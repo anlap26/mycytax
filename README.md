@@ -59,7 +59,13 @@ Replace `pub-XXXXXXXXXXXXXXXX` with the real publisher ID. Do not publish a plac
 
 ## Publishing
 
-A push to `main` that touches `source/` starts the **Build site** workflow (`.github/workflows/build.yml`). It runs `python3 source/build.py` with `BASE=https://mycytax.com` and, when the generated pages changed, commits them back to `main`. Pages keeps serving `main` / root. `CNAME` is `mycytax.com` and is rewritten on every build. A normal push already starts a Pages deployment. A commit this workflow pushes does not, so the workflow requests a Pages build only after its own commit, and also on a manual run. Pull requests run the build as a check. The workflow does not run for an `admin/`-only push; GitHub Pages still publishes that push, which is how the editor itself is served.
+A push to `main` that touches `source/` starts the **Build site** workflow (`.github/workflows/build.yml`). It runs `python3 source/build.py` with `BASE=https://mycytax.com` and, when the generated pages changed, commits them back to `main`. Pages keeps serving `main` / root. `CNAME` is `mycytax.com` and is rewritten on every build. A normal push already starts a Pages deployment. A commit this workflow pushes does not, so the workflow requests a Pages build only after its own commit, and also on a manual run. Pull requests run the build as a check. The workflow does not run for an `admin/`-only push; GitHub Pages still publishes that push, which is how the editor itself is served. A commit that only changes `source/content/telegram-posted.json` does not rebuild the site.
+
+## Telegram
+
+After **Build site** succeeds on `main`, **Post to Telegram** (`.github/workflows/telegram.yml`) posts each new guide once to `@mycytax`. The message is the Russian title, the short description and a link to `https://mycytax.com/ru/guides/<slug>/` (the default-language URL is used only when that Russian page is not in the build). Guides that already existed when posting was added are listed in `source/content/telegram-posted.json` and are not posted. Editing a guide does not post it again.
+
+The bot token is the repository secret `TELEGRAM_BOT_TOKEN`. If that secret is missing, the job logs a notice and exits successfully without changing the state file. Run the workflow manually with **dry run** to print the message without sending it.
 
 ## Form
 
