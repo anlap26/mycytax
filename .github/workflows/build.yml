@@ -3,6 +3,9 @@
 # Pushes made with GITHUB_TOKEN do not start workflows again, including the Pages
 # build. A normal push already starts Pages, so this workflow requests a build
 # only after its own commit, or on a manual run. There is no loop.
+# source/content/telegram-posted.json is excluded so a state-file commit cannot
+# rebuild the site or start Post to Telegram again, even if a later token does
+# start workflows. The poster commit also carries [skip ci].
 name: Build site
 
 on:
@@ -10,12 +13,16 @@ on:
     branches: [main]
     paths:
       - "source/**"
+      - "!source/content/telegram-posted.json"
       - ".github/workflows/build.yml"
+      - ".github/workflows/telegram.yml"
   pull_request:
     paths:
       - "source/**"
+      - "!source/content/telegram-posted.json"
       - "admin/**"
       - ".github/workflows/build.yml"
+      - ".github/workflows/telegram.yml"
   workflow_dispatch:
 
 permissions:
@@ -41,6 +48,9 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Test Telegram poster
+        run: python3 -m unittest discover -s source -p 'test_*.py' -v
+
       - name: Check CMS config
         run: |
           pip install -q pyyaml jsonschema
@@ -65,6 +75,10 @@ jobs:
           git config user.name "mycytax-build[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
+          # The poster owns this file. A site rebuild must not commit it.
+          if [ -f source/content/telegram-posted.json ]; then
+            git reset -q -- source/content/telegram-posted.json
+          fi
           if git diff --cached --quiet; then
             echo "Nothing changed."
             echo "pushed=false" >> "$GITHUB_OUTPUT"
