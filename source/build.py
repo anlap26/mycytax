@@ -21,6 +21,8 @@ ADS_TXT = "google.com, pub-1547877294743851, DIRECT, f08c47fec0942fa0\n"
 EMAIL = "info@mycytax.com"
 PUBLISHER = "Anna"
 CYNEWS = "https://cynews24.net/"
+TG_RU = "https://t.me/mycytax"
+TG_EN = "https://t.me/mycytaxen"
 LANGS = ["en", "ru", "el"]
 # Editable copy lives in source/content/ (one JSON file per guide or page) and is
 # loaded below. Calculator logic and the chrome around it stay in this file.
@@ -40,6 +42,9 @@ UI = {
     lead="Need help buying or selling? Contact us",
     read="Read the guide", open="Open calculator",
     ad="Advertisement",
+    tg="Follow us on Telegram",
+    tg_other="Russian channel",
+    tg_short="Telegram",
     home_h="Cyprus property and tax calculators",
     home_desc="Transfer fees, VAT, capital gains, rental income and a mortgage payment, plus practical guides.",
     home_intro="Work out the Land Registry fee, VAT, stamp duty, capital gains tax, rental tax and a mortgage payment. Every rate on MyCyTax is tied to a source. The publisher is Anna, in Cyprus.",
@@ -59,6 +64,9 @@ UI = {
     lead="Нужна помощь с покупкой или продажей? Напишите нам",
     read="Читать справочник", open="Открыть калькулятор",
     ad="Реклама",
+    tg="Подписывайтесь на наш Telegram-канал",
+    tg_other="Английский канал",
+    tg_short="Telegram",
     home_h="Калькуляторы недвижимости и налогов Кипра",
     home_desc="Сборы кадастра, НДС, прирост капитала, аренда и ипотечный платёж, плюс практические справочники.",
     home_intro="Посчитайте сбор Земельного кадастра, НДС, гербовый сбор, налог на прирост капитала, налог с аренды и ипотечный платёж. Каждая ставка на MyCyTax привязана к источнику. Издатель — Анна, Кипр.",
@@ -78,6 +86,9 @@ UI = {
     lead="Χρειάζεστε βοήθεια για αγορά ή πώληση; Επικοινωνήστε",
     read="Διαβάστε τον οδηγό", open="Άνοιγμα υπολογιστή",
     ad="Διαφήμιση",
+    tg="Ακολουθήστε μας στο Telegram",
+    tg_other="Ρωσικό κανάλι",
+    tg_short="Telegram",
     home_h="Υπολογιστές ακινήτων και φόρων Κύπρου",
     home_desc="Τέλη μεταβίβασης, ΦΠΑ, κεφαλαιουχικά κέρδη, ενοίκιο και δόση δανείου, μαζί με πρακτικούς οδηγούς.",
     home_intro="Υπολογίστε το τέλος του Κτηματολογίου, τον ΦΠΑ, το χαρτόσημο, τον φόρο κεφαλαιουχικών κερδών, τον φόρο ενοικίου και τη δόση στεγαστικού. Κάθε συντελεστής στο MyCyTax δένεται με πηγή. Εκδότρια είναι η Άννα, στην Κύπρο.",
@@ -433,10 +444,25 @@ a.go.alt{background:#fff;color:var(--pine);border:2px solid var(--pine)}
 a.go.alt:hover{background:var(--pine);color:#fff}
 p.consult{margin:14px 0 0;font-weight:700}
 @media(max-width:600px){.cta-btns{flex-direction:column}.cta-btns a{flex-basis:auto}}
+a.tg-nav{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:999px;background:#229ED9;color:#fff;flex:none}
+a.tg-nav:hover{background:#1b86b8;color:#fff}
+.tg-mark{width:18px;height:18px;display:block;flex:none}
+footer a.tg-foot{display:inline-flex;align-items:center;gap:6px}
+footer a.tg-foot .tg-mark{width:16px;height:16px}
+.tg-cta{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--pine2);border-radius:16px;padding:18px 18px 16px;margin:22px 0;max-width:720px}
+.tg-cta h2{font-family:Georgia,Palatino,serif;font-size:26px;line-height:1.2;margin:0 0 12px}
+.tg-cta h2 a{display:inline-flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none}
+.tg-cta h2 a:hover{color:var(--copper)}
+.tg-cta h2 .tg-mark{width:28px;height:28px;color:#229ED9}
+.tg-cta .cta-btns a{gap:8px}
+.tg-cta a.go{background:var(--pine);color:#fff;border:0;border-radius:999px;padding:12px 18px;font-weight:700}
+.tg-cta a.go:hover{background:var(--copper);color:#fff}
+.tg-cta a.go.alt{background:#fff;color:var(--pine);border:2px solid var(--pine);font-weight:650}
+.tg-cta a.go.alt:hover{background:var(--pine);color:#fff}
 .hp{position:absolute;left:-9999px}
 footer{margin-top:48px;background:var(--pine);color:#e7e1d6;padding:28px 0;font-size:14.5px}
 footer a{color:#fff}
-footer .cols{display:flex;flex-wrap:wrap;gap:10px 18px}
+footer .cols{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center}
 footer p{max-width:78ch}
 @media(max-width:800px){.grid{grid-template-columns:1fr}.bar{align-items:flex-start;flex-direction:column}}
 '''
@@ -472,7 +498,7 @@ def header(lang, path_for):
     return f'''<a class="skip" href="#main">{u["home"]}</a><header class="top"><div class="wrap bar">
 <a class="logo" href="{href(loc(lang, "/"))}">{e(u["name"])}<small>{e(u["tagline"])}</small></a>
 <nav class="main" aria-label="{e(u["lang"])}">{item("calcs", loc(lang, "/calculators/"))}{item("guides", loc(lang, "/guides/"))}{item("about", loc(lang, "/about/"))}{item("contact", loc(lang, "/contact/"))}
-<span class="langs">{langs}</span></nav></div></header>'''
+{tg_icon_link(lang)}<span class="langs">{langs}</span></nav></div></header>'''
 
 def footer(lang):
     u = UI[lang]
@@ -482,7 +508,7 @@ def footer(lang):
         (loc(lang, "/terms/"), u["terms"]),
     ]
     nav = "".join(f'<a href="{href(path)}">{e(name)}</a>' for path, name in links)
-    return f'''<footer><div class="wrap"><nav class="cols">{nav}<a href="{CYNEWS}">{e(u["cynews"])}</a></nav>
+    return f'''<footer><div class="wrap"><nav class="cols">{nav}<a href="{CYNEWS}">{e(u["cynews"])}</a>{tg_footer_link(lang)}</nav>
 <p>{e(DISCLAIMER[lang])}</p><p>© 2026 {SITE}. {e(PUBLISHER)}, Cyprus. <a href="mailto:{EMAIL}">{EMAIL}</a></p></div></footer></body></html>'''
 
 def ad(label):
@@ -492,7 +518,47 @@ def org():
     return {"@type":"Organization","name":SITE,"url":absu("/"),"email":EMAIL,
             "address":{"@type":"PostalAddress","addressCountry":"CY"},
             "founder":{"@type":"Person","name":PUBLISHER},
-            "sameAs":[CYNEWS]}
+            "sameAs":[CYNEWS, TG_RU, TG_EN]}
+
+# Official Telegram mark (paper plane), drawn with currentColor so it follows the link.
+TG_ICON = (
+    '<svg class="tg-mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false">'
+    '<path fill="currentColor" d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>'
+    "</svg>"
+)
+
+def tg_primary(lang):
+    """Russian pages use @mycytax. English and Greek pages use @mycytaxen."""
+    return TG_RU if lang == "ru" else TG_EN
+
+def tg_secondary(lang):
+    return TG_EN if lang == "ru" else TG_RU
+
+def tg_handle(url):
+    return "@mycytaxen" if url == TG_EN else "@mycytax"
+
+def tg_icon_link(lang):
+    u = UI[lang]
+    return (f'<a class="tg-nav" href="{e(tg_primary(lang))}" rel="noopener" target="_blank" '
+            f'aria-label="{e(u["tg"])}">{TG_ICON}</a>')
+
+def tg_footer_link(lang):
+    u = UI[lang]
+    return (f'<a class="tg-foot" href="{e(tg_primary(lang))}" rel="noopener" target="_blank" '
+            f'aria-label="{e(u["tg"])}">{TG_ICON}<span>{e(u["tg_short"])}</span></a>')
+
+def telegram_card(lang):
+    """Subscribe block. The page-language channel is the heading and the first button."""
+    u = UI[lang]
+    primary, other = tg_primary(lang), tg_secondary(lang)
+    other_label = f'{u["tg_other"]} · {tg_handle(other)}'
+    return (
+        f'<aside class="tg-cta"><h2><a href="{e(primary)}" rel="noopener" target="_blank">'
+        f'{TG_ICON}<span>{e(u["tg"])}</span></a></h2><div class="cta-btns">'
+        f'<a class="go" href="{e(primary)}" rel="noopener" target="_blank">{TG_ICON}<span>{e(tg_handle(primary))}</span></a>'
+        f'<a class="go alt" href="{e(other)}" rel="noopener" target="_blank">{TG_ICON}<span>{e(other_label)}</span></a>'
+        f"</div></aside>"
+    )
 
 def page_shell(lang, title, desc, path, alt, body, jsonld=None, active_path=None, robots="index,follow,max-image-preview:large"):
     def path_for(l, alt=alt):
@@ -671,7 +737,8 @@ def calc_page(lang, slug):
 <h1>{e(t)}</h1><p class="lede">{e(d)}</p><p class="banner">{e(DISCLAIMER[lang])}</p>{ad("calc-top")}
 <div id="calc" data-consult="{contact_href(lang,"buy")}" data-calc="{e({"transfer-fees":"transfer","stamp-duty":"stamp","vat":"vat","capital-gains":"cgt","rental-yield":"rental","mortgage":"mortgage"}[slug])}"></div>
 {lead_card(lang)}
-<div class="body"><h2>{e(u["sources"])}</h2><p>{note}</p></div>{ad("calc-bottom")}</main>
+<div class="body"><h2>{e(u["sources"])}</h2><p>{note}</p></div>{ad("calc-bottom")}
+{telegram_card(lang)}</main>
 <script src="{href("/assets/calc.js")}" defer></script>'''
     return page_shell(lang, f"{t} | {SITE}", d, path, alt, body, ld)
 
@@ -690,8 +757,8 @@ def guide_page(lang, slug, words_out):
     ld = [
         {"@context":"https://schema.org","@type":"Article","headline":meta["title"],"description":meta["description"],
          "inLanguage":lang,"datePublished":TODAY,"dateModified":TODAY,"mainEntityOfPage":absu(path),
-         "author":{"@type":"Organization","name":SITE,"url":absu("/")},
-         "publisher":{"@type":"Organization","name":SITE,"url":absu("/")}},
+         "author":{"@type":"Organization","name":SITE,"url":absu("/"),"sameAs":[TG_RU, TG_EN]},
+         "publisher":{"@type":"Organization","name":SITE,"url":absu("/"),"sameAs":[TG_RU, TG_EN]}},
     ]
     if faqs:
         ld.append({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
@@ -703,7 +770,8 @@ def guide_page(lang, slug, words_out):
 {faq_html}
 <section class="src"><h2>{e(u["sources"])}</h2><ul>{src}</ul></section>
 {lead_card(lang)}
-{ad("guide-bottom")}</article></main>'''
+{ad("guide-bottom")}
+{telegram_card(lang)}</article></main>'''
     robots = "noindex,follow" if lang in GUIDES[slug]["missing"] else "index,follow,max-image-preview:large"
     return page_shell(lang, f'{meta["title"]} | {SITE}', meta["description"], path, alt, body, ld, robots=robots)
 
