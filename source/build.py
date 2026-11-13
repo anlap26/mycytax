@@ -671,6 +671,8 @@ def main():
     open(os.path.join(OUT, ".nojekyll"), "w").close()
     # GitHub Pages custom domain. Rewritten on every build so a rebuild cannot drop it.
     w("/CNAME", "mycytax.com\n")
+    # Google Search Console verification. Rewritten on every build so a rebuild cannot drop it.
+    w("/google62249645dc64d12b.html", "google-site-verification: google62249645dc64d12b.html\n")
     short = [x for x in words if x[2] < 800]
     print("built", BASE)
     for lang, slug, n in words:
