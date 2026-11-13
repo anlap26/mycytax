@@ -1,0 +1,63 @@
+{
+  "note": "Paste an https affiliate link into affiliate_url. Leave affiliate_url empty to keep the public url. applies_to is guides/<slug> and calculators/<slug>. The site shows a partner only on those pages.",
+  "heading": {
+    "en": "Useful services",
+    "ru": "Полезные сервисы",
+    "el": "Χρήσιμες υπηρεσίες"
+  },
+  "disclosure": {
+    "en": "Some links may be partner links; this does not change the price for you.",
+    "ru": "Некоторые ссылки могут быть партнёрскими; для вас цена от этого не меняется.",
+    "el": "Ορισμένοι σύνδεσμοι μπορεί να είναι σύνδεσμοι συνεργατών· αυτό δεν αλλάζει την τιμή για εσάς."
+  },
+  "partners": [
+    {
+      "id": "wise",
+      "name": "Wise",
+      "url": "https://wise.com/",
+      "affiliate_url": "",
+      "description": {
+        "en": "An international transfer account for sending euros to Cyprus when you pay for property or cover living costs.",
+        "ru": "Международный перевод евро на Кипр, когда вы платите за недвижимость или за повседневные расходы.",
+        "el": "Διεθνές έμβασμα ευρώ προς την Κύπρο, όταν πληρώνετε ακίνητο ή καθημερινά έξοδα."
+      },
+      "applies_to": [
+        "guides/buying-as-a-foreigner",
+        "guides/off-plan",
+        "guides/total-cost",
+        "guides/renting-out",
+        "guides/residence-permit",
+        "guides/tax-residency",
+        "calculators/transfer-fees",
+        "calculators/stamp-duty",
+        "calculators/vat",
+        "calculators/rental-yield",
+        "calculators/mortgage"
+      ]
+    },
+    {
+      "id": "currencies-direct",
+      "name": "Currencies Direct",
+      "url": "https://www.currenciesdirect.com/",
+      "affiliate_url": "",
+      "description": {
+        "en": "A currency specialist for larger payments, such as a purchase instalment or funds sent for a move to Cyprus.",
+        "ru": "Валютный сервис для крупных платежей: взнос за покупку или перевод средств при переезде на Кипр.",
+        "el": "Ειδικός συναλλάγματος για μεγαλύτερες πληρωμές, όπως δόση αγοράς ή μεταφορά χρημάτων για μετακόμιση στην Κύπρο."
+      },
+      "applies_to": [
+        "guides/buying-as-a-foreigner",
+        "guides/off-plan",
+        "guides/total-cost",
+        "guides/renting-out",
+        "guides/residence-permit",
+        "guides/tax-residency",
+        "calculators/transfer-fees",
+        "calculators/stamp-duty",
+        "calculators/vat",
+        "calculators/rental-yield",
+        "calculators/mortgage"
+      ]
+    }
+  ]
+}

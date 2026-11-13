@@ -57,6 +57,27 @@ google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
 
 Replace `pub-XXXXXXXXXXXXXXXX` with the real publisher ID. Do not publish a placeholder ID. Then put the ad unit code inside the elements marked `data-ad`. Update the privacy and cookie pages in `source/content/pages/` before those tags go live, including a consent tool for visitors in the EEA.
 
+## Партнёрские ссылки
+
+Блок «Полезные сервисы» берётся из `source/partners.json`. Его нет в панели сайта. Пока поле `affiliate_url` пустое, ссылка ведёт на обычный адрес из `url` (сейчас это главные страницы Wise и Currencies Direct).
+
+Когда придёт партнёрская ссылка, вставьте её в `affiliate_url` нужного сервиса. Адрес должен начинаться с `https://`. Поле `url` не стирайте: если `affiliate_url` снова очистить, сайт вернётся на обычную страницу. Неверная вставка, не на `https://`, не подменяет ссылку.
+
+```json
+"url": "https://wise.com/",
+"affiliate_url": "https://wise.com/your-affiliate-link"
+```
+
+Список `applies_to` — это страницы, на которых сервис показан: `guides/<адрес>` и `calculators/<адрес>`. Сейчас это покупка, оплата из-за рубежа, аренда, ипотека и переезд или резидентство. На остальных страницах блока нет. После сохранения файла в `main` сайт пересобирается сам.
+
+## Partner links
+
+The “Useful services” box is read from `source/partners.json`. It is not edited in the CMS. While `affiliate_url` is empty, the link is the public homepage in `url`.
+
+When an affiliate link arrives, paste it into that partner’s `affiliate_url`. It must start with `https://`. Keep `url` as the public homepage so clearing `affiliate_url` restores it. A value that is not an `https://` link does not replace the homepage.
+
+`applies_to` lists the guides and calculators that show the partner (`guides/<slug>`, `calculators/<slug>`): buying property, paying from abroad, rent, mortgage, and moving or residency. Other pages do not show the box. A push of this file to `main` rebuilds the site.
+
 ## Publishing
 
 A push to `main` that touches `source/` starts the **Build site** workflow (`.github/workflows/build.yml`). It runs `python3 source/build.py` with `BASE=https://mycytax.com` and, when the generated pages changed, commits them back to `main`. Pages keeps serving `main` / root. `CNAME` is `mycytax.com` and is rewritten on every build. A normal push already starts a Pages deployment. A commit this workflow pushes does not, so the workflow requests a Pages build only after its own commit, and also on a manual run. Pull requests run the build as a check. The workflow does not run for an `admin/`-only push; GitHub Pages still publishes that push, which is how the editor itself is served. A commit that only changes `source/content/telegram-posted.json` does not rebuild the site.
