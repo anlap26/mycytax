@@ -326,6 +326,89 @@ def load_pages():
     return pages
 
 PAGES = load_pages()
+PARTNERS_PATH = os.path.join(HERE, "partners.json")
+PARTNER_HEADING = {
+    "en": "Useful services",
+    "ru": "Полезные сервисы",
+    "el": "Χρήσιμες υπηρεσίες",
+}
+PARTNER_DISCLOSURE = {
+    "en": "Some links may be partner links; this does not change the price for you.",
+    "ru": "Некоторые ссылки могут быть партнёрскими; для вас цена от этого не меняется.",
+    "el": "Ορισμένοι σύνδεσμοι μπορεί να είναι σύνδεσμοι συνεργατών· αυτό δεν αλλάζει την τιμή για εσάς.",
+}
+
+def _https(url):
+    url = _clean(url)
+    if url.startswith("https://") and not any(ch.isspace() for ch in url):
+        return url
+    return ""
+
+def load_partners(path=None):
+    path = path or PARTNERS_PATH
+    if not os.path.isfile(path):
+        raise SystemExit(f"missing {path}")
+    with open(path, encoding="utf8") as f:
+        data = json.load(f)
+    if not isinstance(data, dict) or not isinstance(data.get("partners"), list):
+        raise SystemExit(f"{path}: expected an object with a partners list")
+    return data
+
+def partner_href(partner):
+    """Use affiliate_url when it is a non-empty https link. Otherwise use url.
+
+    A non-empty affiliate_url that is not https is ignored, so a bad paste
+    cannot replace the public homepage and is never written into the page.
+    """
+    if not isinstance(partner, dict):
+        return ""
+    affiliate = _clean(partner.get("affiliate_url"))
+    if affiliate:
+        safe = _https(affiliate)
+        if safe:
+            return safe
+    return _https(partner.get("url"))
+
+def _partner_text(data, key, lang, fallback):
+    block = data.get(key) if isinstance(data, dict) and isinstance(data.get(key), dict) else {}
+    return _clean(block.get(lang)) or _clean(block.get("en")) or fallback.get(lang, "")
+
+def _partner_description(partner, lang):
+    desc = partner.get("description") if isinstance(partner.get("description"), dict) else {}
+    return _clean(desc.get(lang)) or _clean(desc.get("en")) or _clean(desc.get("ru"))
+
+PARTNERS = load_partners()
+
+def partners_block(lang, kind, slug, data=None):
+    """Small partner box. Empty when no partner lists this guide or calculator."""
+    data = PARTNERS if data is None else data
+    if not isinstance(data, dict):
+        return ""
+    page = f"{kind}/{slug}"
+    items = []
+    for partner in data.get("partners") or []:
+        if not isinstance(partner, dict):
+            continue
+        pages = partner.get("applies_to") or []
+        if page not in pages:
+            continue
+        url = partner_href(partner)
+        name = _clean(partner.get("name"))
+        if not url or not name:
+            continue
+        desc = _partner_description(partner, lang)
+        blurb = f"<p>{e(desc)}</p>" if desc else ""
+        items.append(
+            f'<li><a href="{e(url)}" rel="sponsored noopener" target="_blank">{e(name)}</a>{blurb}</li>'
+        )
+    if not items:
+        return ""
+    heading = _partner_text(data, "heading", lang, PARTNER_HEADING)
+    note = _partner_text(data, "disclosure", lang, PARTNER_DISCLOSURE)
+    return (
+        f'<aside class="partners"><h2>{e(heading)}</h2><ul>{"".join(items)}</ul>'
+        f'<p class="partner-note">{e(note)}</p></aside>\n'
+    )
 
 def inline(text):
     text = e(text)
@@ -488,7 +571,14 @@ footer p.projects{margin:14px 0 0}
 .cy-news ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
 .cy-news li{margin:0}
 .cy-news a{font-weight:650}
-@media(max-width:800px){.grid{grid-template-columns:1fr}.bar{align-items:flex-start;flex-direction:column}}
+.partners{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 16px 12px;margin:22px 0;max-width:720px}
+.partners h2{font-family:Georgia,Palatino,serif;font-size:22px;line-height:1.25;margin:0 0 10px}
+.partners ul{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.partners li{margin:0}
+.partners a{font-weight:650;overflow-wrap:anywhere}
+.partners p{margin:2px 0 0;color:#314038;font-size:15.5px}
+.partners .partner-note{margin:12px 0 0;color:var(--muted);font-size:13px;line-height:1.45}
+@media(max-width:800px){.grid{grid-template-columns:1fr}.bar{align-items:flex-start;flex-direction:column}.partners{padding:14px 14px 12px}}
 '''
 
 def head(lang, title, desc, path, alt_path, jsonld=None, extra="", robots="index,follow,max-image-preview:large"):
@@ -885,7 +975,7 @@ def calc_page(lang, slug):
 <div id="calc" data-consult="{contact_href(lang,"buy")}" data-calc="{e({"transfer-fees":"transfer","stamp-duty":"stamp","vat":"vat","capital-gains":"cgt","rental-yield":"rental","mortgage":"mortgage"}[slug])}"></div>
 {lead_card(lang)}
 <div class="body"><h2>{e(u["sources"])}</h2><p>{note}</p></div>{ad("calc-bottom")}
-{telegram_card(lang)}</main>
+{partners_block(lang, "calculators", slug)}{telegram_card(lang)}</main>
 <script src="{href("/assets/calc.js")}" defer></script>'''
     return page_shell(lang, f"{t} | {SITE}", d, path, alt, body, ld)
 
@@ -918,7 +1008,7 @@ def guide_page(lang, slug, words_out):
 <section class="src"><h2>{e(u["sources"])}</h2><ul>{src}</ul></section>
 {lead_card(lang)}
 {ad("guide-bottom")}
-{telegram_card(lang)}
+{partners_block(lang, "guides", slug)}{telegram_card(lang)}
 {news_block(lang)}</article></main>'''
     robots = "noindex,follow" if lang in GUIDES[slug]["missing"] else "index,follow,max-image-preview:large"
     return page_shell(lang, f'{meta["title"]} | {SITE}', meta["description"], path, alt, body, ld, robots=robots)
