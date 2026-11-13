@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 """MyCyTax static generator. English, Russian and Greek.
 
-    BASE=https://anlap26.github.io/mycytax python3 source/build.py
+    BASE=https://mycytax.com python3 source/build.py
 
-When mycytax.com is connected, rebuild with BASE=https://mycytax.com
+The custom domain is mycytax.com. BASE is the origin with no trailing slash.
 The path inside BASE becomes the link prefix. No trailing slash.
 """
 import datetime, html, os, re, shutil
@@ -11,14 +11,14 @@ from urllib.parse import urlparse
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.normpath(os.path.join(HERE, ".."))
-BASE = os.environ.get("BASE", "https://anlap26.github.io/mycytax").rstrip("/")
+BASE = os.environ.get("BASE", "https://mycytax.com").rstrip("/")
 OUT = os.environ.get("OUT", ROOT)
 PREFIX = urlparse(BASE).path.rstrip("/")
 TODAY = "2026-11-13"
 SITE = "MyCyTax"
 EMAIL = "cynews24@gmail.com"
 PUBLISHER = "Anna"
-CYNEWS = "https://anlap26.github.io/cynews24/"
+CYNEWS = "https://cynews24.net/"
 LANGS = ["en", "ru", "el"]
 
 UI = {
@@ -34,7 +34,7 @@ UI = {
     ad="Advertisement",
     home_h="Cyprus property and tax calculators",
     home_desc="Transfer fees, VAT, capital gains, rental income and a mortgage payment, plus practical guides.",
-    home_intro="Work out the Land Registry fee, VAT, stamp duty, capital gains tax, rental tax and a mortgage payment. Every rate on MyCyTax is tied to a source. The publisher is Anna, in Cyprus. The site will move to mycytax.com.",
+    home_intro="Work out the Land Registry fee, VAT, stamp duty, capital gains tax, rental tax and a mortgage payment. Every rate on MyCyTax is tied to a source. The publisher is Anna, in Cyprus.",
     list_calcs="Cyprus property calculators: transfer fees, stamp duty, VAT, capital gains, rental income and mortgage payments.",
     list_guides="Practical guides to buying, selling, tax residency, non-dom status, title deeds and renting property in Cyprus.",
     contact_t="Contact", contact_d="Write to MyCyTax about buying or selling. The form goes to cynews24@gmail.com.",
@@ -53,7 +53,7 @@ UI = {
     ad="Реклама",
     home_h="Калькуляторы недвижимости и налогов Кипра",
     home_desc="Сборы кадастра, НДС, прирост капитала, аренда и ипотечный платёж, плюс практические справочники.",
-    home_intro="Посчитайте сбор Земельного кадастра, НДС, гербовый сбор, налог на прирост капитала, налог с аренды и ипотечный платёж. Каждая ставка на MyCyTax привязана к источнику. Издатель — Анна, Кипр. Позже сайт откроется на mycytax.com.",
+    home_intro="Посчитайте сбор Земельного кадастра, НДС, гербовый сбор, налог на прирост капитала, налог с аренды и ипотечный платёж. Каждая ставка на MyCyTax привязана к источнику. Издатель — Анна, Кипр.",
     list_calcs="Калькуляторы по недвижимости Кипра: сборы кадастра, гербовый сбор, НДС, прирост капитала, аренда и ипотека.",
     list_guides="Практические справочники о покупке, продаже, налоговом резидентстве, статусе non-dom, титулах и аренде на Кипре.",
     contact_t="Контакты", contact_d="Напишите MyCyTax о покупке или продаже. Форма уходит на cynews24@gmail.com.",
@@ -72,7 +72,7 @@ UI = {
     ad="Διαφήμιση",
     home_h="Υπολογιστές ακινήτων και φόρων Κύπρου",
     home_desc="Τέλη μεταβίβασης, ΦΠΑ, κεφαλαιουχικά κέρδη, ενοίκιο και δόση δανείου, μαζί με πρακτικούς οδηγούς.",
-    home_intro="Υπολογίστε το τέλος του Κτηματολογίου, τον ΦΠΑ, το χαρτόσημο, τον φόρο κεφαλαιουχικών κερδών, τον φόρο ενοικίου και τη δόση στεγαστικού. Κάθε συντελεστής στο MyCyTax δένεται με πηγή. Εκδότρια είναι η Άννα, στην Κύπρο. Ο ιστότοπος θα μεταφερθεί στο mycytax.com.",
+    home_intro="Υπολογίστε το τέλος του Κτηματολογίου, τον ΦΠΑ, το χαρτόσημο, τον φόρο κεφαλαιουχικών κερδών, τον φόρο ενοικίου και τη δόση στεγαστικού. Κάθε συντελεστής στο MyCyTax δένεται με πηγή. Εκδότρια είναι η Άννα, στην Κύπρο.",
     list_calcs="Υπολογιστές ακινήτων Κύπρου: τέλη μεταβίβασης, χαρτόσημο, ΦΠΑ, κεφαλαιουχικά κέρδη, ενοίκιο και δόση δανείου.",
     list_guides="Πρακτικοί οδηγοί για αγορά, πώληση, φορολογική κατοικία, καθεστώς non-dom, τίτλους και ενοικίαση στην Κύπρο.",
     contact_t="Επικοινωνία", contact_d="Γράψτε στο MyCyTax για αγορά ή πώληση. Η φόρμα πηγαίνει στο cynews24@gmail.com.",
@@ -669,6 +669,8 @@ def main():
     w("/sitemap.xml", sitemap())
     w("/robots.txt", f"User-agent: *\nAllow: /\n\nSitemap: {BASE}/sitemap.xml\n")
     open(os.path.join(OUT, ".nojekyll"), "w").close()
+    # GitHub Pages custom domain. Rewritten on every build so a rebuild cannot drop it.
+    w("/CNAME", "mycytax.com\n")
     short = [x for x in words if x[2] < 800]
     print("built", BASE)
     for lang, slug, n in words:
