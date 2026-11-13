@@ -69,9 +69,24 @@ a.go.alt{background:#fff;color:var(--pine);border:2px solid var(--pine)}
 a.go.alt:hover{background:var(--pine);color:#fff}
 p.consult{margin:14px 0 0;font-weight:700}
 @media(max-width:600px){.cta-btns{flex-direction:column}.cta-btns a{flex-basis:auto}}
+a.tg-nav{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:999px;background:#229ED9;color:#fff;flex:none}
+a.tg-nav:hover{background:#1b86b8;color:#fff}
+.tg-mark{width:18px;height:18px;display:block;flex:none}
+footer a.tg-foot{display:inline-flex;align-items:center;gap:6px}
+footer a.tg-foot .tg-mark{width:16px;height:16px}
+.tg-cta{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--pine2);border-radius:16px;padding:18px 18px 16px;margin:22px 0;max-width:720px}
+.tg-cta h2{font-family:Georgia,Palatino,serif;font-size:26px;line-height:1.2;margin:0 0 12px}
+.tg-cta h2 a{display:inline-flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none}
+.tg-cta h2 a:hover{color:var(--copper)}
+.tg-cta h2 .tg-mark{width:28px;height:28px;color:#229ED9}
+.tg-cta .cta-btns a{gap:8px}
+.tg-cta a.go{background:var(--pine);color:#fff;border:0;border-radius:999px;padding:12px 18px;font-weight:700}
+.tg-cta a.go:hover{background:var(--copper);color:#fff}
+.tg-cta a.go.alt{background:#fff;color:var(--pine);border:2px solid var(--pine);font-weight:650}
+.tg-cta a.go.alt:hover{background:var(--pine);color:#fff}
 .hp{position:absolute;left:-9999px}
 footer{margin-top:48px;background:var(--pine);color:#e7e1d6;padding:28px 0;font-size:14.5px}
 footer a{color:#fff}
-footer .cols{display:flex;flex-wrap:wrap;gap:10px 18px}
+footer .cols{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center}
 footer p{max-width:78ch}
 @media(max-width:800px){.grid{grid-template-columns:1fr}.bar{align-items:flex-start;flex-direction:column}}
