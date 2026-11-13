@@ -1,0 +1,17 @@
+{
+  "ru": {
+    "title": "О сайте",
+    "description": "Кто издаёт MyCyTax и как считаются калькуляторы.",
+    "body": "MyCyTax — независимый сайт калькуляторов и практических справочников по недвижимости и налогам на английском, русском и греческом. Основной язык — английский.\n\nИздатель — Анна. Сайт базируется на Кипре. Контакт редакции и рекламы: info@mycytax.com. Других имён здесь нет: страница не придумывает список сотрудников.\n\nКалькуляторы работают в браузере. Ставки — те, что указали Департамент земель и землеустройства, Налоговый департамент, Министерство внутренних дел, Gov.cy, сводные тексты на CyLaw или названный профессиональный обзор, если закон по-гречески, а обзор ему следует. Если цифра не устоялась, страница так и пишет.\n\nСайт отделён от CyNews 24, который публикует новости Кипра на русском, английском и греческом. Ссылка на CyNews 24 есть в подвале.\n\nРекламные места остаются пустыми. Сайт подключает Google AdSense (ca-pub-1547877294743851) для автоматических объявлений. AdSense может ставить cookie."
+  },
+  "en": {
+    "title": "About",
+    "description": "Who publishes MyCyTax, and how the calculators are produced.",
+    "body": "MyCyTax is an independent site of property and tax calculators and practical guides in English, Russian and Greek. English is the primary language.\n\nThe publisher is Anna. The site is based in Cyprus. Editorial and advertising contact is info@mycytax.com. No other person is named here, because this page does not invent a staff list.\n\nCalculators run in your browser. The rates are the ones stated by the Department of Lands and Surveys, the Tax Department, the Ministry of Interior, Gov.cy, the consolidated statutes on CyLaw, or a named professional summary where the statute is in Greek and the summary tracks it. If a figure is not settled, the page says so.\n\nThe site is separate from CyNews 24, which publishes Cyprus news in Russian, English and Greek. A link to CyNews 24 is in the footer.\n\nAdvertising spaces stay empty. The site loads Google AdSense (ca-pub-1547877294743851) for automatic ads. AdSense may set cookies."
+  },
+  "el": {
+    "title": "Σχετικά",
+    "description": "Ποιος εκδίδει το MyCyTax και πώς παράγονται οι υπολογιστές.",
+    "body": "Το MyCyTax είναι ανεξάρτητος ιστότοπος υπολογιστών και πρακτικών οδηγών για ακίνητα και φόρους, στα αγγλικά, ρωσικά και ελληνικά. Η κύρια γλώσσα είναι η αγγλική.\n\nΕκδότρια είναι η Άννα. Ο ιστότοπος έχει έδρα την Κύπρο. Επικοινωνία σύνταξης και διαφήμισης: info@mycytax.com. Δεν κατονομάζεται άλλο πρόσωπο, γιατί η σελίδα δεν επινοεί κατάλογο συνεργατών.\n\nΟι υπολογιστές τρέχουν στον φυλλομετρητή σας. Οι συντελεστές είναι αυτοί που δηλώνουν το Τμήμα Κτηματολογίου και Χωρομετρίας, το Τμήμα Φορολογίας, το Υπουργείο Εσωτερικών, το Gov.cy, τα κωδικοποιημένα κείμενα στο CyLaw, ή επώνυμη επαγγελματική σύνοψη όπου ο νόμος είναι στα ελληνικά και η σύνοψη τον ακολουθεί. Αν ένα ποσό δεν είναι σταθερό, η σελίδα το λέει.\n\nΟ ιστότοπος είναι χωριστός από το CyNews 24, που δημοσιεύει ειδήσεις Κύπρου στα ρωσικά, αγγλικά και ελληνικά. Σύνδεσμος προς το CyNews 24 υπάρχει στο υποσέλιδο.\n\nΟι θέσεις διαφήμισης μένουν κενές. Ο ιστότοπος φορτώνει το Google AdSense (ca-pub-1547877294743851) για αυτόματες διαφημίσεις. Το AdSense μπορεί να ορίζει cookies."
+  }
+}

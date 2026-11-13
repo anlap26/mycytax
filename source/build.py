@@ -6,7 +6,7 @@
 The custom domain is mycytax.com. BASE is the origin with no trailing slash.
 The path inside BASE becomes the link prefix. No trailing slash.
 """
-import datetime, html, os, re, shutil
+import datetime, html, json, os, re, shutil
 from urllib.parse import urlparse
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -22,6 +22,12 @@ EMAIL = "info@mycytax.com"
 PUBLISHER = "Anna"
 CYNEWS = "https://cynews24.net/"
 LANGS = ["en", "ru", "el"]
+# Editable copy lives in source/content/ (one JSON file per guide or page) and is
+# loaded below. Calculator logic and the chrome around it stay in this file.
+CONTENT = os.path.join(HERE, "content")
+GUIDE_DIR = os.path.join(CONTENT, "guides")
+PAGE_DIR = os.path.join(CONTENT, "pages")
+PAGE_ORDER = ("about", "privacy", "cookies", "terms")
 
 UI = {
  "en": dict(
@@ -123,11 +129,6 @@ CALCS = {
  },
 }
 
-GUIDE_ORDER = [
- "buying-as-a-foreigner", "total-cost", "selling-and-taxes", "tax-residency", "non-dom",
- "residence-permit", "title-deeds", "renting-out", "off-plan", "taxes-overview",
-]
-
 def e(s):
     return html.escape(s if s is not None else "", quote=True)
 
@@ -149,17 +150,154 @@ def href(path):
 def absu(path):
     return BASE + path
 
+# Russian is required. English and Greek are optional: a missing translation falls
+# back to the Russian text, and that language version is marked noindex.
+_TR = dict(zip("абвгдеёзийклмнопрстуфхыэ", "abvgdeezijklmnoprstufhye")) | {"ж":"zh","ц":"ts","ч":"ch","ш":"sh","щ":"sch","ю":"yu","я":"ya","ъ":"","ь":""}
+
+def _clean(v):
+    if v is None:
+        return ""
+    if isinstance(v, str):
+        return v.replace("\r\n", "\n").replace("\r", "\n").strip()
+    return v
+
+def _seq(v):
+    if isinstance(v, bool) or v is None or v == "":
+        return None
+    try:
+        return int(v)
+    except (TypeError, ValueError):
+        return None
+
+def slugify(v):
+    """Latin page address. Used when a new guide leaves the address field empty."""
+    v = "".join(_TR.get(ch, ch) for ch in str(v).lower())
+    return re.sub(r"-+", "-", re.sub(r"[^a-z0-9]+", "-", v)).strip("-")[:70].strip("-")
+
+def _guide_ok(block):
+    return bool(_clean(block.get("title")) and _clean(block.get("description")) and _clean(block.get("body")))
+
+def guide_markdown(block):
+    """Rebuild the markdown the existing parser expects, from CMS fields."""
+    parts = [_clean(block.get("body"))]
+    faqs = []
+    for item in block.get("faq") or []:
+        if not isinstance(item, dict):
+            continue
+        q = _clean(item.get("q"))
+        a = _clean(item.get("a"))
+        if q or a:
+            faqs.append((q, a))
+    if faqs:
+        chunk = ["## FAQ"]
+        for q, a in faqs:
+            chunk.append(f"### {q}")
+            if a:
+                chunk.append(a)
+        parts.append("\n\n".join(chunk))
+    src_lines = []
+    for item in block.get("sources") or []:
+        if not isinstance(item, dict):
+            continue
+        url = _clean(item.get("url"))
+        name = _clean(item.get("name")) or url
+        if url:
+            src_lines.append(f"- [{name}]({url})")
+    if src_lines:
+        parts.append("## Sources\n\n" + "\n".join(src_lines))
+    return "\n\n".join(p for p in parts if p)
+
+def load_guides():
+    if not os.path.isdir(GUIDE_DIR):
+        raise SystemExit(f"missing {GUIDE_DIR}")
+    out = []
+    for fn in sorted(os.listdir(GUIDE_DIR)):
+        if not fn.endswith(".json"):
+            continue
+        path = os.path.join(GUIDE_DIR, fn)
+        with open(path, encoding="utf8") as f:
+            d = json.load(f)
+        stem = os.path.splitext(fn)[0]
+        ru = d.get("ru") if isinstance(d.get("ru"), dict) else {}
+        # Page address: the slug field, else the file name, else the Russian title.
+        slug = slugify(_clean(d.get("slug")) or stem) or slugify(ru.get("title", ""))
+        if not slug:
+            raise SystemExit(f"{path}: cannot make a page address (slug)")
+        if not _guide_ok(ru):
+            raise SystemExit(f"{path}: Russian title, description and text are required")
+        g = {"slug": slug, "seq": _seq(d.get("seq")), "missing": set(), "text": {}}
+        for lang in LANGS:
+            src = d.get(lang) if isinstance(d.get(lang), dict) else {}
+            if lang != "ru" and not _guide_ok(src):
+                g["missing"].add(lang)
+                src = ru
+            g["text"][lang] = {
+                "title": _clean(src.get("title")),
+                "description": _clean(src.get("description")),
+                "md": guide_markdown(src),
+            }
+        out.append(g)
+    slugs = [g["slug"] for g in out]
+    dup = sorted({s for s in slugs if slugs.count(s) > 1})
+    if dup:
+        raise SystemExit(f"Duplicate guide slugs: {dup}")
+    # Guides migrated from the old files keep their original order (seq). New ones follow.
+    out.sort(key=lambda g: (g["seq"] is None, g["seq"] if g["seq"] is not None else 0, g["slug"]))
+    return out
+
+GUIDES = {g["slug"]: g for g in load_guides()}
+GUIDE_ORDER = [g["slug"] for g in sorted(GUIDES.values(), key=lambda g: (g["seq"] is None, g["seq"] if g["seq"] is not None else 0, g["slug"]))]
+
 def load_md(lang, slug):
-    path = os.path.join(HERE, "guides", lang, slug + ".md")
-    raw = open(path, encoding="utf8").read().replace("\r\n", "\n")
-    meta = {}
-    if raw.startswith("---\n"):
-        head, raw = raw.split("---\n", 2)[1:]
-        for line in head.splitlines():
-            if ":" in line:
-                k, v = line.split(":", 1)
-                meta[k.strip()] = v.strip()
-    return meta, raw.strip()
+    t = GUIDES[slug]["text"][lang]
+    return {"title": t["title"], "description": t["description"]}, t["md"]
+
+def _paras(v):
+    """Paragraphs from a list, or from text with a blank line between paragraphs."""
+    if isinstance(v, list):
+        out = []
+        for item in v:
+            if isinstance(item, dict):
+                item = item.get("text") or item.get("paragraph") or ""
+            s = _clean(item)
+            if s:
+                out.append(s)
+        return out
+    text = _clean(v)
+    return [" ".join(x.strip() for x in p.split("\n")).strip() for p in re.split(r"\n\s*\n", text) if p.strip()]
+
+def _page_fields(block):
+    if not isinstance(block, dict):
+        return "", "", []
+    title = _clean(block.get("title"))
+    desc = _clean(block.get("description"))
+    raw = block.get("body") if block.get("body") is not None else block.get("paragraphs")
+    return title, desc, _paras(raw)
+
+def load_pages():
+    pages = {}
+    for slug in PAGE_ORDER:
+        path = os.path.join(PAGE_DIR, slug + ".json")
+        if not os.path.isfile(path):
+            raise SystemExit(f"missing {path}")
+        with open(path, encoding="utf8") as f:
+            d = json.load(f)
+        ru = d.get("ru") if isinstance(d.get("ru"), dict) else {}
+        title, desc, paras = _page_fields(ru)
+        if not (title and desc and paras):
+            raise SystemExit(f"{path}: Russian title, description and text are required")
+        page = {"missing": set(), "text": {}}
+        for lang in LANGS:
+            src = d.get(lang) if isinstance(d.get(lang), dict) else {}
+            t, ds, ps = _page_fields(src)
+            if lang != "ru" and not (t and ds and ps):
+                page["missing"].add(lang)
+                t, ds, ps = title, desc, paras
+            page["text"][lang] = (t, ds, ps)
+        pages[slug] = page
+    return pages
+
+PAGES = load_pages()
 
 def inline(text):
     text = e(text)
@@ -303,7 +441,7 @@ footer p{max-width:78ch}
 @media(max-width:800px){.grid{grid-template-columns:1fr}.bar{align-items:flex-start;flex-direction:column}}
 '''
 
-def head(lang, title, desc, path, alt_path, jsonld=None, extra=""):
+def head(lang, title, desc, path, alt_path, jsonld=None, extra="", robots="index,follow,max-image-preview:large"):
     u = UI[lang]
     alts = []
     for l in LANGS:
@@ -318,7 +456,7 @@ def head(lang, title, desc, path, alt_path, jsonld=None, extra=""):
 <title>{e(title)}</title><meta name="description" content="{e(desc)}">
 <link rel="canonical" href="{absu(path)}">
 {chr(10).join(alts)}
-<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="robots" content="{robots}">
 <meta property="og:site_name" content="{e(u["name"])}"><meta property="og:title" content="{e(title)}"><meta property="og:description" content="{e(desc)}"><meta property="og:url" content="{absu(path)}"><meta property="og:type" content="website">
 <meta name="theme-color" content="#1e3d34">
 <link rel="stylesheet" href="{href("/assets/style.css")}">{ld}{extra}{ADSENSE}</head>'''
@@ -356,10 +494,10 @@ def org():
             "founder":{"@type":"Person","name":PUBLISHER},
             "sameAs":[CYNEWS]}
 
-def page_shell(lang, title, desc, path, alt, body, jsonld=None, active_path=None):
+def page_shell(lang, title, desc, path, alt, body, jsonld=None, active_path=None, robots="index,follow,max-image-preview:large"):
     def path_for(l, alt=alt):
         return alt(l)
-    return head(lang, title, desc, path, alt, jsonld) + header(lang, path_for) + body + footer(lang)
+    return head(lang, title, desc, path, alt, jsonld, robots=robots) + header(lang, path_for) + body + footer(lang)
 
 LEAD = {
  "en": dict(h="Local help with your Cyprus property",
@@ -566,102 +704,21 @@ def guide_page(lang, slug, words_out):
 <section class="src"><h2>{e(u["sources"])}</h2><ul>{src}</ul></section>
 {lead_card(lang)}
 {ad("guide-bottom")}</article></main>'''
-    return page_shell(lang, f'{meta["title"]} | {SITE}', meta["description"], path, alt, body, ld)
-
-STATIC = {
- "about": {
-   "en": ("About", "Who publishes MyCyTax, and how the calculators are produced.",
-          ["MyCyTax is an independent site of property and tax calculators and practical guides in English, Russian and Greek. English is the primary language.",
-           "The publisher is Anna. The site is based in Cyprus. Editorial and advertising contact is info@mycytax.com. No other person is named here, because this page does not invent a staff list.",
-           "Calculators run in your browser. The rates are the ones stated by the Department of Lands and Surveys, the Tax Department, the Ministry of Interior, Gov.cy, the consolidated statutes on CyLaw, or a named professional summary where the statute is in Greek and the summary tracks it. If a figure is not settled, the page says so.",
-           "The site is separate from CyNews 24, which publishes Cyprus news in Russian, English and Greek. A link to CyNews 24 is in the footer.",
-           "Advertising spaces stay empty. The site loads Google AdSense (ca-pub-1547877294743851) for automatic ads. AdSense may set cookies."]),
-   "ru": ("О сайте", "Кто издаёт MyCyTax и как считаются калькуляторы.",
-          ["MyCyTax — независимый сайт калькуляторов и практических справочников по недвижимости и налогам на английском, русском и греческом. Основной язык — английский.",
-           "Издатель — Анна. Сайт базируется на Кипре. Контакт редакции и рекламы: info@mycytax.com. Других имён здесь нет: страница не придумывает список сотрудников.",
-           "Калькуляторы работают в браузере. Ставки — те, что указали Департамент земель и землеустройства, Налоговый департамент, Министерство внутренних дел, Gov.cy, сводные тексты на CyLaw или названный профессиональный обзор, если закон по-гречески, а обзор ему следует. Если цифра не устоялась, страница так и пишет.",
-           "Сайт отделён от CyNews 24, который публикует новости Кипра на русском, английском и греческом. Ссылка на CyNews 24 есть в подвале.",
-           "Рекламные места остаются пустыми. Сайт подключает Google AdSense (ca-pub-1547877294743851) для автоматических объявлений. AdSense может ставить cookie."]),
-   "el": ("Σχετικά", "Ποιος εκδίδει το MyCyTax και πώς παράγονται οι υπολογιστές.",
-          ["Το MyCyTax είναι ανεξάρτητος ιστότοπος υπολογιστών και πρακτικών οδηγών για ακίνητα και φόρους, στα αγγλικά, ρωσικά και ελληνικά. Η κύρια γλώσσα είναι η αγγλική.",
-           "Εκδότρια είναι η Άννα. Ο ιστότοπος έχει έδρα την Κύπρο. Επικοινωνία σύνταξης και διαφήμισης: info@mycytax.com. Δεν κατονομάζεται άλλο πρόσωπο, γιατί η σελίδα δεν επινοεί κατάλογο συνεργατών.",
-           "Οι υπολογιστές τρέχουν στον φυλλομετρητή σας. Οι συντελεστές είναι αυτοί που δηλώνουν το Τμήμα Κτηματολογίου και Χωρομετρίας, το Τμήμα Φορολογίας, το Υπουργείο Εσωτερικών, το Gov.cy, τα κωδικοποιημένα κείμενα στο CyLaw, ή επώνυμη επαγγελματική σύνοψη όπου ο νόμος είναι στα ελληνικά και η σύνοψη τον ακολουθεί. Αν ένα ποσό δεν είναι σταθερό, η σελίδα το λέει.",
-           "Ο ιστότοπος είναι χωριστός από το CyNews 24, που δημοσιεύει ειδήσεις Κύπρου στα ρωσικά, αγγλικά και ελληνικά. Σύνδεσμος προς το CyNews 24 υπάρχει στο υποσέλιδο.",
-           "Οι θέσεις διαφήμισης μένουν κενές. Ο ιστότοπος φορτώνει το Google AdSense (ca-pub-1547877294743851) για αυτόματες διαφημίσεις. Το AdSense μπορεί να ορίζει cookies."]),
- },
- "privacy": {
-   "en": ("Privacy policy", "What MyCyTax does with the contact form, and what it does not collect.",
-          ["The publisher is Anna, based in Cyprus. Email: info@mycytax.com.",
-           "The contact form sends your name, email, phone or WhatsApp, request type (buy consultation, sell, or rent out), property type, area or city, budget or expected price, and your message through FormSubmit (formsubmit.co) to info@mycytax.com. Those details are used only to reply. FormSubmit processes the submission in order to deliver the email. The details are not sold and are not added to a marketing list.",
-           "The calculators run on your device. The numbers you type are not sent to this site.",
-           "The site does not use Google Analytics. It loads Google AdSense (ca-pub-1547877294743851) so Google can show ads. AdSense may receive technical data such as the page address and a cookie identifier. Google describes that processing in its own policy.",
-           "Email sent to info@mycytax.com is kept for as long as needed to answer it."]),
-   "ru": ("Политика конфиденциальности", "Что MyCyTax делает с формой связи и чего не собирает.",
-          ["Издатель — Анна, Кипр. Эл. почта: info@mycytax.com.",
-           "Форма отправляет имя, эл. почту, телефон или WhatsApp, тип запроса (консультация по покупке, продажа или сдача), тип объекта, район или город, бюджет или ожидаемую цену и сообщение через FormSubmit (formsubmit.co) на info@mycytax.com. Эти сведения используются только для ответа. FormSubmit обрабатывает отправку, чтобы доставить письмо. Сведения не продаются и не попадают в маркетинговый список.",
-           "Калькуляторы работают на вашем устройстве. Введённые цифры на этот сайт не отправляются.",
-           "Сайт не использует Google Analytics. Он подключает Google AdSense (ca-pub-1547877294743851), чтобы Google мог показывать объявления. AdSense может получать технические данные, например адрес страницы и идентификатор cookie. Как Google это обрабатывает, описано в его собственной политике.",
-           "Письма на info@mycytax.com хранятся, пока нужен ответ."]),
-   "el": ("Πολιτική απορρήτου", "Τι κάνει το MyCyTax με τη φόρμα επικοινωνίας και τι δεν συλλέγει.",
-          ["Εκδότρια είναι η Άννα, με έδρα την Κύπρο. Email: info@mycytax.com.",
-           "Η φόρμα στέλνει το όνομα, το email, το τηλέφωνο ή WhatsApp, τον τύπο αιτήματος (συμβουλή αγοράς, πώληση ή ενοικίαση), τον τύπο ακινήτου, την περιοχή ή πόλη, τον προϋπολογισμό ή την αναμενόμενη τιμή και το μήνυμα μέσω FormSubmit (formsubmit.co) στο info@mycytax.com. Τα στοιχεία χρησιμοποιούνται μόνο για απάντηση. Το FormSubmit επεξεργάζεται την υποβολή για να παραδώσει το email. Τα στοιχεία δεν πωλούνται και δεν μπαίνουν σε λίστα μάρκετινγκ.",
-           "Οι υπολογιστές τρέχουν στη συσκευή σας. Οι αριθμοί που πληκτρολογείτε δεν στέλνονται σε αυτόν τον ιστότοπο.",
-           "Ο ιστότοπος δεν χρησιμοποιεί Google Analytics. Φορτώνει το Google AdSense (ca-pub-1547877294743851) ώστε η Google να εμφανίζει διαφημίσεις. Το AdSense μπορεί να λαμβάνει τεχνικά δεδομένα, όπως τη διεύθυνση της σελίδας και ένα αναγνωριστικό cookie. Η Google περιγράφει αυτή την επεξεργασία στη δική της πολιτική.",
-           "Το email προς info@mycytax.com κρατιέται για όσο χρειάζεται η απάντηση."]),
- },
- "cookies": {
-   "en": ("Cookie notice", "Cookies on this site today, and what would change if advertising is added.",
-          ["MyCyTax does not set its own cookies. The calculators and the language switcher do not store a cookie. The language switcher is an ordinary link.",
-           "The contact form is a normal POST to FormSubmit. Any cookie that service sets is described in FormSubmit's own policy, not by this site.",
-           "The pages load Google AdSense. That service may set advertising cookies, including for visitors in the EEA. Empty boxes on the pages are unused slots and do not show an ad by themselves.",
-           "You can refuse or delete cookies in your browser. Because this site does not rely on a cookie to show a page, the calculators and guides still work if cookies are blocked."]),
-   "ru": ("Уведомление о файлах cookie", "Какие cookie есть на сайте сейчас и что изменится, если появится реклама.",
-          ["MyCyTax не ставит собственные cookie. Калькуляторы и переключатель языка cookie не записывают. Переключатель языка — обычная ссылка.",
-           "Форма — обычный POST в FormSubmit. Любые cookie этой службы описаны в её собственной политике, а не на этом сайте.",
-           "Страницы подключают Google AdSense. Эта служба может ставить рекламные cookie, в том числе посетителям из ЕЭЗ. Пустые рамки на страницах — неиспользуемые места и сами по себе объявление не показывают.",
-           "Отказаться от cookie или удалить их можно в браузере. Страницы не зависят от cookie, поэтому калькуляторы и справочники работают и при их блокировке."]),
-   "el": ("Ειδοποίηση για cookies", "Ποια cookies υπάρχουν σήμερα και τι θα άλλαζε αν προστεθεί διαφήμιση.",
-          ["Το MyCyTax δεν τοποθετεί δικά του cookies. Οι υπολογιστές και ο διακόπτης γλώσσας δεν αποθηκεύουν cookie. Ο διακόπτης γλώσσας είναι απλός σύνδεσμος.",
-           "Η φόρμα είναι συνηθισμένο POST προς το FormSubmit. Όποιο cookie ορίζει εκείνη η υπηρεσία περιγράφεται στη δική της πολιτική, όχι από αυτόν τον ιστότοπο.",
-           "Οι σελίδες φορτώνουν το Google AdSense. Η υπηρεσία μπορεί να τοποθετεί διαφημιστικά cookies, και σε επισκέπτες του ΕΟΧ. Τα κενά πλαίσια στις σελίδες είναι αχρησιμοποίητες θέσεις και δεν δείχνουν από μόνα τους διαφήμιση.",
-           "Μπορείτε να αρνηθείτε ή να διαγράψετε cookies στον φυλλομετρητή. Επειδή ο ιστότοπος δεν βασίζεται σε cookie για να δείξει σελίδα, οι υπολογιστές και οι οδηγοί λειτουργούν και με αποκλεισμένα cookies."]),
- },
- "terms": {
-   "en": ("Terms and disclaimer", "The limits of what this site is offering.",
-          ["Using the site does not create a client relationship with the publisher or with anyone else. Nothing on the site is legal advice, tax advice, immigration advice or a valuation.",
-           "The calculators apply the rates described on each page to the numbers you type. They do not know your residence, your domicile, your other income, earlier exemptions you have used, or whether the Land Registry will accept the price in the contract. Two equal buyers are assumed only when you type that number.",
-           "Official sources prevail. Where a professional firm's summary is cited because the statute is published in Greek, that is identified. Where this site is unsure, it says so.",
-           "To the extent the law allows, the publisher is not liable for a decision you take because of a page or a calculator result. Local authority fees, utility deposits and bank charges are not included unless a page says they are.",
-           "You may link to the pages. You may not copy the guides or the calculator code and present them as your own."]),
-   "ru": ("Условия и оговорка", "Пределы того, что предлагает этот сайт.",
-          ["Пользование сайтом не создаёт отношений клиента с издателем или с кем-либо ещё. Ничто на сайте не является юридической, налоговой или иммиграционной консультацией и не является оценкой.",
-           "Калькуляторы применяют ставки, описанные на странице, к введённым числам. Им неизвестны ваше резидентство, домициль, другой доход, уже использованные вычеты и то, примет ли Земельный кадастр цену в договоре. Два равных покупателя предполагаются только если вы ввели это число.",
-           "Приоритет у официальных источников. Если назван обзор фирмы, потому что закон опубликован по-гречески, это указано. Где сайт не уверен, он так и пишет.",
-           "В пределах, допустимых законом, издатель не отвечает за решение, которое вы приняли из-за страницы или результата калькулятора. Местные сборы, залоги за коммуникации и банковские комиссии не включены, если страница прямо не говорит об обратном.",
-           "На страницы можно ссылаться. Нельзя копировать справочники или код калькуляторов и выдавать их за свои."]),
-   "el": ("Όροι και αποποίηση", "Τα όρια αυτού που προσφέρει ο ιστότοπος.",
-          ["Η χρήση του ιστοτόπου δεν δημιουργεί σχέση εντολέα με την εκδότρια ή με οποιονδήποτε άλλον. Τίποτα στον ιστότοπο δεν είναι νομική, φορολογική ή μεταναστευτική συμβουλή, ούτε εκτίμηση.",
-           "Οι υπολογιστές εφαρμόζουν τους συντελεστές που περιγράφει κάθε σελίδα στους αριθμούς που πληκτρολογείτε. Δεν γνωρίζουν την κατοικία σας, τον τόπο διαμονής, το άλλο εισόδημα, απαλλαγές που έχετε ήδη χρησιμοποιήσει, ούτε αν το Κτηματολόγιο θα δεχτεί την τιμή του συμβολαίου. Δύο ίσοι αγοραστές υποτίθενται μόνο όταν πληκτρολογήσετε αυτόν τον αριθμό.",
-           "Οι επίσημες πηγές υπερισχύουν. Όπου αναφέρεται σύνοψη δικηγορικού γραφείου επειδή ο νόμος είναι δημοσιευμένος στα ελληνικά, αυτό δηλώνεται. Όπου ο ιστότοπος δεν είναι βέβαιος, το λέει.",
-           "Στο μέτρο που επιτρέπει ο νόμος, η εκδότρια δεν ευθύνεται για απόφαση που παίρνετε λόγω σελίδας ή αποτελέσματος υπολογιστή. Τέλη τοπικής αρχής, εγγυήσεις υπηρεσιών κοινής ωφέλειας και τραπεζικές χρεώσεις δεν περιλαμβάνονται, εκτός αν μια σελίδα το λέει.",
-           "Μπορείτε να συνδέεστε προς τις σελίδες. Δεν μπορείτε να αντιγράφετε τους οδηγούς ή τον κώδικα των υπολογιστών και να τους παρουσιάζετε ως δικούς σας."]),
- },
-}
+    robots = "noindex,follow" if lang in GUIDES[slug]["missing"] else "index,follow,max-image-preview:large"
+    return page_shell(lang, f'{meta["title"]} | {SITE}', meta["description"], path, alt, body, ld, robots=robots)
 
 def static_page(lang, slug):
-    title, desc, paras = STATIC[slug][lang]
+    title, desc, paras = PAGES[slug]["text"][lang]
     path = loc(lang, f"/{slug}/")
     def alt(l, slug=slug):
         return loc(l, f"/{slug}/")
     body_html = "".join(f"<p>{e(p)}</p>" for p in paras)
-    extra = ""
-    if slug == "contact":
-        pass
     body = f'<main id="main" class="wrap page"><h1>{e(title)}</h1><p class="lede">{e(desc)}</p><div class="body">{body_html}</div>'
     if slug == "about":
         body += f'<p><a href="{href(loc(lang, "/contact/"))}">{e(UI[lang]["contact"])}</a></p>'
     body += "</main>"
-    return page_shell(lang, f"{title} | {SITE}", desc, path, alt, body)
+    robots = "noindex,follow" if lang in PAGES[slug]["missing"] else "index,follow,max-image-preview:large"
+    return page_shell(lang, f"{title} | {SITE}", desc, path, alt, body, robots=robots)
 
 def contact(lang):
     u = UI[lang]
@@ -679,8 +736,7 @@ def thanks(lang):
         return loc(l, "/contact/thanks/")
     title, desc, text = u["thanks_t"], u["thanks_d"], u["thanks_i"]
     body = f'<main id="main" class="wrap page"><h1>{e(title)}</h1><p>{e(text)}</p></main>'
-    html_page = page_shell(lang, f"{title} | {SITE}", desc, path, alt, body)
-    return html_page.replace('content="index,follow,max-image-preview:large"', 'content="noindex,follow"')
+    return page_shell(lang, f"{title} | {SITE}", desc, path, alt, body, robots="noindex,follow")
 
 def w(rel, content):
     path = os.path.join(OUT, rel.lstrip("/"))
@@ -704,7 +760,8 @@ def sitemap():
     return "\n".join(lines) + "\n"
 
 def main():
-    keep = {"source", ".git"}
+    # admin/ is the CMS and is not generated. A rebuild must not delete it.
+    keep = {"source", ".git", "admin"}
     for name in os.listdir(OUT):
         if name in keep or name.startswith("."):
             continue
@@ -728,7 +785,7 @@ def main():
             w(loc(lang, f"/calculators/{slug}/") + "index.html", calc_page(lang, slug))
         for slug in GUIDE_ORDER:
             w(loc(lang, f"/guides/{slug}/") + "index.html", guide_page(lang, slug, words))
-        for slug in STATIC:
+        for slug in PAGE_ORDER:
             w(loc(lang, f"/{slug}/") + "index.html", static_page(lang, slug))
         w(loc(lang, "/contact/") + "index.html", contact(lang))
         w(loc(lang, "/contact/thanks/") + "index.html", thanks(lang))
@@ -742,11 +799,17 @@ def main():
     w("/ads.txt", ADS_TXT)
     short = [x for x in words if x[2] < 800]
     print("built", BASE)
+    print("untranslated", {
+        "guides": {l: [s for s in GUIDE_ORDER if l in GUIDES[s]["missing"]] for l in ("en", "el")},
+        "pages": {l: [s for s in PAGE_ORDER if l in PAGES[s]["missing"]] for l in ("en", "el")},
+    })
     for lang, slug, n in words:
         flag = " SHORT" if n < 800 or n > 1600 else ""
         print(f"  {lang} {slug} {n}{flag}")
     if short:
-        raise SystemExit("guides under 800 words: " + ", ".join(f"{a}/{b}={c}" for a, b, c in short))
+        # A short new guide must still publish. The old generator stopped the build;
+        # that would leave the owner's CMS save on main without updating the site.
+        print("warning: guides under 800 words:", ", ".join(f"{a}/{b}={c}" for a, b, c in short))
 
 if __name__ == "__main__":
     main()
