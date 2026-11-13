@@ -18,7 +18,7 @@ TODAY = "2026-11-13"
 SITE = "MyCyTax"
 ADSENSE = '<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1547877294743851" crossorigin="anonymous"></script>'
 ADS_TXT = "google.com, pub-1547877294743851, DIRECT, f08c47fec0942fa0\n"
-EMAIL = "cynews24@gmail.com"
+EMAIL = "info@mycytax.com"
 PUBLISHER = "Anna"
 CYNEWS = "https://cynews24.net/"
 LANGS = ["en", "ru", "el"]
@@ -39,10 +39,10 @@ UI = {
     home_intro="Work out the Land Registry fee, VAT, stamp duty, capital gains tax, rental tax and a mortgage payment. Every rate on MyCyTax is tied to a source. The publisher is Anna, in Cyprus.",
     list_calcs="Cyprus property calculators: transfer fees, stamp duty, VAT, capital gains, rental income and mortgage payments.",
     list_guides="Practical guides to buying, selling, tax residency, non-dom status, title deeds and renting property in Cyprus.",
-    contact_t="Contact", contact_d="Write to MyCyTax about buying or selling. The form goes to cynews24@gmail.com.",
-    contact_i="The publisher is Anna. Email cynews24@gmail.com, or use the form. The first time the form is used, FormSubmit sends Anna a confirmation email. Until that link is opened, the form will not deliver.",
+    contact_t="Contact", contact_d="Write to MyCyTax about buying or selling. The form goes to info@mycytax.com.",
+    contact_i="The publisher is Anna. Email info@mycytax.com, or use the form. The first message to this address asks FormSubmit to send a confirmation email. Until that link is opened, the form will not deliver. We reply within 24 hours.",
     thanks_t="Thank you", thanks_d="Your message has been sent.",
-    thanks_i="If FormSubmit has already been confirmed for this address, your message is on its way. If this was the first submission, Anna still needs to open the confirmation email before messages are delivered."),
+    thanks_i="Thank you. If this address is already confirmed with FormSubmit, we will reply within 24 hours. If this was the first message, Anna still needs to open the confirmation email before it is delivered."),
  "ru": dict(
     name=SITE, tagline="Калькуляторы недвижимости и налогов Кипра",
     calcs="Калькуляторы", guides="Справочники", about="О сайте", contact="Контакты",
@@ -58,10 +58,10 @@ UI = {
     home_intro="Посчитайте сбор Земельного кадастра, НДС, гербовый сбор, налог на прирост капитала, налог с аренды и ипотечный платёж. Каждая ставка на MyCyTax привязана к источнику. Издатель — Анна, Кипр.",
     list_calcs="Калькуляторы по недвижимости Кипра: сборы кадастра, гербовый сбор, НДС, прирост капитала, аренда и ипотека.",
     list_guides="Практические справочники о покупке, продаже, налоговом резидентстве, статусе non-dom, титулах и аренде на Кипре.",
-    contact_t="Контакты", contact_d="Напишите MyCyTax о покупке или продаже. Форма уходит на cynews24@gmail.com.",
-    contact_i="Издатель — Анна. Пишите на cynews24@gmail.com или через форму. При первом использовании FormSubmit отправит Анне письмо для подтверждения. Пока ссылка в нём не открыта, форма не доставляет сообщения.",
+    contact_t="Контакты", contact_d="Напишите MyCyTax о покупке или продаже. Форма уходит на info@mycytax.com.",
+    contact_i="Издатель — Анна. Пишите на info@mycytax.com или через форму. Первое сообщение на этот адрес FormSubmit подтверждает письмом. Пока ссылка не открыта, форма не доставляет заявки. Ответим в течение 24 часов.",
     thanks_t="Спасибо", thanks_d="Сообщение отправлено.",
-    thanks_i="Если FormSubmit для этого адреса уже подтверждён, сообщение в пути. Если это была первая отправка, Анне ещё нужно открыть письмо подтверждения, прежде чем сообщения начнут доходить."),
+    thanks_i="Спасибо. Если адрес уже подтверждён в FormSubmit, ответим в течение 24 часов. Если это первое сообщение, Анне ещё нужно открыть письмо подтверждения, прежде чем оно будет доставлено."),
  "el": dict(
     name=SITE, tagline="Υπολογιστές ακινήτων και φόρων Κύπρου",
     calcs="Υπολογιστές", guides="Οδηγοί", about="Σχετικά", contact="Επικοινωνία",
@@ -77,10 +77,10 @@ UI = {
     home_intro="Υπολογίστε το τέλος του Κτηματολογίου, τον ΦΠΑ, το χαρτόσημο, τον φόρο κεφαλαιουχικών κερδών, τον φόρο ενοικίου και τη δόση στεγαστικού. Κάθε συντελεστής στο MyCyTax δένεται με πηγή. Εκδότρια είναι η Άννα, στην Κύπρο.",
     list_calcs="Υπολογιστές ακινήτων Κύπρου: τέλη μεταβίβασης, χαρτόσημο, ΦΠΑ, κεφαλαιουχικά κέρδη, ενοίκιο και δόση δανείου.",
     list_guides="Πρακτικοί οδηγοί για αγορά, πώληση, φορολογική κατοικία, καθεστώς non-dom, τίτλους και ενοικίαση στην Κύπρο.",
-    contact_t="Επικοινωνία", contact_d="Γράψτε στο MyCyTax για αγορά ή πώληση. Η φόρμα πηγαίνει στο cynews24@gmail.com.",
-    contact_i="Εκδότρια είναι η Άννα. Στείλτε email στο cynews24@gmail.com ή χρησιμοποιήστε τη φόρμα. Την πρώτη φορά το FormSubmit στέλνει email επιβεβαίωσης στην Άννα. Μέχρι να ανοίξει ο σύνδεσμος, η φόρμα δεν παραδίδει μηνύματα.",
+    contact_t="Επικοινωνία", contact_d="Γράψτε στο MyCyTax για αγορά ή πώληση. Η φόρμα πηγαίνει στο info@mycytax.com.",
+    contact_i="Εκδότρια είναι η Άννα. Στείλτε email στο info@mycytax.com ή χρησιμοποιήστε τη φόρμα. Το πρώτο μήνυμα σε αυτή τη διεύθυνση το επιβεβαιώνει το FormSubmit με email. Μέχρι να ανοίξει ο σύνδεσμος, η φόρμα δεν παραδίδει αιτήματα. Απαντάμε μέσα σε 24 ώρες.",
     thanks_t="Ευχαριστούμε", thanks_d="Το μήνυμά σας στάλθηκε.",
-    thanks_i="Αν το FormSubmit έχει ήδη επιβεβαιωθεί για αυτή τη διεύθυνση, το μήνυμα είναι καθ’ οδόν. Αν αυτή ήταν η πρώτη υποβολή, η Άννα πρέπει ακόμη να ανοίξει το email επιβεβαίωσης."),
+    thanks_i="Ευχαριστούμε. Αν η διεύθυνση έχει ήδη επιβεβαιωθεί στο FormSubmit, θα απαντήσουμε μέσα σε 24 ώρες. Αν αυτό ήταν το πρώτο μήνυμα, η Άννα πρέπει ακόμη να ανοίξει το email επιβεβαίωσης πριν παραδοθεί."),
 }
 
 DISCLAIMER = {
@@ -282,7 +282,19 @@ table.out tr{border-bottom:1px solid var(--line)}
 .fine{color:var(--muted);font-size:13px}
 .adslot{border:1px dashed #c9bfb0;border-radius:12px;min-height:90px;margin:16px 0;display:flex;align-items:center;justify-content:center;color:#8a8174;font-size:12px;letter-spacing:.08em;text-transform:uppercase;background:transparent}
 .adslot:empty{display:none}
-form.lead{display:grid;gap:12px;max-width:640px}
+form.lead{display:grid;gap:12px;max-width:720px}
+.choices{border:1px solid var(--line);border-radius:10px;padding:10px 12px;display:flex;flex-wrap:wrap;gap:8px 16px}
+.choices legend{font-weight:700;padding:0 6px}
+.cta{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--copper);border-radius:16px;padding:18px 18px 16px;margin:22px 0;max-width:720px}
+.cta h2{font-family:Georgia,Palatino,serif;font-size:26px;line-height:1.2;margin:0 0 8px}
+.cta p{margin:0 0 14px}
+.cta-btns{display:flex;flex-wrap:wrap;gap:10px}
+a.go{display:inline-flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;line-height:1.3}
+.cta-btns a{flex:1 1 240px}
+a.go.alt{background:#fff;color:var(--pine);border:2px solid var(--pine)}
+a.go.alt:hover{background:var(--pine);color:#fff}
+p.consult{margin:14px 0 0;font-weight:700}
+@media(max-width:600px){.cta-btns{flex-direction:column}.cta-btns a{flex-basis:auto}}
 .hp{position:absolute;left:-9999px}
 footer{margin-top:48px;background:var(--pine);color:#e7e1d6;padding:28px 0;font-size:14.5px}
 footer a{color:#fff}
@@ -349,39 +361,89 @@ def page_shell(lang, title, desc, path, alt, body, jsonld=None, active_path=None
         return alt(l)
     return head(lang, title, desc, path, alt, jsonld) + header(lang, path_for) + body + footer(lang)
 
+LEAD = {
+ "en": dict(h="Local help with your Cyprus property",
+            p="Licensed local real estate help in Limassol and across Cyprus. We reply within 24 hours.",
+            buy="Get a free property purchase consultation",
+            sell="Sell or rent out your property in Cyprus",
+            type="Request type", buyv="Buy consultation", sellv="Sell", rentv="Rent out",
+            buyl="Buy consultation", selll="Sell", rentl="Rent out",
+            prop="Property type", area="Area or city", budget="Budget or expected price (EUR)",
+            phone="Phone or WhatsApp", msg="Message",
+            props=[("Apartment","Apartment"),("House","House"),("Land","Land"),("Commercial","Commercial"),("Not sure","Not sure")],
+            consent="I agree that MyCyTax may use these details only to reply to this request.",
+            send="Send request", honey="Leave blank", name="Name", email="Email"),
+ "ru": dict(h="Местная помощь с недвижимостью на Кипре",
+            p="Лицензированная помощь с недвижимостью в Лимассоле и по всему Кипру. Ответим в течение 24 часов.",
+            buy="Получить бесплатную консультацию по покупке",
+            sell="Продать или сдать недвижимость на Кипре",
+            type="Тип запроса", buyv="Buy consultation", sellv="Sell", rentv="Rent out",
+            buyl="Консультация по покупке", selll="Продажа", rentl="Сдача в аренду",
+            prop="Тип объекта", area="Район или город", budget="Бюджет или ожидаемая цена (EUR)",
+            phone="Телефон или WhatsApp", msg="Сообщение",
+            props=[("Apartment","Квартира"),("House","Дом"),("Land","Участок"),("Commercial","Коммерция"),("Not sure","Пока не знаю")],
+            consent="Я согласен, что MyCyTax использует эти сведения только чтобы ответить на этот запрос.",
+            send="Отправить запрос", honey="Оставьте пустым", name="Имя", email="Эл. почта"),
+ "el": dict(h="Τοπική βοήθεια για το ακίνητό σας στην Κύπρο",
+            p="Αδειοδοτημένη τοπική βοήθεια για ακίνητα στη Λεμεσό και σε όλη την Κύπρο. Απαντάμε μέσα σε 24 ώρες.",
+            buy="Δωρεάν συμβουλή για αγορά ακινήτου",
+            sell="Πουλήστε ή ενοικιάστε το ακίνητό σας στην Κύπρο",
+            type="Τύπος αιτήματος", buyv="Buy consultation", sellv="Sell", rentv="Rent out",
+            buyl="Συμβουλή αγοράς", selll="Πώληση", rentl="Ενοικίαση",
+            prop="Τύπος ακινήτου", area="Περιοχή ή πόλη", budget="Προϋπολογισμός ή αναμενόμενη τιμή (EUR)",
+            phone="Τηλέφωνο ή WhatsApp", msg="Μήνυμα",
+            props=[("Apartment","Διαμέρισμα"),("House","Οικία"),("Land","Οικόπεδο"),("Commercial","Επαγγελματικό"),("Not sure","Δεν είμαι σίγουρος")],
+            consent="Συμφωνώ ότι το MyCyTax θα χρησιμοποιήσει αυτά τα στοιχεία μόνο για να απαντήσει σε αυτό το αίτημα.",
+            send="Αποστολή αιτήματος", honey="Αφήστε κενό", name="Όνομα", email="Email"),
+}
+def contact_href(lang, kind):
+    return href(loc(lang, "/contact/")) + "?type=" + kind
+def lead_card(lang):
+    a = LEAD[lang]
+    return (f'<aside class="cta"><h2>{e(a["h"])}</h2><p>{e(a["p"])}</p><div class="cta-btns">'
+            f'<a class="go" href="{contact_href(lang,"buy")}">{e(a["buy"])}</a>'
+            f'<a class="go alt" href="{contact_href(lang,"sell")}">{e(a["sell"])}</a></div></aside>')
 def form(lang, next_path):
-    labels = {
-     "en": dict(name="Name", email="Email", phone="Phone (optional)", intent="I am",
-                buy="Buying", sell="Selling", both="Both / not sure",
-                where="District or town", msg="Message",
-                consent="I agree that MyCyTax may use these details only to reply to this message.",
-                send="Send", honey="Leave blank"),
-     "ru": dict(name="Имя", email="Эл. почта", phone="Телефон (необязательно)", intent="Я",
-                buy="Покупаю", sell="Продаю", both="И то и другое / пока не решил",
-                where="Район или город", msg="Сообщение",
-                consent="Я согласен, что MyCyTax использует эти сведения только чтобы ответить на это сообщение.",
-                send="Отправить", honey="Оставьте пустым"),
-     "el": dict(name="Όνομα", email="Email", phone="Τηλέφωνο (προαιρετικό)", intent="Ενδιαφέρομαι για",
-                buy="Αγορά", sell="Πώληση", both="Και τα δύο / δεν είμαι σίγουρος",
-                where="Επαρχία ή πόλη", msg="Μήνυμα",
-                consent="Συμφωνώ ότι το MyCyTax θα χρησιμοποιήσει αυτά τα στοιχεία μόνο για να απαντήσει σε αυτό το μήνυμα.",
-                send="Αποστολή", honey="Αφήστε κενό"),
-    }[lang]
-    opts = "".join(f'<option value="{e(v)}">{e(lab)}</option>' for v, lab in (("buying", labels["buy"]), ("selling", labels["sell"]), ("both", labels["both"])))
-    return f'''<form class="lead" action="https://formsubmit.co/{EMAIL}" method="POST">
-<input type="hidden" name="_subject" value="MyCyTax enquiry">
+    a = LEAD[lang]
+    types = [("buy", a["buyv"], a["buyl"]), ("sell", a["sellv"], a["selll"]), ("rent", a["rentv"], a["rentl"])]
+    radios = "".join(
+        f'<label class="chk"><input type="radio" name="request_choice" data-rtype="{k}" value="{e(v)}"><span>{e(lab)}</span></label>'
+        for k, v, lab in types)
+    props = "".join(f'<option value="{e(v)}">{e(lab)}</option>' for v, lab in a["props"])
+    return f'''<form class="lead" id="leadform" action="https://formsubmit.co/{EMAIL}" method="POST">
+<input type="hidden" name="_subject" id="leadsubject" value="MyCyTax lead: Buy consultation">
 <input type="hidden" name="_template" value="table">
 <input type="hidden" name="_captcha" value="true">
 <input type="hidden" name="_next" value="{e(absu(next_path))}">
-<p class="hp"><label>{e(labels["honey"])}<input name="_honey" tabindex="-1" autocomplete="off"></label></p>
-<label class="fld"><span>{e(labels["name"])}</span><input name="name" required autocomplete="name"></label>
-<label class="fld"><span>{e(labels["email"])}</span><input type="email" name="email" required autocomplete="email"></label>
-<label class="fld"><span>{e(labels["phone"])}</span><input name="phone" autocomplete="tel"></label>
-<label class="fld"><span>{e(labels["intent"])}</span><select name="intent">{opts}</select></label>
-<label class="fld"><span>{e(labels["where"])}</span><input name="place"></label>
-<label class="fld"><span>{e(labels["msg"])}</span><textarea name="message" required style="min-height:140px;font:inherit;padding:10px;border:1px solid #d5cbbd;border-radius:10px"></textarea></label>
-<label class="chk"><input type="checkbox" name="consent" value="yes" required><span>{e(labels["consent"])}</span></label>
-<button class="send" type="submit">{e(labels["send"])}</button></form>'''
+<input type="hidden" name="request type" id="requesttype" value="Buy consultation">
+<p class="hp"><label>{e(a["honey"])}<input name="_honey" tabindex="-1" autocomplete="off"></label></p>
+<fieldset class="choices"><legend>{e(a["type"])}</legend>{radios}</fieldset>
+<label class="fld"><span>{e(a["name"])}</span><input name="name" required autocomplete="name"></label>
+<label class="fld"><span>{e(a["email"])}</span><input type="email" name="email" required autocomplete="email"></label>
+<label class="fld"><span>{e(a["phone"])}</span><input name="phone" required autocomplete="tel"></label>
+<label class="fld"><span>{e(a["prop"])}</span><select name="property type">{props}</select></label>
+<label class="fld"><span>{e(a["area"])}</span><input name="area or city" required></label>
+<label class="fld"><span>{e(a["budget"])}</span><input name="budget or expected price" inputmode="decimal"></label>
+<label class="fld"><span>{e(a["msg"])}</span><textarea name="message" required style="min-height:140px;font:inherit;padding:10px;border:1px solid #d5cbbd;border-radius:10px"></textarea></label>
+<label class="chk"><input type="checkbox" name="consent" value="yes" required><span>{e(a["consent"])}</span></label>
+<button class="send" type="submit">{e(a["send"])}</button></form>
+<script>
+(function(){{
+  var map={{buy:"Buy consultation",sell:"Sell",rent:"Rent out"}};
+  var q=new URLSearchParams(location.search).get("type")||"buy";
+  if(!map[q]) q="buy";
+  function setType(key){{
+    var label=map[key]||map.buy;
+    document.getElementById("requesttype").value=label;
+    document.getElementById("leadsubject").value="MyCyTax lead: "+label;
+    document.querySelectorAll("[data-rtype]").forEach(function(el){{el.checked=el.getAttribute("data-rtype")===(map[key]?key:"buy");}});
+  }}
+  setType(q);
+  document.querySelectorAll("[data-rtype]").forEach(function(el){{
+    el.addEventListener("change", function(){{ if(el.checked) setType(el.getAttribute("data-rtype")); }});
+  }});
+}})();
+</script>'''
 
 def home(lang):
     u = UI[lang]
@@ -402,7 +464,7 @@ def home(lang):
 <p class="banner">{e(DISCLAIMER[lang])}</p>{ad("home-top")}</div>
 <div class="wrap"><h2 class="sec">{e(u["calcs"])}</h2><div class="grid">{"".join(cards)}</div>
 <h2 class="sec">{e(u["guides"])}</h2><div class="grid">{"".join(guides)}</div>
-<h2 class="sec">{e(u["lead"])}</h2>{form(lang, loc(lang, "/contact/thanks/"))}{ad("home-bottom")}</div></main>'''
+{lead_card(lang)}{ad("home-bottom")}</div></main>'''
     return page_shell(lang, f"{title} | {SITE}", desc, alt(lang), alt, body, ld)
 
 def listing(lang, kind):
@@ -469,7 +531,8 @@ def calc_page(lang, slug):
               {"@type":"Question","name":t,"acceptedAnswer":{"@type":"Answer","text":d}}]}]
     body = f'''<main id="main" class="wrap page"><p class="meta"><a href="{href(loc(lang, "/calculators/"))}">{e(u["calcs"])}</a></p>
 <h1>{e(t)}</h1><p class="lede">{e(d)}</p><p class="banner">{e(DISCLAIMER[lang])}</p>{ad("calc-top")}
-<div id="calc" data-calc="{e(slug.split("-")[0] if False else {"transfer-fees":"transfer","stamp-duty":"stamp","vat":"vat","capital-gains":"cgt","rental-yield":"rental","mortgage":"mortgage"}[slug])}"></div>
+<div id="calc" data-consult="{contact_href(lang,"buy")}" data-calc="{e({"transfer-fees":"transfer","stamp-duty":"stamp","vat":"vat","capital-gains":"cgt","rental-yield":"rental","mortgage":"mortgage"}[slug])}"></div>
+{lead_card(lang)}
 <div class="body"><h2>{e(u["sources"])}</h2><p>{note}</p></div>{ad("calc-bottom")}</main>
 <script src="{href("/assets/calc.js")}" defer></script>'''
     return page_shell(lang, f"{t} | {SITE}", d, path, alt, body, ld)
@@ -501,6 +564,7 @@ def guide_page(lang, slug, words_out):
 <div class="body">{body_html}</div>
 {faq_html}
 <section class="src"><h2>{e(u["sources"])}</h2><ul>{src}</ul></section>
+{lead_card(lang)}
 {ad("guide-bottom")}</article></main>'''
     return page_shell(lang, f'{meta["title"]} | {SITE}', meta["description"], path, alt, body, ld)
 
@@ -508,42 +572,42 @@ STATIC = {
  "about": {
    "en": ("About", "Who publishes MyCyTax, and how the calculators are produced.",
           ["MyCyTax is an independent site of property and tax calculators and practical guides in English, Russian and Greek. English is the primary language.",
-           "The publisher is Anna. The site is based in Cyprus. Editorial and advertising contact is cynews24@gmail.com. No other person is named here, because this page does not invent a staff list.",
+           "The publisher is Anna. The site is based in Cyprus. Editorial and advertising contact is info@mycytax.com. No other person is named here, because this page does not invent a staff list.",
            "Calculators run in your browser. The rates are the ones stated by the Department of Lands and Surveys, the Tax Department, the Ministry of Interior, Gov.cy, the consolidated statutes on CyLaw, or a named professional summary where the statute is in Greek and the summary tracks it. If a figure is not settled, the page says so.",
            "The site is separate from CyNews 24, which publishes Cyprus news in Russian, English and Greek. A link to CyNews 24 is in the footer.",
            "Advertising spaces stay empty. The site loads Google AdSense (ca-pub-1547877294743851) for automatic ads. AdSense may set cookies."]),
    "ru": ("О сайте", "Кто издаёт MyCyTax и как считаются калькуляторы.",
           ["MyCyTax — независимый сайт калькуляторов и практических справочников по недвижимости и налогам на английском, русском и греческом. Основной язык — английский.",
-           "Издатель — Анна. Сайт базируется на Кипре. Контакт редакции и рекламы: cynews24@gmail.com. Других имён здесь нет: страница не придумывает список сотрудников.",
+           "Издатель — Анна. Сайт базируется на Кипре. Контакт редакции и рекламы: info@mycytax.com. Других имён здесь нет: страница не придумывает список сотрудников.",
            "Калькуляторы работают в браузере. Ставки — те, что указали Департамент земель и землеустройства, Налоговый департамент, Министерство внутренних дел, Gov.cy, сводные тексты на CyLaw или названный профессиональный обзор, если закон по-гречески, а обзор ему следует. Если цифра не устоялась, страница так и пишет.",
            "Сайт отделён от CyNews 24, который публикует новости Кипра на русском, английском и греческом. Ссылка на CyNews 24 есть в подвале.",
            "Рекламные места остаются пустыми. Сайт подключает Google AdSense (ca-pub-1547877294743851) для автоматических объявлений. AdSense может ставить cookie."]),
    "el": ("Σχετικά", "Ποιος εκδίδει το MyCyTax και πώς παράγονται οι υπολογιστές.",
           ["Το MyCyTax είναι ανεξάρτητος ιστότοπος υπολογιστών και πρακτικών οδηγών για ακίνητα και φόρους, στα αγγλικά, ρωσικά και ελληνικά. Η κύρια γλώσσα είναι η αγγλική.",
-           "Εκδότρια είναι η Άννα. Ο ιστότοπος έχει έδρα την Κύπρο. Επικοινωνία σύνταξης και διαφήμισης: cynews24@gmail.com. Δεν κατονομάζεται άλλο πρόσωπο, γιατί η σελίδα δεν επινοεί κατάλογο συνεργατών.",
+           "Εκδότρια είναι η Άννα. Ο ιστότοπος έχει έδρα την Κύπρο. Επικοινωνία σύνταξης και διαφήμισης: info@mycytax.com. Δεν κατονομάζεται άλλο πρόσωπο, γιατί η σελίδα δεν επινοεί κατάλογο συνεργατών.",
            "Οι υπολογιστές τρέχουν στον φυλλομετρητή σας. Οι συντελεστές είναι αυτοί που δηλώνουν το Τμήμα Κτηματολογίου και Χωρομετρίας, το Τμήμα Φορολογίας, το Υπουργείο Εσωτερικών, το Gov.cy, τα κωδικοποιημένα κείμενα στο CyLaw, ή επώνυμη επαγγελματική σύνοψη όπου ο νόμος είναι στα ελληνικά και η σύνοψη τον ακολουθεί. Αν ένα ποσό δεν είναι σταθερό, η σελίδα το λέει.",
            "Ο ιστότοπος είναι χωριστός από το CyNews 24, που δημοσιεύει ειδήσεις Κύπρου στα ρωσικά, αγγλικά και ελληνικά. Σύνδεσμος προς το CyNews 24 υπάρχει στο υποσέλιδο.",
            "Οι θέσεις διαφήμισης μένουν κενές. Ο ιστότοπος φορτώνει το Google AdSense (ca-pub-1547877294743851) για αυτόματες διαφημίσεις. Το AdSense μπορεί να ορίζει cookies."]),
  },
  "privacy": {
    "en": ("Privacy policy", "What MyCyTax does with the contact form, and what it does not collect.",
-          ["The publisher is Anna, based in Cyprus. Email: cynews24@gmail.com.",
-           "The contact form sends your name, email, phone if you give one, whether you are buying or selling, a place name and your message through FormSubmit (formsubmit.co) to cynews24@gmail.com. Those details are used only to reply. FormSubmit processes the submission in order to deliver the email. The details are not sold and are not added to a marketing list.",
+          ["The publisher is Anna, based in Cyprus. Email: info@mycytax.com.",
+           "The contact form sends your name, email, phone or WhatsApp, request type (buy consultation, sell, or rent out), property type, area or city, budget or expected price, and your message through FormSubmit (formsubmit.co) to info@mycytax.com. Those details are used only to reply. FormSubmit processes the submission in order to deliver the email. The details are not sold and are not added to a marketing list.",
            "The calculators run on your device. The numbers you type are not sent to this site.",
            "The site does not use Google Analytics. It loads Google AdSense (ca-pub-1547877294743851) so Google can show ads. AdSense may receive technical data such as the page address and a cookie identifier. Google describes that processing in its own policy.",
-           "Email sent to cynews24@gmail.com is kept for as long as needed to answer it."]),
+           "Email sent to info@mycytax.com is kept for as long as needed to answer it."]),
    "ru": ("Политика конфиденциальности", "Что MyCyTax делает с формой связи и чего не собирает.",
-          ["Издатель — Анна, Кипр. Эл. почта: cynews24@gmail.com.",
-           "Форма отправляет имя, эл. почту, телефон, если вы его указали, покупку или продажу, место и сообщение через FormSubmit (formsubmit.co) на cynews24@gmail.com. Эти сведения используются только для ответа. FormSubmit обрабатывает отправку, чтобы доставить письмо. Сведения не продаются и не попадают в маркетинговый список.",
+          ["Издатель — Анна, Кипр. Эл. почта: info@mycytax.com.",
+           "Форма отправляет имя, эл. почту, телефон или WhatsApp, тип запроса (консультация по покупке, продажа или сдача), тип объекта, район или город, бюджет или ожидаемую цену и сообщение через FormSubmit (formsubmit.co) на info@mycytax.com. Эти сведения используются только для ответа. FormSubmit обрабатывает отправку, чтобы доставить письмо. Сведения не продаются и не попадают в маркетинговый список.",
            "Калькуляторы работают на вашем устройстве. Введённые цифры на этот сайт не отправляются.",
            "Сайт не использует Google Analytics. Он подключает Google AdSense (ca-pub-1547877294743851), чтобы Google мог показывать объявления. AdSense может получать технические данные, например адрес страницы и идентификатор cookie. Как Google это обрабатывает, описано в его собственной политике.",
-           "Письма на cynews24@gmail.com хранятся, пока нужен ответ."]),
+           "Письма на info@mycytax.com хранятся, пока нужен ответ."]),
    "el": ("Πολιτική απορρήτου", "Τι κάνει το MyCyTax με τη φόρμα επικοινωνίας και τι δεν συλλέγει.",
-          ["Εκδότρια είναι η Άννα, με έδρα την Κύπρο. Email: cynews24@gmail.com.",
-           "Η φόρμα στέλνει το όνομα, το email, το τηλέφωνο αν το δώσετε, αν αγοράζετε ή πουλάτε, έναν τόπο και το μήνυμά σας μέσω FormSubmit (formsubmit.co) στο cynews24@gmail.com. Τα στοιχεία χρησιμοποιούνται μόνο για απάντηση. Το FormSubmit επεξεργάζεται την υποβολή για να παραδώσει το email. Τα στοιχεία δεν πωλούνται και δεν μπαίνουν σε λίστα μάρκετινγκ.",
+          ["Εκδότρια είναι η Άννα, με έδρα την Κύπρο. Email: info@mycytax.com.",
+           "Η φόρμα στέλνει το όνομα, το email, το τηλέφωνο ή WhatsApp, τον τύπο αιτήματος (συμβουλή αγοράς, πώληση ή ενοικίαση), τον τύπο ακινήτου, την περιοχή ή πόλη, τον προϋπολογισμό ή την αναμενόμενη τιμή και το μήνυμα μέσω FormSubmit (formsubmit.co) στο info@mycytax.com. Τα στοιχεία χρησιμοποιούνται μόνο για απάντηση. Το FormSubmit επεξεργάζεται την υποβολή για να παραδώσει το email. Τα στοιχεία δεν πωλούνται και δεν μπαίνουν σε λίστα μάρκετινγκ.",
            "Οι υπολογιστές τρέχουν στη συσκευή σας. Οι αριθμοί που πληκτρολογείτε δεν στέλνονται σε αυτόν τον ιστότοπο.",
            "Ο ιστότοπος δεν χρησιμοποιεί Google Analytics. Φορτώνει το Google AdSense (ca-pub-1547877294743851) ώστε η Google να εμφανίζει διαφημίσεις. Το AdSense μπορεί να λαμβάνει τεχνικά δεδομένα, όπως τη διεύθυνση της σελίδας και ένα αναγνωριστικό cookie. Η Google περιγράφει αυτή την επεξεργασία στη δική της πολιτική.",
-           "Το email προς cynews24@gmail.com κρατιέται για όσο χρειάζεται η απάντηση."]),
+           "Το email προς info@mycytax.com κρατιέται για όσο χρειάζεται η απάντηση."]),
  },
  "cookies": {
    "en": ("Cookie notice", "Cookies on this site today, and what would change if advertising is added.",

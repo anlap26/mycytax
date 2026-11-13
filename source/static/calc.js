@@ -63,7 +63,8 @@
       monthly: "Monthly payment",
       totalPay: "Total paid over the term",
       interest: "Of which interest",
-      schedule: "The payment assumes a fixed rate and a fully amortising loan, with no fees."
+      schedule: "The payment assumes a fixed rate and a fully amortising loan, with no fees.",
+      consult: "Want an exact calculation for your property? Get a free consultation"
     },
     el: {
       value: "Αποδεκτή αξία (EUR)",
@@ -122,7 +123,8 @@
       monthly: "Μηνιαία δόση",
       totalPay: "Σύνολο στη διάρκεια",
       interest: "Από αυτά, τόκοι",
-      schedule: "Η δόση υποθέτει σταθερό επιτόκιο και πλήρη χρεολυσία, χωρίς έξοδα."
+      schedule: "Η δόση υποθέτει σταθερό επιτόκιο και πλήρη χρεολυσία, χωρίς έξοδα.",
+      consult: "Θέλετε ακριβή υπολογισμό για το ακίνητό σας; Ζητήστε δωρεάν συμβουλή"
     },
     ru: {
       value: "Принятая стоимость (EUR)",
@@ -181,7 +183,8 @@
       monthly: "Ежемесячный платёж",
       totalPay: "Всего за срок",
       interest: "Из них проценты",
-      schedule: "Платёж рассчитан при фиксированной ставке и полном погашении, без комиссий банка."
+      schedule: "Платёж рассчитан при фиксированной ставке и полном погашении, без комиссий банка.",
+      consult: "Нужен точный расчёт по вашему объекту? Получите бесплатную консультацию"
     }
   }[lang];
 
@@ -370,7 +373,9 @@
       list.push([T.interest, money(pay * n - P)]);
       list.push(["", T.schedule]);
     }
-    box.innerHTML = "<h2>" + T.result + "</h2>" + rows(list) + '<p class="fine">' + T.note + "</p>";
+    var consult = root.getAttribute("data-consult");
+    var line = consult ? '<p class="consult"><a href="' + consult + '">' + T.consult + "</a></p>" : "";
+    box.innerHTML = "<h2>" + T.result + "</h2>" + rows(list) + '<p class="fine">' + T.note + "</p>" + line;
   }
 
   root.innerHTML = '<form class="calcform" id="calcform">' + forms[kind]() +

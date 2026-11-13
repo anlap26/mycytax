@@ -56,7 +56,19 @@ table.out tr{border-bottom:1px solid var(--line)}
 .fine{color:var(--muted);font-size:13px}
 .adslot{border:1px dashed #c9bfb0;border-radius:12px;min-height:90px;margin:16px 0;display:flex;align-items:center;justify-content:center;color:#8a8174;font-size:12px;letter-spacing:.08em;text-transform:uppercase;background:transparent}
 .adslot:empty{display:none}
-form.lead{display:grid;gap:12px;max-width:640px}
+form.lead{display:grid;gap:12px;max-width:720px}
+.choices{border:1px solid var(--line);border-radius:10px;padding:10px 12px;display:flex;flex-wrap:wrap;gap:8px 16px}
+.choices legend{font-weight:700;padding:0 6px}
+.cta{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--copper);border-radius:16px;padding:18px 18px 16px;margin:22px 0;max-width:720px}
+.cta h2{font-family:Georgia,Palatino,serif;font-size:26px;line-height:1.2;margin:0 0 8px}
+.cta p{margin:0 0 14px}
+.cta-btns{display:flex;flex-wrap:wrap;gap:10px}
+a.go{display:inline-flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;line-height:1.3}
+.cta-btns a{flex:1 1 240px}
+a.go.alt{background:#fff;color:var(--pine);border:2px solid var(--pine)}
+a.go.alt:hover{background:var(--pine);color:#fff}
+p.consult{margin:14px 0 0;font-weight:700}
+@media(max-width:600px){.cta-btns{flex-direction:column}.cta-btns a{flex-basis:auto}}
 .hp{position:absolute;left:-9999px}
 footer{margin-top:48px;background:var(--pine);color:#e7e1d6;padding:28px 0;font-size:14.5px}
 footer a{color:#fff}

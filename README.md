@@ -1,6 +1,6 @@
 # MyCyTax
 
-Trilingual (English, Russian, Greek) calculators and guides for Cyprus property taxes. English is the primary language. The publisher is Anna, based in Cyprus. Contact: cynews24@gmail.com.
+Trilingual (English, Russian, Greek) calculators and guides for Cyprus property taxes. English is the primary language. The publisher is Anna, based in Cyprus. Contact: info@mycytax.com.
 
 The site is published from `anlap26/mycytax` on GitHub Pages. The public origin is https://mycytax.com/.
 
@@ -36,4 +36,4 @@ Replace `pub-XXXXXXXXXXXXXXXX` with the real publisher ID. Do not publish a plac
 
 ## Form
 
-The contact form posts to FormSubmit at cynews24@gmail.com. The first submission sends Anna a confirmation email. Messages are not delivered until that link is opened.
+The contact form posts to FormSubmit at info@mycytax.com. The first submission sends a confirmation email to that address. Messages are not delivered until that link is opened.
