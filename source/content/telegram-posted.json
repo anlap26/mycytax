@@ -1,45 +1,105 @@
 {
-  "note": "Guides already handled for Telegram (@mycytax). An entry means do not post again, including after edits.",
+  "note": "Guides already handled for Telegram. ru is @mycytax (link /ru/guides/<slug>/), en is @mycytaxen (link /guides/<slug>/). A language entry means do not post that language again. Missing en means the English text was not posted yet.",
   "posted": {
     "buying-as-a-foreigner": {
-      "at": "2026-11-13T00:00:00Z",
-      "status": "seeded"
+      "en": {
+        "at": "2026-11-13T00:00:00Z",
+        "status": "seeded"
+      },
+      "ru": {
+        "at": "2026-11-13T00:00:00Z",
+        "status": "seeded"
+      }
     },
     "non-dom": {
-      "at": "2026-11-13T00:00:00Z",
-      "status": "seeded"
+      "en": {
+        "at": "2026-11-13T00:00:00Z",
+        "status": "seeded"
+      },
+      "ru": {
+        "at": "2026-11-13T00:00:00Z",
+        "status": "seeded"
+      }
     },
     "off-plan": {
-      "at": "2026-11-13T00:00:00Z",
-      "status": "seeded"
+      "en": {
+        "at": "2026-11-13T00:00:00Z",
+        "status": "seeded"
+      },
+      "ru": {
+        "at": "2026-11-13T00:00:00Z",
+        "status": "seeded"
+      }
     },
     "renting-out": {
-      "at": "2026-11-13T00:00:00Z",
-      "status": "seeded"
+      "en": {
+        "at": "2026-11-13T00:00:00Z",
+        "status": "seeded"
+      },
+      "ru": {
+        "at": "2026-11-13T00:00:00Z",
+        "status": "seeded"
+      }
     },
     "residence-permit": {
-      "at": "2026-11-13T00:00:00Z",
-      "status": "seeded"
+      "en": {
+        "at": "2026-11-13T00:00:00Z",
+        "status": "seeded"
+      },
+      "ru": {
+        "at": "2026-11-13T00:00:00Z",
+        "status": "seeded"
+      }
     },
     "selling-and-taxes": {
-      "at": "2026-11-13T00:00:00Z",
-      "status": "seeded"
+      "en": {
+        "at": "2026-11-13T00:00:00Z",
+        "status": "seeded"
+      },
+      "ru": {
+        "at": "2026-11-13T00:00:00Z",
+        "status": "seeded"
+      }
     },
     "tax-residency": {
-      "at": "2026-11-13T00:00:00Z",
-      "status": "seeded"
+      "en": {
+        "at": "2026-11-13T00:00:00Z",
+        "status": "seeded"
+      },
+      "ru": {
+        "at": "2026-11-13T00:00:00Z",
+        "status": "seeded"
+      }
     },
     "taxes-overview": {
-      "at": "2026-11-13T00:00:00Z",
-      "status": "seeded"
+      "en": {
+        "at": "2026-11-13T00:00:00Z",
+        "status": "seeded"
+      },
+      "ru": {
+        "at": "2026-11-13T00:00:00Z",
+        "status": "seeded"
+      }
     },
     "title-deeds": {
-      "at": "2026-11-13T00:00:00Z",
-      "status": "seeded"
+      "en": {
+        "at": "2026-11-13T00:00:00Z",
+        "status": "seeded"
+      },
+      "ru": {
+        "at": "2026-11-13T00:00:00Z",
+        "status": "seeded"
+      }
     },
     "total-cost": {
-      "at": "2026-11-13T00:00:00Z",
-      "status": "seeded"
+      "en": {
+        "at": "2026-11-13T00:00:00Z",
+        "status": "seeded"
+      },
+      "ru": {
+        "at": "2026-11-13T00:00:00Z",
+        "status": "seeded"
+      }
     }
   }
 }
