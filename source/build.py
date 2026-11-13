@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """MyCyTax static generator. English, Russian and Greek.
 
-    BASE=https://anlap26.github.io/cynews24/property-guide python3 source/build.py
+    BASE=https://anlap26.github.io/MyCyTax python3 source/build.py
 
 When mycytax.com is connected, rebuild with BASE=https://mycytax.com
 The path inside BASE becomes the link prefix. No trailing slash.
@@ -11,7 +11,7 @@ from urllib.parse import urlparse
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.normpath(os.path.join(HERE, ".."))
-BASE = os.environ.get("BASE", "https://anlap26.github.io/mycytax").rstrip("/")
+BASE = os.environ.get("BASE", "https://anlap26.github.io/MyCyTax").rstrip("/")
 OUT = os.environ.get("OUT", ROOT)
 PREFIX = urlparse(BASE).path.rstrip("/")
 TODAY = "2026-11-13"

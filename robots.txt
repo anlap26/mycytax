@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://anlap26.github.io/mycytax/sitemap.xml
+Sitemap: https://anlap26.github.io/MyCyTax/sitemap.xml

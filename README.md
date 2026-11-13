@@ -2,14 +2,14 @@
 
 Trilingual (English, Russian, Greek) calculators and guides for Cyprus property taxes. English is the primary language. The publisher is Anna, based in Cyprus. Contact: cynews24@gmail.com.
 
-The site is published from the repository `anlap26/mycytax`, GitHub Pages from the `main` branch root, at https://anlap26.github.io/mycytax/.
+The site is published from the repository `anlap26/MyCyTax`, GitHub Pages from the `main` branch root, at https://anlap26.github.io/MyCyTax/. The path is case-sensitive.
 
 ## Build
 
 From the repository root:
 
 ```bash
-BASE=https://anlap26.github.io/mycytax python3 source/build.py
+BASE=https://anlap26.github.io/MyCyTax python3 source/build.py
 ```
 
 `BASE` is the site origin with no trailing slash. The path inside it becomes the link prefix.
