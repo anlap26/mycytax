@@ -1,22 +1,25 @@
 # -*- coding: utf-8 -*-
-"""Post each new MyCyTax guide once to the Telegram channel @mycytax.
+"""Post each new MyCyTax guide once to Telegram.
 
-The message is the Russian title, the short description, and a link to the
-Russian page (https://mycytax.com/ru/guides/<slug>/). Guides have no images,
-so this is a sendMessage text post with the link preview left on. If the
-build has no Russian page for a guide, the link uses the default-language
-URL (https://mycytax.com/guides/<slug>/) instead.
+Russian goes to @mycytax and links to /ru/guides/<slug>/. English goes to
+@mycytaxen and links to /guides/<slug>/. English is skipped until the guide
+has its own English title, description and body, then posted once. Guides
+have no images, so each post is a sendMessage with the link preview left on.
+If the build has no Russian page, the Russian link uses the default-language
+URL instead.
 
-Slugs already handled are stored in source/content/telegram-posted.json.
-The file is pre-seeded with every guide that existed when posting was added,
-and an entry is never removed, so edits do not post again.
+Slugs already handled are stored in source/content/telegram-posted.json, with
+ru and en recorded separately. An entry for a language means do not post that
+language again, so edits do not repost. The file is pre-seeded for both
+languages with every guide that already existed.
 
 TELEGRAM_BOT_TOKEN is the repository secret. When it is missing this script
 logs a notice, leaves the state file untouched and exits 0. It never prints
 the token. DRY_RUN=1 (or --dry-run) prints the messages and does not call
 Telegram or write state.
 
-The channel is TELEGRAM_CHANNEL, or @mycytax when that env var is unset.
+Channels: TELEGRAM_CHANNEL (default @mycytax) and TELEGRAM_CHANNEL_EN
+(default @mycytaxen).
 """
 from __future__ import annotations
 
@@ -38,13 +41,20 @@ DEFAULT_GUIDES = os.path.join(ROOT, "source", "content", "guides")
 DEFAULT_STATE = os.path.join(ROOT, "source", "content", "telegram-posted.json")
 DEFAULT_BASE = "https://mycytax.com"
 DEFAULT_CHANNEL = "@mycytax"
-LINK_TEXT = "Читать справочник"
-HASHTAGS = ("#налогиКипр", "#недвижимостьКипр")
+DEFAULT_CHANNEL_EN = "@mycytaxen"
+LANGS = ("ru", "en")
+LINK_TEXT = {"ru": "Читать справочник", "en": "Read the guide"}
+HASHTAGS = {
+    "ru": ("#налогиКипр", "#недвижимостьКипр"),
+    "en": ("#CyprusTax", "#CyprusProperty"),
+}
 TEXT_LIMIT = 4096
 SEEDED_AT = "2026-11-13T00:00:00Z"
 NOTE = (
-    "Guides already handled for Telegram (@mycytax). "
-    "An entry means do not post again, including after edits."
+    "Guides already handled for Telegram. ru is @mycytax "
+    "(link /ru/guides/<slug>/), en is @mycytaxen (link /guides/<slug>/). "
+    "A language entry means do not post that language again. "
+    "Missing en means the English text was not posted yet."
 )
 # Keep in sync with source/build.py so a missing slug field still matches the site.
 _TR = dict(zip("абвгдеёзийклмнопрстуфхыэ", "abvgdeezijklmnoprstufhye")) | {
@@ -89,18 +99,29 @@ def escape_attr(value: str) -> str:
     return escape_text(value).replace('"', "&quot;")
 
 
-def resolve_channel(value: str | None = None) -> str:
-    raw = (value if value is not None else os.environ.get("TELEGRAM_CHANNEL", "")).strip()
-    channel = raw or DEFAULT_CHANNEL
+def _channel_name(value: str | None, env_name: str, default: str) -> str:
+    raw = (value if value is not None else os.environ.get(env_name, "")).strip()
+    channel = raw or default
     if any(ch.isspace() for ch in channel) or "/" in channel:
-        raise SystemExit(f"invalid TELEGRAM_CHANNEL {channel!r}")
+        raise SystemExit(f"invalid {env_name} {channel!r}")
     if not channel.startswith("@"):
         channel = "@" + channel
     return channel
 
 
-def hashtag_line() -> str:
-    return " ".join(HASHTAGS)
+def resolve_channel(value: str | None = None) -> str:
+    return _channel_name(value, "TELEGRAM_CHANNEL", DEFAULT_CHANNEL)
+
+
+def resolve_channels(ru: str | None = None, en: str | None = None) -> dict:
+    return {
+        "ru": _channel_name(ru, "TELEGRAM_CHANNEL", DEFAULT_CHANNEL),
+        "en": _channel_name(en, "TELEGRAM_CHANNEL_EN", DEFAULT_CHANNEL_EN),
+    }
+
+
+def hashtag_line(lang: str = "ru") -> str:
+    return " ".join(HASHTAGS[lang])
 
 
 def russian_page_exists(root: str, slug: str) -> bool:
@@ -195,12 +216,23 @@ class Guide:
     slug: str
     title: str
     description: str
+    en_title: str = ""
+    en_description: str = ""
+    en_ready: bool = False
 
 
 @dataclass(frozen=True)
 class Action:
-    kind: str  # send, skip
+    kind: str  # send, untranslated
+    lang: str
     guide: Guide
+
+
+def _english_ready(block: dict) -> bool:
+    """Same bar as the site: title, description and body, or the page is a fallback."""
+    if not isinstance(block, dict):
+        return False
+    return bool(_clean(block.get("title")) and _clean(block.get("description")) and _clean(block.get("body")))
 
 
 def load_guide(path: str) -> Guide:
@@ -217,7 +249,15 @@ def load_guide(path: str) -> Guide:
     description = _clean(ru.get("description"))
     if not title or not description:
         raise SystemExit(f"{path}: Russian title and description are required")
-    return Guide(slug, title, description)
+    en = data.get("en") if isinstance(data.get("en"), dict) else {}
+    return Guide(
+        slug,
+        title,
+        description,
+        _clean(en.get("title")),
+        _clean(en.get("description")),
+        _english_ready(en),
+    )
 
 
 def load_guides(directory: str) -> list[Guide]:
@@ -243,13 +283,16 @@ def load_state(path: str) -> dict:
         data = json.load(handle)
     if not isinstance(data, dict) or not isinstance(data.get("posted"), dict):
         raise SystemExit(f"{path}: expected an object with a posted map")
-    for slug, record in data["posted"].items():
-        if not isinstance(slug, str) or not isinstance(record, dict):
+    for slug, entry in data["posted"].items():
+        if not isinstance(slug, str) or not isinstance(entry, dict):
             raise SystemExit(f"{path}: {slug} must be an object")
-        if not isinstance(record.get("status"), str) or not record["status"]:
-            raise SystemExit(f"{path}: {slug} must be an object with a status")
-        if not isinstance(record.get("at"), str) or not record["at"]:
-            raise SystemExit(f"{path}: {slug} must include at")
+        for lang, record in entry.items():
+            if lang not in LANGS:
+                raise SystemExit(f"{path}: {slug} has unknown language {lang}")
+            if not isinstance(record, dict) or not isinstance(record.get("status"), str) or not record["status"]:
+                raise SystemExit(f"{path}: {slug}.{lang} must be an object with a status")
+            if not isinstance(record.get("at"), str) or not record["at"]:
+                raise SystemExit(f"{path}: {slug}.{lang} must include at")
     if "note" not in data:
         data["note"] = NOTE
     return data
@@ -267,46 +310,66 @@ def save_state(path: str, state: dict) -> None:
     os.replace(temporary, path)
 
 
-def is_marked(state: dict, slug: str) -> bool:
+def is_marked(state: dict, slug: str, lang: str) -> bool:
     entry = state.get("posted", {}).get(slug)
-    return isinstance(entry, dict)
+    return isinstance(entry, dict) and isinstance(entry.get(lang), dict)
 
 
-def mark(state: dict, slug: str, status: str, moment: datetime.datetime) -> None:
-    posted = state.setdefault("posted", {})
-    if slug not in posted:
-        posted[slug] = {"at": stamp(moment), "status": status}
+def mark(state: dict, slug: str, lang: str, status: str, moment: datetime.datetime) -> None:
+    entry = state.setdefault("posted", {}).setdefault(slug, {})
+    if not isinstance(entry, dict):
+        raise SystemExit(f"telegram state for {slug} must be an object")
+    if lang not in entry:
+        entry[lang] = {"at": stamp(moment), "status": status}
 
 
 def initial_seed(guides: list[Guide]) -> dict:
-    """Mark every current guide handled, so the first real run posts nothing old."""
+    """Mark every current guide handled in both languages, so nothing old is sent."""
     posted = {}
     for guide in sorted(guides, key=lambda item: item.slug):
-        posted[guide.slug] = {"at": SEEDED_AT, "status": "seeded"}
+        posted[guide.slug] = {
+            lang: {"at": SEEDED_AT, "status": "seeded"}
+            for lang in LANGS
+        }
     return {"note": NOTE, "posted": posted}
 
 
 def plan(guides: list[Guide], state: dict) -> list[Action]:
     actions = []
     for guide in sorted(guides, key=lambda item: item.slug):
-        if is_marked(state, guide.slug):
-            continue
-        actions.append(Action("send", guide))
+        for lang in LANGS:
+            if is_marked(state, guide.slug, lang):
+                continue
+            if lang == "en" and not guide.en_ready:
+                actions.append(Action("untranslated", lang, guide))
+                continue
+            actions.append(Action("send", lang, guide))
     return actions
 
 
-def build_post(guide: Guide, base: str, root: str, channel: str) -> dict:
-    russian = russian_page_exists(root, guide.slug)
+def _copy(guide: Guide, lang: str) -> tuple[str, str]:
+    if lang == "en":
+        return guide.en_title, guide.en_description
+    return guide.title, guide.description
+
+
+def build_post(guide: Guide, lang: str, base: str, root: str, channels: dict) -> dict:
+    if lang == "ru":
+        russian = russian_page_exists(root, guide.slug)
+    else:
+        russian = False
     url = page_url(base, guide.slug, russian=russian)
-    text = render_message(guide.title, guide.description, url, LINK_TEXT, hashtag_line())
+    title, description = _copy(guide, lang)
+    text = render_message(title, description, url, LINK_TEXT[lang], hashtag_line(lang))
     return {
         "method": "sendMessage",
-        "chat_id": channel,
+        "chat_id": channels[lang],
         "parse_mode": "HTML",
         "text": text,
         "link_preview_options": {"is_disabled": False, "url": url},
         "url": url,
         "russian": russian,
+        "lang": lang,
     }
 
 
@@ -315,8 +378,8 @@ def is_page_ready(body: bytes, slug: str, title: str, *, russian: bool, base: st
 
     The default-language path is a suffix of the Russian path (`/guides/`
     sits inside `/ru/guides/`), so the match is the absolute URL or a quoted
-    href of the exact path. A Russian page must also show its Russian title
-    and must not be noindex.
+    href of the exact path.     The page must show that language's title and must not be noindex,
+    so a Russian fallback is not announced as the English guide.
     """
     text = body.decode("utf-8", errors="replace")
     path = f"/ru/guides/{slug}/" if russian else f"/guides/{slug}/"
@@ -326,7 +389,7 @@ def is_page_ready(body: bytes, slug: str, title: str, *, russian: bool, base: st
         return False
     if 'content="noindex' in text or "content='noindex" in text:
         return False
-    if russian and title not in html.unescape(text):
+    if title not in html.unescape(text):
         return False
     return True
 
@@ -392,7 +455,7 @@ def parse_telegram(status: int, raw: bytes) -> tuple[bool, str, int | None]:
 
 def send_telegram(token: str, payload: dict, *, post, sleep, attempts: int = 4) -> tuple[bool, str]:
     method = payload["method"]
-    body = {key: value for key, value in payload.items() if key not in {"method", "url", "russian"}}
+    body = {key: value for key, value in payload.items() if key not in {"method", "url", "russian", "lang"}}
     endpoint = f"https://api.telegram.org/bot{token}/{method}"
     data = json.dumps(body, ensure_ascii=False).encode("utf-8")
     last = "no response"
@@ -416,13 +479,15 @@ def send_telegram(token: str, payload: dict, *, post, sleep, attempts: int = 4) 
     return False, last
 
 
-def wait_until_live(guide: Guide, base: str, root: str, channel: str, *, get, sleep, monotonic, deadline, log) -> bool:
-    post = build_post(guide, base, root, channel)
+def wait_until_live(action: Action, base: str, root: str, channels: dict, *, get, sleep, monotonic, deadline, log) -> bool:
+    guide = action.guide
+    post = build_post(guide, action.lang, base, root, channels)
+    title, _description = _copy(guide, action.lang)
     waits = (15, 30, 45, 60)
     attempt = 0
     while True:
         status, body = get(post["url"])
-        if status == 200 and is_page_ready(body, guide.slug, guide.title, russian=post["russian"], base=base):
+        if status == 200 and is_page_ready(body, guide.slug, title, russian=post["russian"], base=base):
             log(f"live {post['url']}")
             return True
         log(f"waiting for {post['url']} (HTTP {status})")
@@ -475,12 +540,18 @@ def commit_and_push(repo: str, path: str) -> None:
     raise SystemExit("could not push telegram state")
 
 
-def _dry_line(action: Action, base: str, root: str, channel: str, get) -> str:
+def _dry_line(action: Action, base: str, root: str, channels: dict, get) -> str:
     guide = action.guide
-    post = build_post(guide, base, root, channel)
+    if action.kind == "untranslated":
+        return (
+            f"DRY RUN skip {channels['en']} slug={guide.slug}: "
+            "no English text yet; not marked"
+        )
+    post = build_post(guide, action.lang, base, root, channels)
+    title, _description = _copy(guide, action.lang)
     status, body = get(post["url"])
-    live = status == 200 and is_page_ready(body, guide.slug, guide.title, russian=post["russian"], base=base)
-    where = "ru" if post["russian"] else "default"
+    live = status == 200 and is_page_ready(body, guide.slug, title, russian=post["russian"], base=base)
+    where = "ru" if action.lang == "ru" and post["russian"] else action.lang
     lines = [
         f"DRY RUN {post['chat_id']} sendMessage slug={guide.slug} page={where} live={'yes' if live else 'no'}",
         f"link_preview: {post['link_preview_options']['url']}",
@@ -500,7 +571,7 @@ def execute(
     dry_run: bool,
     base: str,
     root: str,
-    channel: str,
+    channels: dict,
     max_wait: float,
     http_get,
     sleep,
@@ -515,15 +586,16 @@ def execute(
         + ("configured" if token else "not set")
         + " (value not printed)."
     )
-    log(f"Channel {channel}.")
+    log(f"Channels {channels['ru']} (ru), {channels['en']} (en).")
     if dry_run:
         if not actions:
             log("DRY RUN nothing new to post.")
         for action in actions:
-            log(_dry_line(action, base, root, channel, http_get))
+            log(_dry_line(action, base, root, channels, http_get))
         log(
             "DRY RUN summary: "
-            f"would send {sum(item.kind == 'send' for item in actions)}. "
+            f"would send {sum(item.kind == 'send' for item in actions)}, "
+            f"waiting for English {sum(item.kind == 'untranslated' for item in actions)}. "
             "Nothing was sent and the state file was not changed."
         )
         return 0
@@ -557,31 +629,35 @@ def execute(
 
     for action in actions:
         guide = action.guide
+        if action.kind == "untranslated":
+            log(f"skip {channels['en']} slug={guide.slug}: no English text yet")
+            continue
         if not flush():
             return 1
         if not wait_until_live(
-            guide, base, root, channel,
+            action, base, root, channels,
             get=http_get, sleep=sleep, monotonic=monotonic, deadline=deadline, log=log,
         ):
-            failures.append(f"{guide.slug}: page was not HTTP 200 in time")
+            failures.append(f"{guide.slug} {action.lang}: page was not HTTP 200 in time")
             log(f"::error title=Telegram::{failures[-1]}")
             continue
-        post = build_post(guide, base, root, channel)
+        post = build_post(guide, action.lang, base, root, channels)
         ok, info = send(post)
         if not ok:
-            failures.append(f"{guide.slug}: {info}")
+            failures.append(f"{guide.slug} {action.lang}: {info}")
             log(f"::error title=Telegram::{failures[-1]}")
             continue
-        mark(state, guide.slug, "sent", now)
+        mark(state, guide.slug, action.lang, "sent", now)
         dirty = True
         sent += 1
-        log(f"sent {post['chat_id']} sendMessage slug={guide.slug} message_id={info or '-'}")
+        log(f"sent {post['chat_id']} sendMessage slug={guide.slug} lang={action.lang} message_id={info or '-'}")
         if not flush():
             return 1
         sleep(1)
     if not flush():
         return 1
-    log(f"Telegram: sent {sent}, failed {len(failures)}")
+    waiting = sum(item.kind == "untranslated" for item in actions)
+    log(f"Telegram: sent {sent}, waiting for English {waiting}, failed {len(failures)}")
     return 1 if failures else 0
 
 
@@ -593,11 +669,12 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--root", default=ROOT)
     parser.add_argument("--base", default=os.environ.get("BASE", DEFAULT_BASE))
     parser.add_argument("--channel", default="")
+    parser.add_argument("--channel-en", default="")
     parser.add_argument("--max-wait", type=float, default=float(os.environ.get("TELEGRAM_MAX_WAIT", "360")))
     args = parser.parse_args(argv)
     dry_run = args.dry_run or env_flag("DRY_RUN")
     token = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
-    channel = resolve_channel(args.channel or None)
+    channels = resolve_channels(args.channel or None, args.channel_en or None)
     guides = load_guides(args.guides)
     state = load_state(args.state)
     base = args.base.rstrip("/")
@@ -619,7 +696,7 @@ def main(argv: list[str] | None = None) -> int:
         dry_run=dry_run,
         base=base,
         root=args.root,
-        channel=channel,
+        channels=channels,
         max_wait=args.max_wait,
         http_get=http_get,
         sleep=time.sleep,

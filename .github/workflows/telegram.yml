@@ -1,6 +1,7 @@
-# Posts each new guide once to @mycytax after Build site has committed the
-# pages on main. The job waits until the guide URL returns HTTP 200 before
-# sendMessage, so the link preview is the live page. Guides have no images.
+# Posts each new guide once to @mycytax (Russian, /ru/guides/) and @mycytaxen
+# (English, /guides/) after Build site has committed the pages on main. The
+# job waits until that language's URL returns HTTP 200 before sendMessage.
+# English is skipped until the guide has its own English text. No images.
 #
 # Dedup state lives in source/content/telegram-posted.json. This workflow
 # commits that file with GITHUB_TOKEN, which does not start other workflows.
@@ -10,7 +11,8 @@
 # Repository secret: TELEGRAM_BOT_TOKEN. If it is unset the job logs a notice,
 # does not change the state file and exits green. The value is never printed.
 # The dry_run dispatch input prints the messages and does not call Telegram.
-# Channel: TELEGRAM_CHANNEL, default @mycytax.
+# Channels: TELEGRAM_CHANNEL (default @mycytax) and TELEGRAM_CHANNEL_EN
+# (default @mycytaxen).
 name: Post to Telegram
 
 on:
@@ -58,6 +60,7 @@ jobs:
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHANNEL: "@mycytax"
+          TELEGRAM_CHANNEL_EN: "@mycytaxen"
           DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && (github.event.inputs.dry_run == 'true' || github.event.inputs.dry_run == true) }}
           PUSH_STATE: "1"
           BASE: https://mycytax.com

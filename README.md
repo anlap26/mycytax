@@ -63,7 +63,7 @@ A push to `main` that touches `source/` starts the **Build site** workflow (`.gi
 
 ## Telegram
 
-After **Build site** succeeds on `main`, **Post to Telegram** (`.github/workflows/telegram.yml`) posts each new guide once to `@mycytax`. The message is the Russian title, the short description and a link to `https://mycytax.com/ru/guides/<slug>/` (the default-language URL is used only when that Russian page is not in the build). Guides that already existed when posting was added are listed in `source/content/telegram-posted.json` and are not posted. Editing a guide does not post it again.
+After **Build site** succeeds on `main`, **Post to Telegram** (`.github/workflows/telegram.yml`) posts each new guide once to `@mycytax` and `@mycytaxen`. The Russian message is the Russian title, the short description and a link to `https://mycytax.com/ru/guides/<slug>/` (the default-language URL is used only when that Russian page is not in the build). The English message is the English title, the short description and a link to `https://mycytax.com/guides/<slug>/`. If a new guide has no English title, description and text yet, the English channel is skipped until that text exists. `source/content/telegram-posted.json` records Russian and English separately. Guides that already existed are marked for both languages and are not posted. Editing a guide does not post it again.
 
 The bot token is the repository secret `TELEGRAM_BOT_TOKEN`. If that secret is missing, the job logs a notice and exits successfully without changing the state file. Run the workflow manually with **dry run** to print the message without sending it.
 

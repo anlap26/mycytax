@@ -61,8 +61,9 @@ class Clock:
         self.now += seconds
 
 
-def guide(slug="new-guide", title="Новый справочник", description="Короткое описание"):
-    return tg.Guide(slug, title, description)
+def guide(slug="new-guide", title="Новый справочник", description="Короткое описание",
+          en_title="", en_description="", en_ready=False):
+    return tg.Guide(slug, title, description, en_title, en_description, en_ready)
 
 
 def write_ru_page(root: str, slug: str) -> None:
@@ -95,12 +96,12 @@ class MessageTests(unittest.TestCase):
             "Заголовок & <тест> " * 400,
             "слово " * 5000,
             "https://mycytax.com/ru/guides/very-long-slug-name/",
-            tg.LINK_TEXT,
+            tg.LINK_TEXT["ru"],
             tg.hashtag_line(),
         )
         self.assertLessEqual(len(text), 4096)
         self.assertLessEqual(tg.visible_length(text), 4096)
-        self.assertIn(tg.LINK_TEXT, text)
+        self.assertIn(tg.LINK_TEXT["ru"], text)
         self.assertIn("#налогиКипр", text)
         self.assertIn("#недвижимостьКипр", text)
         self.assertIn("&amp;", text)
@@ -130,13 +131,21 @@ class MessageTests(unittest.TestCase):
         self.assertFalse(tg.is_page_ready(missing, "taxes-overview", guide.title, russian=True))
         self.assertFalse(tg.is_page_ready(b"missing", "taxes-overview", guide.title, russian=True))
         self.assertFalse(tg.is_page_ready(page(guide.title, "taxes-overview"), "taxes-overview", guide.title, russian=False))
+        self.assertTrue(guide.en_ready)
+        with open(os.path.join(ROOT, "guides", "taxes-overview", "index.html"), "rb") as handle:
+            english = handle.read()
+        self.assertTrue(tg.is_page_ready(english, guide.slug, guide.en_title, russian=False))
+        fallback = page(guide.title, guide.slug, russian=False, noindex=True)
+        self.assertFalse(tg.is_page_ready(fallback, guide.slug, guide.en_title, russian=False))
 
     def test_slugify_matches_the_site_builder(self):
         sample = "Налоги на недвижимость Кипра: обзор"
         self.assertEqual(tg.slugify(sample), build.slugify(sample))
         self.assertEqual(tg.DEFAULT_CHANNEL, "@mycytax")
+        self.assertEqual(tg.DEFAULT_CHANNEL_EN, "@mycytaxen")
         self.assertEqual(tg.resolve_channel(""), "@mycytax")
         self.assertEqual(tg.resolve_channel("mycytax"), "@mycytax")
+        self.assertEqual(tg.resolve_channels("", ""), {"ru": "@mycytax", "en": "@mycytaxen"})
         with self.assertRaises(SystemExit):
             tg.resolve_channel("bad channel")
 
@@ -159,13 +168,22 @@ class LoadTests(unittest.TestCase):
             self.write(tmp, "kept.json", {
                 "slug": "kept-slug",
                 "ru": {"title": "  Русский  ", "description": "  Описание  "},
+                "en": {"title": "English", "description": "Short", "body": "Full text"},
+            })
+            self.write(tmp, "partial.json", {
+                "slug": "partial-en",
+                "ru": {"title": "Русский", "description": "Описание"},
+                "en": {"title": "Title only", "description": "", "body": ""},
             })
             guides = {item.slug: item for item in tg.load_guides(tmp)}
         self.assertEqual(tg.slugify("Новый закон"), "novyj-zakon")
         self.assertEqual(guides["from-file"].title, "Новый закон")
+        self.assertFalse(guides["from-file"].en_ready)
         self.assertEqual(guides["novyj-zakon"].description, "Коротко")
         self.assertEqual(guides["kept-slug"].title, "Русский")
-        self.assertEqual(guides["kept-slug"].description, "Описание")
+        self.assertEqual(guides["kept-slug"].en_title, "English")
+        self.assertTrue(guides["kept-slug"].en_ready)
+        self.assertFalse(guides["partial-en"].en_ready)
 
     def test_rejects_bad_guide_and_duplicate_slug(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -181,16 +199,34 @@ class LoadTests(unittest.TestCase):
 
 
 class PlanTests(unittest.TestCase):
-    def test_new_guide_is_sent_once(self):
-        state = tg.empty_state()
-        actions = tg.plan([guide()], state)
-        self.assertEqual([(item.kind, item.guide.slug) for item in actions], [("send", "new-guide")])
+    def test_new_guide_posts_russian_and_waits_for_english(self):
+        actions = tg.plan([guide()], tg.empty_state())
+        self.assertEqual(
+            [(item.kind, item.lang, item.guide.slug) for item in actions],
+            [("send", "ru", "new-guide"), ("untranslated", "en", "new-guide")],
+        )
 
-    def test_edit_does_not_repost(self):
+    def test_english_text_is_posted_and_an_edit_is_not(self):
+        ready = guide(en_title="English title", en_description="English description", en_ready=True)
+        actions = tg.plan([ready], tg.empty_state())
+        self.assertEqual([(item.kind, item.lang) for item in actions], [("send", "ru"), ("send", "en")])
         state = tg.empty_state()
-        tg.mark(state, "new-guide", "sent", tg.utcnow())
-        changed = guide(title="Другой заголовок", description="Другое описание")
+        tg.mark(state, ready.slug, "ru", "sent", tg.utcnow())
+        tg.mark(state, ready.slug, "en", "sent", tg.utcnow())
+        changed = guide(
+            title="Другой заголовок", description="Другое описание",
+            en_title="Other title", en_description="Other description", en_ready=True,
+        )
         self.assertEqual(tg.plan([changed], state), [])
+
+    def test_english_added_later_is_posted_once(self):
+        state = tg.empty_state()
+        tg.mark(state, "new-guide", "ru", "sent", tg.utcnow())
+        waiting = tg.plan([guide()], state)
+        self.assertEqual([(item.kind, item.lang) for item in waiting], [("untranslated", "en")])
+        ready = guide(en_title="Now in English", en_description="Description", en_ready=True)
+        later = tg.plan([ready], state)
+        self.assertEqual([(item.kind, item.lang) for item in later], [("send", "en")])
 
     def test_seeded_guides_are_not_planned(self):
         guides = tg.load_guides(GUIDES)
@@ -200,17 +236,20 @@ class PlanTests(unittest.TestCase):
 
 class ExecuteTests(unittest.TestCase):
     def run_execute(self, guides, state, *, token="token", dry_run=False, http_get=None,
-                    send=None, max_wait=360, clock=None, root=None, channel="@mycytax"):
+                    send=None, max_wait=360, clock=None, root=None,
+                    channel="@mycytax", channel_en="@mycytaxen"):
         logs = []
         saves = []
         clock = clock or Clock()
         root = root or ROOT
+        channels = {"ru": channel, "en": channel_en}
         if http_get is None:
             def http_get(url):
                 slug = url.rstrip("/").split("/")[-1]
                 match = next(item for item in guides if item.slug == slug)
                 russian = "/ru/guides/" in url
-                return 200, page(match.title, slug, russian=russian)
+                title = match.title if russian else (match.en_title or match.title)
+                return 200, page(title, slug, russian=russian)
         if send is None:
             def send(payload):
                 return True, "10"
@@ -218,7 +257,7 @@ class ExecuteTests(unittest.TestCase):
             guides, state,
             now=datetime.datetime(2026, 11, 13, 12, 0, tzinfo=datetime.timezone.utc),
             token=token, dry_run=dry_run, base="https://mycytax.com", root=root,
-            channel=channel, max_wait=max_wait,
+            channels=channels, max_wait=max_wait,
             http_get=http_get, sleep=clock.sleep, monotonic=clock.monotonic,
             send=send, log=logs.append, save=lambda: saves.append(json.loads(tg.serialize(state))),
         )
@@ -226,7 +265,10 @@ class ExecuteTests(unittest.TestCase):
 
     def test_posts_text_once_with_preview_enabled(self):
         sent = []
-        story = guide(title='Налоги & сборы', description="Коротко <важно>")
+        story = guide(
+            title='Налоги & сборы', description="Коротко <важно>",
+            en_title="Taxes & fees", en_description="Short <note>", en_ready=True,
+        )
         with tempfile.TemporaryDirectory() as root:
             write_ru_page(root, story.slug)
             state = tg.empty_state()
@@ -235,10 +277,9 @@ class ExecuteTests(unittest.TestCase):
                 send=lambda payload: sent.append(payload) or (True, "7"),
             )
         self.assertEqual(code, 0)
-        self.assertEqual(len(sent), 1)
+        self.assertEqual([item["chat_id"] for item in sent], ["@mycytax", "@mycytaxen"])
         post = sent[0]
         self.assertEqual(post["method"], "sendMessage")
-        self.assertEqual(post["chat_id"], "@mycytax")
         self.assertEqual(post["parse_mode"], "HTML")
         self.assertEqual(post["link_preview_options"], {
             "is_disabled": False,
@@ -249,11 +290,24 @@ class ExecuteTests(unittest.TestCase):
         self.assertIn("Коротко &lt;важно&gt;", post["text"])
         self.assertIn(">Читать справочник</a>", post["text"])
         self.assertIn("#налогиКипр #недвижимостьКипр", post["text"])
-        self.assertLessEqual(len(post["text"]), 4096)
-        self.assertEqual(state["posted"]["new-guide"]["status"], "sent")
-        self.assertGreaterEqual(len(saves), 1)
+        english = sent[1]
+        self.assertEqual(english["link_preview_options"], {
+            "is_disabled": False,
+            "url": "https://mycytax.com/guides/new-guide/",
+        })
+        self.assertIn("<b>Taxes &amp; fees</b>", english["text"])
+        self.assertIn("Short &lt;note&gt;", english["text"])
+        self.assertIn(">Read the guide</a>", english["text"])
+        self.assertIn("#CyprusTax #CyprusProperty", english["text"])
+        self.assertLessEqual(len(english["text"]), 4096)
+        self.assertEqual(state["posted"]["new-guide"]["ru"]["status"], "sent")
+        self.assertEqual(state["posted"]["new-guide"]["en"]["status"], "sent")
+        self.assertGreaterEqual(len(saves), 2)
         again = []
-        edited = guide(title="Изменённый заголовок", description="Новое описание")
+        edited = guide(
+            title="Изменённый заголовок", description="Новое описание",
+            en_title="Changed title", en_description="Changed description", en_ready=True,
+        )
         self.run_execute([edited], state, send=lambda payload: again.append(payload) or (True, "8"))
         self.assertEqual(again, [])
         self.assertTrue(any("Nothing new to post." in line for line in self.run_execute([edited], state)[0]))
@@ -264,9 +318,31 @@ class ExecuteTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as root:
             state = tg.empty_state()
             self.run_execute([story], state, root=root, send=lambda payload: sent.append(payload) or (True, "1"))
+        self.assertEqual(len(sent), 1)
+        self.assertEqual(sent[0]["chat_id"], "@mycytax")
         self.assertEqual(sent[0]["link_preview_options"]["url"], "https://mycytax.com/guides/fallback-guide/")
         self.assertIn('href="https://mycytax.com/guides/fallback-guide/"', sent[0]["text"])
         self.assertIn("<b>Новый справочник</b>", sent[0]["text"])
+        self.assertNotIn("en", state["posted"][story.slug])
+
+    def test_missing_english_is_not_marked_and_posts_later(self):
+        sent = []
+        story = guide(slug="later")
+        state = tg.empty_state()
+        with tempfile.TemporaryDirectory() as root:
+            write_ru_page(root, story.slug)
+            self.run_execute([story], state, root=root, send=lambda payload: sent.append(payload) or (True, "1"))
+            self.assertEqual([item["chat_id"] for item in sent], ["@mycytax"])
+            self.assertIn("ru", state["posted"][story.slug])
+            self.assertNotIn("en", state["posted"][story.slug])
+            translated = guide(
+                slug="later", en_title="English title", en_description="English description", en_ready=True,
+            )
+            self.run_execute([translated], state, root=root, send=lambda payload: sent.append(payload) or (True, "2"))
+        self.assertEqual(sent[-1]["chat_id"], "@mycytaxen")
+        self.assertIn("Read the guide", sent[-1]["text"])
+        self.assertEqual(sent[-1]["link_preview_options"]["url"], "https://mycytax.com/guides/later/")
+        self.assertEqual(state["posted"][story.slug]["en"]["status"], "sent")
 
     def test_does_not_send_until_the_page_returns_200(self):
         story = guide()
@@ -291,7 +367,8 @@ class ExecuteTests(unittest.TestCase):
         self.assertGreater(clock.now, 0)
         self.assertEqual(len(sent), 1)
         self.assertTrue(any("HTTP 404" in line for line in logs))
-        self.assertEqual(state["posted"][story.slug]["status"], "sent")
+        self.assertEqual(state["posted"][story.slug]["ru"]["status"], "sent")
+        self.assertNotIn("en", state["posted"][story.slug])
 
     def test_live_failure_does_not_mark(self):
         story = guide(slug="second")
@@ -355,20 +432,23 @@ class ExecuteTests(unittest.TestCase):
         self.assertIn("<b>Заголовок</b>", text)
         self.assertIn("Читать справочник", text)
         self.assertIn("#налогиКипр", text)
+        self.assertIn("DRY RUN skip @mycytaxen slug=new-guide: no English text yet; not marked", text)
+        self.assertIn("waiting for English 1", text)
         self.assertIn("Nothing was sent", text)
         self.assertIn("TELEGRAM_BOT_TOKEN is configured (value not printed).", text)
         self.assertNotIn("secret-token", text)
 
     def test_channel_can_be_overridden(self):
         sent = []
-        story = guide(slug="other")
+        story = guide(slug="other", en_title="English", en_description="Text", en_ready=True)
         with tempfile.TemporaryDirectory() as root:
             write_ru_page(root, story.slug)
             self.run_execute(
-                [story], tg.empty_state(), root=root, channel="@otherchannel",
+                [story], tg.empty_state(), root=root,
+                channel="@otherchannel", channel_en="@other-en",
                 send=lambda payload: sent.append(payload) or (True, "1"),
             )
-        self.assertEqual(sent[0]["chat_id"], "@otherchannel")
+        self.assertEqual([item["chat_id"] for item in sent], ["@otherchannel", "@other-en"])
 
     def test_api_retries_429_and_redacts_the_token(self):
         calls = []
@@ -439,6 +519,7 @@ class ExecuteTests(unittest.TestCase):
             env.pop("DRY_RUN", None)
             env.pop("PUSH_STATE", None)
             env.pop("TELEGRAM_CHANNEL", None)
+            env.pop("TELEGRAM_CHANNEL_EN", None)
             with mock.patch.dict(os.environ, env, clear=True):
                 output = io.StringIO()
                 with contextlib.redirect_stdout(output):
@@ -451,6 +532,7 @@ class ExecuteTests(unittest.TestCase):
             self.assertEqual(code, 0)
             self.assertIn("TELEGRAM_BOT_TOKEN", output.getvalue())
             self.assertIn("@mycytax", output.getvalue())
+            self.assertIn("@mycytaxen", output.getvalue())
             with open(state_path, encoding="utf-8") as handle:
                 self.assertEqual(handle.read(), before)
 
@@ -490,6 +572,7 @@ class SeedAndWorkflowTests(unittest.TestCase):
         self.assertIn("TELEGRAM_BOT_TOKEN", poster)
         self.assertIn("value not printed", poster)
         self.assertIn('TELEGRAM_CHANNEL: "@mycytax"', poster)
+        self.assertIn('TELEGRAM_CHANNEL_EN: "@mycytaxen"', poster)
         self.assertIn("PUSH_STATE", poster)
         self.assertIn("cancel-in-progress: false", poster)
         self.assertIn("[skip ci]", tg.COMMIT_MESSAGE)
