@@ -6,9 +6,15 @@
 # source/content/telegram-posted.json is excluded so a state-file commit cannot
 # rebuild the site or start Post to Telegram again, even if a later token does
 # start workflows. The poster commit also carries [skip ci].
+# The schedule refreshes the CyNews24 headline block. That run still completes
+# this workflow, which starts Post to Telegram. The poster sends a guide only
+# when that language is missing from the state file, and this job never commits
+# the state file, so a scheduled rebuild does not repost guides already sent.
 name: Build site
 
 on:
+  schedule:
+    - cron: "0 12,20 * * *"
   push:
     branches: [main]
     paths:

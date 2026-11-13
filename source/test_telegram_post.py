@@ -263,6 +263,23 @@ class ExecuteTests(unittest.TestCase):
         )
         return logs, saves, code
 
+    def test_scheduled_rebuild_does_not_repost_seeded_guides(self):
+        """A cron rebuild still starts this poster. Seeded guides must not be sent."""
+        guides = tg.load_guides(GUIDES)
+        state = tg.load_state(STATE)
+        before = json.loads(tg.serialize(state))
+        sent = []
+        logs, saves, code = self.run_execute(
+            guides, state,
+            send=lambda payload: sent.append(payload) or (True, "1"),
+        )
+        self.assertEqual(code, 0)
+        self.assertEqual(sent, [])
+        self.assertEqual(saves, [])
+        self.assertIn("Nothing new to post.", "\n".join(logs))
+        self.assertEqual(json.loads(tg.serialize(state)), before)
+        self.assertEqual(tg.plan(guides, state), [])
+
     def test_posts_text_once_with_preview_enabled(self):
         sent = []
         story = guide(
@@ -562,6 +579,8 @@ class SeedAndWorkflowTests(unittest.TestCase):
             poster = handle.read()
         self.assertEqual(build_yml.count("!source/content/telegram-posted.json"), 2)
         self.assertIn("git reset -q -- source/content/telegram-posted.json", build_yml)
+        self.assertIn("schedule:", build_yml)
+        self.assertIn('- cron: "0 12,20 * * *"', build_yml)
         self.assertIn("Test Telegram poster", build_yml)
         self.assertIn("name: Build site", build_yml)
         self.assertIn('workflows: ["Build site"]', poster)

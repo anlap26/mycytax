@@ -6,7 +6,8 @@
 The custom domain is mycytax.com. BASE is the origin with no trailing slash.
 The path inside BASE becomes the link prefix. No trailing slash.
 """
-import datetime, html, json, os, re, shutil
+import datetime, html, json, os, re, shutil, urllib.request
+import xml.etree.ElementTree as ET
 from urllib.parse import urlparse
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -21,6 +22,16 @@ ADS_TXT = "google.com, pub-1547877294743851, DIRECT, f08c47fec0942fa0\n"
 EMAIL = "info@mycytax.com"
 PUBLISHER = "Anna"
 CYNEWS = "https://cynews24.net/"
+CYNEWS_SITEMAP = "https://cynews24.net/news-sitemap.xml"
+CYNEWS_TIMEOUT = 5
+_CYNEWS_NS = {
+    "sm": "http://www.sitemaps.org/schemas/sitemap/0.9",
+    "news": "http://www.google.com/schemas/sitemap-news/0.9",
+}
+# None for a language means the build-time fetch failed or returned nothing.
+# The page then links to that language's CyNews24 home instead of headlines.
+CYNEWS_HEADLINES = {lang: None for lang in ("en", "ru", "el")}
+_MISSING = object()
 TG_RU = "https://t.me/mycytax"
 TG_EN = "https://t.me/mycytaxen"
 LANGS = ["en", "ru", "el"]
@@ -38,7 +49,9 @@ UI = {
     privacy="Privacy", cookies="Cookies", terms="Terms",
     home="Home", lang="Language", disclaimer="Not legal or tax advice",
     sources="Sources", faq="Questions", related="Related",
-    cynews="Cyprus news on CyNews 24",
+    projects="Our projects",
+    project_cynews="CyNews24 — Cyprus news",
+    news_h="Latest Cyprus news",
     lead="Need help buying or selling? Contact us",
     read="Read the guide", open="Open calculator",
     ad="Advertisement",
@@ -60,7 +73,9 @@ UI = {
     privacy="Конфиденциальность", cookies="Файлы cookie", terms="Условия",
     home="Главная", lang="Язык", disclaimer="Это не юридическая и не налоговая консультация",
     sources="Источники", faq="Вопросы", related="Ещё по теме",
-    cynews="Новости Кипра на CyNews 24",
+    projects="Наши проекты",
+    project_cynews="CyNews24 — новости Кипра",
+    news_h="Свежие новости Кипра",
     lead="Нужна помощь с покупкой или продажей? Напишите нам",
     read="Читать справочник", open="Открыть калькулятор",
     ad="Реклама",
@@ -82,7 +97,9 @@ UI = {
     privacy="Απόρρητο", cookies="Cookies", terms="Όροι",
     home="Αρχική", lang="Γλώσσα", disclaimer="Δεν είναι νομική ή φορολογική συμβουλή",
     sources="Πηγές", faq="Ερωτήσεις", related="Σχετικά",
-    cynews="Ειδήσεις Κύπρου στο CyNews 24",
+    projects="Τα έργα μας",
+    project_cynews="CyNews24 — ειδήσεις Κύπρου",
+    news_h="Τελευταία νέα Κύπρου",
     lead="Χρειάζεστε βοήθεια για αγορά ή πώληση; Επικοινωνήστε",
     read="Διαβάστε τον οδηγό", open="Άνοιγμα υπολογιστή",
     ad="Διαφήμιση",
@@ -464,6 +481,13 @@ footer{margin-top:48px;background:var(--pine);color:#e7e1d6;padding:28px 0;font-
 footer a{color:#fff}
 footer .cols{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center}
 footer p{max-width:78ch}
+footer p.projects{margin:14px 0 0}
+.cy-news{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 16px 12px;margin:22px 0;max-width:720px}
+.cy-news h2{font-family:Georgia,Palatino,serif;font-size:22px;line-height:1.25;margin:0 0 8px}
+.cy-news p{margin:0}
+.cy-news ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.cy-news li{margin:0}
+.cy-news a{font-weight:650}
 @media(max-width:800px){.grid{grid-template-columns:1fr}.bar{align-items:flex-start;flex-direction:column}}
 '''
 
@@ -508,8 +532,130 @@ def footer(lang):
         (loc(lang, "/terms/"), u["terms"]),
     ]
     nav = "".join(f'<a href="{href(path)}">{e(name)}</a>' for path, name in links)
-    return f'''<footer><div class="wrap"><nav class="cols">{nav}<a href="{CYNEWS}">{e(u["cynews"])}</a>{tg_footer_link(lang)}</nav>
+    return f'''<footer><div class="wrap"><nav class="cols">{nav}{tg_footer_link(lang)}</nav>
+{projects_line(lang)}
 <p>{e(DISCLAIMER[lang])}</p><p>© 2026 {SITE}. {e(PUBLISHER)}, Cyprus. <a href="mailto:{EMAIL}">{EMAIL}</a></p></div></footer></body></html>'''
+
+def cynews_home(lang):
+    """Language home on CyNews24. English is /en/, not the site root."""
+    code = lang if lang in LANGS else "en"
+    return f"{CYNEWS}{code}/"
+
+def projects_line(lang):
+    """Footer cross-link. Dofollow, same tab."""
+    u = UI[lang]
+    return (f'<p class="projects">{e(u["projects"])}: '
+            f'<a href="{e(cynews_home(lang))}">{e(u["project_cynews"])}</a></p>')
+
+def _cynews_stamp(value):
+    text = (value or "").strip()
+    if text.endswith("Z"):
+        text = text[:-1] + "+00:00"
+    try:
+        moment = datetime.datetime.fromisoformat(text)
+    except ValueError:
+        return 0.0
+    if moment.tzinfo is None:
+        moment = moment.replace(tzinfo=datetime.timezone.utc)
+    return moment.timestamp()
+
+def _cynews_article_lang(url):
+    parsed = urlparse(url or "")
+    if parsed.scheme != "https" or parsed.netloc != "cynews24.net":
+        return None
+    parts = [part for part in parsed.path.split("/") if part]
+    if len(parts) < 2 or parts[0] not in LANGS:
+        return None
+    return parts[0]
+
+def parse_news_sitemap(raw):
+    """Return article dicts from a Google news sitemap. Empty when nothing matches."""
+    if raw is None:
+        return []
+    if isinstance(raw, str):
+        raw = raw.encode("utf-8")
+    text = raw.strip()
+    if not text:
+        return []
+    root = ET.fromstring(text)
+    found = []
+    for order, node in enumerate(root.findall("sm:url", _CYNEWS_NS)):
+        loc = (node.findtext("sm:loc", default="", namespaces=_CYNEWS_NS) or "").strip()
+        path_lang = _cynews_article_lang(loc)
+        if path_lang is None:
+            continue
+        title = (node.findtext("news:news/news:title", default="", namespaces=_CYNEWS_NS) or "").strip()
+        title = " ".join(title.split())
+        if not title:
+            continue
+        declared = (node.findtext(
+            "news:news/news:publication/news:language", default="", namespaces=_CYNEWS_NS,
+        ) or "").strip().lower()
+        if declared and declared != path_lang:
+            continue
+        when = node.findtext("news:news/news:publication_date", default="", namespaces=_CYNEWS_NS)
+        found.append({
+            "lang": path_lang,
+            "title": title,
+            "url": loc,
+            "stamp": _cynews_stamp(when),
+            "order": order,
+        })
+    return found
+
+def _http_get(url, timeout):
+    request = urllib.request.Request(
+        url,
+        headers={"User-Agent": "mycytax-build", "Accept": "application/xml,text/xml,*/*"},
+    )
+    with urllib.request.urlopen(request, timeout=timeout) as response:
+        return response.read(2_000_000)
+
+def load_latest_news(fetch=None, timeout=CYNEWS_TIMEOUT):
+    """Five newest headlines per language, or None when the fetch cannot be used.
+
+    `fetch` is `fn(url, timeout) -> bytes`. Any error, timeout or empty sitemap
+    returns None so the caller can render a static link and the build continues.
+    """
+    getter = fetch or _http_get
+    try:
+        raw = getter(CYNEWS_SITEMAP, timeout)
+        items = parse_news_sitemap(raw)
+    except Exception as exc:
+        print(f"cynews: fetch failed ({type(exc).__name__}); linking to CyNews24 without headlines")
+        return None
+    if not items:
+        print("cynews: sitemap had no headlines; linking to CyNews24 without headlines")
+        return None
+    grouped = {}
+    for lang in LANGS:
+        rows = [item for item in items if item["lang"] == lang]
+        rows.sort(key=lambda item: (-item["stamp"], item["order"]))
+        grouped[lang] = rows[:5]
+    return grouped
+
+def refresh_cynews(fetch=None):
+    """Fill CYNEWS_HEADLINES once per build. A failed fetch leaves every language empty."""
+    loaded = load_latest_news(fetch=fetch)
+    for lang in LANGS:
+        rows = (loaded or {}).get(lang) or []
+        CYNEWS_HEADLINES[lang] = rows or None
+    if loaded:
+        print("cynews", {lang: len(CYNEWS_HEADLINES[lang] or []) for lang in LANGS})
+    return loaded
+
+def news_block(lang, headlines=_MISSING):
+    """Small headline list. With no headlines, one dofollow link to the language home."""
+    rows = CYNEWS_HEADLINES.get(lang) if headlines is _MISSING else headlines
+    u = UI[lang]
+    heading = e(u["news_h"])
+    if not rows:
+        return (f'<aside class="cy-news"><h2>{heading}</h2>'
+                f'<p><a href="{e(cynews_home(lang))}">{e(u["project_cynews"])}</a></p></aside>')
+    items = "".join(
+        f'<li><a href="{e(row["url"])}">{e(row["title"])}</a></li>' for row in rows[:5]
+    )
+    return f'<aside class="cy-news"><h2>{heading}</h2><ul>{items}</ul></aside>'
 
 def ad(label):
     return f'<div class="adslot" data-ad="{e(label)}" aria-label="{e(UI["en"]["ad"])}"><!-- AdSense slot "{e(label)}": leave empty until a unit is approved. --></div>'
@@ -668,7 +814,8 @@ def home(lang):
 <p class="banner">{e(DISCLAIMER[lang])}</p>{ad("home-top")}</div>
 <div class="wrap"><h2 class="sec">{e(u["calcs"])}</h2><div class="grid">{"".join(cards)}</div>
 <h2 class="sec">{e(u["guides"])}</h2><div class="grid">{"".join(guides)}</div>
-{lead_card(lang)}{ad("home-bottom")}</div></main>'''
+{lead_card(lang)}{ad("home-bottom")}
+{news_block(lang)}</div></main>'''
     return page_shell(lang, f"{title} | {SITE}", desc, alt(lang), alt, body, ld)
 
 def listing(lang, kind):
@@ -771,7 +918,8 @@ def guide_page(lang, slug, words_out):
 <section class="src"><h2>{e(u["sources"])}</h2><ul>{src}</ul></section>
 {lead_card(lang)}
 {ad("guide-bottom")}
-{telegram_card(lang)}</article></main>'''
+{telegram_card(lang)}
+{news_block(lang)}</article></main>'''
     robots = "noindex,follow" if lang in GUIDES[slug]["missing"] else "index,follow,max-image-preview:large"
     return page_shell(lang, f'{meta["title"]} | {SITE}', meta["description"], path, alt, body, ld, robots=robots)
 
@@ -828,6 +976,9 @@ def sitemap():
     return "\n".join(lines) + "\n"
 
 def main():
+    # Headlines are fetched once. A timeout or any other failure leaves the
+    # static CyNews24 link in place and does not stop the build.
+    refresh_cynews()
     # admin/ is the CMS and is not generated. A rebuild must not delete it.
     keep = {"source", ".git", "admin"}
     for name in os.listdir(OUT):
