@@ -1,0 +1,309 @@
+# Редакция MyCyTax (Sveltia CMS). Откройте https://mycytax.com/admin/ и войдите токеном GitHub.
+# Сохранение записывает JSON в source/content/ на ветке main. Действие «Build site»
+# затем заново собирает страницы, и сайт обновляется через несколько минут.
+# Токену нужен репозиторий anlap26/mycytax и право Contents: Read and write.
+# Токен только для anlap26/cynews24 этот сайт не откроет, пока в него не добавлен mycytax.
+backend:
+  name: github
+  repo: anlap26/mycytax
+  branch: main
+  commit_messages:
+    create: "Новая запись: {{slug}}"
+    update: "Правка: {{slug}}"
+    delete: "Удалено: {{slug}}"
+
+site_url: https://mycytax.com
+display_url: https://mycytax.com
+
+# Имена файлов из русских заголовков переводятся в латиницу.
+slug:
+  encoding: ascii
+  clean_accents: true
+  maxlength: 70
+
+collections:
+  - name: guides
+    label: Справочники
+    label_singular: справочник
+    description: Практические справочники. Обязателен только русский текст; английский и греческий можно добавить позже.
+    folder: source/content/guides
+    extension: json
+    format: json
+    create: true
+    delete: true
+    slug: "{{ru.title}}"
+    summary: "{{ru.title}}"
+    sortable_fields:
+      fields: [ru.title]
+      default:
+        field: ru.title
+        direction: ascending
+    preview_path: "guides/{{slug}}/"
+    fields:
+      - name: ru
+        label: Текст на русском
+        widget: object
+        fields:
+          - { name: title, label: Заголовок, widget: string }
+          - { name: description, label: Краткое описание, widget: text }
+          - name: body
+            label: Текст справочника
+            widget: markdown
+            hint: "Заголовок раздела — строка, которая начинается с ## и пробела. Абзацы разделяйте пустой строкой. Ссылка: [текст](https://адрес). Вопросы и источники заполняются ниже."
+          - name: faq
+            label: Вопросы и ответы
+            label_singular: вопрос
+            widget: list
+            required: false
+            summary: "{{fields.q}}"
+            fields:
+              - { name: q, label: Вопрос, widget: string }
+              - { name: a, label: Ответ, widget: text }
+          - name: sources
+            label: Источники
+            label_singular: источник
+            widget: list
+            required: false
+            summary: "{{fields.name}}"
+            fields:
+              - { name: name, label: Название, widget: string }
+              - { name: url, label: Ссылка, widget: string }
+      - name: slug
+        label: Адрес страницы (необязательно)
+        widget: string
+        required: false
+        pattern: ['^$|^[a-z0-9]+(-[a-z0-9]+)*$', 'Только латинские строчные буквы, цифры и дефисы, например new-guide, или оставьте пустым']
+        hint: "Можно оставить пустым — адрес создастся из заголовка латинскими буквами. Не меняйте его у опубликованных справочников: старая ссылка перестанет работать."
+      - name: en
+        label: English (необязательно)
+        widget: object
+        required: false
+        collapsed: true
+        hint: "Если оставить пустым, на английской версии будет русский текст, и эта версия не попадёт в поиск. Перевод включается, только когда заполнены заголовок, описание и текст."
+        fields:
+          - { name: title, label: Title, widget: string, required: false }
+          - { name: description, label: Short description, widget: text, required: false }
+          - name: body
+            label: Text
+            widget: markdown
+            required: false
+          - name: faq
+            label: Questions
+            widget: list
+            required: false
+            summary: "{{fields.q}}"
+            fields:
+              - { name: q, label: Question, widget: string, required: false }
+              - { name: a, label: Answer, widget: text, required: false }
+          - name: sources
+            label: Sources
+            widget: list
+            required: false
+            summary: "{{fields.name}}"
+            fields:
+              - { name: name, label: Name, widget: string, required: false }
+              - { name: url, label: Link, widget: string, required: false }
+      - name: el
+        label: Ελληνικά (необязательно)
+        widget: object
+        required: false
+        collapsed: true
+        hint: "Если оставить пустым, на греческой версии будет русский текст, и эта версия не попадёт в поиск. Перевод включается, только когда заполнены заголовок, описание и текст."
+        fields:
+          - { name: title, label: Τίτλος, widget: string, required: false }
+          - { name: description, label: Σύντομη περιγραφή, widget: text, required: false }
+          - name: body
+            label: Κείμενο
+            widget: markdown
+            required: false
+          - name: faq
+            label: Ερωτήσεις
+            widget: list
+            required: false
+            summary: "{{fields.q}}"
+            fields:
+              - { name: q, label: Ερώτηση, widget: string, required: false }
+              - { name: a, label: Απάντηση, widget: text, required: false }
+          - name: sources
+            label: Πηγές
+            widget: list
+            required: false
+            summary: "{{fields.name}}"
+            fields:
+              - { name: name, label: Όνομα, widget: string, required: false }
+              - { name: url, label: Σύνδεσμος, widget: string, required: false }
+      # Порядок уже опубликованных справочников. Скрытое поле нельзя помечать required:
+      # Sveltia из-за этого не открывает редактор.
+      - { name: seq, label: seq, widget: hidden }
+
+  - name: pages
+    label: Страницы
+    description: Тексты страниц, кроме калькуляторов. Русский обязателен, английский и греческий можно добавить позже.
+    files:
+      - name: home
+        label: Главная страница
+        file: source/content/pages/home.json
+        format: json
+        preview_path: ""
+        fields: &page_home
+          - name: ru
+            label: Текст на русском
+            widget: object
+            fields:
+              - { name: title, label: Заголовок, widget: string }
+              - { name: description, label: Описание для поиска, widget: text }
+              - { name: intro, label: Текст под заголовком, widget: text }
+              - { name: calculators_description, label: Описание страницы калькуляторов, widget: text }
+              - { name: guides_description, label: Описание страницы справочников, widget: text }
+          - name: en
+            label: English (необязательно)
+            widget: object
+            required: false
+            collapsed: true
+            hint: "Если оставить пустым, на английской версии будет русский текст, и эта версия не попадёт в поиск. Перевод включается, только когда заполнены все поля."
+            fields:
+              - { name: title, label: Title, widget: string, required: false }
+              - { name: description, label: Search description, widget: text, required: false }
+              - { name: intro, label: Text under the title, widget: text, required: false }
+              - { name: calculators_description, label: Calculators page description, widget: text, required: false }
+              - { name: guides_description, label: Guides page description, widget: text, required: false }
+          - name: el
+            label: Ελληνικά (необязательно)
+            widget: object
+            required: false
+            collapsed: true
+            hint: "Если оставить пустым, на греческой версии будет русский текст, и эта версия не попадёт в поиск. Перевод включается, только когда заполнены все поля."
+            fields:
+              - { name: title, label: Τίτλος, widget: string, required: false }
+              - { name: description, label: Περιγραφή για την αναζήτηση, widget: text, required: false }
+              - { name: intro, label: Κείμενο κάτω από τον τίτλο, widget: text, required: false }
+              - { name: calculators_description, label: Περιγραφή σελίδας υπολογιστών, widget: text, required: false }
+              - { name: guides_description, label: Περιγραφή σελίδας οδηγών, widget: text, required: false }
+
+      - name: about
+        label: О сайте
+        file: source/content/pages/about.json
+        format: json
+        preview_path: about/
+        fields: &prose
+          - name: ru
+            label: Текст на русском
+            widget: object
+            fields:
+              - { name: title, label: Заголовок, widget: string }
+              - { name: description, label: Краткое описание, widget: text }
+              - name: body
+                label: Текст
+                widget: text
+                hint: Абзацы разделяйте пустой строкой.
+          - name: en
+            label: English (необязательно)
+            widget: object
+            required: false
+            collapsed: true
+            hint: "Если оставить пустым, на английской версии будет русский текст, и эта версия не попадёт в поиск. Перевод включается, только когда заполнены все поля."
+            fields:
+              - { name: title, label: Title, widget: string, required: false }
+              - { name: description, label: Short description, widget: text, required: false }
+              - { name: body, label: Text, widget: text, required: false, hint: "Separate paragraphs with a blank line." }
+          - name: el
+            label: Ελληνικά (необязательно)
+            widget: object
+            required: false
+            collapsed: true
+            hint: "Если оставить пустым, на греческой версии будет русский текст, и эта версия не попадёт в поиск. Перевод включается, только когда заполнены все поля."
+            fields:
+              - { name: title, label: Τίτλος, widget: string, required: false }
+              - { name: description, label: Σύντομη περιγραφή, widget: text, required: false }
+              - { name: body, label: Κείμενο, widget: text, required: false }
+
+      - name: privacy
+        label: Конфиденциальность
+        file: source/content/pages/privacy.json
+        format: json
+        preview_path: privacy/
+        fields: *prose
+
+      - name: cookies
+        label: Файлы cookie
+        file: source/content/pages/cookies.json
+        format: json
+        preview_path: cookies/
+        fields: *prose
+
+      - name: terms
+        label: Условия
+        file: source/content/pages/terms.json
+        format: json
+        preview_path: terms/
+        fields: *prose
+
+      - name: contact
+        label: Контакты
+        file: source/content/pages/contact.json
+        format: json
+        preview_path: contact/
+        fields:
+          - name: ru
+            label: Текст на русском
+            widget: object
+            fields:
+              - { name: title, label: Заголовок, widget: string }
+              - { name: description, label: Краткое описание, widget: text }
+              - { name: intro, label: Текст над формой, widget: text }
+              - { name: thanks_title, label: Заголовок страницы «спасибо», widget: string }
+              - { name: thanks_description, label: Описание страницы «спасибо», widget: text }
+              - { name: thanks_text, label: Текст страницы «спасибо», widget: text }
+          - name: en
+            label: English (необязательно)
+            widget: object
+            required: false
+            collapsed: true
+            hint: "Если оставить пустым, на английской версии будет русский текст, и эта версия не попадёт в поиск. Перевод включается, только когда заполнены все поля."
+            fields:
+              - { name: title, label: Title, widget: string, required: false }
+              - { name: description, label: Short description, widget: text, required: false }
+              - { name: intro, label: Text above the form, widget: text, required: false }
+              - { name: thanks_title, label: Thank-you title, widget: string, required: false }
+              - { name: thanks_description, label: Thank-you description, widget: text, required: false }
+              - { name: thanks_text, label: Thank-you text, widget: text, required: false }
+          - name: el
+            label: Ελληνικά (необязательно)
+            widget: object
+            required: false
+            collapsed: true
+            hint: "Если оставить пустым, на греческой версии будет русский текст, и эта версия не попадёт в поиск. Перевод включается, только когда заполнены все поля."
+            fields:
+              - { name: title, label: Τίτλος, widget: string, required: false }
+              - { name: description, label: Σύντομη περιγραφή, widget: text, required: false }
+              - { name: intro, label: Κείμενο πάνω από τη φόρμα, widget: text, required: false }
+              - { name: thanks_title, label: Τίτλος ευχαριστίας, widget: string, required: false }
+              - { name: thanks_description, label: Περιγραφή ευχαριστίας, widget: text, required: false }
+              - { name: thanks_text, label: Κείμενο ευχαριστίας, widget: text, required: false }
+
+      - name: disclaimer
+        label: Оговорка внизу страниц
+        file: source/content/pages/disclaimer.json
+        format: json
+        fields:
+          - name: ru
+            label: Текст на русском
+            widget: object
+            fields:
+              - { name: text, label: Текст оговорки, widget: text }
+          - name: en
+            label: English (необязательно)
+            widget: object
+            required: false
+            collapsed: true
+            hint: Если оставить пустым, в английской версии будет русский текст.
+            fields:
+              - { name: text, label: Disclaimer, widget: text, required: false }
+          - name: el
+            label: Ελληνικά (необязательно)
+            widget: object
+            required: false
+            collapsed: true
+            hint: Если оставить пустым, в греческой версии будет русский текст.
+            fields:
+              - { name: text, label: Αποποίηση, widget: text, required: false }

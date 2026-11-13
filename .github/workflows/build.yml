@@ -1,0 +1,93 @@
+# Rebuilds the static site from source/ and commits the generated pages to main.
+# GitHub Pages keeps serving branch main / root, so the custom domain (CNAME) is unchanged.
+# Pushes made with GITHUB_TOKEN do not start workflows again, including the Pages
+# build. A normal push already starts Pages, so this workflow requests a build
+# only after its own commit, or on the daily/manual run. There is no loop.
+name: Build site
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "source/**"
+      - ".github/workflows/build.yml"
+  pull_request:
+    paths:
+      - "source/**"
+      - "admin/**"
+      - ".github/workflows/build.yml"
+  workflow_dispatch:
+  schedule:
+    # Daily at 22:10 UTC, same slot as the other site, so a manual or delayed
+    # content change is not the only thing that can refresh the Pages build.
+    - cron: "10 22 * * *"
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: build-site-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.sha || 'main' }}
+          # Full history so the push retry can rebase if main moved.
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Check CMS config
+        if: github.event_name == 'pull_request'
+        run: pip install pyyaml && python -c "import yaml; yaml.safe_load(open('admin/config.yml', encoding='utf8'))"
+
+      - name: Build
+        env:
+          BASE: https://mycytax.com
+        run: python source/build.py
+
+      - name: Commit generated site
+        id: commit
+        if: github.event_name != 'pull_request'
+        run: |
+          git config user.name "mycytax-build[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Nothing changed."
+            echo "pushed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git commit -q -m "Пересборка сайта (${GITHUB_SHA::7})"
+          for i in 1 2 3; do
+            if git push origin HEAD:main; then
+              echo "pushed=true" >> "$GITHUB_OUTPUT"
+              exit 0
+            fi
+            echo "main moved on; rebasing and retrying"
+            git pull --rebase -q origin main || { git rebase --abort; exit 1; }
+          done
+          exit 1
+
+      # A push from this token does not start Pages. A normal push already did,
+      # and a second request cancels that build, so only ask after our own commit
+      # or when nothing else will (the daily run and a manual run).
+      - name: Request GitHub Pages build
+        if: >-
+          github.event_name != 'pull_request' &&
+          (steps.commit.outputs.pushed == 'true' ||
+           github.event_name == 'schedule' ||
+           github.event_name == 'workflow_dispatch')
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api --method POST -H "Accept: application/vnd.github+json" \
+            "/repos/${GITHUB_REPOSITORY}/pages/builds"

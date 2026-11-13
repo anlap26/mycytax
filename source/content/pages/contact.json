@@ -1,0 +1,26 @@
+{
+  "ru": {
+    "title": "Контакты",
+    "description": "Напишите MyCyTax о покупке или продаже. Форма уходит на info@mycytax.com.",
+    "intro": "Издатель — Анна. Пишите на info@mycytax.com или через форму. Первое сообщение на этот адрес FormSubmit подтверждает письмом. Пока ссылка не открыта, форма не доставляет заявки. Ответим в течение 24 часов.",
+    "thanks_title": "Спасибо",
+    "thanks_description": "Сообщение отправлено.",
+    "thanks_text": "Спасибо. Если адрес уже подтверждён в FormSubmit, ответим в течение 24 часов. Если это первое сообщение, Анне ещё нужно открыть письмо подтверждения, прежде чем оно будет доставлено."
+  },
+  "en": {
+    "title": "Contact",
+    "description": "Write to MyCyTax about buying or selling. The form goes to info@mycytax.com.",
+    "intro": "The publisher is Anna. Email info@mycytax.com, or use the form. The first message to this address asks FormSubmit to send a confirmation email. Until that link is opened, the form will not deliver. We reply within 24 hours.",
+    "thanks_title": "Thank you",
+    "thanks_description": "Your message has been sent.",
+    "thanks_text": "Thank you. If this address is already confirmed with FormSubmit, we will reply within 24 hours. If this was the first message, Anna still needs to open the confirmation email before it is delivered."
+  },
+  "el": {
+    "title": "Επικοινωνία",
+    "description": "Γράψτε στο MyCyTax για αγορά ή πώληση. Η φόρμα πηγαίνει στο info@mycytax.com.",
+    "intro": "Εκδότρια είναι η Άννα. Στείλτε email στο info@mycytax.com ή χρησιμοποιήστε τη φόρμα. Το πρώτο μήνυμα σε αυτή τη διεύθυνση το επιβεβαιώνει το FormSubmit με email. Μέχρι να ανοίξει ο σύνδεσμος, η φόρμα δεν παραδίδει αιτήματα. Απαντάμε μέσα σε 24 ώρες.",
+    "thanks_title": "Ευχαριστούμε",
+    "thanks_description": "Το μήνυμά σας στάλθηκε.",
+    "thanks_text": "Ευχαριστούμε. Αν η διεύθυνση έχει ήδη επιβεβαιωθεί στο FormSubmit, θα απαντήσουμε μέσα σε 24 ώρες. Αν αυτό ήταν το πρώτο μήνυμα, η Άννα πρέπει ακόμη να ανοίξει το email επιβεβαίωσης πριν παραδοθεί."
+  }
+}

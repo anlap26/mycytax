@@ -1,0 +1,23 @@
+{
+  "ru": {
+    "title": "Калькуляторы недвижимости и налогов Кипра",
+    "description": "Сборы кадастра, НДС, прирост капитала, аренда и ипотечный платёж, плюс практические справочники.",
+    "intro": "Посчитайте сбор Земельного кадастра, НДС, гербовый сбор, налог на прирост капитала, налог с аренды и ипотечный платёж. Каждая ставка на MyCyTax привязана к источнику. Издатель — Анна, Кипр.",
+    "calculators_description": "Калькуляторы по недвижимости Кипра: сборы кадастра, гербовый сбор, НДС, прирост капитала, аренда и ипотека.",
+    "guides_description": "Практические справочники о покупке, продаже, налоговом резидентстве, статусе non-dom, титулах и аренде на Кипре."
+  },
+  "en": {
+    "title": "Cyprus property and tax calculators",
+    "description": "Transfer fees, VAT, capital gains, rental income and a mortgage payment, plus practical guides.",
+    "intro": "Work out the Land Registry fee, VAT, stamp duty, capital gains tax, rental tax and a mortgage payment. Every rate on MyCyTax is tied to a source. The publisher is Anna, in Cyprus.",
+    "calculators_description": "Cyprus property calculators: transfer fees, stamp duty, VAT, capital gains, rental income and mortgage payments.",
+    "guides_description": "Practical guides to buying, selling, tax residency, non-dom status, title deeds and renting property in Cyprus."
+  },
+  "el": {
+    "title": "Υπολογιστές ακινήτων και φόρων Κύπρου",
+    "description": "Τέλη μεταβίβασης, ΦΠΑ, κεφαλαιουχικά κέρδη, ενοίκιο και δόση δανείου, μαζί με πρακτικούς οδηγούς.",
+    "intro": "Υπολογίστε το τέλος του Κτηματολογίου, τον ΦΠΑ, το χαρτόσημο, τον φόρο κεφαλαιουχικών κερδών, τον φόρο ενοικίου και τη δόση στεγαστικού. Κάθε συντελεστής στο MyCyTax δένεται με πηγή. Εκδότρια είναι η Άννα, στην Κύπρο.",
+    "calculators_description": "Υπολογιστές ακινήτων Κύπρου: τέλη μεταβίβασης, χαρτόσημο, ΦΠΑ, κεφαλαιουχικά κέρδη, ενοίκιο και δόση δανείου.",
+    "guides_description": "Πρακτικοί οδηγοί για αγορά, πώληση, φορολογική κατοικία, καθεστώς non-dom, τίτλους και ενοικίαση στην Κύπρο."
+  }
+}
