@@ -16,6 +16,8 @@ OUT = os.environ.get("OUT", ROOT)
 PREFIX = urlparse(BASE).path.rstrip("/")
 TODAY = "2026-11-13"
 SITE = "MyCyTax"
+ADSENSE = '<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1547877294743851" crossorigin="anonymous"></script>'
+ADS_TXT = "google.com, pub-1547877294743851, DIRECT, f08c47fec0942fa0\n"
 EMAIL = "cynews24@gmail.com"
 PUBLISHER = "Anna"
 CYNEWS = "https://cynews24.net/"
@@ -307,7 +309,7 @@ def head(lang, title, desc, path, alt_path, jsonld=None, extra=""):
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta property="og:site_name" content="{e(u["name"])}"><meta property="og:title" content="{e(title)}"><meta property="og:description" content="{e(desc)}"><meta property="og:url" content="{absu(path)}"><meta property="og:type" content="website">
 <meta name="theme-color" content="#1e3d34">
-<link rel="stylesheet" href="{href("/assets/style.css")}">{ld}{extra}</head>'''
+<link rel="stylesheet" href="{href("/assets/style.css")}">{ld}{extra}{ADSENSE}</head>'''
 
 def header(lang, path_for):
     u = UI[lang]
@@ -509,55 +511,55 @@ STATIC = {
            "The publisher is Anna. The site is based in Cyprus. Editorial and advertising contact is cynews24@gmail.com. No other person is named here, because this page does not invent a staff list.",
            "Calculators run in your browser. The rates are the ones stated by the Department of Lands and Surveys, the Tax Department, the Ministry of Interior, Gov.cy, the consolidated statutes on CyLaw, or a named professional summary where the statute is in Greek and the summary tracks it. If a figure is not settled, the page says so.",
            "The site is separate from CyNews 24, which publishes Cyprus news in Russian, English and Greek. A link to CyNews 24 is in the footer.",
-           "Advertising spaces are empty on purpose. No advertising script runs. When an ad network is added, the privacy and cookie pages will be updated."]),
+           "Advertising spaces stay empty. The site loads Google AdSense (ca-pub-1547877294743851) for automatic ads. AdSense may set cookies."]),
    "ru": ("О сайте", "Кто издаёт MyCyTax и как считаются калькуляторы.",
           ["MyCyTax — независимый сайт калькуляторов и практических справочников по недвижимости и налогам на английском, русском и греческом. Основной язык — английский.",
            "Издатель — Анна. Сайт базируется на Кипре. Контакт редакции и рекламы: cynews24@gmail.com. Других имён здесь нет: страница не придумывает список сотрудников.",
            "Калькуляторы работают в браузере. Ставки — те, что указали Департамент земель и землеустройства, Налоговый департамент, Министерство внутренних дел, Gov.cy, сводные тексты на CyLaw или названный профессиональный обзор, если закон по-гречески, а обзор ему следует. Если цифра не устоялась, страница так и пишет.",
            "Сайт отделён от CyNews 24, который публикует новости Кипра на русском, английском и греческом. Ссылка на CyNews 24 есть в подвале.",
-           "Рекламные места нарочно пустые. Рекламный скрипт не выполняется. Когда появится рекламная сеть, страницы о конфиденциальности и cookie будут обновлены."]),
+           "Рекламные места остаются пустыми. Сайт подключает Google AdSense (ca-pub-1547877294743851) для автоматических объявлений. AdSense может ставить cookie."]),
    "el": ("Σχετικά", "Ποιος εκδίδει το MyCyTax και πώς παράγονται οι υπολογιστές.",
           ["Το MyCyTax είναι ανεξάρτητος ιστότοπος υπολογιστών και πρακτικών οδηγών για ακίνητα και φόρους, στα αγγλικά, ρωσικά και ελληνικά. Η κύρια γλώσσα είναι η αγγλική.",
            "Εκδότρια είναι η Άννα. Ο ιστότοπος έχει έδρα την Κύπρο. Επικοινωνία σύνταξης και διαφήμισης: cynews24@gmail.com. Δεν κατονομάζεται άλλο πρόσωπο, γιατί η σελίδα δεν επινοεί κατάλογο συνεργατών.",
            "Οι υπολογιστές τρέχουν στον φυλλομετρητή σας. Οι συντελεστές είναι αυτοί που δηλώνουν το Τμήμα Κτηματολογίου και Χωρομετρίας, το Τμήμα Φορολογίας, το Υπουργείο Εσωτερικών, το Gov.cy, τα κωδικοποιημένα κείμενα στο CyLaw, ή επώνυμη επαγγελματική σύνοψη όπου ο νόμος είναι στα ελληνικά και η σύνοψη τον ακολουθεί. Αν ένα ποσό δεν είναι σταθερό, η σελίδα το λέει.",
            "Ο ιστότοπος είναι χωριστός από το CyNews 24, που δημοσιεύει ειδήσεις Κύπρου στα ρωσικά, αγγλικά και ελληνικά. Σύνδεσμος προς το CyNews 24 υπάρχει στο υποσέλιδο.",
-           "Οι θέσεις διαφήμισης είναι σκόπιμα κενές. Δεν τρέχει διαφημιστικό σενάριο. Όταν προστεθεί δίκτυο διαφημίσεων, οι σελίδες απορρήτου και cookies θα ενημερωθούν."]),
+           "Οι θέσεις διαφήμισης μένουν κενές. Ο ιστότοπος φορτώνει το Google AdSense (ca-pub-1547877294743851) για αυτόματες διαφημίσεις. Το AdSense μπορεί να ορίζει cookies."]),
  },
  "privacy": {
    "en": ("Privacy policy", "What MyCyTax does with the contact form, and what it does not collect.",
           ["The publisher is Anna, based in Cyprus. Email: cynews24@gmail.com.",
            "The contact form sends your name, email, phone if you give one, whether you are buying or selling, a place name and your message through FormSubmit (formsubmit.co) to cynews24@gmail.com. Those details are used only to reply. FormSubmit processes the submission in order to deliver the email. The details are not sold and are not added to a marketing list.",
            "The calculators run on your device. The numbers you type are not sent to this site.",
-           "The site does not use Google Analytics or any other analytics tool. It does not embed advertising scripts. If advertising is added later, this page will say what data the ad provider receives.",
+           "The site does not use Google Analytics. It loads Google AdSense (ca-pub-1547877294743851) so Google can show ads. AdSense may receive technical data such as the page address and a cookie identifier. Google describes that processing in its own policy.",
            "Email sent to cynews24@gmail.com is kept for as long as needed to answer it."]),
    "ru": ("Политика конфиденциальности", "Что MyCyTax делает с формой связи и чего не собирает.",
           ["Издатель — Анна, Кипр. Эл. почта: cynews24@gmail.com.",
            "Форма отправляет имя, эл. почту, телефон, если вы его указали, покупку или продажу, место и сообщение через FormSubmit (formsubmit.co) на cynews24@gmail.com. Эти сведения используются только для ответа. FormSubmit обрабатывает отправку, чтобы доставить письмо. Сведения не продаются и не попадают в маркетинговый список.",
            "Калькуляторы работают на вашем устройстве. Введённые цифры на этот сайт не отправляются.",
-           "Сайт не использует Google Analytics и другие средства аналитики. Рекламные скрипты не подключаются. Если реклама появится позже, эта страница скажет, какие данные получает рекламная служба.",
+           "Сайт не использует Google Analytics. Он подключает Google AdSense (ca-pub-1547877294743851), чтобы Google мог показывать объявления. AdSense может получать технические данные, например адрес страницы и идентификатор cookie. Как Google это обрабатывает, описано в его собственной политике.",
            "Письма на cynews24@gmail.com хранятся, пока нужен ответ."]),
    "el": ("Πολιτική απορρήτου", "Τι κάνει το MyCyTax με τη φόρμα επικοινωνίας και τι δεν συλλέγει.",
           ["Εκδότρια είναι η Άννα, με έδρα την Κύπρο. Email: cynews24@gmail.com.",
            "Η φόρμα στέλνει το όνομα, το email, το τηλέφωνο αν το δώσετε, αν αγοράζετε ή πουλάτε, έναν τόπο και το μήνυμά σας μέσω FormSubmit (formsubmit.co) στο cynews24@gmail.com. Τα στοιχεία χρησιμοποιούνται μόνο για απάντηση. Το FormSubmit επεξεργάζεται την υποβολή για να παραδώσει το email. Τα στοιχεία δεν πωλούνται και δεν μπαίνουν σε λίστα μάρκετινγκ.",
            "Οι υπολογιστές τρέχουν στη συσκευή σας. Οι αριθμοί που πληκτρολογείτε δεν στέλνονται σε αυτόν τον ιστότοπο.",
-           "Ο ιστότοπος δεν χρησιμοποιεί Google Analytics ούτε άλλο εργαλείο αναλυτικών. Δεν ενσωματώνει διαφημιστικά σενάρια. Αν προστεθεί διαφήμιση αργότερα, η σελίδα θα πει ποια δεδομένα λαμβάνει ο πάροχος.",
+           "Ο ιστότοπος δεν χρησιμοποιεί Google Analytics. Φορτώνει το Google AdSense (ca-pub-1547877294743851) ώστε η Google να εμφανίζει διαφημίσεις. Το AdSense μπορεί να λαμβάνει τεχνικά δεδομένα, όπως τη διεύθυνση της σελίδας και ένα αναγνωριστικό cookie. Η Google περιγράφει αυτή την επεξεργασία στη δική της πολιτική.",
            "Το email προς cynews24@gmail.com κρατιέται για όσο χρειάζεται η απάντηση."]),
  },
  "cookies": {
    "en": ("Cookie notice", "Cookies on this site today, and what would change if advertising is added.",
           ["MyCyTax does not set its own cookies. The calculators and the language switcher do not store a cookie. The language switcher is an ordinary link.",
            "The contact form is a normal POST to FormSubmit. Any cookie that service sets is described in FormSubmit's own policy, not by this site.",
-           "There is no advertising code, so there are no advertising cookies. If Google AdSense or another network is added, that provider may set cookies, including on visitors in the EEA, and a consent tool will be added before those tags run. The placeholder boxes on the pages are empty.",
+           "The pages load Google AdSense. That service may set advertising cookies, including for visitors in the EEA. Empty boxes on the pages are unused slots and do not show an ad by themselves.",
            "You can refuse or delete cookies in your browser. Because this site does not rely on a cookie to show a page, the calculators and guides still work if cookies are blocked."]),
    "ru": ("Уведомление о файлах cookie", "Какие cookie есть на сайте сейчас и что изменится, если появится реклама.",
           ["MyCyTax не ставит собственные cookie. Калькуляторы и переключатель языка cookie не записывают. Переключатель языка — обычная ссылка.",
            "Форма — обычный POST в FormSubmit. Любые cookie этой службы описаны в её собственной политике, а не на этом сайте.",
-           "Рекламного кода нет, поэтому нет и рекламных cookie. Если будут подключены Google AdSense или другая сеть, эта служба может ставить cookie, в том числе посетителям из ЕЭЗ, и до запуска меток появится инструмент согласия. Прямоугольники на страницах пустые.",
+           "Страницы подключают Google AdSense. Эта служба может ставить рекламные cookie, в том числе посетителям из ЕЭЗ. Пустые рамки на страницах — неиспользуемые места и сами по себе объявление не показывают.",
            "Отказаться от cookie или удалить их можно в браузере. Страницы не зависят от cookie, поэтому калькуляторы и справочники работают и при их блокировке."]),
    "el": ("Ειδοποίηση για cookies", "Ποια cookies υπάρχουν σήμερα και τι θα άλλαζε αν προστεθεί διαφήμιση.",
           ["Το MyCyTax δεν τοποθετεί δικά του cookies. Οι υπολογιστές και ο διακόπτης γλώσσας δεν αποθηκεύουν cookie. Ο διακόπτης γλώσσας είναι απλός σύνδεσμος.",
            "Η φόρμα είναι συνηθισμένο POST προς το FormSubmit. Όποιο cookie ορίζει εκείνη η υπηρεσία περιγράφεται στη δική της πολιτική, όχι από αυτόν τον ιστότοπο.",
-           "Δεν υπάρχει κώδικας διαφήμισης, άρα δεν υπάρχουν διαφημιστικά cookies. Αν προστεθεί Google AdSense ή άλλο δίκτυο, ο πάροχος μπορεί να τοποθετεί cookies, και σε επισκέπτες του ΕΟΧ, και εργαλείο συγκατάθεσης θα προστεθεί πριν τρέξουν αυτές οι ετικέτες. Τα πλαίσια στις σελίδες είναι κενά.",
+           "Οι σελίδες φορτώνουν το Google AdSense. Η υπηρεσία μπορεί να τοποθετεί διαφημιστικά cookies, και σε επισκέπτες του ΕΟΧ. Τα κενά πλαίσια στις σελίδες είναι αχρησιμοποίητες θέσεις και δεν δείχνουν από μόνα τους διαφήμιση.",
            "Μπορείτε να αρνηθείτε ή να διαγράψετε cookies στον φυλλομετρητή. Επειδή ο ιστότοπος δεν βασίζεται σε cookie για να δείξει σελίδα, οι υπολογιστές και οι οδηγοί λειτουργούν και με αποκλεισμένα cookies."]),
  },
  "terms": {
@@ -673,6 +675,7 @@ def main():
     w("/CNAME", "mycytax.com\n")
     # Google Search Console verification. Rewritten on every build so a rebuild cannot drop it.
     w("/google62249645dc64d12b.html", "google-site-verification: google62249645dc64d12b.html\n")
+    w("/ads.txt", ADS_TXT)
     short = [x for x in words if x[2] < 800]
     print("built", BASE)
     for lang, slug, n in words:
