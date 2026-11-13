@@ -19,6 +19,11 @@ site_url: https://mycytax.com
 display_url: https://mycytax.com
 app_title: MyCyTax — редакция
 
+# Загрузки картинок нет. Эти две строки нужны только чтобы редакция открылась.
+# Сборщик читает source/content и папку source/media на сайт не копирует.
+media_folder: source/media
+public_folder: /media
+
 # Имя файла из русского заголовка переводится в латинские буквы.
 slug:
   encoding: ascii
