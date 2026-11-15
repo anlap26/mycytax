@@ -593,6 +593,7 @@ def head(lang, title, desc, path, alt_path, jsonld=None, extra="", robots="index
         for obj in jsonld:
             ld += '<script type="application/ld+json">' + json.dumps(obj, ensure_ascii=False).replace("</", "<\\/") + "</script>"
     return f'''<!doctype html><html lang="{lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="yandex-verification" content="8dc437c1055c8e9b" />
 <title>{e(title)}</title><meta name="description" content="{e(desc)}">
 <link rel="canonical" href="{absu(path)}">
 {chr(10).join(alts)}
