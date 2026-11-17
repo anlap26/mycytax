@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""English Instagram link-in-bio page."""
+"""Instagram link-in-bio page, in English, Russian and Greek."""
 import os
 import unittest
 
@@ -47,8 +47,8 @@ class LinksPageTests(unittest.TestCase):
         self.assertIn(build.ADSENSE, html)
         self.assertIn('hreflang="en"', html)
         self.assertIn('hreflang="x-default"', html)
-        self.assertNotIn('hreflang="ru"', html)
-        self.assertNotIn('hreflang="el"', html)
+        self.assertIn('hreflang="ru" href="https://mycytax.com/ru/links/"', html)
+        self.assertIn('hreflang="el" href="https://mycytax.com/el/links/"', html)
         self.assertIn("info@mycytax.com", html)
         self.assertIn(">MyCyTax</a>", html)
         self.assertIn("Free Cyprus property tax calculators &amp; guides", html)
@@ -59,8 +59,21 @@ class LinksPageTests(unittest.TestCase):
             self.assertNotIn("/links/", header)
         xml = build.sitemap()
         self.assertEqual(xml.count("https://mycytax.com/links/"), 1)
-        self.assertNotIn("https://mycytax.com/ru/links/", xml)
-        self.assertNotIn("https://mycytax.com/el/links/", xml)
+        self.assertIn("https://mycytax.com/ru/links/", xml)
+        self.assertIn("https://mycytax.com/el/links/", xml)
+
+    def test_russian_and_greek_pages_mirror_the_english_buttons(self):
+        self.assertEqual(len(build.LINKS_LABELS["ru"]), len(build.LINKS_ITEMS))
+        self.assertEqual(len(build.LINKS_LABELS["el"]), len(build.LINKS_ITEMS))
+        for lang, home in (("ru", "/ru/"), ("el", "/el/")):
+            html = build.links_page(lang)
+            self.assertIn(f'<html lang="{lang}">', html)
+            self.assertIn(f'rel="canonical" href="https://mycytax.com{home}links/"', html)
+            self.assertEqual(html.count("utm_source=instagram"), len(build.LINKS_ITEMS) + 1)
+            self.assertIn(f'href="{home}?utm_source=instagram', html)
+            self.assertIn(build.LEAD[lang]["buy"], html)
+            self.assertIn('class="bio-contact"', html)
+            self.assertNotIn("/links/", build.header(lang, lambda l: "/"))
 
     def test_styles_use_the_site_colours(self):
         css = build.css()

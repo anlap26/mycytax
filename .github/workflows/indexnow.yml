@@ -1,0 +1,35 @@
+# Tells IndexNow (Bing and other engines) about URLs on mycytax.com.
+# A push that changes source/ is skipped here: Build site regenerates the
+# sitemap and submits after GitHub Pages is publishing that commit.
+# This workflow covers a push that already contains the pages, for example a
+# generated-file commit that did not need a rebuild.
+name: IndexNow
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: indexnow-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Submit changed sitemap URLs
+        env:
+          INDEXNOW_BEFORE: ${{ github.event.before }}
+        run: python3 source/indexnow_submit.py --wait

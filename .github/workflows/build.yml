@@ -42,7 +42,7 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
         with:
@@ -114,3 +114,28 @@ jobs:
         run: |
           gh api --method POST -H "Accept: application/vnd.github+json" \
             "/repos/${GITHUB_REPOSITORY}/pages/builds"
+
+      # The bot commit does not start other workflows, so IndexNow is submitted
+      # from here, after Pages is asked to publish this commit. A failure is
+      # reported and does not block the site or Post to Telegram.
+      - name: Wait for GitHub Pages
+        if: github.event_name == 'push'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          head_sha=$(git rev-parse HEAD)
+          echo "waiting for Pages to publish $head_sha"
+          for i in $(seq 1 36); do
+            status=$(gh api "/repos/${GITHUB_REPOSITORY}/pages/builds/latest" --jq '.status + " " + .commit' || true)
+            echo "pages: $status"
+            if [ "$status" = "built $head_sha" ]; then
+              exit 0
+            fi
+            sleep 15
+          done
+          echo "Pages did not report this commit in time. IndexNow will still wait for the key file."
+
+      - name: Submit URLs to IndexNow
+        if: github.event_name == 'push'
+        continue-on-error: true
+        run: python3 source/indexnow_submit.py --from-build --wait

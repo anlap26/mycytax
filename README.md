@@ -47,7 +47,9 @@ Point the domain at the host that serves this site root, then set `BASE` to `htt
 
 ## Ads
 
-Advertising boxes in the HTML are empty. No ad script is included.
+Advertising boxes in the HTML stay empty until an ad unit is approved. The pages load the AdSense script. A cookie banner on every page sets Google Consent Mode v2 (`ad_storage`, `analytics_storage`, `ad_user_data`, `ad_personalization`) to denied until the visitor presses Accept. Reject keeps the four signals denied. The choice is stored in this browser as `mycytax-consent` (localStorage). Cookie settings in the footer opens the banner again. The consent default is in the page before the AdSense script and before gtag.
+
+`source/site.json` has an empty `ga4_measurement_id`. When it is a `G-…` id, the build adds the gtag snippet after that consent default. `bing_msvalidate` is empty and is not rendered; paste a Bing code there to add `<meta name="msvalidate.01">`. Bing can also import the site from Google Search Console.
 
 When an AdSense publisher ID exists, add a file named `ads.txt` at the site root (the same folder as `index.html`) with one line:
 
@@ -55,7 +57,7 @@ When an AdSense publisher ID exists, add a file named `ads.txt` at the site root
 google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
 ```
 
-Replace `pub-XXXXXXXXXXXXXXXX` with the real publisher ID. Do not publish a placeholder ID. Then put the ad unit code inside the elements marked `data-ad`. Update the privacy and cookie pages in `source/content/pages/` before those tags go live, including a consent tool for visitors in the EEA.
+Replace `pub-XXXXXXXXXXXXXXXX` with the real publisher ID. Do not publish a placeholder ID. Then put the ad unit code inside the elements marked `data-ad`. The consent banner for visitors in the EEA is already on every page.
 
 ## Партнёрские ссылки
 
@@ -83,6 +85,12 @@ When an affiliate link arrives, paste it into that partner’s `affiliate_url`. 
 A push to `main` that touches `source/` starts the **Build site** workflow (`.github/workflows/build.yml`). It runs `python3 source/build.py` with `BASE=https://mycytax.com` and, when the generated pages changed, commits them back to `main`. Pages keeps serving `main` / root. `CNAME` is `mycytax.com` and is rewritten on every build. A normal push already starts a Pages deployment. A commit this workflow pushes does not, so the workflow requests a Pages build only after its own commit, and also on a manual run. Pull requests run the build as a check. The workflow does not run for an `admin/`-only push; GitHub Pages still publishes that push, which is how the editor itself is served. A commit that only changes `source/content/telegram-posted.json` does not rebuild the site.
 
 The same workflow also runs at 12:00 and 20:00 UTC. The build reads the five latest headlines per language from `https://cynews24.net/news-sitemap.xml` (a short timeout) and places them on each language home page and at the end of each guide. If that fetch fails, those blocks link to `https://cynews24.net/ru/`, `/en/` or `/el/` and the build still succeeds. The footer on every page links to the same language home under “Our projects”. A scheduled run still starts **Post to Telegram** when the build succeeds. Guides already recorded in `source/content/telegram-posted.json` are not sent again, and the rebuild does not commit that file.
+
+## IndexNow
+
+`source/site.json` holds `indexnow_key`, a random 32-character hex key. Every build writes that key to `/<key>.txt` at the site root (`https://mycytax.com/<key>.txt`). Do not edit the generated text file; change the key in `source/site.json` if you ever rotate it.
+
+A push to `main` that changes `source/` is submitted by **Build site** after GitHub Pages publishes the new sitemap. The payload goes to `https://api.indexnow.org/indexnow` with `host` `mycytax.com` and `keyLocation` pointing at the key file. The URL list is the sitemap. A push that does not rebuild the site is handled by **IndexNow** (`.github/workflows/indexnow.yml`): changed sitemap URLs when the diff maps to pages, otherwise every URL in the sitemap. A README-only push sends nothing.
 
 ## Telegram
 
