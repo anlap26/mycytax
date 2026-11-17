@@ -1,0 +1,115 @@
+{
+  "slug": "resident-handbook/social-insurance",
+  "seq": 16,
+  "ru": {
+    "title": "Как получить номер социального страхования на Кипре",
+    "description": "Службы социального страхования выдают номер, когда человек занят оплачиваемой деятельностью, по найму или как самозанятый. Сам по себе приезд номер не создаёт.",
+    "body": "Проверено: ноябрь 2026 года.\n\n## Короткий ответ\n\nНомер социального страхования — это номер в схеме Служб социального страхования. EURES Cyprus, государственная страница, говорит, что схема в обязательном порядке покрывает каждого, кто занят на Кипре оплачиваемой деятельностью, по найму или как самозанятый. К занятым по найму относятся госслужащие и ученики. Человека, который так не занят, один лишь [жёлтый слип](/ru/guides/resident-handbook/residence-registration/) в схему не вводит. Добровольное страхование — отдельная дверь: для того, кто хочет продолжить после периода обязательного страхования, или кто работает за границей на кипрского работодателя.\n\n## Шаги, если вы работаете по найму\n\n1. Работодатель регистрируется, если ещё не зарегистрирован, в реестре работодателей. Business in Cyprus говорит, что форма — заявление о регистрации работодателя, его подают в окружной офис социального страхования, а найм затем уведомляют электронно через [ERGANI](https://ergani.mlsi.gov.cy/).\n2. Если у вас нет номера, работодатель подаёт заявление о регистрации занятого лица. Страница Единого цифрового шлюза министерства называет форму YKA 1-008 вместе с декларацией о найме, форма YKA 1-003, в окружной офис.\n3. Номер, который вернётся, работодатель ставит в запись о заработке. Свой номер тем временем не выдумывают.\n\n## Шаги, если вы самозанятый\n\nBusiness in Cyprus говорит, что заявление самозанятого, образец YKA 1-008, подают лично или почтой в окружной офис, с копией удостоверения личности, паспорта или свидетельства о регистрации иностранца. Та же страница говорит, что номер обычно дают в течение одной-двух недель. Это срок портала, а не гарантия, записанная как законный предел.\n\n## Взносы, которые называют официальные страницы\n\nEURES Cyprus задаёт ставки по году взносов. Для года взносов, начинающегося 1 января 2024 года или позже и до следующей ступени 1 января 2029 года, страница называет 22,8 процента для работника: 8,8 процента платит работник, 8,8 процента работодатель и 5,2 процента из Консолидированного фонда. Для самозанятого в том же окне — 21,8 процента, из которых 16,6 процента платит самозанятый и 5,2 процента фонд. Следующие ступени, в 2029, 2034 и 2039 годах, на той же странице. Если ваш год взносов не это окно, берите страницу. У заработка есть потолок. Эту цифру страница не печатает: использованная выдержка EURES называет ставки, а не потолок в евро.\n\n## Документы\n\nДля работника — формы работодателя и ваше удостоверение личности. Для самозанятого — YKA 1-008 и копия удостоверения, паспорта или свидетельства о регистрации иностранца, как пишет Business in Cyprus. Окружные офисы перечислены на странице министерства: Никосия, Лимассол, Ларнака, Пафос и Фамагуста.\n\n## Чем номер не является\n\nЭто не [налоговый идентификационный код](/ru/guides/resident-handbook/tic/). ГЕСИ может использовать запись социального страхования как один из реестров, которые вас опознают, поэтому работа и ГЕСИ часто идут вместе. Посетитель с розовым слипом, которому нельзя работать, в эту обязательную схему из-за разрешения не попадает.",
+    "faq": [
+      {
+        "q": "Можно ли подать заявление до работы?",
+        "a": "Обязательная схема, как её излагает EURES, покрывает тех, кто занят оплачиваемой деятельностью. Работодатель регистрирует работника без номера. Самозанятый подаёт YKA 1-008. Человеку без найма и без самозанятости источники этой страницы номер только за приезд не выдают."
+      },
+      {
+        "q": "Доля работника — 8,8 процента?",
+        "a": "EURES Cyprus называет это деление для года взносов с 1 января 2024 года: 8,8 процента работник, 8,8 процента работодатель, 5,2 процента из Консолидированного фонда, внутри 22,8 процента. Сверьтесь со страницей, если началась следующая законная ступень."
+      },
+      {
+        "q": "Входит ли в розовый слип номер социального страхования?",
+        "a": "Нет. Разрешение посетителя не позволяет экономическую деятельность, а номер следует за оплачиваемой занятостью или за добровольным путём, который описывают Службы."
+      }
+    ],
+    "sources": [
+      {
+        "name": "Регистрация работников, Единый цифровой шлюз Министерства труда",
+        "url": "https://www.mlsi.gov.cy/mlsi/sdg/sdg.nsf/All/DF541D1E90F75C56C22586A10042515C?OpenDocument"
+      },
+      {
+        "name": "Номер социального страхования, EURES Cyprus",
+        "url": "https://www.eures.gov.cy/mlsi/dl/eures/eures.nsf/page15_en/page15_en?OpenDocument="
+      },
+      {
+        "name": "Регистрация и взносы, Business in Cyprus",
+        "url": "https://www.businessincyprus.gov.cy/social-insurance-registration-and-contributions/"
+      },
+      {
+        "name": "ERGANI",
+        "url": "https://ergani.mlsi.gov.cy/"
+      }
+    ]
+  },
+  "en": {
+    "title": "How to get a social insurance number in Cyprus",
+    "description": "The Social Insurance Services issue the number when a person is gainfully occupied, as an employee or as self-employed. Arrival alone does not create one.",
+    "body": "Last checked: November 2026.\n\n## Short answer\n\nThe social insurance number is the number on the Social Insurance Services’ scheme. EURES Cyprus, a government page, says the scheme covers compulsorily every person gainfully occupied in Cyprus, whether employed or self-employed. Employed persons include civil servants and apprentices. A person who is not gainfully occupied is not brought in by the mere fact of a [yellow slip](/guides/resident-handbook/residence-registration/). Voluntary insurance is a separate door, for someone who wants to continue after a period of compulsory insurance, or who works abroad in the service of a Cypriot employer.\n\n## Steps if you are employed\n\n1. The employer registers, if not already registered, in the employers’ register. Business in Cyprus says the form is the application for registration of an employer, filed at the district Social Insurance Office, and that hiring is then notified electronically through [ERGANI](https://ergani.mlsi.gov.cy/).\n2. If you have no social insurance number, the employer files the application for registration of an employed person. The Ministry’s Single Digital Gateway page names form YKA 1-008, together with the employee hiring declaration, form YKA 1-003, sent to the district office.\n3. The number that comes back is the one the employer uses on the earnings record. You do not invent a number in the meantime.\n\n## Steps if you are self-employed\n\nBusiness in Cyprus says the self-employed application, a sample of YKA 1-008, is filed by hand or by post at the district Social Insurance Office, with a copy of an identity card, a passport or an alien registration certificate. The same page says the number is usually given within one to two weeks. That timing is the portal’s, not a guarantee printed as a statutory limit.\n\n## Contributions the official pages state\n\nEURES Cyprus sets the rates by contribution year. For a contribution year beginning on or after 1 January 2024, and before the next step on 1 January 2029, it states 22.8 per cent for an employee, of which 8.8 per cent is paid by the employee, 8.8 per cent by the employer and 5.2 per cent from the Consolidated Fund. For a self-employed person in the same window it states 21.8 per cent, of which 16.6 per cent is paid by the self-employed person and 5.2 per cent from the Consolidated Fund. Later steps, in 2029, 2034 and 2039, are on the same page. Use that page if your contribution year is not the 2024 window. Earnings are subject to a ceiling. This page does not print the ceiling, because the EURES extract used here states the rates and not the euro cap.\n\n## Documents\n\nFor an employee, the employer’s forms and your identity. For a self-employed person, YKA 1-008 and a copy of the identity card, passport or alien registration certificate, as Business in Cyprus states. District offices are listed on the Ministry page: Nicosia, Limassol, Larnaca, Paphos and Famagusta.\n\n## What the number is not\n\nIt is not the [tax identification code](/guides/resident-handbook/tic/). GESY can use the Social Insurance record as one of the registries that identify you, which is why employment and GESY often travel together. A visitor on a pink slip who is not allowed to work is not in this compulsory scheme by reason of the permit.",
+    "faq": [
+      {
+        "q": "Can I apply before I have a job?",
+        "a": "The compulsory scheme, as EURES states it, covers persons who are gainfully occupied. An employer registers an employee who has no number. A self-employed person files YKA 1-008. A person with neither employment nor self-employment is not given a number by this page’s sources merely for arriving."
+      },
+      {
+        "q": "Is the employee share 8.8 per cent?",
+        "a": "EURES Cyprus states that split for a contribution year beginning on or after 1 January 2024: 8.8 per cent employee, 8.8 per cent employer, 5.2 per cent from the Consolidated Fund, inside a total of 22.8 per cent. Check the page if a later statutory step has started."
+      },
+      {
+        "q": "Does a pink slip include a social insurance number?",
+        "a": "No. A visitor’s permit does not allow economic activity, and the social insurance number follows gainful occupation or the voluntary route the Services describe."
+      }
+    ],
+    "sources": [
+      {
+        "name": "Registration of employees, Ministry of Labour Single Digital Gateway",
+        "url": "https://www.mlsi.gov.cy/mlsi/sdg/sdg.nsf/All/DF541D1E90F75C56C22586A10042515C?OpenDocument"
+      },
+      {
+        "name": "Apply for a social insurance number, EURES Cyprus",
+        "url": "https://www.eures.gov.cy/mlsi/dl/eures/eures.nsf/page15_en/page15_en?OpenDocument="
+      },
+      {
+        "name": "Social insurance registration and contributions, Business in Cyprus",
+        "url": "https://www.businessincyprus.gov.cy/social-insurance-registration-and-contributions/"
+      },
+      {
+        "name": "ERGANI",
+        "url": "https://ergani.mlsi.gov.cy/"
+      }
+    ]
+  },
+  "el": {
+    "title": "Πώς αποκτάτε αριθμό κοινωνικών ασφαλίσεων στην Κύπρο",
+    "description": "Οι Υπηρεσίες Κοινωνικών Ασφαλίσεων εκδίδουν τον αριθμό όταν ένα πρόσωπο ασκεί κερδοφόρα απασχόληση, ως εργοδοτούμενος ή ως αυτοεργοδοτούμενος. Η άφιξη από μόνη της δεν δημιουργεί αριθμό.",
+    "body": "Τελευταίος έλεγχος: Νοέμβριος 2026.\n\n## Σύντομη απάντηση\n\nΟ αριθμός κοινωνικών ασφαλίσεων είναι ο αριθμός στο σχέδιο των Υπηρεσιών Κοινωνικών Ασφαλίσεων. Το EURES Cyprus, κυβερνητική σελίδα, λέει ότι το σχέδιο καλύπτει υποχρεωτικά κάθε πρόσωπο που ασκεί κερδοφόρα απασχόληση στην Κύπρο, είτε εργοδοτούμενο είτε αυτοεργοδοτούμενο. Οι εργοδοτούμενοι περιλαμβάνουν δημόσιους υπαλλήλους και μαθητευόμενους. Πρόσωπο που δεν ασκεί τέτοια απασχόληση δεν μπαίνει από μόνο το [κίτρινο δελτίο](/el/guides/resident-handbook/residence-registration/). Η προαιρετική ασφάλιση είναι χωριστή πόρτα, για όποιον θέλει να συνεχίσει μετά από περίοδο υποχρεωτικής ασφάλισης, ή εργάζεται στο εξωτερικό στην υπηρεσία Κύπριου εργοδότη.\n\n## Βήματα αν είστε εργοδοτούμενος\n\n1. Ο εργοδότης εγγράφεται, αν δεν είναι ήδη, στο μητρώο εργοδοτών. Το Business in Cyprus λέει ότι το έντυπο είναι η αίτηση εγγραφής εργοδότη, κατατίθεται στο επαρχιακό γραφείο Κοινωνικών Ασφαλίσεων, και η πρόσληψη γνωστοποιείται έπειτα ηλεκτρονικά μέσω [ERGANI](https://ergani.mlsi.gov.cy/).\n2. Αν δεν έχετε αριθμό, ο εργοδότης υποβάλλει την αίτηση εγγραφής εργοδοτούμενου. Η σελίδα της Ενιαίας Ψηφιακής Πύλης του Υπουργείου κατονομάζει το έντυπο YKA 1-008, μαζί με τη δήλωση πρόσληψης, έντυπο YKA 1-003, προς το επαρχιακό γραφείο.\n3. Ο αριθμός που επιστρέφει είναι αυτός που ο εργοδότης χρησιμοποιεί στο αρχείο αποδοχών. Δεν επινοείτε αριθμό στο μεταξύ.\n\n## Βήματα αν είστε αυτοεργοδοτούμενος\n\nΤο Business in Cyprus λέει ότι η αίτηση αυτοεργοδοτούμενου, δείγμα του YKA 1-008, κατατίθεται ιδιοχείρως ή ταχυδρομικά στο επαρχιακό γραφείο, με αντίγραφο ταυτότητας, διαβατηρίου ή πιστοποιητικού εγγραφής αλλοδαπού. Η ίδια σελίδα λέει ότι ο αριθμός δίνεται συνήθως εντός μίας έως δύο εβδομάδων. Ο χρόνος είναι της πύλης, όχι εγγύηση τυπωμένη ως νόμιμο όριο.\n\n## Εισφορές που αναφέρουν οι επίσημες σελίδες\n\nΤο EURES Cyprus θέτει τους συντελεστές κατά έτος εισφορών. Για έτος εισφορών που αρχίζει την 1η Ιανουαρίου 2024 ή αργότερα, και πριν από το επόμενο σκαλί την 1η Ιανουαρίου 2029, αναφέρει 22,8 τοις εκατό για εργοδοτούμενο, από το οποίο 8,8 τοις εκατό πληρώνει ο εργοδοτούμενος, 8,8 τοις εκατό ο εργοδότης και 5,2 τοις εκατό από το Πάγιο Ταμείο. Για αυτοεργοδοτούμενο στο ίδιο παράθυρο αναφέρει 21,8 τοις εκατό, από το οποίο 16,6 τοις εκατό πληρώνει ο αυτοεργοδοτούμενος και 5,2 τοις εκατό το Πάγιο Ταμείο. Τα επόμενα σκαλιά, το 2029, το 2034 και το 2039, είναι στην ίδια σελίδα. Χρησιμοποιήστε τη σελίδα αν το έτος εισφορών σας δεν είναι το παράθυρο του 2024. Οι αποδοχές έχουν οροφή. Αυτή η σελίδα δεν τυπώνει την οροφή, γιατί το απόσπασμα EURES που χρησιμοποιείται εδώ αναφέρει τους συντελεστές και όχι το όριο σε ευρώ.\n\n## Έγγραφα\n\nΓια εργοδοτούμενο, τα έντυπα του εργοδότη και η ταυτότητά σας. Για αυτοεργοδοτούμενο, το YKA 1-008 και αντίγραφο ταυτότητας, διαβατηρίου ή πιστοποιητικού εγγραφής αλλοδαπού, όπως λέει το Business in Cyprus. Τα επαρχιακά γραφεία απαριθμούνται στη σελίδα του Υπουργείου: Λευκωσία, Λεμεσός, Λάρνακα, Πάφος και Αμμόχωστος.\n\n## Τι δεν είναι ο αριθμός\n\nΔεν είναι ο [φορολογικός αριθμός](/el/guides/resident-handbook/tic/). Η ΓεΣΥ μπορεί να χρησιμοποιήσει το αρχείο κοινωνικών ασφαλίσεων ως ένα από τα μητρώα που σας ταυτοποιούν, γι’ αυτό η εργασία και η ΓεΣΥ συχνά πάνε μαζί. Επισκέπτης με ροζ δελτίο που δεν επιτρέπεται να εργαστεί δεν είναι σε αυτό το υποχρεωτικό σχέδιο λόγω της άδειας.",
+    "faq": [
+      {
+        "q": "Μπορώ να αιτηθώ πριν έχω εργασία;",
+        "a": "Το υποχρεωτικό σχέδιο, όπως το εκθέτει το EURES, καλύπτει πρόσωπα που ασκούν κερδοφόρα απασχόληση. Ο εργοδότης εγγράφει εργοδοτούμενο που δεν έχει αριθμό. Ο αυτοεργοδοτούμενος υποβάλλει YKA 1-008. Πρόσωπο χωρίς εργασία και χωρίς αυτοεργοδότηση δεν παίρνει αριθμό, κατά τις πηγές αυτής της σελίδας, μόνο και μόνο επειδή έφτασε."
+      },
+      {
+        "q": "Το μερίδιο του εργοδοτούμενου είναι 8,8 τοις εκατό;",
+        "a": "Το EURES Cyprus αναφέρει αυτόν τον επιμερισμό για έτος εισφορών από την 1η Ιανουαρίου 2024: 8,8 τοις εκατό εργοδοτούμενος, 8,8 τοις εκατό εργοδότης, 5,2 τοις εκατό από το Πάγιο Ταμείο, μέσα σε σύνολο 22,8 τοις εκατό. Ελέγξτε τη σελίδα αν έχει αρχίσει μεταγενέστερο νόμιμο σκαλί."
+      },
+      {
+        "q": "Το ροζ δελτίο περιλαμβάνει αριθμό κοινωνικών ασφαλίσεων;",
+        "a": "Όχι. Η άδεια επισκέπτη δεν επιτρέπει οικονομική δραστηριότητα, και ο αριθμός ακολουθεί την κερδοφόρα απασχόληση ή την προαιρετική οδό που περιγράφουν οι Υπηρεσίες."
+      }
+    ],
+    "sources": [
+      {
+        "name": "Εγγραφή εργοδοτουμένων, Ενιαία Ψηφιακή Πύλη Υπουργείου Εργασίας",
+        "url": "https://www.mlsi.gov.cy/mlsi/sdg/sdg.nsf/All/DF541D1E90F75C56C22586A10042515C?OpenDocument"
+      },
+      {
+        "name": "Αριθμός κοινωνικών ασφαλίσεων, EURES Cyprus",
+        "url": "https://www.eures.gov.cy/mlsi/dl/eures/eures.nsf/page15_en/page15_en?OpenDocument="
+      },
+      {
+        "name": "Εγγραφή και εισφορές, Business in Cyprus",
+        "url": "https://www.businessincyprus.gov.cy/social-insurance-registration-and-contributions/"
+      },
+      {
+        "name": "ERGANI",
+        "url": "https://ergani.mlsi.gov.cy/"
+      }
+    ]
+  }
+}

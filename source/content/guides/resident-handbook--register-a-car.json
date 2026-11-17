@@ -1,0 +1,115 @@
+{
+  "slug": "resident-handbook/register-a-car",
+  "seq": 19,
+  "ru": {
+    "title": "Как зарегистрировать автомобиль на Кипре",
+    "description": "Машину оформляет таможня, затем её регистрирует Департамент дорожного транспорта, и только потом её можно поставить на дорожный налог. Уже зарегистрированную машину переоформляют по форме TOM 9B.",
+    "body": "Проверено: ноябрь 2026 года.\n\n## Короткий ответ\n\nЭто две разные задачи. Одна — поставить на кипрский учёт машину, которой там ещё нет. Таможня её выпускает, Департамент дорожного транспорта регистрирует, и только затем её можно лицензировать под дорожный налог. Другая — передать уже зарегистрированную машину от одного владельца другому по форме TOM 9B. Департамент называет сбор €8,54 за эту передачу. Страница называет сбор, потому что его называет департамент. Сумму дорожного налога она не называет: он зависит от машины и от действующей шкалы, которую здесь не копируют.\n\n## Машина, которую вы ввозите\n\nТаможня говорит, что транспортное средство из-за пределов Европейского союза, новое или подержанное, облагается ввозной пошлиной и НДС. Их считают по таможенной декларации со счётом, фрахтом и страховкой до пункта ввоза, если страховка была. Для подержанного нужно оригинальное иностранное свидетельство о регистрации. Для нового — сертификат соответствия ЕС. После выпуска машину надо зарегистрировать до лицензирования. Таможня просит импортёров спросить Департамент дорожного транспорта до отправки, можно ли эту машину вообще зарегистрировать. Некоторые нельзя. Почта, которую даёт страница таможни: roadtransport@rtd.mcw.gov.cy.\n\nМашина из другого государства ЕС — другой таможенный путь, включая вопрос освобождения. Читают страницу таможни о машинах из государств-членов. Условия освобождения эта страница не пересказывает: они длиннее перечня, и неверный пересказ был бы ложной экономией.\n\nДальше страница регистрации департамента делится по категориям. Новые легковые M1 регистрирует онлайн импортёр, а не частный покупатель с бланком. Подержанный M1 из третьей страны тоже регистрирует онлайн уполномоченный импортёр. У подержанного из государства ЕС свой список: форма TOM 6 с подписью техника окружной инспекции, форма TEL 72A таможни, где она нужна, счёт или упаковочный лист, техосмотр, где он применяется, справка о выбросах TOM 119, иностранное свидетельство о регистрации с переводом Управления печати и информации, если оно не на греческом и не на английском, диск дорожного налога прежней страны, где его выдают, одобрение SVA по форме TOM 139B, если руль слева, и страховой сертификат. Страница также упоминает гербовый сбор дважды по €1,71 на части этих бумаг. Идите по строке своей категории. Не-M1 — другой список.\n\n## Машина, уже зарегистрированная на Кипре\n\n1. Заполните форму TOM 9B на нынешнего и нового владельца.\n2. Возьмите свидетельство о регистрации и страховой сертификат.\n3. Уплатите сбор €8,54.\n4. Заверьте подписи. Если оба владельца на месте, клерк сверяет их с удостоверениями. Иначе заверяет мэр или удостоверяющее должностное лицо.\n5. Если нет действующего техосмотра, новый владелец делает заявление по форме TOM 120A, что знает об этом. Такси, беспошлинный ввоз, умерший владелец — в примечаниях той же страницы. Читайте примечание, которое подходит. Не пропускайте его только потому, что обычному случаю оно не нужно.\n\n## Документы\n\nУдостоверения обоих владельцев при переоформлении. Страховка. Свидетельство о регистрации. Для ввоза — таможенный выпуск и список департамента по категории, а не один пакет, который выдумывает эта страница. [Водительские права](/ru/guides/resident-handbook/driving-licence/) — отдельное дело. Регистрация машины права не меняет.",
+    "faq": [
+      {
+        "q": "Можно ли самому зарегистрировать подержанную машину из ЕС?",
+        "a": "Страница департамента даёт список документов для подержанного автомобиля из государства ЕС, включая TOM 6, иностранное свидетельство и, для левого руля, одобрение SVA. Новые M1 и подержанный M1 из третьей страны регистрирует онлайн импортёр. Читайте строку, которая подходит машине."
+      },
+      {
+        "q": "Какой сбор за передачу машины, уже стоящей на учёте Кипра?",
+        "a": "Департамент дорожного транспорта называет €8,54, с формой TOM 9B, свидетельством о регистрации и страховкой."
+      },
+      {
+        "q": "Дорожный налог включён?",
+        "a": "Нет. Департамент говорит, что машину регистрируют до лицензирования под дорожный налог. Цифру дорожного налога эта страница не печатает."
+      }
+    ],
+    "sources": [
+      {
+        "name": "Регистрация транспортного средства, Департамент дорожного транспорта",
+        "url": "https://www.mcw.gov.cy/mcw/rtd/rtd.nsf/All/2F5C42D978D563D3C2258A400040F8B8"
+      },
+      {
+        "name": "Передача права собственности, Департамент дорожного транспорта",
+        "url": "https://www.mcw.gov.cy/mcw/RTD/rtd.nsf/All/D18AB0394B15A537C2258A4000409C2E?OpenDocument="
+      },
+      {
+        "name": "Машины из-за пределов ЕС, Таможня",
+        "url": "https://www.mof.gov.cy/mof/customs/customs.nsf/All/E7F318AF04596B09C22586D50031D0F5?OpenDocument"
+      },
+      {
+        "name": "Машины из государств ЕС, Таможня",
+        "url": "https://www.mof.gov.cy/mof/customs/customs.nsf/All/8164079B0D1D7A48C22572CF002022C9?OpenDocument="
+      }
+    ]
+  },
+  "en": {
+    "title": "Registering a car in Cyprus",
+    "description": "A vehicle is cleared by Customs and then registered with the Road Transport Department before it can be licensed for road tax. A car already on the Cyprus register changes owner on form TOM 9B.",
+    "body": "Last checked: November 2026.\n\n## Short answer\n\nThere are two different jobs. One is putting a vehicle that is not yet on the Cyprus register onto it. Customs clears it, and the Road Transport Department registers it, and only then can it be licensed for road tax. The other is transferring a car that is already registered, from one keeper to the next, on form TOM 9B. The Department states a fee of €8.54 for that transfer. This page states that fee because the Department states it. It does not state a road-tax amount, because road tax depends on the vehicle and the Department’s current scale, which is not copied here.\n\n## A car you bring in\n\nCustoms says a vehicle imported from outside the European Union, new or used, is subject to import duty and VAT, assessed on a customs declaration with the invoice, the freight and any insurance to the point of entry. A used vehicle also needs the original foreign registration certificate. A new vehicle needs an EC certificate of conformity. After clearance the vehicle must be registered before it is licensed. Customs tells importers to ask the Road Transport Department, before they ship, whether that vehicle can be registered at all. Some vehicles cannot. The email the Customs page gives is roadtransport@rtd.mcw.gov.cy.\n\nA vehicle from another EU member state is a different Customs path, including the question of relief. The Customs page on vehicles from member states is the one to read. This page does not summarise the relief conditions, because they are longer than a checklist and a wrong summary would be a false saving.\n\nThe Department’s registration page then splits by category. New category M1 cars, private saloons, are registered online by the importer, not by a private buyer walking in with a form. A used category M1 vehicle from a third country is also registered online by an authorised importer. A used vehicle from an EU member state has its own list: form TOM 6 signed by a technician at the district inspectorate, form TEL 72A from Customs where it is needed, the invoice or packing list, an MOT certificate where it applies, an emissions certificate on form TOM 119, the foreign registration certificate with a Press and Information Office translation unless it is in Greek or English, a road-tax disc from the old country where one is issued, SVA approval on form TOM 139B if the car is left-hand drive, and an insurance certificate. The page also mentions stamp duty of two times €1.71 on certain of those papers. Follow the page for the category you actually have. A category that is not M1 is a different list.\n\n## A car already registered in Cyprus\n\n1. Complete form TOM 9B for the current keeper and the new one.\n2. Take the registration certificate and the insurance certificate.\n3. Pay the fee of €8.54.\n4. Have the signatures witnessed. If both keepers are present, the clerk witnesses them against the identity cards. Otherwise a mayor or a certifying officer witnesses them.\n5. If there is no current MOT, the new keeper makes a statutory declaration on form TOM 120A that they know. Other cases, a taxi, a duty-free import, a deceased keeper, sit in the notes on the same page. Read the note that matches. Do not skip it because the ordinary case did not need it.\n\n## Documents\n\nIdentity for both keepers on a transfer. Insurance. The registration certificate. For an import, the Customs clearance and the Department’s category list, not a single bundle this page invents. A [driving licence](/guides/resident-handbook/driving-licence/) is a separate file. Registering the car does not exchange the licence.",
+    "faq": [
+      {
+        "q": "Can I register a used EU car myself?",
+        "a": "The Department’s page gives a document list for a used vehicle imported from an EU member state, including TOM 6, the foreign registration certificate and, for a left-hand-drive car, SVA approval. New M1 cars, and a used M1 car from a third country, are registered online by an importer. Read the row that matches the car."
+      },
+      {
+        "q": "What is the fee to transfer a Cyprus-registered car?",
+        "a": "The Road Transport Department states €8.54, with form TOM 9B, the registration certificate and insurance."
+      },
+      {
+        "q": "Is road tax included?",
+        "a": "No. The Department says a vehicle is registered before it can be licensed for road tax. This page does not print a road-tax figure."
+      }
+    ],
+    "sources": [
+      {
+        "name": "Registering a vehicle, Road Transport Department",
+        "url": "https://www.mcw.gov.cy/mcw/rtd/rtd.nsf/All/2F5C42D978D563D3C2258A400040F8B8"
+      },
+      {
+        "name": "Transfer of ownership, Road Transport Department",
+        "url": "https://www.mcw.gov.cy/mcw/RTD/rtd.nsf/All/D18AB0394B15A537C2258A4000409C2E?OpenDocument="
+      },
+      {
+        "name": "Vehicles from outside the EU, Customs and Excise",
+        "url": "https://www.mof.gov.cy/mof/customs/customs.nsf/All/E7F318AF04596B09C22586D50031D0F5?OpenDocument"
+      },
+      {
+        "name": "Vehicles from EU member states, Customs and Excise",
+        "url": "https://www.mof.gov.cy/mof/customs/customs.nsf/All/8164079B0D1D7A48C22572CF002022C9?OpenDocument="
+      }
+    ]
+  },
+  "el": {
+    "title": "Εγγραφή αυτοκινήτου στην Κύπρο",
+    "description": "Ένα όχημα εκτελωνίζεται και έπειτα εγγράφεται στο Τμήμα Οδικών Μεταφορών πριν αδειοδοτηθεί για τέλος κυκλοφορίας. Αυτοκίνητο που είναι ήδη στο κυπριακό μητρώο αλλάζει κάτοχο με το έντυπο TOM 9B.",
+    "body": "Τελευταίος έλεγχος: Νοέμβριος 2026.\n\n## Σύντομη απάντηση\n\nΕίναι δύο διαφορετικές δουλειές. Η μία είναι να μπει στο κυπριακό μητρώο όχημα που δεν είναι ακόμη σε αυτό. Το Τελωνείο το εκτελωνίζει, το Τμήμα Οδικών Μεταφορών το εγγράφει, και μόνο τότε μπορεί να αδειοδοτηθεί για τέλος κυκλοφορίας. Η άλλη είναι η μεταβίβαση αυτοκινήτου που είναι ήδη εγγεγραμμένο, από έναν κάτοχο στον επόμενο, με το έντυπο TOM 9B. Το Τμήμα αναφέρει τέλος €8,54 για τη μεταβίβαση αυτή. Αυτή η σελίδα αναφέρει το τέλος γιατί το αναφέρει το Τμήμα. Δεν αναφέρει ποσό τέλους κυκλοφορίας, γιατί το τέλος εξαρτάται από το όχημα και από την τρέχουσα κλίμακα, που δεν αντιγράφεται εδώ.\n\n## Αυτοκίνητο που φέρνετε\n\nΤο Τελωνείο λέει ότι όχημα που εισάγεται από χώρα εκτός Ευρωπαϊκής Ένωσης, καινούργιο ή μεταχειρισμένο, υπόκειται σε εισαγωγικό δασμό και ΦΠΑ, που υπολογίζονται σε τελωνειακή διασάφηση με το τιμολόγιο, τον ναύλο και τυχόν ασφάλιση έως το σημείο εισόδου. Μεταχειρισμένο όχημα χρειάζεται και το πρωτότυπο ξένο πιστοποιητικό εγγραφής. Καινούργιο χρειάζεται πιστοποιητικό συμμόρφωσης ΕΚ. Μετά τον εκτελωνισμό το όχημα πρέπει να εγγραφεί πριν αδειοδοτηθεί. Το Τελωνείο λέει στους εισαγωγείς να ρωτήσουν το Τμήμα Οδικών Μεταφορών, πριν την αποστολή, αν το όχημα μπορεί καν να εγγραφεί. Μερικά δεν μπορούν. Το email που δίνει η σελίδα του Τελωνείου είναι roadtransport@rtd.mcw.gov.cy.\n\nΌχημα από άλλο κράτος μέλος της ΕΕ είναι διαφορετική τελωνειακή οδός, μαζί με το ζήτημα της απαλλαγής. Η σελίδα του Τελωνείου για οχήματα από κράτη μέλη είναι αυτή που διαβάζεται. Αυτή η σελίδα δεν συνοψίζει τους όρους απαλλαγής, γιατί είναι μακρύτεροι από κατάλογο και μια λάθος σύνοψη θα ήταν ψεύτικη εξοικονόμηση.\n\nΗ σελίδα εγγραφής του Τμήματος χωρίζει έπειτα κατά κατηγορία. Καινούργια επιβατικά κατηγορίας M1 εγγράφονται ηλεκτρονικά από τον εισαγωγέα, όχι από ιδιώτη αγοραστή με έντυπο. Μεταχειρισμένο M1 από τρίτη χώρα εγγράφεται επίσης ηλεκτρονικά από εξουσιοδοτημένο εισαγωγέα. Μεταχειρισμένο από κράτος μέλος της ΕΕ έχει δικό του κατάλογο: έντυπο TOM 6 υπογεγραμμένο από τεχνικό της επαρχιακής επιθεώρησης, έντυπο TEL 72A του Τελωνείου όπου χρειάζεται, τιμολόγιο ή συσκευασία, πιστοποιητικό MOT όπου εφαρμόζεται, πιστοποιητικό εκπομπών στο έντυπο TOM 119, το ξένο πιστοποιητικό εγγραφής με μετάφραση του Γραφείου Τύπου και Πληροφοριών εκτός αν είναι στα ελληνικά ή στα αγγλικά, δίσκο τέλους κυκλοφορίας της παλιάς χώρας όπου εκδίδεται, έγκριση SVA στο έντυπο TOM 139B αν το αυτοκίνητο έχει το τιμόνι αριστερά, και πιστοποιητικό ασφάλισης. Η σελίδα αναφέρει επίσης χαρτόσημο δύο φορές €1,71 σε ορισμένα από αυτά τα χαρτιά. Ακολουθήστε τη σελίδα για την κατηγορία που πράγματι έχετε. Κατηγορία που δεν είναι M1 είναι άλλος κατάλογος.\n\n## Αυτοκίνητο ήδη εγγεγραμμένο στην Κύπρο\n\n1. Συμπληρώστε το έντυπο TOM 9B για τον τρέχοντα και τον νέο κάτοχο.\n2. Πάρτε το πιστοποιητικό εγγραφής και το πιστοποιητικό ασφάλισης.\n3. Πληρώστε το τέλος των €8,54.\n4. Βεβαιώστε τις υπογραφές. Αν και οι δύο κάτοχοι είναι παρόντες, ο υπάλληλος τις βεβαιώνει έναντι των ταυτοτήτων. Αλλιώς τις βεβαιώνει δήμαρχος ή πιστοποιών υπάλληλος.\n5. Αν δεν υπάρχει τρέχον MOT, ο νέος κάτοχος κάνει ένορκη δήλωση στο έντυπο TOM 120A ότι το γνωρίζει. Άλλες περιπτώσεις, ταξί, αφορολόγητη εισαγωγή, θανών κάτοχος, κάθονται στις σημειώσεις της ίδιας σελίδας. Διαβάστε τη σημείωση που ταιριάζει. Μην την παραλείψετε επειδή η συνηθισμένη περίπτωση δεν τη χρειάστηκε.\n\n## Έγγραφα\n\nΤαυτότητα και για τους δύο κατόχους σε μεταβίβαση. Ασφάλιση. Το πιστοποιητικό εγγραφής. Για εισαγωγή, ο εκτελωνισμός και ο κατάλογος κατηγορίας του Τμήματος, όχι ένα πακέτο που επινοεί αυτή η σελίδα. Η [άδεια οδήγησης](/el/guides/resident-handbook/driving-licence/) είναι χωριστός φάκελος. Η εγγραφή του αυτοκινήτου δεν ανταλλάσσει την άδεια.",
+    "faq": [
+      {
+        "q": "Μπορώ να εγγράψω μόνος μου μεταχειρισμένο αυτοκίνητο της ΕΕ;",
+        "a": "Η σελίδα του Τμήματος δίνει κατάλογο εγγράφων για μεταχειρισμένο όχημα από κράτος μέλος, συμπεριλαμβανομένων του TOM 6, του ξένου πιστοποιητικού και, για τιμόνι αριστερά, έγκρισης SVA. Καινούργια M1, και μεταχειρισμένο M1 από τρίτη χώρα, εγγράφονται ηλεκτρονικά από εισαγωγέα. Διαβάστε τη γραμμή που ταιριάζει στο αυτοκίνητο."
+      },
+      {
+        "q": "Ποιο είναι το τέλος μεταβίβασης αυτοκινήτου εγγεγραμμένου στην Κύπρο;",
+        "a": "Το Τμήμα Οδικών Μεταφορών αναφέρει €8,54, με έντυπο TOM 9B, το πιστοποιητικό εγγραφής και ασφάλιση."
+      },
+      {
+        "q": "Περιλαμβάνεται το τέλος κυκλοφορίας;",
+        "a": "Όχι. Το Τμήμα λέει ότι ένα όχημα εγγράφεται πριν αδειοδοτηθεί για τέλος κυκλοφορίας. Αυτή η σελίδα δεν τυπώνει ποσό τέλους κυκλοφορίας."
+      }
+    ],
+    "sources": [
+      {
+        "name": "Εγγραφή οχήματος, Τμήμα Οδικών Μεταφορών",
+        "url": "https://www.mcw.gov.cy/mcw/rtd/rtd.nsf/All/2F5C42D978D563D3C2258A400040F8B8"
+      },
+      {
+        "name": "Μεταβίβαση κυριότητας, Τμήμα Οδικών Μεταφορών",
+        "url": "https://www.mcw.gov.cy/mcw/RTD/rtd.nsf/All/D18AB0394B15A537C2258A4000409C2E?OpenDocument="
+      },
+      {
+        "name": "Οχήματα εκτός ΕΕ, Τελωνείο",
+        "url": "https://www.mof.gov.cy/mof/customs/customs.nsf/All/E7F318AF04596B09C22586D50031D0F5?OpenDocument"
+      },
+      {
+        "name": "Οχήματα από κράτη μέλη της ΕΕ, Τελωνείο",
+        "url": "https://www.mof.gov.cy/mof/customs/customs.nsf/All/8164079B0D1D7A48C22572CF002022C9?OpenDocument="
+      }
+    ]
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "slug": "relocation",
+  "seq": 22,
+  "ru": {
+    "title": "Переезд на Кипр",
+    "description": "Короткий набор справочников о самом переезде: первые месяцы, маршруты проживания и налоговые вопросы, которые не совпадают с карточкой проживания.",
+    "body": "Проверено: ноябрь 2026 года.\n\nЭти страницы — порядок переезда. [Справочник резидента](/ru/guides/resident-handbook/) — это подробность каждой регистрации. Здесь нет ни разрешения на проживание, ни налогового расчёта, ни оферты.\n\n- [Первые месяцы в том порядке, который задают официальные сроки](/ru/guides/relocation/first-90-days/)\n- [Маршруты проживания: граждане ЕС, посетители из третьих стран и разрешение через инвестицию](/ru/guides/relocation/residence-options/)\n- [Расходы и налоги, со ссылками на справочники о резидентстве и non-dom](/ru/guides/relocation/cost-and-tax/)\n\nУ покупки свои цифры. Считайте [сбор за переоформление](/ru/calculators/transfer-fees/), [НДС](/ru/calculators/vat/) и [ипотеку](/ru/calculators/mortgage/) и откройте [сравнение ипотеки](/ru/guides/mortgage-comparison/), если вопрос в том, как сентябрьское среднее 2026 года стоит рядом с Германией, Грецией и Испанией.",
+    "faq": [
+      {
+        "q": "Жёлтый слип — это то же, что налоговое резидентство?",
+        "a": "Нет. Свидетельство о регистрации — иммиграционный документ гражданина Союза. Налоговое резидентство — правило 60 дней или правило 183 дней. Оба могут быть верны. Одно другое не вызывает."
+      }
+    ],
+    "sources": [
+      {
+        "name": "Gov.cy",
+        "url": "https://www.gov.cy/"
+      },
+      {
+        "name": "Налоговое резидентство и домициль, Налоговый департамент",
+        "url": "https://www.gov.cy/mof-tax/en/documents/tax-residency-domicility/"
+      }
+    ]
+  },
+  "en": {
+    "title": "Moving to Cyprus",
+    "description": "A short set of guides for the move itself: the first months, the residence routes, and the tax questions that are not the same as a residence card.",
+    "body": "Last checked: November 2026.\n\nThese pages are the order of a move. The [resident handbook](/guides/resident-handbook/) is the detail of each registration. Nothing here is a residence permit, a tax assessment or a quote.\n\n- [The first months, in the order the official deadlines actually impose](/guides/relocation/first-90-days/)\n- [Residence routes: EU citizens, third-country visitors, and the investment permit](/guides/relocation/residence-options/)\n- [Cost and tax, with the links to the residency and non-dom guides](/guides/relocation/cost-and-tax/)\n\nA purchase has its own numbers. Use the [transfer-fee](/calculators/transfer-fees/), [VAT](/calculators/vat/) and [mortgage](/calculators/mortgage/) calculators, and the [mortgage comparison](/guides/mortgage-comparison/) if the question is how the September 2026 average sits beside Germany, Greece and Spain.",
+    "faq": [
+      {
+        "q": "Is a yellow slip the same as tax residence?",
+        "a": "No. The registration certificate is an immigration document for a Union citizen. Tax residence is the 60-day rule or the 183-day rule. Both can be true. Neither causes the other."
+      }
+    ],
+    "sources": [
+      {
+        "name": "Gov.cy",
+        "url": "https://www.gov.cy/"
+      },
+      {
+        "name": "Tax residency and domicile, Tax Department",
+        "url": "https://www.gov.cy/mof-tax/en/documents/tax-residency-domicility/"
+      }
+    ]
+  },
+  "el": {
+    "title": "Μετακόμιση στην Κύπρο",
+    "description": "Ένα σύντομο σύνολο οδηγών για την ίδια τη μετακόμιση: οι πρώτοι μήνες, οι οδοί διαμονής, και τα φορολογικά ερωτήματα που δεν είναι το ίδιο με μια κάρτα διαμονής.",
+    "body": "Τελευταίος έλεγχος: Νοέμβριος 2026.\n\nΑυτές οι σελίδες είναι η σειρά μιας μετακόμισης. Το [εγχειρίδιο κατοίκου](/el/guides/resident-handbook/) είναι η λεπτομέρεια κάθε εγγραφής. Τίποτα εδώ δεν είναι άδεια διαμονής, φορολογική βεβαίωση ή προσφορά.\n\n- [Οι πρώτοι μήνες, στη σειρά που επιβάλλουν πράγματι οι επίσημες προθεσμίες](/el/guides/relocation/first-90-days/)\n- [Οδοί διαμονής: πολίτες ΕΕ, επισκέπτες τρίτων χωρών, και η άδεια μέσω επένδυσης](/el/guides/relocation/residence-options/)\n- [Κόστος και φόρος, με τους συνδέσμους προς τους οδηγούς κατοικίας και non-dom](/el/guides/relocation/cost-and-tax/)\n\nΜια αγορά έχει δικούς της αριθμούς. Χρησιμοποιήστε τους υπολογιστές [τελών μεταβίβασης](/el/calculators/transfer-fees/), [ΦΠΑ](/el/calculators/vat/) και [στεγαστικού](/el/calculators/mortgage/), και τη [σύγκριση στεγαστικού](/el/guides/mortgage-comparison/) αν το ερώτημα είναι πού κάθεται ο μέσος του Σεπτεμβρίου 2026 δίπλα σε Γερμανία, Ελλάδα και Ισπανία.",
+    "faq": [
+      {
+        "q": "Το κίτρινο δελτίο είναι το ίδιο με τη φορολογική κατοικία;",
+        "a": "Όχι. Το πιστοποιητικό εγγραφής είναι μεταναστευτικό έγγραφο πολίτη της Ένωσης. Η φορολογική κατοικία είναι ο κανόνας των 60 ή των 183 ημερών. Και τα δύο μπορούν να ισχύουν. Το ένα δεν προκαλεί το άλλο."
+      }
+    ],
+    "sources": [
+      {
+        "name": "Gov.cy",
+        "url": "https://www.gov.cy/"
+      },
+      {
+        "name": "Φορολογική κατοικία και domicile, Τμήμα Φορολογίας",
+        "url": "https://www.gov.cy/mof-tax/en/documents/tax-residency-domicility/"
+      }
+    ]
+  }
+}

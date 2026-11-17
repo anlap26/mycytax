@@ -1,0 +1,103 @@
+{
+  "slug": "resident-handbook/gesy",
+  "seq": 14,
+  "ru": {
+    "title": "Как зарегистрироваться в ГЕСИ и выбрать личного врача",
+    "description": "Организация медицинского страхования говорит, что помощь по ГЕСИ требует двух записей: в реестре бенефициаров и в списке личного врача.",
+    "body": "Проверено: ноябрь 2026 года.\n\n## Короткий ответ\n\nГЕСИ, всеобщую систему здравоохранения, ведёт Организация медицинского страхования. Организация говорит, что доступ к её услугам — это две вещи. Вы встаёте в реестр бенефициаров и записываетесь в список личного врача. Один только первый шаг в список врача не ставит.\n\nЧтобы встать на учёт, вы уже должны быть в Гражданском реестре или в реестре Департамента миграции и/или в Службах социального страхования. Организация может запросить дополнительные доказательства по Закону о ГЕСИ 2017 года. Для лица, которое не является гражданином Кипра, заявление в ГЕСИ требует регистрации в Департаменте записи актов гражданского состояния и миграции и действующего разрешения на проживание, кроме узких категорий бумажной формы, которые Организация перечисляет.\n\nСтавку взноса эта страница не называет. Страница записи описывает регистрацию. Проценты она не раскладывает. Страница Налогового департамента об аренде, которой этот сайт уже пользуется, называет взнос ГЕСИ 2,65 процента валовой аренды для собственника-физического лица. У других категорий свои ставки. Читайте текущую таблицу Организации, а не цифру по памяти. [Калькулятор аренды](/ru/calculators/rental-yield/) применяет 2,65 процента и говорит, чего он не моделирует.\n\n## Шаги\n\n1. Создайте учётную запись на сайте Организации и активируйте её. Создание — не активация. Экран регистрации бенефициара — на [странице регистрации ГЕСИ](https://registration.gesy.org.cy/registration?lang=en).\n2. Войдите на портал бенефициара и завершите запись. Вы заполняете поля, которые находят вас в Гражданском реестре, реестре миграции или записях социального страхования, плюс адрес и телефон.\n3. Если система вас не находит, она просит онлайн-заявление, которое вы печатаете и отправляете почтой в Организацию вместе с названными свидетельствами. Пока бумаги не пришли, этот путь не закончен.\n4. Если интернета нет, вас может записать человек с учётной записью портала, с вашего согласия. Или вы идёте к личному врачу, который может заполнить заявление бенефициара. На том же визите врач может внести вас в свой список: это второй шаг.\n5. Выберите личного врача, у которого договор с Организацией. Ищите на сайте Организации, на портале бенефициара или в печатных справочниках, которые Организация говорит, что предоставляет.\n6. Запишитесь в список этого врача онлайн-запросом или визитом. Если врач принимает онлайн-запрос, вам сообщают почтой или на портале, и визит всё равно нужен. На визите врач подтверждает данные, и вы оба подписываете форму взаимного согласия, которую врач отправляет в Организацию.\n\nБумажная форма есть только для категорий, которые называет Организация: отдельные лица, освобождённые от миграционных формальностей, включая держателей S1, которые являются дипломатами или персоналом посольств и их семьями в посольствах ЕС, лиц со статусом «Native» и домашний персонал посольств, а также два случая исправления данных, где разрешение на проживание есть, но портал не принимает имя или гражданство. Все остальные идут через портал. Бумажная форма — не общая замена.\n\n## Какой врач\n\nБенефициары до 15 лет записываются к личному врачу для детей. С 15 до 18 лет — либо к детскому, либо к взрослому. Старше 18 — к врачу для взрослых. Старше 65 — к врачу для взрослых или к гериатру.\n\nБенефициар старше 2 лет может сменить личного врача, когда со записи в этот список прошло шесть месяцев. До 2 лет ребёнка можно сменить, когда захотят родители.\n\n## Документы\n\nОнлайн-запись пользуется данными, которые находят вас в реестре, который Организация уже держит, поэтому практические документы — те, что сначала ставят вас в этот реестр: [жёлтый или розовый слип](/ru/guides/resident-handbook/residence-registration/) или другое действующее разрешение на проживание для лица не кипрского гражданства и, если путь через работу, [запись социального страхования](/ru/guides/resident-handbook/social-insurance/). Если портал просит выслать свидетельства, экран их называет. Частного списка эта страница не добавляет.\n\n## Чем регистрация не является\n\nОна не происходит сама в день прилёта. Она не заменяет частную страховку, которую дело о розовом слипе или о правиле 6(2) может требовать, пока вы действительно не внутри ГЕСИ. [Справочник об иммиграционном разрешении](/ru/guides/residence-permit/) говорит, что медицинская страховка продолжается, если семья не в ГЕСИ.",
+    "faq": [
+      {
+        "q": "Достаточно ли записи, чтобы попасть к врачу ГЕСИ?",
+        "a": "Нет. Организация говорит, что вы должны быть в реестре бенефициаров и в списке личного врача. Второй шаг — запрос, который врач принимает, или визит, на котором врач вас добавляет и вы подписываете форму взаимного согласия."
+      },
+      {
+        "q": "Можно ли сменить врача сразу?",
+        "a": "Старше 2 лет — только через шесть месяцев после записи в этот список. До 2 лет — когда захотите. Оба правила принадлежат Организации."
+      },
+      {
+        "q": "Заменяет ли ГЕСИ страховку для розового слипа в первый день?",
+        "a": "Сама по себе нет. Запись зависит от реестров, а для лица не кипрского гражданства — от действующего разрешения на проживание. Пока вы не записаны и не стоите в списке врача, страховка, которую просил Департамент миграции, остаётся вашим покрытием."
+      }
+    ],
+    "sources": [
+      {
+        "name": "Запись бенефициара, Организация медицинского страхования",
+        "url": "https://www.gesy.org.cy/sites/Sites?d=Desktop&locale=en_US&lookuphost=%2Fen-us%2F&lookuppage=hiobeneficiaryenrollmentpro"
+      },
+      {
+        "name": "Учётная запись регистрации ГЕСИ",
+        "url": "https://registration.gesy.org.cy/registration?lang=en"
+      },
+      {
+        "name": "Главная ГЕСИ, Организация медицинского страхования",
+        "url": "https://www.gesy.org.cy/sites/Sites?d=Desktop&locale=en_US&lookuphost=%2Fen-us%2F&lookuppage=home-en"
+      }
+    ]
+  },
+  "en": {
+    "title": "How to register for GESY and choose a personal doctor",
+    "description": "The Health Insurance Organisation says healthcare under GESY needs two registrations: the beneficiary registry, and a personal doctor’s list.",
+    "body": "Last checked: November 2026.\n\n## Short answer\n\nGESY, the General Healthcare System, is run by the Health Insurance Organisation. The Organisation says that access to its healthcare services needs two things. You enrol in the beneficiary registry, and you register on a personal doctor’s list. Doing only the first does not put you on a doctor’s list.\n\nTo enrol, you must already be in the Civil Registry, or in the Migration Department’s registry, and/or with the Social Insurance Services. The Organisation may ask for further evidence under the GHS Law of 2017. For a person who is not a Cypriot, a GESY enrolment request requires registration with the Civil Registry and Migration Department and a valid residence permit, apart from the narrow paper-form categories the Organisation lists.\n\nThis page does not state a contribution rate. The Organisation’s enrolment page describes the registration. It does not set out the percentages. The Tax Department’s rental page, which this site already uses, states GHS at 2.65 per cent of gross rent for an individual owner. Other categories have their own rates. Read the current HIO table rather than a figure repeated from memory. The [rental calculator](/calculators/rental-yield/) applies the 2.65 per cent figure and says what it does not model.\n\n## Steps\n\n1. Create an account on the HIO website and activate it. Creation is not activation. The beneficiary registration screen is at the [GHS registration page](https://registration.gesy.org.cy/registration?lang=en).\n2. Sign in to the Beneficiary Portal and complete the enrolment. You fill the fields that identify you in the Civil Registry, the Migration registry or the Social Insurance records, plus an address and a telephone number.\n3. If the system cannot match you, it asks for an online registration request, which you print and post to the Health Insurance Organisation with the certificates it names. Until those papers arrive, that route is not finished.\n4. If you have no internet access, a person who already has a portal account may enrol you with your consent. Or you may visit a personal doctor, who can complete the beneficiary application. On that visit the doctor may also put you on the doctor’s list, which is the second step.\n5. Choose a personal doctor who is contracted with the Organisation. Search on the HIO website, in the Beneficiary Portal, or in the printed directories the Organisation says it makes available.\n6. Register on that doctor’s list, either by an online request or by visiting the practice. If the doctor accepts an online request, you are told by email or in the portal, and you still visit. At the visit the doctor confirms your details and you both sign the Form of Mutual Acceptance, which the doctor sends to the Organisation.\n\nA paper enrolment form exists only for the categories the Organisation names: certain people exempt from migration formalities, including S1 holders who are diplomats or embassy staff and their families working in EU embassies, persons with “Native” status, and domestic staff in embassies, and two data-correction cases where a residence permit exists but the portal cannot take the name or the nationality. Everyone else uses the portal route. The paper form is not a general alternative.\n\n## Which doctor\n\nBeneficiaries under 15 register with a personal doctor for children. From age 15 until 18, either a children’s doctor or an adult doctor. Over 18, an adult doctor. Over 65, an adult doctor or a doctor specialised in geriatrics.\n\nA beneficiary over the age of 2 may change personal doctor once six months have passed since registration on that list. Up to the age of 2, the child may change whenever the parents wish.\n\n## Documents\n\nOnline enrolment uses the data that identify you in a registry the Organisation already holds, so the practical documents are the ones that put you in that registry first: a [yellow slip or pink slip](/guides/resident-handbook/residence-registration/) or another valid residence permit for a non-Cypriot, and, where the route is employment, the [social insurance record](/guides/resident-handbook/social-insurance/). If the portal asks you to post certificates, the screen names them. This page does not add a private list.\n\n## What registration is not\n\nIt is not automatic on the day you land. It is not a substitute for the private insurance a pink-slip or Regulation 6(2) file may still require until you are actually inside GESY. The [immigration-permit guide](/guides/residence-permit/) says health insurance continues if the family is not in GESY.",
+    "faq": [
+      {
+        "q": "Is enrolment enough to see a GESY doctor?",
+        "a": "No. The Organisation says you must be in the beneficiary registry and on a personal doctor’s list. The second step is a request the doctor accepts, or a visit at which the doctor adds you and you sign the Form of Mutual Acceptance."
+      },
+      {
+        "q": "Can I change doctor immediately?",
+        "a": "Over the age of 2, only after six months from registration on that list. Up to the age of 2, whenever you wish. Both rules are the Organisation’s."
+      },
+      {
+        "q": "Does GESY replace a pink-slip insurance policy on day one?",
+        "a": "Not by itself. Enrolment depends on the registries, and for a non-Cypriot on a valid residence permit. Until you are enrolled and on a doctor’s list, the insurance the Migration Department asked for is still the cover you hold."
+      }
+    ],
+    "sources": [
+      {
+        "name": "Beneficiary enrolment, Health Insurance Organisation",
+        "url": "https://www.gesy.org.cy/sites/Sites?d=Desktop&locale=en_US&lookuphost=%2Fen-us%2F&lookuppage=hiobeneficiaryenrollmentpro"
+      },
+      {
+        "name": "GHS registration account",
+        "url": "https://registration.gesy.org.cy/registration?lang=en"
+      },
+      {
+        "name": "GESY home, Health Insurance Organisation",
+        "url": "https://www.gesy.org.cy/sites/Sites?d=Desktop&locale=en_US&lookuphost=%2Fen-us%2F&lookuppage=home-en"
+      }
+    ]
+  },
+  "el": {
+    "title": "Πώς εγγράφεστε στη ΓεΣΥ και επιλέγετε προσωπικό ιατρό",
+    "description": "Ο Οργανισμός Ασφάλισης Υγείας λέει ότι η φροντίδα στη ΓεΣΥ χρειάζεται δύο εγγραφές: στο μητρώο δικαιούχων και στον κατάλογο προσωπικού ιατρού.",
+    "body": "Τελευταίος έλεγχος: Νοέμβριος 2026.\n\n## Σύντομη απάντηση\n\nΤη ΓεΣΥ, το Γενικό Σύστημα Υγείας, τη λειτουργεί ο Οργανισμός Ασφάλισης Υγείας. Ο Οργανισμός λέει ότι η πρόσβαση στις υπηρεσίες του χρειάζεται δύο πράγματα. Εγγράφεστε στο μητρώο δικαιούχων και εγγράφεστε στον κατάλογο προσωπικού ιατρού. Μόνο το πρώτο δεν σας βάζει σε κατάλογο ιατρού.\n\nΓια να εγγραφείτε, πρέπει ήδη να είστε στο Αρχείο Πληθυσμού, ή στο μητρώο του Τμήματος Μετανάστευσης, και/ή στις Υπηρεσίες Κοινωνικών Ασφαλίσεων. Ο Οργανισμός μπορεί να ζητήσει περαιτέρω αποδεικτικά κατά τον περί ΓεΣΥ Νόμο του 2017. Για πρόσωπο που δεν είναι Κύπριος, αίτηση εγγραφής στη ΓεΣΥ απαιτεί εγγραφή στο Τμήμα Αρχείου Πληθυσμού και Μετανάστευσης και έγκυρη άδεια διαμονής, εκτός από τις στενές κατηγορίες έντυπης αίτησης που απαριθμεί ο Οργανισμός.\n\nΑυτή η σελίδα δεν αναφέρει ποσοστό εισφοράς. Η σελίδα εγγραφής περιγράφει την εγγραφή. Δεν εκθέτει τα ποσοστά. Η σελίδα του Τμήματος Φορολογίας για το ενοίκιο, την οποία αυτός ο ιστότοπος ήδη χρησιμοποιεί, αναφέρει εισφορά ΓεΣΥ 2,65 τοις εκατό στο ακαθάριστο ενοίκιο για ιδιοκτήτη φυσικό πρόσωπο. Άλλες κατηγορίες έχουν δικούς τους συντελεστές. Διαβάστε τον τρέχοντα πίνακα του Οργανισμού, όχι ένα νούμερο από μνήμης. Ο [υπολογιστής ενοικίου](/el/calculators/rental-yield/) εφαρμόζει το 2,65 τοις εκατό και λέει τι δεν μοντελοποιεί.\n\n## Βήματα\n\n1. Δημιουργήστε λογαριασμό στον ιστότοπο του Οργανισμού και ενεργοποιήστε τον. Η δημιουργία δεν είναι ενεργοποίηση. Η οθόνη εγγραφής δικαιούχου είναι στη [σελίδα εγγραφής ΓεΣΥ](https://registration.gesy.org.cy/registration?lang=en).\n2. Συνδεθείτε στην Πύλη Δικαιούχου και ολοκληρώστε την εγγραφή. Συμπληρώνετε τα πεδία που σας ταυτοποιούν στο Αρχείο Πληθυσμού, στο μητρώο μετανάστευσης ή στα αρχεία κοινωνικών ασφαλίσεων, συν διεύθυνση και τηλέφωνο.\n3. Αν το σύστημα δεν σας ταιριάξει, ζητά ηλεκτρονικό αίτημα εγγραφής, που εκτυπώνετε και ταχυδρομείτε στον Οργανισμό με τα πιστοποιητικά που κατονομάζει. Μέχρι να φτάσουν τα χαρτιά, αυτή η οδός δεν έχει τελειώσει.\n4. Αν δεν έχετε διαδίκτυο, πρόσωπο που έχει ήδη λογαριασμό πύλης μπορεί να σας εγγράψει με τη συγκατάθεσή σας. Ή επισκέπτεστε προσωπικό ιατρό, που μπορεί να συμπληρώσει την αίτηση δικαιούχου. Στην ίδια επίσκεψη ο ιατρός μπορεί να σας βάλει και στον κατάλογό του, που είναι το δεύτερο βήμα.\n5. Επιλέξτε προσωπικό ιατρό συμβεβλημένο με τον Οργανισμό. Αναζητήστε στον ιστότοπο του Οργανισμού, στην Πύλη Δικαιούχου, ή στους έντυπους καταλόγους που ο Οργανισμός λέει ότι διαθέτει.\n6. Εγγραφείτε στον κατάλογο αυτού του ιατρού, είτε με ηλεκτρονικό αίτημα είτε με επίσκεψη. Αν ο ιατρός αποδεχθεί ηλεκτρονικό αίτημα, ενημερώνεστε με email ή στην πύλη, και επισκέπτεστε και πάλι. Στην επίσκεψη ο ιατρός επιβεβαιώνει τα στοιχεία και υπογράφετε και οι δύο το Έντυπο Αμοιβαίας Αποδοχής, που ο ιατρός στέλνει στον Οργανισμό.\n\nΈντυπη αίτηση υπάρχει μόνο για τις κατηγορίες που κατονομάζει ο Οργανισμός: ορισμένα πρόσωπα απαλλασσόμενα από μεταναστευτικές διατυπώσεις, μεταξύ άλλων κάτοχοι S1 που είναι διπλωμάτες ή προσωπικό πρεσβειών και οι οικογένειές τους σε πρεσβείες της ΕΕ, πρόσωπα με καθεστώς «Native», και οικιακό προσωπικό πρεσβειών, και δύο περιπτώσεις διόρθωσης στοιχείων όπου υπάρχει άδεια διαμονής αλλά η πύλη δεν δέχεται το όνομα ή την ιθαγένεια. Όλοι οι άλλοι χρησιμοποιούν την πύλη. Το έντυπο δεν είναι γενική εναλλακτική.\n\n## Ποιος ιατρός\n\nΔικαιούχοι κάτω των 15 εγγράφονται σε προσωπικό ιατρό για παιδιά. Από τα 15 έως τα 18, είτε σε ιατρό παιδιών είτε σε ιατρό ενηλίκων. Άνω των 18, σε ιατρό ενηλίκων. Άνω των 65, σε ιατρό ενηλίκων ή σε ιατρό με ειδίκευση στη γηριατρική.\n\nΔικαιούχος άνω των 2 ετών μπορεί να αλλάξει προσωπικό ιατρό αφού περάσουν έξι μήνες από την εγγραφή σε εκείνον τον κατάλογο. Έως την ηλικία των 2, το παιδί μπορεί να αλλάξει όποτε το επιθυμούν οι γονείς.\n\n## Έγγραφα\n\nΗ ηλεκτρονική εγγραφή χρησιμοποιεί τα δεδομένα που σας ταυτοποιούν σε μητρώο που ο Οργανισμός ήδη κρατά, άρα τα πρακτικά έγγραφα είναι όσα σας βάζουν πρώτα σε αυτό το μητρώο: [κίτρινο ή ροζ δελτίο](/el/guides/resident-handbook/residence-registration/) ή άλλη έγκυρη άδεια διαμονής για μη Κύπριο, και, όπου η οδός είναι η εργασία, το [αρχείο κοινωνικών ασφαλίσεων](/el/guides/resident-handbook/social-insurance/). Αν η πύλη σας ζητήσει να ταχυδρομήσετε πιστοποιητικά, η οθόνη τα κατονομάζει. Αυτή η σελίδα δεν προσθέτει ιδιωτικό κατάλογο.\n\n## Τι δεν είναι η εγγραφή\n\nΔεν γίνεται αυτόματα την ημέρα που προσγειώνεστε. Δεν υποκαθιστά την ιδιωτική ασφάλιση που ένας φάκελος ροζ δελτίου ή Κανονισμού 6(2) μπορεί ακόμη να απαιτεί μέχρι να είστε πράγματι μέσα στη ΓεΣΥ. Ο [οδηγός άδειας μετανάστευσης](/el/guides/residence-permit/) λέει ότι η ασφάλιση υγείας συνεχίζεται αν η οικογένεια δεν είναι στη ΓεΣΥ.",
+    "faq": [
+      {
+        "q": "Αρκεί η εγγραφή για να δω ιατρό ΓεΣΥ;",
+        "a": "Όχι. Ο Οργανισμός λέει ότι πρέπει να είστε στο μητρώο δικαιούχων και σε κατάλογο προσωπικού ιατρού. Το δεύτερο βήμα είναι αίτημα που αποδέχεται ο ιατρός, ή επίσκεψη στην οποία ο ιατρός σας προσθέτει και υπογράφετε το Έντυπο Αμοιβαίας Αποδοχής."
+      },
+      {
+        "q": "Μπορώ να αλλάξω ιατρό αμέσως;",
+        "a": "Άνω των 2 ετών, μόνο αφού περάσουν έξι μήνες από την εγγραφή σε εκείνον τον κατάλογο. Έως την ηλικία των 2, όποτε θέλετε. Και οι δύο κανόνες είναι του Οργανισμού."
+      },
+      {
+        "q": "Η ΓεΣΥ αντικαθιστά την ασφάλιση του ροζ δελτίου την πρώτη ημέρα;",
+        "a": "Όχι από μόνη της. Η εγγραφή εξαρτάται από τα μητρώα, και για μη Κύπριο από έγκυρη άδεια διαμονής. Μέχρι να εγγραφείτε και να είστε σε κατάλογο ιατρού, η ασφάλιση που ζήτησε το Τμήμα Μετανάστευσης παραμένει η κάλυψή σας."
+      }
+    ],
+    "sources": [
+      {
+        "name": "Εγγραφή δικαιούχου, Οργανισμός Ασφάλισης Υγείας",
+        "url": "https://www.gesy.org.cy/sites/Sites?d=Desktop&locale=en_US&lookuphost=%2Fen-us%2F&lookuppage=hiobeneficiaryenrollmentpro"
+      },
+      {
+        "name": "Λογαριασμός εγγραφής ΓεΣΥ",
+        "url": "https://registration.gesy.org.cy/registration?lang=en"
+      },
+      {
+        "name": "Αρχική ΓεΣΥ, Οργανισμός Ασφάλισης Υγείας",
+        "url": "https://www.gesy.org.cy/sites/Sites?d=Desktop&locale=en_US&lookuphost=%2Fen-us%2F&lookuppage=home-en"
+      }
+    ]
+  }
+}

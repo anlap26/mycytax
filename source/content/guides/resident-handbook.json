@@ -1,0 +1,91 @@
+{
+  "slug": "resident-handbook",
+  "seq": 11,
+  "ru": {
+    "title": "Справочник резидента Кипра",
+    "description": "Вопросы после переезда: налоговый номер, жёлтый и розовый слип, ГЕСИ, декларация о доходах и остальные регистрации.",
+    "body": "Проверено: ноябрь 2026 года.\n\nЭтот справочник отвечает на практические вопросы, которые появляются после решения жить на Кипре. На каждой странице сначала короткий ответ, затем шаги и документы так, как их описывает сам орган, и ссылка на его страницу. Если официальный источник не публикует сбор, срок или время рассмотрения, справочник так и говорит. Типичную цифру на пустое место он не ставит.\n\n## Вопросы и ответы\n\n- [Как получить налоговый идентификационный код, в том числе через Tax For All](/ru/guides/resident-handbook/tic/)\n- [Жёлтый слип (MEU1) и розовый слип: что это и как подавать](/ru/guides/resident-handbook/residence-registration/)\n- [Как зарегистрироваться в ГЕСИ и выбрать личного врача](/ru/guides/resident-handbook/gesy/)\n- [Кто подаёт декларацию о доходах и в какой срок](/ru/guides/resident-handbook/income-tax-return/)\n- [Как выдают номер социального страхования](/ru/guides/resident-handbook/social-insurance/)\n- [Банковский счёт и базовый платёжный счёт](/ru/guides/resident-handbook/bank-account/)\n- [Обмен иностранного водительского удостоверения](/ru/guides/resident-handbook/driving-licence/)\n- [Регистрация автомобиля](/ru/guides/resident-handbook/register-a-car/)\n- [Электричество и вода](/ru/guides/resident-handbook/utilities/)\n\n## Как это стыкуется с другими справочниками\n\nСвидетельство о регистрации — не налоговое резидентство. [Правила 60 и 183 дней](/ru/guides/tax-residency/) — другая проверка, а [статус non-dom](/ru/guides/non-dom/) — ещё одна. Иммиграционное разрешение по [правилу 6(2)](/ru/guides/residence-permit/) — не жёлтый слип и не розовый. [Справочники о переезде](/ru/guides/relocation/) складывают первые месяцы в один порядок.\n\n## Калькуляторы\n\nЦифры, которые относятся к покупке, а не к регистрации, лежат в калькуляторах: [сборы за переоформление](/ru/calculators/transfer-fees/), [НДС](/ru/calculators/vat/), [гербовый сбор](/ru/calculators/stamp-duty/), [арендный доход](/ru/calculators/rental-yield/) и [ипотечный платёж](/ru/calculators/mortgage/). [Сравнение ипотеки](/ru/guides/mortgage-comparison/) ставит среднюю ставку Европейского центрального банка за сентябрь 2026 года по новым жилищным кредитам рядом с Германией, Грецией и Испанией.",
+    "faq": [
+      {
+        "q": "Нужны ли все страницы?",
+        "a": "Нет. Гражданин ЕС, который будет работать, начинает с жёлтого слипа, налогового номера и, когда есть работа или регистрация самозанятого, с социального страхования. Посетитель из третьей страны, который работать не будет, начинает с розового слипа. Социальное страхование — для тех, кто занят оплачиваемой деятельностью, а не для каждого, кто приехал. Читайте страницу под свой вопрос."
+      },
+      {
+        "q": "Это налоговая или иммиграционная консультация?",
+        "a": "Нет. Шаги взяты с официальных страниц, на которые есть ссылки. Это общая информация. Правила меняются, и дело может выйти за обычный случай. Прежде чем опираться на результат, сверьтесь с источником и получите консультацию по своим фактам."
+      }
+    ],
+    "sources": [
+      {
+        "name": "Gov.cy",
+        "url": "https://www.gov.cy/"
+      },
+      {
+        "name": "Tax For All, Налоговый департамент",
+        "url": "https://taxforall.mof.gov.cy/"
+      },
+      {
+        "name": "ГЕСИ, Организация медицинского страхования",
+        "url": "https://www.gesy.org.cy/sites/Sites?d=Desktop&locale=en_US&lookuphost=%2Fen-us%2F&lookuppage=home-en"
+      }
+    ]
+  },
+  "en": {
+    "title": "Cyprus resident handbook",
+    "description": "Questions people ask after moving: the tax number, the yellow slip and the pink slip, GESY, the income-tax return, and the other registrations that follow.",
+    "body": "Last checked: November 2026.\n\nThis handbook answers the practical questions that come after a decision to live in Cyprus. Each page gives the short answer first, then the steps and the documents the authority itself describes, and it links that page. Where an official source does not publish a fee, a deadline or a processing time, the handbook says so. It does not fill the gap with a typical figure.\n\n## Questions and answers\n\n- [How to get a tax identification code, including through Tax For All](/guides/resident-handbook/tic/)\n- [Yellow slip (MEU1) and pink slip: what they are and how to apply](/guides/resident-handbook/residence-registration/)\n- [How to register for GESY and choose a personal doctor](/guides/resident-handbook/gesy/)\n- [Who files a personal income-tax return, and by when](/guides/resident-handbook/income-tax-return/)\n- [How a social insurance number is issued](/guides/resident-handbook/social-insurance/)\n- [Opening a bank account, and the basic payment account](/guides/resident-handbook/bank-account/)\n- [Exchanging a foreign driving licence](/guides/resident-handbook/driving-licence/)\n- [Registering a car](/guides/resident-handbook/register-a-car/)\n- [Electricity and water](/guides/resident-handbook/utilities/)\n\n## Where this sits next to the other guides\n\nA registration certificate is not tax residence. The [60-day and 183-day rules](/guides/tax-residency/) are a different test, and [non-dom status](/guides/non-dom/) is a further one. An immigration permit under [Regulation 6(2)](/guides/residence-permit/) is not a yellow slip and not a pink slip. The [relocation guides](/guides/relocation/) put the first months in one order.\n\n## Calculators\n\nThe numbers that belong to a purchase, rather than to a registration, are in the calculators: [transfer fees](/calculators/transfer-fees/), [VAT](/calculators/vat/), [stamp duty](/calculators/stamp-duty/), [rental income](/calculators/rental-yield/) and a [mortgage payment](/calculators/mortgage/). The [mortgage comparison](/guides/mortgage-comparison/) places the European Central Bank’s September 2026 average for new housing loans beside Germany, Greece and Spain.",
+    "faq": [
+      {
+        "q": "Do I need every page?",
+        "a": "No. An EU citizen who will work starts with the yellow slip, the tax number and, once there is a job or a self-employed registration, social insurance. A third-country visitor who will not work starts with the pink slip. Social insurance is for people who are gainfully occupied, not for everyone who arrives. Read the page that matches the question."
+      },
+      {
+        "q": "Is the handbook tax or immigration advice?",
+        "a": "No. The steps are taken from the official pages linked on each article. They are general information. Rules change, and a file can fall outside the ordinary case. Check the linked source, and take advice on your own facts, before you rely on a result."
+      }
+    ],
+    "sources": [
+      {
+        "name": "Gov.cy",
+        "url": "https://www.gov.cy/"
+      },
+      {
+        "name": "Tax For All, Tax Department",
+        "url": "https://taxforall.mof.gov.cy/"
+      },
+      {
+        "name": "GESY, Health Insurance Organisation",
+        "url": "https://www.gesy.org.cy/sites/Sites?d=Desktop&locale=en_US&lookuphost=%2Fen-us%2F&lookuppage=home-en"
+      }
+    ]
+  },
+  "el": {
+    "title": "Εγχειρίδιο κατοίκου Κύπρου",
+    "description": "Ερωτήσεις μετά τη μετακόμιση: ο φορολογικός αριθμός, το κίτρινο και το ροζ δελτίο, η ΓεΣΥ, η δήλωση εισοδήματος και οι υπόλοιπες εγγραφές.",
+    "body": "Τελευταίος έλεγχος: Νοέμβριος 2026.\n\nΑυτό το εγχειρίδιο απαντά στις πρακτικές ερωτήσεις που έρχονται αφού αποφασίσετε να ζήσετε στην Κύπρο. Κάθε σελίδα δίνει πρώτα τη σύντομη απάντηση, έπειτα τα βήματα και τα έγγραφα όπως τα περιγράφει η ίδια η αρχή, και συνδέει εκείνη τη σελίδα. Όπου μια επίσημη πηγή δεν δημοσιεύει τέλος, προθεσμία ή χρόνο εξέτασης, το εγχειρίδιο το λέει. Δεν συμπληρώνει το κενό με ένα τυπικό ποσό.\n\n## Ερωτήσεις και απαντήσεις\n\n- [Πώς αποκτάτε φορολογικό αριθμό, και μέσω του Tax For All](/el/guides/resident-handbook/tic/)\n- [Κίτρινο δελτίο (MEU1) και ροζ δελτίο: τι είναι και πώς υποβάλλεται η αίτηση](/el/guides/resident-handbook/residence-registration/)\n- [Πώς εγγράφεστε στη ΓεΣΥ και επιλέγετε προσωπικό ιατρό](/el/guides/resident-handbook/gesy/)\n- [Ποιοι υποβάλλουν δήλωση φόρου εισοδήματος, και έως πότε](/el/guides/resident-handbook/income-tax-return/)\n- [Πώς εκδίδεται αριθμός κοινωνικών ασφαλίσεων](/el/guides/resident-handbook/social-insurance/)\n- [Τραπεζικός λογαριασμός και λογαριασμός πληρωμών με βασικά χαρακτηριστικά](/el/guides/resident-handbook/bank-account/)\n- [Ανταλλαγή ξένης άδειας οδήγησης](/el/guides/resident-handbook/driving-licence/)\n- [Εγγραφή αυτοκινήτου](/el/guides/resident-handbook/register-a-car/)\n- [Ηλεκτρισμός και νερό](/el/guides/resident-handbook/utilities/)\n\n## Πού στέκεται αυτό δίπλα στους άλλους οδηγούς\n\nΤο πιστοποιητικό εγγραφής δεν είναι φορολογική κατοικία. Οι [κανόνες των 60 και των 183 ημερών](/el/guides/tax-residency/) είναι άλλος έλεγχος, και το [καθεστώς non-dom](/el/guides/non-dom/) είναι ακόμη ένας. Άδεια μετανάστευσης κατά τον [Κανονισμό 6(2)](/el/guides/residence-permit/) δεν είναι κίτρινο δελτίο ούτε ροζ. Οι [οδηγοί μετεγκατάστασης](/el/guides/relocation/) βάζουν τους πρώτους μήνες σε μία σειρά.\n\n## Υπολογιστές\n\nΟι αριθμοί που ανήκουν σε αγορά, και όχι σε εγγραφή, είναι στους υπολογιστές: [τέλη μεταβίβασης](/el/calculators/transfer-fees/), [ΦΠΑ](/el/calculators/vat/), [χαρτόσημο](/el/calculators/stamp-duty/), [εισόδημα από ενοίκιο](/el/calculators/rental-yield/) και [δόση στεγαστικού](/el/calculators/mortgage/). Η [σύγκριση στεγαστικού](/el/guides/mortgage-comparison/) τοποθετεί τον μέσο όρο της Ευρωπαϊκής Κεντρικής Τράπεζας για τον Σεπτέμβριο 2026 στα νέα στεγαστικά δάνεια δίπλα σε Γερμανία, Ελλάδα και Ισπανία.",
+    "faq": [
+      {
+        "q": "Χρειάζομαι κάθε σελίδα;",
+        "a": "Όχι. Πολίτης της ΕΕ που θα εργαστεί αρχίζει από το κίτρινο δελτίο, τον φορολογικό αριθμό και, όταν υπάρχει εργασία ή εγγραφή αυτοεργοδοτούμενου, τις κοινωνικές ασφαλίσεις. Επισκέπτης από τρίτη χώρα που δεν θα εργαστεί αρχίζει από το ροζ δελτίο. Οι κοινωνικές ασφαλίσεις είναι για όσους ασκούν κερδοφόρα απασχόληση, όχι για όποιον φτάνει. Διαβάστε τη σελίδα που ταιριάζει στην ερώτηση."
+      },
+      {
+        "q": "Είναι το εγχειρίδιο φορολογική ή μεταναστευτική συμβουλή;",
+        "a": "Όχι. Τα βήματα προέρχονται από τις επίσημες σελίδες που συνδέονται. Είναι γενική πληροφόρηση. Οι κανόνες αλλάζουν, και ένας φάκελος μπορεί να ξεφεύγει από τη συνηθισμένη περίπτωση. Ελέγξτε τη συνδεδεμένη πηγή και ζητήστε συμβουλή για τα δικά σας γεγονότα πριν βασιστείτε σε αποτέλεσμα."
+      }
+    ],
+    "sources": [
+      {
+        "name": "Gov.cy",
+        "url": "https://www.gov.cy/"
+      },
+      {
+        "name": "Tax For All, Τμήμα Φορολογίας",
+        "url": "https://taxforall.mof.gov.cy/"
+      },
+      {
+        "name": "ΓεΣΥ, Οργανισμός Ασφάλισης Υγείας",
+        "url": "https://www.gesy.org.cy/sites/Sites?d=Desktop&locale=en_US&lookuphost=%2Fen-us%2F&lookuppage=home-en"
+      }
+    ]
+  }
+}

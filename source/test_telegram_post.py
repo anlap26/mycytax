@@ -185,6 +185,16 @@ class LoadTests(unittest.TestCase):
         self.assertTrue(guides["kept-slug"].en_ready)
         self.assertFalse(guides["partial-en"].en_ready)
 
+    def test_nested_guide_slug_is_kept(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            self.write(tmp, "child.json", {
+                "slug": "resident-handbook/tic",
+                "ru": {"title": "Код", "description": "Коротко"},
+            })
+            guides = {item.slug: item for item in tg.load_guides(tmp)}
+        self.assertIn("resident-handbook/tic", guides)
+        self.assertEqual(build.guide_address("resident-handbook/tic", "child", "Код"), "resident-handbook/tic")
+
     def test_rejects_bad_guide_and_duplicate_slug(self):
         with tempfile.TemporaryDirectory() as tmp:
             path = self.write(tmp, "bad.json", {"ru": {"title": "Только заголовок"}})
@@ -245,7 +255,7 @@ class ExecuteTests(unittest.TestCase):
         channels = {"ru": channel, "en": channel_en}
         if http_get is None:
             def http_get(url):
-                slug = url.rstrip("/").split("/")[-1]
+                slug = url.split("/guides/", 1)[1].strip("/")
                 match = next(item for item in guides if item.slug == slug)
                 russian = "/ru/guides/" in url
                 title = match.title if russian else (match.en_title or match.title)
@@ -268,9 +278,11 @@ class ExecuteTests(unittest.TestCase):
         guides = tg.load_guides(GUIDES)
         state = tg.load_state(STATE)
         before = json.loads(tg.serialize(state))
+        seeded = [item for item in guides if item.slug in state.get("posted", {})]
+        self.assertTrue(seeded)
         sent = []
         logs, saves, code = self.run_execute(
-            guides, state,
+            seeded, state,
             send=lambda payload: sent.append(payload) or (True, "1"),
         )
         self.assertEqual(code, 0)
@@ -278,7 +290,7 @@ class ExecuteTests(unittest.TestCase):
         self.assertEqual(saves, [])
         self.assertIn("Nothing new to post.", "\n".join(logs))
         self.assertEqual(json.loads(tg.serialize(state)), before)
-        self.assertEqual(tg.plan(guides, state), [])
+        self.assertEqual(tg.plan(seeded, state), [])
 
     def test_posts_text_once_with_preview_enabled(self):
         sent = []
