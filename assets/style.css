@@ -78,6 +78,20 @@ a.tg-nav:hover{background:#1b86b8;color:#fff}
 .tg-mark{width:18px;height:18px;display:block;flex:none}
 footer a.tg-foot{display:inline-flex;align-items:center;gap:6px}
 footer a.tg-foot .tg-mark{width:16px;height:16px}
+a.ig-nav{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:999px;background:#c13584;color:#fff;flex:none}
+a.ig-nav:hover{background:#a02b6e;color:#fff}
+.ig-mark{width:18px;height:18px;display:block;flex:none}
+footer a.ig-foot{display:inline-flex;align-items:center;gap:6px}
+footer a.ig-foot .ig-mark{width:16px;height:16px}
+.cookie-banner{position:fixed;z-index:20;left:16px;right:16px;bottom:16px;margin:0 auto;max-width:1080px;background:var(--card);color:var(--ink);border:1px solid var(--line);border-top:4px solid var(--copper);border-radius:16px;box-shadow:0 12px 32px rgba(30,61,52,.18);padding:14px 16px;display:flex;flex-wrap:wrap;gap:12px 16px;align-items:center}
+.cookie-banner[hidden]{display:none}
+.cookie-banner p{margin:0;flex:1 1 280px;font-size:15px}
+.cookie-actions{display:flex;gap:8px;flex-wrap:wrap}
+.cookie-banner button{font:inherit;font-weight:700;border-radius:999px;padding:8px 16px;cursor:pointer}
+.cookie-banner button.accept{background:var(--pine);color:#fff;border:0}
+.cookie-banner button.reject{background:#fff;color:var(--pine);border:2px solid var(--pine)}
+.cookie-banner button.accept:hover{background:var(--copper)}
+.cookie-banner button.reject:hover{background:var(--pine);color:#fff}
 .tg-cta{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--pine2);border-radius:16px;padding:18px 18px 16px;margin:22px 0;max-width:720px}
 .tg-cta h2{font-family:Georgia,Palatino,serif;font-size:26px;line-height:1.2;margin:0 0 12px}
 .tg-cta h2 a{display:inline-flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none}

@@ -6,7 +6,7 @@
 The custom domain is mycytax.com. BASE is the origin with no trailing slash.
 The path inside BASE becomes the link prefix. No trailing slash.
 """
-import datetime, html, json, os, re, shutil, urllib.request
+import datetime, html, json, os, re, shutil, subprocess, urllib.request
 import xml.etree.ElementTree as ET
 from urllib.parse import urlparse
 
@@ -34,7 +34,33 @@ CYNEWS_HEADLINES = {lang: None for lang in ("en", "ru", "el")}
 _MISSING = object()
 TG_RU = "https://t.me/mycytax"
 TG_EN = "https://t.me/mycytaxen"
+IG = "https://www.instagram.com/mycytax/"
 LANGS = ["en", "ru", "el"]
+# Empty strings stay empty. The meta tag and the gtag snippet are omitted until a real value is set.
+# indexnow_key is the public IndexNow key: the build writes /<key>.txt containing the key.
+def _load_site_config():
+    path = os.path.join(HERE, "site.json")
+    with open(path, encoding="utf8") as f:
+        data = json.load(f)
+    if not isinstance(data, dict):
+        raise SystemExit(f"{path}: expected an object")
+    def pick(key):
+        value = data.get(key, "")
+        if value is None:
+            return ""
+        return str(value).strip()
+    key = pick("indexnow_key").lower()
+    if not re.fullmatch(r"[0-9a-f]{32}", key):
+        raise SystemExit(f"{path}: indexnow_key must be 32 hex characters")
+    ga = pick("ga4_measurement_id")
+    if ga and not re.fullmatch(r"G-[A-Z0-9]+", ga):
+        raise SystemExit(f"{path}: ga4_measurement_id must be empty or look like G-XXXX")
+    return {"bing_msvalidate": pick("bing_msvalidate"), "ga4_measurement_id": ga, "indexnow_key": key}
+
+SITE_CONFIG = _load_site_config()
+BING_MSVALIDATE = SITE_CONFIG["bing_msvalidate"]
+GA4_ID = SITE_CONFIG["ga4_measurement_id"]
+INDEXNOW_KEY = SITE_CONFIG["indexnow_key"]
 # Editable copy lives in source/content/ (one JSON file per guide or page) and is
 # loaded below. Calculator logic and the chrome around it stay in this file.
 CONTENT = os.path.join(HERE, "content")
@@ -58,6 +84,13 @@ UI = {
     tg="Follow us on Telegram",
     tg_other="Russian channel",
     tg_short="Telegram",
+    ig="MyCyTax on Instagram",
+    ig_short="Instagram",
+    feed="MyCyTax guides",
+    cookie_settings="Cookie settings",
+    cookie_accept="Accept",
+    cookie_reject="Reject",
+    cookie_banner="Advertising and analytics cookies stay off until you accept. You can change this later.",
     home_h="Cyprus property and tax calculators",
     home_desc="Transfer fees, VAT, capital gains, rental income and a mortgage payment, plus practical guides.",
     home_intro="Work out the Land Registry fee, VAT, stamp duty, capital gains tax, rental tax and a mortgage payment. Every rate on MyCyTax is tied to a source. The publisher is Anna, in Cyprus.",
@@ -82,6 +115,13 @@ UI = {
     tg="Подписывайтесь на наш Telegram-канал",
     tg_other="Английский канал",
     tg_short="Telegram",
+    ig="MyCyTax в Instagram",
+    ig_short="Instagram",
+    feed="Справочники MyCyTax",
+    cookie_settings="Настройки cookie",
+    cookie_accept="Принять",
+    cookie_reject="Отклонить",
+    cookie_banner="Рекламные и аналитические cookie выключены, пока вы их не примете. Выбор можно изменить позже.",
     home_h="Калькуляторы недвижимости и налогов Кипра",
     home_desc="Сборы кадастра, НДС, прирост капитала, аренда и ипотечный платёж, плюс практические справочники.",
     home_intro="Посчитайте сбор Земельного кадастра, НДС, гербовый сбор, налог на прирост капитала, налог с аренды и ипотечный платёж. Каждая ставка на MyCyTax привязана к источнику. Издатель — Анна, Кипр.",
@@ -106,6 +146,13 @@ UI = {
     tg="Ακολουθήστε μας στο Telegram",
     tg_other="Ρωσικό κανάλι",
     tg_short="Telegram",
+    ig="Το MyCyTax στο Instagram",
+    ig_short="Instagram",
+    feed="Οδηγοί MyCyTax",
+    cookie_settings="Ρυθμίσεις cookies",
+    cookie_accept="Αποδοχή",
+    cookie_reject="Απόρριψη",
+    cookie_banner="Τα cookies διαφήμισης και ανάλυσης μένουν κλειστά μέχρι να τα αποδεχτείτε. Μπορείτε να το αλλάξετε αργότερα.",
     home_h="Υπολογιστές ακινήτων και φόρων Κύπρου",
     home_desc="Τέλη μεταβίβασης, ΦΠΑ, κεφαλαιουχικά κέρδη, ενοίκιο και δόση δανείου, μαζί με πρακτικούς οδηγούς.",
     home_intro="Υπολογίστε το τέλος του Κτηματολογίου, τον ΦΠΑ, το χαρτόσημο, τον φόρο κεφαλαιουχικών κερδών, τον φόρο ενοικίου και τη δόση στεγαστικού. Κάθε συντελεστής στο MyCyTax δένεται με πηγή. Εκδότρια είναι η Άννα, στην Κύπρο.",
@@ -606,6 +653,20 @@ a.tg-nav:hover{background:#1b86b8;color:#fff}
 .tg-mark{width:18px;height:18px;display:block;flex:none}
 footer a.tg-foot{display:inline-flex;align-items:center;gap:6px}
 footer a.tg-foot .tg-mark{width:16px;height:16px}
+a.ig-nav{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:999px;background:#c13584;color:#fff;flex:none}
+a.ig-nav:hover{background:#a02b6e;color:#fff}
+.ig-mark{width:18px;height:18px;display:block;flex:none}
+footer a.ig-foot{display:inline-flex;align-items:center;gap:6px}
+footer a.ig-foot .ig-mark{width:16px;height:16px}
+.cookie-banner{position:fixed;z-index:20;left:16px;right:16px;bottom:16px;margin:0 auto;max-width:1080px;background:var(--card);color:var(--ink);border:1px solid var(--line);border-top:4px solid var(--copper);border-radius:16px;box-shadow:0 12px 32px rgba(30,61,52,.18);padding:14px 16px;display:flex;flex-wrap:wrap;gap:12px 16px;align-items:center}
+.cookie-banner[hidden]{display:none}
+.cookie-banner p{margin:0;flex:1 1 280px;font-size:15px}
+.cookie-actions{display:flex;gap:8px;flex-wrap:wrap}
+.cookie-banner button{font:inherit;font-weight:700;border-radius:999px;padding:8px 16px;cursor:pointer}
+.cookie-banner button.accept{background:var(--pine);color:#fff;border:0}
+.cookie-banner button.reject{background:#fff;color:var(--pine);border:2px solid var(--pine)}
+.cookie-banner button.accept:hover{background:var(--copper)}
+.cookie-banner button.reject:hover{background:var(--pine);color:#fff}
 .tg-cta{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--pine2);border-radius:16px;padding:18px 18px 16px;margin:22px 0;max-width:720px}
 .tg-cta h2{font-family:Georgia,Palatino,serif;font-size:26px;line-height:1.2;margin:0 0 12px}
 .tg-cta h2 a{display:inline-flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none}
@@ -648,6 +709,44 @@ main.bio{width:min(440px,calc(100% - 32px));margin:0 auto;padding:36px 0 12px}
 .bio-links a.bio-contact:hover,.bio-links a.bio-contact:focus-visible{background:#f4efe6;color:var(--pine)}
 '''
 
+def bing_meta():
+    """Bing Webmaster meta. Omitted while source/site.json leaves bing_msvalidate empty."""
+    if not BING_MSVALIDATE:
+        return ""
+    return f'<meta name="msvalidate.01" content="{e(BING_MSVALIDATE)}" />'
+
+def consent_bootstrap():
+    """Consent Mode v2 default, then a stored Accept. Must run before AdSense and gtag.js."""
+    return (
+        "<script>"
+        "window.dataLayer=window.dataLayer||[];"
+        "function gtag(){dataLayer.push(arguments);}"
+        "gtag('consent','default',{"
+        "ad_storage:'denied',"
+        "analytics_storage:'denied',"
+        "ad_user_data:'denied',"
+        "ad_personalization:'denied',"
+        "wait_for_update:500"
+        "});"
+        "(function(){try{if(localStorage.getItem('mycytax-consent')==='granted'){"
+        "gtag('consent','update',{"
+        "ad_storage:'granted',"
+        "analytics_storage:'granted',"
+        "ad_user_data:'granted',"
+        "ad_personalization:'granted'"
+        "});}}catch(e){}})();"
+        "</script>"
+    )
+
+def ga4_snippet():
+    """Load gtag only when a GA4 measurement id is configured. Consent default is already set."""
+    if not GA4_ID:
+        return ""
+    return (
+        f'<script async src="https://www.googletagmanager.com/gtag/js?id={e(GA4_ID)}"></script>'
+        f'<script>gtag("js",new Date());gtag("config","{e(GA4_ID)}");</script>'
+    )
+
 def head(lang, title, desc, path, alt_path, jsonld=None, extra="", robots="index,follow,max-image-preview:large"):
     u = UI[lang]
     alts = []
@@ -659,15 +758,38 @@ def head(lang, title, desc, path, alt_path, jsonld=None, extra="", robots="index
         import json
         for obj in jsonld:
             ld += '<script type="application/ld+json">' + json.dumps(obj, ensure_ascii=False).replace("</", "<\\/") + "</script>"
+    image = absu("/assets/og.png")
+    social = (
+        f'<meta property="og:site_name" content="{e(u["name"])}">'
+        f'<meta property="og:title" content="{e(title)}">'
+        f'<meta property="og:description" content="{e(desc)}">'
+        f'<meta property="og:url" content="{absu(path)}">'
+        f'<meta property="og:type" content="website">'
+        f'<meta property="og:image" content="{image}">'
+        f'<meta property="og:image:width" content="1200">'
+        f'<meta property="og:image:height" content="630">'
+        f'<meta property="og:image:alt" content="{e(u["tagline"])}">'
+        f'<meta name="twitter:card" content="summary_large_image">'
+        f'<meta name="twitter:title" content="{e(title)}">'
+        f'<meta name="twitter:description" content="{e(desc)}">'
+        f'<meta name="twitter:image" content="{image}">'
+    )
+    feed = (
+        f'<link rel="alternate" type="application/atom+xml" title="{e(u["feed"])}" '
+        f'href="{absu(loc(lang, "/feed.xml"))}">'
+    )
+    verify = bing_meta()
+    verify_line = f"\n{verify}" if verify else ""
     return f'''<!doctype html><html lang="{lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="yandex-verification" content="8dc437c1055c8e9b" />
+<meta name="yandex-verification" content="8dc437c1055c8e9b" />{verify_line}
 <title>{e(title)}</title><meta name="description" content="{e(desc)}">
 <link rel="canonical" href="{absu(path)}">
 {chr(10).join(alts)}
 <meta name="robots" content="{robots}">
-<meta property="og:site_name" content="{e(u["name"])}"><meta property="og:title" content="{e(title)}"><meta property="og:description" content="{e(desc)}"><meta property="og:url" content="{absu(path)}"><meta property="og:type" content="website">
+{social}
+{feed}
 <meta name="theme-color" content="#1e3d34">
-<link rel="stylesheet" href="{href("/assets/style.css")}">{ld}{extra}{ADSENSE}</head>'''
+<link rel="stylesheet" href="{href("/assets/style.css")}">{ld}{extra}{consent_bootstrap()}{ga4_snippet()}{ADSENSE}</head>'''
 
 def header(lang, path_for):
     u = UI[lang]
@@ -680,7 +802,7 @@ def header(lang, path_for):
     return f'''<a class="skip" href="#main">{u["home"]}</a><header class="top"><div class="wrap bar">
 <a class="logo" href="{href(loc(lang, "/"))}">{e(u["name"])}<small>{e(u["tagline"])}</small></a>
 <nav class="main" aria-label="{e(u["lang"])}">{item("calcs", loc(lang, "/calculators/"))}{item("guides", loc(lang, "/guides/"))}{item("about", loc(lang, "/about/"))}{item("contact", loc(lang, "/contact/"))}
-{tg_icon_link(lang)}<span class="langs">{langs}</span></nav></div></header>'''
+{tg_icon_link(lang)}{ig_icon_link(lang)}<span class="langs">{langs}</span></nav></div></header>'''
 
 def footer(lang):
     u = UI[lang]
@@ -690,9 +812,48 @@ def footer(lang):
         (loc(lang, "/terms/"), u["terms"]),
     ]
     nav = "".join(f'<a href="{href(path)}">{e(name)}</a>' for path, name in links)
-    return f'''<footer><div class="wrap"><nav class="cols">{nav}{tg_footer_link(lang)}</nav>
+    settings = (
+        f'<a class="cookie-settings" href="{href(loc(lang, "/cookies/"))}" data-cookie-settings>'
+        f'{e(u["cookie_settings"])}</a>'
+    )
+    return f'''<footer><div class="wrap"><nav class="cols">{nav}{tg_footer_link(lang)}{ig_footer_link(lang)}{settings}</nav>
 {projects_line(lang)}
-<p>{e(DISCLAIMER[lang])}</p><p>© 2026 {SITE}. {e(PUBLISHER)}, Cyprus. <a href="mailto:{EMAIL}">{EMAIL}</a></p></div></footer></body></html>'''
+<p>{e(DISCLAIMER[lang])}</p><p>© 2026 {SITE}. {e(PUBLISHER)}, Cyprus. <a href="mailto:{EMAIL}">{EMAIL}</a></p></div></footer>
+{cookie_banner(lang)}</body></html>'''
+
+def cookie_banner(lang):
+    """Accept / Reject banner. The choice is localStorage, and it updates Consent Mode."""
+    u = UI[lang]
+    return (
+        f'<div id="cookie-banner" class="cookie-banner" hidden><p>{e(u["cookie_banner"])} '
+        f'<a href="{href(loc(lang, "/cookies/"))}">{e(u["cookies"])}</a> · '
+        f'<a href="{href(loc(lang, "/privacy/"))}">{e(u["privacy"])}</a></p>'
+        f'<div class="cookie-actions">'
+        f'<button type="button" class="accept" data-cookie="granted">{e(u["cookie_accept"])}</button>'
+        f'<button type="button" class="reject" data-cookie="denied">{e(u["cookie_reject"])}</button>'
+        f'</div></div>'
+        '<script>(function(){'
+        'var KEY="mycytax-consent";'
+        'var banner=document.getElementById("cookie-banner");'
+        'function show(){if(banner)banner.hidden=false;}'
+        'function hide(){if(banner)banner.hidden=true;}'
+        'function apply(value){'
+        'var state=value==="granted"?"granted":"denied";'
+        'try{localStorage.setItem(KEY,state);}catch(e){}'
+        'if(typeof gtag==="function"){gtag("consent","update",{'
+        'ad_storage:state,analytics_storage:state,ad_user_data:state,ad_personalization:state'
+        '});}'
+        'hide();}'
+        'document.querySelectorAll("[data-cookie]").forEach(function(btn){'
+        'btn.addEventListener("click",function(){apply(btn.getAttribute("data-cookie"));});'
+        '});'
+        'document.querySelectorAll("[data-cookie-settings]").forEach(function(el){'
+        'el.addEventListener("click",function(ev){ev.preventDefault();show();});'
+        '});'
+        'var saved=null;try{saved=localStorage.getItem(KEY);}catch(e){}'
+        'if(saved!=="granted"&&saved!=="denied")show();'
+        '})();</script>'
+    )
 
 def cynews_home(lang):
     """Language home on CyNews24. English is /en/, not the site root."""
@@ -822,7 +983,7 @@ def org():
     return {"@type":"Organization","name":SITE,"url":absu("/"),"email":EMAIL,
             "address":{"@type":"PostalAddress","addressCountry":"CY"},
             "founder":{"@type":"Person","name":PUBLISHER},
-            "sameAs":[CYNEWS, TG_RU, TG_EN]}
+            "sameAs":[CYNEWS, TG_RU, TG_EN, IG]}
 
 # Official Telegram mark (paper plane), drawn with currentColor so it follows the link.
 TG_ICON = (
@@ -850,6 +1011,22 @@ def tg_footer_link(lang):
     u = UI[lang]
     return (f'<a class="tg-foot" href="{e(tg_primary(lang))}" rel="noopener" target="_blank" '
             f'aria-label="{e(u["tg"])}">{TG_ICON}<span>{e(u["tg_short"])}</span></a>')
+
+IG_ICON = (
+    '<svg class="ig-mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false">'
+    '<path fill="currentColor" d="M12 2.2c3.2 0 3.6 0 4.9.1 3.2.1 4.8 1.7 4.9 4.9.1 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-3.2-.1-4.8-1.7-4.9-4.9C2.1 15.6 2 15.2 2 12s.1-3.6.2-4.8c.1-3.2 1.7-4.8 4.9-4.9C8.4 2.2 8.8 2.2 12 2.2zM12 0C8.7 0 8.3 0 7 .1 2.7.3.3 2.7.1 7 0 8.3 0 8.7 0 12s0 3.7.1 4.9c.2 4.4 2.6 6.8 7 7 1.3.1 1.7.1 4.9.1s3.7 0 4.9-.1c4.4-.2 6.8-2.6 7-7 .1-1.2.1-1.6.1-4.9s0-3.7-.1-4.9C23.7 2.7 21.3.3 17 .1 15.7 0 15.3 0 12 0zm0 5.8a6.2 6.2 0 1 0 .1 12.4A6.2 6.2 0 0 0 12 5.8zm0 10.2a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.8a1.4 1.4 0 1 0 0 2.8 1.4 1.4 0 0 0 0-2.8z"/>'
+    "</svg>"
+)
+
+def ig_icon_link(lang):
+    u = UI[lang]
+    return (f'<a class="ig-nav" href="{e(IG)}" rel="noopener" target="_blank" '
+            f'aria-label="{e(u["ig"])}">{IG_ICON}</a>')
+
+def ig_footer_link(lang):
+    u = UI[lang]
+    return (f'<a class="ig-foot" href="{e(IG)}" rel="noopener" target="_blank" '
+            f'aria-label="{e(u["ig"])}">{IG_ICON}<span>{e(u["ig_short"])}</span></a>')
 
 def telegram_card(lang):
     """Subscribe block. The page-language channel is the heading and the first button."""
@@ -1061,7 +1238,7 @@ def guide_page(lang, slug, words_out):
             f"<details><summary>{inline(q)}</summary><p>{inline(a)}</p></details>" for q, a in faqs) + "</section>"
     ld = [
         {"@context":"https://schema.org","@type":"Article","headline":meta["title"],"description":meta["description"],
-         "inLanguage":lang,"datePublished":TODAY,"dateModified":TODAY,"mainEntityOfPage":absu(path),
+         "inLanguage":lang,"datePublished":guide_published(slug),"dateModified":guide_modified(slug),"mainEntityOfPage":absu(path),
          "author":{"@type":"Organization","name":SITE,"url":absu("/"),"sameAs":[TG_RU, TG_EN]},
          "publisher":{"@type":"Organization","name":SITE,"url":absu("/"),"sameAs":[TG_RU, TG_EN]}},
     ]
@@ -1109,10 +1286,28 @@ def contact(lang):
     body = f'<main id="main" class="wrap page"><h1>{e(title)}</h1><p class="lede">{e(desc)}</p><p>{e(intro)}</p><p class="banner">{e(DISCLAIMER[lang])}</p>{form(lang, loc(lang, "/contact/thanks/"))}</main>'
     return page_shell(lang, f"{title} | {SITE}", desc, path, alt, body)
 
-# Instagram link-in-bio. English only, and not linked from the site nav.
+# Instagram link-in-bio. Not linked from the site nav. One page per language.
 # Generated here because main() deletes directories it does not rewrite.
 LINKS_UTM = "utm_source=instagram&utm_medium=social&utm_content=links"
-LINKS_TAGLINE = "Free Cyprus property tax calculators & guides"
+LINKS_TAGLINE = {
+    "en": "Free Cyprus property tax calculators & guides",
+    "ru": "Бесплатные калькуляторы и справочники по налогам Кипра",
+    "el": "Δωρεάν υπολογιστές και οδηγοί για φόρους ακινήτων στην Κύπρο",
+}
+LINKS_DESC = {
+    "en": (
+        "Free Cyprus property tax calculators and guides: transfer fees, stamp duty, "
+        "VAT, capital gains, rental income, tax residency, non-dom status and a residence permit."
+    ),
+    "ru": (
+        "Бесплатные калькуляторы и справочники по налогам Кипра: сборы кадастра, гербовый сбор, "
+        "НДС, прирост капитала, аренда, налоговое резидентство, non-dom и ВНЖ."
+    ),
+    "el": (
+        "Δωρεάν υπολογιστές και οδηγοί για φόρους ακινήτων στην Κύπρο: τέλη μεταβίβασης, χαρτόσημο, "
+        "ΦΠΑ, κεφαλαιουχικά κέρδη, ενοίκιο, φορολογική κατοικία, non-dom και άδεια διαμονής."
+    ),
+}
 LINKS_ITEMS = [
     ("Transfer fees calculator", "/calculators/transfer-fees/"),
     ("Stamp duty", "/calculators/stamp-duty/"),
@@ -1124,6 +1319,41 @@ LINKS_ITEMS = [
     ("Residence permit via property", "/guides/residence-permit/"),
     ("All calculators", "/"),
 ]
+LINKS_LABELS = {
+    "ru": [
+        "Калькулятор сборов за переоформление",
+        "Гербовый сбор",
+        "НДС на новое жильё: 5% или 19%",
+        "Налог на прирост капитала",
+        "Налог на аренду и доходность",
+        "Налоговое резидентство: 60 и 183 дня",
+        "Справочник по non-dom",
+        "ВНЖ через покупку недвижимости",
+        "Все калькуляторы",
+    ],
+    "el": [
+        "Υπολογιστής τελών μεταβίβασης",
+        "Χαρτόσημο",
+        "ΦΠΑ σε νέα κατοικία: 5% ή 19%",
+        "Φόρος κεφαλαιουχικών κερδών",
+        "Φόρος ενοικίου και απόδοση",
+        "Φορολογική κατοικία: 60 και 183 ημέρες",
+        "Οδηγός non-dom",
+        "Άδεια διαμονής μέσω ακινήτου",
+        "Όλοι οι υπολογιστές",
+    ],
+}
+
+def links_labels(lang):
+    if lang == "en":
+        return [label for label, _dest in LINKS_ITEMS]
+    return LINKS_LABELS[lang]
+
+def links_dest(lang, path):
+    """Same path in the page language. A query on the path is kept."""
+    base, _, query = path.partition("?")
+    localized = loc(lang, base)
+    return localized + (("?" + query) if query else "")
 
 def links_url(path):
     """Add the Instagram campaign query. Keep a query the path already has."""
@@ -1131,40 +1361,32 @@ def links_url(path):
     params = LINKS_UTM if not query else query + "&" + LINKS_UTM
     return href(base) + "?" + params
 
-def links_page():
-    title = f"{LINKS_TAGLINE} | {SITE}"
-    desc = (
-        "Free Cyprus property tax calculators and guides: transfer fees, stamp duty, "
-        "VAT, capital gains, rental income, tax residency, non-dom status and a residence permit."
-    )
-    path = "/links/"
-    items = list(LINKS_ITEMS) + [(LEAD["en"]["buy"], loc("en", "/contact/") + "?type=buy")]
+def links_page(lang="en"):
+    tagline = LINKS_TAGLINE[lang]
+    title = f"{tagline} | {SITE}"
+    desc = LINKS_DESC[lang]
+    path = loc(lang, "/links/")
+    def alt(l):
+        return loc(l, "/links/")
+    labels = links_labels(lang)
+    if len(labels) != len(LINKS_ITEMS):
+        raise SystemExit(f"links labels for {lang} do not match LINKS_ITEMS")
+    items = [(label, links_dest(lang, dest)) for label, (_en, dest) in zip(labels, LINKS_ITEMS)]
+    items.append((LEAD[lang]["buy"], links_dest(lang, "/contact/?type=buy")))
     anchors = []
     for index, (label, dest) in enumerate(items):
         kind = ' class="bio-contact"' if index == len(items) - 1 else ""
         anchors.append(f'<a{kind} href="{e(links_url(dest))}">{e(label)}</a>')
     ld = {
         "@context": "https://schema.org", "@type": "WebPage",
-        "name": title, "description": desc, "url": absu(path), "inLanguage": "en",
+        "name": title, "description": desc, "url": absu(path), "inLanguage": lang,
         "isPartOf": {"@type": "WebSite", "name": SITE, "url": absu("/")},
     }
-    ld_tag = '<script type="application/ld+json">' + json.dumps(ld, ensure_ascii=False).replace("</", "<\\/") + "</script>"
-    # English only. Russian and Greek alternates would point at pages that do not exist.
-    head_html = f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="yandex-verification" content="8dc437c1055c8e9b" />
-<title>{e(title)}</title><meta name="description" content="{e(desc)}">
-<link rel="canonical" href="{absu(path)}">
-<link rel="alternate" hreflang="en" href="{absu(path)}">
-<link rel="alternate" hreflang="x-default" href="{absu(path)}">
-<meta name="robots" content="index,follow,max-image-preview:large">
-<meta property="og:site_name" content="{e(SITE)}"><meta property="og:title" content="{e(title)}"><meta property="og:description" content="{e(desc)}"><meta property="og:url" content="{absu(path)}"><meta property="og:type" content="website">
-<meta name="theme-color" content="#1e3d34">
-<link rel="stylesheet" href="{href("/assets/style.css")}">{ld_tag}{ADSENSE}</head>'''
-    body = f'''<a class="skip" href="#main">{e(UI["en"]["home"])}</a><main id="main" class="bio"><div class="bio-brand">
-<a class="logo" href="{href("/")}">{e(SITE)}</a>
-<p class="bio-tag">{e(LINKS_TAGLINE)}</p></div>
+    body = f'''<a class="skip" href="#main">{e(UI[lang]["home"])}</a><main id="main" class="bio"><div class="bio-brand">
+<a class="logo" href="{href(loc(lang, "/"))}">{e(SITE)}</a>
+<p class="bio-tag">{e(tagline)}</p></div>
 <nav class="bio-links" aria-label="{e(SITE)}">{"".join(anchors)}</nav></main>'''
-    return head_html + body + footer("en")
+    return head(lang, title, desc, path, alt, [ld]) + body + footer(lang)
 
 def thanks(lang):
     u = UI[lang]
@@ -1181,6 +1403,74 @@ def w(rel, content):
     with open(path, "w", encoding="utf8") as f:
         f.write(content)
 
+_GIT_DAYS = {}
+
+def git_days(path):
+    """(first commit day, last commit day) for a repo path, or (None, None)."""
+    if path in _GIT_DAYS:
+        return _GIT_DAYS[path]
+    try:
+        proc = subprocess.run(
+            ["git", "-C", ROOT, "log", "--follow", "--format=%cs", "--", path],
+            capture_output=True, text=True, timeout=20, check=False,
+        )
+    except (OSError, subprocess.TimeoutExpired):
+        _GIT_DAYS[path] = (None, None)
+        return _GIT_DAYS[path]
+    days = [
+        line.strip() for line in (proc.stdout or "").splitlines()
+        if re.fullmatch(r"\d{4}-\d{2}-\d{2}", line.strip())
+    ]
+    _GIT_DAYS[path] = (days[-1], days[0]) if days else (None, None)
+    return _GIT_DAYS[path]
+
+def guide_published(slug):
+    first, last = git_days(f"source/content/guides/{slug}.json")
+    return first or last or TODAY
+
+def guide_modified(slug):
+    first, last = git_days(f"source/content/guides/{slug}.json")
+    return last or first or TODAY
+
+def bare_path(path):
+    """Drop the /ru or /el prefix so a translation shares its source with English."""
+    if not path.startswith("/"):
+        path = "/" + path
+    for lang in ("ru", "el"):
+        if path == f"/{lang}" or path == f"/{lang}/":
+            return "/"
+        prefix = f"/{lang}/"
+        if path.startswith(prefix):
+            return "/" + path[len(prefix):]
+    return path
+
+def sources_for(path):
+    """Files whose last commit is the page's modification date."""
+    bare = bare_path(path).split("?")[0]
+    if bare.endswith("feed.xml"):
+        return [f"source/content/guides/{slug}.json" for slug in GUIDE_ORDER]
+    parts = [part for part in bare.strip("/").split("/") if part]
+    if not parts:
+        return ["source/build.py"]
+    if len(parts) == 1 and parts[0] in PAGE_ORDER:
+        return [f"source/content/pages/{parts[0]}.json"]
+    if len(parts) == 2 and parts[0] == "guides":
+        return [f"source/content/guides/{parts[1]}.json"]
+    if parts[0] == "calculators" and len(parts) == 2:
+        return ["source/build.py", "source/static/calc.js"]
+    return ["source/build.py"]
+
+def page_lastmod(path):
+    """Git last-commit day of the page source, or the build day when git has none."""
+    found = []
+    for src in sources_for(path):
+        _first, last = git_days(src)
+        if last:
+            found.append(last)
+    if found:
+        return max(found)
+    return datetime.date.today().isoformat()
+
 def sitemap():
     paths = ["/"]
     for slug in ("about", "contact", "privacy", "cookies", "terms", "calculators", "guides"):
@@ -1190,13 +1480,49 @@ def sitemap():
     for slug in GUIDE_ORDER:
         paths.append(f"/guides/{slug}/")
     urls = [loc(lang, p) for lang in LANGS for p in paths]
-    # English link-in-bio page. The sitemap lists every indexable page; this one is English only.
-    urls.append("/links/")
+    for lang in LANGS:
+        urls.append(loc(lang, "/links/"))
+        urls.append(loc(lang, "/feed.xml"))
     lines = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for u in urls:
-        lines.append(f"<url><loc>{e(absu(u))}</loc><lastmod>{TODAY}</lastmod></url>")
+        lines.append(f"<url><loc>{e(absu(u))}</loc><lastmod>{page_lastmod(u)}</lastmod></url>")
     lines.append("</urlset>")
     return "\n".join(lines) + "\n"
+
+def atom_feed(lang):
+    """One Atom feed of the guides that have their own text in this language."""
+    u = UI[lang]
+    path = loc(lang, "/feed.xml")
+    updated = page_lastmod(path)
+    entries = []
+    for slug in GUIDE_ORDER:
+        if lang in GUIDES[slug]["missing"]:
+            continue
+        meta = GUIDES[slug]["text"][lang]
+        gpath = loc(lang, f"/guides/{slug}/")
+        when = page_lastmod(gpath)
+        entries.append(
+            "<entry>"
+            f"<title>{e(meta['title'])}</title>"
+            f'<link href="{e(absu(gpath))}"/>'
+            f"<id>{e(absu(gpath))}</id>"
+            f"<updated>{when}T00:00:00Z</updated>"
+            f"<summary>{e(meta['description'])}</summary>"
+            "</entry>"
+        )
+    body = "\n".join(entries)
+    return (
+        '<?xml version="1.0" encoding="utf-8"?>\n'
+        '<feed xmlns="http://www.w3.org/2005/Atom">\n'
+        f"<title>{e(u['feed'])}</title>\n"
+        f'<link href="{e(absu(path))}" rel="self"/>\n'
+        f'<link href="{e(absu(loc(lang, "/guides/")))}"/>\n'
+        f"<updated>{updated}T00:00:00Z</updated>\n"
+        f"<id>{e(absu(path))}</id>\n"
+        f"<author><name>{e(SITE)}</name></author>\n"
+        f"{body}\n"
+        "</feed>\n"
+    )
 
 def main():
     # Headlines are fetched once. A timeout or any other failure leaves the
@@ -1217,6 +1543,10 @@ def main():
                 os.remove(path)
     os.makedirs(os.path.join(OUT, "assets"), exist_ok=True)
     shutil.copy(os.path.join(HERE, "static", "calc.js"), os.path.join(OUT, "assets", "calc.js"))
+    og_src = os.path.join(HERE, "static", "og.png")
+    if not os.path.isfile(og_src):
+        raise SystemExit(f"missing {og_src}")
+    shutil.copy(og_src, os.path.join(OUT, "assets", "og.png"))
     w("/assets/style.css", css())
     words = []
     for lang in LANGS:
@@ -1231,8 +1561,10 @@ def main():
             w(loc(lang, f"/{slug}/") + "index.html", static_page(lang, slug))
         w(loc(lang, "/contact/") + "index.html", contact(lang))
         w(loc(lang, "/contact/thanks/") + "index.html", thanks(lang))
-    w("/links/index.html", links_page())
+        w(loc(lang, "/links/") + "index.html", links_page(lang))
+        w(loc(lang, "/feed.xml"), atom_feed(lang))
     w("/sitemap.xml", sitemap())
+    w(f"/{INDEXNOW_KEY}.txt", INDEXNOW_KEY + "\n")
     w("/robots.txt", f"User-agent: *\nAllow: /\n\nSitemap: {BASE}/sitemap.xml\n")
     open(os.path.join(OUT, ".nojekyll"), "w").close()
     # GitHub Pages custom domain. Rewritten on every build so a rebuild cannot drop it.
