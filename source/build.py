@@ -579,6 +579,16 @@ footer p.projects{margin:14px 0 0}
 .partners p{margin:2px 0 0;color:#314038;font-size:15.5px}
 .partners .partner-note{margin:12px 0 0;color:var(--muted);font-size:13px;line-height:1.45}
 @media(max-width:800px){.grid{grid-template-columns:1fr}.bar{align-items:flex-start;flex-direction:column}.partners{padding:14px 14px 12px}}
+main.bio{width:min(440px,calc(100% - 32px));margin:0 auto;padding:36px 0 12px}
+.bio-brand{text-align:center;margin:0 0 22px}
+.bio-brand .logo{display:inline-block;color:var(--pine);font-size:clamp(36px,9vw,48px);text-decoration:none}
+.bio-brand .logo:hover{color:var(--copper)}
+.bio-tag{margin:10px 0 0;color:#2d3832;font-size:17px;line-height:1.35;text-wrap:balance}
+.bio-links{display:grid;gap:12px}
+.bio-links a{display:flex;align-items:center;justify-content:center;box-sizing:border-box;width:100%;min-height:56px;padding:14px 16px;border:2px solid #e7c7a4;border-radius:14px;background:var(--pine);color:#f7f3ec;font-size:17px;font-weight:700;line-height:1.25;text-align:center;text-decoration:none}
+.bio-links a:hover,.bio-links a:focus-visible{background:var(--pine2);color:#fff}
+.bio-links a.bio-contact{background:#e7c7a4;color:var(--pine)}
+.bio-links a.bio-contact:hover,.bio-links a.bio-contact:focus-visible{background:#f4efe6;color:var(--pine)}
 '''
 
 def head(lang, title, desc, path, alt_path, jsonld=None, extra="", robots="index,follow,max-image-preview:large"):
@@ -1036,6 +1046,63 @@ def contact(lang):
     body = f'<main id="main" class="wrap page"><h1>{e(title)}</h1><p class="lede">{e(desc)}</p><p>{e(intro)}</p><p class="banner">{e(DISCLAIMER[lang])}</p>{form(lang, loc(lang, "/contact/thanks/"))}</main>'
     return page_shell(lang, f"{title} | {SITE}", desc, path, alt, body)
 
+# Instagram link-in-bio. English only, and not linked from the site nav.
+# Generated here because main() deletes directories it does not rewrite.
+LINKS_UTM = "utm_source=instagram&utm_medium=social&utm_content=links"
+LINKS_TAGLINE = "Free Cyprus property tax calculators & guides"
+LINKS_ITEMS = [
+    ("Transfer fees calculator", "/calculators/transfer-fees/"),
+    ("Stamp duty", "/calculators/stamp-duty/"),
+    ("VAT on new property 5% or 19%", "/calculators/vat/"),
+    ("Capital gains tax", "/calculators/capital-gains/"),
+    ("Rental income tax & yield", "/calculators/rental-yield/"),
+    ("Tax residency 60/183-day guide", "/guides/tax-residency/"),
+    ("Non-dom guide", "/guides/non-dom/"),
+    ("Residence permit via property", "/guides/residence-permit/"),
+    ("All calculators", "/"),
+]
+
+def links_url(path):
+    """Add the Instagram campaign query. Keep a query the path already has."""
+    base, _, query = path.partition("?")
+    params = LINKS_UTM if not query else query + "&" + LINKS_UTM
+    return href(base) + "?" + params
+
+def links_page():
+    title = f"{LINKS_TAGLINE} | {SITE}"
+    desc = (
+        "Free Cyprus property tax calculators and guides: transfer fees, stamp duty, "
+        "VAT, capital gains, rental income, tax residency, non-dom status and a residence permit."
+    )
+    path = "/links/"
+    items = list(LINKS_ITEMS) + [(LEAD["en"]["buy"], loc("en", "/contact/") + "?type=buy")]
+    anchors = []
+    for index, (label, dest) in enumerate(items):
+        kind = ' class="bio-contact"' if index == len(items) - 1 else ""
+        anchors.append(f'<a{kind} href="{e(links_url(dest))}">{e(label)}</a>')
+    ld = {
+        "@context": "https://schema.org", "@type": "WebPage",
+        "name": title, "description": desc, "url": absu(path), "inLanguage": "en",
+        "isPartOf": {"@type": "WebSite", "name": SITE, "url": absu("/")},
+    }
+    ld_tag = '<script type="application/ld+json">' + json.dumps(ld, ensure_ascii=False).replace("</", "<\\/") + "</script>"
+    # English only. Russian and Greek alternates would point at pages that do not exist.
+    head_html = f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="yandex-verification" content="8dc437c1055c8e9b" />
+<title>{e(title)}</title><meta name="description" content="{e(desc)}">
+<link rel="canonical" href="{absu(path)}">
+<link rel="alternate" hreflang="en" href="{absu(path)}">
+<link rel="alternate" hreflang="x-default" href="{absu(path)}">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:site_name" content="{e(SITE)}"><meta property="og:title" content="{e(title)}"><meta property="og:description" content="{e(desc)}"><meta property="og:url" content="{absu(path)}"><meta property="og:type" content="website">
+<meta name="theme-color" content="#1e3d34">
+<link rel="stylesheet" href="{href("/assets/style.css")}">{ld_tag}{ADSENSE}</head>'''
+    body = f'''<a class="skip" href="#main">{e(UI["en"]["home"])}</a><main id="main" class="bio"><div class="bio-brand">
+<a class="logo" href="{href("/")}">{e(SITE)}</a>
+<p class="bio-tag">{e(LINKS_TAGLINE)}</p></div>
+<nav class="bio-links" aria-label="{e(SITE)}">{"".join(anchors)}</nav></main>'''
+    return head_html + body + footer("en")
+
 def thanks(lang):
     u = UI[lang]
     path = loc(lang, "/contact/thanks/")
@@ -1060,6 +1127,8 @@ def sitemap():
     for slug in GUIDE_ORDER:
         paths.append(f"/guides/{slug}/")
     urls = [loc(lang, p) for lang in LANGS for p in paths]
+    # English link-in-bio page. The sitemap lists every indexable page; this one is English only.
+    urls.append("/links/")
     lines = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for u in urls:
         lines.append(f"<url><loc>{e(absu(u))}</loc><lastmod>{TODAY}</lastmod></url>")
@@ -1099,6 +1168,7 @@ def main():
             w(loc(lang, f"/{slug}/") + "index.html", static_page(lang, slug))
         w(loc(lang, "/contact/") + "index.html", contact(lang))
         w(loc(lang, "/contact/thanks/") + "index.html", thanks(lang))
+    w("/links/index.html", links_page())
     w("/sitemap.xml", sitemap())
     w("/robots.txt", f"User-agent: *\nAllow: /\n\nSitemap: {BASE}/sitemap.xml\n")
     open(os.path.join(OUT, ".nojekyll"), "w").close()
