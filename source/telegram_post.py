@@ -61,7 +61,8 @@ _TR = dict(zip("абвгдеёзийклмнопрстуфхыэ", "abvgdeezijkl
     "ж": "zh", "ц": "ts", "ч": "ch", "ш": "sh", "щ": "sch",
     "ю": "yu", "я": "ya", "ъ": "", "ь": "",
 }
-SLUG_RE = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*")
+# Keep in sync with GUIDE_SLUG_RE in source/build.py. One optional slash.
+SLUG_RE = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*(?:/[a-z0-9]+(?:-[a-z0-9]+)*)?")
 USER_AGENT = "mycytax-telegram-poster"
 COMMIT_MESSAGE = "Telegram: отмечены отправленные справочники [skip ci]"
 
@@ -242,7 +243,11 @@ def load_guide(path: str) -> Guide:
         raise SystemExit(f"{path}: guide must be a JSON object")
     stem = os.path.splitext(os.path.basename(path))[0]
     ru = data.get("ru") if isinstance(data.get("ru"), dict) else {}
-    slug = slugify(_clean(data.get("slug")) or stem) or slugify(ru.get("title", ""))
+    raw_slug = _clean(data.get("slug"))
+    if raw_slug and SLUG_RE.fullmatch(raw_slug):
+        slug = raw_slug
+    else:
+        slug = slugify(raw_slug or stem) or slugify(ru.get("title", ""))
     if not slug or not SLUG_RE.fullmatch(slug):
         raise SystemExit(f"{path}: cannot make a page address (slug)")
     title = _clean(ru.get("title"))

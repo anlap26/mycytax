@@ -1,0 +1,115 @@
+{
+  "slug": "resident-handbook/utilities",
+  "seq": 20,
+  "ru": {
+    "title": "Электричество и вода при заселении на Кипре",
+    "description": "Электричество даёт Управление электроэнергетики Кипра. Воду даёт управление или община города, а не один поставщик на всю страну. Залоги бывают. Типичный залог эта страница не печатает.",
+    "body": "Проверено: ноябрь 2026 года.\n\n## Короткий ответ\n\nЭлектроснабжение дома, если объект уже подключён, — это договор с Управлением электроэнергетики Кипра. Совсем новое подключение начинается с распределительной стороны Управления, а не с договора снабжения. Вода не общегосударственная. Никосия и Лимассол публикуют свои формы. У других городов свои управления или общинные советы. Единого «залога за воду на Кипре» эти страницы на весь остров не называют, поэтому эта страница его не выдумывает.\n\n## Электричество, если снабжение уже есть\n\nСтраница снабжения Управления говорит, что договор электроснабжения подписывают при новом подключении, повторном подключении или переоформлении, когда меняется арендатор или имя. Бумаги можно послать почтой в центр обслуживания или принести лично. Для физического лица страница просит:\n\n- титул, договор купли или действующий договор аренды; если титул в долях, у заявителя должна быть хотя бы половина, иначе согласие совладельцев, которым вместе принадлежит хотя бы половина;\n- удостоверение личности, паспорт, свидетельство о регистрации иностранца или другой законный документ;\n- доверенность, если подписывает другой человек, заверенную; Управление говорит, что принимает уполномочие до пяти лет;\n- залог: арендатор платит его при подписании, собственнику его ставят в первый счёт.\n\nДля переоформления нужно и согласие прежнего клиента прекратить старый договор. Новый клиент открывает новый счёт. Старый закрывается.\n\n## Электричество, если подключения ещё нет\n\nСтраница распределения говорит, что пользователь сети заполняет форму оказания услуг. Форма, на которую ведёт страница, на греческом. Её сдают в центр обслуживания или шлют на окружной адрес, который страница перечисляет: Никосия, Лимассол, Ларнака и Фамагуста или Пафос. Малая и большая нагрузка идут разными внутренними путями. После принятия и оплаты условий лицензированный электрик сдаёт планы на проверку. Договор со стороной снабжения подписывают в окне, которое описывает страница снабжения: за один–пять дней до даты проверки, когда дата уже есть. Плату за подключение эта страница не называет. Страница снабжения говорит, что её задаёт распределение и она появляется в следующем счёте.\n\n## Вода\n\nСпрашивайте поставщика, который реально обслуживает объект. Водное управление Никосии публикует заявления потребителей, включая новый счётчик. Управление Лимассола публикует формы подключения и переоформления счёта, в том числе для физического лица. В деревне поставщиком может быть общинный совет, а не городское управление. Берите тот же класс бумаг, что и для электричества: поставщику надо знать, кто вправе поставить счёт на своё имя, то есть личность и титул, договор или аренду. Точный список — форма этого поставщика. Форму Никосии в Лимассол не шлют.\n\n## Документы\n\nУдостоверение личности. Право занимать объект: титул, договор или аренда. Для электричества — список Управления выше. Для воды — местная форма. [Карточка проживания](/ru/guides/resident-handbook/residence-registration/) — это тот документ, которым бывает свидетельство о регистрации иностранца, где страница электричества его называет. Титул или аренду она не заменяет.",
+    "faq": [
+      {
+        "q": "Вода — одно управление на страну?",
+        "a": "Нет. Никосия и Лимассол публикуют разные формы, а за их пределами поставщиком может быть община. Берите поставщика этого объекта."
+      },
+      {
+        "q": "Когда арендатор платит залог за электричество?",
+        "a": "Управление говорит, что арендатор платит залог при подписании договора. Собственнику его ставят в первый счёт. Сумму страница не называет, и эта тоже."
+      },
+      {
+        "q": "Можно ли поставить счёт на своё имя только с жёлтым слипом?",
+        "a": "Страница электричества просит личность и титул, договор купли или действующую аренду. Карточка проживания может быть документом личности. Документом, который показывает право занимать объект, она не является."
+      }
+    ],
+    "sources": [
+      {
+        "name": "Договор электроснабжения, Управление электроэнергетики Кипра",
+        "url": "https://www.eac.com.cy/EN/RegulatedActivities/Supply/ConnectionReconnectionTransfer/Pages/default.aspx"
+      },
+      {
+        "name": "Новые подключения, Управление электроэнергетики Кипра",
+        "url": "https://www.eac.com.cy/EN/RegulatedActivities/Distribution/ElectricitySupplyInformation/Pages/NewSupply.aspx"
+      },
+      {
+        "name": "Заявления потребителей, водное управление Никосии",
+        "url": "https://ndlgo.org.cy/en/water-supply/consumer/"
+      },
+      {
+        "name": "Формы подключения, водное управление Лимассола",
+        "url": "https://eoalemesos.org.cy/en/connection-forms"
+      }
+    ]
+  },
+  "en": {
+    "title": "Electricity and water when you move into a Cyprus home",
+    "description": "Electricity is the Electricity Authority of Cyprus. Water is the board or the community of the town, not one national supplier. Deposits exist. This page does not print a typical deposit.",
+    "body": "Last checked: November 2026.\n\n## Short answer\n\nElectricity supply to a home, once the property is already connected, is an agreement with the Electricity Authority of Cyprus. A brand-new connection starts with the Authority’s distribution side, not with the supply agreement. Water is not national. Nicosia and Limassol publish their own application forms. Other towns have their own boards or community councils. A single “Cyprus water deposit” is not a figure any of those pages states for the whole island, so this page does not invent one.\n\n## Electricity, if the supply is already there\n\nThe Authority’s supply page says you sign an electricity supply agreement for a new connection, a reconnection, or a transfer when the tenant or the name changes. You can send the papers by email to the customer service centre, or you can visit. For a natural person the page asks for:\n\n- a title deed, a contract of sale, or a valid rental agreement, and if the title is in shares the applicant must hold at least half, or else a consent of the co-owners who together hold at least half;\n- an identity card, a passport, an alien registration certificate, or another legally valid identity document;\n- a power of attorney if someone else signs, certified, and the Authority says it accepts an authorisation of up to five years;\n- a deposit, paid by a tenant when the agreement is signed, while an owner is charged on the first bill.\n\nA transfer also needs the existing customer’s consent to end the old agreement. The new customer opens a new account. The old one closes.\n\n## Electricity, if there is no connection yet\n\nThe distribution page says the network user completes the services-provision form. The form the page links is in Greek. You deliver it to a customer centre, or you email the district address the page lists: Nicosia, Limassol, Larnaca and Famagusta, or Paphos. A small load and a large load follow different internal paths. After the terms are accepted and paid, a licensed electrical contractor submits plans for inspection. The supply agreement with the supply side is signed in the window the supply page describes, one to five days before the inspection date, once a date exists. This page does not state the connection charge. The supply page says connection charges are set by distribution and appear on the next bill.\n\n## Water\n\nAsk the supplier that actually serves the property. The Nicosia water board publishes consumer requests, including a new meter. The Limassol board publishes connection and account-transfer forms, including an application for an account transfer by an individual. A village may be the community council rather than a city board. Take the same class of papers the electricity transfer uses, because a supplier needs to know who may put the account in their name: identity, and title, contract or lease. The exact list is the form of that supplier. Do not send Nicosia’s form to Limassol.\n\n## Documents\n\nIdentity. The right to occupy: title, contract or lease. For electricity, the Authority’s own list above. For water, the local form. A [residence card](/guides/resident-handbook/residence-registration/) is the identity document an alien registration certificate represents, where the electricity page names that certificate. It is not a substitute for the title or the lease.",
+    "faq": [
+      {
+        "q": "Is there one water authority?",
+        "a": "No. Nicosia and Limassol publish separate forms, and a community may be the supplier outside those boards. Use the supplier for the property."
+      },
+      {
+        "q": "When does a tenant pay the electricity deposit?",
+        "a": "The Electricity Authority says a tenant pays the deposit when the supply agreement is signed. An owner is charged on the first bill. The page does not state the amount, and neither does this one."
+      },
+      {
+        "q": "Can I put the account in my name with only a yellow slip?",
+        "a": "The electricity page asks for identity and for title, a contract of sale or a valid rental agreement. A residence card can be the identity document. It is not the document that shows you may occupy the property."
+      }
+    ],
+    "sources": [
+      {
+        "name": "Signing an electricity supply agreement, Electricity Authority of Cyprus",
+        "url": "https://www.eac.com.cy/EN/RegulatedActivities/Supply/ConnectionReconnectionTransfer/Pages/default.aspx"
+      },
+      {
+        "name": "New electricity connections, Electricity Authority of Cyprus",
+        "url": "https://www.eac.com.cy/EN/RegulatedActivities/Distribution/ElectricitySupplyInformation/Pages/NewSupply.aspx"
+      },
+      {
+        "name": "Consumer requests, Nicosia water board",
+        "url": "https://ndlgo.org.cy/en/water-supply/consumer/"
+      },
+      {
+        "name": "Connection forms, Limassol water board",
+        "url": "https://eoalemesos.org.cy/en/connection-forms"
+      }
+    ]
+  },
+  "el": {
+    "title": "Ηλεκτρισμός και νερό όταν μπαίνετε σε κατοικία στην Κύπρο",
+    "description": "Ο ηλεκτρισμός είναι η Αρχή Ηλεκτρισμού Κύπρου. Το νερό είναι το συμβούλιο ή η κοινότητα της πόλης, όχι ένας εθνικός προμηθευτής. Υπάρχουν εγγυήσεις. Αυτή η σελίδα δεν τυπώνει τυπική εγγύηση.",
+    "body": "Τελευταίος έλεγχος: Νοέμβριος 2026.\n\n## Σύντομη απάντηση\n\nΗ παροχή ηλεκτρισμού σε κατοικία, όταν το ακίνητο είναι ήδη συνδεδεμένο, είναι σύμβαση με την Αρχή Ηλεκτρισμού Κύπρου. Ολοκαίνουργια σύνδεση αρχίζει από την πλευρά διανομής της Αρχής, όχι από τη σύμβαση προμήθειας. Το νερό δεν είναι εθνικό. Η Λευκωσία και η Λεμεσός δημοσιεύουν δικά τους έντυπα. Άλλες πόλεις έχουν δικά τους συμβούλια ή κοινοτικά συμβούλια. Μία «εγγύηση νερού Κύπρου» δεν είναι ποσό που κάποια από αυτές τις σελίδες δηλώνει για όλο το νησί, άρα αυτή η σελίδα δεν επινοεί ένα.\n\n## Ηλεκτρισμός, αν η παροχή υπάρχει ήδη\n\nΗ σελίδα προμήθειας της Αρχής λέει ότι υπογράφετε σύμβαση προμήθειας ηλεκτρισμού για νέα σύνδεση, επανασύνδεση, ή μεταφορά όταν αλλάζει ο ενοικιαστής ή το όνομα. Μπορείτε να στείλετε τα χαρτιά με email στο κέντρο εξυπηρέτησης, ή να επισκεφθείτε. Για φυσικό πρόσωπο η σελίδα ζητά:\n\n- τίτλο, πωλητήριο, ή έγκυρη σύμβαση ενοικίασης, και αν ο τίτλος είναι σε μερίδια ο αιτητής πρέπει να κατέχει τουλάχιστον το μισό, αλλιώς συναίνεση συνιδιοκτητών που μαζί κατέχουν τουλάχιστον το μισό·\n- ταυτότητα, διαβατήριο, πιστοποιητικό εγγραφής αλλοδαπού, ή άλλο νόμιμα έγκυρο έγγραφο ταυτότητας·\n- πληρεξούσιο αν υπογράφει άλλος, πιστοποιημένο, και η Αρχή λέει ότι δέχεται εξουσιοδότηση έως πέντε έτη·\n- εγγύηση, που την πληρώνει ενοικιαστής όταν υπογράφεται η σύμβαση, ενώ ιδιοκτήτης χρεώνεται στον πρώτο λογαριασμό.\n\nΜεταφορά χρειάζεται και τη συναίνεση του υφιστάμενου πελάτη να λήξει η παλιά σύμβαση. Ο νέος πελάτης ανοίγει νέο λογαριασμό. Ο παλιός κλείνει.\n\n## Ηλεκτρισμός, αν δεν υπάρχει ακόμη σύνδεση\n\nΗ σελίδα διανομής λέει ότι ο χρήστης δικτύου συμπληρώνει το έντυπο παροχής υπηρεσιών. Το έντυπο στο οποίο παραπέμπει η σελίδα είναι στα ελληνικά. Το παραδίδετε σε κέντρο εξυπηρέτησης, ή το στέλνετε με email στη διεύθυνση επαρχίας που απαριθμεί η σελίδα: Λευκωσία, Λεμεσός, Λάρνακα και Αμμόχωστος, ή Πάφος. Μικρό και μεγάλο φορτίο ακολουθούν διαφορετικές εσωτερικές οδούς. Αφού οι όροι γίνουν αποδεκτοί και πληρωθούν, αδειούχος ηλεκτρολόγος υποβάλλει σχέδια για επιθεώρηση. Η σύμβαση προμήθειας με την πλευρά προμήθειας υπογράφεται στο παράθυρο που περιγράφει η σελίδα προμήθειας, μία έως πέντε ημέρες πριν από την ημερομηνία επιθεώρησης, αφού υπάρχει ημερομηνία. Αυτή η σελίδα δεν αναφέρει τη χρέωση σύνδεσης. Η σελίδα προμήθειας λέει ότι οι χρεώσεις σύνδεσης ορίζονται από τη διανομή και εμφανίζονται στον επόμενο λογαριασμό.\n\n## Νερό\n\nΡωτήστε τον προμηθευτή που εξυπηρετεί πράγματι το ακίνητο. Το συμβούλιο νερού Λευκωσίας δημοσιεύει αιτήματα καταναλωτή, συμπεριλαμβανομένου νέου μετρητή. Το συμβούλιο Λεμεσού δημοσιεύει έντυπα σύνδεσης και μεταφοράς λογαριασμού, και για φυσικό πρόσωπο. Χωριό μπορεί να είναι το κοινοτικό συμβούλιο και όχι συμβούλιο πόλης. Πάρτε την ίδια τάξη χαρτιών που χρησιμοποιεί η μεταφορά ηλεκτρισμού, γιατί ο προμηθευτής πρέπει να ξέρει ποιος μπορεί να βάλει τον λογαριασμό στο όνομά του: ταυτότητα, και τίτλο, σύμβαση ή μίσθωση. Ο ακριβής κατάλογος είναι το έντυπο εκείνου του προμηθευτή. Μην στείλετε το έντυπο της Λευκωσίας στη Λεμεσό.\n\n## Έγγραφα\n\nΤαυτότητα. Το δικαίωμα κατοχής: τίτλος, σύμβαση ή μίσθωση. Για ηλεκτρισμό, ο κατάλογος της Αρχής πιο πάνω. Για νερό, το τοπικό έντυπο. Η [κάρτα διαμονής](/el/guides/resident-handbook/residence-registration/) είναι το έγγραφο ταυτότητας που αντιπροσωπεύει ένα πιστοποιητικό εγγραφής αλλοδαπού, όπου η σελίδα ηλεκτρισμού κατονομάζει το πιστοποιητικό αυτό. Δεν υποκαθιστά τον τίτλο ή τη μίσθωση.",
+    "faq": [
+      {
+        "q": "Υπάρχει μία αρχή νερού;",
+        "a": "Όχι. Η Λευκωσία και η Λεμεσός δημοσιεύουν χωριστά έντυπα, και μια κοινότητα μπορεί να είναι ο προμηθευτής έξω από αυτά τα συμβούλια. Χρησιμοποιήστε τον προμηθευτή του ακινήτου."
+      },
+      {
+        "q": "Πότε πληρώνει ο ενοικιαστής την εγγύηση ηλεκτρισμού;",
+        "a": "Η Αρχή Ηλεκτρισμού λέει ότι ο ενοικιαστής πληρώνει την εγγύηση όταν υπογράφεται η σύμβαση προμήθειας. Ο ιδιοκτήτης χρεώνεται στον πρώτο λογαριασμό. Η σελίδα δεν αναφέρει το ποσό, ούτε και αυτή."
+      },
+      {
+        "q": "Μπορώ να βάλω τον λογαριασμό στο όνομά μου μόνο με κίτρινο δελτίο;",
+        "a": "Η σελίδα ηλεκτρισμού ζητά ταυτότητα και τίτλο, πωλητήριο ή έγκυρη σύμβαση ενοικίασης. Κάρτα διαμονής μπορεί να είναι το έγγραφο ταυτότητας. Δεν είναι το έγγραφο που δείχνει ότι μπορείτε να κατέχετε το ακίνητο."
+      }
+    ],
+    "sources": [
+      {
+        "name": "Σύμβαση προμήθειας ηλεκτρισμού, Αρχή Ηλεκτρισμού Κύπρου",
+        "url": "https://www.eac.com.cy/EN/RegulatedActivities/Supply/ConnectionReconnectionTransfer/Pages/default.aspx"
+      },
+      {
+        "name": "Νέες συνδέσεις ηλεκτρισμού, Αρχή Ηλεκτρισμού Κύπρου",
+        "url": "https://www.eac.com.cy/EN/RegulatedActivities/Distribution/ElectricitySupplyInformation/Pages/NewSupply.aspx"
+      },
+      {
+        "name": "Αιτήματα καταναλωτή, συμβούλιο νερού Λευκωσίας",
+        "url": "https://ndlgo.org.cy/en/water-supply/consumer/"
+      },
+      {
+        "name": "Έντυπα σύνδεσης, συμβούλιο νερού Λεμεσού",
+        "url": "https://eoalemesos.org.cy/en/connection-forms"
+      }
+    ]
+  }
+}

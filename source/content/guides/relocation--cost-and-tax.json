@@ -1,0 +1,103 @@
+{
+  "slug": "relocation/cost-and-tax",
+  "seq": 25,
+  "ru": {
+    "title": "Расходы и налоги при переезде на Кипр",
+    "description": "Налоговое резидентство — это правило 60 или 183 дней. Шкала 2026 года начинается с €22 000. Переезд сам по себе не создаёт статус non-dom, а стоимость жизни эта страница не выдумывает.",
+    "body": "Проверено: ноябрь 2026 года.\n\n## Короткий ответ\n\nС переездом приходят два разных счёта, и их не надо складывать, как если бы это был один. Один — стоимость покупки или аренды жилья. Другой — подоходный налог, когда выполнены проверки резидентства Налогового департамента. Эта страница указывает на официальные проверки и на калькуляторы. Месячный бюджет Лимассола или Пафоса она не печатает. Ни один официальный источник, проверенный для этой статьи, не публикует единую стоимость жизни, а выдуманная была бы помощью не того рода.\n\n## Налоговое резидентство, а не карточка проживания\n\nВы налоговый резидент, если находитесь на Кипре более 183 дней в календарном году или если [правило 60 дней](/ru/guides/tax-residency/) выполнено целиком: не менее 60 дней на Кипре, не более 183 дней ни в одной другой стране, бизнес, найм или должность на Кипре, которые не прекращены в течение года, и постоянное жильё, которым вы владеете или которое арендуете. Текущая страница департамента перечисляет эти пункты. [Жёлтый или розовый слип](/ru/guides/resident-handbook/residence-registration/) на проверку не отвечает.\n\nС налогового 2026 года шкалы налогооблагаемого дохода — ноль до €22 000, затем 20, 25, 30 и 35 процентов на порогах со [страницы декларации](/ru/guides/resident-handbook/income-tax-return/). Резидент от 25 до 70 лет подаёт декларацию даже без дохода. Для подачи нужен [налоговый код](/ru/guides/resident-handbook/tic/).\n\n## Non-dom — следующий статус\n\n[Статус non-dom](/ru/guides/non-dom/) — это о домициле для специального взноса на оборону. Он для того, кто налоговый резидент и не имеет домициля. Это не скидка со шкал подоходного налога, и карточка проживания его не даёт. Прочитайте тот справочник, прежде чем повторять фразу о дивидендах.\n\n## Стоимость жилья\n\nПри покупке пользуйтесь [справочником о полной стоимости](/ru/guides/total-cost/) и калькуляторами [сбора за переоформление](/ru/calculators/transfer-fees/), [НДС](/ru/calculators/vat/) и [гербового сбора](/ru/calculators/stamp-duty/). Гербовый сбор равен нулю, если ни одна сторона не подписала до 1 января 2026 года. Государственного ежегодного налога на недвижимость с 2017 года нет. Местные сборы местные. Если сравнение — с жильём в Германии, Греции или Испании, [сравнение ипотеки](/ru/guides/mortgage-comparison/) ставит рядом среднюю ставку кредита за сентябрь 2026 года и налоги на покупку и говорит, где одной общегосударственной цифры нет.\n\nАренда, если вы сдаёте, — это доход. [Калькулятор аренды](/ru/calculators/rental-yield/) применяет уставные 20 процентов, шкалы 2026 года и ГЕСИ 2,65 процента валовой аренды для физического лица: это цифра Налогового департамента об аренде. Потолок, которого он не списал с текущих таблиц ГЕСИ, он не моделирует.\n\n## Что страница оставляет нарочно\n\nПлата за школу, дорожный налог на машину, корзина продуктов и типичный счёт за электричество не лежат на официальной странице одной цифрой «переезд на Кипр». [Страница о коммуналке](/ru/guides/resident-handbook/utilities/) говорит, как поставить электричество и воду на ваше имя, и по той же причине отказывается от типичного залога. Берите расчёт поставщика.",
+    "faq": [
+      {
+        "q": "Переезд делает меня налоговым резидентом?",
+        "a": "Только если выполнено правило 183 дней или правило 60 дней целиком. Карточка проживания — другое дело."
+      },
+      {
+        "q": "Старые шкалы, с €19 500, ещё те, которыми пользоваться?",
+        "a": "За годы по 2025-й включительно порог подачи, который называет департамент, был валовой доход свыше €19 500. С налогового 2026 года нулевая шкала идёт до €22 000, и проверка подачи — уже не этот порог."
+      },
+      {
+        "q": "Где стоимость жизни?",
+        "a": "Не на этой странице. Единой официальной цифры не найдено, поэтому её нет. Налоги на покупку и сравнение ставки кредита — это цифры, у которых источник есть."
+      }
+    ],
+    "sources": [
+      {
+        "name": "Налоговое резидентство и домициль, Налоговый департамент",
+        "url": "https://www.gov.cy/mof-tax/en/documents/tax-residency-domicility/"
+      },
+      {
+        "name": "Декларация и шкалы 2026 года, Налоговый департамент",
+        "url": "https://www.gov.cy/mof-tax/en/documents/forologiki-dilosi-eisodimatos-atomoy/"
+      },
+      {
+        "name": "Сборы за переоформление, Gov.cy",
+        "url": "https://www.gov.cy/en/service/calculation-of-real-estates-transfer-fees/"
+      }
+    ]
+  },
+  "en": {
+    "title": "Cost and tax when you move to Cyprus",
+    "description": "Tax residence is the 60-day or 183-day rule. The 2026 bands start at €22,000. A move does not by itself create non-dom status, and this page does not invent a cost of living.",
+    "body": "Last checked: November 2026.\n\n## Short answer\n\nTwo different bills arrive with a move, and they should not be added together as if they were one. One is the cost of buying or renting a home. The other is income tax, once the Tax Department’s residence tests are met. This page points at the official tests and at the calculators. It does not print a monthly budget for Limassol or Paphos. No official source checked for this article publishes a single cost of living, and a made-up one would be the wrong kind of help.\n\n## Tax residence, not the residence card\n\nYou are tax resident if you are in Cyprus for more than 183 days in the calendar year, or if the [60-day rule](/guides/tax-residency/) is met in full: at least 60 days in Cyprus, not more than 183 days in any other one country, a business, employment or office in Cyprus that is not terminated during the year, and a permanent home you own or rent. The Tax Department’s current page lists those points. A [yellow slip or a pink slip](/guides/resident-handbook/residence-registration/) does not answer the test.\n\nFrom the 2026 tax year the bands on taxable income are nil to €22,000, then 20, 25, 30 and 35 per cent at the thresholds on the [return page](/guides/resident-handbook/income-tax-return/). A resident aged 25 to 70 files even with no income. Filing needs a [tax identification code](/guides/resident-handbook/tic/).\n\n## Non-dom is a further status\n\n[Non-dom status](/guides/non-dom/) is about domicile for Special Defence Contribution. It is for a person who is tax resident and not domiciled. It is not a discount on the income-tax bands, and it is not granted by the residence card. Read that guide before you repeat a sentence about dividends.\n\n## The cost of a home\n\nOn a purchase, use the [total-cost guide](/guides/total-cost/) and the calculators for [transfer fees](/calculators/transfer-fees/), [VAT](/calculators/vat/) and [stamp duty](/calculators/stamp-duty/). Stamp duty is nil if no party signed before 1 January 2026. There is no state annual property tax from 2017. Local charges are local. If the comparison is with a home in Germany, Greece or Spain, the [mortgage comparison](/guides/mortgage-comparison/) sets the September 2026 average loan rate and the purchase taxes side by side, and it says where a single national figure does not exist.\n\nRent, if you let, is income. The [rental calculator](/calculators/rental-yield/) applies the 20 per cent statutory deduction, the 2026 bands and GHS at 2.65 per cent of gross rent for an individual, which is the Tax Department’s rental figure. It does not model a ceiling it has not copied from the current GHS tables.\n\n## What this page leaves out on purpose\n\nSchool fees, a car’s road tax, a grocery basket and a typical electricity bill are not on an official page as one number for “moving to Cyprus”. The [utilities page](/guides/resident-handbook/utilities/) says how to put electricity and water in your name and refuses a typical deposit for the same reason. Take the supplier’s quote.",
+    "faq": [
+      {
+        "q": "Does moving make me tax resident?",
+        "a": "Only if the 183-day rule or the full 60-day rule is met. The residence card is a different file."
+      },
+      {
+        "q": "Are the old bands, starting at €19,500, still the ones to use?",
+        "a": "For tax years up to and including 2025, the filing threshold the Department states was gross income above €19,500. From the 2026 tax year the nil band runs to €22,000, and the filing test is no longer that threshold."
+      },
+      {
+        "q": "Where is the cost of living?",
+        "a": "It is not on this page. No single official figure was found, so none is printed. The purchase taxes and the loan-rate comparison are the figures that do have a source."
+      }
+    ],
+    "sources": [
+      {
+        "name": "Tax residency and domicile, Tax Department",
+        "url": "https://www.gov.cy/mof-tax/en/documents/tax-residency-domicility/"
+      },
+      {
+        "name": "Individual income tax return and 2026 bands, Tax Department",
+        "url": "https://www.gov.cy/mof-tax/en/documents/forologiki-dilosi-eisodimatos-atomoy/"
+      },
+      {
+        "name": "Transfer fees, Gov.cy",
+        "url": "https://www.gov.cy/en/service/calculation-of-real-estates-transfer-fees/"
+      }
+    ]
+  },
+  "el": {
+    "title": "Κόστος και φόρος όταν μετακομίζετε στην Κύπρο",
+    "description": "Η φορολογική κατοικία είναι ο κανόνας των 60 ή των 183 ημερών. Τα κλιμάκια του 2026 αρχίζουν από €22.000. Η μετακόμιση από μόνη της δεν δημιουργεί καθεστώς non-dom, και αυτή η σελίδα δεν επινοεί κόστος ζωής.",
+    "body": "Τελευταίος έλεγχος: Νοέμβριος 2026.\n\n## Σύντομη απάντηση\n\nΔύο διαφορετικοί λογαριασμοί έρχονται με μια μετακόμιση, και δεν πρέπει να προστεθούν σαν να ήταν ένας. Ο ένας είναι το κόστος αγοράς ή ενοικίασης κατοικίας. Ο άλλος είναι ο φόρος εισοδήματος, μόλις πληρωθούν οι έλεγχοι κατοικίας του Τμήματος Φορολογίας. Αυτή η σελίδα δείχνει τους επίσημους ελέγχους και τους υπολογιστές. Δεν τυπώνει μηνιαίο προϋπολογισμό για τη Λεμεσό ή την Πάφο. Καμία επίσημη πηγή που ελέγχθηκε για αυτό το άρθρο δεν δημοσιεύει ένα ενιαίο κόστος ζωής, και ένα επινοημένο θα ήταν βοήθεια λάθος είδους.\n\n## Φορολογική κατοικία, όχι η κάρτα διαμονής\n\nΕίστε φορολογικός κάτοικος αν βρίσκεστε στην Κύπρο περισσότερες από 183 ημέρες στο ημερολογιακό έτος, ή αν ο [κανόνας των 60 ημερών](/el/guides/tax-residency/) πληρούται ολόκληρος: τουλάχιστον 60 ημέρες στην Κύπρο, όχι περισσότερες από 183 ημέρες σε οποιαδήποτε άλλη μία χώρα, επιχείρηση, εργασία ή αξίωμα στην Κύπρο που δεν τερματίζεται μέσα στο έτος, και μόνιμη κατοικία που σας ανήκει ή που ενοικιάζετε. Η τρέχουσα σελίδα του Τμήματος απαριθμεί αυτά τα σημεία. [Κίτρινο ή ροζ δελτίο](/el/guides/resident-handbook/residence-registration/) δεν απαντά στον έλεγχο.\n\nΑπό το φορολογικό έτος 2026 τα κλιμάκια στο φορολογητέο εισόδημα είναι μηδέν έως €22.000, έπειτα 20, 25, 30 και 35 τοις εκατό στα κατώφλια της [σελίδας δήλωσης](/el/guides/resident-handbook/income-tax-return/). Κάτοικος 25 έως 70 ετών υποβάλλει ακόμη και χωρίς εισόδημα. Η υποβολή θέλει [φορολογικό αριθμό](/el/guides/resident-handbook/tic/).\n\n## Το non-dom είναι περαιτέρω καθεστώς\n\nΤο [καθεστώς non-dom](/el/guides/non-dom/) αφορά την κατοικία (domicile) για την έκτακτη εισφορά για την άμυνα. Είναι για πρόσωπο που είναι φορολογικός κάτοικος και δεν έχει domicile. Δεν είναι έκπτωση στα κλιμάκια φόρου εισοδήματος, και δεν το χορηγεί η κάρτα διαμονής. Διαβάστε εκείνον τον οδηγό πριν επαναλάβετε μια πρόταση για μερίσματα.\n\n## Το κόστος μιας κατοικίας\n\nΣε αγορά, χρησιμοποιήστε τον [οδηγό συνολικού κόστους](/el/guides/total-cost/) και τους υπολογιστές [τελών μεταβίβασης](/el/calculators/transfer-fees/), [ΦΠΑ](/el/calculators/vat/) και [χαρτοσήμου](/el/calculators/stamp-duty/). Το χαρτόσημο είναι μηδέν αν κανένα μέρος δεν υπέγραψε πριν την 1η Ιανουαρίου 2026. Δεν υπάρχει κρατικός ετήσιος φόρος ακίνητης ιδιοκτησίας από το 2017. Τα τοπικά τέλη είναι τοπικά. Αν η σύγκριση είναι με κατοικία σε Γερμανία, Ελλάδα ή Ισπανία, η [σύγκριση στεγαστικού](/el/guides/mortgage-comparison/) βάζει δίπλα δίπλα τον μέσο όρο επιτοκίου δανείου του Σεπτεμβρίου 2026 και τους φόρους αγοράς, και λέει πού δεν υπάρχει ένα εθνικό νούμερο.\n\nΤο ενοίκιο, αν εκμισθώνετε, είναι εισόδημα. Ο [υπολογιστής ενοικίου](/el/calculators/rental-yield/) εφαρμόζει την νόμιμη έκπτωση 20 τοις εκατό, τα κλιμάκια του 2026 και τη ΓεΣΥ στο 2,65 τοις εκατό του ακαθάριστου ενοικίου για φυσικό πρόσωπο, που είναι το νούμερο του Τμήματος Φορολογίας για το ενοίκιο. Δεν μοντελοποιεί οροφή που δεν έχει αντιγράψει από τους τρέχοντες πίνακες ΓεΣΥ.\n\n## Τι αφήνει επίτηδες αυτή η σελίδα\n\nΔίδακτρα, τέλος κυκλοφορίας αυτοκινήτου, καλάθι τροφίμων και τυπικός λογαριασμός ρεύματος δεν βρίσκονται σε επίσημη σελίδα ως ένα νούμερο για «μετακόμιση στην Κύπρο». Η [σελίδα κοινής ωφέλειας](/el/guides/resident-handbook/utilities/) λέει πώς να βάλετε ηλεκτρισμό και νερό στο όνομά σας και αρνείται τυπική εγγύηση για τον ίδιο λόγο. Πάρτε την προσφορά του προμηθευτή.",
+    "faq": [
+      {
+        "q": "Η μετακόμιση με κάνει φορολογικό κάτοικο;",
+        "a": "Μόνο αν πληρούται ο κανόνας των 183 ημερών ή ο πλήρης κανόνας των 60 ημερών. Η κάρτα διαμονής είναι άλλος φάκελος."
+      },
+      {
+        "q": "Τα παλιά κλιμάκια, από €19.500, είναι ακόμη αυτά που χρησιμοποιούμε;",
+        "a": "Για φορολογικά έτη έως και το 2025, το κατώφλι υποβολής που αναφέρει το Τμήμα ήταν ακαθάριστο εισόδημα άνω των €19.500. Από το φορολογικό έτος 2026 το μηδενικό κλιμάκιο φτάνει τις €22.000, και ο έλεγχος υποβολής δεν είναι πλέον αυτό το κατώφλι."
+      },
+      {
+        "q": "Πού είναι το κόστος ζωής;",
+        "a": "Δεν είναι σε αυτή τη σελίδα. Δεν βρέθηκε ένα ενιαίο επίσημο νούμερο, άρα δεν τυπώνεται κανένα. Οι φόροι αγοράς και η σύγκριση επιτοκίου δανείου είναι τα νούμερα που έχουν πηγή."
+      }
+    ],
+    "sources": [
+      {
+        "name": "Φορολογική κατοικία και domicile, Τμήμα Φορολογίας",
+        "url": "https://www.gov.cy/mof-tax/en/documents/tax-residency-domicility/"
+      },
+      {
+        "name": "Δήλωση και κλιμάκια 2026, Τμήμα Φορολογίας",
+        "url": "https://www.gov.cy/mof-tax/en/documents/forologiki-dilosi-eisodimatos-atomoy/"
+      },
+      {
+        "name": "Τέλη μεταβίβασης, Gov.cy",
+        "url": "https://www.gov.cy/en/service/calculation-of-real-estates-transfer-fees/"
+      }
+    ]
+  }
+}

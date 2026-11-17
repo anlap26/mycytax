@@ -62,7 +62,7 @@ UI = {
     home_desc="Transfer fees, VAT, capital gains, rental income and a mortgage payment, plus practical guides.",
     home_intro="Work out the Land Registry fee, VAT, stamp duty, capital gains tax, rental tax and a mortgage payment. Every rate on MyCyTax is tied to a source. The publisher is Anna, in Cyprus.",
     list_calcs="Cyprus property calculators: transfer fees, stamp duty, VAT, capital gains, rental income and mortgage payments.",
-    list_guides="Practical guides to buying, selling, tax residency, non-dom status, title deeds and renting property in Cyprus.",
+    list_guides="Practical guides to buying, selling, tax residency, non-dom status, title deeds, renting, settling in, and comparing a mortgage.",
     contact_t="Contact", contact_d="Write to MyCyTax about buying or selling. The form goes to info@mycytax.com.",
     contact_i="The publisher is Anna. Email info@mycytax.com, or use the form. The first message to this address asks FormSubmit to send a confirmation email. Until that link is opened, the form will not deliver. We reply within 24 hours.",
     thanks_t="Thank you", thanks_d="Your message has been sent.",
@@ -86,7 +86,7 @@ UI = {
     home_desc="Сборы кадастра, НДС, прирост капитала, аренда и ипотечный платёж, плюс практические справочники.",
     home_intro="Посчитайте сбор Земельного кадастра, НДС, гербовый сбор, налог на прирост капитала, налог с аренды и ипотечный платёж. Каждая ставка на MyCyTax привязана к источнику. Издатель — Анна, Кипр.",
     list_calcs="Калькуляторы по недвижимости Кипра: сборы кадастра, гербовый сбор, НДС, прирост капитала, аренда и ипотека.",
-    list_guides="Практические справочники о покупке, продаже, налоговом резидентстве, статусе non-dom, титулах и аренде на Кипре.",
+    list_guides="Практические справочники о покупке, продаже, налоговом резидентстве, статусе non-dom, титулах, аренде, переезде и сравнении ипотеки.",
     contact_t="Контакты", contact_d="Напишите MyCyTax о покупке или продаже. Форма уходит на info@mycytax.com.",
     contact_i="Издатель — Анна. Пишите на info@mycytax.com или через форму. Первое сообщение на этот адрес FormSubmit подтверждает письмом. Пока ссылка не открыта, форма не доставляет заявки. Ответим в течение 24 часов.",
     thanks_t="Спасибо", thanks_d="Сообщение отправлено.",
@@ -110,7 +110,7 @@ UI = {
     home_desc="Τέλη μεταβίβασης, ΦΠΑ, κεφαλαιουχικά κέρδη, ενοίκιο και δόση δανείου, μαζί με πρακτικούς οδηγούς.",
     home_intro="Υπολογίστε το τέλος του Κτηματολογίου, τον ΦΠΑ, το χαρτόσημο, τον φόρο κεφαλαιουχικών κερδών, τον φόρο ενοικίου και τη δόση στεγαστικού. Κάθε συντελεστής στο MyCyTax δένεται με πηγή. Εκδότρια είναι η Άννα, στην Κύπρο.",
     list_calcs="Υπολογιστές ακινήτων Κύπρου: τέλη μεταβίβασης, χαρτόσημο, ΦΠΑ, κεφαλαιουχικά κέρδη, ενοίκιο και δόση δανείου.",
-    list_guides="Πρακτικοί οδηγοί για αγορά, πώληση, φορολογική κατοικία, καθεστώς non-dom, τίτλους και ενοικίαση στην Κύπρο.",
+    list_guides="Πρακτικοί οδηγοί για αγορά, πώληση, φορολογική κατοικία, καθεστώς non-dom, τίτλους, ενοικίαση, εγκατάσταση και σύγκριση στεγαστικού.",
     contact_t="Επικοινωνία", contact_d="Γράψτε στο MyCyTax για αγορά ή πώληση. Η φόρμα πηγαίνει στο info@mycytax.com.",
     contact_i="Εκδότρια είναι η Άννα. Στείλτε email στο info@mycytax.com ή χρησιμοποιήστε τη φόρμα. Το πρώτο μήνυμα σε αυτή τη διεύθυνση το επιβεβαιώνει το FormSubmit με email. Μέχρι να ανοίξει ο σύνδεσμος, η φόρμα δεν παραδίδει αιτήματα. Απαντάμε μέσα σε 24 ώρες.",
     thanks_t="Ευχαριστούμε", thanks_d="Το μήνυμά σας στάλθηκε.",
@@ -202,6 +202,17 @@ def slugify(v):
     v = "".join(_TR.get(ch, ch) for ch in str(v).lower())
     return re.sub(r"-+", "-", re.sub(r"[^a-z0-9]+", "-", v)).strip("-")[:70].strip("-")
 
+# A published address may be one segment or a hub plus one child, so a handbook
+# can live at /guides/resident-handbook/tic/ without a second generator.
+GUIDE_SLUG_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*(?:/[a-z0-9]+(?:-[a-z0-9]+)*)?$")
+
+def guide_address(raw, stem, title):
+    """Keep a valid slug, including one slash. Otherwise derive one."""
+    raw = _clean(raw)
+    if raw and GUIDE_SLUG_RE.fullmatch(raw):
+        return raw
+    return slugify(raw or stem) or slugify(title)
+
 def _guide_ok(block):
     return bool(_clean(block.get("title")) and _clean(block.get("description")) and _clean(block.get("body")))
 
@@ -248,7 +259,7 @@ def load_guides():
         stem = os.path.splitext(fn)[0]
         ru = d.get("ru") if isinstance(d.get("ru"), dict) else {}
         # Page address: the slug field, else the file name, else the Russian title.
-        slug = slugify(_clean(d.get("slug")) or stem) or slugify(ru.get("title", ""))
+        slug = guide_address(d.get("slug"), stem, ru.get("title", ""))
         if not slug:
             raise SystemExit(f"{path}: cannot make a page address (slug)")
         if not _guide_ok(ru):
@@ -412,7 +423,7 @@ def partners_block(lang, kind, slug, data=None):
 
 def inline(text):
     text = e(text)
-    text = re.sub(r"\[([^\]]+)\]\((https?://[^)\s]+)\)",
+    text = re.sub(r"\[([^\]]+)\]\((https?://[^)\s]+|/[^\s)]+)\)",
                   lambda m: f'<a href="{m.group(2)}">{m.group(1)}</a>', text)
     return text
 
@@ -422,16 +433,22 @@ def parse(md):
     mode = "body"
     blocks, buf = [], []
     words = []
+    table = None
     def flush():
         if buf:
             blocks.append(("p", " ".join(buf).strip()))
             buf.clear()
+    def flush_table():
+        nonlocal table
+        if table:
+            blocks.append(("table", table))
+            table = None
     for line in md.splitlines():
         s = line.strip()
         if s == "## FAQ":
-            flush(); mode = "faq"; continue
+            flush(); flush_table(); mode = "faq"; continue
         if s == "## Sources":
-            flush(); mode = "sources"; continue
+            flush(); flush_table(); mode = "sources"; continue
         if mode == "sources":
             m = re.match(r"-\s*\[([^\]]+)\]\((https?://[^)]+)\)", s)
             if m:
@@ -443,30 +460,66 @@ def parse(md):
             elif s and faq:
                 faq[-1][1].append(s)
             continue
+        if s.startswith("|"):
+            flush()
+            cells = [c.strip() for c in s.strip().strip("|").split("|")]
+            if cells and all(re.fullmatch(r":?-{3,}:?", c or "-") for c in cells):
+                continue
+            if table is None:
+                table = []
+            table.append(cells)
+            words.append(" ".join(cells))
+            continue
+        flush_table()
         if not s:
             flush(); continue
         if s.startswith("## "):
             flush(); blocks.append(("h2", s[3:].strip())); continue
         if s.startswith("- "):
             flush(); blocks.append(("li", s[2:].strip())); words.append(s[2:].strip()); continue
+        numbered = re.match(r"\d+\.\s+(.*)", s)
+        if numbered:
+            flush(); blocks.append(("oli", numbered.group(1).strip())); words.append(numbered.group(1).strip()); continue
         buf.append(s)
         words.append(s)
     flush()
+    flush_table()
     for q, a in faq:
         words.append(q)
         words.extend(a)
     html_parts = []
+    list_tag = None
+    def close_list():
+        nonlocal list_tag
+        if list_tag:
+            html_parts.append(f"</{list_tag}>")
+            list_tag = None
     for kind, text in blocks:
+        if kind in ("li", "oli"):
+            tag = "ul" if kind == "li" else "ol"
+            if list_tag != tag:
+                close_list()
+                html_parts.append(f"<{tag}>")
+                list_tag = tag
+            html_parts.append(f"<li>{inline(text)}</li>")
+            continue
+        close_list()
         if kind == "h2":
             html_parts.append(f"<h2>{inline(text)}</h2>")
             words.append(text)
-        elif kind == "li":
-            html_parts.append(f"<li>{inline(text)}</li>")
+        elif kind == "table":
+            rows = text
+            head = "".join(f"<th>{inline(c)}</th>" for c in rows[0])
+            body_rows = []
+            for row in rows[1:]:
+                body_rows.append("<tr>" + "".join(f"<td>{inline(c)}</td>" for c in row) + "</tr>")
+            html_parts.append(
+                f'<div class="table-wrap"><table class="compare"><thead><tr>{head}</tr></thead><tbody>{"".join(body_rows)}</tbody></table></div>'
+            )
         else:
             html_parts.append(f"<p>{inline(text)}</p>")
-    # wrap consecutive li
+    close_list()
     body = "\n".join(html_parts)
-    body = re.sub(r"(?:<li>.*?</li>\n?)+", lambda m: "<ul>" + m.group(0) + "</ul>", body)
     faqs = [(q, " ".join(a)) for q, a in faq]
     src = "".join(f'<li><a href="{e(u)}">{e(n)}</a></li>' for n, u in sources)
     count = len(re.findall(r"\w+", " ".join(words), flags=re.UNICODE))
@@ -507,8 +560,12 @@ h2.sec{font-family:Georgia,Palatino,serif;font-size:30px;margin:34px 0 12px}
 .meta{color:var(--muted);font-size:14px;margin:0 0 16px}
 article .body h2{font-family:Georgia,Palatino,serif;font-size:26px;margin:28px 0 8px}
 article .body p{margin:0 0 14px;max-width:72ch}
-article .body ul{margin:0 0 14px;padding-left:1.2em;max-width:72ch}
+article .body ul,article .body ol{margin:0 0 14px;padding-left:1.2em;max-width:72ch}
 article .body li{margin:4px 0}
+.table-wrap{overflow-x:auto;max-width:72ch;margin:0 0 16px}
+table.compare{width:100%;border-collapse:collapse;font-size:15px}
+table.compare th,table.compare td{text-align:left;vertical-align:top;padding:8px 10px;border-bottom:1px solid var(--line);white-space:normal}
+table.compare th{font-weight:700}
 .banner{background:#fff6ea;border:1px solid #ecd7bc;border-radius:12px;padding:12px 14px;color:#5a3b22;font-size:14.5px;margin:12px 0 18px}
 .src{background:var(--card);border-left:4px solid var(--pine2);padding:12px 14px;margin:22px 0;border-radius:0 12px 12px 0}
 .src h2{margin:0 0 6px;font-size:15px;letter-spacing:.04em;text-transform:uppercase}
@@ -1011,7 +1068,13 @@ def guide_page(lang, slug, words_out):
     if faqs:
         ld.append({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
             {"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}} for q, a in faqs]})
-    body = f'''<main id="main" class="wrap page"><p class="meta"><a href="{href(loc(lang, "/guides/"))}">{e(u["guides"])}</a></p>
+    crumb = f'<a href="{href(loc(lang, "/guides/"))}">{e(u["guides"])}</a>'
+    if "/" in slug:
+        parent = slug.split("/", 1)[0]
+        if parent in GUIDES:
+            parent_meta, _ = load_md(lang, parent)
+            crumb += f' · <a href="{href(loc(lang, "/guides/"+parent+"/"))}">{e(parent_meta["title"])}</a>'
+    body = f'''<main id="main" class="wrap page"><p class="meta">{crumb}</p>
 <article><h1>{e(meta["title"])}</h1><p class="lede">{e(meta["description"])}</p>
 <p class="banner">{e(DISCLAIMER[lang])}</p>{ad("guide-top")}
 <div class="body">{body_html}</div>

@@ -1,0 +1,127 @@
+{
+  "slug": "resident-handbook/tic",
+  "seq": 12,
+  "ru": {
+    "title": "Как получить налоговый идентификационный код на Кипре",
+    "description": "Номер выдаёт Налоговый департамент через Tax For All. Сначала учётная запись, затем регистрация налогоплательщика и документы из списка самого департамента.",
+    "body": "Проверено: ноябрь 2026 года.\n\n## Короткий ответ\n\nНалоговый идентификационный код — это номер в реестре Налогового департамента. В английских текстах департамента он называется TIN. Его получают онлайн-регистрацией. Портал Business in Cyprus, государственный сайт, пишет, что заявление о включении в налоговый реестр подаётся только через Tax For All и что первый шаг — учётная запись на этом портале. Как выглядит сам номер, эта страница не описывает. Открытые инструкции описывают порядок и вложения, а не шаблон для запоминания.\n\nНомер нужен до подачи декларации. С налогового 2026 года декларация физического лица подаётся только в Tax For All. Кто обязан подавать — на странице [декларации о доходах](/ru/guides/resident-handbook/income-tax-return/).\n\n## Шаги\n\n1. Откройте [Tax For All](https://taxforall.mof.gov.cy/) и создайте учётную запись. Портал ведёт Налоговый департамент. Учётная запись — это вход. Записи налогоплательщика ещё нет.\n2. Идите по [инструкциям онлайн-регистрации](https://www.gov.cy/mof-tfa/en/documents/online-registration-guides/) департамента. Есть руководство для физического лица, отдельное для самозанятого и отдельное для иного лица.\n3. Приложите документы из файла на той же странице, «Required Documents for Online Registration for Individuals». Список не один на всех. Берите PDF под свой случай.\n4. Дождитесь, пока департамент примет регистрацию и выдаст TIN. Английская страница инструкций не публикует срок рассмотрения, поэтому эта страница срок не называет.\n5. Если TIN уже есть с прошлого года, не регистрируйтесь второй раз. В указателе документов Tax For All есть материалы о доступе к уже существующему налогоплательщику. Начинайте с [указателя](https://www.gov.cy/mof-tfa/en/documents/), а не с новой регистрации.\n\n## Документы\n\nСписок — это PDF департамента. Эта страница его не копирует: скопированный перечень устаревает, а PDF уже раскладывает бумаги по категориям. До начала держите при себе тот документ, удостоверяющий личность, которого просит PDF, и то подтверждение проживания, которого он просит. Адрес, телефон и электронная почта нужны, чтобы портал мог до вас достучаться. Всё сверх этого читайте в PDF.\n\nРегистрация плательщиком НДС — следующий шаг. Портал Business in Cyprus пишет, что TIN нужен до формы НДС, а если номер ещё не выдан, на форму НДС ставят ссылочный номер регистрации. Это шаг для дела, а не первый шаг для человека, которому нужно только подать личную декларацию.\n\n## Чем этот номер не является\n\nЭто не номер социального страхования. Тот выдают Службы социального страхования, и только в случаях со страницы [социального страхования](/ru/guides/resident-handbook/social-insurance/). Это не номер регистрации иностранца на карточке проживания. Сам по себе он не решает, что вы налоговый резидент. Резидентство — это [проверка 60 или 183 дней](/ru/guides/tax-residency/).",
+    "faq": [
+      {
+        "q": "Можно ли подать декларацию без TIN?",
+        "a": "Нет. С налогового 2026 года декларация физического лица подаётся только через Tax For All, и система подаёт её против записи в реестре. Сначала учётная запись, затем регистрация налогоплательщика, и всё это до вашего срока."
+      },
+      {
+        "q": "Дохода нет. Регистрироваться всё равно?",
+        "a": "Если вы налоговый резидент Кипра и в налоговом году вам от 25 до 70 лет, Налоговый департамент говорит, что декларацию подают даже без дохода. Для подачи нужен TIN. Резидент без валового дохода младше 25 лет или старше 70 лет под это правило подачи не подпадает. Подробность — на странице декларации."
+      },
+      {
+        "q": "Есть ли сбор?",
+        "a": "Страница инструкций по регистрации сбор за включение в налоговый реестр не называет. Эта страница сбор не выдумывает. Любая сумма, которую с вас просят, должна быть той, что показана внутри Tax For All или на действующей форме департамента."
+      }
+    ],
+    "sources": [
+      {
+        "name": "Инструкции онлайн-регистрации, Tax For All, Gov.cy",
+        "url": "https://www.gov.cy/mof-tfa/en/documents/online-registration-guides/"
+      },
+      {
+        "name": "Документы Tax For All, Gov.cy",
+        "url": "https://www.gov.cy/mof-tfa/en/documents/"
+      },
+      {
+        "name": "Портал Tax For All, Налоговый департамент",
+        "url": "https://taxforall.mof.gov.cy/"
+      },
+      {
+        "name": "Декларация о доходах физического лица, Налоговый департамент",
+        "url": "https://www.gov.cy/mof-tax/en/documents/forologiki-dilosi-eisodimatos-atomoy/"
+      },
+      {
+        "name": "Регистрация для подоходного налога и НДС, Business in Cyprus",
+        "url": "https://www.businessincyprus.gov.cy/doing-business-in-cyprus/start-your-business/registering-for-income-tax-and-value-added-tax/"
+      }
+    ]
+  },
+  "en": {
+    "title": "How to get a Cyprus tax identification code",
+    "description": "The Tax Department issues the number through Tax For All. You create an account, then register as a taxpayer, and you attach the documents on the Department’s own list.",
+    "body": "Last checked: November 2026.\n\n## Short answer\n\nThe tax identification code is the number on the Tax Department’s register. The Department’s English pages call it a TIN. You obtain it by registering online. The Business in Cyprus portal, a government site, says a request to join the tax register is submitted only through the Tax For All portal, and that the first step is an account on that portal. This page does not describe the shape of the number. The public guides describe the process and the attachments, not a pattern to memorise.\n\nYou need the number before you can file. From the 2026 tax year the individual return is filed only in Tax For All. Who must file is on the [income-tax return page](/guides/resident-handbook/income-tax-return/).\n\n## Steps\n\n1. Open [Tax For All](https://taxforall.mof.gov.cy/) and create an account. The portal is run by the Tax Department. An account is the sign-in. It is not yet the taxpayer record.\n2. Follow the Department’s [online registration guides](https://www.gov.cy/mof-tfa/en/documents/online-registration-guides/). There is a user guide for an individual, a separate one for a self-employed person, and a separate one for a non-individual.\n3. Attach the documents in the file the same page publishes, “Required Documents for Online Registration for Individuals”. The list is not the same for every person. Use the PDF for your own case.\n4. Wait for the Department to accept the registration and to issue the TIN. The English guides page does not publish a processing time, so this page does not state one.\n5. If you already have a TIN from an earlier year, do not register again. The Tax For All document index includes material on access to an existing taxpayer. Start from that [document index](https://www.gov.cy/mof-tfa/en/documents/) rather than from a second registration.\n\n## Documents\n\nThe Department’s PDF is the list. This page does not copy it, because a copied checklist goes stale and because the PDF already sorts the papers by category. Have the identity document the PDF asks for, and the residence evidence it asks for, before you start. An address, a telephone number and an email address are part of a registration the portal can actually reach you on. Read the PDF for anything beyond that.\n\nA VAT registration is a later step. The Business in Cyprus portal says you need a TIN before the VAT form, and that if the TIN is not issued yet you put the registration reference on the VAT form. That is a business step, not the first step for a person who only needs to file an individual return.\n\n## What this number is not\n\nIt is not the social insurance number. That comes from the Social Insurance Services, and only in the cases on the [social insurance page](/guides/resident-handbook/social-insurance/). It is not the alien registration number on a residence card. It is not, by itself, a decision that you are tax resident. Residence is the [60-day or 183-day test](/guides/tax-residency/).",
+    "faq": [
+      {
+        "q": "Can I file a return without a TIN?",
+        "a": "No. From the 2026 tax year the individual return is submitted only through Tax For All, and the register entry is what that system files against. Create the account, then the taxpayer registration, before the deadline that applies to you."
+      },
+      {
+        "q": "I have no income. Do I still register?",
+        "a": "If you are a Cyprus tax resident and you are between 25 and 70 during the tax year, the Tax Department says you file even where you have no income. Filing needs a TIN. A resident with no gross income who is under 25, or over 70, is outside that filing rule. The detail is on the return page."
+      },
+      {
+        "q": "Is there a fee?",
+        "a": "The registration guides page does not state a fee for joining the tax register. This page does not invent one. Any charge you are asked for should be the one shown inside Tax For All or on the Department’s current form."
+      }
+    ],
+    "sources": [
+      {
+        "name": "Online registration guides, Tax For All, Gov.cy",
+        "url": "https://www.gov.cy/mof-tfa/en/documents/online-registration-guides/"
+      },
+      {
+        "name": "Tax For All documents, Gov.cy",
+        "url": "https://www.gov.cy/mof-tfa/en/documents/"
+      },
+      {
+        "name": "Tax For All portal, Tax Department",
+        "url": "https://taxforall.mof.gov.cy/"
+      },
+      {
+        "name": "Individual income tax return, who must file, Tax Department",
+        "url": "https://www.gov.cy/mof-tax/en/documents/forologiki-dilosi-eisodimatos-atomoy/"
+      },
+      {
+        "name": "Registering for income tax and VAT, Business in Cyprus",
+        "url": "https://www.businessincyprus.gov.cy/doing-business-in-cyprus/start-your-business/registering-for-income-tax-and-value-added-tax/"
+      }
+    ]
+  },
+  "el": {
+    "title": "Πώς αποκτάτε φορολογικό αριθμό στην Κύπρο",
+    "description": "Το Τμήμα Φορολογίας εκδίδει τον αριθμό μέσω του Tax For All. Δημιουργείτε λογαριασμό, έπειτα εγγράφεστε ως φορολογούμενος, και επισυνάπτετε τα έγγραφα του καταλόγου του Τμήματος.",
+    "body": "Τελευταίος έλεγχος: Νοέμβριος 2026.\n\n## Σύντομη απάντηση\n\nΟ φορολογικός αριθμός ταυτοποίησης είναι ο αριθμός στο μητρώο του Τμήματος Φορολογίας. Στις αγγλικές σελίδες του Τμήματος ονομάζεται TIN. Τον αποκτάτε με ηλεκτρονική εγγραφή. Η πύλη Business in Cyprus, κυβερνητικός ιστότοπος, λέει ότι αίτηση για το φορολογικό μητρώο υποβάλλεται μόνο μέσω της πύλης Tax For All, και ότι το πρώτο βήμα είναι λογαριασμός σε αυτή την πύλη. Αυτή η σελίδα δεν περιγράφει τη μορφή του αριθμού. Οι δημόσιοι οδηγοί περιγράφουν τη διαδικασία και τα συνημμένα, όχι ένα μοτίβο για απομνημόνευση.\n\nΟ αριθμός χρειάζεται πριν από τη δήλωση. Από το φορολογικό έτος 2026 η δήλωση φυσικού προσώπου υποβάλλεται μόνο στο Tax For All. Ποιοι οφείλουν να δηλώσουν είναι στη [σελίδα της δήλωσης](/el/guides/resident-handbook/income-tax-return/).\n\n## Βήματα\n\n1. Ανοίξτε το [Tax For All](https://taxforall.mof.gov.cy/) και δημιουργήστε λογαριασμό. Την πύλη τη λειτουργεί το Τμήμα Φορολογίας. Ο λογαριασμός είναι η είσοδος. Δεν είναι ακόμη το μητρώο φορολογουμένου.\n2. Ακολουθήστε τους [οδηγούς ηλεκτρονικής εγγραφής](https://www.gov.cy/mof-tfa/en/documents/online-registration-guides/) του Τμήματος. Υπάρχει οδηγός για φυσικό πρόσωπο, χωριστός για αυτοεργοδοτούμενο και χωριστός για μη φυσικό πρόσωπο.\n3. Επισυνάψτε τα έγγραφα του αρχείου που δημοσιεύει η ίδια σελίδα, «Required Documents for Online Registration for Individuals». Ο κατάλογος δεν είναι ο ίδιος για όλους. Χρησιμοποιήστε το PDF της δικής σας περίπτωσης.\n4. Περιμένετε να αποδεχθεί το Τμήμα την εγγραφή και να εκδώσει τον TIN. Η αγγλική σελίδα οδηγών δεν δημοσιεύει χρόνο εξέτασης, άρα αυτή η σελίδα δεν αναφέρει κανέναν.\n5. Αν έχετε ήδη TIN από προηγούμενο έτος, μην εγγραφείτε ξανά. Το ευρετήριο εγγράφων του Tax For All περιλαμβάνει υλικό για πρόσβαση σε υφιστάμενο φορολογούμενο. Ξεκινήστε από αυτό το [ευρετήριο](https://www.gov.cy/mof-tfa/en/documents/), όχι από δεύτερη εγγραφή.\n\n## Έγγραφα\n\nΟ κατάλογος είναι το PDF του Τμήματος. Αυτή η σελίδα δεν το αντιγράφει, γιατί ένας αντιγραμμένος κατάλογος παλιώνει και γιατί το PDF ήδη χωρίζει τα χαρτιά κατά κατηγορία. Πριν ξεκινήσετε, έχετε το έγγραφο ταυτότητας που ζητά το PDF και το αποδεικτικό διαμονής που ζητά. Διεύθυνση, τηλέφωνο και email χρειάζονται ώστε η πύλη να μπορεί να σας βρει. Ό,τι περνά από αυτά, διαβάστε το στο PDF.\n\nΗ εγγραφή στο μητρώο ΦΠΑ είναι μεταγενέστερο βήμα. Η πύλη Business in Cyprus λέει ότι χρειάζεστε TIN πριν από το έντυπο ΦΠΑ, και ότι αν ο TIN δεν έχει εκδοθεί ακόμη γράφετε στο έντυπο ΦΠΑ τον αριθμό αναφοράς της εγγραφής. Αυτό είναι βήμα επιχείρησης, όχι το πρώτο βήμα για πρόσωπο που χρειάζεται μόνο ατομική δήλωση.\n\n## Τι δεν είναι αυτός ο αριθμός\n\nΔεν είναι ο αριθμός κοινωνικών ασφαλίσεων. Εκείνος προέρχεται από τις Υπηρεσίες Κοινωνικών Ασφαλίσεων, και μόνο στις περιπτώσεις της [σελίδας κοινωνικών ασφαλίσεων](/el/guides/resident-handbook/social-insurance/). Δεν είναι ο αριθμός εγγραφής αλλοδαπού στην άδεια διαμονής. Από μόνος του δεν είναι απόφαση ότι είστε φορολογικός κάτοικος. Η φορολογική κατοικία είναι ο [έλεγχος των 60 ή των 183 ημερών](/el/guides/tax-residency/).",
+    "faq": [
+      {
+        "q": "Μπορώ να υποβάλω δήλωση χωρίς TIN;",
+        "a": "Όχι. Από το φορολογικό έτος 2026 η δήλωση φυσικού προσώπου υποβάλλεται μόνο μέσω Tax For All, και το σύστημα τη υποβάλλει έναντι της εγγραφής στο μητρώο. Δημιουργήστε τον λογαριασμό και έπειτα την εγγραφή φορολογουμένου πριν από την προθεσμία που σας αφορά."
+      },
+      {
+        "q": "Δεν έχω εισόδημα. Εγγράφομαι και πάλι;",
+        "a": "Αν είστε φορολογικός κάτοικος Κύπρου και μέσα στο φορολογικό έτος είστε μεταξύ 25 και 70 ετών, το Τμήμα Φορολογίας λέει ότι υποβάλλετε δήλωση ακόμη και χωρίς εισόδημα. Η υποβολή θέλει TIN. Κάτοικος χωρίς ακαθάριστο εισόδημα που είναι κάτω των 25 ή άνω των 70 είναι εκτός αυτού του κανόνα. Η λεπτομέρεια είναι στη σελίδα της δήλωσης."
+      },
+      {
+        "q": "Υπάρχει τέλος;",
+        "a": "Η σελίδα οδηγών εγγραφής δεν αναφέρει τέλος για την ένταξη στο φορολογικό μητρώο. Αυτή η σελίδα δεν επινοεί τέλος. Οποιοδήποτε ποσό σας ζητηθεί πρέπει να είναι αυτό που φαίνεται μέσα στο Tax For All ή στο τρέχον έντυπο του Τμήματος."
+      }
+    ],
+    "sources": [
+      {
+        "name": "Οδηγοί ηλεκτρονικής εγγραφής, Tax For All, Gov.cy",
+        "url": "https://www.gov.cy/mof-tfa/en/documents/online-registration-guides/"
+      },
+      {
+        "name": "Έγγραφα Tax For All, Gov.cy",
+        "url": "https://www.gov.cy/mof-tfa/en/documents/"
+      },
+      {
+        "name": "Πύλη Tax For All, Τμήμα Φορολογίας",
+        "url": "https://taxforall.mof.gov.cy/"
+      },
+      {
+        "name": "Δήλωση εισοδήματος φυσικού προσώπου, Τμήμα Φορολογίας",
+        "url": "https://www.gov.cy/mof-tax/en/documents/forologiki-dilosi-eisodimatos-atomoy/"
+      },
+      {
+        "name": "Εγγραφή για φόρο εισοδήματος και ΦΠΑ, Business in Cyprus",
+        "url": "https://www.businessincyprus.gov.cy/doing-business-in-cyprus/start-your-business/registering-for-income-tax-and-value-added-tax/"
+      }
+    ]
+  }
+}

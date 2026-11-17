@@ -1,0 +1,115 @@
+{
+  "slug": "relocation/residence-options",
+  "seq": 24,
+  "ru": {
+    "title": "Варианты проживания: граждане ЕС и граждане третьих стран",
+    "description": "Гражданин Союза получает свидетельство MEU1. Посетитель из третьей страны получает разрешение MVIS8 и работать не может. Иммиграционное разрешение по правилу 6(2) — третий путь, со своими денежными проверками.",
+    "body": "Проверено: ноябрь 2026 года.\n\n## Короткий ответ\n\nМаршрут зависит от паспорта, а затем от того, что вы будете делать. Гражданин Европейского союза, Европейской экономической зоны или Швейцарии, который остаётся дольше трёх месяцев, подаёт на свидетельство о регистрации, форма MEU1, в течение четырёх месяцев со дня въезда. Сбор — €20. Свидетельство не истекает. Работать можно. Гражданин третьей страны, который приезжает в гости и не работает, подаёт на временное разрешение, форма MVIS8, до истечения визы. Сбор — €70 плюс €70, если это первая регистрация в реестре иностранцев. Вести экономическую деятельность нельзя. Гражданин третьей страны, который будет инвестировать по действующим критериям департамента, использует [правило 6(2)](/ru/guides/residence-permit/). Это ни одна из тех форм.\n\nПолные шаги, основания и сборы — на странице [жёлтого и розового слипа](/ru/guides/resident-handbook/residence-registration/). Эта страница — карта, чтобы три дела не смешались.\n\n## Граждане Союза\n\nДо трёх месяцев хватает действующего удостоверения или паспорта. Дольше — человек работает по найму или как самозанятый либо имеет достаточно средств и полное медицинское страхование. Члены семьи, которые сами граждане Союза, подают на то же свидетельство. Члены семьи, которые не граждане Союза, — другая карточка, MEU2. Страница Министерства внутренних дел о карточках проживания — место этого различия. После пяти лет законного проживания постоянную карточку, MEU3, могут выдать за €20, если требования выполнены. Ничто из этого не налоговое резидентство. [Дни](/ru/guides/tax-residency/) считают отдельно.\n\n## Граждане третьих стран, которые не инвестируют\n\nКатегории посетителя — на странице Департамента миграции: самостоятельный посетитель, супруг-иждивенец, несовершеннолетний ребёнок-иждивенец и более узкие категории, которые страница называет. Первое разрешение обычно на один год, и его продлевают, если критерии всё ещё выполнены. Это не разрешение на работу. Кто будет работать по найму, идёт по процедуре проживания и работы, которую эта страница не пересказывает: сборы и офис не те, что на странице посетителя. Прочитайте страницу департамента для той категории, прежде чем пользоваться MVIS8.\n\n## Граждане третьих стран, которые инвестируют\n\nПравило 6(2), по критериям в силе с 2 мая 2023 года, — иммиграционное разрешение, привязанное к инвестиции не менее €300 000 в одной из категорий, которые перечисляет департамент, плюс обеспеченный годовой доход не менее €50 000, с надбавками на супруга и детей. Это не гражданство и не налоговое резидентство. [Справочник](/ru/guides/residence-permit/) даёт категории, правило дохода для квартиры и то, чего разрешение не позволяет. Покупатель земли не из ЕС до регистрации титула нуждается ещё и в разрешении Министерства внутренних дел на приобретение. Это разрешение — не разрешение на проживание. [Справочник о покупке](/ru/guides/buying-as-a-foreigner/) их не смешивает.\n\n## Что делать с ответом\n\nВыберите один маршрут и его форму. Перечень для жёлтого слипа розовый не выдаст, а дело по правилу 6(2) не рассмотрят как заявление посетителя. Когда разрешение или свидетельство есть, [ГЕСИ](/ru/guides/resident-handbook/gesy/) может опознать лицо не кипрского гражданства по реестру миграции. До тех пор страховка, которую просил департамент, — это ваше покрытие.",
+    "faq": [
+      {
+        "q": "Может ли гражданин ЕС пользоваться розовым слипом?",
+        "a": "Нет. Розовый слип — разрешение посетителя для гражданина третьей страны. Гражданин Союза пользуется MEU1."
+      },
+      {
+        "q": "Правило 6(2) позволяет работать?",
+        "a": "Критерии департамента говорят, что нет, кроме должности директора компании, в которую вы инвестировали по этой политике. Справочник называет предел."
+      },
+      {
+        "q": "На какой странице документы?",
+        "a": "Страница жёлтого и розового слипа ссылается на списки самого департамента. Этот обзор их не копирует."
+      }
+    ],
+    "sources": [
+      {
+        "name": "MEU1, Департамент миграции",
+        "url": "https://www.gov.cy/mip-md/en/documents/e-u-e-e-a-citizens-and-family-members-2/e-u-e-e-a-citizens-family-member/registration-of-e-u-citizens-and-members-of-their-families-who-are-also-e-u-e-e-a-citizens-meu1/"
+      },
+      {
+        "name": "Посетители, Департамент миграции",
+        "url": "https://www.gov.cy/mip-md/en/documents/visitors-and-family-members/"
+      },
+      {
+        "name": "Карточки проживания, Министерство внутренних дел",
+        "url": "https://www.gov.cy/moi/en/residence-cards/"
+      },
+      {
+        "name": "Иммиграционные разрешения для инвесторов, Департамент миграции",
+        "url": "https://www.gov.cy/mip-md/en/documents/companies-investors-permanent-residence-3/immigration-permits-for-investors/"
+      }
+    ]
+  },
+  "en": {
+    "title": "Residence options: EU citizens and third-country nationals",
+    "description": "A Union citizen uses the MEU1 registration certificate. A third-country visitor uses the MVIS8 permit and may not work. An investment permit under Regulation 6(2) is a third route, with its own money tests.",
+    "body": "Last checked: November 2026.\n\n## Short answer\n\nThe route depends on the passport, and then on what you will do. A citizen of the European Union, the European Economic Area or Switzerland who stays longer than three months applies for a registration certificate, form MEU1, within four months of entry. The fee is €20. The certificate does not expire. The person may work. A third-country national who is visiting, and not working, applies for a temporary residence permit, form MVIS8, before the visa expires. The fee is €70, plus €70 if this is the first registration in the Aliens’ Register. The holder may not carry out an economic activity. A third-country national who will invest on the Department’s current criteria uses [Regulation 6(2)](/guides/residence-permit/), which is neither of those forms.\n\nThe full steps, the grounds and the fees are on the [yellow slip and pink slip page](/guides/resident-handbook/residence-registration/). This page is the map, so the three files are not mixed.\n\n## Union citizens\n\nUp to three months, a valid identity card or passport is enough. Longer than that, the person is a worker or self-employed, or has sufficient resources and comprehensive sickness insurance. Family members who are themselves Union citizens apply with the same certificate. Family members who are not Union citizens are a different card, MEU2. The Ministry’s residence-card page is the place for that distinction. After five years of legal residence a permanent card, MEU3, can be issued for €20 if the requirements are met. None of this is tax residence. Count the [days](/guides/tax-residency/) separately.\n\n## Third-country nationals who are not investing\n\nThe visitor categories are on the Migration Department’s page: an autonomous visitor, a dependent spouse, a dependent minor child, and the narrower categories the page names. The first permit is generally one year and is renewable if the criteria still hold. It is not a work permit. A person who will be employed is in the residence-and-employment procedure, which this page does not restate, because the fees and the office are not the visitor page’s. Read the Department’s page for that category before you use MVIS8.\n\n## Third-country nationals who invest\n\nRegulation 6(2), on the criteria in force from 2 May 2023, is an immigration permit tied to an investment of at least €300,000 in one of the categories the Department lists, plus a secured annual income of at least €50,000, with the uplifts for a spouse and children. It is not citizenship and not tax residence. The [guide](/guides/residence-permit/) has the categories, the income rule for a flat, and what the permit does not allow. A non-EU buyer of land also needs the Ministry of Interior’s acquisition permission before title is registered. That permission is not the residence permit. The [buying guide](/guides/buying-as-a-foreigner/) keeps them apart.\n\n## What to do with the answer\n\nPick one route and follow its form. A yellow-slip checklist will not get a pink slip issued, and a Regulation 6(2) file will not be examined as a visitor application. When the permit or the certificate exists, [GESY](/guides/resident-handbook/gesy/) can use the migration registry to identify a non-Cypriot. Until then, the insurance the Department asked for is the cover you hold.",
+    "faq": [
+      {
+        "q": "Can an EU citizen use the pink slip?",
+        "a": "No. The pink slip is the visitor permit for a third-country national. A Union citizen uses MEU1."
+      },
+      {
+        "q": "Does Regulation 6(2) let me work?",
+        "a": "The Department’s criteria say no, except as a director of a company you invested in under that policy. The guide states the limit."
+      },
+      {
+        "q": "Which page has the documents?",
+        "a": "The yellow-slip and pink-slip page links the Department’s own lists. This overview does not copy them."
+      }
+    ],
+    "sources": [
+      {
+        "name": "MEU1, Migration Department",
+        "url": "https://www.gov.cy/mip-md/en/documents/e-u-e-e-a-citizens-and-family-members-2/e-u-e-e-a-citizens-family-member/registration-of-e-u-citizens-and-members-of-their-families-who-are-also-e-u-e-e-a-citizens-meu1/"
+      },
+      {
+        "name": "Visitors, Migration Department",
+        "url": "https://www.gov.cy/mip-md/en/documents/visitors-and-family-members/"
+      },
+      {
+        "name": "Residence cards, Ministry of Interior",
+        "url": "https://www.gov.cy/moi/en/residence-cards/"
+      },
+      {
+        "name": "Immigration permits for investors, Migration Department",
+        "url": "https://www.gov.cy/mip-md/en/documents/companies-investors-permanent-residence-3/immigration-permits-for-investors/"
+      }
+    ]
+  },
+  "el": {
+    "title": "Επιλογές διαμονής: πολίτες ΕΕ και υπήκοοι τρίτων χωρών",
+    "description": "Πολίτης της Ένωσης χρησιμοποιεί το πιστοποιητικό εγγραφής MEU1. Επισκέπτης τρίτης χώρας χρησιμοποιεί την άδεια MVIS8 και δεν μπορεί να εργαστεί. Άδεια επένδυσης κατά τον Κανονισμό 6(2) είναι τρίτη οδός, με δικούς της χρηματικούς ελέγχους.",
+    "body": "Τελευταίος έλεγχος: Νοέμβριος 2026.\n\n## Σύντομη απάντηση\n\nΗ οδός εξαρτάται από το διαβατήριο, και έπειτα από το τι θα κάνετε. Πολίτης της Ευρωπαϊκής Ένωσης, του Ευρωπαϊκού Οικονομικού Χώρου ή της Ελβετίας που μένει πάνω από τρεις μήνες αιτείται πιστοποιητικό εγγραφής, έντυπο MEU1, εντός τεσσάρων μηνών από την είσοδο. Το τέλος είναι €20. Το πιστοποιητικό δεν λήγει. Το πρόσωπο μπορεί να εργαστεί. Υπήκοος τρίτης χώρας που επισκέπτεται, και δεν εργάζεται, αιτείται προσωρινή άδεια διαμονής, έντυπο MVIS8, πριν λήξει η θεώρηση. Το τέλος είναι €70, συν €70 αν αυτή είναι η πρώτη εγγραφή στο Μητρώο Αλλοδαπών. Ο κάτοχος δεν μπορεί να ασκεί οικονομική δραστηριότητα. Υπήκοος τρίτης χώρας που θα επενδύσει με τα τρέχοντα κριτήρια του Τμήματος χρησιμοποιεί τον [Κανονισμό 6(2)](/el/guides/residence-permit/), που δεν είναι κανένα από αυτά τα έντυπα.\n\nΤα πλήρη βήματα, οι βάσεις και τα τέλη είναι στη σελίδα [κίτρινου και ροζ δελτίου](/el/guides/resident-handbook/residence-registration/). Αυτή η σελίδα είναι ο χάρτης, ώστε οι τρεις φάκελοι να μην αναμειχθούν.\n\n## Πολίτες της Ένωσης\n\nΈως τρεις μήνες, έγκυρη ταυτότητα ή διαβατήριο αρκεί. Πέρα από αυτό, το πρόσωπο είναι εργαζόμενος ή αυτοεργοδοτούμενος, ή έχει επαρκείς πόρους και πλήρη ασφάλιση ασθενείας. Μέλη οικογένειας που είναι οι ίδιοι πολίτες της Ένωσης αιτούνται με το ίδιο πιστοποιητικό. Μέλη οικογένειας που δεν είναι πολίτες της Ένωσης είναι άλλη κάρτα, MEU2. Η σελίδα καρτών διαμονής του Υπουργείου Εσωτερικών είναι το σημείο αυτής της διάκρισης. Μετά από πέντε έτη νόμιμης διαμονής μόνιμη κάρτα, MEU3, μπορεί να εκδοθεί για €20 αν πληρούνται οι απαιτήσεις. Τίποτα από αυτά δεν είναι φορολογική κατοικία. Μετρήστε τις [ημέρες](/el/guides/tax-residency/) χωριστά.\n\n## Υπήκοοι τρίτων χωρών που δεν επενδύουν\n\nΟι κατηγορίες επισκέπτη είναι στη σελίδα του Τμήματος Μετανάστευσης: αυτόνομος επισκέπτης, εξαρτώμενος σύζυγος, εξαρτώμενο ανήλικο τέκνο, και οι στενότερες κατηγορίες που κατονομάζει η σελίδα. Η πρώτη άδεια είναι γενικά ενός έτους και ανανεώνεται αν τα κριτήρια εξακολουθούν. Δεν είναι άδεια εργασίας. Πρόσωπο που θα εργοδοτηθεί είναι στη διαδικασία διαμονής και απασχόλησης, την οποία αυτή η σελίδα δεν επαναλαμβάνει, γιατί τα τέλη και το γραφείο δεν είναι της σελίδας επισκέπτη. Διαβάστε τη σελίδα του Τμήματος για εκείνη την κατηγορία πριν χρησιμοποιήσετε το MVIS8.\n\n## Υπήκοοι τρίτων χωρών που επενδύουν\n\nΟ Κανονισμός 6(2), με τα κριτήρια σε ισχύ από τις 2 Μαΐου 2023, είναι άδεια μετανάστευσης δεμένη με επένδυση τουλάχιστον €300.000 σε μία από τις κατηγορίες που απαριθμεί το Τμήμα, συν εξασφαλισμένο ετήσιο εισόδημα τουλάχιστον €50.000, με τις προσαυξήσεις για σύζυγο και τέκνα. Δεν είναι υπηκοότητα και δεν είναι φορολογική κατοικία. Ο [οδηγός](/el/guides/residence-permit/) έχει τις κατηγορίες, τον κανόνα εισοδήματος για διαμέρισμα, και τι δεν επιτρέπει η άδεια. Αγοραστής γης εκτός ΕΕ χρειάζεται επίσης την άδεια απόκτησης του Υπουργείου Εσωτερικών πριν εγγραφεί ο τίτλος. Η άδεια αυτή δεν είναι η άδεια διαμονής. Ο [οδηγός αγοράς](/el/guides/buying-as-a-foreigner/) τις κρατά χωριστά.\n\n## Τι να κάνετε με την απάντηση\n\nΔιαλέξτε μία οδό και ακολουθήστε το έντυπό της. Κατάλογος κίτρινου δελτίου δεν θα εκδώσει ροζ, και φάκελος Κανονισμού 6(2) δεν θα εξεταστεί ως αίτηση επισκέπτη. Όταν η άδεια ή το πιστοποιητικό υπάρχει, η [ΓεΣΥ](/el/guides/resident-handbook/gesy/) μπορεί να χρησιμοποιήσει το μητρώο μετανάστευσης για να ταυτοποιήσει μη Κύπριο. Μέχρι τότε, η ασφάλιση που ζήτησε το Τμήμα είναι η κάλυψη που κρατάτε.",
+    "faq": [
+      {
+        "q": "Μπορεί πολίτης της ΕΕ να χρησιμοποιήσει το ροζ δελτίο;",
+        "a": "Όχι. Το ροζ δελτίο είναι η άδεια επισκέπτη για υπήκοο τρίτης χώρας. Πολίτης της Ένωσης χρησιμοποιεί το MEU1."
+      },
+      {
+        "q": "Ο Κανονισμός 6(2) μου επιτρέπει να εργαστώ;",
+        "a": "Τα κριτήρια του Τμήματος λένε όχι, εκτός ως διευθυντής εταιρείας στην οποία επενδύσατε κατά την πολιτική αυτή. Ο οδηγός δηλώνει το όριο."
+      },
+      {
+        "q": "Ποια σελίδα έχει τα έγγραφα;",
+        "a": "Η σελίδα κίτρινου και ροζ δελτίου συνδέει τους καταλόγους του ίδιου του Τμήματος. Αυτή η επισκόπηση δεν τους αντιγράφει."
+      }
+    ],
+    "sources": [
+      {
+        "name": "MEU1, Τμήμα Μετανάστευσης",
+        "url": "https://www.gov.cy/mip-md/en/documents/e-u-e-e-a-citizens-and-family-members-2/e-u-e-e-a-citizens-family-member/registration-of-e-u-citizens-and-members-of-their-families-who-are-also-e-u-e-e-a-citizens-meu1/"
+      },
+      {
+        "name": "Επισκέπτες, Τμήμα Μετανάστευσης",
+        "url": "https://www.gov.cy/mip-md/en/documents/visitors-and-family-members/"
+      },
+      {
+        "name": "Κάρτες διαμονής, Υπουργείο Εσωτερικών",
+        "url": "https://www.gov.cy/moi/en/residence-cards/"
+      },
+      {
+        "name": "Άδειες μετανάστευσης επενδυτών, Τμήμα Μετανάστευσης",
+        "url": "https://www.gov.cy/mip-md/en/documents/companies-investors-permanent-residence-3/immigration-permits-for-investors/"
+      }
+    ]
+  }
+}
