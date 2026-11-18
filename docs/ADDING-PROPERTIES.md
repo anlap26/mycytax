@@ -39,4 +39,4 @@ On each published listing that has a `price_eur`, the page links to four calcula
 
 The mortgage link uses the price as the loan amount only so the calculator opens on a figure. It is not a statement of how much a bank will lend. VAT and transfer fees are alternatives on many purchases. The calculators explain that. The listing does not add them together.
 
-The contact buttons are the same consultation buttons used on the guides. They go to the contact form.
+Each listing page has its own request form. It posts to the same FormSubmit address as the contact page, info@mycytax.com. The button on the card and the button under the title both go to that form. The consultation buttons under the form are the same ones used on the guides. They go to the contact form.
