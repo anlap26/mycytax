@@ -64,6 +64,65 @@ class RealEstateTests(unittest.TestCase):
         self.assertIn("€10", build.guide_page("el", "water-tariff-proposal", []))
         self.assertIn("17 ноября 2026", build.guide_page("ru", "water-tariff-proposal", []))
 
+    def test_listing_pages_post_a_request_to_the_contact_form_address(self):
+        labels = {"en": "Request info", "ru": "Оставить заявку", "el": "Ζητήστε πληροφορίες"}
+        interests = {
+            "en": "I'm interested in ",
+            "ru": "Меня интересует ",
+            "el": "Ενδιαφέρομαι για ",
+        }
+        xml = build.sitemap()
+        self.assertNotIn("/real-estate/thanks/", xml)
+        self.assertNotIn("wa.me", build.real_estate_page("en"))
+        for lang, label in labels.items():
+            section = build.real_estate_page(lang)
+            thanks = build.listing_thanks(lang)
+            self.assertIn('name="robots" content="noindex,follow"', thanks)
+            self.assertIn(build.LISTING_LEAD[lang]["thanks_d"], thanks)
+            self.assertNotIn("/real-estate/thanks/", section)
+            for item in build.published_listings():
+                page = build.listing_detail(lang, item)
+                title = item["title"][lang]
+                detail = build.href(build.loc(lang, f"/real-estate/{item['id']}/"))
+                form_at = page.index('id="listing-lead"')
+                top = page.index('class="listing-request"')
+                self.assertLess(page.index("<h1>"), top)
+                self.assertLess(top, page.index('class="gallery"') if 'class="gallery"' in page else form_at)
+                self.assertIn(f'<a class="request" href="#listing-lead">{label}</a>', page)
+                self.assertIn(f'<a class="request" href="{detail}#listing-lead">{label}</a>', section)
+                self.assertLess(
+                    section.index(f'href="{detail}#listing-lead"'),
+                    section.index(item["description"][lang][:80]),
+                )
+                form = page[form_at:page.index("</form>", form_at)]
+                self.assertIn(f'action="https://formsubmit.co/{build.EMAIL}"', form)
+                self.assertIn('method="POST"', form)
+                self.assertIn(f'name="_subject" value="MyCyTax lead: {build.e(title)}"', form)
+                self.assertIn('name="_template" value="table"', form)
+                self.assertIn('name="_captcha" value="false"', form)
+                self.assertIn('name="_honey"', form)
+                self.assertIn(
+                    f'name="_next" value="{build.absu(build.loc(lang, "/real-estate/thanks/"))}"',
+                    form,
+                )
+                self.assertIn(f'name="listing" value="{build.e(title)}"', form)
+                self.assertIn(
+                    f'name="page url" value="{build.absu(build.loc(lang, f"/real-estate/{item["id"]}/"))}"',
+                    form,
+                )
+                self.assertIn('<input name="name" required', form)
+                self.assertIn('<input name="phone" required', form)
+                email = form[form.index('type="email"'):form.index('type="email"') + 80]
+                self.assertNotIn("required", email)
+                self.assertIn(
+                    "<textarea name=\"message\">" + build.e(interests[lang] + title) + "</textarea>",
+                    form,
+                )
+                self.assertIn('name="consent" value="yes" required', form)
+                self.assertNotIn("<script", form)
+                self.assertNotIn("wa.me", page)
+                self.assertNotIn("youtube.com", page)
+
 
 if __name__ == "__main__":
     unittest.main()

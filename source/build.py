@@ -690,6 +690,15 @@ footer a.ig-foot .ig-mark{width:16px;height:16px}
 .listing-facts{display:flex;flex-wrap:wrap;gap:8px 16px;margin:8px 0 16px;color:#314038}
 .gallery{display:grid;gap:10px;margin:0 0 16px}
 .gallery img{width:100%;border-radius:16px}
+a.request{display:flex;align-items:center;justify-content:center;box-sizing:border-box;width:100%;max-width:720px;text-align:center;text-decoration:none;background:var(--pine);color:#fff;border-radius:999px;padding:12px 18px;font-weight:700;line-height:1.3}
+a.request:hover,a.request:focus-visible{background:var(--copper);color:#fff}
+.listing-request{margin:0 0 16px}
+.listing-lead{scroll-margin-top:16px}
+.prop-card .more{margin-top:auto}
+.prop-card a.request{max-width:none;margin-top:4px}
+.fld textarea{font:inherit;padding:10px 12px;border:1px solid #d5cbbd;border-radius:10px;background:#fff;width:100%;min-height:140px}
+form.listing-form button.send{width:100%}
+@media(min-width:601px){form.listing-form button.send{width:auto}}
 .tg-cta{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--pine2);border-radius:16px;padding:18px 18px 16px;margin:22px 0;max-width:720px}
 .tg-cta h2{font-family:Georgia,Palatino,serif;font-size:26px;line-height:1.2;margin:0 0 12px}
 .tg-cta h2 a{display:inline-flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none}
@@ -1706,6 +1715,72 @@ def listing_calc_links(lang, item):
     heading = PROPERTY_LABELS[lang]["calc_h"]
     return f'<section class="src"><h2>{e(heading)}</h2><ul>{"".join(items)}</ul></section>'
 
+LISTING_LEAD = {
+ "en": dict(
+    request="Request info",
+    p="Send your name and a phone or WhatsApp number. We reply within 24 hours.",
+    email="Email (optional)",
+    interest="I'm interested in {title}",
+    thanks_d="Your request about this listing has been sent.",
+ ),
+ "ru": dict(
+    request="Оставить заявку",
+    p="Оставьте имя и телефон или WhatsApp. Ответим в течение 24 часов.",
+    email="Эл. почта (необязательно)",
+    interest="Меня интересует {title}",
+    thanks_d="Заявка по этому объявлению отправлена.",
+ ),
+ "el": dict(
+    request="Ζητήστε πληροφορίες",
+    p="Στείλτε το όνομά σας και ένα τηλέφωνο ή WhatsApp. Απαντάμε μέσα σε 24 ώρες.",
+    email="Email (προαιρετικό)",
+    interest="Ενδιαφέρομαι για {title}",
+    thanks_d="Το αίτημά σας για αυτή την αγγελία στάλθηκε.",
+ ),
+}
+
+def listing_interest(lang, title):
+    return LISTING_LEAD[lang]["interest"].replace("{title}", title)
+
+def listing_request_link(lang, href_target):
+    label = LISTING_LEAD[lang]["request"]
+    return f'<a class="request" href="{e(href_target)}">{e(label)}</a>'
+
+def listing_form(lang, item, path):
+    """Same FormSubmit address as the contact page. No script: the button is an anchor."""
+    a = LEAD[lang]
+    lead = LISTING_LEAD[lang]
+    title = item["title"][lang]
+    interest = listing_interest(lang, title)
+    thanks = absu(loc(lang, "/real-estate/thanks/"))
+    subject = e("MyCyTax lead: " + title)
+    return f'''<section class="cta listing-lead" id="listing-lead"><h2>{e(lead["request"])}</h2><p>{e(lead["p"])}</p>
+<form class="lead listing-form" action="https://formsubmit.co/{EMAIL}" method="POST">
+<input type="hidden" name="_subject" value="{subject}">
+<input type="hidden" name="_template" value="table">
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_next" value="{e(thanks)}">
+<input type="hidden" name="listing" value="{e(title)}">
+<input type="hidden" name="page url" value="{e(absu(path))}">
+<p class="hp"><label>{e(a["honey"])}<input name="_honey" tabindex="-1" autocomplete="off"></label></p>
+<label class="fld"><span>{e(a["name"])}</span><input name="name" required autocomplete="name"></label>
+<label class="fld"><span>{e(a["phone"])}</span><input name="phone" required autocomplete="tel" inputmode="tel"></label>
+<label class="fld"><span>{e(lead["email"])}</span><input type="email" name="email" autocomplete="email"></label>
+<label class="fld"><span>{e(a["msg"])}</span><textarea name="message">{e(interest)}</textarea></label>
+<label class="chk"><input type="checkbox" name="consent" value="yes" required><span>{e(a["consent"])}</span></label>
+<button class="send" type="submit">{e(a["send"])}</button></form></section>'''
+
+def listing_thanks(lang):
+    u = UI[lang]
+    lead = LISTING_LEAD[lang]
+    path = loc(lang, "/real-estate/thanks/")
+    def alt(l):
+        return loc(l, "/real-estate/thanks/")
+    title = u["thanks_t"]
+    body = f'''<main id="main" class="wrap page"><h1>{e(title)}</h1><p>{e(lead["thanks_d"])}</p><p>{e(u["thanks_i"])}</p>
+<p><a href="{href(loc(lang, "/real-estate/"))}">{e(u["real_estate"])}</a></p></main>'''
+    return page_shell(lang, f"{title} | {SITE}", lead["thanks_d"], path, alt, body, robots="noindex,follow")
+
 def listings_block(lang, rows=None):
     labels = PROPERTY_LABELS[lang]
     rows = published_listings() if rows is None else [row for row in rows if row["published"]]
@@ -1720,7 +1795,9 @@ def listings_block(lang, rows=None):
         url = href(loc(lang, f"/real-estate/{item['id']}/"))
         cards.append(
             f'<article class="prop-card">{photo}<div class="pad"><h2>{e(item["title"][lang])}</h2>'
-            f'<p class="prop-meta">{meta}</p><p>{e(item["description"][lang])}</p>'
+            f'<p class="prop-meta">{meta}</p>'
+            f'{listing_request_link(lang, url + "#listing-lead")}'
+            f'<p>{e(item["description"][lang])}</p>'
             f'<a class="more" href="{url}">{e(UI[lang]["read"])}</a></div></article>'
         )
     return f'<h2 class="sec">{e(labels["listings"])}</h2><div class="prop-grid">{"".join(cards)}</div>'
@@ -1770,11 +1847,13 @@ def listing_detail(lang, item):
     badge = labels["status"][item["status"]]
     body = f'''<main id="main" class="wrap page"><p class="meta"><a href="{href(loc(lang, "/real-estate/"))}">{e(u["real_estate"])}</a></p>
 <article><h1>{e(item["title"][lang])}</h1>
+<p class="listing-request">{listing_request_link(lang, "#listing-lead")}</p>
 <p class="meta"><span class="badge{" sold" if item["status"]=="sold" else ""}">{e(badge)}</span></p>
 {gallery}
 <p class="listing-facts">{facts}</p>
 <div class="body"><p>{e(item["description"][lang])}</p></div>
 {listing_calc_links(lang, item)}
+{listing_form(lang, item, path)}
 {lead_card(lang)}
 <p><a href="{href(loc(lang, "/contact/"))}">{e(u["contact"])}</a></p>
 </article></main>'''
@@ -1885,6 +1964,7 @@ def main():
         w(loc(lang, "/contact/") + "index.html", contact(lang))
         w(loc(lang, "/contact/thanks/") + "index.html", thanks(lang))
         w(loc(lang, "/real-estate/") + "index.html", real_estate_page(lang))
+        w(loc(lang, "/real-estate/thanks/") + "index.html", listing_thanks(lang))
         for item in published_listings():
             w(loc(lang, f"/real-estate/{item['id']}/") + "index.html", listing_detail(lang, item))
         w(loc(lang, "/links/") + "index.html", links_page(lang))
