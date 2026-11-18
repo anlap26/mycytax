@@ -1,0 +1,29 @@
+{
+  "listings": [
+    {
+      "id": "example-limassol-apartment",
+      "published": false,
+      "title": {
+        "en": "EXAMPLE — not a real listing",
+        "ru": "ПРИМЕР — это не настоящее объявление",
+        "el": "ΠΑΡΑΔΕΙΓΜΑ — δεν είναι αληθινή αγγελία"
+      },
+      "type": "apartment",
+      "city": "Limassol",
+      "area": "Germasogeia",
+      "price_eur": 350000,
+      "price_from": true,
+      "bedrooms": 2,
+      "area_m2": 85,
+      "status": "available",
+      "description": {
+        "en": "EXAMPLE only. This entry shows every field in data/properties.json. It is not a home for sale. It stays off the site while published is false.",
+        "ru": "Только ПРИМЕР. Эта запись показывает все поля в data/properties.json. Это не квартира на продажу. Пока published равно false, на сайте её нет.",
+        "el": "Μόνο ΠΑΡΑΔΕΙΓΜΑ. Η εγγραφή δείχνει όλα τα πεδία στο data/properties.json. Δεν είναι διαμέρισμα προς πώληση. Όσο το published είναι false, δεν φαίνεται στον ιστότοπο."
+      },
+      "photos": [
+        "images/properties/example-limassol-apartment/cover.jpg"
+      ]
+    }
+  ]
+}
