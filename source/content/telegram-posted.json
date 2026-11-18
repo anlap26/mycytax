@@ -250,6 +250,12 @@
         "at": "2026-11-13T00:00:00Z",
         "status": "seeded"
       }
+    },
+    "water-tariff-proposal": {
+      "ru": {
+        "at": "2026-11-18T05:30:55Z",
+        "status": "sent"
+      }
     }
   }
 }
