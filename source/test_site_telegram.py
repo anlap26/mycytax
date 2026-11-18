@@ -90,13 +90,16 @@ class TelegramLinkTests(unittest.TestCase):
     def test_organization_same_as_includes_both_channels(self):
         same = build.org()["sameAs"]
         self.assertEqual(same[0], build.CYNEWS)
-        self.assertEqual(same[1:], [build.TG_RU, build.TG_EN, build.IG, build.YT])
+        self.assertEqual(same[1:], [build.TG_RU, build.TG_EN, build.IG])
         home = build.home("en")
-        self.assertIn('"sameAs": ["https://cynews24.net/", "https://t.me/mycytax", "https://t.me/mycytaxen", "https://www.instagram.com/mycytax/", "https://www.youtube.com/@thepeachickclub"]', home)
+        self.assertIn('"sameAs": ["https://cynews24.net/", "https://t.me/mycytax", "https://t.me/mycytaxen", "https://www.instagram.com/mycytax/"]', home)
+        self.assertNotIn("youtube.com", home)
         guide = build.guide_page("en", "off-plan", [])
-        self.assertIn('"sameAs": ["https://t.me/mycytax", "https://t.me/mycytaxen", "https://www.youtube.com/@thepeachickclub"]', guide)
+        self.assertIn('"sameAs": ["https://t.me/mycytax", "https://t.me/mycytaxen"]', guide)
+        self.assertNotIn("youtube.com", guide)
         calc = build.calc_page("en", "stamp-duty")
-        self.assertIn('"sameAs": ["https://cynews24.net/", "https://t.me/mycytax", "https://t.me/mycytaxen", "https://www.instagram.com/mycytax/", "https://www.youtube.com/@thepeachickclub"]', calc)
+        self.assertIn('"sameAs": ["https://cynews24.net/", "https://t.me/mycytax", "https://t.me/mycytaxen", "https://www.instagram.com/mycytax/"]', calc)
+        self.assertNotIn("youtube.com", calc)
 
 
 if __name__ == "__main__":

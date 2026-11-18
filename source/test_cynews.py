@@ -128,7 +128,7 @@ class CyNewsTests(unittest.TestCase):
 
     def test_organization_same_as_is_unchanged(self):
         self.assertEqual(build.org()["sameAs"][0], "https://cynews24.net/")
-        self.assertEqual(build.org()["sameAs"][1:], [build.TG_RU, build.TG_EN, build.IG, build.YT])
+        self.assertEqual(build.org()["sameAs"][1:], [build.TG_RU, build.TG_EN, build.IG])
 
 
 if __name__ == "__main__":

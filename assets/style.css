@@ -83,11 +83,6 @@ a.ig-nav:hover{background:#a02b6e;color:#fff}
 .ig-mark{width:18px;height:18px;display:block;flex:none}
 footer a.ig-foot{display:inline-flex;align-items:center;gap:6px}
 footer a.ig-foot .ig-mark{width:16px;height:16px}
-a.yt-nav{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:999px;background:#ff0000;color:#fff;flex:none}
-a.yt-nav:hover{background:#cc0000;color:#fff}
-.yt-mark{width:18px;height:18px;display:block;flex:none}
-footer a.yt-foot{display:inline-flex;align-items:center;gap:6px}
-footer a.yt-foot .yt-mark{width:16px;height:16px}
 .cookie-banner{position:fixed;z-index:20;left:16px;right:16px;bottom:16px;margin:0 auto;max-width:1080px;background:var(--card);color:var(--ink);border:1px solid var(--line);border-top:4px solid var(--copper);border-radius:16px;box-shadow:0 12px 32px rgba(30,61,52,.18);padding:14px 16px;display:flex;flex-wrap:wrap;gap:12px 16px;align-items:center}
 .cookie-banner[hidden]{display:none}
 .cookie-banner p{margin:0;flex:1 1 280px;font-size:15px}
