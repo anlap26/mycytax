@@ -35,6 +35,7 @@ _MISSING = object()
 TG_RU = "https://t.me/mycytax"
 TG_EN = "https://t.me/mycytaxen"
 IG = "https://www.instagram.com/mycytax/"
+YT = "https://www.youtube.com/@thepeachickclub"
 LANGS = ["en", "ru", "el"]
 # Empty strings stay empty. The meta tag and the gtag snippet are omitted until a real value is set.
 # indexnow_key is the public IndexNow key: the build writes /<key>.txt containing the key.
@@ -86,6 +87,8 @@ UI = {
     tg_short="Telegram",
     ig="MyCyTax on Instagram",
     ig_short="Instagram",
+    yt="The Peachick Club on YouTube",
+    yt_short="YouTube",
     feed="MyCyTax guides",
     cookie_settings="Cookie settings",
     cookie_accept="Accept",
@@ -119,6 +122,8 @@ UI = {
     tg_short="Telegram",
     ig="MyCyTax в Instagram",
     ig_short="Instagram",
+    yt="The Peachick Club на YouTube",
+    yt_short="YouTube",
     feed="Справочники MyCyTax",
     cookie_settings="Настройки cookie",
     cookie_accept="Принять",
@@ -152,6 +157,8 @@ UI = {
     tg_short="Telegram",
     ig="Το MyCyTax στο Instagram",
     ig_short="Instagram",
+    yt="Το The Peachick Club στο YouTube",
+    yt_short="YouTube",
     feed="Οδηγοί MyCyTax",
     cookie_settings="Ρυθμίσεις cookies",
     cookie_accept="Αποδοχή",
@@ -665,6 +672,11 @@ a.ig-nav:hover{background:#a02b6e;color:#fff}
 .ig-mark{width:18px;height:18px;display:block;flex:none}
 footer a.ig-foot{display:inline-flex;align-items:center;gap:6px}
 footer a.ig-foot .ig-mark{width:16px;height:16px}
+a.yt-nav{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:999px;background:#ff0000;color:#fff;flex:none}
+a.yt-nav:hover{background:#cc0000;color:#fff}
+.yt-mark{width:18px;height:18px;display:block;flex:none}
+footer a.yt-foot{display:inline-flex;align-items:center;gap:6px}
+footer a.yt-foot .yt-mark{width:16px;height:16px}
 .cookie-banner{position:fixed;z-index:20;left:16px;right:16px;bottom:16px;margin:0 auto;max-width:1080px;background:var(--card);color:var(--ink);border:1px solid var(--line);border-top:4px solid var(--copper);border-radius:16px;box-shadow:0 12px 32px rgba(30,61,52,.18);padding:14px 16px;display:flex;flex-wrap:wrap;gap:12px 16px;align-items:center}
 .cookie-banner[hidden]{display:none}
 .cookie-banner p{margin:0;flex:1 1 280px;font-size:15px}
@@ -827,7 +839,7 @@ def header(lang, path_for):
     return f'''<a class="skip" href="#main">{u["home"]}</a><header class="top"><div class="wrap bar">
 <a class="logo" href="{href(loc(lang, "/"))}">{e(u["name"])}<small>{e(u["tagline"])}</small></a>
 <nav class="main" aria-label="{e(u["lang"])}">{item("calcs", loc(lang, "/calculators/"))}{item("guides", loc(lang, "/guides/"))}{item("real_estate", loc(lang, "/real-estate/"))}{item("about", loc(lang, "/about/"))}{item("contact", loc(lang, "/contact/"))}
-{tg_icon_link(lang)}{ig_icon_link(lang)}<span class="langs">{langs}</span></nav></div></header>'''
+{tg_icon_link(lang)}{ig_icon_link(lang)}{yt_icon_link(lang)}<span class="langs">{langs}</span></nav></div></header>'''
 
 def footer(lang):
     u = UI[lang]
@@ -841,7 +853,7 @@ def footer(lang):
         f'<a class="cookie-settings" href="{href(loc(lang, "/cookies/"))}" data-cookie-settings>'
         f'{e(u["cookie_settings"])}</a>'
     )
-    return f'''<footer><div class="wrap"><nav class="cols">{nav}{tg_footer_link(lang)}{ig_footer_link(lang)}{settings}</nav>
+    return f'''<footer><div class="wrap"><nav class="cols">{nav}{tg_footer_link(lang)}{ig_footer_link(lang)}{yt_footer_link(lang)}{settings}</nav>
 {projects_line(lang)}
 <p>{e(DISCLAIMER[lang])}</p><p>© 2026 {SITE}. {e(PUBLISHER)}, Cyprus. <a href="mailto:{EMAIL}">{EMAIL}</a></p></div></footer>
 {cookie_banner(lang)}</body></html>'''
@@ -1008,7 +1020,7 @@ def org():
     return {"@type":"Organization","name":SITE,"url":absu("/"),"email":EMAIL,
             "address":{"@type":"PostalAddress","addressCountry":"CY"},
             "founder":{"@type":"Person","name":PUBLISHER},
-            "sameAs":[CYNEWS, TG_RU, TG_EN, IG]}
+            "sameAs":[CYNEWS, TG_RU, TG_EN, IG, YT]}
 
 # Official Telegram mark (paper plane), drawn with currentColor so it follows the link.
 TG_ICON = (
@@ -1052,6 +1064,23 @@ def ig_footer_link(lang):
     u = UI[lang]
     return (f'<a class="ig-foot" href="{e(IG)}" rel="noopener" target="_blank" '
             f'aria-label="{e(u["ig"])}">{IG_ICON}<span>{e(u["ig_short"])}</span></a>')
+
+# Play-button mark, drawn with currentColor like the other social icons.
+YT_ICON = (
+    '<svg class="yt-mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false">'
+    '<path fill="currentColor" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31.5 31.5 0 0 0 0 12a31.5 31.5 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.5 31.5 0 0 0 24 12a31.5 31.5 0 0 0-.5-5.8zM9.8 15.5v-7L15.8 12l-6 3.5z"/>'
+    "</svg>"
+)
+
+def yt_icon_link(lang):
+    u = UI[lang]
+    return (f'<a class="yt-nav" href="{e(YT)}" rel="noopener" target="_blank" '
+            f'aria-label="{e(u["yt"])}">{YT_ICON}</a>')
+
+def yt_footer_link(lang):
+    u = UI[lang]
+    return (f'<a class="yt-foot" href="{e(YT)}" rel="noopener" target="_blank" '
+            f'aria-label="{e(u["yt"])}">{YT_ICON}<span>{e(u["yt_short"])}</span></a>')
 
 def telegram_card(lang):
     """Subscribe block. The page-language channel is the heading and the first button."""
@@ -1282,8 +1311,8 @@ def guide_page(lang, slug, words_out):
     ld = [
         {"@context":"https://schema.org","@type":"Article","headline":meta["title"],"description":meta["description"],
          "inLanguage":lang,"datePublished":guide_published(slug),"dateModified":guide_modified(slug),"mainEntityOfPage":absu(path),
-         "author":{"@type":"Organization","name":SITE,"url":absu("/"),"sameAs":[TG_RU, TG_EN]},
-         "publisher":{"@type":"Organization","name":SITE,"url":absu("/"),"sameAs":[TG_RU, TG_EN]}},
+         "author":{"@type":"Organization","name":SITE,"url":absu("/"),"sameAs":[TG_RU, TG_EN, YT]},
+         "publisher":{"@type":"Organization","name":SITE,"url":absu("/"),"sameAs":[TG_RU, TG_EN, YT]}},
     ]
     if faqs:
         ld.append({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
