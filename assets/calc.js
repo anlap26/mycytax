@@ -205,6 +205,16 @@
     var v = parseFloat(String(el.value).replace(/\s/g, "").replace(",", "."));
     return isFinite(v) ? v : 0;
   }
+  function qnum(names) {
+    var params = new URLSearchParams(location.search);
+    for (var i = 0; i < names.length; i++) {
+      var raw = params.get(names[i]);
+      if (raw == null || String(raw).trim() === "") continue;
+      var v = parseFloat(String(raw).replace(/\s/g, "").replace(",", "."));
+      if (isFinite(v) && v >= 0) return String(v);
+    }
+    return null;
+  }
   function field(id, label, value, step) {
     return '<label class="fld" for="' + id + '"><span>' + label + '</span><input id="' + id + '" inputmode="decimal" step="' + (step || "0.01") + '" value="' + value + '"></label>';
   }
@@ -252,17 +262,17 @@
 
   var forms = {
     transfer: function () {
-      return field("value", T.value, "200000") +
+      return field("value", T.value, qnum(["value", "price"]) || "200000") +
         radio("vat", "vatNo", T.vatNo, true) + radio("vat", "vatYes", T.vatYes, false) +
         check("forced", T.forced, false) + check("late", T.late, false) +
         field("buyers", T.buyers, "1", "1");
     },
     stamp: function () {
-      return field("value", T.value, "300000") +
+      return field("value", T.value, qnum(["value", "price"]) || "300000") +
         radio("when", "yearNew", T.yearNew, true) + radio("when", "yearOld", T.yearOld, false);
     },
     vat: function () {
-      return field("price", T.price, "300000") + field("area", T.area, "120", "0.1") +
+      return field("price", T.price, qnum(["price"]) || "300000") + field("area", T.area, qnum(["area"]) || "120", "0.1") +
         check("home", T.home, true) + check("disability", T.disability, false);
     },
     cgt: function () {
@@ -278,7 +288,7 @@
         field("otherInc", T.otherInc, "0") + field("extra", T.extra, "0");
     },
     mortgage: function () {
-      return field("principal", T.principal, "200000") + field("rate", T.rate, "4", "0.01") +
+      return field("principal", T.principal, qnum(["principal", "price"]) || "200000") + field("rate", T.rate, "4", "0.01") +
         field("years", T.years, "20", "1");
     }
   };

@@ -91,6 +91,8 @@ UI = {
     cookie_accept="Accept",
     cookie_reject="Reject",
     cookie_banner="Advertising and analytics cookies stay off until you accept. You can change this later.",
+    real_estate="Real Estate",
+    real_estate_desc="Property guides and tax calculators, and any home or project that is listed for sale.",
     home_h="Cyprus property and tax calculators",
     home_desc="Transfer fees, VAT, capital gains, rental income and a mortgage payment, plus practical guides.",
     home_intro="Work out the Land Registry fee, VAT, stamp duty, capital gains tax, rental tax and a mortgage payment. Every rate on MyCyTax is tied to a source. The publisher is Anna, in Cyprus.",
@@ -122,6 +124,8 @@ UI = {
     cookie_accept="Принять",
     cookie_reject="Отклонить",
     cookie_banner="Рекламные и аналитические cookie выключены, пока вы их не примете. Выбор можно изменить позже.",
+    real_estate="Недвижимость",
+    real_estate_desc="Справочники по недвижимости и налоговые калькуляторы, а также объявления о продаже, если они опубликованы.",
     home_h="Калькуляторы недвижимости и налогов Кипра",
     home_desc="Сборы кадастра, НДС, прирост капитала, аренда и ипотечный платёж, плюс практические справочники.",
     home_intro="Посчитайте сбор Земельного кадастра, НДС, гербовый сбор, налог на прирост капитала, налог с аренды и ипотечный платёж. Каждая ставка на MyCyTax привязана к источнику. Издатель — Анна, Кипр.",
@@ -153,6 +157,8 @@ UI = {
     cookie_accept="Αποδοχή",
     cookie_reject="Απόρριψη",
     cookie_banner="Τα cookies διαφήμισης και ανάλυσης μένουν κλειστά μέχρι να τα αποδεχτείτε. Μπορείτε να το αλλάξετε αργότερα.",
+    real_estate="Ακίνητα",
+    real_estate_desc="Οδηγοί για ακίνητα και φορολογικοί υπολογιστές, και όσες κατοικίες ή έργα έχουν δημοσιευτεί προς πώληση.",
     home_h="Υπολογιστές ακινήτων και φόρων Κύπρου",
     home_desc="Τέλη μεταβίβασης, ΦΠΑ, κεφαλαιουχικά κέρδη, ενοίκιο και δόση δανείου, μαζί με πρακτικούς οδηγούς.",
     home_intro="Υπολογίστε το τέλος του Κτηματολογίου, τον ΦΠΑ, το χαρτόσημο, τον φόρο κεφαλαιουχικών κερδών, τον φόρο ενοικίου και τη δόση στεγαστικού. Κάθε συντελεστής στο MyCyTax δένεται με πηγή. Εκδότρια είναι η Άννα, στην Κύπρο.",
@@ -311,7 +317,8 @@ def load_guides():
             raise SystemExit(f"{path}: cannot make a page address (slug)")
         if not _guide_ok(ru):
             raise SystemExit(f"{path}: Russian title, description and text are required")
-        g = {"slug": slug, "seq": _seq(d.get("seq")), "missing": set(), "text": {}}
+        g = {"slug": slug, "seq": _seq(d.get("seq")), "missing": set(), "text": {},
+             "image": d.get("image") if isinstance(d.get("image"), dict) else None}
         for lang in LANGS:
             src = d.get(lang) if isinstance(d.get(lang), dict) else {}
             if lang != "ru" and not _guide_ok(src):
@@ -667,6 +674,22 @@ footer a.ig-foot .ig-mark{width:16px;height:16px}
 .cookie-banner button.reject{background:#fff;color:var(--pine);border:2px solid var(--pine)}
 .cookie-banner button.accept:hover{background:var(--copper)}
 .cookie-banner button.reject:hover{background:var(--pine);color:#fff}
+.guide-fig{margin:0 0 18px}
+.guide-fig img{width:100%;border-radius:16px;display:block}
+.guide-fig figcaption{color:var(--muted);font-size:13px;margin-top:6px}
+.prop-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.prop-card{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+.prop-card img{width:100%;height:180px;object-fit:cover;display:block;background:var(--sand)}
+.prop-card .pad{padding:14px 14px 16px;display:flex;flex-direction:column;gap:6px;flex:1}
+.prop-card h2{font-family:Georgia,Palatino,serif;font-size:22px;line-height:1.2;margin:0}
+.prop-card p{margin:0;color:#314038;font-size:15px}
+.prop-meta{color:var(--muted);font-size:14px}
+.badge{display:inline-block;border-radius:999px;padding:2px 8px;font-size:12px;font-weight:700;background:var(--sand);color:var(--pine)}
+.badge.sold{background:#f3e4e4;color:#6d2e2e}
+.empty{background:var(--card);border:1px dashed #c9bfb0;border-radius:16px;padding:16px;color:var(--muted)}
+.listing-facts{display:flex;flex-wrap:wrap;gap:8px 16px;margin:8px 0 16px;color:#314038}
+.gallery{display:grid;gap:10px;margin:0 0 16px}
+.gallery img{width:100%;border-radius:16px}
 .tg-cta{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--pine2);border-radius:16px;padding:18px 18px 16px;margin:22px 0;max-width:720px}
 .tg-cta h2{font-family:Georgia,Palatino,serif;font-size:26px;line-height:1.2;margin:0 0 12px}
 .tg-cta h2 a{display:inline-flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none}
@@ -696,7 +719,7 @@ footer p.projects{margin:14px 0 0}
 .partners a{font-weight:650;overflow-wrap:anywhere}
 .partners p{margin:2px 0 0;color:#314038;font-size:15.5px}
 .partners .partner-note{margin:12px 0 0;color:var(--muted);font-size:13px;line-height:1.45}
-@media(max-width:800px){.grid{grid-template-columns:1fr}.bar{align-items:flex-start;flex-direction:column}.partners{padding:14px 14px 12px}}
+@media(max-width:800px){.grid,.prop-grid{grid-template-columns:1fr}.bar{align-items:flex-start;flex-direction:column}.partners{padding:14px 14px 12px}}
 main.bio{width:min(440px,calc(100% - 32px));margin:0 auto;padding:36px 0 12px}
 .bio-brand{text-align:center;margin:0 0 22px}
 .bio-brand .logo{display:inline-block;color:var(--pine);font-size:clamp(36px,9vw,48px);text-decoration:none}
@@ -794,14 +817,16 @@ def head(lang, title, desc, path, alt_path, jsonld=None, extra="", robots="index
 def header(lang, path_for):
     u = UI[lang]
     def item(key, path):
-        cur = ' aria-current="page"' if path_for(lang) == path else ""
+        here = path_for(lang)
+        current = here == path or (path.rstrip("/") != "" and here.startswith(path))
+        cur = ' aria-current="page"' if current else ""
         return f'<a href="{href(path)}"{cur}>{u[key]}</a>'
     langs = " ".join(
         f'<a href="{href(path_for(l))}" hreflang="{l}" lang="{l}"{" aria-current=\"true\"" if l==lang else ""}>{l.upper()}</a>'
         for l in LANGS)
     return f'''<a class="skip" href="#main">{u["home"]}</a><header class="top"><div class="wrap bar">
 <a class="logo" href="{href(loc(lang, "/"))}">{e(u["name"])}<small>{e(u["tagline"])}</small></a>
-<nav class="main" aria-label="{e(u["lang"])}">{item("calcs", loc(lang, "/calculators/"))}{item("guides", loc(lang, "/guides/"))}{item("about", loc(lang, "/about/"))}{item("contact", loc(lang, "/contact/"))}
+<nav class="main" aria-label="{e(u["lang"])}">{item("calcs", loc(lang, "/calculators/"))}{item("guides", loc(lang, "/guides/"))}{item("real_estate", loc(lang, "/real-estate/"))}{item("about", loc(lang, "/about/"))}{item("contact", loc(lang, "/contact/"))}
 {tg_icon_link(lang)}{ig_icon_link(lang)}<span class="langs">{langs}</span></nav></div></header>'''
 
 def footer(lang):
@@ -1224,6 +1249,24 @@ def calc_page(lang, slug):
 <script src="{href("/assets/calc.js")}" defer></script>'''
     return page_shell(lang, f"{t} | {SITE}", d, path, alt, body, ld)
 
+def guide_figure(lang, slug):
+    """Optional photograph stored beside the guide. Empty when the guide has none."""
+    img = GUIDES[slug].get("image") or {}
+    src = _clean(img.get("src"))
+    if not src or "/" in src or src.startswith("."):
+        return ""
+    altmap = img.get("alt") if isinstance(img.get("alt"), dict) else {}
+    credmap = img.get("credit") if isinstance(img.get("credit"), dict) else {}
+    alt = _clean(altmap.get(lang)) or _clean(altmap.get("en"))
+    credit = _clean(credmap.get(lang)) or _clean(credmap.get("en"))
+    url = _https(img.get("credit_url"))
+    cap = f'<a href="{e(url)}" rel="noopener">{e(credit or url)}</a>' if url else e(credit)
+    wh = ""
+    if img.get("width") and img.get("height"):
+        wh = f' width="{int(img["width"])}" height="{int(img["height"])}"'
+    return (f'<figure class="guide-fig"><img src="{href("/assets/guides/" + src)}" alt="{e(alt)}"{wh}>'
+            f"<figcaption>{cap}</figcaption></figure>")
+
 def guide_page(lang, slug, words_out):
     u = UI[lang]
     meta, md = load_md(lang, slug)
@@ -1251,8 +1294,12 @@ def guide_page(lang, slug, words_out):
         if parent in GUIDES:
             parent_meta, _ = load_md(lang, parent)
             crumb += f' · <a href="{href(loc(lang, "/guides/"+parent+"/"))}">{e(parent_meta["title"])}</a>'
+    figure = guide_figure(lang, slug)
+    if figure:
+        ld[0]["image"] = absu("/assets/guides/" + GUIDES[slug]["image"]["src"])
     body = f'''<main id="main" class="wrap page"><p class="meta">{crumb}</p>
 <article><h1>{e(meta["title"])}</h1><p class="lede">{e(meta["description"])}</p>
+{figure}
 <p class="banner">{e(DISCLAIMER[lang])}</p>{ad("guide-top")}
 <div class="body">{body_html}</div>
 {faq_html}
@@ -1456,6 +1503,8 @@ def sources_for(path):
         return [f"source/content/pages/{parts[0]}.json"]
     if len(parts) == 2 and parts[0] == "guides":
         return [f"source/content/guides/{parts[1]}.json"]
+    if parts[0] == "real-estate":
+        return ["source/build.py", "data/properties.json"]
     if parts[0] == "calculators" and len(parts) == 2:
         return ["source/build.py", "source/static/calc.js"]
     return ["source/build.py"]
@@ -1471,6 +1520,266 @@ def page_lastmod(path):
         return max(found)
     return datetime.date.today().isoformat()
 
+PROPERTIES_PATH = os.path.join(ROOT, "data", "properties.json")
+LISTING_TYPES = ("project", "apartment", "villa", "house", "land", "commercial")
+LISTING_STATUSES = ("available", "sold", "under-construction")
+REAL_ESTATE_GUIDES = (
+    "taxes-overview", "buying-as-a-foreigner", "total-cost", "off-plan", "title-deeds",
+    "selling-and-taxes", "renting-out", "residence-permit", "mortgage-comparison",
+    "relocation/cost-and-tax", "resident-handbook/utilities", "water-tariff-proposal",
+)
+PROPERTY_LABELS = {
+ "en": {
+    "listings": "Listings", "guides": "Guides", "calcs": "Calculators",
+    "empty": "No properties are listed at the moment.",
+    "calc_h": "Calculators for this price",
+    "type": {"project": "Project", "apartment": "Apartment", "villa": "Villa", "house": "House", "land": "Land", "commercial": "Commercial"},
+    "status": {"available": "Available", "sold": "Sold", "under-construction": "Under construction"},
+ },
+ "ru": {
+    "listings": "Объявления", "guides": "Справочники", "calcs": "Калькуляторы",
+    "empty": "Сейчас нет опубликованных объявлений.",
+    "calc_h": "Калькуляторы с этой ценой",
+    "type": {"project": "Проект", "apartment": "Квартира", "villa": "Вилла", "house": "Дом", "land": "Участок", "commercial": "Коммерция"},
+    "status": {"available": "Свободно", "sold": "Продано", "under-construction": "Строится"},
+ },
+ "el": {
+    "listings": "Αγγελίες", "guides": "Οδηγοί", "calcs": "Υπολογιστές",
+    "empty": "Δεν υπάρχουν δημοσιευμένες αγγελίες αυτή τη στιγμή.",
+    "calc_h": "Υπολογιστές με αυτή την τιμή",
+    "type": {"project": "Έργο", "apartment": "Διαμέρισμα", "villa": "Βίλα", "house": "Οικία", "land": "Οικόπεδο", "commercial": "Επαγγελματικό"},
+    "status": {"available": "Διαθέσιμο", "sold": "Πωλήθηκε", "under-construction": "Υπό κατασκευή"},
+ },
+}
+
+def _listing_number(value, ident, field):
+    if value is None or value == "":
+        return None
+    if isinstance(value, bool) or not isinstance(value, (int, float)):
+        raise SystemExit(f"data/properties.json: {ident}: {field} must be a number or null")
+    if value < 0:
+        raise SystemExit(f"data/properties.json: {ident}: {field} cannot be negative")
+    return value
+
+def load_properties(path=None):
+    path = path or PROPERTIES_PATH
+    if not os.path.isfile(path):
+        raise SystemExit(f"missing {path}")
+    with open(path, encoding="utf8") as f:
+        data = json.load(f)
+    rows = data.get("listings") if isinstance(data, dict) else None
+    if not isinstance(rows, list):
+        raise SystemExit(f"{path}: expected an object with a listings list")
+    out, seen = [], set()
+    for index, raw in enumerate(rows, 1):
+        if not isinstance(raw, dict):
+            raise SystemExit(f"{path}: listing {index} is not an object")
+        ident = _clean(raw.get("id"))
+        where = f"{path}: {ident or index}"
+        if not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", ident or ""):
+            raise SystemExit(f"{where}: id must be lower-case letters, digits and hyphens")
+        if ident in seen:
+            raise SystemExit(f"{where}: duplicate id")
+        seen.add(ident)
+        if not isinstance(raw.get("published"), bool):
+            raise SystemExit(f"{where}: published must be true or false")
+        if not isinstance(raw.get("price_from"), bool):
+            raise SystemExit(f"{where}: price_from must be true or false")
+        title = raw.get("title") if isinstance(raw.get("title"), dict) else {}
+        desc = raw.get("description") if isinstance(raw.get("description"), dict) else {}
+        for lang in LANGS:
+            if not _clean(title.get(lang)) or not _clean(desc.get(lang)):
+                raise SystemExit(f"{where}: {lang} title and description are required")
+        kind, status = _clean(raw.get("type")), _clean(raw.get("status"))
+        if kind not in LISTING_TYPES:
+            raise SystemExit(f"{where}: type must be one of {', '.join(LISTING_TYPES)}")
+        if status not in LISTING_STATUSES:
+            raise SystemExit(f"{where}: status must be one of {', '.join(LISTING_STATUSES)}")
+        price = _listing_number(raw.get("price_eur"), ident, "price_eur")
+        area = _listing_number(raw.get("area_m2"), ident, "area_m2")
+        beds = raw.get("bedrooms")
+        if beds is not None and beds != "":
+            if isinstance(beds, bool) or not isinstance(beds, int):
+                raise SystemExit(f"{where}: bedrooms must be a whole number or null")
+            if beds < 0:
+                raise SystemExit(f"{where}: bedrooms cannot be negative")
+        else:
+            beds = None
+        photos = raw.get("photos") if raw.get("photos") is not None else []
+        if not isinstance(photos, list):
+            raise SystemExit(f"{where}: photos must be a list")
+        prefix = f"images/properties/{ident}/"
+        clean_photos = []
+        for photo in photos:
+            photo = _clean(photo)
+            if not photo.startswith(prefix) or ".." in photo:
+                raise SystemExit(f"{where}: each photo must start with {prefix}")
+            if raw["published"] and not os.path.isfile(os.path.join(ROOT, photo)):
+                raise SystemExit(f"{where}: missing {photo}")
+            clean_photos.append(photo)
+        out.append({
+            "id": ident, "published": raw["published"], "title": {l: _clean(title[l]) for l in LANGS},
+            "description": {l: _clean(desc[l]) for l in LANGS}, "type": kind, "status": status,
+            "city": _clean(raw.get("city")), "area": _clean(raw.get("area")),
+            "price_eur": price, "price_from": raw["price_from"], "bedrooms": beds, "area_m2": area,
+            "photos": clean_photos,
+        })
+    return out
+
+PROPERTIES = load_properties()
+
+def published_listings(rows=None):
+    rows = PROPERTIES if rows is None else rows
+    return [row for row in rows if row["published"]]
+
+def euro_text(lang, amount, price_from=False):
+    number = int(amount) if float(amount).is_integer() else amount
+    if isinstance(number, int):
+        grouped = f"{number:,}"
+        if lang == "ru":
+            grouped = grouped.replace(",", " ")
+        elif lang == "el":
+            grouped = grouped.replace(",", ".")
+        text = "€" + grouped
+    else:
+        text = f"€{number}"
+    if price_from:
+        return {"en": "From ", "ru": "От ", "el": "Από "}[lang] + text
+    return text
+
+def beds_text(lang, count):
+    if lang == "en":
+        return "1 bedroom" if count == 1 else f"{count} bedrooms"
+    if lang == "el":
+        return "1 υπνοδωμάτιο" if count == 1 else f"{count} υπνοδωμάτια"
+    if count % 10 == 1 and count % 100 != 11:
+        word = "спальня"
+    elif count % 10 in (2, 3, 4) and count % 100 not in (12, 13, 14):
+        word = "спальни"
+    else:
+        word = "спален"
+    return f"{count} {word}"
+
+def area_text(value):
+    number = int(value) if float(value).is_integer() else value
+    return f"{number} m²"
+
+def listing_place(item):
+    return ", ".join(part for part in (item["area"], item["city"]) if part)
+
+def listing_facts(lang, item):
+    labels = PROPERTY_LABELS[lang]
+    bits = [labels["type"][item["type"]]]
+    place = listing_place(item)
+    if place:
+        bits.append(place)
+    if item["price_eur"] is not None:
+        bits.append(euro_text(lang, item["price_eur"], item["price_from"]))
+    if item["bedrooms"] is not None:
+        bits.append(beds_text(lang, item["bedrooms"]))
+    if item["area_m2"] is not None:
+        bits.append(area_text(item["area_m2"]))
+    bits.append(labels["status"][item["status"]])
+    return bits
+
+def listing_calc_links(lang, item):
+    """Open the four purchase calculators on this price, when a price is set."""
+    price = item["price_eur"]
+    if price is None:
+        return ""
+    number = int(price) if float(price).is_integer() else price
+    area = item["area_m2"]
+    area_q = ""
+    if area is not None:
+        area_q = "&area=" + (str(int(area)) if float(area).is_integer() else str(area))
+    specs = (
+        ("transfer-fees", f"value={number}"),
+        ("vat", f"price={number}{area_q}"),
+        ("stamp-duty", f"value={number}"),
+        ("mortgage", f"principal={number}"),
+    )
+    items = []
+    for slug, query in specs:
+        name = CALCS[slug][lang][0]
+        url = href(loc(lang, f"/calculators/{slug}/")) + "?" + query
+        items.append(f'<li><a href="{e(url)}">{e(name)}</a></li>')
+    heading = PROPERTY_LABELS[lang]["calc_h"]
+    return f'<section class="src"><h2>{e(heading)}</h2><ul>{"".join(items)}</ul></section>'
+
+def listings_block(lang, rows=None):
+    labels = PROPERTY_LABELS[lang]
+    rows = published_listings() if rows is None else [row for row in rows if row["published"]]
+    if not rows:
+        return f'<h2 class="sec">{e(labels["listings"])}</h2><p class="empty">{e(labels["empty"])}</p>'
+    cards = []
+    for item in rows:
+        photo = ""
+        if item["photos"] and os.path.isfile(os.path.join(ROOT, item["photos"][0])):
+            photo = f'<img src="{href("/" + item["photos"][0])}" alt="{e(item["title"][lang])}">'
+        meta = " · ".join(e(bit) for bit in listing_facts(lang, item))
+        url = href(loc(lang, f"/real-estate/{item['id']}/"))
+        cards.append(
+            f'<article class="prop-card">{photo}<div class="pad"><h2>{e(item["title"][lang])}</h2>'
+            f'<p class="prop-meta">{meta}</p><p>{e(item["description"][lang])}</p>'
+            f'<a class="more" href="{url}">{e(UI[lang]["read"])}</a></div></article>'
+        )
+    return f'<h2 class="sec">{e(labels["listings"])}</h2><div class="prop-grid">{"".join(cards)}</div>'
+
+def real_estate_page(lang):
+    u = UI[lang]
+    labels = PROPERTY_LABELS[lang]
+    missing = [slug for slug in REAL_ESTATE_GUIDES if slug not in GUIDES]
+    if missing:
+        raise SystemExit("real estate section lists unknown guides: " + ", ".join(missing))
+    guides = []
+    for slug in REAL_ESTATE_GUIDES:
+        meta, _ = load_md(lang, slug)
+        guides.append(
+            f'<article class="card"><h2>{e(meta["title"])}</h2><p>{e(meta["description"])}</p>'
+            f'<a class="more" href="{href(loc(lang, "/guides/"+slug+"/"))}">{e(u["read"])}</a></article>'
+        )
+    calcs = []
+    for slug in CALC_ORDER:
+        title, desc = CALCS[slug][lang]
+        calcs.append(
+            f'<article class="card"><h2>{e(title)}</h2><p>{e(desc)}</p>'
+            f'<a class="more" href="{href(loc(lang, "/calculators/"+slug+"/"))}">{e(u["open"])}</a></article>'
+        )
+    path = loc(lang, "/real-estate/")
+    def alt(l):
+        return loc(l, "/real-estate/")
+    body = f'''<main id="main" class="wrap page"><h1>{e(u["real_estate"])}</h1><p class="lede">{e(u["real_estate_desc"])}</p>
+{listings_block(lang)}
+<h2 class="sec">{e(labels["guides"])}</h2><div class="grid">{"".join(guides)}</div>
+<h2 class="sec">{e(labels["calcs"])}</h2><div class="grid">{"".join(calcs)}</div>
+{lead_card(lang)}</main>'''
+    return page_shell(lang, f'{u["real_estate"]} | {SITE}', u["real_estate_desc"], path, alt, body)
+
+def listing_detail(lang, item):
+    u = UI[lang]
+    labels = PROPERTY_LABELS[lang]
+    path = loc(lang, f"/real-estate/{item['id']}/")
+    def alt(l, item=item):
+        return loc(l, f"/real-estate/{item['id']}/")
+    gallery = "".join(
+        f'<img src="{href("/" + photo)}" alt="{e(item["title"][lang])}">' for photo in item["photos"]
+        if os.path.isfile(os.path.join(ROOT, photo))
+    )
+    gallery = f'<div class="gallery">{gallery}</div>' if gallery else ""
+    facts = "".join(f"<span>{e(bit)}</span>" for bit in listing_facts(lang, item))
+    badge = labels["status"][item["status"]]
+    body = f'''<main id="main" class="wrap page"><p class="meta"><a href="{href(loc(lang, "/real-estate/"))}">{e(u["real_estate"])}</a></p>
+<article><h1>{e(item["title"][lang])}</h1>
+<p class="meta"><span class="badge{" sold" if item["status"]=="sold" else ""}">{e(badge)}</span></p>
+{gallery}
+<p class="listing-facts">{facts}</p>
+<div class="body"><p>{e(item["description"][lang])}</p></div>
+{listing_calc_links(lang, item)}
+{lead_card(lang)}
+<p><a href="{href(loc(lang, "/contact/"))}">{e(u["contact"])}</a></p>
+</article></main>'''
+    return page_shell(lang, f'{item["title"][lang]} | {SITE}', item["description"][lang], path, alt, body)
+
 def sitemap():
     paths = ["/"]
     for slug in ("about", "contact", "privacy", "cookies", "terms", "calculators", "guides"):
@@ -1481,6 +1790,9 @@ def sitemap():
         paths.append(f"/guides/{slug}/")
     urls = [loc(lang, p) for lang in LANGS for p in paths]
     for lang in LANGS:
+        urls.append(loc(lang, "/real-estate/"))
+        for item in published_listings():
+            urls.append(loc(lang, f"/real-estate/{item['id']}/"))
         urls.append(loc(lang, "/links/"))
         urls.append(loc(lang, "/feed.xml"))
     lines = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
@@ -1528,8 +1840,12 @@ def main():
     # Headlines are fetched once. A timeout or any other failure leaves the
     # static CyNews24 link in place and does not stop the build.
     refresh_cynews()
+    for slug, guide in GUIDES.items():
+        src = _clean((guide.get("image") or {}).get("src"))
+        if src and not os.path.isfile(os.path.join(HERE, "static", "guides", src)):
+            raise SystemExit(f"missing guide image for {slug}: {src}")
     # admin/ is the CMS and is not generated. A rebuild must not delete it.
-    keep = {"source", ".git", "admin"}
+    keep = {"source", ".git", "admin", "data", "docs", "images"}
     for name in os.listdir(OUT):
         if name in keep or name.startswith("."):
             continue
@@ -1547,6 +1863,13 @@ def main():
     if not os.path.isfile(og_src):
         raise SystemExit(f"missing {og_src}")
     shutil.copy(og_src, os.path.join(OUT, "assets", "og.png"))
+    guide_img = os.path.join(HERE, "static", "guides")
+    if os.path.isdir(guide_img):
+        dest = os.path.join(OUT, "assets", "guides")
+        os.makedirs(dest, exist_ok=True)
+        for name in os.listdir(guide_img):
+            if name.lower().endswith((".jpg", ".jpeg", ".png", ".webp")):
+                shutil.copy(os.path.join(guide_img, name), os.path.join(dest, name))
     w("/assets/style.css", css())
     words = []
     for lang in LANGS:
@@ -1561,6 +1884,9 @@ def main():
             w(loc(lang, f"/{slug}/") + "index.html", static_page(lang, slug))
         w(loc(lang, "/contact/") + "index.html", contact(lang))
         w(loc(lang, "/contact/thanks/") + "index.html", thanks(lang))
+        w(loc(lang, "/real-estate/") + "index.html", real_estate_page(lang))
+        for item in published_listings():
+            w(loc(lang, f"/real-estate/{item['id']}/") + "index.html", listing_detail(lang, item))
         w(loc(lang, "/links/") + "index.html", links_page(lang))
         w(loc(lang, "/feed.xml"), atom_feed(lang))
     w("/sitemap.xml", sitemap())
