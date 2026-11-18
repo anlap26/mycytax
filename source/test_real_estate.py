@@ -13,19 +13,31 @@ class RealEstateTests(unittest.TestCase):
             self.assertIn(name, header)
             page = build.real_estate_page(lang)
             self.assertIn(name, page)
-            self.assertIn(build.PROPERTY_LABELS[lang]["empty"], page)
             self.assertNotIn("example-limassol-apartment", page)
+            self.assertIn("/real-estate/bellissimo/", page)
+            self.assertIn("/real-estate/olivia/", page)
+            self.assertIn("/real-estate/the-city-home-2/", page)
             self.assertIn("water-tariff-proposal", page)
             self.assertIn(build.href(build.loc(lang, "/calculators/vat/")), page)
             self.assertIn(build.href(build.loc(lang, "/calculators/transfer-fees/")), page)
 
     def test_sample_listing_is_hidden_and_a_published_one_links_the_price(self):
-        self.assertEqual(build.published_listings(), [])
+        published = [row["id"] for row in build.published_listings()]
+        self.assertEqual(published, ["bellissimo", "olivia", "the-city-home-2"])
         xml = build.sitemap()
         self.assertIn("https://mycytax.com/real-estate/", xml)
         self.assertIn("https://mycytax.com/ru/real-estate/", xml)
         self.assertIn("https://mycytax.com/el/real-estate/", xml)
         self.assertNotIn("example-limassol-apartment", xml)
+        for ident in published:
+            self.assertIn(f"https://mycytax.com/real-estate/{ident}/", xml)
+            self.assertIn(f"https://mycytax.com/ru/real-estate/{ident}/", xml)
+            self.assertIn(f"https://mycytax.com/el/real-estate/{ident}/", xml)
+        olivia = build.listing_detail("en", next(row for row in build.PROPERTIES if row["id"] == "olivia"))
+        self.assertIn("Price on request", olivia)
+        self.assertNotIn("?value=", olivia)
+        self.assertNotIn("?price=", olivia)
+        self.assertNotIn("?principal=", olivia)
         sample = dict(build.PROPERTIES[0])
         sample["published"] = True
         sample["photos"] = []
