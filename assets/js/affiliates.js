@@ -8,7 +8,7 @@
    Keep the key. A value must be either #AFFILIATE_NAME or an https:// URL
    with no spaces. Do not paste links into the HTML.
 
-   safetywing, genki and semrush are reserved. No page shows them until a
+   genki and semrush are reserved. No page shows them until a
    guide or calculator names that key. */
 window.MYCYTAX_AFFILIATES = {
   "nordvpn": "#AFFILIATE_NORDVPN",
@@ -20,7 +20,6 @@ window.MYCYTAX_AFFILIATES = {
   "bybit": "#AFFILIATE_BYBIT",
   "interactivebrokers": "#AFFILIATE_INTERACTIVEBROKERS",
   "wise": "#AFFILIATE_WISE",
-  "safetywing": "#AFFILIATE_SAFETYWING",
   "genki": "#AFFILIATE_GENKI",
   "semrush": "#AFFILIATE_SEMRUSH"
 };

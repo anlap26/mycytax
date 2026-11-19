@@ -86,7 +86,7 @@ When an affiliate link arrives, paste it into that partner’s `affiliate_url`. 
 
 В справочнике кнопка — это отдельная строка `!!ledger|Текст кнопки` или `!!ledger|Текст кнопки|Короткая подпись`. Калькуляторы берут ключ из сборщика и тот же файл. На страницах с кнопками есть короткое раскрытие и ссылка на страницу «Партнёрские ссылки».
 
-Ключи `safetywing`, `genki` и `semrush` в файле зарезервированы. Пока ни одна страница их не показывает.
+Ключи `genki` и `semrush` в файле зарезервированы. Пока ни одна страница их не показывает.
 
 ## Partner buttons (one file)
 
@@ -94,7 +94,7 @@ The Ledger, Trezor, Binance, Bybit, Interactive Brokers, Wise, NordVPN, Surfshar
 
 In a guide, a button is its own line: `!!ledger|Button label` or `!!ledger|Button label|Short note`. Calculators take their key from the build and the same file. Pages with buttons carry a short disclosure and a link to the Affiliate links page.
 
-The keys `safetywing`, `genki` and `semrush` are reserved in the file. No page shows them yet.
+The keys `genki` and `semrush` are reserved in the file. No page shows them yet.
 
 ## Publishing
 

@@ -455,7 +455,7 @@ PARTNERS = load_partners()
 AFFILIATES_PATH = os.path.join(HERE, "static", "affiliates.js")
 AFFILIATE_KEYS = (
     "nordvpn", "surfshark", "proton", "ledger", "trezor", "binance", "bybit",
-    "interactivebrokers", "wise", "safetywing", "genki", "semrush",
+    "interactivebrokers", "wise", "genki", "semrush",
 )
 _AFFILIATE_PLACEHOLDER = re.compile(r"^#AFFILIATE_[A-Z0-9]+$")
 AFF_REL = "nofollow sponsored noopener"
