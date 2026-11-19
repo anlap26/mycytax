@@ -66,13 +66,15 @@ INDEXNOW_KEY = SITE_CONFIG["indexnow_key"]
 CONTENT = os.path.join(HERE, "content")
 GUIDE_DIR = os.path.join(CONTENT, "guides")
 PAGE_DIR = os.path.join(CONTENT, "pages")
-PAGE_ORDER = ("about", "privacy", "cookies", "terms")
+PAGE_ORDER = ("about", "privacy", "cookies", "terms", "affiliate-disclosure")
 
 UI = {
  "en": dict(
     name=SITE, tagline="Cyprus property and tax calculators",
     calcs="Calculators", guides="Guides", about="About", contact="Contact",
     privacy="Privacy", cookies="Cookies", terms="Terms",
+    affiliates="Affiliate links",
+    aff_note="Some buttons on this page are partner links. If you use one and buy, the publisher may earn a commission. Prices on the provider site can change. Nothing here is a recommendation for your own money.",
     home="Home", lang="Language", disclaimer="Not legal or tax advice",
     sources="Sources", faq="Questions", related="Related",
     projects="Our projects",
@@ -97,7 +99,7 @@ UI = {
     home_desc="Transfer fees, VAT, capital gains, rental income and a mortgage payment, plus practical guides.",
     home_intro="Work out the Land Registry fee, VAT, stamp duty, capital gains tax, rental tax and a mortgage payment. Every rate on MyCyTax is tied to a source. The publisher is Anna, in Cyprus.",
     list_calcs="Cyprus property calculators: transfer fees, stamp duty, VAT, capital gains, rental income and mortgage payments.",
-    list_guides="Practical guides to buying, selling, tax residency, non-dom status, title deeds, renting, settling in, and comparing a mortgage.",
+    list_guides="Practical guides to buying, selling, tax residency, non-dom status, title deeds, renting, settling in, comparing a mortgage, storing savings, brokers and a VPN.",
     contact_t="Contact", contact_d="Write to MyCyTax about buying or selling. The form goes to info@mycytax.com.",
     contact_i="The publisher is Anna. Email info@mycytax.com, or use the form. The first message to this address asks FormSubmit to send a confirmation email. Until that link is opened, the form will not deliver. We reply within 24 hours.",
     thanks_t="Thank you", thanks_d="Your message has been sent.",
@@ -106,6 +108,8 @@ UI = {
     name=SITE, tagline="Калькуляторы недвижимости и налогов Кипра",
     calcs="Калькуляторы", guides="Справочники", about="О сайте", contact="Контакты",
     privacy="Конфиденциальность", cookies="Файлы cookie", terms="Условия",
+    affiliates="Партнёрские ссылки",
+    aff_note="Некоторые кнопки на этой странице — партнёрские ссылки. Если вы по ним оформите услугу, издатель может получить комиссию. Цена провайдера меняется. Это не рекомендация для ваших денег.",
     home="Главная", lang="Язык", disclaimer="Это не юридическая и не налоговая консультация",
     sources="Источники", faq="Вопросы", related="Ещё по теме",
     projects="Наши проекты",
@@ -130,7 +134,7 @@ UI = {
     home_desc="Сборы кадастра, НДС, прирост капитала, аренда и ипотечный платёж, плюс практические справочники.",
     home_intro="Посчитайте сбор Земельного кадастра, НДС, гербовый сбор, налог на прирост капитала, налог с аренды и ипотечный платёж. Каждая ставка на MyCyTax привязана к источнику. Издатель — Анна, Кипр.",
     list_calcs="Калькуляторы по недвижимости Кипра: сборы кадастра, гербовый сбор, НДС, прирост капитала, аренда и ипотека.",
-    list_guides="Практические справочники о покупке, продаже, налоговом резидентстве, статусе non-dom, титулах, аренде, переезде и сравнении ипотеки.",
+    list_guides="Практические справочники о покупке, продаже, налоговом резидентстве, статусе non-dom, титулах, аренде, переезде, сравнении ипотеки, хранении сбережений, брокерах и VPN.",
     contact_t="Контакты", contact_d="Напишите MyCyTax о покупке или продаже. Форма уходит на info@mycytax.com.",
     contact_i="Издатель — Анна. Пишите на info@mycytax.com или через форму. Первое сообщение на этот адрес FormSubmit подтверждает письмом. Пока ссылка не открыта, форма не доставляет заявки. Ответим в течение 24 часов.",
     thanks_t="Спасибо", thanks_d="Сообщение отправлено.",
@@ -139,6 +143,8 @@ UI = {
     name=SITE, tagline="Υπολογιστές ακινήτων και φόρων Κύπρου",
     calcs="Υπολογιστές", guides="Οδηγοί", about="Σχετικά", contact="Επικοινωνία",
     privacy="Απόρρητο", cookies="Cookies", terms="Όροι",
+    affiliates="Σύνδεσμοι συνεργατών",
+    aff_note="Ορισμένα κουμπιά σε αυτή τη σελίδα είναι σύνδεσμοι συνεργατών. Αν αγοράσετε μέσω αυτών, η εκδότρια μπορεί να λάβει προμήθεια. Η τιμή του παρόχου αλλάζει. Δεν είναι σύσταση για τα δικά σας χρήματα.",
     home="Αρχική", lang="Γλώσσα", disclaimer="Δεν είναι νομική ή φορολογική συμβουλή",
     sources="Πηγές", faq="Ερωτήσεις", related="Σχετικά",
     projects="Τα έργα μας",
@@ -163,7 +169,7 @@ UI = {
     home_desc="Τέλη μεταβίβασης, ΦΠΑ, κεφαλαιουχικά κέρδη, ενοίκιο και δόση δανείου, μαζί με πρακτικούς οδηγούς.",
     home_intro="Υπολογίστε το τέλος του Κτηματολογίου, τον ΦΠΑ, το χαρτόσημο, τον φόρο κεφαλαιουχικών κερδών, τον φόρο ενοικίου και τη δόση στεγαστικού. Κάθε συντελεστής στο MyCyTax δένεται με πηγή. Εκδότρια είναι η Άννα, στην Κύπρο.",
     list_calcs="Υπολογιστές ακινήτων Κύπρου: τέλη μεταβίβασης, χαρτόσημο, ΦΠΑ, κεφαλαιουχικά κέρδη, ενοίκιο και δόση δανείου.",
-    list_guides="Πρακτικοί οδηγοί για αγορά, πώληση, φορολογική κατοικία, καθεστώς non-dom, τίτλους, ενοικίαση, εγκατάσταση και σύγκριση στεγαστικού.",
+    list_guides="Πρακτικοί οδηγοί για αγορά, πώληση, φορολογική κατοικία, καθεστώς non-dom, τίτλους, ενοικίαση, εγκατάσταση, σύγκριση στεγαστικού, φύλαξη αποταμιεύσεων, χρηματιστές και VPN.",
     contact_t="Επικοινωνία", contact_d="Γράψτε στο MyCyTax για αγορά ή πώληση. Η φόρμα πηγαίνει στο info@mycytax.com.",
     contact_i="Εκδότρια είναι η Άννα. Στείλτε email στο info@mycytax.com ή χρησιμοποιήστε τη φόρμα. Το πρώτο μήνυμα σε αυτή τη διεύθυνση το επιβεβαιώνει το FormSubmit με email. Μέχρι να ανοίξει ο σύνδεσμος, η φόρμα δεν παραδίδει αιτήματα. Απαντάμε μέσα σε 24 ώρες.",
     thanks_t="Ευχαριστούμε", thanks_d="Το μήνυμά σας στάλθηκε.",
@@ -444,6 +450,90 @@ def _partner_description(partner, lang):
 
 PARTNERS = load_partners()
 
+# Partner buttons on the new guides and under calculators. One file holds every URL.
+# Placeholders (#AFFILIATE_…) stay until the owner pastes an https link.
+AFFILIATES_PATH = os.path.join(HERE, "static", "affiliates.js")
+AFFILIATE_KEYS = (
+    "nordvpn", "surfshark", "proton", "ledger", "trezor", "binance", "bybit",
+    "interactivebrokers", "wise", "safetywing", "genki", "semrush",
+)
+_AFFILIATE_PLACEHOLDER = re.compile(r"^#AFFILIATE_[A-Z0-9]+$")
+AFF_REL = "nofollow sponsored noopener"
+
+def _affiliate_url_ok(url):
+    if not isinstance(url, str) or any(ch.isspace() for ch in url):
+        return False
+    if _AFFILIATE_PLACEHOLDER.fullmatch(url):
+        return True
+    return url.startswith("https://")
+
+def load_affiliates(path=None):
+    path = path or AFFILIATES_PATH
+    if not os.path.isfile(path):
+        raise SystemExit(f"missing {path}")
+    with open(path, encoding="utf8") as f:
+        text = f.read()
+    m = re.search(r"MYCYTAX_AFFILIATES\s*=\s*(\{.*\})\s*;\s*\Z", text, re.S)
+    if not m:
+        raise SystemExit(f"{path}: expected window.MYCYTAX_AFFILIATES = {{...}};")
+    try:
+        data = json.loads(m.group(1))
+    except json.JSONDecodeError as exc:
+        raise SystemExit(f"{path}: {exc}")
+    if not isinstance(data, dict):
+        raise SystemExit(f"{path}: expected an object of partner links")
+    missing = [key for key in AFFILIATE_KEYS if key not in data]
+    if missing:
+        raise SystemExit(f"{path}: missing keys: {', '.join(missing)}")
+    for key, url in data.items():
+        if not re.fullmatch(r"[a-z0-9]+", str(key)) or not _affiliate_url_ok(url):
+            raise SystemExit(
+                f"{path}: {key} must be an https:// link or a #AFFILIATE_ placeholder"
+            )
+    return data
+
+AFFILIATES = load_affiliates()
+
+def affiliate_href(key, data=None):
+    data = AFFILIATES if data is None else data
+    url = data.get(key) if isinstance(data, dict) else ""
+    return url if _affiliate_url_ok(url) else ""
+
+def affiliate_offer(key, label, note="", data=None):
+    """Highlighted partner button. Empty when the key has no safe URL."""
+    url = affiliate_href(key, data)
+    label = _clean(label)
+    if not url or not label:
+        return ""
+    note = _clean(note)
+    note_html = f"<p>{inline(note)}</p>" if note else ""
+    return (
+        f'<aside class="aff-offer">{note_html}'
+        f'<a class="aff-btn" data-affiliate="{e(key)}" href="{e(url)}" '
+        f'rel="{AFF_REL}" target="_blank">{e(label)}</a></aside>\n'
+    )
+
+def affiliate_disclosure(lang):
+    u = UI[lang]
+    return (
+        f'<p class="aff-disclosure">{e(u["aff_note"])} '
+        f'<a href="{href(loc(lang, "/affiliate-disclosure/"))}">{e(u["affiliates"])}</a>.</p>\n'
+    )
+
+def affiliate_runtime():
+    """Re-read the one config file in the browser, so a replaced link wins."""
+    return (
+        f'<script src="{href("/assets/js/affiliates.js")}"></script>'
+        "<script>(function(){"
+        "var map=window.MYCYTAX_AFFILIATES||{};"
+        'document.querySelectorAll("[data-affiliate]").forEach(function(a){'
+        'var url=map[a.getAttribute("data-affiliate")];'
+        'if(typeof url!=="string")return;'
+        'if(url.indexOf("https://")===0||url.indexOf("#AFFILIATE_")===0){a.href=url;}'
+        "});"
+        "})();</script>\n"
+    )
+
 def partners_block(lang, kind, slug, data=None):
     """Small partner box. Empty when no partner lists this guide or calculator."""
     data = PARTNERS if data is None else data
@@ -514,6 +604,16 @@ def parse(md):
             elif s and faq:
                 faq[-1][1].append(s)
             continue
+        offer = re.fullmatch(r"!!([a-z0-9]+)\|([^|]+?)(?:\|(.*))?$", s)
+        if offer:
+            flush(); flush_table()
+            label = offer.group(2).strip()
+            note = (offer.group(3) or "").strip()
+            blocks.append(("offer", (offer.group(1), label, note)))
+            words.append(label)
+            if note:
+                words.append(note)
+            continue
         if s.startswith("|"):
             flush()
             cells = [c.strip() for c in s.strip().strip("|").split("|")]
@@ -549,6 +649,10 @@ def parse(md):
             html_parts.append(f"</{list_tag}>")
             list_tag = None
     for kind, text in blocks:
+        if kind == "offer":
+            close_list()
+            html_parts.append(affiliate_offer(text[0], text[1], text[2]))
+            continue
         if kind in ("li", "oli"):
             tag = "ul" if kind == "li" else "ol"
             if list_tag != tag:
@@ -728,6 +832,15 @@ footer p.projects{margin:14px 0 0}
 .partners a{font-weight:650;overflow-wrap:anywhere}
 .partners p{margin:2px 0 0;color:#314038;font-size:15.5px}
 .partners .partner-note{margin:12px 0 0;color:var(--muted);font-size:13px;line-height:1.45}
+.aff-offer{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--copper);border-radius:12px;padding:12px 14px;margin:14px 0;max-width:720px}
+.aff-offer h2{font-family:Georgia,Palatino,serif;font-size:20px;line-height:1.25;margin:0 0 6px}
+.aff-offer p{margin:0 0 10px;font-size:15.5px;max-width:68ch}
+.aff-btn{display:inline-flex;align-items:center;justify-content:center;text-align:center;background:var(--pine);color:#fff;text-decoration:none;border-radius:999px;padding:10px 16px;font-weight:700;line-height:1.3}
+.aff-btn:hover,.aff-btn:focus-visible{background:var(--copper);color:#fff}
+.aff-offer .aff-more{margin:10px 0 0;font-size:15px}
+.aff-disclosure{color:var(--muted);font-size:13px;line-height:1.45;margin:12px 0 16px;max-width:72ch}
+.aff-offer .aff-disclosure{margin:10px 0 0}
+@media(max-width:600px){.aff-btn{display:flex;width:100%;box-sizing:border-box}.aff-offer{padding:12px}}
 @media(max-width:800px){.grid,.prop-grid{grid-template-columns:1fr}.bar{align-items:flex-start;flex-direction:column}.partners{padding:14px 14px 12px}}
 main.bio{width:min(440px,calc(100% - 32px));margin:0 auto;padding:36px 0 12px}
 .bio-brand{text-align:center;margin:0 0 22px}
@@ -844,6 +957,7 @@ def footer(lang):
         (loc(lang, "/about/"), u["about"]), (loc(lang, "/contact/"), u["contact"]),
         (loc(lang, "/privacy/"), u["privacy"]), (loc(lang, "/cookies/"), u["cookies"]),
         (loc(lang, "/terms/"), u["terms"]),
+        (loc(lang, "/affiliate-disclosure/"), u["affiliates"]),
     ]
     nav = "".join(f'<a href="{href(path)}">{e(name)}</a>' for path, name in links)
     settings = (
@@ -1078,7 +1192,8 @@ def telegram_card(lang):
 def page_shell(lang, title, desc, path, alt, body, jsonld=None, active_path=None, robots="index,follow,max-image-preview:large"):
     def path_for(l, alt=alt):
         return alt(l)
-    return head(lang, title, desc, path, alt, jsonld, robots=robots) + header(lang, path_for) + body + footer(lang)
+    runtime = affiliate_runtime() if 'data-affiliate="' in (body or "") else ""
+    return head(lang, title, desc, path, alt, jsonld, robots=robots) + header(lang, path_for) + body + runtime + footer(lang)
 
 LEAD = {
  "en": dict(h="Local help with your Cyprus property",
@@ -1206,6 +1321,171 @@ def listing(lang, kind):
     body = f'<main id="main" class="wrap page"><h1>{e(title)}</h1><p class="lede">{e(desc)}</p><div class="grid">{"".join(card(s) for s in items)}</div></main>'
     return page_shell(lang, f"{title} | {SITE}", desc, path if path.endswith("/") else path+"/", alt, body)
 
+# One unobtrusive offer under each calculator. The button URL comes from affiliates.js.
+# guide is an internal article, not a partner.
+CALC_OFFERS = {
+ "transfer-fees": {
+    "key": "wise",
+    "guide": "international-brokers",
+    "en": {
+        "h": "Moving the purchase money",
+        "p": "The fee is one line. The price is usually a much larger transfer, often from another currency into euros. Wise is one account built for that transfer. The rate and the fee are whatever Wise shows that day, and they change. This is not advice to fund the purchase from abroad.",
+        "btn": "See Wise",
+        "more": "Where a transfer account fits",
+    },
+    "ru": {
+        "h": "Как доехать деньгам на покупку",
+        "p": "Сбор — одна строка. Цена обычно гораздо больший перевод, часто из другой валюты в евро. Wise — один из счетов для такого перевода. Курс и комиссия те, которые Wise показывает в этот день, и они меняются. Это не совет финансировать покупку из-за рубежа.",
+        "btn": "Открыть Wise",
+        "more": "Где уместен счёт для перевода",
+    },
+    "el": {
+        "h": "Η μεταφορά των χρημάτων της αγοράς",
+        "p": "Το τέλος είναι μία γραμμή. Η τιμή είναι συνήθως πολύ μεγαλύτερο έμβασμα, συχνά από άλλο νόμισμα σε ευρώ. Η Wise είναι ένας λογαριασμός φτιαγμένος για αυτή τη μεταφορά. Η ισοτιμία και η χρέωση είναι ό,τι δείχνει η Wise εκείνη την ημέρα, και αλλάζουν. Δεν είναι συμβουλή να χρηματοδοτήσετε την αγορά από το εξωτερικό.",
+        "btn": "Δείτε τη Wise",
+        "more": "Πού χωρά ένας λογαριασμός εμβάσματος",
+    },
+ },
+ "stamp-duty": {
+    "key": "wise",
+    "guide": "international-brokers",
+    "en": {
+        "h": "The contract sum still has to move",
+        "p": "On a signature from 2026 the duty itself is often zero. The price in the contract is not. If that money starts in another currency, compare the transfer before you send it. Wise is one way to do that. Terms change. This note does not tell you which route to use.",
+        "btn": "See Wise",
+        "more": "Where a transfer account fits",
+    },
+    "ru": {
+        "h": "Сумма договора всё равно должна доехать",
+        "p": "При подписи с 2026 года сам сбор часто равен нулю. Цена в договоре — нет. Если деньги лежат в другой валюте, сравните перевод до отправки. Wise — один из способов. Условия меняются. Эта заметка не говорит, какой путь выбрать.",
+        "btn": "Открыть Wise",
+        "more": "Где уместен счёт для перевода",
+    },
+    "el": {
+        "h": "Το ποσό του συμβολαίου πρέπει και πάλι να μετακινηθεί",
+        "p": "Σε υπογραφή από το 2026 το ίδιο το χαρτόσημο είναι συχνά μηδέν. Η τιμή στο συμβόλαιο δεν είναι. Αν τα χρήματα ξεκινούν σε άλλο νόμισμα, συγκρίνετε τη μεταφορά πριν τα στείλετε. Η Wise είναι ένας τρόπος. Οι όροι αλλάζουν. Αυτή η σημείωση δεν λέει ποια οδό να διαλέξετε.",
+        "btn": "Δείτε τη Wise",
+        "more": "Πού χωρά ένας λογαριασμός εμβάσματος",
+    },
+ },
+ "vat": {
+    "key": "wise",
+    "guide": "international-brokers",
+    "en": {
+        "h": "VAT is cash you may have to send",
+        "p": "On a new home the VAT line can be larger than the Land Registry fee on a resale. Buyers who pay it from another currency move both the price and the tax. Wise is one way to make that conversion. Check the live quote. This block does not say the purchase should be funded from overseas.",
+        "btn": "See Wise",
+        "more": "Where a transfer account fits",
+    },
+    "ru": {
+        "h": "НДС — это деньги, которые, возможно, придётся отправить",
+        "p": "На новом доме строка НДС может быть больше сбора кадастра на вторичке. Кто платит из другой валюты, переводит и цену, и налог. Wise — один способ такой конвертации. Смотрите живую котировку. Этот блок не говорит, что покупку надо финансировать из-за рубежа.",
+        "btn": "Открыть Wise",
+        "more": "Где уместен счёт для перевода",
+    },
+    "el": {
+        "h": "Ο ΦΠΑ είναι μετρητά που ίσως πρέπει να στείλετε",
+        "p": "Σε καινούργια κατοικία η γραμμή του ΦΠΑ μπορεί να είναι μεγαλύτερη από το τέλος Κτηματολογίου σε μεταπώληση. Όποιος πληρώνει από άλλο νόμισμα μεταφέρει και την τιμή και τον φόρο. Η Wise είναι ένας τρόπος για αυτή τη μετατροπή. Δείτε τη ζωντανή τιμή. Αυτό το πλαίσιο δεν λέει ότι η αγορά πρέπει να χρηματοδοτηθεί από το εξωτερικό.",
+        "btn": "Δείτε τη Wise",
+        "more": "Πού χωρά ένας λογαριασμός εμβάσματος",
+    },
+ },
+ "capital-gains": {
+    "key": "ledger",
+    "guide": "store-savings-and-crypto",
+    "en": {
+        "h": "Where anything you still hold should sit",
+        "p": "The result is the tax on one sale, not a plan for the rest. Cash from a property sale usually belongs in a bank while you decide. If part of what you already hold is crypto, a hardware wallet such as a Ledger keeps the keys offline instead of on an exchange. Crypto prices can fall sharply. This is not a suggestion to turn the proceeds into crypto.",
+        "btn": "See Ledger",
+        "more": "How to store savings and crypto",
+    },
+    "ru": {
+        "h": "Где держать то, что у вас остаётся",
+        "p": "Результат — налог с одной продажи, а не план для остального. Деньги от продажи недвижимости обычно лежат в банке, пока вы решаете. Если часть того, что у вас уже есть, — это криптовалюта, аппаратный кошелёк вроде Ledger держит ключи офлайн, а не на бирже. Цены на криптовалюту могут сильно упасть. Это не предложение перевести выручку в криптовалюту.",
+        "btn": "Открыть Ledger",
+        "more": "Как хранить сбережения и криптовалюту",
+    },
+    "el": {
+        "h": "Πού να κάθεται ό,τι σας μένει",
+        "p": "Το αποτέλεσμα είναι ο φόρος μίας πώλησης, όχι σχέδιο για τα υπόλοιπα. Μετρητά από πώληση ακινήτου συνήθως ανήκουν σε τράπεζα όσο αποφασίζετε. Αν μέρος όσων ήδη κρατάτε είναι κρυπτοστοιχείο, ένα hardware πορτοφόλι όπως το Ledger κρατά τα κλειδιά εκτός σύνδεσης, όχι σε ανταλλακτήριο. Οι τιμές μπορούν να πέσουν απότομα. Δεν είναι πρόταση να μετατρέψετε το προϊόν σε κρυπτοστοιχείο.",
+        "btn": "Δείτε το Ledger",
+        "more": "Πώς να φυλάξετε αποταμιεύσεις και κρυπτοστοιχεία",
+    },
+ },
+ "rental-yield": {
+    "key": "interactivebrokers",
+    "guide": "international-brokers",
+    "en": {
+        "h": "Rent you do not spend",
+        "p": "The yield after tax is an illustration of one year, not a forecast. Money left after tax can stay in the bank that receives the rent. Some owners move a surplus they can leave untouched to a broker such as Interactive Brokers. A broker account can fall in value. Tax on the rent is separate from any later gain or loss. This is not advice to invest the rent.",
+        "btn": "See Interactive Brokers",
+        "more": "How to think about a broker account",
+    },
+    "ru": {
+        "h": "Аренда, которую вы не тратите",
+        "p": "Доходность после налога — иллюстрация одного года, не прогноз. Деньги после налога могут остаться в банке, куда приходит аренда. Кто-то переводит остаток, который можно не трогать, брокеру вроде Interactive Brokers. Брокерский счёт может подешеветь. Налог с аренды отдельно от последующей прибыли или убытка. Это не совет вкладывать аренду.",
+        "btn": "Открыть Interactive Brokers",
+        "more": "Как думать о брокерском счёте",
+    },
+    "el": {
+        "h": "Ενοίκιο που δεν ξοδεύετε",
+        "p": "Η απόδοση μετά τον φόρο είναι εικόνα μίας χρονιάς, όχι πρόβλεψη. Τα χρήματα μετά τον φόρο μπορούν να μείνουν στην τράπεζα που εισπράττει το ενοίκιο. Κάποιοι μεταφέρουν πλεόνασμα που μπορούν να αφήσουν άθικτο σε χρηματιστή όπως η Interactive Brokers. Ένας λογαριασμός χρηματιστή μπορεί να χάσει αξία. Ο φόρος του ενοικίου είναι χωριστά από οποιοδήποτε μεταγενέστερο κέρδος ή ζημία. Δεν είναι συμβουλή να επενδύσετε το ενοίκιο.",
+        "btn": "Δείτε την Interactive Brokers",
+        "more": "Πώς να σκέφτεστε έναν λογαριασμό χρηματιστή",
+    },
+ },
+ "mortgage": {
+    "key": "wise",
+    "guide": "international-brokers",
+    "en": {
+        "h": "The instalment may start in another currency",
+        "p": "The figure is the loan payment, not a return. If the salary or invoice that pays it is in another currency, the conversion sits on top of the rate the bank quoted. Wise is one way to make that conversion. It does not change the loan rate, and the transfer fee is whatever Wise quotes that day.",
+        "btn": "See Wise",
+        "more": "Where a transfer account fits",
+    },
+    "ru": {
+        "h": "Платёж может начинаться в другой валюте",
+        "p": "Цифра — это платёж по кредиту, а не доход. Если зарплата или счёт, которыми вы его платите, в другой валюте, конвертация садится сверху ставки, которую назвал банк. Wise — один способ такой конвертации. Ставку кредита это не меняет, а комиссия перевода та, которую Wise назовёт в этот день.",
+        "btn": "Открыть Wise",
+        "more": "Где уместен счёт для перевода",
+    },
+    "el": {
+        "h": "Η δόση μπορεί να ξεκινά σε άλλο νόμισμα",
+        "p": "Το νούμερο είναι η δόση του δανείου, όχι απόδοση. Αν ο μισθός ή το τιμολόγιο που την πληρώνει είναι σε άλλο νόμισμα, η μετατροπή κάθεται πάνω στο επιτόκιο που έδωσε η τράπεζα. Η Wise είναι ένας τρόπος για αυτή τη μετατροπή. Δεν αλλάζει το επιτόκιο του δανείου, και η χρέωση είναι ό,τι κοστολογεί η Wise εκείνη την ημέρα.",
+        "btn": "Δείτε τη Wise",
+        "more": "Πού χωρά ένας λογαριασμός εμβάσματος",
+    },
+ },
+}
+
+def calc_offer(lang, slug):
+    """Small box under a calculator. Empty when this calculator has no offer."""
+    spec = CALC_OFFERS.get(slug)
+    if not isinstance(spec, dict):
+        return ""
+    text = spec.get(lang) if isinstance(spec.get(lang), dict) else None
+    url = affiliate_href(spec.get("key"))
+    if not text or not url or not text.get("h") or not text.get("p") or not text.get("btn"):
+        return ""
+    guide = spec.get("guide") or ""
+    more = ""
+    if guide and text.get("more"):
+        more = (
+            f'<p class="aff-more"><a href="{href(loc(lang, "/guides/" + guide + "/"))}">'
+            f'{e(text["more"])}</a></p>'
+        )
+    u = UI[lang]
+    return (
+        f'<aside class="aff-offer aff-calc" data-affiliate-widget="{e(spec["key"])}">'
+        f'<h2>{e(text["h"])}</h2><p>{e(text["p"])}</p>'
+        f'<a class="aff-btn" data-affiliate="{e(spec["key"])}" href="{e(url)}" '
+        f'rel="{AFF_REL}" target="_blank">{e(text["btn"])}</a>'
+        f"{more}"
+        f'<p class="aff-disclosure">{e(u["aff_note"])} '
+        f'<a href="{href(loc(lang, "/affiliate-disclosure/"))}">{e(u["affiliates"])}</a>.</p>'
+        f"</aside>\n"
+    )
+
 def calc_page(lang, slug):
     u = UI[lang]
     t, d = CALCS[slug][lang]
@@ -1245,6 +1525,7 @@ def calc_page(lang, slug):
      },
     }
     note = notes[slug][lang]
+    offer = calc_offer(lang, slug)
     ld = [{"@context":"https://schema.org","@type":"WebApplication","name":t,"applicationCategory":"FinanceApplication","operatingSystem":"Web","url":absu(path),
            "description":d,"inLanguage":lang,"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"publisher":org()},
           {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
@@ -1252,6 +1533,7 @@ def calc_page(lang, slug):
     body = f'''<main id="main" class="wrap page"><p class="meta"><a href="{href(loc(lang, "/calculators/"))}">{e(u["calcs"])}</a></p>
 <h1>{e(t)}</h1><p class="lede">{e(d)}</p><p class="banner">{e(DISCLAIMER[lang])}</p>{ad("calc-top")}
 <div id="calc" data-consult="{contact_href(lang,"buy")}" data-calc="{e({"transfer-fees":"transfer","stamp-duty":"stamp","vat":"vat","capital-gains":"cgt","rental-yield":"rental","mortgage":"mortgage"}[slug])}"></div>
+{offer}
 {lead_card(lang)}
 <div class="body"><h2>{e(u["sources"])}</h2><p>{note}</p></div>{ad("calc-bottom")}
 {partners_block(lang, "calculators", slug)}{telegram_card(lang)}</main>
@@ -1306,11 +1588,13 @@ def guide_page(lang, slug, words_out):
     figure = guide_figure(lang, slug)
     if figure:
         ld[0]["image"] = absu("/assets/guides/" + GUIDES[slug]["image"]["src"])
+    disclosure = affiliate_disclosure(lang) if 'data-affiliate="' in body_html else ""
     body = f'''<main id="main" class="wrap page"><p class="meta">{crumb}</p>
 <article><h1>{e(meta["title"])}</h1><p class="lede">{e(meta["description"])}</p>
 {figure}
 <p class="banner">{e(DISCLAIMER[lang])}</p>{ad("guide-top")}
 <div class="body">{body_html}</div>
+{disclosure}
 {faq_html}
 <section class="src"><h2>{e(u["sources"])}</h2><ul>{src}</ul></section>
 {lead_card(lang)}
@@ -1861,7 +2145,7 @@ def listing_detail(lang, item):
 
 def sitemap():
     paths = ["/"]
-    for slug in ("about", "contact", "privacy", "cookies", "terms", "calculators", "guides"):
+    for slug in ("about", "contact", "privacy", "cookies", "terms", "affiliate-disclosure", "calculators", "guides"):
         paths.append(f"/{slug}/")
     for slug in CALC_ORDER:
         paths.append(f"/calculators/{slug}/")
@@ -1938,6 +2222,9 @@ def main():
                 os.remove(path)
     os.makedirs(os.path.join(OUT, "assets"), exist_ok=True)
     shutil.copy(os.path.join(HERE, "static", "calc.js"), os.path.join(OUT, "assets", "calc.js"))
+    js_dir = os.path.join(OUT, "assets", "js")
+    os.makedirs(js_dir, exist_ok=True)
+    shutil.copy(AFFILIATES_PATH, os.path.join(js_dir, "affiliates.js"))
     og_src = os.path.join(HERE, "static", "og.png")
     if not os.path.isfile(og_src):
         raise SystemExit(f"missing {og_src}")
