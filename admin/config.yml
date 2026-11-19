@@ -58,7 +58,7 @@ collections:
           - name: body
             label: Текст справочника
             widget: text
-            hint: "Абзацы разделяйте пустой строкой. Подзаголовок — отдельная строка, которая начинается с ## и пробела, например «## До подписи». Ссылку можно вставить так: [текст](https://example.com). Пункт списка — строка, которая начинается с «- »."
+            hint: "Абзацы разделяйте пустой строкой. Подзаголовок — отдельная строка, которая начинается с ## и пробела, например «## До подписи». Ссылку можно вставить так: [текст](https://example.com). Пункт списка — строка, которая начинается с «- ». Строка !!ledger|Текст кнопки ставит партнёрскую кнопку. Ключ и адрес берутся из source/static/affiliates.js."
           - name: faq
             label: Вопросы и ответы
             label_singular: вопрос
@@ -149,7 +149,7 @@ collections:
   - name: pages
     label: Страницы
     label_singular: страницу
-    description: Текст страниц «О сайте», конфиденциальности, cookie и условий. Адрес этих страниц менять нельзя.
+    description: Текст страниц «О сайте», конфиденциальности, cookie, условий и партнёрских ссылок. Адрес этих страниц менять нельзя.
     files:
       - name: about
         label: О сайте
@@ -259,6 +259,41 @@ collections:
       - name: terms
         label: Условия
         file: source/content/pages/terms.json
+        format: json
+        fields:
+          - name: ru
+            label: Текст на русском
+            widget: object
+            fields:
+              - { name: title, label: Заголовок, widget: string }
+              - { name: description, label: Краткое описание, widget: text }
+              - name: body
+                label: Текст
+                widget: text
+                hint: Абзацы разделяйте пустой строкой.
+          - name: en
+            label: English (необязательно)
+            widget: object
+            required: false
+            collapsed: true
+            hint: "Если оставить пустым, на английской версии будет русский текст, а страница не попадёт в поиск, пока не появится перевод."
+            fields:
+              - { name: title, label: Title, widget: string, required: false }
+              - { name: description, label: Description, widget: text, required: false }
+              - { name: body, label: Text, widget: text, required: false }
+          - name: el
+            label: Ελληνικά (необязательно)
+            widget: object
+            required: false
+            collapsed: true
+            hint: "Если оставить пустым, на греческой версии будет русский текст, а страница не попадёт в поиск, пока не появится перевод."
+            fields:
+              - { name: title, label: Τίτλος, widget: string, required: false }
+              - { name: description, label: Περιγραφή, widget: text, required: false }
+              - { name: body, label: Κείμενο, widget: text, required: false }
+      - name: affiliate-disclosure
+        label: Партнёрские ссылки
+        file: source/content/pages/affiliate-disclosure.json
         format: json
         fields:
           - name: ru

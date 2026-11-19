@@ -80,6 +80,22 @@ When an affiliate link arrives, paste it into that partner’s `affiliate_url`. 
 
 `applies_to` lists the guides and calculators that show the partner (`guides/<slug>`, `calculators/<slug>`): buying property, paying from abroad, rent, mortgage, and moving or residency. Other pages do not show the box. A push of this file to `main` rebuilds the site.
 
+## Партнёрские кнопки (один файл)
+
+Кнопки Ledger, Trezor, Binance, Bybit, Interactive Brokers, Wise, NordVPN, Surfshark и Proton VPN читают адреса из `source/static/affiliates.js`. На сайте тот же файл лежит как `assets/js/affiliates.js`. Пока значение выглядит как `#AFFILIATE_LEDGER`, подставьте вместо него ссылку `https://…`, когда она будет. Ключ не переименовывайте. Адрес с пробелом или не на `https://` сборку останавливает. В текст страницы ссылку не вставляют.
+
+В справочнике кнопка — это отдельная строка `!!ledger|Текст кнопки` или `!!ledger|Текст кнопки|Короткая подпись`. Калькуляторы берут ключ из сборщика и тот же файл. На страницах с кнопками есть короткое раскрытие и ссылка на страницу «Партнёрские ссылки».
+
+Ключи `safetywing`, `genki` и `semrush` в файле зарезервированы. Пока ни одна страница их не показывает.
+
+## Partner buttons (one file)
+
+The Ledger, Trezor, Binance, Bybit, Interactive Brokers, Wise, NordVPN, Surfshark and Proton VPN buttons read their addresses from `source/static/affiliates.js`. The site serves the same file at `assets/js/affiliates.js`. While a value looks like `#AFFILIATE_LEDGER`, replace it with the `https://…` link when you have it. Do not rename the key. A value with a space, or one that is not `https://`, stops the build. Do not paste the link into the page text.
+
+In a guide, a button is its own line: `!!ledger|Button label` or `!!ledger|Button label|Short note`. Calculators take their key from the build and the same file. Pages with buttons carry a short disclosure and a link to the Affiliate links page.
+
+The keys `safetywing`, `genki` and `semrush` are reserved in the file. No page shows them yet.
+
 ## Publishing
 
 A push to `main` that touches `source/` starts the **Build site** workflow (`.github/workflows/build.yml`). It runs `python3 source/build.py` with `BASE=https://mycytax.com` and, when the generated pages changed, commits them back to `main`. Pages keeps serving `main` / root. `CNAME` is `mycytax.com` and is rewritten on every build. A normal push already starts a Pages deployment. A commit this workflow pushes does not, so the workflow requests a Pages build only after its own commit, and also on a manual run. Pull requests run the build as a check. The workflow does not run for an `admin/`-only push; GitHub Pages still publishes that push, which is how the editor itself is served. A commit that only changes `source/content/telegram-posted.json` does not rebuild the site.
