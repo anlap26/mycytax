@@ -1259,11 +1259,100 @@ def telegram_card(lang):
         f"</div></aside>"
     )
 
+def service_nodes():
+    """Accounting practice markup for the home and services pages. No street address."""
+    same = [CYNEWS, TG_RU, TG_EN, IG]
+    area = {"@type": "Country", "name": "Cyprus"}
+    org_id = absu("/") + "#organization"
+    organization = {
+        "@type": "Organization",
+        "@id": org_id,
+        "name": SITE,
+        "url": absu("/"),
+        "email": LEADS_EMAIL,
+        "areaServed": area,
+        "sameAs": same,
+    }
+    service = {
+        "@type": ["ProfessionalService", "AccountingService"],
+        "@id": absu("/") + "#service",
+        "name": SITE,
+        "url": absu("/"),
+        "email": LEADS_EMAIL,
+        "areaServed": area,
+        "sameAs": same,
+        "provider": {"@id": org_id},
+    }
+    return [
+        {"@context": "https://schema.org", **organization},
+        {"@context": "https://schema.org", **service},
+    ]
+
+def _crumb_title(title):
+    if title and " | " in title:
+        return title.split(" | ", 1)[0]
+    return title or ""
+
+def _crumb_name(lang, parts, current_title):
+    u = UI[lang]
+    known = {
+        "about": u["about"], "contact": u["contact"], "privacy": u["privacy"],
+        "cookies": u["cookies"], "terms": u["terms"],
+        "affiliate-disclosure": u["affiliates"], "property-consultation": u["consult"],
+        "services": u["services"], "calculators": u["calcs"], "guides": u["guides"],
+        "real-estate": u["real_estate"], "buying-checklist": CHECKLIST[lang]["gate_h"],
+    }
+    if len(parts) == 1 and parts[0] in known:
+        return known[parts[0]]
+    if parts[0] == "calculators" and len(parts) == 2 and parts[1] in CALCS:
+        return CALCS[parts[1]][lang][0]
+    if parts[0] == "guides" and len(parts) >= 2:
+        slug = "/".join(parts[1:])
+        if slug in GUIDES:
+            return load_md(lang, slug)[0]["title"]
+    if parts[0] == "real-estate" and len(parts) == 2:
+        for item in published_listings():
+            if item["id"] == parts[1]:
+                return item["title"][lang]
+    if parts == ["buying-checklist", "2026"]:
+        return CHECKLIST[lang]["h"]
+    if parts == ["contact", "thanks"]:
+        return u["thanks_t"]
+    if parts == ["property-consultation", "thanks"]:
+        return CONSULT[lang]["thanks_t"]
+    return _crumb_title(current_title) or parts[-1]
+
+def breadcrumbs(lang, path, current_title):
+    """One BreadcrumbList for the page. New pages get this from page_shell."""
+    bare = bare_path(path).split("?")[0]
+    parts = [part for part in bare.strip("/").split("/") if part]
+    items = [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": UI[lang]["home"],
+        "item": absu(loc(lang, "/")),
+    }]
+    acc = ""
+    for index, _part in enumerate(parts):
+        acc += "/" + parts[index]
+        items.append({
+            "@type": "ListItem",
+            "position": index + 2,
+            "name": _crumb_name(lang, parts[:index + 1], current_title if index == len(parts) - 1 else ""),
+            "item": absu(loc(lang, acc + "/")),
+        })
+    return {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": items}
+
+def with_breadcrumbs(lang, path, title, jsonld):
+    blocks = list(jsonld or [])
+    blocks.append(breadcrumbs(lang, path, title))
+    return blocks
+
 def page_shell(lang, title, desc, path, alt, body, jsonld=None, active_path=None, robots="index,follow,max-image-preview:large"):
     def path_for(l, alt=alt):
         return alt(l)
     runtime = affiliate_runtime() if ('data-affiliate="' in (body or "") or 'data-amazon-search="' in (body or "")) else ""
-    return head(lang, title, desc, path, alt, jsonld, robots=robots) + header(lang, path_for) + body + runtime + footer(lang)
+    return head(lang, title, desc, path, alt, with_breadcrumbs(lang, path, title, jsonld), robots=robots) + header(lang, path_for) + body + runtime + footer(lang)
 
 LEAD = {
  "en": dict(h="Local help with your Cyprus property",
@@ -1557,7 +1646,7 @@ def services_page(lang):
             f'<h2 class="sec">{e(free_h)}</h2><p>{e(free_p)}</p>'
             f'<p><a class="go" href="{href(loc(lang, "/buying-checklist/"))}">{e(CHECKLIST[lang]["gate_h"])}</a></p>'
             f'</main>')
-    return page_shell(lang, f'{u["services"]} | {SITE}', intro, path, alt, body)
+    return page_shell(lang, f'{u["services"]} | {SITE}', intro, path, alt, body, service_nodes())
 
 def checklist_gate(lang):
     base = LEAD[lang]
@@ -1625,17 +1714,31 @@ def checklist_page(lang):
 <h1>{e(c["h"])}</h1><p class="lede">{e(c["lede"])}</p>
 <p class="banner">{e(DISCLAIMER[lang])}</p>
 <div class="body">
-<h2>{e(c["fork_h"])}</h2><p>{e(c["fork"])}</p>
-<h2>{e(c["vat_h"])}</h2><p>{e(c["vat"])}</p>
-<h2>{e(c["stamp_h"])}</h2><p>{e(c["stamp"])}</p>
-<h2>{e(c["cgt_h"])}</h2><p>{e(c["cgt"])}</p>
-<h2>{e(c["rent_h"])}</h2><p>{e(c["rent"])}</p>
-<h2>{e(c["other_h"])}</h2><p>{e(c["other"])}</p>
+<h2 id="step-1">{e(c["fork_h"])}</h2><p>{e(c["fork"])}</p>
+<h2 id="step-2">{e(c["vat_h"])}</h2><p>{e(c["vat"])}</p>
+<h2 id="step-3">{e(c["stamp_h"])}</h2><p>{e(c["stamp"])}</p>
+<h2 id="step-4">{e(c["cgt_h"])}</h2><p>{e(c["cgt"])}</p>
+<h2 id="step-5">{e(c["rent_h"])}</h2><p>{e(c["rent"])}</p>
+<h2 id="step-6">{e(c["other_h"])}</h2><p>{e(c["other"])}</p>
 <p>{_checklist_links(lang)}</p>
 </div>
 <section class="src"><h2>{e(u["sources"])}</h2><ul>{src}</ul></section>
 </main>'''
-    return page_shell(lang, f'{c["h"]} | {SITE}', c["lede"], path, alt, body, robots="noindex,follow")
+    steps = []
+    for position, key_h, key_t in (
+        (1, "fork_h", "fork"), (2, "vat_h", "vat"), (3, "stamp_h", "stamp"),
+        (4, "cgt_h", "cgt"), (5, "rent_h", "rent"), (6, "other_h", "other"),
+    ):
+        steps.append({
+            "@type": "HowToStep",
+            "position": position,
+            "name": c[key_h],
+            "text": c[key_t],
+            "url": absu(path) + "#step-" + str(position),
+        })
+    howto = {"@context":"https://schema.org","@type":"HowTo","name":c["h"],"description":c["lede"],
+             "inLanguage":lang,"step":steps}
+    return page_shell(lang, f'{c["h"]} | {SITE}', c["lede"], path, alt, body, [howto], robots="noindex,follow")
 
 def contact_href(lang, kind):
     return href(loc(lang, "/contact/")) + "?type=" + kind
@@ -1699,8 +1802,8 @@ def home(lang):
     for slug in GUIDE_ORDER:
         meta, _ = load_md(lang, slug)
         guides.append(f'<article class="card"><h3>{e(meta["title"])}</h3><p>{e(meta["description"])}</p><a class="more" href="{href(loc(lang, "/guides/"+slug+"/"))}">{e(u["read"])}</a></article>')
-    ld = [{"@context":"https://schema.org","@type":"WebSite","name":SITE,"url":absu(alt(lang)),"inLanguage":lang,"publisher":org()},
-          {"@context":"https://schema.org",**org()}]
+    ld = [{"@context":"https://schema.org","@type":"WebSite","name":SITE,"url":absu(alt(lang)),"inLanguage":lang,
+           "publisher":{"@id":absu("/") + "#organization"}}] + service_nodes()
     body = f'''<main id="main"><div class="wrap hero"><h1>{e(title)}</h1><p class="lede">{e(intro)}</p>
 <p class="banner">{e(DISCLAIMER[lang])}</p>{ad("home-top")}</div>
 <div class="wrap"><h2 class="sec">{e(u["calcs"])}</h2><div class="grid">{"".join(cards)}</div>
@@ -2135,7 +2238,7 @@ def links_page(lang="en"):
 <a class="logo" href="{href(loc(lang, "/"))}">{e(SITE)}</a>
 <p class="bio-tag">{e(tagline)}</p></div>
 <nav class="bio-links" aria-label="{e(SITE)}">{"".join(anchors)}</nav></main>'''
-    return head(lang, title, desc, path, alt, [ld]) + body + footer(lang)
+    return head(lang, title, desc, path, alt, with_breadcrumbs(lang, path, title, [ld])) + body + footer(lang)
 
 def thanks(lang):
     u = UI[lang]
