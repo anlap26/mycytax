@@ -76,6 +76,13 @@ a.go.alt{background:#fff;color:var(--pine);border:2px solid var(--pine)}
 a.go.alt:hover{background:var(--pine);color:#fff}
 p.consult{margin:14px 0 0;font-weight:700}
 @media(max-width:600px){.cta-btns{flex-direction:column}.cta-btns a{flex-basis:auto}}
+@media print {
+  header.top, footer, .cookie-banner, .skip, .no-print, .adslot { display:none !important }
+  body { background:#fff; color:#000 }
+  a { color:inherit; text-decoration:none }
+  .print-doc { padding-top:0 }
+  .print-doc h1 { font-size:22pt }
+}
 a.tg-nav{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:999px;background:#229ED9;color:#fff;flex:none}
 a.tg-nav:hover{background:#1b86b8;color:#fff}
 .tg-mark{width:18px;height:18px;display:block;flex:none}

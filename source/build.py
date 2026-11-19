@@ -73,7 +73,7 @@ PAGE_ORDER = ("about", "privacy", "cookies", "terms", "affiliate-disclosure")
 UI = {
  "en": dict(
     name=SITE, tagline="Cyprus property and tax calculators",
-    calcs="Calculators", guides="Guides", about="About", contact="Contact",
+    calcs="Calculators", guides="Guides", services="Services", about="About", contact="Contact",
     privacy="Privacy", cookies="Cookies", terms="Terms",
     affiliates="Affiliate links",
     consult="Tax paperwork",
@@ -109,7 +109,7 @@ UI = {
     thanks_i="Thank you. If this address is already confirmed with FormSubmit, we will reply within 24 hours. If this was the first message, Anna still needs to open the confirmation email before it is delivered."),
  "ru": dict(
     name=SITE, tagline="Калькуляторы недвижимости и налогов Кипра",
-    calcs="Калькуляторы", guides="Справочники", about="О сайте", contact="Контакты",
+    calcs="Калькуляторы", guides="Справочники", services="Услуги", about="О сайте", contact="Контакты",
     privacy="Конфиденциальность", cookies="Файлы cookie", terms="Условия",
     affiliates="Партнёрские ссылки",
     consult="Налоги и документы",
@@ -145,7 +145,7 @@ UI = {
     thanks_i="Спасибо. Если адрес уже подтверждён в FormSubmit, ответим в течение 24 часов. Если это первое сообщение, Анне ещё нужно открыть письмо подтверждения, прежде чем оно будет доставлено."),
  "el": dict(
     name=SITE, tagline="Υπολογιστές ακινήτων και φόρων Κύπρου",
-    calcs="Υπολογιστές", guides="Οδηγοί", about="Σχετικά", contact="Επικοινωνία",
+    calcs="Υπολογιστές", guides="Οδηγοί", services="Υπηρεσίες", about="Σχετικά", contact="Επικοινωνία",
     privacy="Απόρρητο", cookies="Cookies", terms="Όροι",
     affiliates="Σύνδεσμοι συνεργατών",
     consult="Φόροι και έγγραφα",
@@ -817,6 +817,13 @@ a.go.alt{background:#fff;color:var(--pine);border:2px solid var(--pine)}
 a.go.alt:hover{background:var(--pine);color:#fff}
 p.consult{margin:14px 0 0;font-weight:700}
 @media(max-width:600px){.cta-btns{flex-direction:column}.cta-btns a{flex-basis:auto}}
+@media print {
+  header.top, footer, .cookie-banner, .skip, .no-print, .adslot { display:none !important }
+  body { background:#fff; color:#000 }
+  a { color:inherit; text-decoration:none }
+  .print-doc { padding-top:0 }
+  .print-doc h1 { font-size:22pt }
+}
 a.tg-nav{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:999px;background:#229ED9;color:#fff;flex:none}
 a.tg-nav:hover{background:#1b86b8;color:#fff}
 .tg-mark{width:18px;height:18px;display:block;flex:none}
@@ -1010,7 +1017,7 @@ def header(lang, path_for):
         for l in LANGS)
     return f'''<a class="skip" href="#main">{u["home"]}</a><header class="top"><div class="wrap bar">
 <a class="logo" href="{href(loc(lang, "/"))}">{e(u["name"])}<small>{e(u["tagline"])}</small></a>
-<nav class="main" aria-label="{e(u["lang"])}">{item("calcs", loc(lang, "/calculators/"))}{item("guides", loc(lang, "/guides/"))}{item("real_estate", loc(lang, "/real-estate/"))}{item("about", loc(lang, "/about/"))}{item("contact", loc(lang, "/contact/"))}
+<nav class="main" aria-label="{e(u["lang"])}">{item("calcs", loc(lang, "/calculators/"))}{item("guides", loc(lang, "/guides/"))}{item("services", loc(lang, "/services/"))}{item("real_estate", loc(lang, "/real-estate/"))}{item("about", loc(lang, "/about/"))}{item("contact", loc(lang, "/contact/"))}
 {tg_icon_link(lang)}{ig_icon_link(lang)}<span class="langs">{langs}</span></nav></div></header>'''
 
 def footer(lang):
@@ -1308,6 +1315,10 @@ CONSULT = {
     thanks_d="Your consultation request has been sent.",
     thanks_i="Thank you. If this address is already confirmed with FormSubmit, we will reply about the taxes and paperwork.",
     options=[
+        ("30-minute property tax consultation", "30-minute property tax consultation"),
+        ("Capital gains tax return", "Capital gains tax return"),
+        ("Rental income tax filing", "Rental income tax filing"),
+        ("Buying property checklist", "Buying property checklist"),
         ("Selling property", "Selling property"),
         ("Buying", "Buying"),
         ("Capital gains tax", "Capital gains tax"),
@@ -1330,6 +1341,10 @@ CONSULT = {
     thanks_d="Запрос на консультацию отправлен.",
     thanks_i="Спасибо. Если адрес уже подтверждён в FormSubmit, ответим по налогам и документам.",
     options=[
+        ("30-minute property tax consultation", "Консультация по налогам на недвижимость, 30 минут"),
+        ("Capital gains tax return", "Декларация по налогу на прирост капитала"),
+        ("Rental income tax filing", "Подача налога на доход от аренды"),
+        ("Buying property checklist", "Перечень налогов и сборов при покупке"),
         ("Selling property", "Продажа недвижимости"),
         ("Buying", "Покупка"),
         ("Capital gains tax", "Налог на прирост капитала"),
@@ -1352,6 +1367,10 @@ CONSULT = {
     thanks_d="Το αίτημα συμβουλής στάλθηκε.",
     thanks_i="Ευχαριστούμε. Αν η διεύθυνση έχει ήδη επιβεβαιωθεί στο FormSubmit, θα απαντήσουμε για τους φόρους και τα έγγραφα.",
     options=[
+        ("30-minute property tax consultation", "Συμβουλή για φόρους ακινήτου, 30 λεπτά"),
+        ("Capital gains tax return", "Δήλωση φόρου κεφαλαιουχικών κερδών"),
+        ("Rental income tax filing", "Υποβολή φόρου εισοδήματος από ενοίκια"),
+        ("Buying property checklist", "Λίστα φόρων και τελών αγοράς"),
         ("Selling property", "Πώληση ακινήτου"),
         ("Buying", "Αγορά"),
         ("Capital gains tax", "Φόρος κεφαλαιουχικών κερδών"),
@@ -1414,6 +1433,210 @@ def consultation_thanks(lang):
         return loc(l, "/property-consultation/thanks/")
     body = f'<main id="main" class="wrap page"><h1>{e(a["thanks_t"])}</h1><p>{e(a["thanks_i"])}</p></main>'
     return page_shell(lang, f'{a["thanks_t"]} | {SITE}', a["thanks_d"], path, alt, body, robots="noindex,follow")
+
+# Paid work. No prices: each button opens the consultation form with that service selected.
+SERVICE_LIST = (
+    ("30-minute property tax consultation", {
+        "en": ("30-minute Cyprus property tax consultation",
+               "Half an hour on the taxes that apply to a purchase, a sale or a letting you already have in mind. You receive a quote before any time is booked."),
+        "ru": ("Консультация по налогам на недвижимость Кипра, 30 минут",
+               "Полчаса о налогах на покупку, продажу или аренду, которая у вас уже на примете. Стоимость называют до того, как время будет назначено."),
+        "el": ("Συμβουλή 30 λεπτών για φόρους ακινήτου στην Κύπρο",
+               "Μισή ώρα για τους φόρους μιας αγοράς, πώλησης ή ενοικίασης που ήδη έχετε στο μυαλό σας. Η τιμή δίνεται πριν κλειστεί χρόνος."),
+    }),
+    ("Capital gains tax return", {
+        "en": ("Capital gains tax return on a property sale",
+               "Help preparing the computation on a disposal of immovable property in Cyprus: indexation from the Tax Department table, disposal costs, and any lifetime exemption. The Department still makes the assessment."),
+        "ru": ("Декларация по налогу на прирост капитала при продаже",
+               "Помощь с расчётом при отчуждении недвижимости на Кипре: индексация по таблице Налогового департамента, расходы на продажу и возможный пожизненный вычет. Оценку всё равно делает департамент."),
+        "el": ("Δήλωση φόρου κεφαλαιουχικών κερδών σε πώληση ακινήτου",
+               "Βοήθεια στον υπολογισμό διάθεσης ακίνητης ιδιοκτησίας στην Κύπρο: τιμαριθμική αναπροσαρμογή από τον πίνακα του Τμήματος Φορολογίας, έξοδα διάθεσης και τυχόν ισόβια απαλλαγή. Τη βεβαίωση την κάνει το Τμήμα."),
+    }),
+    ("Trading-criteria form for developers", {
+        "en": ("Trading-criteria form for a developer",
+               "Preparation of the trading-criteria form where a developer’s sale may be trading income rather than a capital gain. You supply the facts. This is not the Tax Department’s decision."),
+        "ru": ("Форма критериев трейдинга для застройщика",
+               "Подготовка формы критериев трейдинга, когда продажа застройщика может быть торговым доходом, а не приростом капитала. Факты даёте вы. Это не решение Налогового департамента."),
+        "el": ("Έντυπο κριτηρίων εμπορίας για αναπτύκτη",
+               "Ετοιμασία του εντύπου κριτηρίων εμπορίας, όπου μια πώληση αναπτύκτη μπορεί να είναι εμπορικό εισόδημα και όχι κεφαλαιουχικό κέρδος. Τα γεγονότα τα δίνετε εσείς. Δεν είναι απόφαση του Τμήματος Φορολογίας."),
+    }),
+    ("Rental income tax filing", {
+        "en": ("Rental income tax filing",
+               "Help with the income-tax side of a year’s rent: the statutory 20% deduction, the 2026 bands, and GHS at 2.65% of gross rent. Special Defence Contribution on rent is nil for 2026 on the published rule. A quote comes before the work."),
+        "ru": ("Подача налога на доход от аренды",
+               "Помощь с подоходным налогом на аренду за год: уставные 20%, шкалы 2026 года и ГЕСИ 2,65% валовой аренды. Сбор на оборону с аренды в 2026 году по опубликованному правилу равен нулю. Стоимость называют до начала работы."),
+        "el": ("Υποβολή φόρου εισοδήματος από ενοίκια",
+               "Βοήθεια με τον φόρο εισοδήματος ενός έτους ενοικίου: η νόμιμη έκπτωση 20%, οι κλίμακες του 2026 και η ΓεΣΥ στο 2,65% του ακαθάριστου ενοικίου. Η έκτακτη εισφορά για την άμυνα στο ενοίκιο είναι μηδέν για το 2026 κατά τον δημοσιευμένο κανόνα. Η τιμή δίνεται πριν από τη δουλειά."),
+    }),
+)
+QUOTE = {"en": "Request a quote", "ru": "Запросить стоимость", "el": "Ζητήστε προσφορά"}
+CHECKLIST = {
+ "en": dict(
+    h="Buying property in Cyprus: taxes and fees checklist 2026",
+    lede="The published taxes on a purchase, and the ones that appear later if you let or sell. Not a fee for this site, and not an assessment of your contract.",
+    print="Print or save as PDF",
+    fork_h="Transfer fees or VAT, not usually both",
+    fork="Gov.cy states that transfer fees are not charged when the transfer is a transaction subject to VAT, if you produce the VAT Department certificate. Where VAT is not charged, the legislation provides a 50% exemption from transfer fees. The 50% is refused where the seller acquired the property in a forced sale under Parts VI and VIA of the Transfer and Mortgage Law 9/1965. The Department of Lands and Surveys scale, before that 50%, is 3% from €0.01 to €85,000, 5% from €85,001 to €170,000, and 8% above €170,000. The bands are slices. On an accepted value of €200,000 with one buyer and no VAT, the full scale is €9,200 and half is €4,600. A contract not deposited within six months can increase the transfer fee by 10% when title is transferred, according to the Department’s leaflet.",
+    vat_h="VAT at 19%, or 5% on part of a primary home",
+    vat="The standard rate is 19% of the price before VAT. The 5% rate is for a primary and permanent residence, on the first 130 square metres and up to €350,000, and only if the whole buildable area is not over 190 square metres and the whole value is not over €475,000. Between those inner and outer limits only the qualifying portion is at 5%. Over either outer limit the reduced rate is not available. A holiday home, or a flat you will let from the start, is budgeted at 19%. The window for the transitional reduced-rate application ran to 15 June 2026. This checklist does not treat that route as still open.",
+    stamp_h="Stamp duty",
+    stamp="Law 239(I)/2025 repealed the stamp duty laws from 1 January 2026. A contract drawn up and signed by at least one party on or after that date is not stamped: the duty is €0. A contract that a party signed on or before 31 December 2025 is still on the old scale, capped at €20,000 on one document. The Ministry of Interior checklist has not always been rewritten for the repeal. Say so when you file.",
+    cgt_h="If you later sell: capital gains tax at 20%",
+    cgt="Capital gains tax is 20% of the gain on disposal of immovable property in Cyprus. The Tax Department reduces the gain for inflation using the official retail price index. This checklist does not store that index: take the ratio from the Department’s table. For an individual, the consolidated Capital Gains Tax Law states a lifetime exemption of €30,000, €50,000 where a farmer sells agricultural land, and €150,000 on a qualifying main residence used by the owner for at least five years (ten years if it is not the first such disposal) on land of up to 1.5 decares. A person does not get both the general exemption and the residence exemption. Companies do not get these lifetime exemptions.",
+    rent_h="If you let",
+    rent="A 20% deduction from gross rent is the statutory income-tax deduction. From 1 January 2026 the bands for an individual are nil on the first €22,000, 20% to €32,000, 25% to €42,000, 30% to €72,000 and 35% above that. Special Defence Contribution on rent is nil for the 2026 tax year, including for domiciled residents. GHS on rental income is 2.65% of the gross rent. An annual ceiling can apply and is not reproduced here.",
+    other_h="Costs that are not a tax rate",
+    other="Legal fees, the Land Registry search, the fee to deposit the contract, utility deposits and municipal charges are not on a single published percentage. Ask for them in writing. Do not add a national annual property tax: that state tax is not charged for tax years from 2017.",
+    gate_h="Get the checklist",
+    gate_p="Send your name and email. The checklist then opens in this browser, and you can print it or save it as a PDF. The details are used only to send you the page.",
+    send="Send and open the checklist",
+ ),
+ "ru": dict(
+    h="Покупка недвижимости на Кипре: перечень налогов и сборов 2026",
+    lede="Опубликованные налоги при покупке и те, что возникают позже, если сдавать или продавать. Это не гонорар сайта и не расчёт по вашему договору.",
+    print="Печать или сохранить как PDF",
+    fork_h="Сбор за переход или НДС, обычно не оба",
+    fork="На Gov.cy указано, что сбор за переход не берут, если переход относится к сделке с НДС и вы приносите справку Департамента НДС. Если НДС нет, закон даёт освобождение на 50% сбора. Эти 50% не дают, если продавец приобрёл объект на принудительной продаже по частям VI и VIA закона 9/1965. Шкала Департамента земель до этих 50%: 3% с €0,01 до €85 000, 5% с €85 001 до €170 000 и 8% сверх €170 000. Диапазоны — это слои. При принятой стоимости €200 000, одном покупателе и без НДС полная шкала — €9 200, половина — €4 600. Договор, не сданный в течение шести месяцев, по буклету департамента может увеличить сбор на 10% при переоформлении.",
+    vat_h="НДС 19% или 5% с части основного жилья",
+    vat="Обычная ставка — 19% цены без НДС. Ставка 5% — для основного и постоянного жилья, на первые 130 квадратных метров и до €350 000, и только если вся площадь застройки не выше 190 квадратных метров, а вся стоимость не выше €475 000. Между пределами 5% только на подходящую долю. За любым внешним пределом сниженной ставки нет. Жильё для отпуска или квартира, которую сразу сдают, закладывается по 19%. Окно заявления на сниженную ставку по переходному пути закрылось 15 июня 2026 года. Этот перечень не считает тот путь открытым.",
+    stamp_h="Гербовый сбор",
+    stamp="Закон 239(I)/2025 отменил гербовый сбор с 1 января 2026 года. Договор, составленный и подписанный хотя бы одной стороной в эту дату или позже, не штампуют: сбор €0. Договор, который сторона подписала не позднее 31 декабря 2025 года, всё ещё на старой шкале, не больше €20 000 с одного документа. Перечень Министерства внутренних дел не всегда переписан под отмену. Скажите об этом при подаче.",
+    cgt_h="Если потом продадите: налог на прирост капитала 20%",
+    cgt="Налог на прирост капитала — 20% с прироста при отчуждении недвижимости на Кипре. Налоговый департамент уменьшает прирост на инфляцию по официальному индексу розничных цен. Этот перечень индекс не хранит: коэффициент берите из таблицы департамента. Для физического лица сводка закона указывает пожизненный вычет €30 000, €50 000, если фермер продаёт сельхозземлю, и €150 000 по основному жилью, которым владелец пользовался не меньше пяти лет (десять лет, если это не первое такое отчуждение), на участке до 1,5 декара. Общий вычет и вычет за жильё вместе не даются. Компании этих пожизненных вычетов не имеют.",
+    rent_h="Если будете сдавать",
+    rent="Вычет 20% из валовой аренды — уставный вычет для подоходного налога. С 1 января 2026 года шкалы для физического лица: ноль на первые €22 000, 20% до €32 000, 25% до €42 000, 30% до €72 000 и 35% сверх этого. Специальный сбор на оборону с аренды в налоговом 2026 году равен нулю, в том числе для домицилированных резидентов. Взнос ГЕСИ с аренды — 2,65% валовой аренды. Годовой потолок возможен и здесь не воспроизводится.",
+    other_h="Расходы, у которых нет налоговой ставки",
+    other="Гонорар юриста, поиск в кадастре, пошлина за сдачу договора, залоги коммунальных компаний и муниципальные сборы не сводятся к одному опубликованному проценту. Просите их письменно. Не прибавляйте ежегодный государственный налог на недвижимость: за налоговые годы с 2017-го он не взимается.",
+    gate_h="Получить перечень",
+    gate_p="Отправьте имя и эл. почту. Перечень откроется в этом браузере, и его можно напечатать или сохранить как PDF. Сведения нужны только чтобы открыть страницу.",
+    send="Отправить и открыть перечень",
+ ),
+ "el": dict(
+    h="Αγορά ακινήτου στην Κύπρο: λίστα φόρων και τελών 2026",
+    lede="Οι δημοσιευμένοι φόροι σε μια αγορά, και όσοι εμφανίζονται αργότερα αν ενοικιάσετε ή πουλήσετε. Δεν είναι αμοιβή αυτού του ιστοτόπου, ούτε βεβαίωση του συμβολαίου σας.",
+    print="Εκτύπωση ή αποθήκευση PDF",
+    fork_h="Τέλη μεταβίβασης ή ΦΠΑ, συνήθως όχι και τα δύο",
+    fork="Το Gov.cy αναφέρει ότι τα τέλη μεταβίβασης δεν επιβάλλονται όταν η μεταβίβαση αφορά συναλλαγή που υπόκειται σε ΦΠΑ, αν προσκομίσετε το πιστοποιητικό του Τμήματος ΦΠΑ. Όπου δεν επιβάλλεται ΦΠΑ, η νομοθεσία παρέχει απαλλαγή 50% των τελών. Η απαλλαγή 50% δεν δίνεται αν ο πωλητής απέκτησε το ακίνητο σε αναγκαστική πώληση κατά τα Μέρη VI και VIA του Νόμου 9/1965. Η κλίμακα του Κτηματολογίου, πριν από το 50%, είναι 3% από €0,01 έως €85.000, 5% από €85.001 έως €170.000 και 8% πάνω από €170.000. Τα κλιμάκια είναι στρώσεις. Σε αποδεκτή αξία €200.000, με έναν αγοραστή και χωρίς ΦΠΑ, η πλήρης κλίμακα είναι €9.200 και το μισό €4.600. Συμβόλαιο που δεν κατατέθηκε μέσα σε έξι μήνες μπορεί, κατά το φυλλάδιο του Τμήματος, να αυξήσει το τέλος κατά 10% στη μεταβίβαση.",
+    vat_h="ΦΠΑ 19% ή 5% σε μέρος κύριας κατοικίας",
+    vat="Ο κανονικός συντελεστής είναι 19% της τιμής πριν τον ΦΠΑ. Το 5% είναι για κύρια και μόνιμη κατοικία, στα πρώτα 130 τετραγωνικά μέτρα και έως €350.000, και μόνο αν το συνολικό δομήσιμο δεν υπερβαίνει τα 190 τετραγωνικά μέτρα και η συνολική αξία τα €475.000. Ανάμεσα στα όρια το 5% πιάνει μόνο το επιλέξιμο μέρος. Πάνω από οποιοδήποτε εξωτερικό όριο ο μειωμένος συντελεστής δεν είναι διαθέσιμος. Κατοικία διακοπών, ή διαμέρισμα που θα ενοικιαστεί από την αρχή, υπολογίζεται με 19%. Το παράθυρο για τη μεταβατική αίτηση μειωμένου συντελεστή έτρεξε έως τις 15 Ιουνίου 2026. Αυτή η λίστα δεν θεωρεί την οδό ακόμη ανοιχτή.",
+    stamp_h="Χαρτόσημο",
+    stamp="Ο Νόμος 239(I)/2025 κατάργησε το χαρτόσημο από την 1η Ιανουαρίου 2026. Συμβόλαιο που καταρτίστηκε και υπογράφηκε από τουλάχιστον ένα μέρος κατά ή μετά την ημερομηνία αυτή δεν χαρτοσημαίνεται: το τέλος είναι €0. Συμβόλαιο που υπέγραψε ένα μέρος έως τις 31 Δεκεμβρίου 2025 παραμένει στην παλιά κλίμακα, με ανώτατο €20.000 σε ένα έγγραφο. Ο κατάλογος του Υπουργείου Εσωτερικών δεν έχει πάντα ξαναγραφεί για την κατάργηση. Πείτε το κατά την κατάθεση.",
+    cgt_h="Αν πουλήσετε αργότερα: φόρος κεφαλαιουχικών κερδών 20%",
+    cgt="Ο φόρος κεφαλαιουχικών κερδών είναι 20% στο κέρδος από διάθεση ακίνητης ιδιοκτησίας στην Κύπρο. Το Τμήμα Φορολογίας μειώνει το κέρδος για τον πληθωρισμό με τον επίσημο δείκτη τιμών λιανικής. Αυτή η λίστα δεν αποθηκεύει τον δείκτη: πάρτε τον λόγο από τον πίνακα του Τμήματος. Για φυσικό πρόσωπο, ο κωδικοποιημένος νόμος αναφέρει ισόβια απαλλαγή €30.000, €50.000 όταν γεωργός πωλεί γεωργική γη, και €150.000 για κύρια κατοικία που χρησιμοποιήθηκε τουλάχιστον πέντε έτη (δέκα αν δεν είναι η πρώτη τέτοια διάθεση) σε γη έως 1,5 δεκάρια. Δεν δικαιούται κανείς και τη γενική απαλλαγή και την απαλλαγή κατοικίας. Οι εταιρείες δεν έχουν αυτές τις ισόβιες απαλλαγές.",
+    rent_h="Αν ενοικιάσετε",
+    rent="Η έκπτωση 20% από το ακαθάριστο ενοίκιο είναι η νόμιμη έκπτωση φόρου εισοδήματος. Από την 1η Ιανουαρίου 2026 οι κλίμακες για φυσικό πρόσωπο είναι μηδέν στα πρώτα €22.000, 20% έως €32.000, 25% έως €42.000, 30% έως €72.000 και 35% πάνω από αυτό. Η έκτακτη εισφορά για την άμυνα στο ενοίκιο είναι μηδέν για το φορολογικό έτος 2026, και για κατοίκους με κατοικία. Η εισφορά ΓεΣΥ στο ενοίκιο είναι 2,65% του ακαθάριστου ενοικίου. Ετήσιο ανώτατο μπορεί να ισχύει και δεν αναπαράγεται εδώ.",
+    other_h="Έξοδα που δεν είναι φορολογικός συντελεστής",
+    other="Η αμοιβή δικηγόρου, η έρευνα στο Κτηματολόγιο, το τέλος κατάθεσης συμβολαίου, οι εγγυήσεις υπηρεσιών και τα δημοτικά τέλη δεν ανάγονται σε ένα δημοσιευμένο ποσοστό. Ζητήστε τα γραπτώς. Μην προσθέτετε ετήσιο κρατικό φόρο ακίνητης ιδιοκτησίας: δεν επιβάλλεται για φορολογικά έτη από το 2017.",
+    gate_h="Πάρτε τη λίστα",
+    gate_p="Στείλτε όνομα και email. Η λίστα ανοίγει σε αυτόν τον browser και μπορείτε να την εκτυπώσετε ή να την αποθηκεύσετε ως PDF. Τα στοιχεία χρησιμοποιούνται μόνο για να ανοίξει η σελίδα.",
+    send="Αποστολή και άνοιγμα της λίστας",
+ ),
+}
+
+def services_page(lang):
+    u = UI[lang]
+    intro = {
+        "en": "Paid help with Cyprus property tax. Each item is quoted before any work starts. This page does not publish a fee.",
+        "ru": "Платная помощь с налогами на недвижимость Кипра. По каждой услуге стоимость называют до начала работы. Эта страница цену не публикует.",
+        "el": "Αμειβόμενη βοήθεια με φόρους ακινήτου στην Κύπρο. Κάθε υπηρεσία κοστολογείται πριν αρχίσει η δουλειά. Αυτή η σελίδα δεν δημοσιεύει τιμή.",
+    }[lang]
+    cards = []
+    for value, copy in SERVICE_LIST:
+        title, text = copy[lang]
+        cards.append(
+            f'<article class="card"><h2>{e(title)}</h2><p>{e(text)}</p>'
+            f'<a class="more" href="{consult_href(lang, value)}">{e(QUOTE[lang])}</a></article>'
+        )
+    free_h = {"en": "Free checklist", "ru": "Бесплатный перечень", "el": "Δωρεάν λίστα"}[lang]
+    free_p = CHECKLIST[lang]["h"]
+    path = loc(lang, "/services/")
+    def alt(l):
+        return loc(l, "/services/")
+    body = (f'<main id="main" class="wrap page"><h1>{e(u["services"])}</h1><p class="lede">{e(intro)}</p>'
+            f'<div class="grid">{"".join(cards)}</div>'
+            f'<h2 class="sec">{e(free_h)}</h2><p>{e(free_p)}</p>'
+            f'<p><a class="go" href="{href(loc(lang, "/buying-checklist/"))}">{e(CHECKLIST[lang]["gate_h"])}</a></p>'
+            f'</main>')
+    return page_shell(lang, f'{u["services"]} | {SITE}', intro, path, alt, body)
+
+def checklist_gate(lang):
+    base = LEAD[lang]
+    c = CHECKLIST[lang]
+    a = CONSULT[lang]
+    privacy = href(loc(lang, "/privacy/"))
+    nxt = loc(lang, "/buying-checklist/2026/")
+    return f'''<form class="lead" action="https://formsubmit.co/{LEADS_EMAIL}" method="POST">
+<input type="hidden" name="_subject" value="mycytax lead">
+<input type="hidden" name="_template" value="table">
+<input type="hidden" name="_captcha" value="true">
+<input type="hidden" name="_next" value="{e(absu(nxt))}">
+<input type="hidden" name="interest" value="Buying property checklist">
+<p class="hp"><label>{e(base["honey"])}<input name="_honey" tabindex="-1" autocomplete="off"></label></p>
+<label class="fld"><span>{e(base["name"])}</span><input name="name" required autocomplete="name"></label>
+<label class="fld"><span>{e(base["email"])}</span><input type="email" name="email" required autocomplete="email"></label>
+<label class="chk"><input type="checkbox" name="consent" value="yes" required><span>{e(a["consent"])} <a href="{privacy}">{e(UI[lang]["privacy"])}</a>.</span></label>
+<button class="send" type="submit">{e(c["send"])}</button></form>'''
+
+def checklist_gate_page(lang):
+    c = CHECKLIST[lang]
+    path = loc(lang, "/buying-checklist/")
+    def alt(l):
+        return loc(l, "/buying-checklist/")
+    body = (f'<main id="main" class="wrap page"><h1>{e(c["gate_h"])}</h1>'
+            f'<p class="lede">{e(c["h"])}</p><p>{e(c["gate_p"])}</p>'
+            f'{checklist_gate(lang)}</main>')
+    return page_shell(lang, f'{c["h"]} | {SITE}', c["gate_p"], path, alt, body)
+
+def _checklist_links(lang):
+    labels = {
+        "en": ("Transfer fees", "VAT", "Stamp duty", "Capital gains", "Rental income", "Total cost of buying"),
+        "ru": ("Сборы за переход", "НДС", "Гербовый сбор", "Прирост капитала", "Аренда", "Полная стоимость покупки"),
+        "el": ("Τέλη μεταβίβασης", "ΦΠΑ", "Χαρτόσημο", "Κεφαλαιουχικά κέρδη", "Ενοίκιο", "Συνολικό κόστος αγοράς"),
+    }[lang]
+    slugs = (
+        ("/calculators/transfer-fees/", labels[0]),
+        ("/calculators/vat/", labels[1]),
+        ("/calculators/stamp-duty/", labels[2]),
+        ("/calculators/capital-gains/", labels[3]),
+        ("/calculators/rental-yield/", labels[4]),
+        ("/guides/total-cost/", labels[5]),
+    )
+    return " ".join(f'<a href="{href(loc(lang, path))}">{e(label)}</a>' for path, label in slugs)
+
+def checklist_page(lang):
+    c = CHECKLIST[lang]
+    u = UI[lang]
+    path = loc(lang, "/buying-checklist/2026/")
+    def alt(l):
+        return loc(l, "/buying-checklist/2026/")
+    sources = (
+        ("Calculation of transfer fees, Gov.cy", "https://www.gov.cy/en/service/calculation-of-real-estates-transfer-fees/"),
+        ("Sale and exchange fees, Department of Lands and Surveys", "https://portal.dls.moi.gov.cy/en/application_forms/polisi-antallagi/"),
+        ("VAT 5% tool, Gov.cy", "https://www.gov.cy/mof-tfa/en/documents/vat-5-calculation-tool-for-the-purchase-building-of-a-house/"),
+        ("Repeal of stamp duty, KPMG note on the Tax Department announcement", "https://kpmg.com/us/en/taxnewsflash/news/2026/01/tnf-cyprus-repeal-of-stamp-duty-laws.html"),
+        ("Capital Gains Tax Law section 5, CyLaw", "https://cylaw.org/nomoi/enop/ind/1980_1_52/section-sca7e654bc-d0c0-9dd6-06d7-c735c009387b.html"),
+        ("Rental income, Tax Department", "https://www.mof.gov.cy/mof/TAX/taxdep.nsf/All/04BF7957A056E21DC225873D0038367D"),
+        ("Tax residency and defence contribution on rent, Gov.cy", "https://www.gov.cy/mof-tax/en/documents/tax-residency-domicility/"),
+        ("Tax Facts and Figures 2026, PwC Cyprus", "https://www.pwc.com.cy/en/publications/assets/tff-eng-2026.pdf"),
+    )
+    src = "".join(f'<li><a href="{e(url)}">{e(name)}</a></li>' for name, url in sources)
+    body = f'''<main id="main" class="wrap page print-doc">
+<p class="no-print"><button type="button" class="go" onclick="window.print()">{e(c["print"])}</button></p>
+<h1>{e(c["h"])}</h1><p class="lede">{e(c["lede"])}</p>
+<p class="banner">{e(DISCLAIMER[lang])}</p>
+<div class="body">
+<h2>{e(c["fork_h"])}</h2><p>{e(c["fork"])}</p>
+<h2>{e(c["vat_h"])}</h2><p>{e(c["vat"])}</p>
+<h2>{e(c["stamp_h"])}</h2><p>{e(c["stamp"])}</p>
+<h2>{e(c["cgt_h"])}</h2><p>{e(c["cgt"])}</p>
+<h2>{e(c["rent_h"])}</h2><p>{e(c["rent"])}</p>
+<h2>{e(c["other_h"])}</h2><p>{e(c["other"])}</p>
+<p>{_checklist_links(lang)}</p>
+</div>
+<section class="src"><h2>{e(u["sources"])}</h2><ul>{src}</ul></section>
+</main>'''
+    return page_shell(lang, f'{c["h"]} | {SITE}', c["lede"], path, alt, body, robots="noindex,follow")
+
 def contact_href(lang, kind):
     return href(loc(lang, "/contact/")) + "?type=" + kind
 def lead_card(lang):
@@ -2331,7 +2554,7 @@ def listing_detail(lang, item):
 
 def sitemap():
     paths = ["/"]
-    for slug in ("about", "contact", "privacy", "cookies", "terms", "affiliate-disclosure", "property-consultation", "calculators", "guides"):
+    for slug in ("about", "contact", "privacy", "cookies", "terms", "affiliate-disclosure", "property-consultation", "services", "buying-checklist", "calculators", "guides"):
         paths.append(f"/{slug}/")
     for slug in CALC_ORDER:
         paths.append(f"/calculators/{slug}/")
@@ -2438,6 +2661,9 @@ def main():
         w(loc(lang, "/contact/thanks/") + "index.html", thanks(lang))
         w(loc(lang, "/property-consultation/") + "index.html", consultation_page(lang))
         w(loc(lang, "/property-consultation/thanks/") + "index.html", consultation_thanks(lang))
+        w(loc(lang, "/services/") + "index.html", services_page(lang))
+        w(loc(lang, "/buying-checklist/") + "index.html", checklist_gate_page(lang))
+        w(loc(lang, "/buying-checklist/2026/") + "index.html", checklist_page(lang))
         w(loc(lang, "/real-estate/") + "index.html", real_estate_page(lang))
         w(loc(lang, "/real-estate/thanks/") + "index.html", listing_thanks(lang))
         for item in published_listings():
