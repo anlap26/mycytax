@@ -926,7 +926,8 @@ def head(lang, title, desc, path, alt_path, jsonld=None, extra="", robots="index
     verify = bing_meta()
     verify_line = f"\n{verify}" if verify else ""
     return f'''<!doctype html><html lang="{lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="yandex-verification" content="8dc437c1055c8e9b" />{verify_line}
+<meta name="yandex-verification" content="8dc437c1055c8e9b" />
+<meta name="impact-site-verification" value="04c75eec-b177-4aab-a06b-a7dc4db45d6b">{verify_line}
 <title>{e(title)}</title><meta name="description" content="{e(desc)}">
 <link rel="canonical" href="{absu(path)}">
 {chr(10).join(alts)}
