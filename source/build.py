@@ -1003,6 +1003,10 @@ def head(lang, title, desc, path, alt_path, jsonld=None, extra="", robots="index
 {social}
 {feed}
 <meta name="theme-color" content="#1e3d34">
+<link rel="icon" href="{href("/favicon.ico")}" sizes="16x16 32x32 48x48">
+<link rel="icon" href="{href("/favicon-48x48.png")}" type="image/png" sizes="48x48">
+<link rel="icon" href="{href("/icon-192.png")}" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="{href("/apple-touch-icon.png")}" sizes="180x180">
 <link rel="stylesheet" href="{href("/assets/style.css")}">{ld}{extra}{consent_bootstrap()}{ga4_snippet()}{ADSENSE}</head>'''
 
 def header(lang, path_for):
@@ -1198,7 +1202,7 @@ def ad(label):
     return f'<div class="adslot" data-ad="{e(label)}" aria-label="{e(UI["en"]["ad"])}"><!-- AdSense slot "{e(label)}": leave empty until a unit is approved. --></div>'
 
 def org():
-    return {"@type":"Organization","name":SITE,"url":absu("/"),"email":EMAIL,
+    return {"@type":"Organization","name":SITE,"url":absu("/"),"logo":absu("/icon-512.png"),"email":EMAIL,
             "address":{"@type":"PostalAddress","addressCountry":"CY"},
             "founder":{"@type":"Person","name":PUBLISHER},
             "sameAs":[CYNEWS, TG_RU, TG_EN, IG]}
@@ -1269,6 +1273,7 @@ def service_nodes():
         "@id": org_id,
         "name": SITE,
         "url": absu("/"),
+        "logo": absu("/icon-512.png"),
         "email": LEADS_EMAIL,
         "areaServed": area,
         "sameAs": same,
@@ -2737,6 +2742,9 @@ def main():
     js_dir = os.path.join(OUT, "assets", "js")
     os.makedirs(js_dir, exist_ok=True)
     shutil.copy(AFFILIATES_PATH, os.path.join(js_dir, "affiliates.js"))
+    icons_dir = os.path.join(HERE, "static", "icons")
+    for fn in os.listdir(icons_dir):
+        shutil.copy(os.path.join(icons_dir, fn), os.path.join(OUT, fn))
     og_src = os.path.join(HERE, "static", "og.png")
     if not os.path.isfile(og_src):
         raise SystemExit(f"missing {og_src}")
