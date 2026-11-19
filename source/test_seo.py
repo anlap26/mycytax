@@ -22,6 +22,10 @@ class SeoTests(unittest.TestCase):
                 '<meta name="impact-site-verification" value="04c75eec-b177-4aab-a06b-a7dc4db45d6b">',
                 html,
             )
+            self.assertIn(
+                '<meta name="impact-site-verification" value="91556748-8f38-47b9-874f-f6a1bf0cbe4e">',
+                html,
+            )
             self.assertIn("mycytax-consent", html)
             self.assertIn('data-cookie="granted"', html)
             self.assertIn('data-cookie="denied"', html)
