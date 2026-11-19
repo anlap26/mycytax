@@ -20,6 +20,8 @@ SITE = "MyCyTax"
 ADSENSE = '<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1547877294743851" crossorigin="anonymous"></script>'
 ADS_TXT = "google.com, pub-1547877294743851, DIRECT, f08c47fec0942fa0\n"
 EMAIL = "info@mycytax.com"
+# Consultation form only. The contact and listing forms still use EMAIL.
+LEADS_EMAIL = "2877novosti@gmail.com"
 PUBLISHER = "Anna"
 CYNEWS = "https://cynews24.net/"
 CYNEWS_SITEMAP = "https://cynews24.net/news-sitemap.xml"
@@ -74,6 +76,7 @@ UI = {
     calcs="Calculators", guides="Guides", about="About", contact="Contact",
     privacy="Privacy", cookies="Cookies", terms="Terms",
     affiliates="Affiliate links",
+    consult="Tax paperwork",
     aff_note="Some buttons on this page are partner links. If you use one and buy, the publisher may earn a commission. Prices on the provider site can change. Nothing here is a recommendation for your own money.",
     home="Home", lang="Language", disclaimer="Not legal or tax advice",
     sources="Sources", faq="Questions", related="Related",
@@ -109,6 +112,7 @@ UI = {
     calcs="Калькуляторы", guides="Справочники", about="О сайте", contact="Контакты",
     privacy="Конфиденциальность", cookies="Файлы cookie", terms="Условия",
     affiliates="Партнёрские ссылки",
+    consult="Налоги и документы",
     aff_note="Некоторые кнопки на этой странице — партнёрские ссылки. Если вы по ним оформите услугу, издатель может получить комиссию. Цена провайдера меняется. Это не рекомендация для ваших денег.",
     home="Главная", lang="Язык", disclaimer="Это не юридическая и не налоговая консультация",
     sources="Источники", faq="Вопросы", related="Ещё по теме",
@@ -144,6 +148,7 @@ UI = {
     calcs="Υπολογιστές", guides="Οδηγοί", about="Σχετικά", contact="Επικοινωνία",
     privacy="Απόρρητο", cookies="Cookies", terms="Όροι",
     affiliates="Σύνδεσμοι συνεργατών",
+    consult="Φόροι και έγγραφα",
     aff_note="Ορισμένα κουμπιά σε αυτή τη σελίδα είναι σύνδεσμοι συνεργατών. Αν αγοράσετε μέσω αυτών, η εκδότρια μπορεί να λάβει προμήθεια. Η τιμή του παρόχου αλλάζει. Δεν είναι σύσταση για τα δικά σας χρήματα.",
     home="Αρχική", lang="Γλώσσα", disclaimer="Δεν είναι νομική ή φορολογική συμβουλή",
     sources="Πηγές", faq="Ερωτήσεις", related="Σχετικά",
@@ -805,6 +810,9 @@ form.lead{display:grid;gap:12px;max-width:720px}
 .cta-btns{display:flex;flex-wrap:wrap;gap:10px}
 a.go{display:inline-flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;line-height:1.3}
 .cta-btns a{flex:1 1 240px}
+.consult-cta{border-top-color:var(--pine2)}
+.consult-cta h2{font-size:22px}
+.fld select{font:inherit;padding:10px 12px;border:1px solid #d5cbbd;border-radius:10px;background:#fff;width:100%}
 a.go.alt{background:#fff;color:var(--pine);border:2px solid var(--pine)}
 a.go.alt:hover{background:var(--pine);color:#fff}
 p.consult{margin:14px 0 0;font-weight:700}
@@ -1011,6 +1019,7 @@ def footer(lang):
         (loc(lang, "/about/"), u["about"]), (loc(lang, "/contact/"), u["contact"]),
         (loc(lang, "/privacy/"), u["privacy"]), (loc(lang, "/cookies/"), u["cookies"]),
         (loc(lang, "/terms/"), u["terms"]),
+        (loc(lang, "/property-consultation/"), u["consult"]),
         (loc(lang, "/affiliate-disclosure/"), u["affiliates"]),
     ]
     nav = "".join(f'<a href="{href(path)}">{e(name)}</a>' for path, name in links)
@@ -1284,6 +1293,127 @@ LEAD = {
             consent="Συμφωνώ ότι το MyCyTax θα χρησιμοποιήσει αυτά τα στοιχεία μόνο για να απαντήσει σε αυτό το αίτημα.",
             send="Αποστολή αιτήματος", honey="Αφήστε κενό", name="Όνομα", email="Email"),
 }
+CONSULT = {
+ "en": dict(
+    h="Selling or buying property in Cyprus? Get help with taxes and paperwork",
+    p="Tell us what you are doing and where the property is. This is not a tax assessment.",
+    go="Get help",
+    d="A short form about a sale, a purchase, capital gains, rental income, or a developer’s trading-criteria form.",
+    interest="What you need",
+    area="Area or city",
+    msg="Message",
+    consent="I agree that these details are used only to reply to this request.",
+    send="Send",
+    thanks_t="Thank you",
+    thanks_d="Your consultation request has been sent.",
+    thanks_i="Thank you. If this address is already confirmed with FormSubmit, we will reply about the taxes and paperwork.",
+    options=[
+        ("Selling property", "Selling property"),
+        ("Buying", "Buying"),
+        ("Capital gains tax", "Capital gains tax"),
+        ("Trading-criteria form for developers", "Trading-criteria form for developers"),
+        ("Rental income tax", "Rental income tax"),
+        ("Other", "Other"),
+    ],
+ ),
+ "ru": dict(
+    h="Продаёте или покупаете недвижимость на Кипре? Поможем с налогами и документами",
+    p="Напишите, что вы делаете и где объект. Это не расчёт налога.",
+    go="Получить помощь",
+    d="Короткая форма о продаже, покупке, приросте капитала, аренде или форме критериев трейдинга для застройщика.",
+    interest="Что нужно",
+    area="Район или город",
+    msg="Сообщение",
+    consent="Я согласен, что эти сведения используются только чтобы ответить на этот запрос.",
+    send="Отправить",
+    thanks_t="Спасибо",
+    thanks_d="Запрос на консультацию отправлен.",
+    thanks_i="Спасибо. Если адрес уже подтверждён в FormSubmit, ответим по налогам и документам.",
+    options=[
+        ("Selling property", "Продажа недвижимости"),
+        ("Buying", "Покупка"),
+        ("Capital gains tax", "Налог на прирост капитала"),
+        ("Trading-criteria form for developers", "Форма критериев трейдинга для застройщиков"),
+        ("Rental income tax", "Налог на доход от аренды"),
+        ("Other", "Другое"),
+    ],
+ ),
+ "el": dict(
+    h="Πουλάτε ή αγοράζετε ακίνητο στην Κύπρο; Βοήθεια με φόρους και έγγραφα",
+    p="Γράψτε τι κάνετε και πού είναι το ακίνητο. Δεν είναι φορολογικός υπολογισμός.",
+    go="Ζητήστε βοήθεια",
+    d="Σύντομη φόρμα για πώληση, αγορά, κεφαλαιουχικά κέρδη, ενοίκιο ή το έντυπο κριτηρίων εμπορίας για αναπτύκτη.",
+    interest="Τι χρειάζεστε",
+    area="Περιοχή ή πόλη",
+    msg="Μήνυμα",
+    consent="Συμφωνώ ότι αυτά τα στοιχεία χρησιμοποιούνται μόνο για απάντηση σε αυτό το αίτημα.",
+    send="Αποστολή",
+    thanks_t="Ευχαριστούμε",
+    thanks_d="Το αίτημα συμβουλής στάλθηκε.",
+    thanks_i="Ευχαριστούμε. Αν η διεύθυνση έχει ήδη επιβεβαιωθεί στο FormSubmit, θα απαντήσουμε για τους φόρους και τα έγγραφα.",
+    options=[
+        ("Selling property", "Πώληση ακινήτου"),
+        ("Buying", "Αγορά"),
+        ("Capital gains tax", "Φόρος κεφαλαιουχικών κερδών"),
+        ("Trading-criteria form for developers", "Έντυπο κριτηρίων εμπορίας για αναπτύκτες"),
+        ("Rental income tax", "Φόρος εισοδήματος από ενοίκια"),
+        ("Other", "Άλλο"),
+    ],
+ ),
+}
+def consult_href(lang, interest=""):
+    from urllib.parse import quote
+    path = href(loc(lang, "/property-consultation/"))
+    return path + "?interest=" + quote(interest) if interest else path
+def consult_card(lang, interest=""):
+    """Compact invitation. The form itself is on the consultation page."""
+    a = CONSULT[lang]
+    return (f'<aside class="cta consult-cta"><h2>{e(a["h"])}</h2><p>{e(a["p"])}</p>'
+            f'<div class="cta-btns"><a class="go" href="{consult_href(lang, interest)}">{e(a["go"])}</a></div></aside>')
+def consult_form(lang, next_path):
+    a = CONSULT[lang]
+    base = LEAD[lang]
+    options = "".join(f'<option value="{e(value)}">{e(label)}</option>' for value, label in a["options"])
+    privacy = href(loc(lang, "/privacy/"))
+    return f'''<form class="lead" id="consultform" action="https://formsubmit.co/{LEADS_EMAIL}" method="POST">
+<input type="hidden" name="_subject" value="mycytax lead">
+<input type="hidden" name="_template" value="table">
+<input type="hidden" name="_captcha" value="true">
+<input type="hidden" name="_next" value="{e(absu(next_path))}">
+<p class="hp"><label>{e(base["honey"])}<input name="_honey" tabindex="-1" autocomplete="off"></label></p>
+<label class="fld"><span>{e(base["name"])}</span><input name="name" required autocomplete="name"></label>
+<label class="fld"><span>{e(base["email"])}</span><input type="email" name="email" required autocomplete="email"></label>
+<label class="fld"><span>{e(base["phone"])}</span><input name="phone" required autocomplete="tel"></label>
+<label class="fld"><span>{e(a["interest"])}</span><select name="interest" required>{options}</select></label>
+<label class="fld"><span>{e(a["area"])}</span><input name="area" required></label>
+<label class="fld"><span>{e(a["msg"])}</span><textarea name="message" required></textarea></label>
+<label class="chk"><input type="checkbox" name="consent" value="yes" required><span>{e(a["consent"])} <a href="{privacy}">{e(UI[lang]["privacy"])}</a>.</span></label>
+<button class="send" type="submit">{e(a["send"])}</button></form>
+<script>
+(function(){{
+  var q=new URLSearchParams(location.search).get("interest")||"";
+  var sel=document.querySelector("#consultform select[name=interest]");
+  if(!sel||!q) return;
+  Array.prototype.forEach.call(sel.options, function(opt){{ if(opt.value===q) sel.value=q; }});
+}})();
+</script>'''
+def consultation_page(lang):
+    u = UI[lang]
+    a = CONSULT[lang]
+    path = loc(lang, "/property-consultation/")
+    def alt(l):
+        return loc(l, "/property-consultation/")
+    body = (f'<main id="main" class="wrap page"><h1>{e(a["h"])}</h1><p class="lede">{e(a["d"])}</p>'
+            f'<p class="banner">{e(DISCLAIMER[lang])}</p>'
+            f'{consult_form(lang, loc(lang, "/property-consultation/thanks/"))}</main>')
+    return page_shell(lang, f'{u["consult"]} | {SITE}', a["d"], path, alt, body)
+def consultation_thanks(lang):
+    a = CONSULT[lang]
+    path = loc(lang, "/property-consultation/thanks/")
+    def alt(l):
+        return loc(l, "/property-consultation/thanks/")
+    body = f'<main id="main" class="wrap page"><h1>{e(a["thanks_t"])}</h1><p>{e(a["thanks_i"])}</p></main>'
+    return page_shell(lang, f'{a["thanks_t"]} | {SITE}', a["thanks_d"], path, alt, body, robots="noindex,follow")
 def contact_href(lang, kind):
     return href(loc(lang, "/contact/")) + "?type=" + kind
 def lead_card(lang):
@@ -1589,6 +1719,7 @@ def calc_page(lang, slug):
 <div id="calc" data-consult="{contact_href(lang,"buy")}" data-calc="{e({"transfer-fees":"transfer","stamp-duty":"stamp","vat":"vat","capital-gains":"cgt","rental-yield":"rental","mortgage":"mortgage"}[slug])}"></div>
 {offer}
 {lead_card(lang)}
+{consult_card(lang, {"capital-gains":"Capital gains tax","rental-yield":"Rental income tax"}.get(slug, ""))}
 <div class="body"><h2>{e(u["sources"])}</h2><p>{note}</p></div>{ad("calc-bottom")}
 {partners_block(lang, "calculators", slug)}{telegram_card(lang)}</main>
 <script src="{href("/assets/calc.js")}" defer></script>'''
@@ -1652,6 +1783,7 @@ def guide_page(lang, slug, words_out):
 {faq_html}
 <section class="src"><h2>{e(u["sources"])}</h2><ul>{src}</ul></section>
 {lead_card(lang)}
+{consult_card(lang)}
 {ad("guide-bottom")}
 {partners_block(lang, "guides", slug)}{telegram_card(lang)}
 {news_block(lang)}</article></main>'''
@@ -2199,7 +2331,7 @@ def listing_detail(lang, item):
 
 def sitemap():
     paths = ["/"]
-    for slug in ("about", "contact", "privacy", "cookies", "terms", "affiliate-disclosure", "calculators", "guides"):
+    for slug in ("about", "contact", "privacy", "cookies", "terms", "affiliate-disclosure", "property-consultation", "calculators", "guides"):
         paths.append(f"/{slug}/")
     for slug in CALC_ORDER:
         paths.append(f"/calculators/{slug}/")
@@ -2304,6 +2436,8 @@ def main():
             w(loc(lang, f"/{slug}/") + "index.html", static_page(lang, slug))
         w(loc(lang, "/contact/") + "index.html", contact(lang))
         w(loc(lang, "/contact/thanks/") + "index.html", thanks(lang))
+        w(loc(lang, "/property-consultation/") + "index.html", consultation_page(lang))
+        w(loc(lang, "/property-consultation/thanks/") + "index.html", consultation_thanks(lang))
         w(loc(lang, "/real-estate/") + "index.html", real_estate_page(lang))
         w(loc(lang, "/real-estate/thanks/") + "index.html", listing_thanks(lang))
         for item in published_listings():
