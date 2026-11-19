@@ -32,8 +32,20 @@ class AffiliateTests(unittest.TestCase):
         data = build.load_affiliates()
         self.assertEqual(set(build.AFFILIATE_KEYS), set(data))
         for key in build.AFFILIATE_KEYS:
-            self.assertEqual(data[key], "#AFFILIATE_" + key.upper())
+            if key == "amazon":
+                self.assertEqual(data[key], "https://www.amazon.de/?tag=cynews24-21")
+            else:
+                self.assertEqual(data[key], "#AFFILIATE_" + key.upper())
             self.assertTrue(build._affiliate_url_ok(data[key]))
+        self.assertEqual(
+            build.amazon_search_url("Belegscanner"),
+            "https://www.amazon.de/s?k=Belegscanner&tag=cynews24-21",
+        )
+        self.assertEqual(
+            build.amazon_search_url("Buchhaltung Buch"),
+            "https://www.amazon.de/s?k=Buchhaltung%20Buch&tag=cynews24-21",
+        )
+        self.assertNotIn("/dp/", build.amazon_search_url("Smart Lock"))
         self.assertFalse(build._affiliate_url_ok("javascript:alert(1)"))
         self.assertFalse(build._affiliate_url_ok("http://example.com"))
         self.assertFalse(build._affiliate_url_ok("https://ok.example/a b"))

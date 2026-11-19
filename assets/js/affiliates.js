@@ -21,5 +21,20 @@ window.MYCYTAX_AFFILIATES = {
   "interactivebrokers": "#AFFILIATE_INTERACTIVEBROKERS",
   "wise": "#AFFILIATE_WISE",
   "genki": "#AFFILIATE_GENKI",
-  "semrush": "#AFFILIATE_SEMRUSH"
+  "semrush": "#AFFILIATE_SEMRUSH",
+  "amazon": "https://www.amazon.de/?tag=cynews24-21"
+};
+
+/* Search link for a type of product. No ASINs. The tag comes from the amazon entry. */
+window.MYCYTAX_AMAZON_SEARCH = function (query) {
+  var base = (window.MYCYTAX_AFFILIATES && window.MYCYTAX_AFFILIATES.amazon) || "";
+  var tag = "cynews24-21";
+  var origin = "https://www.amazon.de";
+  var match = /[?&]tag=([^&#]+)/.exec(base);
+  if (match) tag = decodeURIComponent(match[1]);
+  try {
+    if (base.indexOf("https://") === 0) origin = new URL(base).origin;
+  } catch (err) {}
+  var q = encodeURIComponent(String(query == null ? "" : query).replace(/^\s+|\s+$/g, ""));
+  return origin + "/s?k=" + q + "&tag=" + encodeURIComponent(tag);
 };

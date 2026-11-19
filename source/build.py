@@ -455,7 +455,7 @@ PARTNERS = load_partners()
 AFFILIATES_PATH = os.path.join(HERE, "static", "affiliates.js")
 AFFILIATE_KEYS = (
     "nordvpn", "surfshark", "proton", "ledger", "trezor", "binance", "bybit",
-    "interactivebrokers", "wise", "genki", "semrush",
+    "interactivebrokers", "wise", "genki", "semrush", "amazon",
 )
 _AFFILIATE_PLACEHOLDER = re.compile(r"^#AFFILIATE_[A-Z0-9]+$")
 AFF_REL = "nofollow sponsored noopener"
@@ -473,7 +473,7 @@ def load_affiliates(path=None):
         raise SystemExit(f"missing {path}")
     with open(path, encoding="utf8") as f:
         text = f.read()
-    m = re.search(r"MYCYTAX_AFFILIATES\s*=\s*(\{.*\})\s*;\s*\Z", text, re.S)
+    m = re.search(r"MYCYTAX_AFFILIATES\s*=\s*(\{.*?\})\s*;", text, re.S)
     if not m:
         raise SystemExit(f"{path}: expected window.MYCYTAX_AFFILIATES = {{...}};")
     try:
@@ -498,6 +498,37 @@ def affiliate_href(key, data=None):
     data = AFFILIATES if data is None else data
     url = data.get(key) if isinstance(data, dict) else ""
     return url if _affiliate_url_ok(url) else ""
+
+def amazon_search_url(query, data=None):
+    """Amazon.de search URL. The tag is read from the amazon entry. No product codes."""
+    from urllib.parse import parse_qs, quote, urlparse
+    query = _clean(query)
+    base = affiliate_href("amazon", data)
+    if not query or not base:
+        return ""
+    parsed = urlparse(base)
+    tags = parse_qs(parsed.query).get("tag") or []
+    tag = tags[0] if tags else ""
+    if not tag or parsed.scheme != "https" or not parsed.netloc:
+        return ""
+    origin = f"{parsed.scheme}://{parsed.netloc}"
+    return origin + "/s?k=" + quote(query, safe="") + "&tag=" + quote(tag, safe="")
+
+def amazon_links(items):
+    """One box of Amazon search buttons. items are (label, query) pairs."""
+    buttons = []
+    for label, query in items:
+        label = _clean(label)
+        url = amazon_search_url(query)
+        if not label or not url:
+            continue
+        buttons.append(
+            f'<a class="aff-btn" data-amazon-search="{e(query)}" href="{e(url)}" '
+            f'rel="sponsored nofollow noopener" target="_blank">{e(label)}</a>'
+        )
+    if not buttons:
+        return ""
+    return '<aside class="aff-offer aff-amazon">' + "".join(buttons) + "</aside>\n"
 
 def affiliate_offer(key, label, note="", data=None):
     """Highlighted partner button. Empty when the key has no safe URL."""
@@ -531,6 +562,10 @@ def affiliate_runtime():
         'if(typeof url!=="string")return;'
         'if(url.indexOf("https://")===0||url.indexOf("#AFFILIATE_")===0){a.href=url;}'
         "});"
+        'if(typeof window.MYCYTAX_AMAZON_SEARCH==="function"){'
+        'document.querySelectorAll("[data-amazon-search]").forEach(function(a){'
+        'a.href=window.MYCYTAX_AMAZON_SEARCH(a.getAttribute("data-amazon-search"));'
+        "});}"
         "})();</script>\n"
     )
 
@@ -648,10 +683,23 @@ def parse(md):
         if list_tag:
             html_parts.append(f"</{list_tag}>")
             list_tag = None
-    for kind, text in blocks:
+    i = 0
+    nblocks = len(blocks)
+    while i < nblocks:
+        kind, text = blocks[i]
+        if kind == "offer" and text[0] == "amazon":
+            close_list()
+            group = []
+            while i < nblocks and blocks[i][0] == "offer" and blocks[i][1][0] == "amazon":
+                _key, label, query = blocks[i][1]
+                group.append((label, query or label))
+                i += 1
+            html_parts.append(amazon_links(group))
+            continue
         if kind == "offer":
             close_list()
             html_parts.append(affiliate_offer(text[0], text[1], text[2]))
+            i += 1
             continue
         if kind in ("li", "oli"):
             tag = "ul" if kind == "li" else "ol"
@@ -660,6 +708,7 @@ def parse(md):
                 html_parts.append(f"<{tag}>")
                 list_tag = tag
             html_parts.append(f"<li>{inline(text)}</li>")
+            i += 1
             continue
         close_list()
         if kind == "h2":
@@ -676,6 +725,7 @@ def parse(md):
             )
         else:
             html_parts.append(f"<p>{inline(text)}</p>")
+        i += 1
     close_list()
     body = "\n".join(html_parts)
     faqs = [(q, " ".join(a)) for q, a in faq]
@@ -838,6 +888,8 @@ footer p.projects{margin:14px 0 0}
 .aff-btn{display:inline-flex;align-items:center;justify-content:center;text-align:center;background:var(--pine);color:#fff;text-decoration:none;border-radius:999px;padding:10px 16px;font-weight:700;line-height:1.3}
 .aff-btn:hover,.aff-btn:focus-visible{background:var(--copper);color:#fff}
 .aff-offer .aff-more{margin:10px 0 0;font-size:15px}
+.aff-amazon{display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+.aff-amazon .aff-btn{margin:0}
 .aff-disclosure{color:var(--muted);font-size:13px;line-height:1.45;margin:12px 0 16px;max-width:72ch}
 .aff-offer .aff-disclosure{margin:10px 0 0}
 @media(max-width:600px){.aff-btn{display:flex;width:100%;box-sizing:border-box}.aff-offer{padding:12px}}
@@ -1194,7 +1246,7 @@ def telegram_card(lang):
 def page_shell(lang, title, desc, path, alt, body, jsonld=None, active_path=None, robots="index,follow,max-image-preview:large"):
     def path_for(l, alt=alt):
         return alt(l)
-    runtime = affiliate_runtime() if 'data-affiliate="' in (body or "") else ""
+    runtime = affiliate_runtime() if ('data-affiliate="' in (body or "") or 'data-amazon-search="' in (body or "")) else ""
     return head(lang, title, desc, path, alt, jsonld, robots=robots) + header(lang, path_for) + body + runtime + footer(lang)
 
 LEAD = {
@@ -1590,7 +1642,7 @@ def guide_page(lang, slug, words_out):
     figure = guide_figure(lang, slug)
     if figure:
         ld[0]["image"] = absu("/assets/guides/" + GUIDES[slug]["image"]["src"])
-    disclosure = affiliate_disclosure(lang) if 'data-affiliate="' in body_html else ""
+    disclosure = affiliate_disclosure(lang) if ('data-affiliate="' in body_html or 'data-amazon-search="' in body_html) else ""
     body = f'''<main id="main" class="wrap page"><p class="meta">{crumb}</p>
 <article><h1>{e(meta["title"])}</h1><p class="lede">{e(meta["description"])}</p>
 {figure}
