@@ -94,11 +94,15 @@ class SeoTests(unittest.TestCase):
             "https://mycytax.com/links/",
             "https://mycytax.com/ru/links/",
             "https://mycytax.com/el/links/",
+        ):
+            self.assertIn(f"<loc>{url}</loc>", xml)
+        for url in (
             "https://mycytax.com/feed.xml",
             "https://mycytax.com/ru/feed.xml",
             "https://mycytax.com/el/feed.xml",
         ):
-            self.assertIn(f"<loc>{url}</loc>", xml)
+            self.assertNotIn(url, xml)
+        self.assertNotIn(".xml</loc>", xml)
         guide = build.page_lastmod("/guides/taxes-overview/")
         self.assertRegex(guide, r"^\d{4}-\d{2}-\d{2}$")
         self.assertIn(

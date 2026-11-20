@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /feed.xml
+Disallow: /ru/feed.xml
+Disallow: /el/feed.xml
 
 Sitemap: https://mycytax.com/sitemap.xml

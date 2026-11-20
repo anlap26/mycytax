@@ -2586,9 +2586,11 @@ def sitemap():
         for item in published_listings():
             urls.append(loc(lang, f"/real-estate/{item['id']}/"))
         urls.append(loc(lang, "/links/"))
-        urls.append(loc(lang, "/feed.xml"))
     lines = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for u in urls:
+        # Atom and any other XML feed stay on the site, but they are not pages.
+        if u.endswith(".xml"):
+            continue
         lines.append(f"<url><loc>{e(absu(u))}</loc><lastmod>{page_lastmod(u)}</lastmod></url>")
     lines.append("</urlset>")
     return "\n".join(lines) + "\n"
@@ -2695,7 +2697,15 @@ def main():
         w(loc(lang, "/feed.xml"), atom_feed(lang))
     w("/sitemap.xml", sitemap())
     w(f"/{INDEXNOW_KEY}.txt", INDEXNOW_KEY + "\n")
-    w("/robots.txt", f"User-agent: *\nAllow: /\n\nSitemap: {BASE}/sitemap.xml\n")
+    w("/robots.txt", (
+        "User-agent: *\n"
+        "Allow: /\n"
+        "Disallow: /feed.xml\n"
+        "Disallow: /ru/feed.xml\n"
+        "Disallow: /el/feed.xml\n"
+        "\n"
+        f"Sitemap: {BASE}/sitemap.xml\n"
+    ))
     open(os.path.join(OUT, ".nojekyll"), "w").close()
     # GitHub Pages custom domain. Rewritten on every build so a rebuild cannot drop it.
     w("/CNAME", "mycytax.com\n")
