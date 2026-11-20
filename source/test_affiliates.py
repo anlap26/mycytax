@@ -11,13 +11,10 @@ import build
 HERE = os.path.dirname(os.path.abspath(__file__))
 NEW_GUIDES = ("store-savings-and-crypto", "international-brokers", "vpn-abroad")
 CALC_KEYS = {
-    "transfer-fees": "wise",
-    "stamp-duty": "wise",
-    "vat": "wise",
     "capital-gains": "ledger",
     "rental-yield": "interactivebrokers",
-    "mortgage": "wise",
 }
+NO_OFFER = ("transfer-fees", "stamp-duty", "vat", "mortgage")
 
 
 def ld_objects(html):
@@ -55,7 +52,7 @@ class AffiliateTests(unittest.TestCase):
         path = os.path.join(HERE, "static", "affiliates.js")
         with open(path, encoding="utf8") as handle:
             raw = handle.read()
-        broken = raw.replace("#AFFILIATE_WISE", "javascript:alert(1)")
+        broken = raw.replace("#AFFILIATE_LEDGER", "javascript:alert(1)")
         tmp = os.path.join(HERE, "_affiliates_bad.js")
         try:
             with open(tmp, "w", encoding="utf8") as handle:
@@ -69,7 +66,7 @@ class AffiliateTests(unittest.TestCase):
     def test_guides_have_buttons_disclosure_and_schema(self):
         expected = {
             "store-savings-and-crypto": ["ledger", "trezor", "binance", "bybit"],
-            "international-brokers": ["interactivebrokers", "wise"],
+            "international-brokers": ["interactivebrokers"],
             "vpn-abroad": ["nordvpn", "surfshark", "proton"],
         }
         for lang in build.LANGS:
@@ -85,7 +82,6 @@ class AffiliateTests(unittest.TestCase):
                 self.assertIn(build.UI[lang]["aff_note"], html)
                 self.assertIn(build.href(build.loc(lang, "/affiliate-disclosure/")), html)
                 self.assertIn("assets/js/affiliates.js", html)
-                self.assertNotIn("wise.com", html)
                 self.assertNotIn("currenciesdirect.com", html)
                 self.assertNotIn('class="partners"', html)
                 for key in keys:
@@ -123,6 +119,10 @@ class AffiliateTests(unittest.TestCase):
                 self.assertLess(html.index("aff-calc"), html.index('class="cta"'))
                 self.assertIn("assets/js/affiliates.js", html)
                 self.assertIn(build.href(build.loc(lang, "/guides/" + build.CALC_OFFERS[slug]["guide"] + "/")), html)
+            for slug in NO_OFFER:
+                html = build.calc_page(lang, slug)
+                self.assertEqual(html.count('class="aff-offer aff-calc"'), 0)
+                self.assertNotIn("data-affiliate-widget=", html)
 
     def test_disclosure_page_is_in_the_footer_sitemap_and_index(self):
         for lang in build.LANGS:
@@ -147,9 +147,9 @@ class AffiliateTests(unittest.TestCase):
     def test_existing_partner_box_is_unchanged(self):
         html = build.calc_page("en", "transfer-fees")
         self.assertIn('class="partners"', html)
-        self.assertIn('href="https://wise.com/"', html)
+        self.assertIn('href="https://www.currenciesdirect.com/"', html)
         self.assertIn('rel="sponsored noopener"', html)
-        self.assertIn('href="#AFFILIATE_WISE"', html)
+        self.assertEqual(html.count("data-affiliate="), 0)
 
 
 if __name__ == "__main__":

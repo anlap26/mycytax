@@ -460,7 +460,7 @@ PARTNERS = load_partners()
 AFFILIATES_PATH = os.path.join(HERE, "static", "affiliates.js")
 AFFILIATE_KEYS = (
     "nordvpn", "surfshark", "proton", "ledger", "trezor", "binance", "bybit",
-    "interactivebrokers", "wise", "genki", "semrush", "amazon",
+    "interactivebrokers", "genki", "semrush", "amazon",
 )
 _AFFILIATE_PLACEHOLDER = re.compile(r"^#AFFILIATE_[A-Z0-9]+$")
 AFF_REL = "nofollow sponsored noopener"
@@ -1836,75 +1836,9 @@ def listing(lang, kind):
     body = f'<main id="main" class="wrap page"><h1>{e(title)}</h1><p class="lede">{e(desc)}</p><div class="grid">{"".join(card(s) for s in items)}</div></main>'
     return page_shell(lang, f"{title} | {SITE}", desc, path if path.endswith("/") else path+"/", alt, body)
 
-# One unobtrusive offer under each calculator. The button URL comes from affiliates.js.
+# One unobtrusive offer under a calculator that names a partner. The button URL comes from affiliates.js.
 # guide is an internal article, not a partner.
 CALC_OFFERS = {
- "transfer-fees": {
-    "key": "wise",
-    "guide": "international-brokers",
-    "en": {
-        "h": "Moving the purchase money",
-        "p": "The fee is one line. The price is usually a much larger transfer, often from another currency into euros. Wise is one account built for that transfer. The rate and the fee are whatever Wise shows that day, and they change. This is not advice to fund the purchase from abroad.",
-        "btn": "See Wise",
-        "more": "Where a transfer account fits",
-    },
-    "ru": {
-        "h": "Как доехать деньгам на покупку",
-        "p": "Сбор — одна строка. Цена обычно гораздо больший перевод, часто из другой валюты в евро. Wise — один из счетов для такого перевода. Курс и комиссия те, которые Wise показывает в этот день, и они меняются. Это не совет финансировать покупку из-за рубежа.",
-        "btn": "Открыть Wise",
-        "more": "Где уместен счёт для перевода",
-    },
-    "el": {
-        "h": "Η μεταφορά των χρημάτων της αγοράς",
-        "p": "Το τέλος είναι μία γραμμή. Η τιμή είναι συνήθως πολύ μεγαλύτερο έμβασμα, συχνά από άλλο νόμισμα σε ευρώ. Η Wise είναι ένας λογαριασμός φτιαγμένος για αυτή τη μεταφορά. Η ισοτιμία και η χρέωση είναι ό,τι δείχνει η Wise εκείνη την ημέρα, και αλλάζουν. Δεν είναι συμβουλή να χρηματοδοτήσετε την αγορά από το εξωτερικό.",
-        "btn": "Δείτε τη Wise",
-        "more": "Πού χωρά ένας λογαριασμός εμβάσματος",
-    },
- },
- "stamp-duty": {
-    "key": "wise",
-    "guide": "international-brokers",
-    "en": {
-        "h": "The contract sum still has to move",
-        "p": "On a signature from 2026 the duty itself is often zero. The price in the contract is not. If that money starts in another currency, compare the transfer before you send it. Wise is one way to do that. Terms change. This note does not tell you which route to use.",
-        "btn": "See Wise",
-        "more": "Where a transfer account fits",
-    },
-    "ru": {
-        "h": "Сумма договора всё равно должна доехать",
-        "p": "При подписи с 2026 года сам сбор часто равен нулю. Цена в договоре — нет. Если деньги лежат в другой валюте, сравните перевод до отправки. Wise — один из способов. Условия меняются. Эта заметка не говорит, какой путь выбрать.",
-        "btn": "Открыть Wise",
-        "more": "Где уместен счёт для перевода",
-    },
-    "el": {
-        "h": "Το ποσό του συμβολαίου πρέπει και πάλι να μετακινηθεί",
-        "p": "Σε υπογραφή από το 2026 το ίδιο το χαρτόσημο είναι συχνά μηδέν. Η τιμή στο συμβόλαιο δεν είναι. Αν τα χρήματα ξεκινούν σε άλλο νόμισμα, συγκρίνετε τη μεταφορά πριν τα στείλετε. Η Wise είναι ένας τρόπος. Οι όροι αλλάζουν. Αυτή η σημείωση δεν λέει ποια οδό να διαλέξετε.",
-        "btn": "Δείτε τη Wise",
-        "more": "Πού χωρά ένας λογαριασμός εμβάσματος",
-    },
- },
- "vat": {
-    "key": "wise",
-    "guide": "international-brokers",
-    "en": {
-        "h": "VAT is cash you may have to send",
-        "p": "On a new home the VAT line can be larger than the Land Registry fee on a resale. Buyers who pay it from another currency move both the price and the tax. Wise is one way to make that conversion. Check the live quote. This block does not say the purchase should be funded from overseas.",
-        "btn": "See Wise",
-        "more": "Where a transfer account fits",
-    },
-    "ru": {
-        "h": "НДС — это деньги, которые, возможно, придётся отправить",
-        "p": "На новом доме строка НДС может быть больше сбора кадастра на вторичке. Кто платит из другой валюты, переводит и цену, и налог. Wise — один способ такой конвертации. Смотрите живую котировку. Этот блок не говорит, что покупку надо финансировать из-за рубежа.",
-        "btn": "Открыть Wise",
-        "more": "Где уместен счёт для перевода",
-    },
-    "el": {
-        "h": "Ο ΦΠΑ είναι μετρητά που ίσως πρέπει να στείλετε",
-        "p": "Σε καινούργια κατοικία η γραμμή του ΦΠΑ μπορεί να είναι μεγαλύτερη από το τέλος Κτηματολογίου σε μεταπώληση. Όποιος πληρώνει από άλλο νόμισμα μεταφέρει και την τιμή και τον φόρο. Η Wise είναι ένας τρόπος για αυτή τη μετατροπή. Δείτε τη ζωντανή τιμή. Αυτό το πλαίσιο δεν λέει ότι η αγορά πρέπει να χρηματοδοτηθεί από το εξωτερικό.",
-        "btn": "Δείτε τη Wise",
-        "more": "Πού χωρά ένας λογαριασμός εμβάσματος",
-    },
- },
  "capital-gains": {
     "key": "ledger",
     "guide": "store-savings-and-crypto",
@@ -1947,28 +1881,6 @@ CALC_OFFERS = {
         "p": "Η απόδοση μετά τον φόρο είναι εικόνα μίας χρονιάς, όχι πρόβλεψη. Τα χρήματα μετά τον φόρο μπορούν να μείνουν στην τράπεζα που εισπράττει το ενοίκιο. Κάποιοι μεταφέρουν πλεόνασμα που μπορούν να αφήσουν άθικτο σε χρηματιστή όπως η Interactive Brokers. Ένας λογαριασμός χρηματιστή μπορεί να χάσει αξία. Ο φόρος του ενοικίου είναι χωριστά από οποιοδήποτε μεταγενέστερο κέρδος ή ζημία. Δεν είναι συμβουλή να επενδύσετε το ενοίκιο.",
         "btn": "Δείτε την Interactive Brokers",
         "more": "Πώς να σκέφτεστε έναν λογαριασμό χρηματιστή",
-    },
- },
- "mortgage": {
-    "key": "wise",
-    "guide": "international-brokers",
-    "en": {
-        "h": "The instalment may start in another currency",
-        "p": "The figure is the loan payment, not a return. If the salary or invoice that pays it is in another currency, the conversion sits on top of the rate the bank quoted. Wise is one way to make that conversion. It does not change the loan rate, and the transfer fee is whatever Wise quotes that day.",
-        "btn": "See Wise",
-        "more": "Where a transfer account fits",
-    },
-    "ru": {
-        "h": "Платёж может начинаться в другой валюте",
-        "p": "Цифра — это платёж по кредиту, а не доход. Если зарплата или счёт, которыми вы его платите, в другой валюте, конвертация садится сверху ставки, которую назвал банк. Wise — один способ такой конвертации. Ставку кредита это не меняет, а комиссия перевода та, которую Wise назовёт в этот день.",
-        "btn": "Открыть Wise",
-        "more": "Где уместен счёт для перевода",
-    },
-    "el": {
-        "h": "Η δόση μπορεί να ξεκινά σε άλλο νόμισμα",
-        "p": "Το νούμερο είναι η δόση του δανείου, όχι απόδοση. Αν ο μισθός ή το τιμολόγιο που την πληρώνει είναι σε άλλο νόμισμα, η μετατροπή κάθεται πάνω στο επιτόκιο που έδωσε η τράπεζα. Η Wise είναι ένας τρόπος για αυτή τη μετατροπή. Δεν αλλάζει το επιτόκιο του δανείου, και η χρέωση είναι ό,τι κοστολογεί η Wise εκείνη την ημέρα.",
-        "btn": "Δείτε τη Wise",
-        "more": "Πού χωρά ένας λογαριασμός εμβάσματος",
     },
  },
 }

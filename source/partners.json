@@ -12,30 +12,6 @@
   },
   "partners": [
     {
-      "id": "wise",
-      "name": "Wise",
-      "url": "https://wise.com/",
-      "affiliate_url": "",
-      "description": {
-        "en": "An international transfer account for sending euros to Cyprus when you pay for property or cover living costs.",
-        "ru": "Международный перевод евро на Кипр, когда вы платите за недвижимость или за повседневные расходы.",
-        "el": "Διεθνές έμβασμα ευρώ προς την Κύπρο, όταν πληρώνετε ακίνητο ή καθημερινά έξοδα."
-      },
-      "applies_to": [
-        "guides/buying-as-a-foreigner",
-        "guides/off-plan",
-        "guides/total-cost",
-        "guides/renting-out",
-        "guides/residence-permit",
-        "guides/tax-residency",
-        "calculators/transfer-fees",
-        "calculators/stamp-duty",
-        "calculators/vat",
-        "calculators/rental-yield",
-        "calculators/mortgage"
-      ]
-    },
-    {
       "id": "currencies-direct",
       "name": "Currencies Direct",
       "url": "https://www.currenciesdirect.com/",

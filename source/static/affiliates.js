@@ -19,7 +19,6 @@ window.MYCYTAX_AFFILIATES = {
   "binance": "#AFFILIATE_BINANCE",
   "bybit": "#AFFILIATE_BYBIT",
   "interactivebrokers": "#AFFILIATE_INTERACTIVEBROKERS",
-  "wise": "#AFFILIATE_WISE",
   "genki": "#AFFILIATE_GENKI",
   "semrush": "#AFFILIATE_SEMRUSH",
   "amazon": "https://www.amazon.de/?tag=cynews24-21"

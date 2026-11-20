@@ -30,8 +30,7 @@ class PartnerTests(unittest.TestCase):
         self.assertIn("партнёрскими", raw["disclosure"]["ru"])
         self.assertIn("συνεργατών", raw["disclosure"]["el"])
         by_id = {item["id"]: item for item in raw["partners"]}
-        self.assertEqual(set(by_id), {"wise", "currencies-direct"})
-        self.assertEqual(by_id["wise"]["url"], "https://wise.com/")
+        self.assertEqual(set(by_id), {"currencies-direct"})
         self.assertEqual(by_id["currencies-direct"]["url"], "https://www.currenciesdirect.com/")
         for item in raw["partners"]:
             self.assertEqual(item["affiliate_url"].strip(), "")
@@ -41,17 +40,17 @@ class PartnerTests(unittest.TestCase):
             self.assertTrue(item["applies_to"])
 
     def test_affiliate_url_replaces_the_homepage_when_it_is_https(self):
-        wise = {"name": "Wise", "url": "https://wise.com/", "affiliate_url": ""}
-        self.assertEqual(build.partner_href(wise), "https://wise.com/")
-        wise["affiliate_url"] = "  "
-        self.assertEqual(build.partner_href(wise), "https://wise.com/")
-        wise["affiliate_url"] = "https://wise.com/invite/EXAMPLE"
-        self.assertEqual(build.partner_href(wise), "https://wise.com/invite/EXAMPLE")
-        wise["affiliate_url"] = "javascript:alert(1)"
-        self.assertEqual(build.partner_href(wise), "https://wise.com/")
-        wise["url"] = "http://wise.com/"
-        wise["affiliate_url"] = "not a url"
-        self.assertEqual(build.partner_href(wise), "")
+        partner = {"name": "Sample Transfer", "url": "https://example.com/", "affiliate_url": ""}
+        self.assertEqual(build.partner_href(partner), "https://example.com/")
+        partner["affiliate_url"] = "  "
+        self.assertEqual(build.partner_href(partner), "https://example.com/")
+        partner["affiliate_url"] = "https://example.com/invite/EXAMPLE"
+        self.assertEqual(build.partner_href(partner), "https://example.com/invite/EXAMPLE")
+        partner["affiliate_url"] = "javascript:alert(1)"
+        self.assertEqual(build.partner_href(partner), "https://example.com/")
+        partner["url"] = "http://example.com/"
+        partner["affiliate_url"] = "not a url"
+        self.assertEqual(build.partner_href(partner), "")
 
     def test_block_uses_the_affiliate_link_and_escapes_text(self):
         data = {
@@ -59,9 +58,9 @@ class PartnerTests(unittest.TestCase):
             "disclosure": {"en": "Some links may be partner links; this does not change the price for you."},
             "partners": [
                 {
-                    "name": "Wise & Co <x>",
-                    "url": "https://wise.com/",
-                    "affiliate_url": "https://wise.com/invite/EXAMPLE?id=1&ref=a",
+                    "name": "Sample & Co <x>",
+                    "url": "https://example.com/",
+                    "affiliate_url": "https://example.com/invite/EXAMPLE?id=1&ref=a",
                     "description": {"en": 'Fees <shown> & "quoted"'},
                     "applies_to": ["guides/total-cost"],
                 },
@@ -75,14 +74,14 @@ class PartnerTests(unittest.TestCase):
             ],
         }
         guide = build.partners_block("en", "guides", "total-cost", data)
-        self.assertIn('href="https://wise.com/invite/EXAMPLE?id=1&amp;ref=a"', guide)
-        self.assertNotIn('href="https://wise.com/"', guide)
-        self.assertIn("Wise &amp; Co &lt;x&gt;", guide)
+        self.assertIn('href="https://example.com/invite/EXAMPLE?id=1&amp;ref=a"', guide)
+        self.assertNotIn('href="https://example.com/"', guide)
+        self.assertIn("Sample &amp; Co &lt;x&gt;", guide)
         self.assertIn("Fees &lt;shown&gt; &amp; &quot;quoted&quot;", guide)
         self.assertNotIn("Currencies Direct", guide)
         calc = build.partners_block("en", "calculators", "mortgage", data)
         self.assertIn('href="https://www.currenciesdirect.com/"', calc)
-        self.assertNotIn("wise.com", calc)
+        self.assertNotIn("example.com", calc)
         self.assertEqual(build.partners_block("en", "guides", "non-dom", data), "")
         for tag in partner_anchors(guide):
             self.assertIn('rel="sponsored noopener"', tag)
@@ -119,7 +118,6 @@ class PartnerTests(unittest.TestCase):
                     self.assertIn('class="partners"', html)
                     self.assertIn(heading, html)
                     self.assertIn(disclosure, html)
-                    self.assertIn('href="https://wise.com/"', html)
                     self.assertIn('href="https://www.currenciesdirect.com/"', html)
                     self.assertLess(html.index('class="partners"'), html.index('class="tg-cta"'))
                     self.assertLess(html.index('class="tg-cta"'), html.index('class="cy-news"'))
@@ -127,11 +125,10 @@ class PartnerTests(unittest.TestCase):
                     for tag in partner_anchors(html):
                         self.assertIn('rel="sponsored noopener"', tag)
                         self.assertIn('target="_blank"', tag)
-                    wise = next(item for item in build.PARTNERS["partners"] if item["id"] == "wise")
-                    self.assertIn(wise["description"][lang], html)
+                    shown = next(item for item in build.PARTNERS["partners"] if item["id"] == "currencies-direct")
+                    self.assertIn(shown["description"][lang], html)
                 else:
                     self.assertNotIn('class="partners"', html)
-                    self.assertNotIn("wise.com", html)
                     self.assertNotIn("currenciesdirect.com", html)
             for slug in build.CALC_ORDER:
                 html = build.calc_page(lang, slug)
@@ -146,7 +143,6 @@ class PartnerTests(unittest.TestCase):
                         self.assertIn('target="_blank"', tag)
                 else:
                     self.assertNotIn('class="partners"', html)
-                    self.assertNotIn("wise.com", html)
                     self.assertNotIn("currenciesdirect.com", html)
             for html in (
                 build.home(lang),
@@ -157,7 +153,6 @@ class PartnerTests(unittest.TestCase):
                 build.thanks(lang),
             ):
                 self.assertNotIn('class="partners"', html)
-                self.assertNotIn("wise.com", html)
                 self.assertNotIn("currenciesdirect.com", html)
 
     def test_missing_translation_falls_back_without_dropping_the_box(self):
@@ -165,8 +160,8 @@ class PartnerTests(unittest.TestCase):
             "heading": {"en": "Useful services"},
             "disclosure": {"ru": "Некоторые ссылки могут быть партнёрскими; для вас цена от этого не меняется."},
             "partners": [{
-                "name": "Wise",
-                "url": "https://wise.com/",
+                "name": "Sample Transfer",
+                "url": "https://example.com/",
                 "affiliate_url": "",
                 "description": {"en": "Send euros to Cyprus."},
                 "applies_to": ["guides/renting-out"],

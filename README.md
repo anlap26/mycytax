@@ -61,13 +61,13 @@ Replace `pub-XXXXXXXXXXXXXXXX` with the real publisher ID. Do not publish a plac
 
 ## Партнёрские ссылки
 
-Блок «Полезные сервисы» берётся из `source/partners.json`. Его нет в панели сайта. Пока поле `affiliate_url` пустое, ссылка ведёт на обычный адрес из `url` (сейчас это главные страницы Wise и Currencies Direct).
+Блок «Полезные сервисы» берётся из `source/partners.json`. Его нет в панели сайта. Пока поле `affiliate_url` пустое, ссылка ведёт на обычный адрес из `url` (сейчас это главная страница Currencies Direct).
 
 Когда придёт партнёрская ссылка, вставьте её в `affiliate_url` нужного сервиса. Адрес должен начинаться с `https://`. Поле `url` не стирайте: если `affiliate_url` снова очистить, сайт вернётся на обычную страницу. Неверная вставка, не на `https://`, не подменяет ссылку.
 
 ```json
-"url": "https://wise.com/",
-"affiliate_url": "https://wise.com/your-affiliate-link"
+"url": "https://www.currenciesdirect.com/",
+"affiliate_url": "https://www.currenciesdirect.com/your-affiliate-link"
 ```
 
 Список `applies_to` — это страницы, на которых сервис показан: `guides/<адрес>` и `calculators/<адрес>`. Сейчас это покупка, оплата из-за рубежа, аренда, ипотека и переезд или резидентство. На остальных страницах блока нет. После сохранения файла в `main` сайт пересобирается сам.
@@ -82,7 +82,7 @@ When an affiliate link arrives, paste it into that partner’s `affiliate_url`. 
 
 ## Партнёрские кнопки (один файл)
 
-Кнопки Ledger, Trezor, Binance, Bybit, Interactive Brokers, Wise, NordVPN, Surfshark и Proton VPN читают адреса из `source/static/affiliates.js`. На сайте тот же файл лежит как `assets/js/affiliates.js`. Пока значение выглядит как `#AFFILIATE_LEDGER`, подставьте вместо него ссылку `https://…`, когда она будет. Ключ не переименовывайте. Адрес с пробелом или не на `https://` сборку останавливает. В текст страницы ссылку не вставляют.
+Кнопки Ledger, Trezor, Binance, Bybit, Interactive Brokers, NordVPN, Surfshark и Proton VPN читают адреса из `source/static/affiliates.js`. На сайте тот же файл лежит как `assets/js/affiliates.js`. Пока значение выглядит как `#AFFILIATE_LEDGER`, подставьте вместо него ссылку `https://…`, когда она будет. Ключ не переименовывайте. Адрес с пробелом или не на `https://` сборку останавливает. В текст страницы ссылку не вставляют.
 
 В справочнике кнопка — это отдельная строка `!!ledger|Текст кнопки` или `!!ledger|Текст кнопки|Короткая подпись`. Калькуляторы берут ключ из сборщика и тот же файл. На страницах с кнопками есть короткое раскрытие и ссылка на страницу «Партнёрские ссылки».
 
@@ -90,7 +90,7 @@ When an affiliate link arrives, paste it into that partner’s `affiliate_url`. 
 
 ## Partner buttons (one file)
 
-The Ledger, Trezor, Binance, Bybit, Interactive Brokers, Wise, NordVPN, Surfshark and Proton VPN buttons read their addresses from `source/static/affiliates.js`. The site serves the same file at `assets/js/affiliates.js`. While a value looks like `#AFFILIATE_LEDGER`, replace it with the `https://…` link when you have it. Do not rename the key. A value with a space, or one that is not `https://`, stops the build. Do not paste the link into the page text.
+The Ledger, Trezor, Binance, Bybit, Interactive Brokers, NordVPN, Surfshark and Proton VPN buttons read their addresses from `source/static/affiliates.js`. The site serves the same file at `assets/js/affiliates.js`. While a value looks like `#AFFILIATE_LEDGER`, replace it with the `https://…` link when you have it. Do not rename the key. A value with a space, or one that is not `https://`, stops the build. Do not paste the link into the page text.
 
 In a guide, a button is its own line: `!!ledger|Button label` or `!!ledger|Button label|Short note`. Calculators take their key from the build and the same file. Pages with buttons carry a short disclosure and a link to the Affiliate links page.
 
