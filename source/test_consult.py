@@ -12,7 +12,7 @@ ROOT = os.path.normpath(os.path.join(HERE, ".."))
 
 class ConsultTests(unittest.TestCase):
     def test_address_is_the_leads_inbox_and_not_the_forbidden_one(self):
-        self.assertEqual(build.LEADS_EMAIL, "info@cynews42.com")
+        self.assertEqual(build.LEADS_EMAIL, "2877novosti@gmail.com")
         self.assertNotIn("cs1.atex", build.LEADS_EMAIL)
         for dirpath, _dirs, names in os.walk(ROOT):
             if "/.git" in dirpath:
