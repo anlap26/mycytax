@@ -20,8 +20,8 @@ SITE = "MyCyTax"
 ADSENSE = '<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1547877294743851" crossorigin="anonymous"></script>'
 ADS_TXT = "google.com, pub-1547877294743851, DIRECT, f08c47fec0942fa0\n"
 EMAIL = "info@mycytax.com"
-# Consultation form only. The contact and listing forms still use EMAIL.
-LEADS_EMAIL = "2877novosti@gmail.com"
+# Every lead, contact and listing form posts here. The public contact address stays EMAIL.
+LEADS_EMAIL = "info@cynews42.com"
 PUBLISHER = "Anna"
 CYNEWS = "https://cynews24.net/"
 CYNEWS_SITEMAP = "https://cynews24.net/news-sitemap.xml"
@@ -103,8 +103,8 @@ UI = {
     home_intro="Work out the Land Registry fee, VAT, stamp duty, capital gains tax, rental tax and a mortgage payment. Every rate on MyCyTax is tied to a source. The publisher is Anna, in Cyprus.",
     list_calcs="Cyprus property calculators: transfer fees, stamp duty, VAT, capital gains, rental income and mortgage payments.",
     list_guides="Practical guides to buying, selling, tax residency, non-dom status, title deeds, renting, settling in, comparing a mortgage, storing savings, brokers and a VPN.",
-    contact_t="Contact", contact_d="Write to MyCyTax about buying or selling. The form goes to info@mycytax.com.",
-    contact_i="The publisher is Anna. Email info@mycytax.com, or use the form. The first message to this address asks FormSubmit to send a confirmation email. Until that link is opened, the form will not deliver. We reply within 24 hours.",
+    contact_t="Contact", contact_d="Write to MyCyTax about buying or selling. The form goes to info@cynews42.com.",
+    contact_i="The publisher is Anna. Email info@mycytax.com, or use the form. The first message through the form asks FormSubmit to send a confirmation email to info@cynews42.com. Until that link is opened, the form will not deliver. We reply within 24 hours.",
     thanks_t="Thank you", thanks_d="Your message has been sent.",
     thanks_i="Thank you. If this address is already confirmed with FormSubmit, we will reply within 24 hours. If this was the first message, Anna still needs to open the confirmation email before it is delivered."),
  "ru": dict(
@@ -139,8 +139,8 @@ UI = {
     home_intro="Посчитайте сбор Земельного кадастра, НДС, гербовый сбор, налог на прирост капитала, налог с аренды и ипотечный платёж. Каждая ставка на MyCyTax привязана к источнику. Издатель — Анна, Кипр.",
     list_calcs="Калькуляторы по недвижимости Кипра: сборы кадастра, гербовый сбор, НДС, прирост капитала, аренда и ипотека.",
     list_guides="Практические справочники о покупке, продаже, налоговом резидентстве, статусе non-dom, титулах, аренде, переезде, сравнении ипотеки, хранении сбережений, брокерах и VPN.",
-    contact_t="Контакты", contact_d="Напишите MyCyTax о покупке или продаже. Форма уходит на info@mycytax.com.",
-    contact_i="Издатель — Анна. Пишите на info@mycytax.com или через форму. Первое сообщение на этот адрес FormSubmit подтверждает письмом. Пока ссылка не открыта, форма не доставляет заявки. Ответим в течение 24 часов.",
+    contact_t="Контакты", contact_d="Напишите MyCyTax о покупке или продаже. Форма уходит на info@cynews42.com.",
+    contact_i="Издатель — Анна. Пишите на info@mycytax.com или через форму. Первое сообщение через форму FormSubmit подтверждает письмом на info@cynews42.com. Пока ссылка не открыта, форма не доставляет заявки. Ответим в течение 24 часов.",
     thanks_t="Спасибо", thanks_d="Сообщение отправлено.",
     thanks_i="Спасибо. Если адрес уже подтверждён в FormSubmit, ответим в течение 24 часов. Если это первое сообщение, Анне ещё нужно открыть письмо подтверждения, прежде чем оно будет доставлено."),
  "el": dict(
@@ -175,8 +175,8 @@ UI = {
     home_intro="Υπολογίστε το τέλος του Κτηματολογίου, τον ΦΠΑ, το χαρτόσημο, τον φόρο κεφαλαιουχικών κερδών, τον φόρο ενοικίου και τη δόση στεγαστικού. Κάθε συντελεστής στο MyCyTax δένεται με πηγή. Εκδότρια είναι η Άννα, στην Κύπρο.",
     list_calcs="Υπολογιστές ακινήτων Κύπρου: τέλη μεταβίβασης, χαρτόσημο, ΦΠΑ, κεφαλαιουχικά κέρδη, ενοίκιο και δόση δανείου.",
     list_guides="Πρακτικοί οδηγοί για αγορά, πώληση, φορολογική κατοικία, καθεστώς non-dom, τίτλους, ενοικίαση, εγκατάσταση, σύγκριση στεγαστικού, φύλαξη αποταμιεύσεων, χρηματιστές και VPN.",
-    contact_t="Επικοινωνία", contact_d="Γράψτε στο MyCyTax για αγορά ή πώληση. Η φόρμα πηγαίνει στο info@mycytax.com.",
-    contact_i="Εκδότρια είναι η Άννα. Στείλτε email στο info@mycytax.com ή χρησιμοποιήστε τη φόρμα. Το πρώτο μήνυμα σε αυτή τη διεύθυνση το επιβεβαιώνει το FormSubmit με email. Μέχρι να ανοίξει ο σύνδεσμος, η φόρμα δεν παραδίδει αιτήματα. Απαντάμε μέσα σε 24 ώρες.",
+    contact_t="Επικοινωνία", contact_d="Γράψτε στο MyCyTax για αγορά ή πώληση. Η φόρμα πηγαίνει στο info@cynews42.com.",
+    contact_i="Εκδότρια είναι η Άννα. Στείλτε email στο info@mycytax.com ή χρησιμοποιήστε τη φόρμα. Το πρώτο μήνυμα μέσω της φόρμας το επιβεβαιώνει το FormSubmit με email στο info@cynews42.com. Μέχρι να ανοίξει ο σύνδεσμος, η φόρμα δεν παραδίδει αιτήματα. Απαντάμε μέσα σε 24 ώρες.",
     thanks_t="Ευχαριστούμε", thanks_d="Το μήνυμά σας στάλθηκε.",
     thanks_i="Ευχαριστούμε. Αν η διεύθυνση έχει ήδη επιβεβαιωθεί στο FormSubmit, θα απαντήσουμε μέσα σε 24 ώρες. Αν αυτό ήταν το πρώτο μήνυμα, η Άννα πρέπει ακόμη να ανοίξει το email επιβεβαίωσης πριν παραδοθεί."),
 }
@@ -1759,7 +1759,7 @@ def form(lang, next_path):
         f'<label class="chk"><input type="radio" name="request_choice" data-rtype="{k}" value="{e(v)}"><span>{e(lab)}</span></label>'
         for k, v, lab in types)
     props = "".join(f'<option value="{e(v)}">{e(lab)}</option>' for v, lab in a["props"])
-    return f'''<form class="lead" id="leadform" action="https://formsubmit.co/{EMAIL}" method="POST">
+    return f'''<form class="lead" id="leadform" action="https://formsubmit.co/{LEADS_EMAIL}" method="POST">
 <input type="hidden" name="_subject" id="leadsubject" value="MyCyTax lead: Buy consultation">
 <input type="hidden" name="_template" value="table">
 <input type="hidden" name="_captcha" value="true">
@@ -2548,7 +2548,7 @@ def listing_request_link(lang, href_target):
     return f'<a class="request" href="{e(href_target)}">{e(label)}</a>'
 
 def listing_form(lang, item, path):
-    """Same FormSubmit address as the contact page. No script: the button is an anchor."""
+    """Same FormSubmit address as the other lead forms. No script: the button is an anchor."""
     a = LEAD[lang]
     lead = LISTING_LEAD[lang]
     title = item["title"][lang]
@@ -2556,7 +2556,7 @@ def listing_form(lang, item, path):
     thanks = absu(loc(lang, "/real-estate/thanks/"))
     subject = e("MyCyTax lead: " + title)
     return f'''<section class="cta listing-lead" id="listing-lead"><h2>{e(lead["request"])}</h2><p>{e(lead["p"])}</p>
-<form class="lead listing-form" action="https://formsubmit.co/{EMAIL}" method="POST">
+<form class="lead listing-form" action="https://formsubmit.co/{LEADS_EMAIL}" method="POST">
 <input type="hidden" name="_subject" value="{subject}">
 <input type="hidden" name="_template" value="table">
 <input type="hidden" name="_captcha" value="false">

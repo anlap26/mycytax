@@ -95,7 +95,7 @@ class RealEstateTests(unittest.TestCase):
                     section.index(item["description"][lang][:80]),
                 )
                 form = page[form_at:page.index("</form>", form_at)]
-                self.assertIn(f'action="https://formsubmit.co/{build.EMAIL}"', form)
+                self.assertIn(f'action="https://formsubmit.co/{build.LEADS_EMAIL}"', form)
                 self.assertIn('method="POST"', form)
                 self.assertIn(f'name="_subject" value="MyCyTax lead: {build.e(title)}"', form)
                 self.assertIn('name="_template" value="table"', form)

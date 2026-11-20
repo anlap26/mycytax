@@ -12,7 +12,7 @@ ROOT = os.path.normpath(os.path.join(HERE, ".."))
 
 class ConsultTests(unittest.TestCase):
     def test_address_is_the_leads_inbox_and_not_the_forbidden_one(self):
-        self.assertEqual(build.LEADS_EMAIL, "2877novosti@gmail.com")
+        self.assertEqual(build.LEADS_EMAIL, "info@cynews42.com")
         self.assertNotIn("cs1.atex", build.LEADS_EMAIL)
         for dirpath, _dirs, names in os.walk(ROOT):
             if "/.git" in dirpath:
@@ -30,6 +30,7 @@ class ConsultTests(unittest.TestCase):
             page = build.consultation_page(lang)
             self.assertIn(build.CONSULT["en"]["h"] if lang == "en" else build.CONSULT[lang]["h"], page)
             self.assertIn(f'action="https://formsubmit.co/{build.LEADS_EMAIL}"', page)
+            self.assertIn(f'action="https://formsubmit.co/{build.LEADS_EMAIL}"', build.contact(lang))
             self.assertIn('name="_subject" value="mycytax lead"', page)
             self.assertIn('name="_captcha" value="true"', page)
             self.assertIn("/property-consultation/thanks/", page)
