@@ -124,5 +124,66 @@ class RealEstateTests(unittest.TestCase):
                 self.assertNotIn("youtube.com", page)
 
 
+class CatalogueCardTests(unittest.TestCase):
+    def test_vat_status_on_request_and_local_area_units(self):
+        expected = {
+            "en": ("€955,600 + VAT", "From €715,000 + VAT", "Price on request", "209.5 m²", "286 m²", "148 m²"),
+            "ru": ("€955 600 без НДС", "От €715 000 без НДС", "Цена по запросу", "209.5 м²", "286 м²", "148 м²"),
+            "el": ("€955.600 πλέον ΦΠΑ", "Από €715.000 πλέον ΦΠΑ", "Τιμή κατόπιν αιτήματος", "209.5 τ.μ.", "286 τ.μ.", "148 τ.μ."),
+        }
+        for lang, bits in expected.items():
+            page = build.real_estate_page(lang)
+            for bit in bits:
+                self.assertIn(bit, page)
+            bellissimo = build.listing_detail(
+                lang, next(row for row in build.PROPERTIES if row["id"] == "bellissimo"),
+            )
+            self.assertIn(bits[0], bellissimo)
+        sample = dict(build.PROPERTIES[0])
+        sample["published"] = True
+        sample["photos"] = []
+        hidden = build.listings_block("en", [sample])
+        self.assertIn("€350,000", hidden)
+        self.assertNotIn("+ VAT", hidden)
+        self.assertIn("85 m²", hidden)
+        self.assertIn("85 м²", build.listings_block("ru", [sample]))
+        self.assertIn("85 τ.μ.", build.listings_block("el", [sample]))
+
+    def test_notes_on_other_projects_are_not_listings(self):
+        labels = {
+            "en": ("Notes on other new projects", "Get independent advice"),
+            "ru": ("Заметки о других новых проектах", "Независимая консультация"),
+            "el": ("Σημειώσεις για άλλα νέα έργα", "Ανεξάρτητη συμβουλή"),
+        }
+        for lang, (heading, button) in labels.items():
+            page = build.real_estate_page(lang)
+            guides = 'class="sec">' + build.PROPERTY_LABELS[lang]["guides"]
+            self.assertLess(page.index(heading), page.index(guides))
+            notes = page[page.index(heading):page.index(guides)]
+            self.assertIn(":eden coast", notes)
+            self.assertIn(":dream tower", notes)
+            self.assertIn(">KEAN<", notes)
+            self.assertIn(button, notes)
+            self.assertEqual(notes.count(f'href="{build.contact_href(lang, "buy")}"'), 3)
+            self.assertNotIn("<img", notes)
+            self.assertNotIn("http://", notes)
+            self.assertNotIn("https://", notes)
+            self.assertNotIn("+ VAT", notes)
+            self.assertNotIn("πλέον ΦΠΑ", notes)
+            self.assertNotIn("без НДС", notes)
+            detail = build.listing_detail(
+                lang, next(row for row in build.PROPERTIES if row["id"] == "bellissimo"),
+            )
+            self.assertNotIn(heading, detail)
+        en = build.real_estate_page("en")
+        notes = en[en.index("Notes on other new projects"):en.index('class="sec">Guides')]
+        self.assertIn("From €940,000 on the developer page", notes)
+        self.assertIn("From €890,000 on the developer page", notes)
+        self.assertIn("BBF sales portfolio", notes)
+        self.assertIn("Price on request", notes)
+        self.assertIn("Geroskipou, Paphos", notes)
+        self.assertIn("Agios Tychonas, Limassol", notes)
+
+
 if __name__ == "__main__":
     unittest.main()

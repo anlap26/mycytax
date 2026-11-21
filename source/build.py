@@ -2369,6 +2369,31 @@ def euro_text(lang, amount, price_from=False):
         return {"en": "From ", "ru": "От ", "el": "Από "}[lang] + text
     return text
 
+# Same wording CyNews24 puts on a price that the source states as excluding VAT.
+_VAT_NOTE = {"en": "+ VAT", "ru": "без НДС", "el": "πλέον ΦΠΑ"}
+_PRICE_ON_REQUEST = {
+    "en": "Price on request",
+    "ru": "Цена по запросу",
+    "el": "Τιμή κατόπιν αιτήματος",
+}
+_AREA_UNIT = {"en": "m²", "ru": "м²", "el": "τ.μ."}
+
+def price_vat_note(lang, description):
+    """VAT status for the catalogue price, only when this language's text says the price excludes VAT."""
+    text = description or ""
+    if lang == "en" and re.search(
+        r"\+\s*VAT|\bplus VAT\b|\bexcluding VAT\b|\bexcludes VAT\b|\bexclude VAT\b", text, re.I,
+    ):
+        return _VAT_NOTE["en"]
+    if lang == "ru":
+        if "без НДС" in text:
+            return _VAT_NOTE["ru"]
+        if re.search(r"\+\s*НДС", text):
+            return "+ НДС"
+    if lang == "el" and ("πλέον ΦΠΑ" in text or "χωρίς ΦΠΑ" in text):
+        return _VAT_NOTE["el"]
+    return ""
+
 def beds_text(lang, count):
     if lang == "en":
         return "1 bedroom" if count == 1 else f"{count} bedrooms"
@@ -2382,9 +2407,9 @@ def beds_text(lang, count):
         word = "спален"
     return f"{count} {word}"
 
-def area_text(value):
+def area_text(lang, value):
     number = int(value) if float(value).is_integer() else value
-    return f"{number} m²"
+    return f"{number} {_AREA_UNIT[lang]}"
 
 def listing_place(item):
     return ", ".join(part for part in (item["area"], item["city"]) if part)
@@ -2396,11 +2421,17 @@ def listing_facts(lang, item):
     if place:
         bits.append(place)
     if item["price_eur"] is not None:
-        bits.append(euro_text(lang, item["price_eur"], item["price_from"]))
+        price = euro_text(lang, item["price_eur"], item["price_from"])
+        note = price_vat_note(lang, (item.get("description") or {}).get(lang, ""))
+        if note:
+            price = f"{price} {note}"
+        bits.append(price)
+    else:
+        bits.append(_PRICE_ON_REQUEST[lang])
     if item["bedrooms"] is not None:
         bits.append(beds_text(lang, item["bedrooms"]))
     if item["area_m2"] is not None:
-        bits.append(area_text(item["area_m2"]))
+        bits.append(area_text(lang, item["area_m2"]))
     bits.append(labels["status"][item["status"]])
     return bits
 
@@ -2515,6 +2546,62 @@ def listings_block(lang, rows=None):
         )
     return f'<h2 class="sec">{e(labels["listings"])}</h2><div class="prop-grid">{"".join(cards)}</div>'
 
+# Public notes, not inventory. No developer site, no developer photograph.
+OTHER_PROJECT_COPY = {
+ "en": dict(
+    h="Notes on other new projects",
+    note="These are not MyCyTax listings and not links to the developer. A price below is the figure on the developer page, and it can change.",
+    cta="Get independent advice",
+ ),
+ "ru": dict(
+    h="Заметки о других новых проектах",
+    note="Это не объявления MyCyTax и не ссылки на застройщика. Цена ниже — цифра со страницы застройщика, и она может измениться.",
+    cta="Независимая консультация",
+ ),
+ "el": dict(
+    h="Σημειώσεις για άλλα νέα έργα",
+    note="Δεν είναι αγγελίες του MyCyTax και δεν είναι σύνδεσμοι προς τον κατασκευαστή. Η τιμή από κάτω είναι το ποσό στη σελίδα του κατασκευαστή και μπορεί να αλλάξει.",
+    cta="Ανεξάρτητη συμβουλή",
+ ),
+}
+OTHER_PROJECTS = (
+ dict(name=":eden coast",
+      place={"en": "Geroskipou, Paphos", "ru": "Героскипу, Пафос", "el": "Γεροσκήπου, Πάφος"},
+      price={"en": "From €940,000 on the developer page", "ru": "От €940 000 на странице застройщика", "el": "Από €940.000 στη σελίδα του κατασκευαστή"},
+      line={"en": "A BBF project. The developer summary lists 16 homes.",
+            "ru": "Проект BBF. В сводке застройщика 16 объектов.",
+            "el": "Έργο της BBF. Η σύνοψη του κατασκευαστή αναφέρει 16 κατοικίες."}),
+ dict(name=":dream tower",
+      place={"en": "Agios Tychonas, Limassol", "ru": "Агиос Тихонас, Лимассол", "el": "Άγιος Τύχωνας, Λεμεσός"},
+      price={"en": "From €890,000 on the developer page", "ru": "От €890 000 на странице застройщика", "el": "Από €890.000 στη σελίδα του κατασκευαστή"},
+      line={"en": "A 27-storey tower in the BBF sales portfolio.",
+            "ru": "Башня в 27 этажей в портфеле продаж BBF.",
+            "el": "Πύργος 27 ορόφων στο χαρτοφυλάκιο πωλήσεων της BBF."}),
+ dict(name="KEAN",
+      place={"en": "Limassol", "ru": "Лиμαссол", "el": "Λεμεσός"},
+      price={"en": "Price on request", "ru": "Цена по запросу", "el": "Τιμή κατόπιν αιτήματος"},
+      line={"en": "A BBF project in Limassol. No sale price is stated here.",
+            "ru": "Проект BBF в Лимассоле. Продажная цена здесь не указана.",
+            "el": "Έργο της BBF στη Λεμεσό. Εδώ δεν αναφέρεται τιμή πώλησης."}),
+)
+
+def other_projects_block(lang):
+    copy = OTHER_PROJECT_COPY[lang]
+    advice = contact_href(lang, "buy")
+    cards = []
+    for item in OTHER_PROJECTS:
+        cards.append(
+            f'<article class="prop-card"><div class="pad"><h2>{e(item["name"])}</h2>'
+            f'<p class="prop-meta">{e(item["place"][lang])}</p>'
+            f'<p>{e(item["price"][lang])}</p>'
+            f'<p>{e(item["line"][lang])}</p>'
+            f'<a class="request" href="{e(advice)}">{e(copy["cta"])}</a></div></article>'
+        )
+    return (
+        f'<h2 class="sec">{e(copy["h"])}</h2><p>{e(copy["note"])}</p>'
+        f'<div class="prop-grid">{"".join(cards)}</div>'
+    )
+
 def real_estate_page(lang):
     u = UI[lang]
     labels = PROPERTY_LABELS[lang]
@@ -2540,6 +2627,7 @@ def real_estate_page(lang):
         return loc(l, "/real-estate/")
     body = f'''<main id="main" class="wrap page"><h1>{e(u["real_estate"])}</h1><p class="lede">{e(u["real_estate_desc"])}</p>
 {listings_block(lang)}
+{other_projects_block(lang)}
 <h2 class="sec">{e(labels["guides"])}</h2><div class="grid">{"".join(guides)}</div>
 <h2 class="sec">{e(labels["calcs"])}</h2><div class="grid">{"".join(calcs)}</div>
 {lead_card(lang)}</main>'''
