@@ -1,0 +1,151 @@
+{
+  "slug": "for-foreigners/cyprus-vs-greece",
+  "seq": 64,
+  "en": {
+    "title": "Cyprus and Greece: tax in 2026",
+    "description": "Greek corporate tax is 22%. The 2026 employment scale depends on children, and the zero-child middle bands were not read reliably.",
+    "body": "Last checked: 26 November 2026.\n\n## Short answer\n\nThe Ministry of Economy and Finance states 22% on business profits of legal persons from tax year 2021 onwards, apart from the banks and cooperatives it names. Employment income from 2026 uses a scale that changes with the number of children, plus a €777 reduction for a taxpayer with none.\n\n## Personal income tax\n\nCyprus, from the 2026 tax year, as published by Business in Cyprus: 0% on the first €22,000 of taxable income, 20% from €22,001 to €32,000, 25% to €42,000, 30% to €72,000 and 35% above that.\n\nThe Ministry’s English guide prints 9% on the first €10,000 in the columns that were readable, 34% from €30,001 to €40,000, 39% from €40,000.01 to €60,000 and 44% above €60,000, in every column shown. The bands between €10,000 and €30,000 change with children, and the zero-child rates in that stretch were not reliably readable. They are not invented here. The tax reduction is €777 with no children, shrinking by €20 per €1,000 of employment income above €12,000.\n\n## Companies\n\nThe Tax Department’s company-return table puts corporate tax at 15% from 2026, and 12.5% on 2013–2025.\n\nTwenty-two per cent is the rate the Ministry states for legal persons from tax year 2021, by article 120 of Law 4799/2021. Credit institutions in the regime the guide names are at 29%. The agricultural cooperatives it names are at 10%. The AADE legal-person return shows 22% among the rates on the tax line.\n\n## Dividends and interest\n\nA person who is not domiciled in Cyprus is outside Special Defence Contribution on dividends and interest. A domiciled resident is generally at 5% on dividends from 2026 profits. A dividend from a Cyprus company out of profits up to the 2025 tax year stays at 17% if it is received by 31 December 2031. Interest of an individual is at 17%, or 3% where total income is under €12,000. The contribution on rent was abolished for 2026. Those points are on the Tax Department’s defence-contribution page and the Ministry of Finance incentives page.\n\nA single 2026 dividend percentage for an individual was not extracted from the employment scale. It is not stated here.\n\n## Capital gains\n\nCyprus capital gains tax on immovable property in Cyprus is 20% of the gain after the official inflation adjustment, with the lifetime exemptions in the Capital Gains Tax Law. The [capital-gains calculator](/calculators/capital-gains/) is the working of that rule. It does not tax a gain on assets outside Cyprus.\n\nThe Ministry’s guide was not used for a personal capital-gains percentage. It is not stated here.\n\n## Social insurance\n\nNo 2026 social-insurance rate for this country was copied from its social-insurance authority for this page. Cyprus GHS and social-insurance percentages are likewise not restated here. The [social-insurance guide](/guides/resident-handbook/social-insurance/) describes registration, not a rate.\n\n## Treaty with Cyprus\n\nThe list shows an agreement in force from 16 January 1969. The Ministry of Finance list was read on 26 November 2026. Withholding percentages in the treaty are not printed here, because the articles were not copied out of the gazette text. The [treaty page](/guides/for-foreigners/tax-treaties/) collects the same list for the countries it already names. The [comparison hub](/guides/for-foreigners/compare/) and the [calculator](/calculators/compare-countries/) use only the headline rates that page already ties to a source.\n\n## Residence and non-dom\n\nTax residence in Cyprus is the 183-day rule or the 60-day rule on the Tax Department’s residency page. Non-dom status is about domicile, not about this passport. It does not change the income-tax bands. The conditions are in the [non-dom guide](/guides/non-dom/) and on the [relocation page](/guides/for-foreigners/relocating/).\n\n## Visa\n\nA citizen of a Union country who stays longer than three months applies for a registration certificate, form MEU1. The Migration Department’s page puts the fee at €20. The certificate is not tax residence and it is not non-dom status. The split is on the [residence options](/guides/relocation/residence-options/) page.\n\n## Who this comparison is for\n\nCorporate profit at 22% in Greece against 15% in Cyprus is the comparison the Ministry’s page supports. A salary comparison should not invent the missing middle bands. The €777 reduction depends on income and on children.\n\n## What this page does not state\n\nFigures that were not on an official 2026 page when this text was written are named in the sections above and are not used as a rate. A move does not, by itself, end tax in the country you leave. Exit taxes and reporting duties of that country were not copied onto this page unless a sentence above cites that authority.",
+    "faq": [
+      {
+        "q": "What is the Greek rate with no children?",
+        "a": "The Ministry prints a child-dependent scale and a €777 reduction. The middle bands for zero children were not reliably readable, so they are not reprinted."
+      },
+      {
+        "q": "Is corporate tax 22% in 2026?",
+        "a": "The Ministry says 22% from tax year 2021 onwards for the legal persons that are not in the exceptions it names."
+      },
+      {
+        "q": "Is there a treaty?",
+        "a": "Yes, in force from 16 January 1969. No withholding rate is stated."
+      },
+      {
+        "q": "Does an EU passport change Cyprus non-dom?",
+        "a": "No. The MEU1 certificate is the residence step. Non-dom is a tax status about domicile."
+      }
+    ],
+    "sources": [
+      {
+        "name": "Income-tax bands from 2026, Business in Cyprus",
+        "url": "https://www.businessincyprus.gov.cy/doing-business-in-cyprus/start-your-business/registering-for-income-tax-and-value-added-tax/"
+      },
+      {
+        "name": "Corporate-tax table, Tax Department",
+        "url": "https://www.gov.cy/mof-tax/documents/forologiki-dilosi-eisodimatos-etaireias-t-f-4-aytoergodotoymenoy-me-elegmenoys-logariasmoys-t-f-1/"
+      },
+      {
+        "name": "Defence contribution from 2026, Tax Department",
+        "url": "https://www.gov.cy/mof-tax/documents/ektakti-amyntiki-eisfora-eae/"
+      },
+      {
+        "name": "Tax residency and domicile, Tax Department",
+        "url": "https://www.gov.cy/mof-tax/en/documents/tax-residency-domicility/"
+      },
+      {
+        "name": "Double tax treaties, Ministry of Finance, read 26 November 2026",
+        "url": "https://www.gov.cy/mof/en/documents/double-tax-treaties/"
+      },
+      {
+        "name": "Income taxation, Greek Ministry of Economy and Finance",
+        "url": "https://minfin.gov.gr/en/tax-policy/tax-guide/income-taxation/"
+      }
+    ]
+  },
+  "ru": {
+    "title": "Кипр и Греция: налоги в 2026 году",
+    "description": "Греческий корпоративный налог — 22%. Шкала занятости 2026 года зависит от детей, а средние диапазоны без детей надёжно не прочитаны.",
+    "body": "Проверено: 26 ноября 2026 года.\n\n## Короткий ответ\n\nМинистерство национальной экономики и финансов указывает 22% на предпринимательскую прибыль юридических лиц с налогового 2021 года, кроме банков и кооперативов, которые оно называет. Доход от работы с 2026 года идёт по шкале, которая меняется с числом детей, плюс уменьшение €777 для налогоплательщика без детей.\n\n## Подоходный налог\n\nКипр с налогового 2026 года, как публикует Business in Cyprus: 0% на первые €22 000 налогооблагаемого дохода, 20% с €22 001 до €32 000, 25% до €42 000, 30% до €72 000 и 35% сверх этого.\n\nАнглийский справочник министерства печатает 9% на первые €10 000 в колонках, которые читались, 34% с €30 001 до €40 000, 39% с €40 000,01 до €60 000 и 44% сверх €60 000, в каждой показанной колонке. Диапазоны между €10 000 и €30 000 меняются с детьми, а ставки без детей на этом отрезке надёжно не читались. Здесь они не выдуманы. Уменьшение налога — €777 без детей и сокращается на €20 за каждую €1 000 дохода от работы сверх €12 000.\n\n## Компании\n\nТаблица Налогового департамента на странице декларации компании ставит корпоративный налог 15% с 2026 года и 12,5% на 2013–2025 годы.\n\nДвадцать два процента — ставка, которую министерство указывает для юридических лиц с налогового 2021 года, по статье 120 закона 4799/2021. Кредитные учреждения в режиме, который называет справочник, — 29%. Названные им сельскохозяйственные кооперативы — 10%. Декларация ΑΑΔΕ для юридического лица показывает 22% среди ставок строки налога.\n\n## Дивиденды и проценты\n\nЛицо без домициля на Кипре вне специального взноса на оборону по дивидендам и процентам. Резидент с домицилем, как правило, платит 5% с дивидендов из прибыли 2026 года. Дивиденд кипрской компании из прибыли по налоговый 2025 год остаётся по 17%, если он получен до 31 декабря 2031 года. Проценты физического лица — 17%, или 3%, если весь доход ниже €12 000. Взнос с аренды на 2026 год отменён. Это страница департамента о взносе и страница стимулов Министерства финансов.\n\nЕдиный процент дивидендов 2026 года для физического лица из шкалы занятости не извлекался. Здесь он не назван.\n\n## Прирост капитала\n\nКипрский налог на прирост капитала по недвижимости на Кипре — 20% прироста после официальной поправки на инфляцию, с пожизненными вычетами закона. [Калькулятор прироста](/ru/calculators/capital-gains/) считает это правило. Прирост по активам вне Кипра он не облагает.\n\nСправочник министерства не использовался для личного процента прироста. Здесь он не назван.\n\n## Социальное страхование\n\nСтавка социального страхования этой страны на 2026 год с сайта её ведомства на эту страницу не копировалась. Проценты ГЕСИ и социального страхования Кипра здесь тоже не повторены. [Справочник](/ru/guides/resident-handbook/social-insurance/) описывает регистрацию, а не ставку.\n\n## Соглашение с Кипром\n\nПеречень показывает соглашение в силе с 16 января 1969 года. Перечень Министерства финансов прочитан 26 ноября 2026 года. Проценты удержания по соглашению здесь не напечатаны: статьи из текста «Официальной газеты» не выписывались. [Страница соглашений](/ru/guides/for-foreigners/tax-treaties/) собирает тот же перечень для стран, которые она уже называет. [Хаб сравнения](/ru/guides/for-foreigners/compare/) и [калькулятор](/ru/calculators/compare-countries/) берут только те заголовки, которые та страница уже привязала к источнику.\n\n## Резидентство и non-dom\n\nНалоговое резидентство Кипра — правило 183 дней или правило 60 дней на странице Налогового департамента. Статус non-dom — это домициль, а не этот паспорт. Шкалы подоходного налога он не меняет. Условия — в [справочнике non-dom](/ru/guides/non-dom/) и на [странице переезда](/ru/guides/for-foreigners/relocating/).\n\n## Виза\n\nГражданин страны Союза, который остаётся дольше трёх месяцев, подаёт на свидетельство о регистрации, форма MEU1. На странице Департамента миграции сбор — €20. Свидетельство — не налоговое резидентство и не non-dom. Развилка — на странице [вариантов проживания](/ru/guides/relocation/residence-options/).\n\n## Кому это сравнение полезно\n\nПрибыль компании по 22% в Греции против 15% на Кипре — сравнение, которое поддерживает страница министерства. Сравнение зарплаты не должно выдумывать недостающие средние диапазоны. Уменьшение €777 зависит от дохода и от детей.\n\n## Чего эта страница не утверждает\n\nЦифры, которых не было на официальной странице 2026 года, когда писался этот текст, названы выше и ставкой здесь не служат. Сам переезд не прекращает налог в стране, которую вы оставляете. Налоги на выезд и обязанности по отчётности той страны на эту страницу не копировались, если предложение выше не ссылается на её орган.",
+    "faq": [
+      {
+        "q": "Какая греческая ставка без детей?",
+        "a": "Министерство печатает шкалу, зависящую от детей, и уменьшение €777. Средние диапазоны для нуля детей надёжно не читались, поэтому не перепечатаны."
+      },
+      {
+        "q": "Корпоративный налог в 2026 году — 22%?",
+        "a": "Министерство говорит 22% с налогового 2021 года для юридических лиц, которые не входят в названные им исключения."
+      },
+      {
+        "q": "Соглашение есть?",
+        "a": "Да, в силе с 16 января 1969 года. Ставка удержания не названа."
+      },
+      {
+        "q": "Паспорт ЕС меняет кипрский non-dom?",
+        "a": "Нет. Свидетельство MEU1 — это шаг проживания. Non-dom — налоговый статус о домициле."
+      }
+    ],
+    "sources": [
+      {
+        "name": "Income-tax bands from 2026, Business in Cyprus",
+        "url": "https://www.businessincyprus.gov.cy/doing-business-in-cyprus/start-your-business/registering-for-income-tax-and-value-added-tax/"
+      },
+      {
+        "name": "Corporate-tax table, Tax Department",
+        "url": "https://www.gov.cy/mof-tax/documents/forologiki-dilosi-eisodimatos-etaireias-t-f-4-aytoergodotoymenoy-me-elegmenoys-logariasmoys-t-f-1/"
+      },
+      {
+        "name": "Defence contribution from 2026, Tax Department",
+        "url": "https://www.gov.cy/mof-tax/documents/ektakti-amyntiki-eisfora-eae/"
+      },
+      {
+        "name": "Tax residency and domicile, Tax Department",
+        "url": "https://www.gov.cy/mof-tax/en/documents/tax-residency-domicility/"
+      },
+      {
+        "name": "Double tax treaties, Ministry of Finance, read 26 November 2026",
+        "url": "https://www.gov.cy/mof/en/documents/double-tax-treaties/"
+      },
+      {
+        "name": "Income taxation, Greek Ministry of Economy and Finance",
+        "url": "https://minfin.gov.gr/en/tax-policy/tax-guide/income-taxation/"
+      }
+    ]
+  },
+  "el": {
+    "title": "Κύπρος και Ελλάδα: φόροι το 2026",
+    "description": "Ο ελληνικός εταιρικός φόρος είναι 22%. Η κλίμακα μισθωτών 2026 εξαρτάται από τέκνα, και τα μεσαία κλιμάκια χωρίς τέκνα δεν διαβάστηκαν αξιόπιστα.",
+    "body": "Τελευταίος έλεγχος: 26 Νοεμβρίου 2026.\n\n## Σύντομη απάντηση\n\nΤο Υπουργείο Εθνικής Οικονομίας και Οικονομικών αναφέρει 22% στα επιχειρηματικά κέρδη νομικών προσώπων από το φορολογικό έτος 2021, εκτός από τις τράπεζες και τους συνεταιρισμούς που ονομάζει. Εισόδημα εργασίας από το 2026 χρησιμοποιεί κλίμακα που αλλάζει με τον αριθμό τέκνων, συν μείωση €777 για φορολογούμενο χωρίς τέκνα.\n\n## Φόρος εισοδήματος\n\nΗ Κύπρος, από το φορολογικό έτος 2026, όπως το δημοσιεύει το Business in Cyprus: 0% στα πρώτα €22.000 φορολογητέου εισοδήματος, 20% από €22.001 έως €32.000, 25% έως €42.000, 30% έως €72.000 και 35% πάνω από αυτό.\n\nΟ αγγλικός οδηγός του Υπουργείου τυπώνει 9% στα πρώτα €10.000 στις στήλες που διαβάζονταν, 34% από €30.001 έως €40.000, 39% από €40.000,01 έως €60.000 και 44% πάνω από €60.000, σε κάθε στήλη που φάνηκε. Τα κλιμάκια ανάμεσα σε €10.000 και €30.000 αλλάζουν με τέκνα, και οι συντελεστές χωρίς τέκνα σε αυτό το τμήμα δεν διαβάστηκαν αξιόπιστα. Δεν επινοούνται εδώ. Η μείωση φόρου είναι €777 χωρίς τέκνα και μικραίνει κατά €20 ανά €1.000 εισοδήματος εργασίας πάνω από €12.000.\n\n## Εταιρείες\n\nΟ πίνακας του Τμήματος Φορολογίας στη σελίδα δήλωσης εταιρείας βάζει εταιρικό φόρο 15% από το 2026, και 12,5% για το 2013–2025.\n\nΕίκοσι δύο τοις εκατό είναι ο συντελεστής που αναφέρει το Υπουργείο για νομικά πρόσωπα από το φορολογικό έτος 2021, κατά το άρθρο 120 του νόμου 4799/2021. Πιστωτικά ιδρύματα στο καθεστώς που ονομάζει ο οδηγός είναι στο 29%. Οι αγροτικοί συνεταιρισμοί που ονομάζει είναι στο 10%. Η δήλωση ΑΑΔΕ νομικού προσώπου δείχνει 22% ανάμεσα στους συντελεστές της γραμμής φόρου.\n\n## Μερίσματα και τόκοι\n\nΠρόσωπο χωρίς κατοικία στην Κύπρο είναι έξω από την έκτακτη εισφορά για την άμυνα σε μερίσματα και τόκους. Κάτοικος με κατοικία είναι κατά κανόνα στο 5% στα μερίσματα από κέρδη του 2026. Μέρισμα κυπριακής εταιρείας από κέρδη έως το φορολογικό έτος 2025 μένει στο 17% αν εισπραχθεί έως τις 31 Δεκεμβρίου 2031. Τόκοι φυσικού προσώπου είναι στο 17%, ή 3% αν το συνολικό εισόδημα είναι κάτω από €12.000. Η εισφορά στο ενοίκιο καταργήθηκε για το 2026. Αυτά είναι στη σελίδα εισφοράς του Τμήματος και στη σελίδα κινήτρων του Υπουργείου Οικονομικών.\n\nΕνιαίο ποσοστό μερίσματος 2026 για φυσικό πρόσωπο δεν εξήχθη από την κλίμακα μισθωτών. Δεν αναφέρεται εδώ.\n\n## Κεφαλαιουχικά κέρδη\n\nΟ κυπριακός φόρος κεφαλαιουχικών κερδών σε ακίνητο στην Κύπρο είναι 20% του κέρδους μετά την επίσημη τιμαριθμική αναπροσαρμογή, με τις ισόβιες απαλλαγές του νόμου. Ο [υπολογιστής κεφαλαιουχικών κερδών](/el/calculators/capital-gains/) εφαρμόζει αυτόν τον κανόνα. Δεν φορολογεί κέρδος σε στοιχεία εκτός Κύπρου.\n\nΟ οδηγός του Υπουργείου δεν χρησιμοποιήθηκε για προσωπικό ποσοστό υπεραξίας. Δεν αναφέρεται εδώ.\n\n## Κοινωνικές ασφαλίσεις\n\nΣυντελεστής κοινωνικής ασφάλισης αυτής της χώρας για το 2026 δεν αντιγράφηκε από την αρχή της για αυτή τη σελίδα. Ποσοστά ΓεΣΥ και κοινωνικών ασφαλίσεων της Κύπρου δεν επαναλαμβάνονται εδώ. Ο [οδηγός](/el/guides/resident-handbook/social-insurance/) περιγράφει την εγγραφή, όχι συντελεστή.\n\n## Σύμβαση με την Κύπρο\n\nΟ κατάλογος δείχνει συμφωνία σε ισχύ από τις 16 Ιανουαρίου 1969. Ο κατάλογος του Υπουργείου Οικονομικών διαβάστηκε στις 26 Νοεμβρίου 2026. Ποσοστά παρακράτησης της σύμβασης δεν τυπώνονται εδώ, γιατί τα άρθρα δεν αντιγράφηκαν από το κείμενο της Εφημερίδας. Η [σελίδα συμβάσεων](/el/guides/for-foreigners/tax-treaties/) μαζεύει τον ίδιο κατάλογο για τις χώρες που ήδη ονομάζει. Ο [κόμβος σύγκρισης](/el/guides/for-foreigners/compare/) και ο [υπολογιστής](/el/calculators/compare-countries/) χρησιμοποιούν μόνο τους γενικούς συντελεστές που εκείνη η σελίδα ήδη δένει με πηγή.\n\n## Κατοικία και non-dom\n\nΗ φορολογική κατοικία στην Κύπρο είναι ο κανόνας των 183 ημερών ή ο κανόνας των 60 ημερών στη σελίδα του Τμήματος Φορολογίας. Το non-dom αφορά την κατοικία (domicile), όχι αυτό το διαβατήριο. Δεν αλλάζει τις κλίμακες φόρου εισοδήματος. Οι όροι είναι στον [οδηγό non-dom](/el/guides/non-dom/) και στη [σελίδα μετεγκατάστασης](/el/guides/for-foreigners/relocating/).\n\n## Θεώρηση\n\nΠολίτης χώρας της Ένωσης που μένει πάνω από τρεις μήνες αιτείται πιστοποιητικό εγγραφής, έντυπο MEU1. Η σελίδα του Τμήματος Μετανάστευσης βάζει το τέλος στα €20. Το πιστοποιητικό δεν είναι φορολογική κατοικία και δεν είναι non-dom. Ο χωρισμός είναι στη σελίδα [επιλογών διαμονής](/el/guides/relocation/residence-options/).\n\n## Σε ποιον χρησιμεύει η σύγκριση\n\nΕταιρικό κέρδος στο 22% στην Ελλάδα έναντι 15% στην Κύπρο είναι η σύγκριση που στηρίζει η σελίδα του Υπουργείου. Σύγκριση μισθού δεν πρέπει να επινοεί τα μεσαία κλιμάκια που λείπουν. Η μείωση €777 εξαρτάται από το εισόδημα και από τα τέκνα.\n\n## Τι δεν λέει αυτή η σελίδα\n\nΑριθμοί που δεν ήταν σε επίσημη σελίδα του 2026 όταν γράφτηκε αυτό το κείμενο ονομάζονται παραπάνω και δεν χρησιμοποιούνται ως συντελεστής. Η μετακίνηση από μόνη της δεν σταματά τον φόρο στη χώρα που αφήνετε. Φόροι εξόδου και υποχρεώσεις δήλωσης εκείνης της χώρας δεν αντιγράφηκαν εδώ, εκτός αν μια πρόταση παραπάνω παραπέμπει στην αρχή της.",
+    "faq": [
+      {
+        "q": "Ποιος είναι ο ελληνικός συντελεστής χωρίς τέκνα;",
+        "a": "Το Υπουργείο τυπώνει κλίμακα που εξαρτάται από τέκνα και μείωση €777. Τα μεσαία κλιμάκια για μηδέν τέκνα δεν διαβάστηκαν αξιόπιστα, οπότε δεν ανατυπώνονται."
+      },
+      {
+        "q": "Ο εταιρικός φόρος το 2026 είναι 22%;",
+        "a": "Το Υπουργείο λέει 22% από το φορολογικό έτος 2021 για τα νομικά πρόσωπα που δεν είναι στις εξαιρέσεις που ονομάζει."
+      },
+      {
+        "q": "Υπάρχει σύμβαση;",
+        "a": "Ναι, σε ισχύ από τις 16 Ιανουαρίου 1969. Συντελεστής παρακράτησης δεν αναφέρεται."
+      },
+      {
+        "q": "Διαβατήριο ΕΕ αλλάζει το κυπριακό non-dom;",
+        "a": "Όχι. Το πιστοποιητικό MEU1 είναι το βήμα διαμονής. Το non-dom είναι φορολογικό καθεστώς για την κατοικία."
+      }
+    ],
+    "sources": [
+      {
+        "name": "Income-tax bands from 2026, Business in Cyprus",
+        "url": "https://www.businessincyprus.gov.cy/doing-business-in-cyprus/start-your-business/registering-for-income-tax-and-value-added-tax/"
+      },
+      {
+        "name": "Corporate-tax table, Tax Department",
+        "url": "https://www.gov.cy/mof-tax/documents/forologiki-dilosi-eisodimatos-etaireias-t-f-4-aytoergodotoymenoy-me-elegmenoys-logariasmoys-t-f-1/"
+      },
+      {
+        "name": "Defence contribution from 2026, Tax Department",
+        "url": "https://www.gov.cy/mof-tax/documents/ektakti-amyntiki-eisfora-eae/"
+      },
+      {
+        "name": "Tax residency and domicile, Tax Department",
+        "url": "https://www.gov.cy/mof-tax/en/documents/tax-residency-domicility/"
+      },
+      {
+        "name": "Double tax treaties, Ministry of Finance, read 26 November 2026",
+        "url": "https://www.gov.cy/mof/en/documents/double-tax-treaties/"
+      },
+      {
+        "name": "Income taxation, Greek Ministry of Economy and Finance",
+        "url": "https://minfin.gov.gr/en/tax-policy/tax-guide/income-taxation/"
+      }
+    ]
+  }
+}

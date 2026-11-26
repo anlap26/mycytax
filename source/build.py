@@ -1980,6 +1980,41 @@ def calc_offer(lang, slug):
         f"</aside>\n"
     )
 
+COMPARE_COUNTRY_LINKS = (
+    ("United Kingdom", "Великобритания", "Ηνωμένο Βασίλειο", "uk"),
+    ("Germany", "Германия", "Γερμανία", "germany"),
+    ("Russia", "Россия", "Ρωσία", "russia"),
+    ("Ukraine", "Украина", "Ουκρανία", "ukraine"),
+    ("Israel", "Израиль", "Ισραήλ", "israel"),
+    ("France", "Франция", "Γαλλία", "france"),
+    ("Italy", "Италия", "Ιταλία", "italy"),
+    ("Netherlands", "Нидерланды", "Ολλανδία", "netherlands"),
+    ("Poland", "Польша", "Πολωνία", "poland"),
+    ("Sweden", "Швеция", "Σουηδία", "sweden"),
+    ("Ireland", "Ирландия", "Ιρλανδία", "ireland"),
+    ("United States", "США", "Ηνωμένες Πολιτείες", "united-states"),
+    ("India", "Индия", "Ινδία", "india"),
+    ("South Africa", "Южная Африка", "Νότια Αφρική", "south-africa"),
+    ("Malta", "Мальта", "Μάλτα", "malta"),
+    ("Portugal", "Португалия", "Πορτογαλία", "portugal"),
+    ("Greece", "Греция", "Ελλάδα", "greece"),
+    ("United Arab Emirates", "ОАЭ", "Ηνωμένα Αραβικά Εμιράτα", "uae"),
+)
+
+def compare_country_links(lang):
+    idx = {"en": 0, "ru": 1, "el": 2}[lang]
+    heads = {
+        "en": "One page per country",
+        "ru": "Отдельная страница по стране",
+        "el": "Μία σελίδα ανά χώρα",
+    }
+    items = "".join(
+        f'<li><a href="{href(loc(lang, "/guides/for-foreigners/cyprus-vs-" + slug + "/"))}">{e(row[idx])}</a></li>'
+        for row in COMPARE_COUNTRY_LINKS
+        for slug in (row[3],)
+    )
+    return f"<h2>{e(heads[lang])}</h2><ul>{items}</ul>"
+
 def calc_page(lang, slug):
     u = UI[lang]
     t, d = CALCS[slug][lang]
@@ -2050,7 +2085,7 @@ def calc_page(lang, slug):
 {offer}
 {lead_card(lang)}
 {consult_card(lang, {"capital-gains":"Capital gains tax","rental-yield":"Rental income tax"}.get(slug, ""))}
-<div class="body"><h2>{e(u["sources"])}</h2><p>{note}</p></div>{ad("calc-bottom")}
+<div class="body"><h2>{e(u["sources"])}</h2><p>{note}</p>{compare_country_links(lang) if slug == "compare-countries" else ""}</div>{ad("calc-bottom")}
 {partners_block(lang, "calculators", slug)}{telegram_card(lang)}</main>
 <script src="{href("/assets/calc.js")}" defer></script>'''
     return page_shell(lang, f"{t} | {SITE}", d, path, alt, body, ld)

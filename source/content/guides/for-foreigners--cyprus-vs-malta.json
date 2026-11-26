@@ -1,0 +1,163 @@
+{
+  "slug": "for-foreigners/cyprus-vs-malta",
+  "seq": 62,
+  "en": {
+    "title": "Cyprus and Malta: tax in 2026",
+    "description": "Malta’s corporate tax is 35% on the Malta Tax and Customs Administration page. Personal bands for 2026 were not on the page that was read.",
+    "body": "Last checked: 26 November 2026.\n\n## Short answer\n\nMaltese companies are taxed at 35% on worldwide income and capital gains. A shareholder refund can apply after a dividend. The fraction was not stated, so it is not used. Personal bands for 2026 were not found. The 2025 bands were not reused.\n\n## Personal income tax\n\nCyprus, from the 2026 tax year, as published by Business in Cyprus: 0% on the first €22,000 of taxable income, 20% from €22,001 to €32,000, 25% to €42,000, 30% to €72,000 and 35% above that.\n\nThe Administration’s personal-rates page that was found is the 2025 scale. The 2026 legislative-notes page did not replace it with new bands. This page does not print the 2025 bands as if they were 2026.\n\n## Companies\n\nThe Tax Department’s company-return table puts corporate tax at 15% from 2026, and 12.5% on 2013–2025.\n\nThe corporate-tax page states 35% on worldwide income and capital gains, and says a shareholder may receive a refund of part or all of the tax after a dividend. The refund fraction is not stated. The company income-tax page, last updated 8 October 2025, repeats the flat 35%.\n\n## Dividends and interest\n\nA person who is not domiciled in Cyprus is outside Special Defence Contribution on dividends and interest. A domiciled resident is generally at 5% on dividends from 2026 profits. A dividend from a Cyprus company out of profits up to the 2025 tax year stays at 17% if it is received by 31 December 2031. Interest of an individual is at 17%, or 3% where total income is under €12,000. The contribution on rent was abolished for 2026. Those points are on the Tax Department’s defence-contribution page and the Ministry of Finance incentives page.\n\nThe refund is the dividend mechanism the Administration describes. A separate withholding percentage was not copied.\n\n## Capital gains\n\nCyprus capital gains tax on immovable property in Cyprus is 20% of the gain after the official inflation adjustment, with the lifetime exemptions in the Capital Gains Tax Law. The [capital-gains calculator](/calculators/capital-gains/) is the working of that rule. It does not tax a gain on assets outside Cyprus.\n\nCompany capital gains are inside the 35% above. A personal capital-gains scale for 2026 was not read.\n\n## Social insurance\n\nNo 2026 social-insurance rate for this country was copied from its social-insurance authority for this page. Cyprus GHS and social-insurance percentages are likewise not restated here. The [social-insurance guide](/guides/resident-handbook/social-insurance/) describes registration, not a rate.\n\n## Treaty with Cyprus\n\nThe list shows an agreement in force from 11 August 1994. The Ministry of Finance list was read on 26 November 2026. Withholding percentages in the treaty are not printed here, because the articles were not copied out of the gazette text. The [treaty page](/guides/for-foreigners/tax-treaties/) collects the same list for the countries it already names. The [comparison hub](/guides/for-foreigners/compare/) and the [calculator](/calculators/compare-countries/) use only the headline rates that page already ties to a source.\n\n## Residence and non-dom\n\nTax residence in Cyprus is the 183-day rule or the 60-day rule on the Tax Department’s residency page. Non-dom status is about domicile, not about this passport. It does not change the income-tax bands. The conditions are in the [non-dom guide](/guides/non-dom/) and on the [relocation page](/guides/for-foreigners/relocating/).\n\n## Visa\n\nA citizen of a Union country who stays longer than three months applies for a registration certificate, form MEU1. The Migration Department’s page puts the fee at €20. The certificate is not tax residence and it is not non-dom status. The split is on the [residence options](/guides/relocation/residence-options/) page.\n\n## Who this comparison is for\n\nThe headline that is safe to compare is 35% Maltese corporate tax, before any unstated refund, against 15% in Cyprus plus defence contribution if the shareholder is domiciled. A personal-tax comparison is not safe until a 2026 Maltese scale is read.\n\n## What this page does not state\n\nFigures that were not on an official 2026 page when this text was written are named in the sections above and are not used as a rate. A move does not, by itself, end tax in the country you leave. Exit taxes and reporting duties of that country were not copied onto this page unless a sentence above cites that authority.",
+    "faq": [
+      {
+        "q": "Why is there no Maltese personal scale?",
+        "a": "The page that was found is for 2025. It was not reused as 2026."
+      },
+      {
+        "q": "Is the effective corporate tax 5%?",
+        "a": "Not on this page. The Administration describes a refund and does not state the fraction here."
+      },
+      {
+        "q": "Is there a treaty?",
+        "a": "Yes, in force from 11 August 1994. No withholding rate is stated."
+      },
+      {
+        "q": "Does non-dom change the 35%?",
+        "a": "No. Thirty-five per cent is Maltese corporate tax. Cyprus non-dom status changes Cyprus defence contribution, not the Maltese assessment."
+      }
+    ],
+    "sources": [
+      {
+        "name": "Income-tax bands from 2026, Business in Cyprus",
+        "url": "https://www.businessincyprus.gov.cy/doing-business-in-cyprus/start-your-business/registering-for-income-tax-and-value-added-tax/"
+      },
+      {
+        "name": "Corporate-tax table, Tax Department",
+        "url": "https://www.gov.cy/mof-tax/documents/forologiki-dilosi-eisodimatos-etaireias-t-f-4-aytoergodotoymenoy-me-elegmenoys-logariasmoys-t-f-1/"
+      },
+      {
+        "name": "Defence contribution from 2026, Tax Department",
+        "url": "https://www.gov.cy/mof-tax/documents/ektakti-amyntiki-eisfora-eae/"
+      },
+      {
+        "name": "Tax residency and domicile, Tax Department",
+        "url": "https://www.gov.cy/mof-tax/en/documents/tax-residency-domicility/"
+      },
+      {
+        "name": "Double tax treaties, Ministry of Finance, read 26 November 2026",
+        "url": "https://www.gov.cy/mof/en/documents/double-tax-treaties/"
+      },
+      {
+        "name": "Corporate tax, Malta Tax and Customs Administration",
+        "url": "https://mtca.gov.mt/business-tax/corporate/corporate_tax"
+      },
+      {
+        "name": "Company income tax, MTCA, updated 8 October 2025",
+        "url": "https://mtca.gov.mt/business-tax/corporate/Income_Tax"
+      }
+    ]
+  },
+  "ru": {
+    "title": "Кипр и Мальта: налоги в 2026 году",
+    "description": "Корпоративный налог Мальты — 35% на странице Malta Tax and Customs Administration. Личных шкал на 2026 год на прочитанной странице не было.",
+    "body": "Проверено: 26 ноября 2026 года.\n\n## Короткий ответ\n\nМальтийские компании платят 35% с мирового дохода и прироста капитала. После дивиденда акционеру может полагаться возврат. Доля не названа, поэтому она не используется. Личных шкал на 2026 год не найдено. Шкалы 2025 года заново не использованы.\n\n## Подоходный налог\n\nКипр с налогового 2026 года, как публикует Business in Cyprus: 0% на первые €22 000 налогооблагаемого дохода, 20% с €22 001 до €32 000, 25% до €42 000, 30% до €72 000 и 35% сверх этого.\n\nНайденная страница личных ставок администрации — шкала 2025 года. Страница законодательных заметок 2026 года не заменила её новыми диапазонами. Эта страница не печатает диапазоны 2025 года так, будто это 2026 год.\n\n## Компании\n\nТаблица Налогового департамента на странице декларации компании ставит корпоративный налог 15% с 2026 года и 12,5% на 2013–2025 годы.\n\nСтраница корпоративного налога указывает 35% с мирового дохода и прироста капитала и говорит, что акционер может получить возврат части или всего налога после дивиденда. Доля возврата не названа. Страница подоходного налога компаний, обновлённая 8 октября 2025 года, повторяет плоские 35%.\n\n## Дивиденды и проценты\n\nЛицо без домициля на Кипре вне специального взноса на оборону по дивидендам и процентам. Резидент с домицилем, как правило, платит 5% с дивидендов из прибыли 2026 года. Дивиденд кипрской компании из прибыли по налоговый 2025 год остаётся по 17%, если он получен до 31 декабря 2031 года. Проценты физического лица — 17%, или 3%, если весь доход ниже €12 000. Взнос с аренды на 2026 год отменён. Это страница департамента о взносе и страница стимулов Министерства финансов.\n\nВозврат — это механизм дивиденда, который описывает администрация. Отдельный процент удержания не копировался.\n\n## Прирост капитала\n\nКипрский налог на прирост капитала по недвижимости на Кипре — 20% прироста после официальной поправки на инфляцию, с пожизненными вычетами закона. [Калькулятор прироста](/ru/calculators/capital-gains/) считает это правило. Прирост по активам вне Кипра он не облагает.\n\nПрирост капитала компании входит в эти 35%. Личная шкала прироста на 2026 год не читалась.\n\n## Социальное страхование\n\nСтавка социального страхования этой страны на 2026 год с сайта её ведомства на эту страницу не копировалась. Проценты ГЕСИ и социального страхования Кипра здесь тоже не повторены. [Справочник](/ru/guides/resident-handbook/social-insurance/) описывает регистрацию, а не ставку.\n\n## Соглашение с Кипром\n\nПеречень показывает соглашение в силе с 11 августа 1994 года. Перечень Министерства финансов прочитан 26 ноября 2026 года. Проценты удержания по соглашению здесь не напечатаны: статьи из текста «Официальной газеты» не выписывались. [Страница соглашений](/ru/guides/for-foreigners/tax-treaties/) собирает тот же перечень для стран, которые она уже называет. [Хаб сравнения](/ru/guides/for-foreigners/compare/) и [калькулятор](/ru/calculators/compare-countries/) берут только те заголовки, которые та страница уже привязала к источнику.\n\n## Резидентство и non-dom\n\nНалоговое резидентство Кипра — правило 183 дней или правило 60 дней на странице Налогового департамента. Статус non-dom — это домициль, а не этот паспорт. Шкалы подоходного налога он не меняет. Условия — в [справочнике non-dom](/ru/guides/non-dom/) и на [странице переезда](/ru/guides/for-foreigners/relocating/).\n\n## Виза\n\nГражданин страны Союза, который остаётся дольше трёх месяцев, подаёт на свидетельство о регистрации, форма MEU1. На странице Департамента миграции сбор — €20. Свидетельство — не налоговое резидентство и не non-dom. Развилка — на странице [вариантов проживания](/ru/guides/relocation/residence-options/).\n\n## Кому это сравнение полезно\n\nЗаголовок, который можно сравнивать, — 35% мальтийского корпоративного налога до неназванного возврата против 15% на Кипре плюс взнос на оборону, если у акционера есть домициль. Сравнение личного налога небезопасно, пока не прочитана мальтийская шкала 2026 года.\n\n## Чего эта страница не утверждает\n\nЦифры, которых не было на официальной странице 2026 года, когда писался этот текст, названы выше и ставкой здесь не служат. Сам переезд не прекращает налог в стране, которую вы оставляете. Налоги на выезд и обязанности по отчётности той страны на эту страницу не копировались, если предложение выше не ссылается на её орган.",
+    "faq": [
+      {
+        "q": "Почему нет мальтийской личной шкалы?",
+        "a": "Найденная страница — за 2025 год. Как шкалу 2026 года её не использовали."
+      },
+      {
+        "q": "Эффективный корпоративный налог — 5%?",
+        "a": "Не на этой странице. Администрация описывает возврат и долю здесь не называет."
+      },
+      {
+        "q": "Соглашение есть?",
+        "a": "Да, в силе с 11 августа 1994 года. Ставка удержания не названа."
+      },
+      {
+        "q": "Non-dom меняет 35%?",
+        "a": "Нет. Тридцать пять процентов — мальтийский корпоративный налог. Кипрский non-dom меняет кипрский взнос на оборону, а не мальтийское начисление."
+      }
+    ],
+    "sources": [
+      {
+        "name": "Income-tax bands from 2026, Business in Cyprus",
+        "url": "https://www.businessincyprus.gov.cy/doing-business-in-cyprus/start-your-business/registering-for-income-tax-and-value-added-tax/"
+      },
+      {
+        "name": "Corporate-tax table, Tax Department",
+        "url": "https://www.gov.cy/mof-tax/documents/forologiki-dilosi-eisodimatos-etaireias-t-f-4-aytoergodotoymenoy-me-elegmenoys-logariasmoys-t-f-1/"
+      },
+      {
+        "name": "Defence contribution from 2026, Tax Department",
+        "url": "https://www.gov.cy/mof-tax/documents/ektakti-amyntiki-eisfora-eae/"
+      },
+      {
+        "name": "Tax residency and domicile, Tax Department",
+        "url": "https://www.gov.cy/mof-tax/en/documents/tax-residency-domicility/"
+      },
+      {
+        "name": "Double tax treaties, Ministry of Finance, read 26 November 2026",
+        "url": "https://www.gov.cy/mof/en/documents/double-tax-treaties/"
+      },
+      {
+        "name": "Corporate tax, Malta Tax and Customs Administration",
+        "url": "https://mtca.gov.mt/business-tax/corporate/corporate_tax"
+      },
+      {
+        "name": "Company income tax, MTCA, updated 8 October 2025",
+        "url": "https://mtca.gov.mt/business-tax/corporate/Income_Tax"
+      }
+    ]
+  },
+  "el": {
+    "title": "Κύπρος και Μάλτα: φόροι το 2026",
+    "description": "Ο εταιρικός φόρος της Μάλτας είναι 35% στη σελίδα της Malta Tax and Customs Administration. Προσωπικά κλιμάκια για το 2026 δεν ήταν στη σελίδα που διαβάστηκε.",
+    "body": "Τελευταίος έλεγχος: 26 Νοεμβρίου 2026.\n\n## Σύντομη απάντηση\n\nΟι μαλτέζικες εταιρείες φορολογούνται με 35% στο παγκόσμιο εισόδημα και στα κεφαλαιουχικά κέρδη. Επιστροφή σε μέτοχο μπορεί να ισχύσει μετά από μέρισμα. Το κλάσμα δεν αναφέρθηκε, οπότε δεν χρησιμοποιείται. Προσωπικά κλιμάκια για το 2026 δεν βρέθηκαν. Τα κλιμάκια του 2025 δεν ξαναχρησιμοποιήθηκαν.\n\n## Φόρος εισοδήματος\n\nΗ Κύπρος, από το φορολογικό έτος 2026, όπως το δημοσιεύει το Business in Cyprus: 0% στα πρώτα €22.000 φορολογητέου εισοδήματος, 20% από €22.001 έως €32.000, 25% έως €42.000, 30% έως €72.000 και 35% πάνω από αυτό.\n\nΗ σελίδα προσωπικών συντελεστών της διοίκησης που βρέθηκε είναι η κλίμακα 2025. Η σελίδα νομοθετικών σημειώσεων 2026 δεν την αντικατέστησε με νέα κλιμάκια. Αυτή η σελίδα δεν τυπώνει τα κλιμάκια 2025 σαν να ήταν 2026.\n\n## Εταιρείες\n\nΟ πίνακας του Τμήματος Φορολογίας στη σελίδα δήλωσης εταιρείας βάζει εταιρικό φόρο 15% από το 2026, και 12,5% για το 2013–2025.\n\nΗ σελίδα εταιρικού φόρου αναφέρει 35% στο παγκόσμιο εισόδημα και στα κεφαλαιουχικά κέρδη, και λέει ότι μέτοχος μπορεί να λάβει επιστροφή μέρους ή όλου του φόρου μετά από μέρισμα. Το κλάσμα επιστροφής δεν αναφέρεται. Η σελίδα φόρου εισοδήματος εταιρειών, τελευταία ενημέρωση 8 Οκτωβρίου 2025, επαναλαμβάνει το ενιαίο 35%.\n\n## Μερίσματα και τόκοι\n\nΠρόσωπο χωρίς κατοικία στην Κύπρο είναι έξω από την έκτακτη εισφορά για την άμυνα σε μερίσματα και τόκους. Κάτοικος με κατοικία είναι κατά κανόνα στο 5% στα μερίσματα από κέρδη του 2026. Μέρισμα κυπριακής εταιρείας από κέρδη έως το φορολογικό έτος 2025 μένει στο 17% αν εισπραχθεί έως τις 31 Δεκεμβρίου 2031. Τόκοι φυσικού προσώπου είναι στο 17%, ή 3% αν το συνολικό εισόδημα είναι κάτω από €12.000. Η εισφορά στο ενοίκιο καταργήθηκε για το 2026. Αυτά είναι στη σελίδα εισφοράς του Τμήματος και στη σελίδα κινήτρων του Υπουργείου Οικονομικών.\n\nΗ επιστροφή είναι ο μηχανισμός μερίσματος που περιγράφει η διοίκηση. Χωριστό ποσοστό παρακράτησης δεν αντιγράφηκε.\n\n## Κεφαλαιουχικά κέρδη\n\nΟ κυπριακός φόρος κεφαλαιουχικών κερδών σε ακίνητο στην Κύπρο είναι 20% του κέρδους μετά την επίσημη τιμαριθμική αναπροσαρμογή, με τις ισόβιες απαλλαγές του νόμου. Ο [υπολογιστής κεφαλαιουχικών κερδών](/el/calculators/capital-gains/) εφαρμόζει αυτόν τον κανόνα. Δεν φορολογεί κέρδος σε στοιχεία εκτός Κύπρου.\n\nΤα κεφαλαιουχικά κέρδη εταιρείας είναι μέσα στο 35% παραπάνω. Προσωπική κλίμακα υπεραξίας για το 2026 δεν διαβάστηκε.\n\n## Κοινωνικές ασφαλίσεις\n\nΣυντελεστής κοινωνικής ασφάλισης αυτής της χώρας για το 2026 δεν αντιγράφηκε από την αρχή της για αυτή τη σελίδα. Ποσοστά ΓεΣΥ και κοινωνικών ασφαλίσεων της Κύπρου δεν επαναλαμβάνονται εδώ. Ο [οδηγός](/el/guides/resident-handbook/social-insurance/) περιγράφει την εγγραφή, όχι συντελεστή.\n\n## Σύμβαση με την Κύπρο\n\nΟ κατάλογος δείχνει συμφωνία σε ισχύ από τις 11 Αυγούστου 1994. Ο κατάλογος του Υπουργείου Οικονομικών διαβάστηκε στις 26 Νοεμβρίου 2026. Ποσοστά παρακράτησης της σύμβασης δεν τυπώνονται εδώ, γιατί τα άρθρα δεν αντιγράφηκαν από το κείμενο της Εφημερίδας. Η [σελίδα συμβάσεων](/el/guides/for-foreigners/tax-treaties/) μαζεύει τον ίδιο κατάλογο για τις χώρες που ήδη ονομάζει. Ο [κόμβος σύγκρισης](/el/guides/for-foreigners/compare/) και ο [υπολογιστής](/el/calculators/compare-countries/) χρησιμοποιούν μόνο τους γενικούς συντελεστές που εκείνη η σελίδα ήδη δένει με πηγή.\n\n## Κατοικία και non-dom\n\nΗ φορολογική κατοικία στην Κύπρο είναι ο κανόνας των 183 ημερών ή ο κανόνας των 60 ημερών στη σελίδα του Τμήματος Φορολογίας. Το non-dom αφορά την κατοικία (domicile), όχι αυτό το διαβατήριο. Δεν αλλάζει τις κλίμακες φόρου εισοδήματος. Οι όροι είναι στον [οδηγό non-dom](/el/guides/non-dom/) και στη [σελίδα μετεγκατάστασης](/el/guides/for-foreigners/relocating/).\n\n## Θεώρηση\n\nΠολίτης χώρας της Ένωσης που μένει πάνω από τρεις μήνες αιτείται πιστοποιητικό εγγραφής, έντυπο MEU1. Η σελίδα του Τμήματος Μετανάστευσης βάζει το τέλος στα €20. Το πιστοποιητικό δεν είναι φορολογική κατοικία και δεν είναι non-dom. Ο χωρισμός είναι στη σελίδα [επιλογών διαμονής](/el/guides/relocation/residence-options/).\n\n## Σε ποιον χρησιμεύει η σύγκριση\n\nΟ γενικός συντελεστής που μπορεί να συγκριθεί είναι 35% μαλτέζικος εταιρικός φόρος, πριν από αδήλωτη επιστροφή, έναντι 15% στην Κύπρο συν εισφορά άμυνας αν ο μέτοχος έχει κατοικία. Σύγκριση προσωπικού φόρου δεν είναι ασφαλής ώσπου να διαβαστεί μαλτέζικη κλίμακα 2026.\n\n## Τι δεν λέει αυτή η σελίδα\n\nΑριθμοί που δεν ήταν σε επίσημη σελίδα του 2026 όταν γράφτηκε αυτό το κείμενο ονομάζονται παραπάνω και δεν χρησιμοποιούνται ως συντελεστής. Η μετακίνηση από μόνη της δεν σταματά τον φόρο στη χώρα που αφήνετε. Φόροι εξόδου και υποχρεώσεις δήλωσης εκείνης της χώρας δεν αντιγράφηκαν εδώ, εκτός αν μια πρόταση παραπάνω παραπέμπει στην αρχή της.",
+    "faq": [
+      {
+        "q": "Γιατί δεν υπάρχει μαλτέζικη προσωπική κλίμακα;",
+        "a": "Η σελίδα που βρέθηκε είναι για το 2025. Δεν ξαναχρησιμοποιήθηκε ως 2026."
+      },
+      {
+        "q": "Ο πραγματικός εταιρικός φόρος είναι 5%;",
+        "a": "Όχι σε αυτή τη σελίδα. Η διοίκηση περιγράφει επιστροφή και δεν αναφέρει το κλάσμα εδώ."
+      },
+      {
+        "q": "Υπάρχει σύμβαση;",
+        "a": "Ναι, σε ισχύ από τις 11 Αυγούστου 1994. Συντελεστής παρακράτησης δεν αναφέρεται."
+      },
+      {
+        "q": "Το non-dom αλλάζει το 35%;",
+        "a": "Όχι. Το τριάντα πέντε τοις εκατό είναι μαλτέζικος εταιρικός φόρος. Το κυπριακό non-dom αλλάζει την κυπριακή εισφορά άμυνας, όχι τη μαλτέζικη βεβαίωση."
+      }
+    ],
+    "sources": [
+      {
+        "name": "Income-tax bands from 2026, Business in Cyprus",
+        "url": "https://www.businessincyprus.gov.cy/doing-business-in-cyprus/start-your-business/registering-for-income-tax-and-value-added-tax/"
+      },
+      {
+        "name": "Corporate-tax table, Tax Department",
+        "url": "https://www.gov.cy/mof-tax/documents/forologiki-dilosi-eisodimatos-etaireias-t-f-4-aytoergodotoymenoy-me-elegmenoys-logariasmoys-t-f-1/"
+      },
+      {
+        "name": "Defence contribution from 2026, Tax Department",
+        "url": "https://www.gov.cy/mof-tax/documents/ektakti-amyntiki-eisfora-eae/"
+      },
+      {
+        "name": "Tax residency and domicile, Tax Department",
+        "url": "https://www.gov.cy/mof-tax/en/documents/tax-residency-domicility/"
+      },
+      {
+        "name": "Double tax treaties, Ministry of Finance, read 26 November 2026",
+        "url": "https://www.gov.cy/mof/en/documents/double-tax-treaties/"
+      },
+      {
+        "name": "Corporate tax, Malta Tax and Customs Administration",
+        "url": "https://mtca.gov.mt/business-tax/corporate/corporate_tax"
+      },
+      {
+        "name": "Company income tax, MTCA, updated 8 October 2025",
+        "url": "https://mtca.gov.mt/business-tax/corporate/Income_Tax"
+      }
+    ]
+  }
+}

@@ -1,0 +1,175 @@
+{
+  "slug": "for-foreigners/cyprus-vs-portugal",
+  "seq": 63,
+  "en": {
+    "title": "Cyprus and Portugal: tax in 2026",
+    "description": "Portugal’s 2026 mainland corporate rate is 19%, and the IRS scale is in Decreto-Lei n.º 212/2026, beside Cyprus.",
+    "body": "Last checked: 26 November 2026.\n\n## Short answer\n\nLei n.º 64/2025 sets the 2026 mainland corporate rate at 19%. Decreto-Lei n.º 212/2026 sets the mainland personal scale from 12.20% to 48% on rendimento coletável. Island rates are not used, because two official pages disagree.\n\n## Personal income tax\n\nCyprus, from the 2026 tax year, as published by Business in Cyprus: 0% on the first €22,000 of taxable income, 20% from €22,001 to €32,000, 25% to €42,000, 30% to €72,000 and 35% above that.\n\nThe decree’s marginal rates, from 1 January 2026, are 12.20% up to €8,342, 15.20% to €12,587, 20.70% to €17,838, 23.60% to €23,089, 30.60% to €29,397, 34.60% to €43,090, 43.10% to €46,566, 44.60% to €86,634 and 48% above that. This is rendimento coletável, after deductions, not gross salary. A special regime for new residents is not in these bands.\n\n## Companies\n\nThe Tax Department’s company-return table puts corporate tax at 15% from 2026, and 12.5% on 2013–2025.\n\nArticle 3 of Lei n.º 64/2025 says that for periods beginning in 2026 the rate in paragraphs 1 and 5 of article 87 of the IRC Code is 19%. The Portal das Finanças 2026 card agrees for the mainland. The Azores figure on the state-budget site (16.8%) and on that card (13.3%) are not reconciled here, so the islands are not given a rate.\n\n## Dividends and interest\n\nA person who is not domiciled in Cyprus is outside Special Defence Contribution on dividends and interest. A domiciled resident is generally at 5% on dividends from 2026 profits. A dividend from a Cyprus company out of profits up to the 2025 tax year stays at 17% if it is received by 31 December 2031. Interest of an individual is at 17%, or 3% where total income is under €12,000. The contribution on rent was abolished for 2026. Those points are on the Tax Department’s defence-contribution page and the Ministry of Finance incentives page.\n\nA separate 2026 withholding rate on dividends, beyond the personal scale, was not copied.\n\n## Capital gains\n\nCyprus capital gains tax on immovable property in Cyprus is 20% of the gain after the official inflation adjustment, with the lifetime exemptions in the Capital Gains Tax Law. The [capital-gains calculator](/calculators/capital-gains/) is the working of that rule. It does not tax a gain on assets outside Cyprus.\n\nA separate 2026 capital-gains rate was not copied. The personal scale above is income tax on rendimento coletável.\n\n## Social insurance\n\nNo 2026 social-insurance rate for this country was copied from its social-insurance authority for this page. Cyprus GHS and social-insurance percentages are likewise not restated here. The [social-insurance guide](/guides/resident-handbook/social-insurance/) describes registration, not a rate.\n\n## Treaty with Cyprus\n\nThe list shows an agreement in force from 16 August 2013. The Ministry of Finance list was read on 26 November 2026. Withholding percentages in the treaty are not printed here, because the articles were not copied out of the gazette text. The [treaty page](/guides/for-foreigners/tax-treaties/) collects the same list for the countries it already names. The [comparison hub](/guides/for-foreigners/compare/) and the [calculator](/calculators/compare-countries/) use only the headline rates that page already ties to a source.\n\n## Residence and non-dom\n\nTax residence in Cyprus is the 183-day rule or the 60-day rule on the Tax Department’s residency page. Non-dom status is about domicile, not about this passport. It does not change the income-tax bands. The conditions are in the [non-dom guide](/guides/non-dom/) and on the [relocation page](/guides/for-foreigners/relocating/).\n\n## Visa\n\nA citizen of a Union country who stays longer than three months applies for a registration certificate, form MEU1. The Migration Department’s page puts the fee at €20. The certificate is not tax residence and it is not non-dom status. The split is on the [residence options](/guides/relocation/residence-options/) page.\n\n## Who this comparison is for\n\nThe [comparison calculator](/calculators/compare-countries/) already applies this mainland personal scale and the 19% corporate rate. It asks for rendimento coletável, not gross pay. A non-domiciled Cyprus resident still pays Cyprus income tax. Defence contribution on dividends is the Cyprus difference.\n\n## What this page does not state\n\nFigures that were not on an official 2026 page when this text was written are named in the sections above and are not used as a rate. A move does not, by itself, end tax in the country you leave. Exit taxes and reporting duties of that country were not copied onto this page unless a sentence above cites that authority.",
+    "faq": [
+      {
+        "q": "Is 19% the rate in the Azores?",
+        "a": "Not on this page. The state-budget site and the tax portal’s card do not agree, so the islands are left out."
+      },
+      {
+        "q": "Is the personal scale gross salary?",
+        "a": "No. It is the marginal scale on rendimento coletável."
+      },
+      {
+        "q": "Is there a treaty?",
+        "a": "Yes, in force from 16 August 2013. No withholding rate is stated."
+      },
+      {
+        "q": "Does the calculator include social insurance?",
+        "a": "No. Neither country is given a social-insurance rate on this page."
+      }
+    ],
+    "sources": [
+      {
+        "name": "Income-tax bands from 2026, Business in Cyprus",
+        "url": "https://www.businessincyprus.gov.cy/doing-business-in-cyprus/start-your-business/registering-for-income-tax-and-value-added-tax/"
+      },
+      {
+        "name": "Corporate-tax table, Tax Department",
+        "url": "https://www.gov.cy/mof-tax/documents/forologiki-dilosi-eisodimatos-etaireias-t-f-4-aytoergodotoymenoy-me-elegmenoys-logariasmoys-t-f-1/"
+      },
+      {
+        "name": "Defence contribution from 2026, Tax Department",
+        "url": "https://www.gov.cy/mof-tax/documents/ektakti-amyntiki-eisfora-eae/"
+      },
+      {
+        "name": "Tax residency and domicile, Tax Department",
+        "url": "https://www.gov.cy/mof-tax/en/documents/tax-residency-domicility/"
+      },
+      {
+        "name": "Double tax treaties, Ministry of Finance, read 26 November 2026",
+        "url": "https://www.gov.cy/mof/en/documents/double-tax-treaties/"
+      },
+      {
+        "name": "Lei n.º 64/2025, IRC at 19% in 2026",
+        "url": "https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/legislacao/diplomas_legislativos/Documents/Lei_64_2025.pdf"
+      },
+      {
+        "name": "Decreto-Lei n.º 212/2026, IRS bands",
+        "url": "https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/legislacao/diplomas_legislativos/Documents/Decreto-Lei-212-2026.pdf"
+      },
+      {
+        "name": "Portugal 2026 rate card, Portal das Finanças",
+        "url": "https://info.portaldasfinancas.gov.pt/pt/apoio_contribuinte/Folhetos_informativos/Documents/SFP-Taxas-2026.pdf"
+      }
+    ]
+  },
+  "ru": {
+    "title": "Кипр и Португалия: налоги в 2026 году",
+    "description": "Корпоративная ставка Португалии на материке в 2026 году — 19%, шкала IRS — в Decreto-Lei n.º 212/2026, рядом с Кипром.",
+    "body": "Проверено: 26 ноября 2026 года.\n\n## Короткий ответ\n\nLei n.º 64/2025 ставит корпоративную ставку материка на 2026 год в 19%. Decreto-Lei n.º 212/2026 ставит личную шкалу материка от 12,20% до 48% с rendimento coletável. Ставки островов не используются: две официальные страницы расходятся.\n\n## Подоходный налог\n\nКипр с налогового 2026 года, как публикует Business in Cyprus: 0% на первые €22 000 налогооблагаемого дохода, 20% с €22 001 до €32 000, 25% до €42 000, 30% до €72 000 и 35% сверх этого.\n\nПредельные ставки указа от 1 января 2026 года: 12,20% до €8 342, 15,20% до €12 587, 20,70% до €17 838, 23,60% до €23 089, 30,60% до €29 397, 34,60% до €43 090, 43,10% до €46 566, 44,60% до €86 634 и 48% сверх этого. Это rendimento coletável, после вычетов, а не грязная зарплата. Особый режим для новых резидентов в эти диапазоны не входит.\n\n## Компании\n\nТаблица Налогового департамента на странице декларации компании ставит корпоративный налог 15% с 2026 года и 12,5% на 2013–2025 годы.\n\nСтатья 3 Lei n.º 64/2025 говорит, что для периодов, начинающихся в 2026 году, ставка пунктов 1 и 5 статьи 87 Кодекса IRC — 19%. Карточка Portal das Finanças на 2026 год согласна для материка. Цифра Азор на сайте бюджета (16,8%) и на той карточке (13,3%) здесь не сведена, поэтому островам ставка не дана.\n\n## Дивиденды и проценты\n\nЛицо без домициля на Кипре вне специального взноса на оборону по дивидендам и процентам. Резидент с домицилем, как правило, платит 5% с дивидендов из прибыли 2026 года. Дивиденд кипрской компании из прибыли по налоговый 2025 год остаётся по 17%, если он получен до 31 декабря 2031 года. Проценты физического лица — 17%, или 3%, если весь доход ниже €12 000. Взнос с аренды на 2026 год отменён. Это страница департамента о взносе и страница стимулов Министерства финансов.\n\nОтдельная ставка удержания 2026 года с дивидендов, сверх личной шкалы, не копировалась.\n\n## Прирост капитала\n\nКипрский налог на прирост капитала по недвижимости на Кипре — 20% прироста после официальной поправки на инфляцию, с пожизненными вычетами закона. [Калькулятор прироста](/ru/calculators/capital-gains/) считает это правило. Прирост по активам вне Кипра он не облагает.\n\nОтдельная ставка прироста 2026 года не копировалась. Личная шкала выше — подоходный налог с rendimento coletável.\n\n## Социальное страхование\n\nСтавка социального страхования этой страны на 2026 год с сайта её ведомства на эту страницу не копировалась. Проценты ГЕСИ и социального страхования Кипра здесь тоже не повторены. [Справочник](/ru/guides/resident-handbook/social-insurance/) описывает регистрацию, а не ставку.\n\n## Соглашение с Кипром\n\nПеречень показывает соглашение в силе с 16 августа 2013 года. Перечень Министерства финансов прочитан 26 ноября 2026 года. Проценты удержания по соглашению здесь не напечатаны: статьи из текста «Официальной газеты» не выписывались. [Страница соглашений](/ru/guides/for-foreigners/tax-treaties/) собирает тот же перечень для стран, которые она уже называет. [Хаб сравнения](/ru/guides/for-foreigners/compare/) и [калькулятор](/ru/calculators/compare-countries/) берут только те заголовки, которые та страница уже привязала к источнику.\n\n## Резидентство и non-dom\n\nНалоговое резидентство Кипра — правило 183 дней или правило 60 дней на странице Налогового департамента. Статус non-dom — это домициль, а не этот паспорт. Шкалы подоходного налога он не меняет. Условия — в [справочнике non-dom](/ru/guides/non-dom/) и на [странице переезда](/ru/guides/for-foreigners/relocating/).\n\n## Виза\n\nГражданин страны Союза, который остаётся дольше трёх месяцев, подаёт на свидетельство о регистрации, форма MEU1. На странице Департамента миграции сбор — €20. Свидетельство — не налоговое резидентство и не non-dom. Развилка — на странице [вариантов проживания](/ru/guides/relocation/residence-options/).\n\n## Кому это сравнение полезно\n\nКалькулятор сравнения уже применяет эту личную шкалу материка и корпоративные 19%. Он просит rendimento coletável, а не грязную оплату. Резидент Кипра без домициля всё равно платит кипрский подоходный налог. Взнос на оборону с дивидендов — это кипрская разница.\n\n## Чего эта страница не утверждает\n\nЦифры, которых не было на официальной странице 2026 года, когда писался этот текст, названы выше и ставкой здесь не служат. Сам переезд не прекращает налог в стране, которую вы оставляете. Налоги на выезд и обязанности по отчётности той страны на эту страницу не копировались, если предложение выше не ссылается на её орган.",
+    "faq": [
+      {
+        "q": "19% — это ставка на Азорах?",
+        "a": "Не на этой странице. Сайт бюджета и карточка налогового портала не совпадают, поэтому острова оставлены в стороне."
+      },
+      {
+        "q": "Личная шкала — это грязная зарплата?",
+        "a": "Нет. Это предельная шкала с rendimento coletável."
+      },
+      {
+        "q": "Соглашение есть?",
+        "a": "Да, в силе с 16 августа 2013 года. Ставка удержания не названа."
+      },
+      {
+        "q": "Калькулятор включает социальное страхование?",
+        "a": "Нет. Ни одной стране на этой странице не дана ставка социального страхования."
+      }
+    ],
+    "sources": [
+      {
+        "name": "Income-tax bands from 2026, Business in Cyprus",
+        "url": "https://www.businessincyprus.gov.cy/doing-business-in-cyprus/start-your-business/registering-for-income-tax-and-value-added-tax/"
+      },
+      {
+        "name": "Corporate-tax table, Tax Department",
+        "url": "https://www.gov.cy/mof-tax/documents/forologiki-dilosi-eisodimatos-etaireias-t-f-4-aytoergodotoymenoy-me-elegmenoys-logariasmoys-t-f-1/"
+      },
+      {
+        "name": "Defence contribution from 2026, Tax Department",
+        "url": "https://www.gov.cy/mof-tax/documents/ektakti-amyntiki-eisfora-eae/"
+      },
+      {
+        "name": "Tax residency and domicile, Tax Department",
+        "url": "https://www.gov.cy/mof-tax/en/documents/tax-residency-domicility/"
+      },
+      {
+        "name": "Double tax treaties, Ministry of Finance, read 26 November 2026",
+        "url": "https://www.gov.cy/mof/en/documents/double-tax-treaties/"
+      },
+      {
+        "name": "Lei n.º 64/2025, IRC at 19% in 2026",
+        "url": "https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/legislacao/diplomas_legislativos/Documents/Lei_64_2025.pdf"
+      },
+      {
+        "name": "Decreto-Lei n.º 212/2026, IRS bands",
+        "url": "https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/legislacao/diplomas_legislativos/Documents/Decreto-Lei-212-2026.pdf"
+      },
+      {
+        "name": "Portugal 2026 rate card, Portal das Finanças",
+        "url": "https://info.portaldasfinancas.gov.pt/pt/apoio_contribuinte/Folhetos_informativos/Documents/SFP-Taxas-2026.pdf"
+      }
+    ]
+  },
+  "el": {
+    "title": "Κύπρος και Πορτογαλία: φόροι το 2026",
+    "description": "Ο εταιρικός συντελεστής ηπειρωτικής Πορτογαλίας το 2026 είναι 19%, και η κλίμακα IRS είναι στο Decreto-Lei n.º 212/2026, δίπλα στην Κύπρο.",
+    "body": "Τελευταίος έλεγχος: 26 Νοεμβρίου 2026.\n\n## Σύντομη απάντηση\n\nΟ Lei n.º 64/2025 ορίζει τον εταιρικό συντελεστή ηπειρωτικής χώρας για το 2026 στο 19%. Το Decreto-Lei n.º 212/2026 ορίζει την προσωπική κλίμακα ηπειρωτικής χώρας από 12,20% έως 48% επί rendimento coletável. Οι συντελεστές των νησιών δεν χρησιμοποιούνται, γιατί δύο επίσημες σελίδες διαφωνούν.\n\n## Φόρος εισοδήματος\n\nΗ Κύπρος, από το φορολογικό έτος 2026, όπως το δημοσιεύει το Business in Cyprus: 0% στα πρώτα €22.000 φορολογητέου εισοδήματος, 20% από €22.001 έως €32.000, 25% έως €42.000, 30% έως €72.000 και 35% πάνω από αυτό.\n\nΟι οριακοί συντελεστές του διατάγματος, από την 1η Ιανουαρίου 2026, είναι 12,20% έως €8.342, 15,20% έως €12.587, 20,70% έως €17.838, 23,60% έως €23.089, 30,60% έως €29.397, 34,60% έως €43.090, 43,10% έως €46.566, 44,60% έως €86.634 και 48% πάνω από αυτό. Αυτό είναι rendimento coletável, μετά από εκπτώσεις, όχι μεικτός μισθός. Ειδικό καθεστώς για νέους κατοίκους δεν είναι μέσα στα κλιμάκια.\n\n## Εταιρείες\n\nΟ πίνακας του Τμήματος Φορολογίας στη σελίδα δήλωσης εταιρείας βάζει εταιρικό φόρο 15% από το 2026, και 12,5% για το 2013–2025.\n\nΤο άρθρο 3 του Lei n.º 64/2025 λέει ότι για περιόδους που αρχίζουν το 2026 ο συντελεστής των παραγράφων 1 και 5 του άρθρου 87 του Κώδικα IRC είναι 19%. Η κάρτα του Portal das Finanças για το 2026 συμφωνεί για την ηπειρωτική χώρα. Το νούμερο των Αζορών στον ιστότοπο προϋπολογισμού (16,8%) και σε εκείνη την κάρτα (13,3%) δεν συμβιβάζεται εδώ, οπότε στα νησιά δεν δίνεται συντελεστής.\n\n## Μερίσματα και τόκοι\n\nΠρόσωπο χωρίς κατοικία στην Κύπρο είναι έξω από την έκτακτη εισφορά για την άμυνα σε μερίσματα και τόκους. Κάτοικος με κατοικία είναι κατά κανόνα στο 5% στα μερίσματα από κέρδη του 2026. Μέρισμα κυπριακής εταιρείας από κέρδη έως το φορολογικό έτος 2025 μένει στο 17% αν εισπραχθεί έως τις 31 Δεκεμβρίου 2031. Τόκοι φυσικού προσώπου είναι στο 17%, ή 3% αν το συνολικό εισόδημα είναι κάτω από €12.000. Η εισφορά στο ενοίκιο καταργήθηκε για το 2026. Αυτά είναι στη σελίδα εισφοράς του Τμήματος και στη σελίδα κινήτρων του Υπουργείου Οικονομικών.\n\nΧωριστός συντελεστής παρακράτησης 2026 στα μερίσματα, πέρα από την προσωπική κλίμακα, δεν αντιγράφηκε.\n\n## Κεφαλαιουχικά κέρδη\n\nΟ κυπριακός φόρος κεφαλαιουχικών κερδών σε ακίνητο στην Κύπρο είναι 20% του κέρδους μετά την επίσημη τιμαριθμική αναπροσαρμογή, με τις ισόβιες απαλλαγές του νόμου. Ο [υπολογιστής κεφαλαιουχικών κερδών](/el/calculators/capital-gains/) εφαρμόζει αυτόν τον κανόνα. Δεν φορολογεί κέρδος σε στοιχεία εκτός Κύπρου.\n\nΧωριστός συντελεστής υπεραξίας 2026 δεν αντιγράφηκε. Η προσωπική κλίμακα παραπάνω είναι φόρος εισοδήματος επί rendimento coletável.\n\n## Κοινωνικές ασφαλίσεις\n\nΣυντελεστής κοινωνικής ασφάλισης αυτής της χώρας για το 2026 δεν αντιγράφηκε από την αρχή της για αυτή τη σελίδα. Ποσοστά ΓεΣΥ και κοινωνικών ασφαλίσεων της Κύπρου δεν επαναλαμβάνονται εδώ. Ο [οδηγός](/el/guides/resident-handbook/social-insurance/) περιγράφει την εγγραφή, όχι συντελεστή.\n\n## Σύμβαση με την Κύπρο\n\nΟ κατάλογος δείχνει συμφωνία σε ισχύ από τις 16 Αυγούστου 2013. Ο κατάλογος του Υπουργείου Οικονομικών διαβάστηκε στις 26 Νοεμβρίου 2026. Ποσοστά παρακράτησης της σύμβασης δεν τυπώνονται εδώ, γιατί τα άρθρα δεν αντιγράφηκαν από το κείμενο της Εφημερίδας. Η [σελίδα συμβάσεων](/el/guides/for-foreigners/tax-treaties/) μαζεύει τον ίδιο κατάλογο για τις χώρες που ήδη ονομάζει. Ο [κόμβος σύγκρισης](/el/guides/for-foreigners/compare/) και ο [υπολογιστής](/el/calculators/compare-countries/) χρησιμοποιούν μόνο τους γενικούς συντελεστές που εκείνη η σελίδα ήδη δένει με πηγή.\n\n## Κατοικία και non-dom\n\nΗ φορολογική κατοικία στην Κύπρο είναι ο κανόνας των 183 ημερών ή ο κανόνας των 60 ημερών στη σελίδα του Τμήματος Φορολογίας. Το non-dom αφορά την κατοικία (domicile), όχι αυτό το διαβατήριο. Δεν αλλάζει τις κλίμακες φόρου εισοδήματος. Οι όροι είναι στον [οδηγό non-dom](/el/guides/non-dom/) και στη [σελίδα μετεγκατάστασης](/el/guides/for-foreigners/relocating/).\n\n## Θεώρηση\n\nΠολίτης χώρας της Ένωσης που μένει πάνω από τρεις μήνες αιτείται πιστοποιητικό εγγραφής, έντυπο MEU1. Η σελίδα του Τμήματος Μετανάστευσης βάζει το τέλος στα €20. Το πιστοποιητικό δεν είναι φορολογική κατοικία και δεν είναι non-dom. Ο χωρισμός είναι στη σελίδα [επιλογών διαμονής](/el/guides/relocation/residence-options/).\n\n## Σε ποιον χρησιμεύει η σύγκριση\n\nΟ υπολογιστής σύγκρισης εφαρμόζει ήδη αυτή την προσωπική κλίμακα ηπειρωτικής χώρας και τον εταιρικό συντελεστή 19%. Ζητά rendimento coletável, όχι μεικτή αμοιβή. Κάτοικος Κύπρου χωρίς κατοικία πληρώνει και πάλι κυπριακό φόρο εισοδήματος. Η εισφορά άμυνας στα μερίσματα είναι η κυπριακή διαφορά.\n\n## Τι δεν λέει αυτή η σελίδα\n\nΑριθμοί που δεν ήταν σε επίσημη σελίδα του 2026 όταν γράφτηκε αυτό το κείμενο ονομάζονται παραπάνω και δεν χρησιμοποιούνται ως συντελεστής. Η μετακίνηση από μόνη της δεν σταματά τον φόρο στη χώρα που αφήνετε. Φόροι εξόδου και υποχρεώσεις δήλωσης εκείνης της χώρας δεν αντιγράφηκαν εδώ, εκτός αν μια πρόταση παραπάνω παραπέμπει στην αρχή της.",
+    "faq": [
+      {
+        "q": "Το 19% είναι ο συντελεστής στις Αζόρες;",
+        "a": "Όχι σε αυτή τη σελίδα. Ο ιστότοπος προϋπολογισμού και η κάρτα της φορολογικής πύλης δεν συμφωνούν, οπότε τα νησιά μένουν έξω."
+      },
+      {
+        "q": "Η προσωπική κλίμακα είναι μεικτός μισθός;",
+        "a": "Όχι. Είναι η οριακή κλίμακα επί rendimento coletável."
+      },
+      {
+        "q": "Υπάρχει σύμβαση;",
+        "a": "Ναι, σε ισχύ από τις 16 Αυγούστου 2013. Συντελεστής παρακράτησης δεν αναφέρεται."
+      },
+      {
+        "q": "Ο υπολογιστής περιλαμβάνει κοινωνικές ασφαλίσεις;",
+        "a": "Όχι. Σε καμία χώρα δεν δίνεται συντελεστής κοινωνικής ασφάλισης σε αυτή τη σελίδα."
+      }
+    ],
+    "sources": [
+      {
+        "name": "Income-tax bands from 2026, Business in Cyprus",
+        "url": "https://www.businessincyprus.gov.cy/doing-business-in-cyprus/start-your-business/registering-for-income-tax-and-value-added-tax/"
+      },
+      {
+        "name": "Corporate-tax table, Tax Department",
+        "url": "https://www.gov.cy/mof-tax/documents/forologiki-dilosi-eisodimatos-etaireias-t-f-4-aytoergodotoymenoy-me-elegmenoys-logariasmoys-t-f-1/"
+      },
+      {
+        "name": "Defence contribution from 2026, Tax Department",
+        "url": "https://www.gov.cy/mof-tax/documents/ektakti-amyntiki-eisfora-eae/"
+      },
+      {
+        "name": "Tax residency and domicile, Tax Department",
+        "url": "https://www.gov.cy/mof-tax/en/documents/tax-residency-domicility/"
+      },
+      {
+        "name": "Double tax treaties, Ministry of Finance, read 26 November 2026",
+        "url": "https://www.gov.cy/mof/en/documents/double-tax-treaties/"
+      },
+      {
+        "name": "Lei n.º 64/2025, IRC at 19% in 2026",
+        "url": "https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/legislacao/diplomas_legislativos/Documents/Lei_64_2025.pdf"
+      },
+      {
+        "name": "Decreto-Lei n.º 212/2026, IRS bands",
+        "url": "https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/legislacao/diplomas_legislativos/Documents/Decreto-Lei-212-2026.pdf"
+      },
+      {
+        "name": "Portugal 2026 rate card, Portal das Finanças",
+        "url": "https://info.portaldasfinancas.gov.pt/pt/apoio_contribuinte/Folhetos_informativos/Documents/SFP-Taxas-2026.pdf"
+      }
+    ]
+  }
+}

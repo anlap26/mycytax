@@ -1,0 +1,163 @@
+{
+  "slug": "for-foreigners/cyprus-vs-sweden",
+  "seq": 57,
+  "en": {
+    "title": "Cyprus and Sweden: tax in 2026",
+    "description": "Swedish state income tax at 20% above SEK 643,000 for 2026, municipal tax left local, and corporate tax at 20.6%, beside Cyprus.",
+    "body": "Last checked: 26 November 2026.\n\n## Short answer\n\nThe Swedish Tax Agency’s 2026 amounts page charges no state income tax on taxable earned income up to SEK 643,000 and 20% above that. Municipal tax is charged as well and is set locally, so this page does not print a municipal percentage. Corporate tax is 20.6%. State tax on capital income is 30%.\n\n## Personal income tax\n\nCyprus, from the 2026 tax year, as published by Business in Cyprus: 0% on the first €22,000 of taxable income, 20% from €22,001 to €32,000, 25% to €42,000, 30% to €72,000 and 35% above that.\n\nThe threshold of SEK 643,000 is taxable earned income after the basic deduction. Before that deduction, the breakpoint is SEK 660,400 for someone who had not turned 66 at the start of the year, and SEK 760,500 for someone who had. There is no single national rate on a salary, because the municipal tax sits on top.\n\n## Companies\n\nThe Tax Department’s company-return table puts corporate tax at 15% from 2026, and 12.5% on 2013–2025.\n\nThe Agency’s company page states corporate tax at 20.6%. The 2026 amounts page states the same rate as state income tax on legal persons.\n\n## Dividends and interest\n\nA person who is not domiciled in Cyprus is outside Special Defence Contribution on dividends and interest. A domiciled resident is generally at 5% on dividends from 2026 profits. A dividend from a Cyprus company out of profits up to the 2025 tax year stays at 17% if it is received by 31 December 2031. Interest of an individual is at 17%, or 3% where total income is under €12,000. The contribution on rent was abolished for 2026. Those points are on the Tax Department’s defence-contribution page and the Ministry of Finance incentives page.\n\nState tax on capital income, which covers dividends and interest in that category, is 30% on the 2026 amounts page.\n\n## Capital gains\n\nCyprus capital gains tax on immovable property in Cyprus is 20% of the gain after the official inflation adjustment, with the lifetime exemptions in the Capital Gains Tax Law. The [capital-gains calculator](/calculators/capital-gains/) is the working of that rule. It does not tax a gain on assets outside Cyprus.\n\nA gain that the Agency places in capital income is inside the 30% above. A separate property-gain computation was not copied.\n\n## Social insurance\n\nNo 2026 social-insurance rate for this country was copied from its social-insurance authority for this page. Cyprus GHS and social-insurance percentages are likewise not restated here. The [social-insurance guide](/guides/resident-handbook/social-insurance/) describes registration, not a rate.\n\n## Treaty with Cyprus\n\nThe list shows an agreement in force from 14 November 1989 and an amending protocol signed on 3 July 2026. The row, as read, does not give that protocol its own entry-into-force date. The Ministry of Finance list was read on 26 November 2026. Withholding percentages in the treaty are not printed here, because the articles were not copied out of the gazette text. The [treaty page](/guides/for-foreigners/tax-treaties/) collects the same list for the countries it already names. The [comparison hub](/guides/for-foreigners/compare/) and the [calculator](/calculators/compare-countries/) use only the headline rates that page already ties to a source.\n\n## Residence and non-dom\n\nTax residence in Cyprus is the 183-day rule or the 60-day rule on the Tax Department’s residency page. Non-dom status is about domicile, not about this passport. It does not change the income-tax bands. The conditions are in the [non-dom guide](/guides/non-dom/) and on the [relocation page](/guides/for-foreigners/relocating/).\n\n## Visa\n\nA citizen of a Union country who stays longer than three months applies for a registration certificate, form MEU1. The Migration Department’s page puts the fee at €20. The certificate is not tax residence and it is not non-dom status. The split is on the [residence options](/guides/relocation/residence-options/) page.\n\n## Who this comparison is for\n\nA salary below the state-tax threshold still meets municipal tax, which this page will not invent. Company profit at 20.6% is above the Cyprus 15%. Capital income at 30% is the figure to set beside Cyprus defence contribution, which is nil for a non-domiciled resident and generally 5% on 2026 dividends for a domiciled one.\n\n## What this page does not state\n\nFigures that were not on an official 2026 page when this text was written are named in the sections above and are not used as a rate. A move does not, by itself, end tax in the country you leave. Exit taxes and reporting duties of that country were not copied onto this page unless a sentence above cites that authority.",
+    "faq": [
+      {
+        "q": "Is Swedish income tax 20%?",
+        "a": "20% is the state tax above SEK 643,000 of taxable earned income. Below that threshold the state tax on earned income is nil, and municipal tax still applies. The municipal rate is not printed here."
+      },
+      {
+        "q": "What is the tax on Swedish dividends?",
+        "a": "30% state tax on capital income, on the Agency’s 2026 amounts page."
+      },
+      {
+        "q": "Is the July 2026 protocol in force?",
+        "a": "It is signed. The Ministry list, as read, does not show a separate entry-into-force date for it."
+      },
+      {
+        "q": "Does non-dom remove Swedish municipal tax?",
+        "a": "No. Non-dom is a Cyprus status. It does not set the Swedish municipal rate, and this page does not say when Swedish residence ends."
+      }
+    ],
+    "sources": [
+      {
+        "name": "Income-tax bands from 2026, Business in Cyprus",
+        "url": "https://www.businessincyprus.gov.cy/doing-business-in-cyprus/start-your-business/registering-for-income-tax-and-value-added-tax/"
+      },
+      {
+        "name": "Corporate-tax table, Tax Department",
+        "url": "https://www.gov.cy/mof-tax/documents/forologiki-dilosi-eisodimatos-etaireias-t-f-4-aytoergodotoymenoy-me-elegmenoys-logariasmoys-t-f-1/"
+      },
+      {
+        "name": "Defence contribution from 2026, Tax Department",
+        "url": "https://www.gov.cy/mof-tax/documents/ektakti-amyntiki-eisfora-eae/"
+      },
+      {
+        "name": "Tax residency and domicile, Tax Department",
+        "url": "https://www.gov.cy/mof-tax/en/documents/tax-residency-domicility/"
+      },
+      {
+        "name": "Double tax treaties, Ministry of Finance, read 26 November 2026",
+        "url": "https://www.gov.cy/mof/en/documents/double-tax-treaties/"
+      },
+      {
+        "name": "Amounts and percentages, income year 2026, Skatteverket",
+        "url": "https://www.skatteverket.se/privat/skatter/beloppochprocent/2026.4.1522bf3f19aea8075ba21.html"
+      },
+      {
+        "name": "Limited companies, Skatteverket",
+        "url": "https://www.skatteverket.se/foretag/drivaforetag/foretagsformer/aktiebolag.4.5c13cb6b1198121ee8580002546.html"
+      }
+    ]
+  },
+  "ru": {
+    "title": "Кипр и Швеция: налоги в 2026 году",
+    "description": "Шведский государственный подоходный налог 20% сверх 643 000 крон в 2026 году, муниципальный налог оставлен местным, корпоративный налог 20,6% рядом с Кипром.",
+    "body": "Проверено: 26 ноября 2026 года.\n\n## Короткий ответ\n\nСтраница сумм Шведского налогового агентства на 2026 год не берёт государственный подоходный налог с налогооблагаемого трудового дохода до 643 000 крон и берёт 20% сверх этого. Муниципальный налог тоже взимается и устанавливается на месте, поэтому эта страница не печатает муниципальный процент. Корпоративный налог — 20,6%. Государственный налог на доход от капитала — 30%.\n\n## Подоходный налог\n\nКипр с налогового 2026 года, как публикует Business in Cyprus: 0% на первые €22 000 налогооблагаемого дохода, 20% с €22 001 до €32 000, 25% до €42 000, 30% до €72 000 и 35% сверх этого.\n\nПорог 643 000 крон — это налогооблагаемый трудовой доход после основного вычета. До этого вычета точка перелома — 660 400 крон для того, кому на начало года не исполнилось 66, и 760 500 крон для того, кому исполнилось. Единой общегосударственной ставки на зарплату нет, потому что сверху сидит муниципальный налог.\n\n## Компании\n\nТаблица Налогового департамента на странице декларации компании ставит корпоративный налог 15% с 2026 года и 12,5% на 2013–2025 годы.\n\nСтраница агентства о компании указывает корпоративный налог 20,6%. Страница сумм 2026 года называет ту же ставку государственным подоходным налогом юридических лиц.\n\n## Дивиденды и проценты\n\nЛицо без домициля на Кипре вне специального взноса на оборону по дивидендам и процентам. Резидент с домицилем, как правило, платит 5% с дивидендов из прибыли 2026 года. Дивиденд кипрской компании из прибыли по налоговый 2025 год остаётся по 17%, если он получен до 31 декабря 2031 года. Проценты физического лица — 17%, или 3%, если весь доход ниже €12 000. Взнос с аренды на 2026 год отменён. Это страница департамента о взносе и страница стимулов Министерства финансов.\n\nГосударственный налог на доход от капитала, который покрывает дивиденды и проценты в этой категории, — 30% на странице сумм 2026 года.\n\n## Прирост капитала\n\nКипрский налог на прирост капитала по недвижимости на Кипре — 20% прироста после официальной поправки на инфляцию, с пожизненными вычетами закона. [Калькулятор прироста](/ru/calculators/capital-gains/) считает это правило. Прирост по активам вне Кипра он не облагает.\n\nПрирост, который агентство относит к доходу от капитала, входит в эти 30%. Отдельный расчёт прироста по недвижимости не копировался.\n\n## Социальное страхование\n\nСтавка социального страхования этой страны на 2026 год с сайта её ведомства на эту страницу не копировалась. Проценты ГЕСИ и социального страхования Кипра здесь тоже не повторены. [Справочник](/ru/guides/resident-handbook/social-insurance/) описывает регистрацию, а не ставку.\n\n## Соглашение с Кипром\n\nПеречень показывает соглашение в силе с 14 ноября 1989 года и изменяющий протокол, подписанный 3 июля 2026 года. В строке, как она прочитана, у этого протокола нет собственной даты вступления в силу. Перечень Министерства финансов прочитан 26 ноября 2026 года. Проценты удержания по соглашению здесь не напечатаны: статьи из текста «Официальной газеты» не выписывались. [Страница соглашений](/ru/guides/for-foreigners/tax-treaties/) собирает тот же перечень для стран, которые она уже называет. [Хаб сравнения](/ru/guides/for-foreigners/compare/) и [калькулятор](/ru/calculators/compare-countries/) берут только те заголовки, которые та страница уже привязала к источнику.\n\n## Резидентство и non-dom\n\nНалоговое резидентство Кипра — правило 183 дней или правило 60 дней на странице Налогового департамента. Статус non-dom — это домициль, а не этот паспорт. Шкалы подоходного налога он не меняет. Условия — в [справочнике non-dom](/ru/guides/non-dom/) и на [странице переезда](/ru/guides/for-foreigners/relocating/).\n\n## Виза\n\nГражданин страны Союза, который остаётся дольше трёх месяцев, подаёт на свидетельство о регистрации, форма MEU1. На странице Департамента миграции сбор — €20. Свидетельство — не налоговое резидентство и не non-dom. Развилка — на странице [вариантов проживания](/ru/guides/relocation/residence-options/).\n\n## Кому это сравнение полезно\n\nЗарплата ниже порога государственного налога всё равно встречает муниципальный налог, который эта страница не выдумает. Прибыль компании по 20,6% выше кипрских 15%. Доход от капитала по 30% — это цифра, которую ставят рядом с кипрским взносом на оборону: он нулевой для резидента без домициля и, как правило, 5% с дивидендов 2026 года для резидента с домицилем.\n\n## Чего эта страница не утверждает\n\nЦифры, которых не было на официальной странице 2026 года, когда писался этот текст, названы выше и ставкой здесь не служат. Сам переезд не прекращает налог в стране, которую вы оставляете. Налоги на выезд и обязанности по отчётности той страны на эту страницу не копировались, если предложение выше не ссылается на её орган.",
+    "faq": [
+      {
+        "q": "Шведский подоходный налог — 20%?",
+        "a": "20% — это государственный налог сверх 643 000 крон налогооблагаемого трудового дохода. Ниже этого порога государственный налог с трудового дохода нулевой, а муниципальный налог всё равно есть. Муниципальная ставка здесь не напечатана."
+      },
+      {
+        "q": "Какой налог на шведские дивиденды?",
+        "a": "30% государственного налога на доход от капитала, на странице сумм агентства на 2026 год."
+      },
+      {
+        "q": "Протокол июля 2026 года в силе?",
+        "a": "Он подписан. Перечень министерства, как он прочитан, не показывает отдельной даты вступления в силу."
+      },
+      {
+        "q": "Non-dom снимает шведский муниципальный налог?",
+        "a": "Нет. Non-dom — кипрский статус. Шведскую муниципальную ставку он не задаёт, и эта страница не говорит, когда кончается шведское резидентство."
+      }
+    ],
+    "sources": [
+      {
+        "name": "Income-tax bands from 2026, Business in Cyprus",
+        "url": "https://www.businessincyprus.gov.cy/doing-business-in-cyprus/start-your-business/registering-for-income-tax-and-value-added-tax/"
+      },
+      {
+        "name": "Corporate-tax table, Tax Department",
+        "url": "https://www.gov.cy/mof-tax/documents/forologiki-dilosi-eisodimatos-etaireias-t-f-4-aytoergodotoymenoy-me-elegmenoys-logariasmoys-t-f-1/"
+      },
+      {
+        "name": "Defence contribution from 2026, Tax Department",
+        "url": "https://www.gov.cy/mof-tax/documents/ektakti-amyntiki-eisfora-eae/"
+      },
+      {
+        "name": "Tax residency and domicile, Tax Department",
+        "url": "https://www.gov.cy/mof-tax/en/documents/tax-residency-domicility/"
+      },
+      {
+        "name": "Double tax treaties, Ministry of Finance, read 26 November 2026",
+        "url": "https://www.gov.cy/mof/en/documents/double-tax-treaties/"
+      },
+      {
+        "name": "Amounts and percentages, income year 2026, Skatteverket",
+        "url": "https://www.skatteverket.se/privat/skatter/beloppochprocent/2026.4.1522bf3f19aea8075ba21.html"
+      },
+      {
+        "name": "Limited companies, Skatteverket",
+        "url": "https://www.skatteverket.se/foretag/drivaforetag/foretagsformer/aktiebolag.4.5c13cb6b1198121ee8580002546.html"
+      }
+    ]
+  },
+  "el": {
+    "title": "Κύπρος και Σουηδία: φόροι το 2026",
+    "description": "Σουηδικός κρατικός φόρος εισοδήματος 20% πάνω από 643.000 κορόνες το 2026, ο δημοτικός φόρος μένει τοπικός, εταιρικός φόρος 20,6% δίπλα στην Κύπρο.",
+    "body": "Τελευταίος έλεγχος: 26 Νοεμβρίου 2026.\n\n## Σύντομη απάντηση\n\nΗ σελίδα ποσών της σουηδικής φορολογικής υπηρεσίας για το 2026 δεν επιβάλλει κρατικό φόρο εισοδήματος σε φορολογητέο εισόδημα εργασίας έως 643.000 κορόνες και επιβάλλει 20% πάνω από αυτό. Δημοτικός φόρος επιβάλλεται επίσης και ορίζεται τοπικά, οπότε αυτή η σελίδα δεν τυπώνει δημοτικό ποσοστό. Ο εταιρικός φόρος είναι 20,6%. Ο κρατικός φόρος σε εισόδημα κεφαλαίου είναι 30%.\n\n## Φόρος εισοδήματος\n\nΗ Κύπρος, από το φορολογικό έτος 2026, όπως το δημοσιεύει το Business in Cyprus: 0% στα πρώτα €22.000 φορολογητέου εισοδήματος, 20% από €22.001 έως €32.000, 25% έως €42.000, 30% έως €72.000 και 35% πάνω από αυτό.\n\nΤο όριο των 643.000 κορονών είναι φορολογητέο εισόδημα εργασίας μετά τη βασική έκπτωση. Πριν από την έκπτωση, το σημείο καμπής είναι 660.400 κορόνες για όποιον δεν είχε κλείσει τα 66 στην αρχή του έτους, και 760.500 για όποιον είχε. Δεν υπάρχει ένας εθνικός συντελεστής στον μισθό, γιατί από πάνω κάθεται ο δημοτικός φόρος.\n\n## Εταιρείες\n\nΟ πίνακας του Τμήματος Φορολογίας στη σελίδα δήλωσης εταιρείας βάζει εταιρικό φόρο 15% από το 2026, και 12,5% για το 2013–2025.\n\nΗ σελίδα της υπηρεσίας για την εταιρεία αναφέρει εταιρικό φόρο 20,6%. Η σελίδα ποσών 2026 αναφέρει τον ίδιο συντελεστή ως κρατικό φόρο εισοδήματος νομικών προσώπων.\n\n## Μερίσματα και τόκοι\n\nΠρόσωπο χωρίς κατοικία στην Κύπρο είναι έξω από την έκτακτη εισφορά για την άμυνα σε μερίσματα και τόκους. Κάτοικος με κατοικία είναι κατά κανόνα στο 5% στα μερίσματα από κέρδη του 2026. Μέρισμα κυπριακής εταιρείας από κέρδη έως το φορολογικό έτος 2025 μένει στο 17% αν εισπραχθεί έως τις 31 Δεκεμβρίου 2031. Τόκοι φυσικού προσώπου είναι στο 17%, ή 3% αν το συνολικό εισόδημα είναι κάτω από €12.000. Η εισφορά στο ενοίκιο καταργήθηκε για το 2026. Αυτά είναι στη σελίδα εισφοράς του Τμήματος και στη σελίδα κινήτρων του Υπουργείου Οικονομικών.\n\nΟ κρατικός φόρος σε εισόδημα κεφαλαίου, που καλύπτει μερίσματα και τόκους σε αυτή την κατηγορία, είναι 30% στη σελίδα ποσών 2026.\n\n## Κεφαλαιουχικά κέρδη\n\nΟ κυπριακός φόρος κεφαλαιουχικών κερδών σε ακίνητο στην Κύπρο είναι 20% του κέρδους μετά την επίσημη τιμαριθμική αναπροσαρμογή, με τις ισόβιες απαλλαγές του νόμου. Ο [υπολογιστής κεφαλαιουχικών κερδών](/el/calculators/capital-gains/) εφαρμόζει αυτόν τον κανόνα. Δεν φορολογεί κέρδος σε στοιχεία εκτός Κύπρου.\n\nΚέρδος που η υπηρεσία τοποθετεί στο εισόδημα κεφαλαίου είναι μέσα στο 30% παραπάνω. Χωριστός υπολογισμός κέρδους ακινήτου δεν αντιγράφηκε.\n\n## Κοινωνικές ασφαλίσεις\n\nΣυντελεστής κοινωνικής ασφάλισης αυτής της χώρας για το 2026 δεν αντιγράφηκε από την αρχή της για αυτή τη σελίδα. Ποσοστά ΓεΣΥ και κοινωνικών ασφαλίσεων της Κύπρου δεν επαναλαμβάνονται εδώ. Ο [οδηγός](/el/guides/resident-handbook/social-insurance/) περιγράφει την εγγραφή, όχι συντελεστή.\n\n## Σύμβαση με την Κύπρο\n\nΟ κατάλογος δείχνει συμφωνία σε ισχύ από τις 14 Νοεμβρίου 1989 και τροποποιητικό πρωτόκολλο που υπογράφηκε στις 3 Ιουλίου 2026. Η γραμμή, όπως διαβάστηκε, δεν δίνει σε εκείνο το πρωτόκολλο δική του ημερομηνία έναρξης ισχύος. Ο κατάλογος του Υπουργείου Οικονομικών διαβάστηκε στις 26 Νοεμβρίου 2026. Ποσοστά παρακράτησης της σύμβασης δεν τυπώνονται εδώ, γιατί τα άρθρα δεν αντιγράφηκαν από το κείμενο της Εφημερίδας. Η [σελίδα συμβάσεων](/el/guides/for-foreigners/tax-treaties/) μαζεύει τον ίδιο κατάλογο για τις χώρες που ήδη ονομάζει. Ο [κόμβος σύγκρισης](/el/guides/for-foreigners/compare/) και ο [υπολογιστής](/el/calculators/compare-countries/) χρησιμοποιούν μόνο τους γενικούς συντελεστές που εκείνη η σελίδα ήδη δένει με πηγή.\n\n## Κατοικία και non-dom\n\nΗ φορολογική κατοικία στην Κύπρο είναι ο κανόνας των 183 ημερών ή ο κανόνας των 60 ημερών στη σελίδα του Τμήματος Φορολογίας. Το non-dom αφορά την κατοικία (domicile), όχι αυτό το διαβατήριο. Δεν αλλάζει τις κλίμακες φόρου εισοδήματος. Οι όροι είναι στον [οδηγό non-dom](/el/guides/non-dom/) και στη [σελίδα μετεγκατάστασης](/el/guides/for-foreigners/relocating/).\n\n## Θεώρηση\n\nΠολίτης χώρας της Ένωσης που μένει πάνω από τρεις μήνες αιτείται πιστοποιητικό εγγραφής, έντυπο MEU1. Η σελίδα του Τμήματος Μετανάστευσης βάζει το τέλος στα €20. Το πιστοποιητικό δεν είναι φορολογική κατοικία και δεν είναι non-dom. Ο χωρισμός είναι στη σελίδα [επιλογών διαμονής](/el/guides/relocation/residence-options/).\n\n## Σε ποιον χρησιμεύει η σύγκριση\n\nΜισθός κάτω από το όριο κρατικού φόρου συναντά και πάλι δημοτικό φόρο, που αυτή η σελίδα δεν θα επινοήσει. Εταιρικό κέρδος στο 20,6% είναι πάνω από το κυπριακό 15%. Εισόδημα κεφαλαίου στο 30% είναι το νούμερο που μπαίνει δίπλα στην κυπριακή εισφορά άμυνας: μηδέν για κάτοικο χωρίς κατοικία και, κατά κανόνα, 5% στα μερίσματα 2026 για κάτοικο με κατοικία.\n\n## Τι δεν λέει αυτή η σελίδα\n\nΑριθμοί που δεν ήταν σε επίσημη σελίδα του 2026 όταν γράφτηκε αυτό το κείμενο ονομάζονται παραπάνω και δεν χρησιμοποιούνται ως συντελεστής. Η μετακίνηση από μόνη της δεν σταματά τον φόρο στη χώρα που αφήνετε. Φόροι εξόδου και υποχρεώσεις δήλωσης εκείνης της χώρας δεν αντιγράφηκαν εδώ, εκτός αν μια πρόταση παραπάνω παραπέμπει στην αρχή της.",
+    "faq": [
+      {
+        "q": "Ο σουηδικός φόρος εισοδήματος είναι 20%;",
+        "a": "Το 20% είναι ο κρατικός φόρος πάνω από 643.000 κορόνες φορολογητέου εισοδήματος εργασίας. Κάτω από το όριο ο κρατικός φόρος στο εισόδημα εργασίας είναι μηδέν, και ο δημοτικός φόρος εξακολουθεί. Ο δημοτικός συντελεστής δεν τυπώνεται εδώ."
+      },
+      {
+        "q": "Ποιος είναι ο φόρος στα σουηδικά μερίσματα;",
+        "a": "30% κρατικός φόρος στο εισόδημα κεφαλαίου, στη σελίδα ποσών της υπηρεσίας για το 2026."
+      },
+      {
+        "q": "Το πρωτόκολλο του Ιουλίου 2026 είναι σε ισχύ;",
+        "a": "Είναι υπογεγραμμένο. Ο κατάλογος του Υπουργείου, όπως διαβάστηκε, δεν δείχνει χωριστή ημερομηνία έναρξης ισχύος."
+      },
+      {
+        "q": "Το non-dom αφαιρεί τον σουηδικό δημοτικό φόρο;",
+        "a": "Όχι. Το non-dom είναι κυπριακό καθεστώς. Δεν ορίζει τον σουηδικό δημοτικό συντελεστή, και αυτή η σελίδα δεν λέει πότε τελειώνει η σουηδική κατοικία."
+      }
+    ],
+    "sources": [
+      {
+        "name": "Income-tax bands from 2026, Business in Cyprus",
+        "url": "https://www.businessincyprus.gov.cy/doing-business-in-cyprus/start-your-business/registering-for-income-tax-and-value-added-tax/"
+      },
+      {
+        "name": "Corporate-tax table, Tax Department",
+        "url": "https://www.gov.cy/mof-tax/documents/forologiki-dilosi-eisodimatos-etaireias-t-f-4-aytoergodotoymenoy-me-elegmenoys-logariasmoys-t-f-1/"
+      },
+      {
+        "name": "Defence contribution from 2026, Tax Department",
+        "url": "https://www.gov.cy/mof-tax/documents/ektakti-amyntiki-eisfora-eae/"
+      },
+      {
+        "name": "Tax residency and domicile, Tax Department",
+        "url": "https://www.gov.cy/mof-tax/en/documents/tax-residency-domicility/"
+      },
+      {
+        "name": "Double tax treaties, Ministry of Finance, read 26 November 2026",
+        "url": "https://www.gov.cy/mof/en/documents/double-tax-treaties/"
+      },
+      {
+        "name": "Amounts and percentages, income year 2026, Skatteverket",
+        "url": "https://www.skatteverket.se/privat/skatter/beloppochprocent/2026.4.1522bf3f19aea8075ba21.html"
+      },
+      {
+        "name": "Limited companies, Skatteverket",
+        "url": "https://www.skatteverket.se/foretag/drivaforetag/foretagsformer/aktiebolag.4.5c13cb6b1198121ee8580002546.html"
+      }
+    ]
+  }
+}
