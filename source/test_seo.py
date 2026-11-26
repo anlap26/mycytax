@@ -55,7 +55,6 @@ class SeoTests(unittest.TestCase):
         pages = [
             build.home("en"),
             build.links_page("ru"),
-            build.guide_page("el", "taxes-overview", []),
             build.calc_page("en", "vat"),
         ]
         for html in pages:
@@ -65,6 +64,17 @@ class SeoTests(unittest.TestCase):
             self.assertIn('<meta name="twitter:card" content="summary_large_image">', html)
             self.assertIn('<meta name="twitter:image" content="https://mycytax.com/assets/og.png">', html)
             self.assertIn('type="application/atom+xml"', html)
+            self.assertIn('<meta name="robots" content="index,follow,max-image-preview:large">', html)
+        guide = build.guide_page("el", "taxes-overview", [])
+        self.assertIn('<meta name="twitter:card" content="summary_large_image">', guide)
+        self.assertIn('type="application/atom+xml"', guide)
+        self.assertIn("https://mycytax.com/assets/guides/cards/el/taxes-overview.png", guide)
+        self.assertNotIn("/assets/og.png", guide)
+        merged = build.head("en", "T", "D", "/", lambda l: "/", robots="index,follow")
+        self.assertIn('<meta name="robots" content="index,follow,max-image-preview:large">', merged)
+        kept = build.head("en", "T", "D", "/", lambda l: "/", robots="noindex,follow")
+        self.assertIn('<meta name="robots" content="noindex,follow">', kept)
+        self.assertNotIn("max-image-preview", kept)
 
     def test_instagram_sits_next_to_telegram(self):
         for lang in build.LANGS:

@@ -54,6 +54,9 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install Pillow
+        run: pip install -q pillow
+
       - name: Test Telegram poster
         run: python3 -m unittest discover -s source -p 'test_*.py' -v
 

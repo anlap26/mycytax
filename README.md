@@ -19,6 +19,8 @@ The site is published from `anlap26/mycytax` on GitHub Pages. The public origin 
 
 Калькуляторы из панели не меняются. После сохранения страница на сайте обновляется сама, обычно через несколько минут.
 
+Заголовок справочника пишите ясным и интересным: из него должно быть понятно, о чём страница. Не используйте кликбейт. У каждого справочника нужна картинка шириной не меньше 1200 пикселей; лучше пропорция 16:9, например 1200×675. В JSON это поле `image`: `src` — имя файла в `source/static/guides/` (без папок), плюс `width`, `height` и `alt` на каждом языке. Берите только изображение, которое можно публиковать. Если такой картинки нет, сборка рисует карточку 1200×675 в цветах сайта с заголовком страницы и ставит её главной картинкой, картинкой Open Graph и картинкой Article.
+
 ## Editing
 
 - **In the browser:** https://mycytax.com/admin/ (Sveltia CMS, `admin/config.yml`). Sign in with a GitHub fine-grained token that has *Contents: Read and write* on `anlap26/mycytax`. Token login only; there is no OAuth server.
@@ -27,6 +29,8 @@ The site is published from `anlap26/mycytax` on GitHub Pages. The public origin 
 
 Guide fields: `title`, `description`, `body` (paragraphs separated by a blank line, `## ` headings, optional `- ` lists and `[text](https://…)` links), `faq` (`q`, `a`), `sources` (`name`, `url`).
 
+Write a clear, interesting headline that says what the page is about. Do not use clickbait. Every guide needs an image at least 1200 pixels wide; 16:9 (for example 1200×675) is the size to aim for. Set `image` in the guide JSON: `src` is a file name in `source/static/guides/` (no folders), plus `width`, `height` and `alt` in each language. Use only a picture you have the right to publish. If the guide has no image that wide, the build draws a 1200×675 card in the site colours with the page title, and uses it as the lead image, the Open Graph image and the Article image.
+
 ## Build
 
 From the repository root:
@@ -34,6 +38,8 @@ From the repository root:
 ```bash
 BASE=https://mycytax.com python3 source/build.py
 ```
+
+The build needs Pillow (`pip install pillow`) to draw the 1200×675 title card for a guide that has no image at least 1200 pixels wide.
 
 `BASE` is the site origin with no trailing slash. The path inside it becomes the link prefix.
 

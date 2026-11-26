@@ -6,7 +6,7 @@
 The custom domain is mycytax.com. BASE is the origin with no trailing slash.
 The path inside BASE becomes the link prefix. No trailing slash.
 """
-import datetime, html, json, os, re, shutil, subprocess, urllib.request
+import datetime, html, io, json, os, re, shutil, struct, subprocess, urllib.request
 import xml.etree.ElementTree as ET
 from urllib.parse import urlparse
 
@@ -1024,7 +1024,23 @@ def ga4_snippet():
         f'<script>gtag("js",new Date());gtag("config","{e(GA4_ID)}");</script>'
     )
 
-def head(lang, title, desc, path, alt_path, jsonld=None, extra="", robots="index,follow,max-image-preview:large"):
+def robots_content(value):
+    """Merge max-image-preview:large into a robots meta. Keep index,follow.
+
+    A noindex value is left unchanged. An indexable value gains the directive
+    when it is missing, so a future page that only says index,follow still
+    allows a large Discover preview.
+    """
+    parts = []
+    for part in (value or "").split(","):
+        part = part.strip()
+        if part and part not in parts:
+            parts.append(part)
+    if "noindex" not in parts and "max-image-preview:large" not in parts:
+        parts.append("max-image-preview:large")
+    return ",".join(parts)
+
+def head(lang, title, desc, path, alt_path, jsonld=None, extra="", robots="index,follow,max-image-preview:large", share=None):
     u = UI[lang]
     alts = []
     for l in LANGS:
@@ -1035,21 +1051,29 @@ def head(lang, title, desc, path, alt_path, jsonld=None, extra="", robots="index
         import json
         for obj in jsonld:
             ld += '<script type="application/ld+json">' + json.dumps(obj, ensure_ascii=False).replace("</", "<\\/") + "</script>"
-    image = absu("/assets/og.png")
+    if share:
+        image = share["url"]
+        image_w = int(share["width"])
+        image_h = int(share["height"])
+        image_alt = share.get("alt") or u["tagline"]
+    else:
+        image = absu("/assets/og.png")
+        image_w, image_h = 1200, 630
+        image_alt = u["tagline"]
     social = (
         f'<meta property="og:site_name" content="{e(u["name"])}">'
         f'<meta property="og:title" content="{e(title)}">'
         f'<meta property="og:description" content="{e(desc)}">'
         f'<meta property="og:url" content="{absu(path)}">'
         f'<meta property="og:type" content="website">'
-        f'<meta property="og:image" content="{image}">'
-        f'<meta property="og:image:width" content="1200">'
-        f'<meta property="og:image:height" content="630">'
-        f'<meta property="og:image:alt" content="{e(u["tagline"])}">'
+        f'<meta property="og:image" content="{e(image)}">'
+        f'<meta property="og:image:width" content="{image_w}">'
+        f'<meta property="og:image:height" content="{image_h}">'
+        f'<meta property="og:image:alt" content="{e(image_alt)}">'
         f'<meta name="twitter:card" content="summary_large_image">'
         f'<meta name="twitter:title" content="{e(title)}">'
         f'<meta name="twitter:description" content="{e(desc)}">'
-        f'<meta name="twitter:image" content="{image}">'
+        f'<meta name="twitter:image" content="{e(image)}">'
     )
     feed = (
         f'<link rel="alternate" type="application/atom+xml" title="{e(u["feed"])}" '
@@ -1064,7 +1088,7 @@ def head(lang, title, desc, path, alt_path, jsonld=None, extra="", robots="index
 <title>{e(title)}</title><meta name="description" content="{e(desc)}">
 <link rel="canonical" href="{absu(path)}">
 {chr(10).join(alts)}
-<meta name="robots" content="{robots}">
+<meta name="robots" content="{e(robots_content(robots))}">
 {social}
 {feed}
 <meta name="theme-color" content="#1e3d34">
@@ -1419,11 +1443,11 @@ def with_breadcrumbs(lang, path, title, jsonld):
     blocks.append(breadcrumbs(lang, path, title))
     return blocks
 
-def page_shell(lang, title, desc, path, alt, body, jsonld=None, active_path=None, robots="index,follow,max-image-preview:large"):
+def page_shell(lang, title, desc, path, alt, body, jsonld=None, active_path=None, robots="index,follow,max-image-preview:large", share=None):
     def path_for(l, alt=alt):
         return alt(l)
     runtime = affiliate_runtime() if ('data-affiliate="' in (body or "") or 'data-amazon-search="' in (body or "")) else ""
-    return head(lang, title, desc, path, alt, with_breadcrumbs(lang, path, title, jsonld), robots=robots) + header(lang, path_for) + body + runtime + footer(lang)
+    return head(lang, title, desc, path, alt, with_breadcrumbs(lang, path, title, jsonld), robots=robots, share=share) + header(lang, path_for) + body + runtime + footer(lang)
 
 LEAD = {
  "en": dict(h="Local help with your Cyprus property",
@@ -2090,6 +2114,190 @@ def calc_page(lang, slug):
 <script src="{href("/assets/calc.js")}" defer></script>'''
     return page_shell(lang, f"{t} | {SITE}", d, path, alt, body, ld)
 
+# Google Discover wants a lead image at least 1200px wide. 16:9 is the preferred frame.
+DISCOVER_MIN_W = 1200
+DISCOVER_CARD_W = 1200
+DISCOVER_CARD_H = 675
+CARD_FONT = os.path.join(HERE, "static", "fonts", "DejaVuSans-Bold.ttf")
+_JPEG_SOF = {
+    0xC0, 0xC1, 0xC2, 0xC3, 0xC5, 0xC6, 0xC7,
+    0xC9, 0xCA, 0xCB, 0xCD, 0xCE, 0xCF,
+}
+
+def _image_size(path):
+    """Pixel size of a PNG, JPEG or WebP, or None when the file is not one of those."""
+    with open(path, "rb") as f:
+        head = f.read(32)
+        if head.startswith(b"\x89PNG\r\n\x1a\n") and len(head) >= 24:
+            return struct.unpack(">II", head[16:24])
+        if head[:4] == b"RIFF" and head[8:12] == b"WEBP":
+            f.seek(0)
+            return _webp_size(f.read(40))
+        if head[:2] != b"\xff\xd8":
+            return None
+        f.seek(2)
+        return _jpeg_size(f)
+
+def _jpeg_size(f):
+    while True:
+        byte = f.read(1)
+        if not byte:
+            return None
+        if byte != b"\xff":
+            continue
+        marker = f.read(1)
+        while marker == b"\xff":
+            marker = f.read(1)
+            if not marker:
+                return None
+        code = marker[0]
+        if code in (0xD8, 0xD9):
+            return None
+        if code in (0x00, 0x01) or 0xD0 <= code <= 0xD7:
+            continue
+        ln = f.read(2)
+        if len(ln) < 2:
+            return None
+        seglen = struct.unpack(">H", ln)[0]
+        if seglen < 2:
+            return None
+        if code in _JPEG_SOF:
+            rest = f.read(seglen - 2)
+            if len(rest) < 5:
+                return None
+            height, width = struct.unpack(">HH", rest[1:5])
+            return width, height
+        f.seek(seglen - 2, 1)
+
+def _webp_size(data):
+    if len(data) < 30:
+        return None
+    kind = data[12:16]
+    if kind == b"VP8X":
+        width = 1 + int.from_bytes(data[24:27], "little")
+        height = 1 + int.from_bytes(data[27:30], "little")
+        return width, height
+    if kind == b"VP8 " and len(data) >= 30:
+        width, height = struct.unpack("<HH", data[26:30])
+        return width & 0x3FFF, height & 0x3FFF
+    if kind == b"VP8L" and len(data) >= 25:
+        bits = int.from_bytes(data[21:25], "little")
+        return (bits & 0x3FFF) + 1, ((bits >> 14) & 0x3FFF) + 1
+    return None
+
+def guide_card_path(lang, slug):
+    safe = slug.replace("/", "--")
+    return f"/assets/guides/cards/{lang}/{safe}.png"
+
+def guide_lead(lang, slug, title):
+    """Large lead image for a guide: the guide's own photo, or a 1200x675 title card."""
+    img = GUIDES[slug].get("image") or {}
+    src = _clean(img.get("src"))
+    if src and "/" not in src and not src.startswith("."):
+        path = os.path.join(HERE, "static", "guides", src)
+        size = _image_size(path) if os.path.isfile(path) else None
+        if size and size[0] >= DISCOVER_MIN_W:
+            altmap = img.get("alt") if isinstance(img.get("alt"), dict) else {}
+            alt = _clean(altmap.get(lang)) or _clean(altmap.get("en")) or title
+            rel = "/assets/guides/" + src
+            return {
+                "kind": "photo", "path": rel, "url": absu(rel),
+                "width": size[0], "height": size[1], "alt": alt,
+            }
+    rel = guide_card_path(lang, slug)
+    return {
+        "kind": "card", "path": rel, "url": absu(rel),
+        "width": DISCOVER_CARD_W, "height": DISCOVER_CARD_H, "alt": title,
+    }
+
+def _wrap_lines(draw, text, font, max_width):
+    words = [w for w in text.split() if w]
+    if not words:
+        return [""]
+    lines, cur = [], words[0]
+    for word in words[1:]:
+        trial = cur + " " + word
+        if draw.textlength(trial, font=font) <= max_width:
+            cur = trial
+        else:
+            lines.append(cur)
+            cur = word
+    lines.append(cur)
+    return lines
+
+def render_title_card(title):
+    """Branded 1200x675 PNG. Site colours and the page title. No photograph."""
+    try:
+        from PIL import Image, ImageDraw, ImageFont
+    except ImportError:
+        raise SystemExit("Pillow is required to draw guide title cards. Install it with: pip install pillow")
+    if not os.path.isfile(CARD_FONT):
+        raise SystemExit(f"missing {CARD_FONT}")
+    width, height = DISCOVER_CARD_W, DISCOVER_CARD_H
+    pine = (30, 61, 52)
+    copper = (140, 74, 47)
+    sand = (231, 199, 164)
+    paper = (247, 243, 236)
+    img = Image.new("RGB", (width, height), pine)
+    draw = ImageDraw.Draw(img)
+    draw.rectangle((0, 0, width, 8), fill=copper)
+    draw.rectangle((0, height - 12, width, height), fill=sand)
+    brand = ImageFont.truetype(CARD_FONT, 32)
+    draw.text((80, 52), SITE, font=brand, fill=sand)
+    brand_w = int(draw.textlength(SITE, font=brand))
+    draw.rectangle((80, 104, 80 + brand_w, 108), fill=copper)
+    text = " ".join((title or SITE).split())
+    max_w = width - 160
+    chosen = None
+    for size in range(64, 27, -2):
+        font = ImageFont.truetype(CARD_FONT, size)
+        lines = _wrap_lines(draw, text, font, max_w)
+        ascent, descent = font.getmetrics()
+        line_h = ascent + descent + max(6, size // 6)
+        block = line_h * len(lines)
+        too_wide = any(draw.textlength(line, font=font) > max_w for line in lines)
+        if not too_wide and len(lines) <= 6 and 140 + block <= height - 40:
+            chosen = (font, lines, line_h)
+            break
+    if chosen is None:
+        font = ImageFont.truetype(CARD_FONT, 28)
+        lines = _wrap_lines(draw, text, font, max_w)
+        ascent, descent = font.getmetrics()
+        line_h = ascent + descent + 6
+        chosen = (font, lines, line_h)
+    font, lines, line_h = chosen
+    y = 140
+    for line in lines:
+        draw.text((80, y), line, font=font, fill=paper)
+        y += line_h
+    buf = io.BytesIO()
+    img.save(buf, format="PNG", optimize=False)
+    return buf.getvalue()
+
+def write_guide_cards():
+    """Draw a title card for every guide language that has no 1200px-wide photo."""
+    for slug in GUIDE_ORDER:
+        for lang in LANGS:
+            title = GUIDES[slug]["text"][lang]["title"]
+            lead = guide_lead(lang, slug, title)
+            if lead["kind"] != "card":
+                continue
+            dest = os.path.join(OUT, lead["path"].lstrip("/"))
+            os.makedirs(os.path.dirname(dest), exist_ok=True)
+            with open(dest, "wb") as f:
+                f.write(render_title_card(title))
+
+def guide_lead_figure(lang, slug, lead):
+    """The large image at the top of a guide. A small extra photo stays below the card."""
+    if lead["kind"] == "photo":
+        return guide_figure(lang, slug)
+    card = (
+        f'<figure class="guide-fig"><img src="{href(lead["path"])}" alt="{e(lead["alt"])}" '
+        f'width="{lead["width"]}" height="{lead["height"]}"></figure>'
+    )
+    extra = guide_figure(lang, slug)
+    return card + extra
+
 def guide_figure(lang, slug):
     """Optional photograph stored beside the guide. Empty when the guide has none."""
     img = GUIDES[slug].get("image") or {}
@@ -2141,9 +2349,14 @@ def guide_page(lang, slug, words_out):
         if parent in GUIDES:
             parent_meta, _ = load_md(lang, parent)
             crumb += f' · <a href="{href(loc(lang, "/guides/"+parent+"/"))}">{e(parent_meta["title"])}</a>'
-    figure = guide_figure(lang, slug)
-    if figure:
-        ld[0]["image"] = absu("/assets/guides/" + GUIDES[slug]["image"]["src"])
+    lead = guide_lead(lang, slug, meta["title"])
+    figure = guide_lead_figure(lang, slug, lead)
+    ld[0]["image"] = {
+        "@type": "ImageObject",
+        "url": lead["url"],
+        "width": lead["width"],
+        "height": lead["height"],
+    }
     wallet = trezor_box(lang) if slug == "for-foreigners/crypto" else ""
     disclosure = "" if wallet else (
         affiliate_disclosure(lang) if ('data-affiliate="' in body_html or 'data-amazon-search="' in body_html) else ""
@@ -2163,7 +2376,7 @@ def guide_page(lang, slug, words_out):
 {partners_block(lang, "guides", slug)}{telegram_card(lang)}
 {news_block(lang)}</article></main>'''
     robots = "noindex,follow" if lang in GUIDES[slug]["missing"] else "index,follow,max-image-preview:large"
-    return page_shell(lang, f'{meta["title"]} | {SITE}', meta["description"], path, alt, body, ld, robots=robots)
+    return page_shell(lang, f'{meta["title"]} | {SITE}', meta["description"], path, alt, body, ld, robots=robots, share=lead)
 
 def static_page(lang, slug):
     title, desc, paras = PAGES[slug]["text"][lang]
@@ -2891,6 +3104,7 @@ def main():
         for name in os.listdir(guide_img):
             if name.lower().endswith((".jpg", ".jpeg", ".png", ".webp")):
                 shutil.copy(os.path.join(guide_img, name), os.path.join(dest, name))
+    write_guide_cards()
     w("/assets/style.css", css())
     words = []
     for lang in LANGS:
