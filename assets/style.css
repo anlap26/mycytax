@@ -178,3 +178,25 @@ main.bio{width:min(440px,calc(100% - 32px));margin:0 auto;padding:36px 0 12px}
 .bio-links a:hover,.bio-links a:focus-visible{background:var(--pine2);color:#fff}
 .bio-links a.bio-contact{background:#e7c7a4;color:var(--pine)}
 .bio-links a.bio-contact:hover,.bio-links a.bio-contact:focus-visible{background:#f4efe6;color:var(--pine)}
+.embed-list{display:grid;gap:22px;margin-top:8px}
+.embed-list h2{font-family:Georgia,Palatino,serif;font-size:26px;line-height:1.2;margin:0 0 6px}
+.embed-list .embed-links{margin:0 0 8px;font-weight:700}
+.embed-box{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--pine2);border-radius:16px;padding:16px 16px 14px;margin:22px 0;max-width:720px}
+.embed-list .embed-box{max-width:760px}
+.embed-box h2{font-family:Georgia,Palatino,serif;font-size:22px;line-height:1.25;margin:0 0 8px}
+.embed-box > p{margin:0 0 12px;max-width:68ch}
+.embed-sizes{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 10px}
+.embed-sizes button{font:inherit;font-weight:650;font-size:14.5px;background:#fff;color:var(--pine);border:2px solid var(--pine);border-radius:999px;padding:6px 12px;cursor:pointer}
+.embed-sizes button[aria-pressed="true"]{background:var(--pine);color:#fff}
+.embed-sizes button:hover,.embed-sizes button:focus-visible{background:var(--copper);color:#fff;border-color:var(--copper)}
+.embed-box textarea{display:block;box-sizing:border-box;font:13px/1.45 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;width:100%;min-height:8.5em;padding:10px 12px;border:1px solid #d5cbbd;border-radius:10px;background:#fff;color:var(--ink);resize:vertical}
+.embed-box .embed-copy{margin-top:10px}
+.embed-box .embed-copy[data-copied="1"]{background:var(--pine2)}
+body.embed{background:var(--paper)}
+body.embed .embed-main{width:min(720px,calc(100% - 20px));margin:0 auto;padding:12px 0 18px}
+body.embed h1{font-family:Georgia,Palatino,serif;font-size:clamp(22px,4vw,30px);line-height:1.15;margin:0 0 12px}
+body.embed .calcform,body.embed .result{max-width:none}
+.embed-credit{margin:16px 0 0;padding-top:12px;border-top:1px solid var(--line);font-size:15px;font-weight:700}
+.embed-credit a{color:var(--pine)}
+body.embed .fine{margin:6px 0 0}
+@media(max-width:600px){.embed-sizes{flex-direction:column}.embed-sizes button{width:100%}}

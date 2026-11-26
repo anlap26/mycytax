@@ -241,6 +241,78 @@ CALCS = {
  },
 }
 
+# Widget id used by assets/calc.js. Every calculator in CALC_ORDER needs one.
+CALC_IDS = {
+ "transfer-fees": "transfer",
+ "stamp-duty": "stamp",
+ "vat": "vat",
+ "capital-gains": "cgt",
+ "rental-yield": "rental",
+ "mortgage": "mortgage",
+ "non-dom": "nondom",
+ "company-or-self-employed": "company",
+ "purchase-costs": "purchase",
+ "compare-countries": "compare",
+}
+
+# Copy for /embed/ and the box under each calculator. The English powered-by
+# line and the English snippet anchor are the backlink text publishers paste.
+EMBED = {
+ "en": dict(
+    footer="Embed calculators",
+    h="Free Cyprus tax calculators for your website",
+    lede="Paste a calculator into your page. The frame loads from MyCyTax and stays up to date. The link under the frame is a normal link to the full calculator.",
+    desc="Embed a free Cyprus tax calculator on your site. Transfer fees, VAT, stamp duty, capital gains, rent, mortgage and more, each with a link to MyCyTax.",
+    box_h="Embed this calculator",
+    box_p="Copy this code. The link sits outside the frame, so a reader on your site can open the full calculator.",
+    copy="Copy code",
+    copied="Copied",
+    sizes="Width and height",
+    narrow="Narrow",
+    medium="Medium",
+    wide="Full width",
+    powered="Powered by MyCyTax — Cyprus tax calculators",
+    anchor="Calculator by MyCyTax",
+    preview="Preview embed",
+ ),
+ "ru": dict(
+    footer="Калькуляторы для сайта",
+    h="Бесплатные калькуляторы налогов Кипра для вашего сайта",
+    lede="Вставьте калькулятор на свою страницу. Рамка открывается с MyCyTax и обновляется вместе с сайтом. Ссылка под рамкой — обычная ссылка на полный калькулятор.",
+    desc="Встройте бесплатный калькулятор налогов Кипра на свой сайт. Сборы, НДС, гербовый сбор, прирост капитала, аренда, ипотека и другие, со ссылкой на MyCyTax.",
+    box_h="Встроить этот калькулятор",
+    box_p="Скопируйте этот код. Ссылка стоит снаружи рамки, чтобы читатель с вашего сайта открыл полный калькулятор.",
+    copy="Скопировать код",
+    copied="Скопировано",
+    sizes="Ширина и высота",
+    narrow="Узкий",
+    medium="Средний",
+    wide="На всю ширину",
+    powered="На платформе MyCyTax — калькуляторы налогов Кипра",
+    anchor="Калькулятор от MyCyTax",
+    preview="Открыть встраиваемую страницу",
+ ),
+ "el": dict(
+    footer="Υπολογιστές για ιστότοπο",
+    h="Δωρεάν φορολογικοί υπολογιστές Κύπρου για τον ιστότοπό σας",
+    lede="Επικολλήστε έναν υπολογιστή στη σελίδα σας. Το πλαίσιο φορτώνει από το MyCyTax και μένει ενημερωμένο. Ο σύνδεσμος κάτω από το πλαίσιο είναι κανονικός σύνδεσμος προς τον πλήρη υπολογιστή.",
+    desc="Ενσωματώστε έναν δωρεάν φορολογικό υπολογιστή Κύπρου στον ιστότοπό σας. Τέλη, ΦΠΑ, χαρτόσημο, κεφαλαιουχικά κέρδη, ενοίκιο, δόση και άλλα, με σύνδεσμο στο MyCyTax.",
+    box_h="Ενσωματώστε αυτόν τον υπολογιστή",
+    box_p="Αντιγράψτε αυτόν τον κώδικα. Ο σύνδεσμος είναι έξω από το πλαίσιο, ώστε ο αναγνώστης στον ιστότοπό σας να ανοίξει τον πλήρη υπολογιστή.",
+    copy="Αντιγραφή κώδικα",
+    copied="Αντιγράφηκε",
+    sizes="Πλάτος και ύψος",
+    narrow="Στενό",
+    medium="Μεσαίο",
+    wide="Πλήρες πλάτος",
+    powered="Με την υποστήριξη του MyCyTax — φορολογικοί υπολογιστές Κύπρου",
+    anchor="Υπολογιστής από τη MyCyTax",
+    preview="Προεπισκόπηση ενσωμάτωσης",
+ ),
+}
+# Default snippet is the middle preset. Narrow and full width are the other two.
+EMBED_PRESETS = (("400", "1100", "narrow"), ("680", "1280", "medium"), ("100%", "1480", "wide"))
+
 def e(s):
     return html.escape(s if s is not None else "", quote=True)
 
@@ -984,6 +1056,28 @@ main.bio{width:min(440px,calc(100% - 32px));margin:0 auto;padding:36px 0 12px}
 .bio-links a:hover,.bio-links a:focus-visible{background:var(--pine2);color:#fff}
 .bio-links a.bio-contact{background:#e7c7a4;color:var(--pine)}
 .bio-links a.bio-contact:hover,.bio-links a.bio-contact:focus-visible{background:#f4efe6;color:var(--pine)}
+.embed-list{display:grid;gap:22px;margin-top:8px}
+.embed-list h2{font-family:Georgia,Palatino,serif;font-size:26px;line-height:1.2;margin:0 0 6px}
+.embed-list .embed-links{margin:0 0 8px;font-weight:700}
+.embed-box{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--pine2);border-radius:16px;padding:16px 16px 14px;margin:22px 0;max-width:720px}
+.embed-list .embed-box{max-width:760px}
+.embed-box h2{font-family:Georgia,Palatino,serif;font-size:22px;line-height:1.25;margin:0 0 8px}
+.embed-box > p{margin:0 0 12px;max-width:68ch}
+.embed-sizes{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 10px}
+.embed-sizes button{font:inherit;font-weight:650;font-size:14.5px;background:#fff;color:var(--pine);border:2px solid var(--pine);border-radius:999px;padding:6px 12px;cursor:pointer}
+.embed-sizes button[aria-pressed="true"]{background:var(--pine);color:#fff}
+.embed-sizes button:hover,.embed-sizes button:focus-visible{background:var(--copper);color:#fff;border-color:var(--copper)}
+.embed-box textarea{display:block;box-sizing:border-box;font:13px/1.45 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;width:100%;min-height:8.5em;padding:10px 12px;border:1px solid #d5cbbd;border-radius:10px;background:#fff;color:var(--ink);resize:vertical}
+.embed-box .embed-copy{margin-top:10px}
+.embed-box .embed-copy[data-copied="1"]{background:var(--pine2)}
+body.embed{background:var(--paper)}
+body.embed .embed-main{width:min(720px,calc(100% - 20px));margin:0 auto;padding:12px 0 18px}
+body.embed h1{font-family:Georgia,Palatino,serif;font-size:clamp(22px,4vw,30px);line-height:1.15;margin:0 0 12px}
+body.embed .calcform,body.embed .result{max-width:none}
+.embed-credit{margin:16px 0 0;padding-top:12px;border-top:1px solid var(--line);font-size:15px;font-weight:700}
+.embed-credit a{color:var(--pine)}
+body.embed .fine{margin:6px 0 0}
+@media(max-width:600px){.embed-sizes{flex-direction:column}.embed-sizes button{width:100%}}
 '''
 
 def bing_meta():
@@ -1117,6 +1211,7 @@ def footer(lang):
     u = UI[lang]
     links = [
         (loc(lang, "/guides/for-foreigners/"), u["foreigners"]),
+        (loc(lang, "/embed/"), EMBED[lang]["footer"]),
         (loc(lang, "/about/"), u["about"]), (loc(lang, "/contact/"), u["contact"]),
         (loc(lang, "/privacy/"), u["privacy"]), (loc(lang, "/cookies/"), u["cookies"]),
         (loc(lang, "/terms/"), u["terms"]),
@@ -1396,6 +1491,7 @@ def _crumb_name(lang, parts, current_title):
         "affiliate-disclosure": u["affiliates"], "property-consultation": u["consult"],
         "services": u["services"], "calculators": u["calcs"], "guides": u["guides"],
         "real-estate": u["real_estate"], "buying-checklist": CHECKLIST[lang]["gate_h"],
+        "embed": EMBED[lang]["footer"],
     }
     if len(parts) == 1 and parts[0] in known:
         return known[parts[0]]
@@ -2039,6 +2135,161 @@ def compare_country_links(lang):
     )
     return f"<h2>{e(heads[lang])}</h2><ul>{items}</ul>"
 
+def embed_paths(lang, slug):
+    """(embed path, full calculator path) for one language."""
+    return loc(lang, f"/embed/{slug}/"), loc(lang, f"/calculators/{slug}/")
+
+def embed_snippet(lang, slug, width, height):
+    """Iframe plus the backlink that sits outside it. The anchor is dofollow."""
+    embed, full = embed_paths(lang, slug)
+    title = CALCS[slug][lang][0]
+    return (
+        f'<iframe src="{absu(embed)}" width="{width}" height="{height}" '
+        f'style="border:0;max-width:100%" title="{e(title)}"></iframe>'
+        f'<p><a href="{absu(full)}">{e(EMBED[lang]["anchor"])}</a></p>'
+    )
+
+def embed_box(lang, slug):
+    """Presets and a copyable snippet. Used under the calculator and on /embed/."""
+    copy = EMBED[lang]
+    embed, full = embed_paths(lang, slug)
+    title = CALCS[slug][lang][0]
+    width, height, _key = EMBED_PRESETS[1]
+    buttons = []
+    for preset_w, preset_h, key in EMBED_PRESETS:
+        pressed = "true" if key == "medium" else "false"
+        label = f"{copy[key]} {preset_w}×{preset_h}"
+        buttons.append(
+            f'<button type="button" data-width="{e(preset_w)}" data-height="{e(preset_h)}" '
+            f'aria-pressed="{pressed}">{e(label)}</button>'
+        )
+    return (
+        f'<section class="embed-box" data-embed data-src="{e(absu(embed))}" '
+        f'data-href="{e(absu(full))}" data-title="{e(title)}" data-anchor="{e(copy["anchor"])}">'
+        f'<h2>{e(copy["box_h"])}</h2><p>{e(copy["box_p"])}</p>'
+        f'<div class="embed-sizes" role="group" aria-label="{e(copy["sizes"])}">{"".join(buttons)}</div>'
+        f'<textarea readonly rows="4" spellcheck="false" data-embed-code>{e(embed_snippet(lang, slug, width, height))}</textarea>'
+        f'<button type="button" class="go embed-copy" data-embed-copy data-label="{e(copy["copy"])}" '
+        f'data-done="{e(copy["copied"])}">{e(copy["copy"])}</button></section>'
+    )
+
+def embed_script():
+    """Rewrite the snippet when a size is chosen, and copy it."""
+    return (
+        "<script>(function(){"
+        "function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\"/g,'&quot;');}"
+        "function snippet(box,w,h){"
+        "return '<iframe src=\"'+esc(box.getAttribute('data-src'))+'\" width=\"'+esc(w)+'\" height=\"'+esc(h)+'\" style=\"border:0;max-width:100%\" title=\"'+esc(box.getAttribute('data-title'))+'\"></iframe><p><a href=\"'+esc(box.getAttribute('data-href'))+'\">'+esc(box.getAttribute('data-anchor'))+'</a></p>';"
+        "}"
+        "document.querySelectorAll('[data-embed]').forEach(function(box){"
+        "var code=box.querySelector('[data-embed-code]');"
+        "function apply(btn){"
+        "box.querySelectorAll('[data-width]').forEach(function(b){b.setAttribute('aria-pressed',b===btn?'true':'false');});"
+        "code.value=snippet(box,btn.getAttribute('data-width'),btn.getAttribute('data-height'));"
+        "}"
+        "box.querySelectorAll('[data-width]').forEach(function(btn){btn.addEventListener('click',function(){apply(btn);});});"
+        "var copy=box.querySelector('[data-embed-copy]');"
+        "if(!copy)return;"
+        "copy.addEventListener('click',function(){"
+        "var text=code.value;"
+        "function done(){copy.setAttribute('data-copied','1');copy.textContent=copy.getAttribute('data-done');"
+        "window.setTimeout(function(){copy.removeAttribute('data-copied');copy.textContent=copy.getAttribute('data-label');},2000);}"
+        "if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(text).then(done,function(){code.focus();code.select();try{document.execCommand('copy');}catch(err){}done();});}"
+        "else{code.focus();code.select();try{document.execCommand('copy');}catch(err){}done();}"
+        "});"
+        "});"
+        "})();</script>"
+    )
+
+def embed_page(lang, slug):
+    """Calculator only, for an iframe. No site chrome, no ads, not indexed.
+
+    Framing is allowed here and nowhere else: a CSP meta on this document, and
+    a matching path in /_headers for hosts that apply that file. GitHub Pages
+    does not send custom headers, and it does not send X-Frame-Options, so the
+    frame works. The powered-by link has no rel, so it is dofollow.
+    """
+    if slug not in CALC_IDS:
+        raise SystemExit(f"no calculator id for embed: {slug}")
+    title, _desc = CALCS[slug][lang]
+    embed, full = embed_paths(lang, slug)
+    return (
+        f'<!doctype html><html lang="{lang}"><head><meta charset="utf-8">'
+        f'<meta name="viewport" content="width=device-width,initial-scale=1">'
+        f'<meta name="robots" content="noindex,follow">'
+        f'<meta http-equiv="Content-Security-Policy" content="frame-ancestors *;">'
+        f"<title>{e(title)}</title>"
+        f'<link rel="canonical" href="{absu(embed)}">'
+        f'<link rel="stylesheet" href="{href("/assets/style.css")}"></head>'
+        f'<body class="embed"><main id="main" class="embed-main">'
+        f"<h1>{e(title)}</h1>"
+        f'<div id="calc" data-calc="{e(CALC_IDS[slug])}"></div>'
+        f'<p class="embed-credit"><a href="{absu(full)}" target="_top">{e(EMBED[lang]["powered"])}</a></p>'
+        f'<p class="fine">{e(UI[lang]["disclaimer"])}</p>'
+        f"</main>"
+        f'<script src="{href("/assets/calc.js")}" defer></script></body></html>'
+    )
+
+def embed_landing(lang):
+    """Indexable list of every embeddable calculator, with the same snippet."""
+    copy = EMBED[lang]
+    path = loc(lang, "/embed/")
+    def alt(l):
+        return loc(l, "/embed/")
+    blocks = []
+    for slug in CALC_ORDER:
+        title, desc = CALCS[slug][lang]
+        embed, full = embed_paths(lang, slug)
+        blocks.append(
+            f"<section><h2>{e(title)}</h2><p>{e(desc)}</p>"
+            f'<p class="embed-links"><a href="{href(full)}">{e(UI[lang]["open"])}</a>'
+            f' · <a href="{href(embed)}">{e(copy["preview"])}</a></p>'
+            f"{embed_box(lang, slug)}</section>"
+        )
+    ld = [{
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": copy["h"],
+        "description": copy["desc"],
+        "url": absu(path),
+        "inLanguage": lang,
+        "isPartOf": {"@type": "WebSite", "name": SITE, "url": absu(loc(lang, "/"))},
+    }]
+    body = (
+        f'<main id="main" class="wrap page"><h1>{e(copy["h"])}</h1>'
+        f'<p class="lede">{e(copy["lede"])}</p>'
+        f'<div class="embed-list">{"".join(blocks)}</div>'
+        f"{embed_script()}</main>"
+    )
+    return page_shell(lang, f'{copy["h"]} | {SITE}', copy["desc"], path, alt, body, ld)
+
+def embed_headers():
+    """Framing rules for hosts that read a Netlify or Cloudflare _headers file.
+
+    GitHub Pages ignores this file. The rules still name the only paths that
+    may be framed: each calculator embed, in each language, and not the
+    landing page or the rest of the site.
+    """
+    lines = [
+        "# Only the lightweight calculator embeds may be framed by other sites.",
+        "# GitHub Pages ignores this file. Netlify and Cloudflare Pages apply it.",
+        "# frame-ancestors in a meta tag is ignored by browsers, so the allow",
+        "# also lives here. On an embed path it replaces the site-wide rule.",
+        "/*",
+        "  X-Frame-Options: SAMEORIGIN",
+        "  Content-Security-Policy: frame-ancestors 'self'",
+        "",
+    ]
+    for lang in LANGS:
+        for slug in CALC_ORDER:
+            for suffix in ("", "/", "/index.html"):
+                lines.append(loc(lang, f"/embed/{slug}{suffix}"))
+                lines.append("  X-Frame-Options: ALLOWALL")
+                lines.append("  Content-Security-Policy: frame-ancestors *")
+                lines.append("  X-Robots-Tag: noindex, follow")
+                lines.append("")
+    return "\n".join(lines)
+
 def calc_page(lang, slug):
     u = UI[lang]
     t, d = CALCS[slug][lang]
@@ -2105,7 +2356,9 @@ def calc_page(lang, slug):
               {"@type":"Question","name":t,"acceptedAnswer":{"@type":"Answer","text":d}}]}]
     body = f'''<main id="main" class="wrap page"><p class="meta"><a href="{href(loc(lang, "/calculators/"))}">{e(u["calcs"])}</a></p>
 <h1>{e(t)}</h1><p class="lede">{e(d)}</p><p class="banner">{e(DISCLAIMER[lang])}</p>{ad("calc-top")}
-<div id="calc" data-consult="{contact_href(lang,"buy")}" data-calc="{e({"transfer-fees":"transfer","stamp-duty":"stamp","vat":"vat","capital-gains":"cgt","rental-yield":"rental","mortgage":"mortgage","non-dom":"nondom","company-or-self-employed":"company","purchase-costs":"purchase","compare-countries":"compare"}[slug])}"></div>
+<div id="calc" data-consult="{contact_href(lang,"buy")}" data-calc="{e(CALC_IDS[slug])}"></div>
+{embed_box(lang, slug)}
+{embed_script()}
 {offer}
 {lead_card(lang)}
 {consult_card(lang, {"capital-gains":"Capital gains tax","rental-yield":"Rental income tax"}.get(slug, ""))}
@@ -3008,7 +3261,7 @@ def listing_detail(lang, item):
 
 def sitemap():
     paths = ["/"]
-    for slug in ("about", "contact", "privacy", "cookies", "terms", "affiliate-disclosure", "property-consultation", "services", "buying-checklist", "calculators", "guides"):
+    for slug in ("about", "contact", "privacy", "cookies", "terms", "affiliate-disclosure", "property-consultation", "services", "buying-checklist", "calculators", "guides", "embed"):
         paths.append(f"/{slug}/")
     for slug in CALC_ORDER:
         paths.append(f"/calculators/{slug}/")
@@ -3113,6 +3366,9 @@ def main():
         w(loc(lang, "/guides/") + "index.html", listing(lang, "guides"))
         for slug in CALC_ORDER:
             w(loc(lang, f"/calculators/{slug}/") + "index.html", calc_page(lang, slug))
+        w(loc(lang, "/embed/") + "index.html", embed_landing(lang))
+        for slug in CALC_ORDER:
+            w(loc(lang, f"/embed/{slug}/") + "index.html", embed_page(lang, slug))
         for slug in GUIDE_ORDER:
             w(loc(lang, f"/guides/{slug}/") + "index.html", guide_page(lang, slug, words))
         for slug in PAGE_ORDER:
@@ -3131,6 +3387,7 @@ def main():
         w(loc(lang, "/links/") + "index.html", links_page(lang))
         w(loc(lang, "/feed.xml"), atom_feed(lang))
     w("/sitemap.xml", sitemap())
+    w("/_headers", embed_headers())
     w(f"/{INDEXNOW_KEY}.txt", INDEXNOW_KEY + "\n")
     w("/robots.txt", (
         "User-agent: *\n"
