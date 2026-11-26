@@ -1,0 +1,181 @@
+{
+  "slug": "for-foreigners/companies",
+  "seq": 44,
+  "ru": {
+    "title": "Компания на Кипре и корпоративный налог 15%",
+    "description": "С 2026 года Налоговый департамент публикует корпоративный налог 15%. Вменённое распределение по прибыли с 2026 года отменено. Дивиденд лицу с домицилем — 5%.",
+    "body": "Проверено: 26 ноября 2026 года.\n\n## Короткий ответ\n\nНа странице декларации компании Налоговый департамент публикует таблицу ставок. С 2026 года корпоративный налог — 15%. За 2013–2025 годы та же таблица ставит 12,5%. За 2003–2012 годы — 10%. Это ставка на прибыль компании, которая попадает в закон. Это не ставка на зарплату владельца и не обещание, что вся жизнь иностранца уйдёт в компанию.\n\n## Дивиденд после налога\n\nСтраница департамента о взносе на оборону с 2026 года ставит дивиденды по 5%. Министерство финансов на странице стимулов пишет то же: взнос удерживают с дивидендов физических лиц по 5% из прибыли, заработанной после 1 января 2026 года, а до этой даты — по 17%.\n\nЗаписка департамента уточняет дедушкину оговорку. Дивиденд, полученный от компании-резидента до 31 декабря 2031 года из прибыли налоговых лет по 2025 год включительно, остаётся по 17%. Пример на той же записке: дивиденд 2027 года из прибыли 2025 года — 17%, из прибыли 2026 года — 5%.\n\nЛицо без домициля вне взноса по дивидендам целиком. Это страница департамента о резидентстве, не скидка, которую покупают в первый год. Условия — в [справочнике non-dom](/ru/guides/non-dom/).\n\nВменённое распределение дивиденда по прибыли с 2026 года и далее страница департамента помечает как отменённое. По прибыли до этого года переходные правила в записке длинные. Эта страница их не сжимает в одну цифру.\n\nОтдельные строки той же таблицы касаются дивиденда компании в несотрудничающей юрисдикции (17%) и скрытого распределения (10%). Они не являются обычной ставкой акционера-физика.\n\n## Чего сравнение с самозанятостью не включает\n\n[Калькулятор](/ru/calculators/company-or-self-employed/) ставит 15% и, если вся прибыль после налога выплачена дивидендом из прибыли 2026 года, взнос 5% или ноль. Рядом — подоходный налог с той же прибыли по шкалам 2026 года, как с дохода самозанятого.\n\nВ цифры не входят социальное страхование, ГЕСИ, расходы, зарплата директора и льготы по найму. Тест, когда компания считается налоговым резидентом только из-за регистрации на Кипре, эта страница не пересказывает: статья 2 в своде на эту дату здесь не цитировалась построчно. Если соглашение говорит иначе, читают соглашение. Перечень — на [странице соглашений](/ru/guides/for-foreigners/tax-treaties/).\n\nПроценты компании эта страница отдельной ставкой взноса не называет, кроме строк, которые таблица департамента печатает прямо, например 17% при выплате в несотрудничающую юрисдикцию. Общую фразу «все проценты компании только в корпоративном налоге» из вторичного обзора сюда не переносят.",
+    "faq": [
+      {
+        "q": "15% — это налог и на дивиденд тоже?",
+        "a": "15% — корпоративный налог с прибыли. Дивиденд физическому лицу с домицилем из прибыли 2026 года департамент облагает взносом ещё 5%. Лицо без домициля этот взнос не платит."
+      },
+      {
+        "q": "Старый дивиденд из прибыли 2024 года всё ещё 17%?",
+        "a": "Записка департамента говорит: дивиденд компании-резидента из прибыли по 2025 год, полученный до 31 декабря 2031 года, остаётся по 17%. Это не ставка на прибыль 2026 года."
+      },
+      {
+        "q": "Калькулятор выбирает компанию за меня?",
+        "a": "Нет. Он не считает взносы социального страхования и не решает, является ли выплата дивидендом. Это иллюстрация двух опубликованных ставок."
+      },
+      {
+        "q": "Вменённое распределение ещё есть?",
+        "a": "Страница департамента пишет, что оно отменено в отношении прибыли с 2026 года и далее. Переход для более ранней прибыли в той же записке не сводится здесь к одной фразе."
+      }
+    ],
+    "howto": [
+      {
+        "name": "Взять ставку компании из таблицы департамента",
+        "text": "С 2026 года строка таблицы на странице декларации компании — 15%. 12,5% в той же таблице относятся к 2013–2025 годам."
+      },
+      {
+        "name": "Отделить дивиденд",
+        "text": "Прибыль 2026 года, выплаченная дивидендом лицу с домицилем, идёт со взносом 5%. Лицо без домициля вне взноса. Прибыль по 2025 год может остаться по 17% до 31 декабря 2031 года."
+      },
+      {
+        "name": "Не подставлять социальное страхование",
+        "text": "Калькулятор компании и самозанятости эти взносы не включает. Их публикует Служба социального страхования, и эта страница цифру не копирует."
+      }
+    ],
+    "sources": [
+      {
+        "name": "Таблица корпоративного налога на странице декларации компании, Налоговый департамент",
+        "url": "https://www.gov.cy/mof-tax/documents/forologiki-dilosi-eisodimatos-etaireias-t-f-4-aytoergodotoymenoy-me-elegmenoys-logariasmoys-t-f-1/"
+      },
+      {
+        "name": "Взнос на оборону с 2026 года, Налоговый департамент",
+        "url": "https://www.gov.cy/mof-tax/documents/ektakti-amyntiki-eisfora-eae/"
+      },
+      {
+        "name": "Записка о поправках к закону о взносе, Налоговый департамент",
+        "url": "https://www.gov.cy/media/sites/167/2026/03/EEA-%CE%A6%CE%9A%CE%9A-%CE%9C%CE%95%CE%A4%CE%91%CE%A1%CE%A1%CE%A5%CE%98%CE%9C%CE%99%CE%A3%CE%97-06032026.pdf"
+      },
+      {
+        "name": "Налоговые стимулы, Министерство финансов",
+        "url": "https://www.gov.cy/mof/en/documents/tax-incentives/"
+      },
+      {
+        "name": "Резидентство и non-dom, Налоговый департамент",
+        "url": "https://www.gov.cy/mof-tax/en/documents/tax-residency-domicility/"
+      }
+    ]
+  },
+  "en": {
+    "title": "A Cyprus company and the 15% corporate tax",
+    "description": "From 2026 the Tax Department publishes corporate tax at 15%. Deemed distribution on profits from 2026 is abolished. A dividend to a domiciled individual is at 5%.",
+    "body": "Last checked: 26 November 2026.\n\n## Short answer\n\nOn the company-return page the Tax Department publishes a rate table. From 2026 corporate tax is 15%. For 2013–2025 the same table puts 12.5%. For 2003–2012 it puts 10%. That is the rate on company profit that falls inside the statute. It is not the rate on the owner’s salary, and it is not a promise that a foreigner’s whole life moves into a company.\n\n## The dividend after the tax\n\nThe Department’s defence-contribution page, from 2026, puts dividends at 5%. The Ministry of Finance incentives page says the same: the contribution is withheld on dividends received by individuals at 5% from profits earned after 1 January 2026, and before that date at 17%.\n\nThe Department’s note states the grandfathering. A dividend received from a resident company by 31 December 2031 out of profits of tax years up to and including 2025 stays at 17%. The example on that note is a 2027 dividend out of 2025 profits at 17%, and out of 2026 profits at 5%.\n\nA person who is not domiciled is outside the contribution on dividends entirely. That is the Department’s residency page, not a discount bought in year one. The conditions are in the [non-dom guide](/guides/non-dom/).\n\nDeemed dividend distribution on profits from 2026 onwards is marked abolished on the Department’s page. The transitional rules for earlier profits, in the same note, are long. This page does not compress them into one figure.\n\nSeparate rows of the same table concern a dividend to a company in a non-cooperative jurisdiction (17%) and a hidden distribution (10%). They are not the ordinary rate for an individual shareholder.\n\n## What a comparison with self-employment leaves out\n\nThe [calculator](/calculators/company-or-self-employed/) applies 15% and, if the whole after-tax profit is paid as a dividend out of 2026 profits, contribution at 5% or at nil. Beside it is income tax on the same profit under the 2026 bands, as if it were self-employed income.\n\nSocial insurance, GHS, expenses, a director’s salary and the employment exemptions are not in the figures. The test under which a company is tax resident merely because it is incorporated in Cyprus is not restated here: Article 2 was not quoted line by line from the consolidation on this date. Where a treaty says otherwise, the treaty is what is read. The list is on the [treaty page](/guides/for-foreigners/tax-treaties/).\n\nThis page does not state a separate contribution rate on a company’s interest, beyond the rows the Department’s table prints in terms, such as 17% on a payment into a non-cooperative jurisdiction. The general sentence “all company interest is only in corporate tax”, taken from a secondary summary, is not brought over.",
+    "faq": [
+      {
+        "q": "Is 15% the tax on the dividend as well?",
+        "a": "15% is corporate tax on the profit. A dividend to a domiciled individual out of 2026 profits is charged defence contribution at a further 5%. A person who is not domiciled does not pay that contribution."
+      },
+      {
+        "q": "Is an old dividend out of 2024 profits still at 17%?",
+        "a": "The Department’s note says a dividend from a resident company out of profits up to 2025, received by 31 December 2031, stays at 17%. That is not the rate on 2026 profits."
+      },
+      {
+        "q": "Does the calculator choose a company for me?",
+        "a": "No. It does not compute social-insurance contributions and it does not decide whether a payment is a dividend. It illustrates two published rates."
+      },
+      {
+        "q": "Is deemed distribution still there?",
+        "a": "The Department’s page says it was abolished for profits from 2026 onwards. The transition for earlier profits, in the same note, is not reduced to one sentence here."
+      }
+    ],
+    "howto": [
+      {
+        "name": "Take the company rate from the Department’s table",
+        "text": "From 2026 the row on the company-return page is 15%. The 12.5% in the same table belongs to 2013–2025."
+      },
+      {
+        "name": "Separate the dividend",
+        "text": "2026 profits paid as a dividend to a domiciled person carry contribution at 5%. A person who is not domiciled is outside the contribution. Profits up to 2025 can stay at 17% until 31 December 2031."
+      },
+      {
+        "name": "Do not fill in social insurance",
+        "text": "The company and self-employed calculator does not include those contributions. The Social Insurance Services publish them, and this page does not copy a figure."
+      }
+    ],
+    "sources": [
+      {
+        "name": "Corporate-tax table on the company-return page, Tax Department",
+        "url": "https://www.gov.cy/mof-tax/documents/forologiki-dilosi-eisodimatos-etaireias-t-f-4-aytoergodotoymenoy-me-elegmenoys-logariasmoys-t-f-1/"
+      },
+      {
+        "name": "Defence contribution from 2026, Tax Department",
+        "url": "https://www.gov.cy/mof-tax/documents/ektakti-amyntiki-eisfora-eae/"
+      },
+      {
+        "name": "Note on the defence-contribution amendments, Tax Department",
+        "url": "https://www.gov.cy/media/sites/167/2026/03/EEA-%CE%A6%CE%9A%CE%9A-%CE%9C%CE%95%CE%A4%CE%91%CE%A1%CE%A1%CE%A5%CE%98%CE%9C%CE%99%CE%A3%CE%97-06032026.pdf"
+      },
+      {
+        "name": "Tax incentives, Ministry of Finance",
+        "url": "https://www.gov.cy/mof/en/documents/tax-incentives/"
+      },
+      {
+        "name": "Residence and non-dom, Tax Department",
+        "url": "https://www.gov.cy/mof-tax/en/documents/tax-residency-domicility/"
+      }
+    ]
+  },
+  "el": {
+    "title": "Εταιρεία στην Κύπρο και εταιρικός φόρος 15%",
+    "description": "Από το 2026 το Τμήμα Φορολογίας δημοσιεύει εταιρικό φόρο 15%. Η λογιζόμενη διανομή για κέρδη από το 2026 καταργήθηκε. Μέρισμα σε πρόσωπο με κατοικία είναι στο 5%.",
+    "body": "Τελευταίος έλεγχος: 26 Νοεμβρίου 2026.\n\n## Σύντομη απάντηση\n\nΣτη σελίδα δήλωσης εταιρείας το Τμήμα Φορολογίας δημοσιεύει πίνακα συντελεστών. Από το 2026 ο εταιρικός φόρος είναι 15%. Για το 2013–2025 ο ίδιος πίνακας βάζει 12,5%. Για το 2003–2012 βάζει 10%. Αυτός είναι ο συντελεστής στο κέρδος εταιρείας που εμπίπτει στον νόμο. Δεν είναι ο συντελεστής στον μισθό του ιδιοκτήτη, και δεν είναι υπόσχεση ότι όλη η ζωή ενός αλλοδαπού μετακομίζει σε εταιρεία.\n\n## Το μέρισμα μετά τον φόρο\n\nΗ σελίδα του Τμήματος για την έκτακτη εισφορά, από το 2026, βάζει τα μερίσματα στο 5%. Η σελίδα κινήτρων του Υπουργείου Οικονομικών λέει το ίδιο: η εισφορά παρακρατείται σε μερίσματα που λαμβάνουν φυσικά πρόσωπα με 5% από κέρδη που αποκτήθηκαν μετά την 1η Ιανουαρίου 2026, και πριν από την ημερομηνία αυτή με 17%.\n\nΗ σημείωση του Τμήματος εκθέτει τη μεταβατική διάταξη. Μέρισμα που εισπράττεται από εταιρεία κάτοικο έως τις 31 Δεκεμβρίου 2031 από κέρδη φορολογικών ετών έως και το 2025 μένει στο 17%. Το παράδειγμα στην ίδια σημείωση είναι μέρισμα του 2027 από κέρδη του 2025 στο 17%, και από κέρδη του 2026 στο 5%.\n\nΠρόσωπο χωρίς κατοικία βρίσκεται εντελώς έξω από την εισφορά στα μερίσματα. Αυτή είναι η σελίδα κατοικίας του Τμήματος, όχι έκπτωση που αγοράζεται τον πρώτο χρόνο. Οι όροι είναι στον [οδηγό non-dom](/el/guides/non-dom/).\n\nΗ λογιζόμενη διανομή μερίσματος για κέρδη από το 2026 και έπειτα σημειώνεται ως καταργημένη στη σελίδα του Τμήματος. Οι μεταβατικοί κανόνες για παλαιότερα κέρδη, στην ίδια σημείωση, είναι μακρείς. Αυτή η σελίδα δεν τους συμπιέζει σε έναν αριθμό.\n\nΧωριστές γραμμές του ίδιου πίνακα αφορούν μέρισμα προς εταιρεία σε μη συνεργάσιμη δικαιοδοσία (17%) και συγκεκαλυμμένη διανομή (10%). Δεν είναι ο συνήθης συντελεστής για μέτοχο φυσικό πρόσωπο.\n\n## Τι αφήνει έξω μια σύγκριση με την αυτοαπασχόληση\n\nΟ [υπολογιστής](/el/calculators/company-or-self-employed/) εφαρμόζει 15% και, αν όλο το κέρδος μετά τον φόρο πληρωθεί ως μέρισμα από κέρδη του 2026, εισφορά 5% ή μηδέν. Δίπλα είναι φόρος εισοδήματος στο ίδιο κέρδος με τις κλίμακες του 2026, σαν να ήταν εισόδημα αυτοαπασχολούμενου.\n\nΚοινωνικές ασφαλίσεις, ΓεΣΥ, έξοδα, μισθός διευθυντή και απαλλαγές μισθωτών δεν είναι στα νούμερα. Το κριτήριο με το οποίο εταιρεία είναι φορολογικός κάτοικος μόνο επειδή συστάθηκε στην Κύπρο δεν επαναλαμβάνεται εδώ: το άρθρο 2 δεν παρατέθηκε γραμμή προς γραμμή από την κωδικοποίηση σε αυτή την ημερομηνία. Όπου μια σύμβαση λέει αλλιώς, διαβάζεται η σύμβαση. Ο κατάλογος είναι στη [σελίδα συμβάσεων](/el/guides/for-foreigners/tax-treaties/).\n\nΑυτή η σελίδα δεν αναφέρει χωριστό συντελεστή εισφοράς σε τόκους εταιρείας, πέρα από τις γραμμές που ο πίνακας του Τμήματος τυπώνει ρητά, όπως 17% σε πληρωμή προς μη συνεργάσιμη δικαιοδοσία. Η γενική φράση «όλοι οι τόκοι εταιρείας είναι μόνο στον εταιρικό φόρο», παρμένη από δευτερογενή σύνοψη, δεν μεταφέρεται.",
+    "faq": [
+      {
+        "q": "Το 15% είναι και ο φόρος στο μέρισμα;",
+        "a": "Το 15% είναι εταιρικός φόρος στο κέρδος. Μέρισμα σε πρόσωπο με κατοικία από κέρδη του 2026 επιβαρύνεται με έκτακτη εισφορά επιπλέον 5%. Πρόσωπο χωρίς κατοικία δεν πληρώνει αυτή την εισφορά."
+      },
+      {
+        "q": "Παλιό μέρισμα από κέρδη του 2024 είναι ακόμη στο 17%;",
+        "a": "Η σημείωση του Τμήματος λέει ότι μέρισμα από εταιρεία κάτοικο από κέρδη έως το 2025, που εισπράττεται έως τις 31 Δεκεμβρίου 2031, μένει στο 17%. Δεν είναι ο συντελεστής στα κέρδη του 2026."
+      },
+      {
+        "q": "Ο υπολογιστής διαλέγει εταιρεία για μένα;",
+        "a": "Όχι. Δεν υπολογίζει εισφορές κοινωνικών ασφαλίσεων και δεν κρίνει αν μια πληρωμή είναι μέρισμα. Απεικονίζει δύο δημοσιευμένους συντελεστές."
+      },
+      {
+        "q": "Η λογιζόμενη διανομή υπάρχει ακόμη;",
+        "a": "Η σελίδα του Τμήματος λέει ότι καταργήθηκε για κέρδη από το 2026 και έπειτα. Η μετάβαση για παλαιότερα κέρδη, στην ίδια σημείωση, δεν συνοψίζεται εδώ σε μία φράση."
+      }
+    ],
+    "howto": [
+      {
+        "name": "Πάρτε τον εταιρικό συντελεστή από τον πίνακα του Τμήματος",
+        "text": "Από το 2026 η γραμμή στη σελίδα δήλωσης εταιρείας είναι 15%. Το 12,5% στον ίδιο πίνακα ανήκει στα έτη 2013–2025."
+      },
+      {
+        "name": "Χωρίστε το μέρισμα",
+        "text": "Κέρδη του 2026 που πληρώνονται ως μέρισμα σε πρόσωπο με κατοικία φέρουν εισφορά 5%. Πρόσωπο χωρίς κατοικία είναι έξω από την εισφορά. Κέρδη έως το 2025 μπορούν να μείνουν στο 17% έως τις 31 Δεκεμβρίου 2031."
+      },
+      {
+        "name": "Μην συμπληρώνετε κοινωνικές ασφαλίσεις",
+        "text": "Ο υπολογιστής εταιρείας και αυτοαπασχόλησης δεν περιλαμβάνει αυτές τις εισφορές. Τις δημοσιεύουν οι Υπηρεσίες Κοινωνικών Ασφαλίσεων, και αυτή η σελίδα δεν αντιγράφει αριθμό."
+      }
+    ],
+    "sources": [
+      {
+        "name": "Πίνακας εταιρικού φόρου στη σελίδα δήλωσης εταιρείας, Τμήμα Φορολογίας",
+        "url": "https://www.gov.cy/mof-tax/documents/forologiki-dilosi-eisodimatos-etaireias-t-f-4-aytoergodotoymenoy-me-elegmenoys-logariasmoys-t-f-1/"
+      },
+      {
+        "name": "Έκτακτη εισφορά από το 2026, Τμήμα Φορολογίας",
+        "url": "https://www.gov.cy/mof-tax/documents/ektakti-amyntiki-eisfora-eae/"
+      },
+      {
+        "name": "Σημείωση για τις τροποποιήσεις της έκτακτης εισφοράς, Τμήμα Φορολογίας",
+        "url": "https://www.gov.cy/media/sites/167/2026/03/EEA-%CE%A6%CE%9A%CE%9A-%CE%9C%CE%95%CE%A4%CE%91%CE%A1%CE%A1%CE%A5%CE%98%CE%9C%CE%99%CE%A3%CE%97-06032026.pdf"
+      },
+      {
+        "name": "Φορολογικά κίνητρα, Υπουργείο Οικονομικών",
+        "url": "https://www.gov.cy/mof/en/documents/tax-incentives/"
+      },
+      {
+        "name": "Κατοικία και non-dom, Τμήμα Φορολογίας",
+        "url": "https://www.gov.cy/mof-tax/en/documents/tax-residency-domicility/"
+      }
+    ]
+  }
+}

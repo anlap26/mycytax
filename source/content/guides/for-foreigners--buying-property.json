@@ -1,0 +1,181 @@
+{
+  "slug": "for-foreigners/buying-property",
+  "seq": 45,
+  "ru": {
+    "title": "Покупка жилья иностранцем: НДС, сборы за переход и гербовый сбор",
+    "description": "Два режима покупки в 2026 году. Гербовый сбор с нового договора — €0. Сборы юриста и агента эта страница не оценивает.",
+    "body": "Проверено: 26 ноября 2026 года.\n\n## Короткий ответ\n\nПокупка на Кипре встречается с налогом в одном из двух режимов. Если переход — сделка с НДС и предъявлена справка, Gov.cy говорит, что сбор Земельного кадастра за переход не взимается. Если НДС нет, сбор идёт по шкале 3%, 5% и 8%, а закон затем освобождает половину, кроме принудительной продажи по частям VI и VIA закона 9/1965. Гербовый сбор с договора, который хотя бы одна сторона подписывает 1 января 2026 года или позже, равен нулю.\n\nГонорар юриста, комиссия агента и местные сборы сюда не подставлены. Их нет в одной государственной таблице.\n\n## НДС\n\nОбычная ставка — 19%. Сниженная ставка 5% для основного и постоянного жилья покрывает не всю цену. С поправки, действующей с 2023 года, 5% — на первые 130 квадратных метров и до €350 000, если вся площадь не выше 190 квадратных метров, а вся стоимость не выше €475 000. За этими внешними пределами ставки 5% нет. У Налогового департамента есть собственный калькулятор. Перед подачей пользуются им. Разбор пределов — на [калькуляторе НДС](/ru/calculators/vat/) этого сайта, и он иллюстрирует правило, а не заменяет инструмент департамента.\n\n## Сборы за переход\n\nШкала Департамента земель и землеустройства, до снижения на 50%: 3% до €85 000, 5% с €85 001 до €170 000 и 8% сверх этого. Шкалу применяют к доле каждого покупателя. Договор, не сданный в течение шести месяцев, по буклету департамента может увеличить сбор на 10% при переоформлении. Отдельный расчёт — [калькулятор сборов](/ru/calculators/transfer-fees/).\n\n## Гербовый сбор\n\nЗакон 239(I)/2025 отменил гербовый сбор с 1 января 2026 года. Договор, составленный и подписанный хотя бы одной стороной в эту дату или позже, не штампуют. Договор, который сторона подписала не позднее 31 декабря 2025 года, остаётся на старой шкале с потолком €20 000. Это [калькулятор гербового сбора](/ru/calculators/stamp-duty/).\n\nТри строки вместе, без гонораров, считает [калькулятор расходов на покупку](/ru/calculators/purchase-costs/).\n\n## Покупатель не из ЕС\n\nДо регистрации титула такому покупателю нужно разрешение Министерства внутренних дел на приобретение. Министерство пишет, что за само разрешение пошлины нет. Пределы того, что можно купить, — на странице министерства: до 4 000 квадратных метров земли под жильё либо до двух единиц в пределах, которые страница называет. Это разрешение — не вид на жительство. Их разделяет [справочник о покупке иностранцем](/ru/guides/buying-as-a-foreigner/).\n\nОбзор остальных налогов на объект, включая прирост при продаже по 20% и то, что государственного годового налога на имущество нет, — в [обзоре налогов на недвижимость](/ru/guides/taxes-overview/). Местные ставки эта страница по-прежнему не угадывает.",
+    "faq": [
+      {
+        "q": "Платят и НДС, и сборы за переход?",
+        "a": "Gov.cy описывает освобождение от сборов, когда переход — сделка с НДС и есть справка. Где НДС нет, действует снижение на 50%, если это не принудительная продажа. Калькулятор расходов ставит один из этих двух исходов."
+      },
+      {
+        "q": "Гербовый сбор в 2026 году ещё есть?",
+        "a": "С договора, который сторона подписывает 1 января 2026 года или позже, сбор €0. Старая шкала остаётся для документа, подписанного стороной не позднее 31 декабря 2025 года."
+      },
+      {
+        "q": "Ставка 5% покрывает всю квартиру?",
+        "a": "Нет. Она покрывает подходящую долю в пределах 130 квадратных метров и €350 000, и только если весь объект внутри 190 квадратных метров и €475 000. Иначе НДС 19%."
+      },
+      {
+        "q": "Сколько стоит разрешение на покупку для гражданина не из ЕС?",
+        "a": "Министерство внутренних дел пишет, что пошлины за само разрешение нет. Пределы площади и числа объектов — на его странице."
+      }
+    ],
+    "howto": [
+      {
+        "name": "Выбрать режим: НДС или сборы за переход",
+        "text": "Если переход — сделка с НДС и предъявлена справка, Gov.cy говорит, что сбор за переход не взимается. Если НДС нет, сбор идёт по шкале со снижением на 50%."
+      },
+      {
+        "name": "Проверить дату подписи для гербового сбора",
+        "text": "Подпись хотя бы одной стороны 1 января 2026 года или позже даёт гербовый сбор €0. Более ранняя подпись остаётся на старой шкале."
+      },
+      {
+        "name": "Отделить разрешение на приобретение от вида на жительство",
+        "text": "Покупатель не из ЕС до регистрации титула получает разрешение Министерства внутренних дел. Министерство пишет, что пошлины за него нет. Это не разрешение на проживание."
+      }
+    ],
+    "sources": [
+      {
+        "name": "Расчёт сборов за переход, Gov.cy",
+        "url": "https://www.gov.cy/en/service/calculation-of-real-estates-transfer-fees/"
+      },
+      {
+        "name": "Сборы при продаже и обмене, Департамент земель и землеустройства",
+        "url": "https://portal.dls.moi.gov.cy/en/application_forms/polisi-antallagi/"
+      },
+      {
+        "name": "Калькулятор НДС 5%, Gov.cy",
+        "url": "https://www.gov.cy/mof-tfa/en/documents/vat-5-calculation-tool-for-the-purchase-building-of-a-house/"
+      },
+      {
+        "name": "Покупка недвижимости, Министерство внутренних дел",
+        "url": "https://www.gov.cy/moi/en/purchasing-property/"
+      },
+      {
+        "name": "Отмена гербового сбора, как её передаёт KPMG со ссылкой на объявление Налогового департамента",
+        "url": "https://kpmg.com/us/en/taxnewsflash/news/2026/01/tnf-cyprus-repeal-of-stamp-duty-laws.html"
+      }
+    ]
+  },
+  "en": {
+    "title": "A foreigner buying property: VAT, transfer fees and stamp duty",
+    "description": "The two ways a 2026 purchase is taxed. Stamp duty on a new contract is €0. Legal fees and the agent are not estimated here.",
+    "body": "Last checked: 26 November 2026.\n\n## Short answer\n\nA purchase in Cyprus meets tax in one of two ways. If the transfer is a VAT transaction and the certificate is produced, Gov.cy says the Land Registry transfer fee is not charged. If there is no VAT, the fee follows the scale of 3%, 5% and 8%, and the legislation then exempts half, unless the sale was a forced sale under Parts VI and VIA of Law 9/1965. Stamp duty on a contract that at least one party signs on or after 1 January 2026 is nil.\n\nA lawyer’s fee, an agent’s commission and local charges are not filled in here. They are not on one government table.\n\n## VAT\n\nThe standard rate is 19%. The 5% rate for a primary and permanent home does not cover the whole price. Since the amendment in force from 2023, 5% is on the first 130 square metres and up to €350,000, provided the whole area is not over 190 square metres and the whole value is not over €475,000. Outside those outer limits there is no 5%. The Tax Department has its own calculator. Use that before you file. The limits are set out on this site’s [VAT calculator](/calculators/vat/), which illustrates the rule and does not replace the Department’s tool.\n\n## Transfer fees\n\nThe Department of Lands and Surveys scale, before the 50% reduction, is 3% up to €85,000, 5% from €85,001 to €170,000 and 8% above that. The scale is applied to each buyer’s share. A contract not deposited within six months can, on the Department’s leaflet, increase the fee by 10% when title is transferred. The separate working is the [transfer-fee calculator](/calculators/transfer-fees/).\n\n## Stamp duty\n\nLaw 239(I)/2025 repealed stamp duty from 1 January 2026. A contract drawn up and signed by at least one party on or after that date is not stamped. A contract a party signed by 31 December 2025 stays on the old scale, capped at €20,000. That is the [stamp-duty calculator](/calculators/stamp-duty/).\n\nThe three lines together, without professional fees, are in the [purchase-cost calculator](/calculators/purchase-costs/).\n\n## A buyer from outside the EU\n\nBefore title is registered, that buyer needs the Ministry of Interior’s permission to acquire. The Ministry says the permission itself has no fee. The limits on what may be bought are on the Ministry’s page: up to 4,000 square metres of land for a home, or up to two units within the sizes the page states. The permission is not a residence permit. The [guide to buying as a foreigner](/guides/buying-as-a-foreigner/) keeps them apart.\n\nThe rest of the taxes on a property, including gains tax at 20% on a sale and the fact that there is no annual state property tax, are in the [property-tax overview](/guides/taxes-overview/). Local rates are still not guessed on this page.",
+    "faq": [
+      {
+        "q": "Do I pay both VAT and transfer fees?",
+        "a": "Gov.cy describes an exemption from the fees when the transfer is a VAT transaction and the certificate is produced. Where there is no VAT, the 50% reduction applies unless it was a forced sale. The purchase-cost calculator uses one of those two outcomes."
+      },
+      {
+        "q": "Is stamp duty still charged in 2026?",
+        "a": "On a contract a party signs on or after 1 January 2026 the duty is €0. The old scale remains for a document a party signed by 31 December 2025."
+      },
+      {
+        "q": "Does the 5% rate cover the whole flat?",
+        "a": "No. It covers the qualifying portion within 130 square metres and €350,000, and only if the whole property is inside 190 square metres and €475,000. Otherwise VAT is 19%."
+      },
+      {
+        "q": "What does the non-EU acquisition permission cost?",
+        "a": "The Ministry of Interior says there is no fee for the permission itself. The limits on area and on the number of units are on its page."
+      }
+    ],
+    "howto": [
+      {
+        "name": "Pick VAT or transfer fees",
+        "text": "If the transfer is a VAT transaction and the certificate is produced, Gov.cy says the transfer fee is not charged. If there is no VAT, the fee follows the scale with the 50% reduction."
+      },
+      {
+        "name": "Check the signing date for stamp duty",
+        "text": "A signature by at least one party on or after 1 January 2026 makes stamp duty €0. An earlier signature stays on the old scale."
+      },
+      {
+        "name": "Keep the acquisition permission apart from residence",
+        "text": "A non-EU buyer obtains the Ministry of Interior’s permission before title is registered. The Ministry says there is no fee for it. It is not a residence permit."
+      }
+    ],
+    "sources": [
+      {
+        "name": "Calculation of transfer fees, Gov.cy",
+        "url": "https://www.gov.cy/en/service/calculation-of-real-estates-transfer-fees/"
+      },
+      {
+        "name": "Sale and exchange fees, Department of Lands and Surveys",
+        "url": "https://portal.dls.moi.gov.cy/en/application_forms/polisi-antallagi/"
+      },
+      {
+        "name": "VAT 5% tool, Gov.cy",
+        "url": "https://www.gov.cy/mof-tfa/en/documents/vat-5-calculation-tool-for-the-purchase-building-of-a-house/"
+      },
+      {
+        "name": "Purchasing property, Ministry of Interior",
+        "url": "https://www.gov.cy/moi/en/purchasing-property/"
+      },
+      {
+        "name": "Repeal of stamp duty, KPMG note on the Tax Department announcement",
+        "url": "https://kpmg.com/us/en/taxnewsflash/news/2026/01/tnf-cyprus-repeal-of-stamp-duty-laws.html"
+      }
+    ]
+  },
+  "el": {
+    "title": "Αγορά κατοικίας από αλλοδαπό: ΦΠΑ, τέλη μεταβίβασης και χαρτόσημο",
+    "description": "Οι δύο τρόποι με τους οποίους φορολογείται μια αγορά του 2026. Το χαρτόσημο σε νέο συμβόλαιο είναι €0. Αμοιβή δικηγόρου και μεσίτη δεν εκτιμώνται εδώ.",
+    "body": "Τελευταίος έλεγχος: 26 Νοεμβρίου 2026.\n\n## Σύντομη απάντηση\n\nΜια αγορά στην Κύπρο συναντά φόρο με έναν από δύο τρόπους. Αν η μεταβίβαση είναι συναλλαγή με ΦΠΑ και προσκομίζεται το πιστοποιητικό, το Gov.cy λέει ότι το τέλος μεταβίβασης του Κτηματολογίου δεν επιβάλλεται. Αν δεν υπάρχει ΦΠΑ, το τέλος ακολουθεί την κλίμακα 3%, 5% και 8%, και η νομοθεσία έπειτα απαλλάσσει το μισό, εκτός αν η πώληση ήταν αναγκαστική κατά τα Μέρη VI και VIA του Νόμου 9/1965. Το χαρτόσημο σε συμβόλαιο που υπογράφει τουλάχιστον ένα μέρος την 1η Ιανουαρίου 2026 ή αργότερα είναι μηδέν.\n\nΑμοιβή δικηγόρου, προμήθεια μεσίτη και τοπικά τέλη δεν συμπληρώνονται εδώ. Δεν βρίσκονται σε έναν κρατικό πίνακα.\n\n## ΦΠΑ\n\nΟ κανονικός συντελεστής είναι 19%. Ο συντελεστής 5% για κύρια και μόνιμη κατοικία δεν καλύπτει όλη την τιμή. Με την τροποποίηση που ισχύει από το 2023, το 5% είναι στα πρώτα 130 τετραγωνικά μέτρα και έως €350.000, εφόσον το συνολικό εμβαδόν δεν υπερβαίνει τα 190 τετραγωνικά μέτρα και η συνολική αξία τα €475.000. Έξω από αυτά τα εξωτερικά όρια δεν υπάρχει 5%. Το Τμήμα Φορολογίας έχει δικό του υπολογιστή. Χρησιμοποιήστε τον πριν την αίτηση. Τα όρια εκτίθενται στον [υπολογιστή ΦΠΑ](/el/calculators/vat/) αυτού του ιστοτόπου, που απεικονίζει τον κανόνα και δεν αντικαθιστά το εργαλείο του Τμήματος.\n\n## Τέλη μεταβίβασης\n\nΗ κλίμακα του Τμήματος Κτηματολογίου, πριν από τη μείωση 50%, είναι 3% έως €85.000, 5% από €85.001 έως €170.000 και 8% πάνω από αυτό. Η κλίμακα εφαρμόζεται στο μερίδιο κάθε αγοραστή. Συμβόλαιο που δεν κατατέθηκε μέσα σε έξι μήνες μπορεί, κατά το φυλλάδιο του Τμήματος, να αυξήσει το τέλος κατά 10% κατά τη μεταβίβαση του τίτλου. Ο χωριστός υπολογισμός είναι ο [υπολογιστής τελών μεταβίβασης](/el/calculators/transfer-fees/).\n\n## Χαρτόσημο\n\nΟ Νόμος 239(I)/2025 κατάργησε το χαρτόσημο από την 1η Ιανουαρίου 2026. Συμβόλαιο που καταρτίστηκε και υπογράφηκε από τουλάχιστον ένα μέρος κατά ή μετά την ημερομηνία αυτή δεν χαρτοσημαίνεται. Συμβόλαιο που υπέγραψε ένα μέρος έως τις 31 Δεκεμβρίου 2025 μένει στην παλιά κλίμακα, με ανώτατο €20.000. Αυτός είναι ο [υπολογιστής χαρτοσήμου](/el/calculators/stamp-duty/).\n\nΟι τρεις γραμμές μαζί, χωρίς επαγγελματικές αμοιβές, είναι στον [υπολογιστή κόστους αγοράς](/el/calculators/purchase-costs/).\n\n## Αγοραστής εκτός ΕΕ\n\nΠριν την εγγραφή του τίτλου, αυτός ο αγοραστής χρειάζεται άδεια απόκτησης του Υπουργείου Εσωτερικών. Το Υπουργείο λέει ότι η ίδια η άδεια δεν έχει τέλος. Τα όρια τού τι μπορεί να αγοραστεί είναι στη σελίδα του Υπουργείου: έως 4.000 τετραγωνικά μέτρα γης για κατοικία, ή έως δύο μονάδες μέσα στα μεγέθη που αναφέρει η σελίδα. Η άδεια δεν είναι άδεια διαμονής. Ο [οδηγός αγοράς από αλλοδαπό](/el/guides/buying-as-a-foreigner/) τα κρατά χωριστά.\n\nΟι υπόλοιποι φόροι σε ένα ακίνητο, συμπεριλαμβανομένου φόρου κερδών 20% σε πώληση και του ότι δεν υπάρχει ετήσιος κρατικός φόρος ακίνητης ιδιοκτησίας, είναι στη [επισκόπηση φόρων ακινήτων](/el/guides/taxes-overview/). Τα τοπικά τέλη εξακολουθούν να μην μαντεύονται σε αυτή τη σελίδα.",
+    "faq": [
+      {
+        "q": "Πληρώνω και ΦΠΑ και τέλη μεταβίβασης;",
+        "a": "Το Gov.cy περιγράφει απαλλαγή από τα τέλη όταν η μεταβίβαση είναι συναλλαγή με ΦΠΑ και προσκομίζεται το πιστοποιητικό. Όπου δεν υπάρχει ΦΠΑ, ισχύει η μείωση 50%, εκτός αν ήταν αναγκαστική πώληση. Ο υπολογιστής κόστους χρησιμοποιεί ένα από τα δύο αυτά αποτελέσματα."
+      },
+      {
+        "q": "Το χαρτόσημο επιβάλλεται ακόμη το 2026;",
+        "a": "Σε συμβόλαιο που υπογράφει ένα μέρος την 1η Ιανουαρίου 2026 ή αργότερα το τέλος είναι €0. Η παλιά κλίμακα μένει για έγγραφο που υπέγραψε ένα μέρος έως τις 31 Δεκεμβρίου 2025."
+      },
+      {
+        "q": "Ο συντελεστής 5% καλύπτει όλο το διαμέρισμα;",
+        "a": "Όχι. Καλύπτει το επιλέξιμο μέρος μέσα σε 130 τετραγωνικά μέτρα και €350.000, και μόνο αν όλο το ακίνητο είναι μέσα σε 190 τετραγωνικά μέτρα και €475.000. Αλλιώς ο ΦΠΑ είναι 19%."
+      },
+      {
+        "q": "Πόσο κοστίζει η άδεια απόκτησης για αγοραστή εκτός ΕΕ;",
+        "a": "Το Υπουργείο Εσωτερικών λέει ότι δεν υπάρχει τέλος για την ίδια την άδεια. Τα όρια εμβαδού και αριθμού μονάδων είναι στη σελίδα του."
+      }
+    ],
+    "howto": [
+      {
+        "name": "Διαλέξτε ΦΠΑ ή τέλη μεταβίβασης",
+        "text": "Αν η μεταβίβαση είναι συναλλαγή με ΦΠΑ και προσκομίζεται το πιστοποιητικό, το Gov.cy λέει ότι το τέλος μεταβίβασης δεν επιβάλλεται. Αν δεν υπάρχει ΦΠΑ, το τέλος ακολουθεί την κλίμακα με τη μείωση 50%."
+      },
+      {
+        "name": "Ελέγξτε την ημερομηνία υπογραφής για το χαρτόσημο",
+        "text": "Υπογραφή από τουλάχιστον ένα μέρος την 1η Ιανουαρίου 2026 ή αργότερα κάνει το χαρτόσημο €0. Παλαιότερη υπογραφή μένει στην παλιά κλίμακα."
+      },
+      {
+        "name": "Κρατήστε την άδεια απόκτησης χωριστά από τη διαμονή",
+        "text": "Αγοραστής εκτός ΕΕ παίρνει την άδεια του Υπουργείου Εσωτερικών πριν την εγγραφή του τίτλου. Το Υπουργείο λέει ότι δεν έχει τέλος. Δεν είναι άδεια διαμονής."
+      }
+    ],
+    "sources": [
+      {
+        "name": "Υπολογισμός τελών μεταβίβασης, Gov.cy",
+        "url": "https://www.gov.cy/en/service/calculation-of-real-estates-transfer-fees/"
+      },
+      {
+        "name": "Τέλη πώλησης και ανταλλαγής, Τμήμα Κτηματολογίου",
+        "url": "https://portal.dls.moi.gov.cy/en/application_forms/polisi-antallagi/"
+      },
+      {
+        "name": "Εργαλείο ΦΠΑ 5%, Gov.cy",
+        "url": "https://www.gov.cy/mof-tfa/en/documents/vat-5-calculation-tool-for-the-purchase-building-of-a-house/"
+      },
+      {
+        "name": "Αγορά ακινήτου, Υπουργείο Εσωτερικών",
+        "url": "https://www.gov.cy/moi/en/purchasing-property/"
+      },
+      {
+        "name": "Κατάργηση χαρτοσήμου, σημείωμα KPMG για την ανακοίνωση του Τμήματος Φορολογίας",
+        "url": "https://kpmg.com/us/en/taxnewsflash/news/2026/01/tnf-cyprus-repeal-of-stamp-duty-laws.html"
+      }
+    ]
+  }
+}

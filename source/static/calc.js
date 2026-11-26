@@ -64,6 +64,48 @@
       totalPay: "Total paid over the term",
       interest: "Of which interest",
       schedule: "The payment assumes a fixed rate and a fully amortising loan, with no fees.",
+      salary: "Other taxable income, apart from these dividends and this interest (EUR)",
+      dividend: "Dividends (EUR)",
+      interestAmt: "Interest (EUR)",
+      profitNew: "Dividends are out of 2026 profits (domiciled rate 5%)",
+      profitOld: "Dividends are from a Cyprus company, out of profits up to 2025, received by 31 December 2031 (domiciled rate 17%)",
+      lowInc: "Total income is under €12,000, so domiciled interest is at 3% rather than 17%",
+      nondomCol: "Not domiciled",
+      domCol: "Domiciled",
+      itax: "Income tax on the other income",
+      sdcDiv: "Defence contribution on the dividends",
+      sdcInt: "Defence contribution on the interest",
+      totalTax: "Income tax plus those two contributions",
+      sameBands: "The income-tax bands do not change with domicile.",
+      profit: "Profit before this comparison (EUR)",
+      shNon: "The shareholder is not domiciled",
+      shDom: "The shareholder is domiciled, and the dividend is out of 2026 profits",
+      cit: "Corporate tax at 15%",
+      afterCit: "Paid out as a dividend after that corporate tax",
+      coTotal: "Company route",
+      seTax: "Self-employed route, income tax only",
+      notSi: "Social insurance, GHS and expenses are not in either figure.",
+      resale: "Resale: no VAT, transfer fees apply",
+      newbuild: "New build: VAT is charged, so transfer fees are nil",
+      vatPart: "VAT",
+      transferPart: "Transfer fees",
+      stampPart: "Stamp duty",
+      purchaseTotal: "Those three together",
+      notFees: "Lawyer, agent and local charges are not included.",
+      incomeCmp: "Taxable income, or Portuguese rendimento coletável (EUR)",
+      profitCmp: "Company profit (EUR)",
+      uaeBand: "Euro amount of the UAE 0% band (AED 375,000). Use 0 to charge 9% on the whole profit.",
+      otherRate: "A flat rate you supply for another country (%). Use 0 to skip it.",
+      cyPerson: "Cyprus income tax",
+      ptPerson: "Portugal income tax, mainland 2026 scale",
+      uaePerson: "UAE personal income tax",
+      otherPerson: "Tax at the rate you typed",
+      cyCo: "Cyprus corporate tax at 15%",
+      mtCo: "Malta corporate tax at 35%, no refund",
+      ptCo: "Portugal corporate tax at 19%, mainland",
+      grCo: "Greece corporate tax at 22%",
+      uaeCo: "UAE corporate tax",
+      compareNote: "Malta’s 2026 personal bands and the Greek personal scale are not calculated. Social insurance is not included.",
       consult: "Want an exact calculation for your property? Get a free consultation"
     },
     el: {
@@ -124,6 +166,48 @@
       totalPay: "Σύνολο στη διάρκεια",
       interest: "Από αυτά, τόκοι",
       schedule: "Η δόση υποθέτει σταθερό επιτόκιο και πλήρη χρεολυσία, χωρίς έξοδα.",
+      salary: "Άλλο φορολογητέο εισόδημα, εκτός από αυτά τα μερίσματα και αυτούς τους τόκους (EUR)",
+      dividend: "Μερίσματα (EUR)",
+      interestAmt: "Τόκοι (EUR)",
+      profitNew: "Τα μερίσματα είναι από κέρδη του 2026 (συντελεστής με κατοικία 5%)",
+      profitOld: "Τα μερίσματα είναι από κυπριακή εταιρεία, από κέρδη έως το 2025, εισπραχθέντα έως τις 31 Δεκεμβρίου 2031 (συντελεστής με κατοικία 17%)",
+      lowInc: "Το συνολικό εισόδημα είναι κάτω από €12.000, οπότε οι τόκοι με κατοικία είναι στο 3% και όχι στο 17%",
+      nondomCol: "Χωρίς κατοικία",
+      domCol: "Με κατοικία",
+      itax: "Φόρος εισοδήματος στο άλλο εισόδημα",
+      sdcDiv: "Έκτακτη εισφορά στα μερίσματα",
+      sdcInt: "Έκτακτη εισφορά στους τόκους",
+      totalTax: "Φόρος εισοδήματος συν τις δύο εισφορές",
+      sameBands: "Οι κλίμακες φόρου εισοδήματος δεν αλλάζουν με την κατοικία.",
+      profit: "Κέρδος πριν από αυτή τη σύγκριση (EUR)",
+      shNon: "Ο μέτοχος δεν έχει κατοικία",
+      shDom: "Ο μέτοχος έχει κατοικία, και το μέρισμα είναι από κέρδη του 2026",
+      cit: "Εταιρικός φόρος 15%",
+      afterCit: "Πληρώνεται ως μέρισμα μετά από αυτόν τον εταιρικό φόρο",
+      coTotal: "Οδός εταιρείας",
+      seTax: "Οδός αυτοαπασχολούμενου, μόνο φόρος εισοδήματος",
+      notSi: "Κοινωνικές ασφαλίσεις, ΓεΣΥ και έξοδα δεν είναι σε κανένα από τα δύο ποσά.",
+      resale: "Μεταπώληση: χωρίς ΦΠΑ, ισχύουν τέλη μεταβίβασης",
+      newbuild: "Νέα οικοδομή: επιβάλλεται ΦΠΑ, οπότε τα τέλη μεταβίβασης είναι μηδέν",
+      vatPart: "ΦΠΑ",
+      transferPart: "Τέλη μεταβίβασης",
+      stampPart: "Χαρτόσημο",
+      purchaseTotal: "Τα τρία μαζί",
+      notFees: "Δικηγόρος, μεσίτης και τοπικά τέλη δεν περιλαμβάνονται.",
+      incomeCmp: "Φορολογητέο εισόδημα, ή πορτογαλικό rendimento coletável (EUR)",
+      profitCmp: "Κέρδος εταιρείας (EUR)",
+      uaeBand: "Ποσό σε ευρώ της μηδενικής ζώνης ΗΑΕ (375.000 ντιρχάμ). Βάλτε 0 για 9% σε όλο το κέρδος.",
+      otherRate: "Ενιαίος συντελεστής που δίνετε εσείς για άλλη χώρα (%). Βάλτε 0 για να παραλειφθεί.",
+      cyPerson: "Φόρος εισοδήματος Κύπρου",
+      ptPerson: "Φόρος εισοδήματος Πορτογαλίας, κλίμακα ηπειρωτικής χώρας 2026",
+      uaePerson: "Φόρος εισοδήματος φυσικού προσώπου ΗΑΕ",
+      otherPerson: "Φόρος με τον συντελεστή που πληκτρολογήσατε",
+      cyCo: "Εταιρικός φόρος Κύπρου 15%",
+      mtCo: "Εταιρικός φόρος Μάλτας 35%, χωρίς επιστροφή",
+      ptCo: "Εταιρικός φόρος Πορτογαλίας 19%, ηπειρωτική χώρα",
+      grCo: "Εταιρικός φόρος Ελλάδας 22%",
+      uaeCo: "Εταιρικός φόρος ΗΑΕ",
+      compareNote: "Οι προσωπικές κλίμακες της Μάλτας για το 2026 και η προσωπική κλίμακα της Ελλάδας δεν υπολογίζονται. Οι κοινωνικές ασφαλίσεις δεν περιλαμβάνονται.",
       consult: "Θέλετε ακριβή υπολογισμό για το ακίνητό σας; Ζητήστε δωρεάν συμβουλή"
     },
     ru: {
@@ -184,6 +268,48 @@
       totalPay: "Всего за срок",
       interest: "Из них проценты",
       schedule: "Платёж рассчитан при фиксированной ставке и полном погашении, без комиссий банка.",
+      salary: "Другой налогооблагаемый доход, кроме этих дивидендов и этих процентов (EUR)",
+      dividend: "Дивиденды (EUR)",
+      interestAmt: "Проценты (EUR)",
+      profitNew: "Дивиденды из прибыли 2026 года (ставка для лица с домицилем 5%)",
+      profitOld: "Дивиденды кипрской компании из прибыли по 2025 год, полученные до 31 декабря 2031 года (ставка для лица с домицилем 17%)",
+      lowInc: "Весь доход ниже €12 000, поэтому проценты лица с домицилем — по 3%, а не по 17%",
+      nondomCol: "Без домициля",
+      domCol: "С домицилем",
+      itax: "Подоходный налог с другого дохода",
+      sdcDiv: "Взнос на оборону с дивидендов",
+      sdcInt: "Взнос на оборону с процентов",
+      totalTax: "Подоходный налог плюс эти два взноса",
+      sameBands: "Шкалы подоходного налога от домициля не меняются.",
+      profit: "Прибыль до этого сравнения (EUR)",
+      shNon: "У акционера нет домициля",
+      shDom: "У акционера есть домициль, и дивиденд из прибыли 2026 года",
+      cit: "Корпоративный налог 15%",
+      afterCit: "Выплачивается дивидендом после этого корпоративного налога",
+      coTotal: "Путь компании",
+      seTax: "Путь самозанятого, только подоходный налог",
+      notSi: "Социальное страхование, ГЕСИ и расходы ни в одну цифру не входят.",
+      resale: "Вторичная продажа: без НДС, сборы за переход есть",
+      newbuild: "Новостройка: НДС взимается, поэтому сборы за переход равны нулю",
+      vatPart: "НДС",
+      transferPart: "Сборы за переход",
+      stampPart: "Гербовый сбор",
+      purchaseTotal: "Эти три вместе",
+      notFees: "Юрист, агент и местные сборы не включены.",
+      incomeCmp: "Налогооблагаемый доход или португальский rendimento coletável (EUR)",
+      profitCmp: "Прибыль компании (EUR)",
+      uaeBand: "Сумма в евро нулевой полосы ОАЭ (375 000 дирхамов). Поставьте 0, чтобы взять 9% со всей прибыли.",
+      otherRate: "Плоская ставка, которую вы задаёте для другой страны (%). Поставьте 0, чтобы пропустить.",
+      cyPerson: "Подоходный налог Кипра",
+      ptPerson: "Подоходный налог Португалии, шкала материка 2026 года",
+      uaePerson: "Подоходный налог физического лица в ОАЭ",
+      otherPerson: "Налог по ставке, которую вы ввели",
+      cyCo: "Корпоративный налог Кипра 15%",
+      mtCo: "Корпоративный налог Мальты 35%, без возврата",
+      ptCo: "Корпоративный налог Португалии 19%, материк",
+      grCo: "Корпоративный налог Греции 22%",
+      uaeCo: "Корпоративный налог ОАЭ",
+      compareNote: "Личные шкалы Мальты на 2026 год и личная шкала Греции не считаются. Социальное страхование не включено.",
       consult: "Нужен точный расчёт по вашему объекту? Получите бесплатную консультацию"
     }
   }[lang];
@@ -259,6 +385,26 @@
     if (v > 170000) duty += Math.ceil((v - 170000) / 1000) * 2;
     return Math.min(duty, 20000);
   }
+  function sliceTax(income, cuts) {
+    if (income <= 0) return 0;
+    var prev = 0, tax = 0;
+    for (var i = 0; i < cuts.length; i++) {
+      var cap = Math.min(income, cuts[i][0]);
+      if (cap > prev) tax += (cap - prev) * cuts[i][1];
+      prev = cuts[i][0];
+      if (income <= cuts[i][0]) break;
+    }
+    return tax;
+  }
+  var PORTUGAL = [[8342, 0.122], [12587, 0.152], [17838, 0.207], [23089, 0.236], [29397, 0.306], [43090, 0.346], [46566, 0.431], [86634, 0.446], [Infinity, 0.48]];
+  function vatOn(price, area, home, disability) {
+    var capM = disability ? 190 : 130;
+    var maxM = disability ? Infinity : 190;
+    var eligible = home && area > 0 && area <= maxM && price <= 475000;
+    if (!eligible) return price * 0.19;
+    var portion = price * (Math.min(capM, area) / area) * (Math.min(350000, price) / price);
+    return portion * 0.05 + Math.max(0, price - portion) * 0.19;
+  }
 
   var forms = {
     transfer: function () {
@@ -290,6 +436,26 @@
     mortgage: function () {
       return field("principal", T.principal, qnum(["principal", "price"]) || "200000") + field("rate", T.rate, "4", "0.01") +
         field("years", T.years, "20", "1");
+    },
+    nondom: function () {
+      return field("salary", T.salary, "40000") + field("dividend", T.dividend, "20000") + field("interestAmt", T.interestAmt, "0") +
+        radio("profits", "profitNew", T.profitNew, true) + radio("profits", "profitOld", T.profitOld, false) +
+        check("lowInc", T.lowInc, false);
+    },
+    company: function () {
+      return field("profit", T.profit, "80000") +
+        radio("shareholder", "shNon", T.shNon, true) + radio("shareholder", "shDom", T.shDom, false);
+    },
+    purchase: function () {
+      return field("price", T.price, qnum(["price", "value"]) || "300000") + field("area", T.area, qnum(["area"]) || "120", "0.1") +
+        radio("kindp", "resale", T.resale, true) + radio("kindp", "newbuild", T.newbuild, false) +
+        check("home", T.home, true) + check("disability", T.disability, false) +
+        field("buyers", T.buyers, "1", "1") + check("forced", T.forced, false) + check("late", T.late, false) +
+        radio("when", "yearNew", T.yearNew, true) + radio("when", "yearOld", T.yearOld, false);
+    },
+    compare: function () {
+      return field("incomeCmp", T.incomeCmp, "60000") + field("profitCmp", T.profitCmp, "80000") +
+        field("uaeBand", T.uaeBand, "0") + field("otherRate", T.otherRate, "0", "0.01");
     }
   };
 
@@ -382,6 +548,69 @@
       list.push([T.totalPay, money(pay * n)]);
       list.push([T.interest, money(pay * n - P)]);
       list.push(["", T.schedule]);
+    } else if (kind === "nondom") {
+      var other = Math.max(0, num("salary"));
+      var div = Math.max(0, num("dividend"));
+      var intr = Math.max(0, num("interestAmt"));
+      var tax = incomeTax(other);
+      var divRate = document.getElementById("profitOld").checked ? 0.17 : 0.05;
+      var intRate = document.getElementById("lowInc").checked ? 0.03 : 0.17;
+      list.push([T.itax + " — " + T.nondomCol, money(tax)]);
+      list.push([T.itax + " — " + T.domCol, money(tax)]);
+      list.push([T.sdcDiv + " — " + T.nondomCol, money(0)]);
+      list.push([T.sdcDiv + " — " + T.domCol, money(div * divRate)]);
+      list.push([T.sdcInt + " — " + T.nondomCol, money(0)]);
+      list.push([T.sdcInt + " — " + T.domCol, money(intr * intRate)]);
+      list.push([T.totalTax + " — " + T.nondomCol, money(tax)]);
+      list.push([T.totalTax + " — " + T.domCol, money(tax + div * divRate + intr * intRate)]);
+      list.push(["", T.sameBands]);
+    } else if (kind === "company") {
+      var profit = Math.max(0, num("profit"));
+      var cit = profit * 0.15;
+      var left = Math.max(0, profit - cit);
+      var sdc = document.getElementById("shDom").checked ? left * 0.05 : 0;
+      list.push([T.cit, money(cit)]);
+      list.push([T.afterCit, money(left)]);
+      list.push([T.sdcDiv, money(sdc)]);
+      list.push([T.coTotal, money(cit + sdc)]);
+      list.push([T.seTax, money(incomeTax(profit))]);
+      list.push(["", T.notSi]);
+    } else if (kind === "purchase") {
+      var priceP = Math.max(0, num("price"));
+      var buyersP = Math.max(1, Math.round(num("buyers")));
+      var shareP = priceP / buyersP;
+      var fullP = transferScale(shareP).reduce(function (s, b) { return s + b.amount; }, 0);
+      var transferP = 0;
+      var vatP = 0;
+      if (document.getElementById("newbuild").checked) {
+        vatP = vatOn(priceP, Math.max(0, num("area")), document.getElementById("home").checked, document.getElementById("disability").checked);
+      } else {
+        transferP = document.getElementById("forced").checked ? fullP : fullP * 0.5;
+        if (document.getElementById("late").checked) transferP *= 1.1;
+        transferP *= buyersP;
+      }
+      var stampP = document.getElementById("yearNew").checked ? 0 : stampOld(priceP);
+      list.push([T.vatPart, money(vatP)]);
+      list.push([T.transferPart, money(transferP)]);
+      list.push([T.stampPart, money(stampP)]);
+      list.push([T.purchaseTotal, money(vatP + transferP + stampP)]);
+      list.push(["", T.notFees]);
+    } else if (kind === "compare") {
+      var inc = Math.max(0, num("incomeCmp"));
+      var prof = Math.max(0, num("profitCmp"));
+      var band = Math.max(0, num("uaeBand"));
+      var typed = Math.max(0, num("otherRate")) / 100;
+      var uaeCorp = band <= 0 ? prof * 0.09 : Math.max(0, prof - band) * 0.09;
+      list.push([T.cyPerson, money(incomeTax(inc))]);
+      list.push([T.ptPerson, money(sliceTax(inc, PORTUGAL))]);
+      list.push([T.uaePerson, money(0)]);
+      if (typed > 0) list.push([T.otherPerson, money(inc * typed)]);
+      list.push([T.cyCo, money(prof * 0.15)]);
+      list.push([T.mtCo, money(prof * 0.35)]);
+      list.push([T.ptCo, money(prof * 0.19)]);
+      list.push([T.grCo, money(prof * 0.22)]);
+      list.push([T.uaeCo, money(uaeCorp)]);
+      list.push(["", T.compareNote]);
     }
     var consult = root.getAttribute("data-consult");
     var line = consult ? '<p class="consult"><a href="' + consult + '">' + T.consult + "</a></p>" : "";

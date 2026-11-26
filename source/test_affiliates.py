@@ -31,6 +31,11 @@ class AffiliateTests(unittest.TestCase):
         for key in build.AFFILIATE_KEYS:
             if key == "amazon":
                 self.assertEqual(data[key], "https://www.amazon.de/?tag=cynews24-21")
+            elif key == "trezor":
+                self.assertEqual(
+                    data[key],
+                    "https://affil.trezor.io/aff_c?offer_id=352&aff_id=847056",
+                )
             else:
                 self.assertEqual(data[key], "#AFFILIATE_" + key.upper())
             self.assertTrue(build._affiliate_url_ok(data[key]))
@@ -86,7 +91,7 @@ class AffiliateTests(unittest.TestCase):
                 self.assertNotIn('class="partners"', html)
                 for key in keys:
                     self.assertIn(f'data-affiliate="{key}"', html)
-                    self.assertIn(f'href="{build.affiliate_href(key)}"', html)
+                    self.assertIn(f'href="{build.e(build.affiliate_href(key))}"', html)
                 for tag in re.findall(r'<a class="aff-btn"[^>]*>', html):
                     self.assertIn('rel="nofollow sponsored noopener"', tag)
                     self.assertIn('target="_blank"', tag)
@@ -123,6 +128,21 @@ class AffiliateTests(unittest.TestCase):
                 html = build.calc_page(lang, slug)
                 self.assertEqual(html.count('class="aff-offer aff-calc"'), 0)
                 self.assertNotIn("data-affiliate-widget=", html)
+
+    def test_crypto_tax_page_has_the_trezor_safe_box(self):
+        url = "https://affil.trezor.io/aff_c?offer_id=352&aff_id=847056"
+        for lang in build.LANGS:
+            html = build.guide_page(lang, "for-foreigners/crypto", [])
+            self.assertIn(f'href="{build.e(url)}"', html)
+            self.assertIn('data-affiliate="trezor"', html)
+            self.assertIn('rel="sponsored nofollow noopener"', html)
+            self.assertIn('target="_blank"', html)
+            self.assertIn("Trezor Safe 7", html)
+            self.assertIn('class="aff-disclosure"', html)
+            self.assertIn(build.UI[lang]["aff_note"], html)
+            self.assertIn("assets/js/affiliates.js", html)
+            self.assertLess(html.index('class="body"'), html.index("aff-offer"))
+            self.assertLess(html.index("aff-offer"), html.index('class="faq"'))
 
     def test_disclosure_page_is_in_the_footer_sitemap_and_index(self):
         for lang in build.LANGS:

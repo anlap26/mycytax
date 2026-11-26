@@ -1,0 +1,115 @@
+{
+  "slug": "for-foreigners/crypto",
+  "seq": 46,
+  "ru": {
+    "title": "Налог на криптовалюту на Кипре с 2026 года",
+    "description": "Статья 20Е облагает прибыль от распоряжения криптоактивом по ставке 8% с 1 января 2026 года. Майнинг идёт по обычным ставкам. Нереализованный рост не облагается.",
+    "body": "Проверено: 26 ноября 2026 года.\n\n## Короткий ответ\n\nСтатья 20Е Закона о подоходном налоге, в сводке CyLaw, говорит: прибыль любого лица от распоряжения криптоактивами облагается по ставке 8%. Вопросы и ответы Налогового департамента, о распоряжениях с 1 января 2026 года, говорят то же и добавляют границы. Майнинг в эти 8% не входит. Рост рыночной цены, пока актив не отчуждён, департамент называет нереализованным и не облагает.\n\nХранение ключей — другая страница. [Справочник о хранении](/ru/guides/store-savings-and-crypto/) не выбирает долю сбережений и не является налоговой оценкой.\n\n## Кто и с какого дня\n\nДепартамент пишет, что статья применяется к распоряжениям с 1 января 2026 года, независимо от даты приобретения. Выбора нет: статья применяется к каждому распоряжению в её поле.\n\nДля физического лица поле — налоговый резидент Кипра либо нерезидент, который распоряжается активом, находясь на Кипре физически. Для компании — налоговый резидент либо нерезидент, который распоряжается через постоянное представительство на Кипре. В случаях нерезидента департамент говорит, что учтут применимое соглашение, если оно есть. Перечень соглашений — [отдельная страница](/ru/guides/for-foreigners/tax-treaties/). Статей об источнике криптодохода эта страница из текстов не выписывала.\n\nДепартамент пишет, что режим для физических лиц и для компаний один и тот же.\n\n## Что такое распоряжение и что такое актив\n\nЗакон определяет распоряжение как продажу, дарение, обмен одного криптоактива на другой и использование криптоактива как средства платежа.\n\nТермин «криптоактив» закон отсылает к пункту 5 части 1 статьи 3 Регламента (ЕС) 2023/1114. Департамент перечисляет криптовалюту, служебные токены, токены с привязкой к активам и токены электронных денег. По общему правилу, пишет департамент, NFT в термин не входит. Прибыль по сделке, которая в статью 20Е не попадает, облагается по общим правилам закона.\n\nЕсли один и тот же актив куплен в разное время по разной цене, департамент считает, что отчуждают более раннюю покупку. Это метод FIFO.\n\n## Майнинг, убыток и то, чего нет\n\nПрибыль от распоряжения активом, полученным майнингом, департамент относит к обычным ставкам подоходного налога, а не к 8%. Пункт 4 статьи 20Е говорит, что статья не применяется к распоряжению активом, приобретённым через майнинг.\n\nУбыток от распоряжения закон позволяет зачесть только с прибылью от распоряжения криптоактивами того же налогового года. Перенос на следующие годы и передача другой компании по статье 13 не допускаются.\n\nКалькулятора ставки 8% на этом сайте нет: достаточно умножения, а вопрос, попадает ли конкретная сделка в статью, калькулятор не решает. Вознаграждение за стейкинг департамент в прочитанном фрагменте вопросов отдельно от майнинга не раскладывает одной фразой, которую можно было бы сузить до ставки. Если выплата не является распоряжением по статье 20Е, департамент отсылает к общим правилам. Эту страницу не просят угадать ставку стейкинга.",
+    "faq": [
+      {
+        "q": "8% — это и для компании?",
+        "a": "Департамент пишет, что режим для физических лиц и для компаний один. Статья 20Е говорит о прибыли любого лица от распоряжения."
+      },
+      {
+        "q": "Облагается ли рост цены, пока монету не продали?",
+        "a": "Нет. Департамент называет такое движение нереализованным и пишет, что оно не облагается."
+      },
+      {
+        "q": "Монета, добытая майнингом, тоже 8%?",
+        "a": "Нет. И закон, и вопросы департамента выводят распоряжение активом из майнинга из статьи 20Е. Оно идёт по обычным ставкам."
+      },
+      {
+        "q": "Убыток переносится на следующий год?",
+        "a": "Статья 20Е позволяет зачёт только с прибылью от распоряжения криптоактивами того же года. Перенос закон прямо исключает."
+      }
+    ],
+    "sources": [
+      {
+        "name": "Вопросы о налоге на криптоактивы с 1 января 2026 года, Налоговый департамент",
+        "url": "https://www.gov.cy/mof-tax/documents/forologisi-kerdon-apo-synallages-se-kryptostoicheia/sychnes-erotiseis-anaforika-me-ti-forologisi-kerdon-apo-synallages-se-kryptostoicheia-apo-01-01-2026/"
+      },
+      {
+        "name": "Статья 20Е, Закон о подоходном налоге, CyLaw",
+        "url": "https://cylaw.org/nomoi/enop/ind/2002_1_118/section-sce804a257-bc56-297e-343c-322a5efaf1aa.html"
+      },
+      {
+        "name": "Продажа криптовалюты в перечне дохода статьи 5, Business in Cyprus",
+        "url": "https://www.businessincyprus.gov.cy/doing-business-in-cyprus/start-your-business/registering-for-income-tax-and-value-added-tax/"
+      }
+    ]
+  },
+  "en": {
+    "title": "Crypto tax in Cyprus from 2026",
+    "description": "Article 20E taxes a gain on disposing of a crypto-asset at 8% from 1 January 2026. Mining is at the ordinary rates. An unrealised rise is not taxed.",
+    "body": "Last checked: 26 November 2026.\n\n## Short answer\n\nArticle 20E of the Income Tax Law, in the CyLaw consolidation, says the profits of any person from disposing of crypto-assets are taxed at 8%. The Tax Department’s questions and answers, on disposals from 1 January 2026, say the same and add the edges. Mining is not in that 8%. A rise in market price while the asset is still held is, in the Department’s words, unrealised and not taxed.\n\nKeeping the keys is a different page. The [storage guide](/guides/store-savings-and-crypto/) does not choose a share of savings and it is not a tax assessment.\n\n## Who, and from which day\n\nThe Department says the article applies to disposals from 1 January 2026, whatever the date of acquisition. There is no election: the article applies to every disposal inside its field.\n\nFor an individual the field is a Cyprus tax resident, or a non-resident who disposes of the asset while physically in Cyprus. For a company it is a tax resident, or a non-resident disposing through a permanent establishment in Cyprus. For the non-resident cases the Department says the applicable treaty, if there is one, is taken into account. The treaty list is a [separate page](/guides/for-foreigners/tax-treaties/). This page did not copy source articles on crypto out of those texts.\n\nThe Department says the treatment of individuals and of companies is the same.\n\n## What a disposal is, and what an asset is\n\nThe statute defines a disposal as a sale, a gift, an exchange of one crypto-asset for another, and the use of a crypto-asset as a means of payment.\n\nThe statute sends the word “crypto-asset” to point 5 of paragraph 1 of Article 3 of Regulation (EU) 2023/1114. The Department lists cryptocurrency, utility tokens, asset-referenced tokens and e-money tokens. As a general rule, the Department writes, an NFT is not in the term. A gain on a transaction that does not fall in Article 20E is taxed under the ordinary provisions of the law.\n\nWhere the same asset was bought at different times and at different prices, the Department treats the earlier purchase as the one disposed of. That is FIFO.\n\n## Mining, a loss, and what is not stated\n\nA gain on disposing of an asset acquired by mining is, in the Department’s answers, taxed at the ordinary income-tax rates, not at 8%. Paragraph 4 of Article 20E says the article does not apply to a disposal of an asset acquired through mining.\n\nA loss on a disposal may, under the statute, be set only against a gain on disposing of crypto-assets in the same tax year. A carry-forward, and a surrender to another company under Article 13, is not allowed.\n\nThis site has no calculator for the 8% rate: the multiplication is short, and a calculator would not decide whether a particular trade falls in the article. Staking rewards are not, in the part of the Department’s questions that was read, separated from mining in one sentence that could be narrowed to a rate. Where a receipt is not a disposal under Article 20E, the Department points to the ordinary rules. This page is not asked to guess a staking rate.",
+    "faq": [
+      {
+        "q": "Is 8% the rate for a company as well?",
+        "a": "The Department says the treatment of individuals and of companies is the same. Article 20E speaks of the profits of any person from a disposal."
+      },
+      {
+        "q": "Is a price rise taxed while the coin is unsold?",
+        "a": "No. The Department calls that movement unrealised and says it is not taxed."
+      },
+      {
+        "q": "Is a mined coin also at 8%?",
+        "a": "No. Both the statute and the Department’s answers take a disposal of an asset acquired by mining out of Article 20E. It is taxed at the ordinary rates."
+      },
+      {
+        "q": "Does a loss carry into the next year?",
+        "a": "Article 20E allows a set-off only against a gain on disposing of crypto-assets in the same year. A carry-forward is expressly excluded."
+      }
+    ],
+    "sources": [
+      {
+        "name": "Questions on crypto-asset tax from 1 January 2026, Tax Department",
+        "url": "https://www.gov.cy/mof-tax/documents/forologisi-kerdon-apo-synallages-se-kryptostoicheia/sychnes-erotiseis-anaforika-me-ti-forologisi-kerdon-apo-synallages-se-kryptostoicheia-apo-01-01-2026/"
+      },
+      {
+        "name": "Article 20E, Income Tax Law, CyLaw",
+        "url": "https://cylaw.org/nomoi/enop/ind/2002_1_118/section-sce804a257-bc56-297e-343c-322a5efaf1aa.html"
+      },
+      {
+        "name": "Sale of cryptocurrency in the Article 5 income list, Business in Cyprus",
+        "url": "https://www.businessincyprus.gov.cy/doing-business-in-cyprus/start-your-business/registering-for-income-tax-and-value-added-tax/"
+      }
+    ]
+  },
+  "el": {
+    "title": "Φόρος κρυπτοστοιχείων στην Κύπρο από το 2026",
+    "description": "Το άρθρο 20Ε φορολογεί κέρδος από διάθεση κρυπτοστοιχείου με 8% από την 1η Ιανουαρίου 2026. Η εξόρυξη πάει στους συνήθεις συντελεστές. Μη πραγματοποιηθείσα άνοδος δεν φορολογείται.",
+    "body": "Τελευταίος έλεγχος: 26 Νοεμβρίου 2026.\n\n## Σύντομη απάντηση\n\nΤο άρθρο 20Ε του περί Φορολογίας του Εισοδήματος Νόμου, στην κωδικοποίηση του CyLaw, λέει: κέρδη οποιουδήποτε προσώπου από διάθεση κρυπτοστοιχείων φορολογούνται με συντελεστή 8%. Οι ερωταποκρίσεις του Τμήματος Φορολογίας, για διαθέσεις από την 1η Ιανουαρίου 2026, λένε το ίδιο και προσθέτουν τα όρια. Η εξόρυξη δεν είναι μέσα σε αυτό το 8%. Άνοδος της αγοραίας τιμής όσο το στοιχείο κρατιέται είναι, με τα λόγια του Τμήματος, μη πραγματοποιηθείσα και δεν φορολογείται.\n\nΗ φύλαξη των κλειδιών είναι άλλη σελίδα. Ο [οδηγός φύλαξης](/el/guides/store-savings-and-crypto/) δεν διαλέγει μερίδιο αποταμιεύσεων και δεν είναι φορολογική βεβαίωση.\n\n## Ποιος, και από ποια ημέρα\n\nΤο Τμήμα λέει ότι το άρθρο εφαρμόζεται σε διαθέσεις από την 1η Ιανουαρίου 2026, ανεξάρτητα από την ημερομηνία απόκτησης. Δεν υπάρχει επιλογή: το άρθρο εφαρμόζεται σε κάθε διάθεση μέσα στο πεδίο του.\n\nΓια φυσικό πρόσωπο το πεδίο είναι φορολογικός κάτοικος Κύπρου, ή μη κάτοικος που διαθέτει το στοιχείο ενώ βρίσκεται με φυσική παρουσία στην Κύπρο. Για εταιρεία είναι φορολογικός κάτοικος, ή μη κάτοικος που διαθέτει μέσω μόνιμης εγκατάστασης στην Κύπρο. Για τις περιπτώσεις μη κατοίκου το Τμήμα λέει ότι λαμβάνεται υπόψη η εφαρμοστέα σύμβαση, αν υπάρχει. Ο κατάλογος συμβάσεων είναι [χωριστή σελίδα](/el/guides/for-foreigners/tax-treaties/). Αυτή η σελίδα δεν αντέγραψε άρθρα πηγής για κρυπτοστοιχεία από εκείνα τα κείμενα.\n\nΤο Τμήμα λέει ότι ο χειρισμός φυσικών προσώπων και εταιρειών είναι ο ίδιος.\n\n## Τι είναι διάθεση, και τι είναι στοιχείο\n\nΟ νόμος ορίζει τη διάθεση ως πώληση, δωρεά, ανταλλαγή ενός κρυπτοστοιχείου με άλλο και χρήση κρυπτοστοιχείου ως μέσου πληρωμής.\n\nΟ νόμος στέλνει τη λέξη «κρυπτοστοιχεία» στην παράγραφο 5 του εδαφίου 1 του άρθρου 3 του Κανονισμού (ΕΕ) 2023/1114. Το Τμήμα απαριθμεί κρυπτονομίσματα, μάρκες χρησιμότητας, μάρκες με αναφορά σε περιουσιακά στοιχεία και μάρκες ηλεκτρονικού χρήματος. Κατά γενικό κανόνα, γράφει το Τμήμα, ένα NFT δεν είναι μέσα στον όρο. Κέρδος από συναλλαγή που δεν εμπίπτει στο άρθρο 20Ε φορολογείται κατά τις γενικές διατάξεις του νόμου.\n\nΌπου το ίδιο στοιχείο αγοράστηκε σε διαφορετικούς χρόνους και με διαφορετικό κόστος, το Τμήμα θεωρεί ότι διατίθεται η παλαιότερη αγορά. Αυτή είναι η μέθοδος FIFO.\n\n## Εξόρυξη, ζημία, και τι δεν λέγεται\n\nΚέρδος από διάθεση στοιχείου που αποκτήθηκε με εξόρυξη, στις απαντήσεις του Τμήματος, φορολογείται με τους συνήθεις συντελεστές φόρου εισοδήματος, όχι με 8%. Η παράγραφος 4 του άρθρου 20Ε λέει ότι το άρθρο δεν εφαρμόζεται σε διάθεση στοιχείου που αποκτήθηκε μέσω εξόρυξης.\n\nΖημία από διάθεση μπορεί, κατά τον νόμο, να συμψηφιστεί μόνο με κέρδος από διάθεση κρυπτοστοιχείων του ίδιου φορολογικού έτους. Μεταφορά σε επόμενα έτη, και εκχώρηση σε άλλη εταιρεία κατά το άρθρο 13, δεν επιτρέπεται.\n\nΑυτός ο ιστότοπος δεν έχει υπολογιστή για τον συντελεστή 8%: ο πολλαπλασιασμός είναι σύντομος, και ένας υπολογιστής δεν θα έκρινε αν μια συγκεκριμένη συναλλαγή εμπίπτει στο άρθρο. Οι αμοιβές staking, στο μέρος των ερωτήσεων του Τμήματος που διαβάστηκε, δεν χωρίζονται από την εξόρυξη με μία φράση που θα μπορούσε να στενέψει σε συντελεστή. Όπου μια είσπραξη δεν είναι διάθεση κατά το άρθρο 20Ε, το Τμήμα παραπέμπει στους γενικούς κανόνες. Αυτή η σελίδα δεν καλείται να μαντέψει συντελεστή staking.",
+    "faq": [
+      {
+        "q": "Το 8% είναι και ο συντελεστής για εταιρεία;",
+        "a": "Το Τμήμα λέει ότι ο χειρισμός φυσικών προσώπων και εταιρειών είναι ο ίδιος. Το άρθρο 20Ε μιλά για κέρδη οποιουδήποτε προσώπου από διάθεση."
+      },
+      {
+        "q": "Φορολογείται άνοδος τιμής όσο το νόμισμα δεν έχει πωληθεί;",
+        "a": "Όχι. Το Τμήμα ονομάζει αυτή την κίνηση μη πραγματοποιηθείσα και λέει ότι δεν φορολογείται."
+      },
+      {
+        "q": "Νόμισμα από εξόρυξη είναι επίσης στο 8%;",
+        "a": "Όχι. Και ο νόμος και οι απαντήσεις του Τμήματος βγάζουν διάθεση στοιχείου από εξόρυξη έξω από το άρθρο 20Ε. Φορολογείται με τους συνήθεις συντελεστές."
+      },
+      {
+        "q": "Η ζημία μεταφέρεται στον επόμενο χρόνο;",
+        "a": "Το άρθρο 20Ε επιτρέπει συμψηφισμό μόνο με κέρδος από διάθεση κρυπτοστοιχείων του ίδιου έτους. Η μεταφορά αποκλείεται ρητά."
+      }
+    ],
+    "sources": [
+      {
+        "name": "Ερωτήσεις για φόρο κρυπτοστοιχείων από 1η Ιανουαρίου 2026, Τμήμα Φορολογίας",
+        "url": "https://www.gov.cy/mof-tax/documents/forologisi-kerdon-apo-synallages-se-kryptostoicheia/sychnes-erotiseis-anaforika-me-ti-forologisi-kerdon-apo-synallages-se-kryptostoicheia-apo-01-01-2026/"
+      },
+      {
+        "name": "Άρθρο 20Ε, περί Φορολογίας του Εισοδήματος Νόμος, CyLaw",
+        "url": "https://cylaw.org/nomoi/enop/ind/2002_1_118/section-sce804a257-bc56-297e-343c-322a5efaf1aa.html"
+      },
+      {
+        "name": "Πώληση κρυπτονομίσματος στον κατάλογο εισοδήματος του άρθρου 5, Business in Cyprus",
+        "url": "https://www.businessincyprus.gov.cy/doing-business-in-cyprus/start-your-business/registering-for-income-tax-and-value-added-tax/"
+      }
+    ]
+  }
+}

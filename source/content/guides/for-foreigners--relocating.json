@@ -1,0 +1,181 @@
+{
+  "slug": "for-foreigners/relocating",
+  "seq": 41,
+  "ru": {
+    "title": "Налоги при переезде на Кипр",
+    "description": "Правило 183 дней и правило 60 дней по странице Налогового департамента, шкалы 2026 года и что non-dom с зарплаты не снимает.",
+    "body": "Проверено: 26 ноября 2026 года.\n\n## Короткий ответ\n\nПереезд — это не налоговое резидентство. Налоговый департамент на своей странице о резидентстве говорит, что физическое лицо — налоговый резидент Кипра, если выполняется правило 183 дней или правило 60 дней по статье 2 Закона о подоходном налоге 2002 года. Пока вы не резидент, кипрский подоходный налог смотрит на доход из кипрского источника, а не на всю вашу жизнь за границей. Когда вы резидент, в поле закона попадает доход, который статья 5 относит к резиденту, в том числе доход вне Кипра, если статья так говорит. Изъятия — отдельные нормы. Эта страница их не пересказывает, потому что условия легко преувеличить.\n\n## Правило 183 дней\n\nДепартамент пишет: лицо считается пребывающим на Кипре, если оно находится здесь один или несколько периодов, в сумме больше 183 дней в налоговом году. День приезда считается днём на Кипре. День отъезда считается днём вне Кипра. Приезд и отъезд в один день считаются днём на Кипре. Отъезд и приезд в один день считаются днём вне Кипра.\n\n## Правило 60 дней\n\nДепартамент пишет, что лицо может быть налоговым резидентом и без 183 дней, если выполнены все условия сразу. Оно находится на Кипре не меньше 60 дней в налоговом году. Оно не находится больше 183 дней в другом государстве. Оно ведёт на Кипре деятельность и/или работает по найму и/или занимает должность. У него есть постоянное жильё на Кипре, своё или арендованное. Если в течение года деятельность или работа прекращаются, лицо перестаёт считаться налоговым резидентом за этот год.\n\nСтраница департамента, прочитанная 26 ноября 2026 года, по-прежнему содержит условие о 183 днях в другой стране. Отдельные обзоры пишут, что условие «не быть налоговым резидентом другого государства» из правила убрали. Эта страница следует тексту департамента, а не обзору.\n\nПодсчёт дней и документы — в [справочнике о налоговом резидентстве](/ru/guides/tax-residency/). Первые месяцы проживания, которые не являются налоговым сроком, — в [заметке о первых месяцах](/ru/guides/relocation/first-90-days/).\n\n## Шкалы, когда доход уже в подоходном налоге\n\nBusiness in Cyprus публикует шкалы с налогового 2026 года: 0% на €0–€22 000, 20% на €22 001–€32 000, 25% на €32 001–€42 000, 30% на €42 001–€72 000 и 35% на €72 001 и выше. Необлагаемый порог сайт называет увеличенным с €19 500 до €22 000.\n\nТот же сайт пишет, кто подаёт декларацию с налогового 2026 года. Налоговый резидент подаёт её, если у него есть валовой доход внутри или вне Кипра, который попадает в статью 5(1), независимо от возраста, и/или если в налоговом году ему от 25 до 70 лет, даже без дохода. Нерезидент подаёт её, если у него есть доход на Кипре по статье 5(2). С 2026 года декларация физического лица подаётся в Tax For All. Порядок номера — в [справочнике о налоговом коде](/ru/guides/resident-handbook/tic/).\n\n## Что non-dom здесь не делает\n\nСтатус без домициля выводит дивиденды и проценты из специального взноса на оборону. Подоходный налог со шкалами выше он не меняет. Взнос с аренды с 2026 года отменён и для лица с домицилем, поэтому non-dom больше не объясняет аренду. Сравнение двух колонок — в [калькуляторе](/ru/calculators/non-dom/). Полные условия, включая 17 лет из 20 и платёж €250 000, — в [справочнике non-dom](/ru/guides/non-dom/).\n\nСоциальное страхование и ГЕСИ эта страница в процентах не называет: потолок 2026 года из закона о ГЕСИ здесь не воспроизведён. Регистрация номера — отдельная [страница](/ru/guides/resident-handbook/social-insurance/).\n\n## Порядок, который следует правилам\n\n1. Решите иммиграционный шаг по паспорту. Карта — на странице [вариантов проживания](/ru/guides/relocation/residence-options/). Виза цифрового кочевника — [отдельная страница](/ru/guides/for-foreigners/digital-nomad/), и она не заменяет подсчёт дней.\n2. Храните даты въезда и выезда так, как их считает департамент, и не смешивайте их с визой.\n3. Если декларация потребуется, получите налоговый номер до подачи.\n4. Прежде чем распределять дивиденд, отдельно ответьте, есть ли домициль. Это не тот же ответ, что резидентство.",
+    "faq": [
+      {
+        "q": "Первые 90 дней освобождают от налога?",
+        "a": "Нет. Такого срока в Законе о подоходном налоге департамент не описывает. Резидентство считают по налоговому году."
+      },
+      {
+        "q": "Правило 60 дней работает, если я налоговый резидент другой страны?",
+        "a": "Страница департамента требует, чтобы вы не провели больше 183 дней в другом государстве, плюс работу или должность, плюс жильё. Фразу «не быть налоговым резидентом нигде ещё» эта страница с обзора не копирует."
+      },
+      {
+        "q": "С какой суммы начинается налог в 2026 году?",
+        "a": "Business in Cyprus пишет 0% на первые €22 000 налогооблагаемого дохода. Это доход после изъятий и вычетов, которые допускает закон, а не обязательно зарплата до вычетов."
+      },
+      {
+        "q": "Нужно ли подавать декларацию, если дохода нет?",
+        "a": "Тот же государственный сайт пишет, что налоговый резидент в возрасте от 25 до 70 лет на 31 декабря подаёт декларацию и без дохода. Исключение — лица моложе 25 или старше 70 без валового дохода."
+      }
+    ],
+    "howto": [
+      {
+        "name": "Отделить визу от налогового года",
+        "text": "Выберите иммиграционный маршрут по паспорту. Дни для налога считайте по правилу 183 или 60 дней на странице Налогового департамента, а не по сроку визы."
+      },
+      {
+        "name": "Сохранить дни так, как их считает департамент",
+        "text": "День приезда — день на Кипре, день отъезда — день вне Кипра. Приезд и отъезд в один день — день на Кипре."
+      },
+      {
+        "name": "Получить налоговый номер, если декларация нужна",
+        "text": "С налогового 2026 года декларация физического лица подаётся в Tax For All. Номер получают до подачи."
+      },
+      {
+        "name": "Отдельно решить вопрос домициля",
+        "text": "Non-dom не меняет шкалы подоходного налога. Он относится к взносу на оборону с дивидендов и процентов."
+      }
+    ],
+    "sources": [
+      {
+        "name": "Налоговое резидентство и домициль, Налоговый департамент",
+        "url": "https://www.gov.cy/mof-tax/en/documents/tax-residency-domicility/"
+      },
+      {
+        "name": "Шкалы и обязанность подать декларацию с 2026 года, Business in Cyprus",
+        "url": "https://www.businessincyprus.gov.cy/doing-business-in-cyprus/start-your-business/registering-for-income-tax-and-value-added-tax/"
+      },
+      {
+        "name": "Взнос на оборону, Налоговый департамент",
+        "url": "https://www.gov.cy/mof-tax/documents/ektakti-amyntiki-eisfora-eae/"
+      },
+      {
+        "name": "Налоговые стимулы, в том числе 5% с дивидендов, Министерство финансов",
+        "url": "https://www.gov.cy/mof/en/documents/tax-incentives/"
+      }
+    ]
+  },
+  "en": {
+    "title": "Taxes when you relocate to Cyprus",
+    "description": "The 183-day rule and the 60-day rule as the Tax Department states them, the 2026 bands, and what non-dom status does not remove from a salary.",
+    "body": "Last checked: 26 November 2026.\n\n## Short answer\n\nMoving is not tax residence. The Tax Department’s residency page says an individual is a Cyprus tax resident if the 183-day rule or the 60-day rule in Article 2 of the Income Tax Law of 2002 is met. Until you are resident, Cyprus income tax looks at Cyprus-source income, not at your whole life abroad. Once you are resident, the statute charges the income Article 5 charges on a resident, including income outside Cyprus where that article says so. Exemptions are separate provisions. This page does not restate them, because the conditions are easy to overstate.\n\n## The 183-day rule\n\nThe Department says a person is treated as residing in Cyprus if they stay for one or more periods exceeding 183 days in total in a tax year. The day of arrival counts as a day in Cyprus. The day of departure counts as a day outside Cyprus. Arrival and departure on the same day count as a day in Cyprus. Departure and arrival on the same day count as a day outside Cyprus.\n\n## The 60-day rule\n\nThe Department says a person can be tax resident without 183 days if every condition is met. They stay in Cyprus for at least 60 days in the tax year. They do not stay more than 183 days in another country. They carry on a business in Cyprus and/or are employed in Cyprus and/or hold an office. They maintain a permanent home in Cyprus, owned or rented. If the business or the employment stops during the year, the person ceases to be a Cyprus tax resident for that year.\n\nThe Department’s page, read on 26 November 2026, still contains the condition about 183 days in another country. Some commentaries say the old words “not tax resident anywhere else” were removed from the rule. This page follows the Department’s text, not a commentary.\n\nThe day count and the papers are in the [tax residency guide](/guides/tax-residency/). The first months of living here, which are not a tax period, are in the [note on the first months](/guides/relocation/first-90-days/).\n\n## The bands, once income is in income tax\n\nBusiness in Cyprus publishes the bands from the 2026 tax year: 0% on €0–€22,000, 20% on €22,001–€32,000, 25% on €32,001–€42,000, 30% on €42,001–€72,000 and 35% on €72,001 and above. The site calls the nil band an increase from €19,500 to €22,000.\n\nThe same site says who files from the 2026 tax year. A tax resident files if they have gross income, in or outside Cyprus, that falls under Article 5(1), whatever their age, and/or if they are aged 25 to 70 in the tax year, even with no income. A non-resident files if they have Cyprus income under Article 5(2). From 2026 the individual return is filed in Tax For All. The number is in the [tax-code guide](/guides/resident-handbook/tic/).\n\n## What non-dom does not do here\n\nNon-dom status takes dividends and interest out of Special Defence Contribution. It does not change the income-tax bands above. The contribution on rent was abolished for 2026 for a domiciled person as well, so non-dom no longer explains rent. The two columns are in the [calculator](/calculators/non-dom/). The full conditions, including 17 years out of 20 and the €250,000 payment, are in the [non-dom guide](/guides/non-dom/).\n\nThis page does not state social-insurance or GHS percentages. A 2026 ceiling from the GHS law is not reproduced here. Getting the number is a separate [page](/guides/resident-handbook/social-insurance/).\n\n## An order that follows the rules\n\n1. Decide the immigration step from the passport. The map is the [residence options](/guides/relocation/residence-options/) page. The digital nomad visa is a [separate page](/guides/for-foreigners/digital-nomad/), and it does not replace the day count.\n2. Keep arrival and departure dates the way the Department counts them, and do not mix them with the visa.\n3. If a return will be due, get the tax number before you file.\n4. Before a dividend is paid, answer domicile separately. It is not the same answer as residence.",
+    "faq": [
+      {
+        "q": "Do the first 90 days exempt the tax?",
+        "a": "No. The Department does not describe that period in the Income Tax Law. Residence is counted on the tax year."
+      },
+      {
+        "q": "Does the 60-day rule work if I am tax resident somewhere else?",
+        "a": "The Department’s page requires that you do not spend more than 183 days in another country, plus work or an office, plus a home. This page does not copy the sentence “not tax resident anywhere else” from a commentary."
+      },
+      {
+        "q": "From what amount does tax start in 2026?",
+        "a": "Business in Cyprus states 0% on the first €22,000 of taxable income. That is income after the exemptions and deductions the statute allows, not necessarily salary before deductions."
+      },
+      {
+        "q": "Must I file if there is no income?",
+        "a": "The same government site says a tax resident aged 25 to 70 on 31 December files even with no income. The exception is a person under 25 or over 70 with no gross income."
+      }
+    ],
+    "howto": [
+      {
+        "name": "Separate the visa from the tax year",
+        "text": "Pick the immigration route from the passport. Count tax days under the 183-day or 60-day rule on the Tax Department’s page, not under the visa’s length."
+      },
+      {
+        "name": "Keep the days the way the Department counts them",
+        "text": "The arrival day is a day in Cyprus. The departure day is a day outside Cyprus. Arrival and departure on the same day is a day in Cyprus."
+      },
+      {
+        "name": "Get a tax number if a return is due",
+        "text": "From the 2026 tax year the individual return is filed in Tax For All. The number comes before the filing."
+      },
+      {
+        "name": "Decide domicile on its own",
+        "text": "Non-dom status does not change the income-tax bands. It belongs to defence contribution on dividends and interest."
+      }
+    ],
+    "sources": [
+      {
+        "name": "Tax residency and domicile, Tax Department",
+        "url": "https://www.gov.cy/mof-tax/en/documents/tax-residency-domicility/"
+      },
+      {
+        "name": "Bands and the filing duty from 2026, Business in Cyprus",
+        "url": "https://www.businessincyprus.gov.cy/doing-business-in-cyprus/start-your-business/registering-for-income-tax-and-value-added-tax/"
+      },
+      {
+        "name": "Defence contribution, Tax Department",
+        "url": "https://www.gov.cy/mof-tax/documents/ektakti-amyntiki-eisfora-eae/"
+      },
+      {
+        "name": "Tax incentives, including 5% on dividends, Ministry of Finance",
+        "url": "https://www.gov.cy/mof/en/documents/tax-incentives/"
+      }
+    ]
+  },
+  "el": {
+    "title": "Φόροι κατά τη μετεγκατάσταση στην Κύπρο",
+    "description": "Ο κανόνας των 183 ημερών και ο κανόνας των 60 ημερών όπως τους γράφει το Τμήμα Φορολογίας, οι κλίμακες του 2026 και τι δεν αφαιρεί το non-dom από τον μισθό.",
+    "body": "Τελευταίος έλεγχος: 26 Νοεμβρίου 2026.\n\n## Σύντομη απάντηση\n\nΗ μετεγκατάσταση δεν είναι φορολογική κατοικία. Η σελίδα κατοικίας του Τμήματος Φορολογίας λέει ότι φυσικό πρόσωπο είναι φορολογικός κάτοικος Κύπρου αν πληρούται ο κανόνας των 183 ημερών ή ο κανόνας των 60 ημερών στο άρθρο 2 του περί Φορολογίας του Εισοδήματος Νόμου του 2002. Μέχρι να είστε κάτοικος, ο κυπριακός φόρος εισοδήματος κοιτά εισόδημα πηγής Κύπρου, όχι όλη τη ζωή σας στο εξωτερικό. Μόλις είστε κάτοικος, ο νόμος πιάνει το εισόδημα που το άρθρο 5 πιάνει σε κάτοικο, συμπεριλαμβανομένου εισοδήματος εκτός Κύπρου όπου το άρθρο το λέει. Οι απαλλαγές είναι χωριστές διατάξεις. Αυτή η σελίδα δεν τις επαναλαμβάνει, γιατί οι όροι είναι εύκολο να μεγαλοποιηθούν.\n\n## Ο κανόνας των 183 ημερών\n\nΤο Τμήμα λέει ότι πρόσωπο θεωρείται ότι διαμένει στην Κύπρο αν μένει μία ή περισσότερες περιόδους που υπερβαίνουν τις 183 ημέρες συνολικά σε ένα φορολογικό έτος. Η ημέρα άφιξης μετρά ως ημέρα στην Κύπρο. Η ημέρα αναχώρησης μετρά ως ημέρα εκτός Κύπρου. Άφιξη και αναχώρηση την ίδια ημέρα μετρούν ως ημέρα στην Κύπρο. Αναχώρηση και άφιξη την ίδια ημέρα μετρούν ως ημέρα εκτός Κύπρου.\n\n## Ο κανόνας των 60 ημερών\n\nΤο Τμήμα λέει ότι πρόσωπο μπορεί να είναι φορολογικός κάτοικος χωρίς 183 ημέρες αν πληρούνται όλοι οι όροι. Μένει στην Κύπρο τουλάχιστον 60 ημέρες στο φορολογικό έτος. Δεν μένει πάνω από 183 ημέρες σε άλλη χώρα. Ασκεί επιχείρηση στην Κύπρο και/ή εργάζεται στην Κύπρο και/ή κατέχει αξίωμα. Διατηρεί μόνιμη κατοικία στην Κύπρο, ιδιόκτητη ή ενοικιασμένη. Αν η επιχείρηση ή η εργασία σταματήσει μέσα στο έτος, το πρόσωπο παύει να θεωρείται φορολογικός κάτοικος Κύπρου για το έτος αυτό.\n\nΗ σελίδα του Τμήματος, όπως διαβάστηκε στις 26 Νοεμβρίου 2026, εξακολουθεί να περιέχει τον όρο για 183 ημέρες σε άλλη χώρα. Ορισμένα σχόλια λένε ότι οι παλιές λέξεις «να μην είναι φορολογικός κάτοικος αλλού» αφαιρέθηκαν από τον κανόνα. Αυτή η σελίδα ακολουθεί το κείμενο του Τμήματος, όχι ένα σχόλιο.\n\nΗ μέτρηση ημερών και τα έγγραφα είναι στον [οδηγό φορολογικής κατοικίας](/el/guides/tax-residency/). Οι πρώτοι μήνες διαμονής, που δεν είναι φορολογική περίοδος, είναι στο [σημείωμα για τους πρώτους μήνες](/el/guides/relocation/first-90-days/).\n\n## Οι κλίμακες, μόλις το εισόδημα είναι στον φόρο εισοδήματος\n\nΤο Business in Cyprus δημοσιεύει τις κλίμακες από το φορολογικό έτος 2026: 0% στα €0–€22.000, 20% στα €22.001–€32.000, 25% στα €32.001–€42.000, 30% στα €42.001–€72.000 και 35% στα €72.001 και άνω. Ο ιστότοπος ονομάζει το αφορολόγητο αύξηση από €19.500 σε €22.000.\n\nΟ ίδιος ιστότοπος λέει ποιοι υποβάλλουν δήλωση από το φορολογικό έτος 2026. Φορολογικός κάτοικος υποβάλλει αν έχει μεικτό εισόδημα, εντός ή εκτός Κύπρου, που εμπίπτει στο άρθρο 5(1), ανεξάρτητα από ηλικία, και/ή αν είναι 25 έως 70 ετών στο φορολογικό έτος, ακόμη και χωρίς εισόδημα. Μη κάτοικος υποβάλλει αν έχει εισόδημα στην Κύπρο κατά το άρθρο 5(2). Από το 2026 η δήλωση φυσικού προσώπου υποβάλλεται στο Tax For All. Ο αριθμός είναι στον [οδηγό φορολογικού αριθμού](/el/guides/resident-handbook/tic/).\n\n## Τι δεν κάνει εδώ το non-dom\n\nΤο καθεστώς χωρίς κατοικία βγάζει μερίσματα και τόκους από την έκτακτη εισφορά για την άμυνα. Δεν αλλάζει τις κλίμακες φόρου εισοδήματος παραπάνω. Η εισφορά στο ενοίκιο καταργήθηκε για το 2026 και για πρόσωπο με κατοικία, οπότε το non-dom δεν εξηγεί πλέον το ενοίκιο. Οι δύο στήλες είναι στον [υπολογιστή](/el/calculators/non-dom/). Οι πλήρεις όροι, συμπεριλαμβανομένων των 17 από τα 20 έτη και της πληρωμής €250.000, είναι στον [οδηγό non-dom](/el/guides/non-dom/).\n\nΑυτή η σελίδα δεν αναφέρει ποσοστά κοινωνικών ασφαλίσεων ή ΓεΣΥ. Ανώτατο του 2026 από τον νόμο ΓεΣΥ δεν αναπαράγεται εδώ. Η απόκτηση του αριθμού είναι χωριστή [σελίδα](/el/guides/resident-handbook/social-insurance/).\n\n## Μια σειρά που ακολουθεί τους κανόνες\n\n1. Αποφασίστε το μεταναστευτικό βήμα από το διαβατήριο. Ο χάρτης είναι η σελίδα [επιλογών διαμονής](/el/guides/relocation/residence-options/). Η βίζα ψηφιακού νομάδα είναι [χωριστή σελίδα](/el/guides/for-foreigners/digital-nomad/) και δεν αντικαθιστά τη μέτρηση ημερών.\n2. Κρατήστε ημερομηνίες άφιξης και αναχώρησης όπως τις μετρά το Τμήμα, και μην τις ανακατεύετε με τη βίζα.\n3. Αν η δήλωση θα οφείλεται, πάρτε τον φορολογικό αριθμό πριν την υποβολή.\n4. Πριν πληρωθεί μέρισμα, απαντήστε την κατοικία χωριστά. Δεν είναι η ίδια απάντηση με τη φορολογική κατοικία.",
+    "faq": [
+      {
+        "q": "Οι πρώτες 90 ημέρες απαλλάσσουν τον φόρο;",
+        "a": "Όχι. Το Τμήμα δεν περιγράφει τέτοια περίοδο στον περί Φορολογίας του Εισοδήματος Νόμο. Η κατοικία μετράται στο φορολογικό έτος."
+      },
+      {
+        "q": "Ο κανόνας των 60 ημερών δουλεύει αν είμαι φορολογικός κάτοικος αλλού;",
+        "a": "Η σελίδα του Τμήματος απαιτεί να μην περάσετε πάνω από 183 ημέρες σε άλλη χώρα, συν εργασία ή αξίωμα, συν κατοικία. Αυτή η σελίδα δεν αντιγράφει τη φράση «να μην είστε φορολογικός κάτοικος πουθενά αλλού» από σχόλιο."
+      },
+      {
+        "q": "Από ποιο ποσό αρχίζει ο φόρος το 2026;",
+        "a": "Το Business in Cyprus γράφει 0% στα πρώτα €22.000 φορολογητέου εισοδήματος. Είναι εισόδημα μετά τις απαλλαγές και εκπτώσεις που επιτρέπει ο νόμος, όχι οπωσδήποτε μισθός πριν από εκπτώσεις."
+      },
+      {
+        "q": "Πρέπει να υποβάλω δήλωση αν δεν υπάρχει εισόδημα;",
+        "a": "Ο ίδιος κυβερνητικός ιστότοπος λέει ότι φορολογικός κάτοικος 25 έως 70 ετών στις 31 Δεκεμβρίου υποβάλλει δήλωση και χωρίς εισόδημα. Η εξαίρεση είναι πρόσωπο κάτω των 25 ή άνω των 70 χωρίς μεικτό εισόδημα."
+      }
+    ],
+    "howto": [
+      {
+        "name": "Χωρίστε τη βίζα από το φορολογικό έτος",
+        "text": "Διαλέξτε τη μεταναστευτική οδό από το διαβατήριο. Μετρήστε φορολογικές ημέρες με τον κανόνα των 183 ή των 60 ημερών στη σελίδα του Τμήματος Φορολογίας, όχι με τη διάρκεια της βίζας."
+      },
+      {
+        "name": "Κρατήστε τις ημέρες όπως τις μετρά το Τμήμα",
+        "text": "Η ημέρα άφιξης είναι ημέρα στην Κύπρο. Η ημέρα αναχώρησης είναι ημέρα εκτός Κύπρου. Άφιξη και αναχώρηση την ίδια ημέρα είναι ημέρα στην Κύπρο."
+      },
+      {
+        "name": "Πάρτε φορολογικό αριθμό αν οφείλεται δήλωση",
+        "text": "Από το φορολογικό έτος 2026 η δήλωση φυσικού προσώπου υποβάλλεται στο Tax For All. Ο αριθμός προηγείται της υποβολής."
+      },
+      {
+        "name": "Αποφασίστε την κατοικία μόνη της",
+        "text": "Το καθεστώς non-dom δεν αλλάζει τις κλίμακες φόρου εισοδήματος. Ανήκει στην έκτακτη εισφορά σε μερίσματα και τόκους."
+      }
+    ],
+    "sources": [
+      {
+        "name": "Φορολογική κατοικία και domicile, Τμήμα Φορολογίας",
+        "url": "https://www.gov.cy/mof-tax/en/documents/tax-residency-domicility/"
+      },
+      {
+        "name": "Κλίμακες και υποχρέωση δήλωσης από το 2026, Business in Cyprus",
+        "url": "https://www.businessincyprus.gov.cy/doing-business-in-cyprus/start-your-business/registering-for-income-tax-and-value-added-tax/"
+      },
+      {
+        "name": "Έκτακτη εισφορά, Τμήμα Φορολογίας",
+        "url": "https://www.gov.cy/mof-tax/documents/ektakti-amyntiki-eisfora-eae/"
+      },
+      {
+        "name": "Φορολογικά κίνητρα, συμπεριλαμβανομένου 5% στα μερίσματα, Υπουργείο Οικονομικών",
+        "url": "https://www.gov.cy/mof/en/documents/tax-incentives/"
+      }
+    ]
+  }
+}

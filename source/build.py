@@ -73,7 +73,7 @@ PAGE_ORDER = ("about", "privacy", "cookies", "terms", "affiliate-disclosure")
 UI = {
  "en": dict(
     name=SITE, tagline="Cyprus property and tax calculators",
-    calcs="Calculators", guides="Guides", services="Services", about="About", contact="Contact",
+    calcs="Calculators", guides="Guides", foreigners="For foreigners", services="Services", about="About", contact="Contact",
     privacy="Privacy", cookies="Cookies", terms="Terms",
     affiliates="Affiliate links",
     consult="Tax paperwork",
@@ -101,15 +101,15 @@ UI = {
     home_h="Cyprus property and tax calculators",
     home_desc="Transfer fees, VAT, capital gains, rental income and a mortgage payment, plus practical guides.",
     home_intro="Work out the Land Registry fee, VAT, stamp duty, capital gains tax, rental tax and a mortgage payment. Every rate on MyCyTax is tied to a source. The publisher is Anna, in Cyprus.",
-    list_calcs="Cyprus property calculators: transfer fees, stamp duty, VAT, capital gains, rental income and mortgage payments.",
-    list_guides="Practical guides to buying, selling, tax residency, non-dom status, title deeds, renting, settling in, comparing a mortgage, storing savings, brokers and a VPN.",
+    list_calcs="Cyprus property calculators, plus non-dom, company or self-employed, purchase costs and a comparison with other countries. Every rate is tied to a source.",
+    list_guides="Practical guides to buying, selling, tax residency, non-dom status, moving to Cyprus, companies, treaties, crypto, title deeds, renting, a mortgage, savings, brokers and a VPN.",
     contact_t="Contact", contact_d="Write to MyCyTax about buying or selling. The form goes to 2877novosti@gmail.com.",
     contact_i="The publisher is Anna. Email info@mycytax.com, or use the form. The first message through the form asks FormSubmit to send a confirmation email to 2877novosti@gmail.com. Until that link is opened, the form will not deliver. We reply within 24 hours.",
     thanks_t="Thank you", thanks_d="Your message has been sent.",
     thanks_i="Thank you. If this address is already confirmed with FormSubmit, we will reply within 24 hours. If this was the first message, Anna still needs to open the confirmation email before it is delivered."),
  "ru": dict(
     name=SITE, tagline="Калькуляторы недвижимости и налогов Кипра",
-    calcs="Калькуляторы", guides="Справочники", services="Услуги", about="О сайте", contact="Контакты",
+    calcs="Калькуляторы", guides="Справочники", foreigners="Иностранцам", services="Услуги", about="О сайте", contact="Контакты",
     privacy="Конфиденциальность", cookies="Файлы cookie", terms="Условия",
     affiliates="Партнёрские ссылки",
     consult="Налоги и документы",
@@ -137,15 +137,15 @@ UI = {
     home_h="Калькуляторы недвижимости и налогов Кипра",
     home_desc="Сборы кадастра, НДС, прирост капитала, аренда и ипотечный платёж, плюс практические справочники.",
     home_intro="Посчитайте сбор Земельного кадастра, НДС, гербовый сбор, налог на прирост капитала, налог с аренды и ипотечный платёж. Каждая ставка на MyCyTax привязана к источнику. Издатель — Анна, Кипр.",
-    list_calcs="Калькуляторы по недвижимости Кипра: сборы кадастра, гербовый сбор, НДС, прирост капитала, аренда и ипотека.",
-    list_guides="Практические справочники о покупке, продаже, налоговом резидентстве, статусе non-dom, титулах, аренде, переезде, сравнении ипотеки, хранении сбережений, брокерах и VPN.",
+    list_calcs="Калькуляторы по недвижимости Кипра, а также non-dom, компания или самозанятость, расходы на покупку и сравнение с другими странами. Каждая ставка привязана к источнику.",
+    list_guides="Практические справочники о покупке, продаже, налоговом резидентстве, статусе non-dom, переезде, компаниях, соглашениях, криптовалюте, титулах, аренде, ипотеке, сбережениях, брокерах и VPN.",
     contact_t="Контакты", contact_d="Напишите MyCyTax о покупке или продаже. Форма уходит на 2877novosti@gmail.com.",
     contact_i="Издатель — Анна. Пишите на info@mycytax.com или через форму. Первое сообщение через форму FormSubmit подтверждает письмом на 2877novosti@gmail.com. Пока ссылка не открыта, форма не доставляет заявки. Ответим в течение 24 часов.",
     thanks_t="Спасибо", thanks_d="Сообщение отправлено.",
     thanks_i="Спасибо. Если адрес уже подтверждён в FormSubmit, ответим в течение 24 часов. Если это первое сообщение, Анне ещё нужно открыть письмо подтверждения, прежде чем оно будет доставлено."),
  "el": dict(
     name=SITE, tagline="Υπολογιστές ακινήτων και φόρων Κύπρου",
-    calcs="Υπολογιστές", guides="Οδηγοί", services="Υπηρεσίες", about="Σχετικά", contact="Επικοινωνία",
+    calcs="Υπολογιστές", guides="Οδηγοί", foreigners="Για αλλοδαπούς", services="Υπηρεσίες", about="Σχετικά", contact="Επικοινωνία",
     privacy="Απόρρητο", cookies="Cookies", terms="Όροι",
     affiliates="Σύνδεσμοι συνεργατών",
     consult="Φόροι και έγγραφα",
@@ -173,8 +173,8 @@ UI = {
     home_h="Υπολογιστές ακινήτων και φόρων Κύπρου",
     home_desc="Τέλη μεταβίβασης, ΦΠΑ, κεφαλαιουχικά κέρδη, ενοίκιο και δόση δανείου, μαζί με πρακτικούς οδηγούς.",
     home_intro="Υπολογίστε το τέλος του Κτηματολογίου, τον ΦΠΑ, το χαρτόσημο, τον φόρο κεφαλαιουχικών κερδών, τον φόρο ενοικίου και τη δόση στεγαστικού. Κάθε συντελεστής στο MyCyTax δένεται με πηγή. Εκδότρια είναι η Άννα, στην Κύπρο.",
-    list_calcs="Υπολογιστές ακινήτων Κύπρου: τέλη μεταβίβασης, χαρτόσημο, ΦΠΑ, κεφαλαιουχικά κέρδη, ενοίκιο και δόση δανείου.",
-    list_guides="Πρακτικοί οδηγοί για αγορά, πώληση, φορολογική κατοικία, καθεστώς non-dom, τίτλους, ενοικίαση, εγκατάσταση, σύγκριση στεγαστικού, φύλαξη αποταμιεύσεων, χρηματιστές και VPN.",
+    list_calcs="Υπολογιστές ακινήτων Κύπρου, και ακόμη non-dom, εταιρεία ή αυτοαπασχόληση, κόστος αγοράς και σύγκριση με άλλες χώρες. Κάθε συντελεστής δένεται με πηγή.",
+    list_guides="Πρακτικοί οδηγοί για αγορά, πώληση, φορολογική κατοικία, καθεστώς non-dom, μετεγκατάσταση, εταιρείες, συμβάσεις, κρυπτοστοιχεία, τίτλους, ενοικίαση, στεγαστικό, αποταμιεύσεις, χρηματιστές και VPN.",
     contact_t="Επικοινωνία", contact_d="Γράψτε στο MyCyTax για αγορά ή πώληση. Η φόρμα πηγαίνει στο 2877novosti@gmail.com.",
     contact_i="Εκδότρια είναι η Άννα. Στείλτε email στο info@mycytax.com ή χρησιμοποιήστε τη φόρμα. Το πρώτο μήνυμα μέσω της φόρμας το επιβεβαιώνει το FormSubmit με email στο 2877novosti@gmail.com. Μέχρι να ανοίξει ο σύνδεσμος, η φόρμα δεν παραδίδει αιτήματα. Απαντάμε μέσα σε 24 ώρες.",
     thanks_t="Ευχαριστούμε", thanks_d="Το μήνυμά σας στάλθηκε.",
@@ -187,7 +187,7 @@ DISCLAIMER = {
  "el": "Τα ποσά σε αυτόν τον ιστότοπο προέρχονται από τις επίσημες και πρωτογενείς πηγές που συνδέονται σε κάθε σελίδα και περιγράφουν όσα έχουν δημοσιευτεί για το 2026. Είναι γενική πληροφόρηση, όχι νομική, φορολογική ή επενδυτική συμβουλή, ούτε βεβαίωση του Κτηματολογίου ή του Τμήματος Φορολογίας. Οι κανόνες, οι απαλλαγές και τα τοπικά τέλη αλλάζουν, και μια συναλλαγή μπορεί να ξεφεύγει από τη συνηθισμένη περίπτωση. Ελέγξτε τη συνδεδεμένη πηγή και ζητήστε συμβουλή για τα δικά σας γεγονότα πριν βασιστείτε σε αποτέλεσμα.",
 }
 
-CALC_ORDER = ["transfer-fees", "stamp-duty", "vat", "capital-gains", "rental-yield", "mortgage"]
+CALC_ORDER = ["transfer-fees", "stamp-duty", "vat", "capital-gains", "rental-yield", "mortgage", "non-dom", "company-or-self-employed", "purchase-costs", "compare-countries"]
 CALCS = {
  "transfer-fees": {
     "en": ("Property transfer fees", "Land Registry transfer fees on a Cyprus purchase, including the 50% reduction when VAT is not charged and the exemption when it is."),
@@ -218,6 +218,26 @@ CALCS = {
     "en": ("Mortgage payment", "Monthly payment on a euro loan at a fixed rate. The rate is the one your bank offers. This page does not publish a market rate."),
     "ru": ("Платёж по ипотеке", "Ежемесячный платёж по кредиту в евро при фиксированной ставке. Ставку даёт банк. Рыночную ставку эта страница не публикует."),
     "el": ("Δόση στεγαστικού", "Μηνιαία δόση δανείου σε ευρώ με σταθερό επιτόκιο. Το επιτόκιο είναι αυτό που δίνει η τράπεζά σας. Η σελίδα δεν δημοσιεύει επιτόκιο αγοράς."),
+ },
+ "non-dom": {
+    "en": ("Non-dom and ordinary tax", "The 2026 income-tax bands are the same either way. The difference is Special Defence Contribution on dividends and interest."),
+    "ru": ("Non-dom и обычный налог", "Шкалы подоходного налога 2026 года одинаковы. Разница — специальный взнос на оборону с дивидендов и процентов."),
+    "el": ("Non-dom και συνήθης φόρος", "Οι κλίμακες φόρου εισοδήματος του 2026 είναι οι ίδιες. Η διαφορά είναι η έκτακτη εισφορά για την άμυνα σε μερίσματα και τόκους."),
+ },
+ "company-or-self-employed": {
+    "en": ("Company or self-employed", "Corporate tax at 15% and defence contribution on a dividend, set beside income tax on the same profit. Social insurance is not included."),
+    "ru": ("Компания или самозанятость", "Корпоративный налог 15% и взнос на оборону с дивиденда рядом с подоходным налогом с той же прибыли. Социальное страхование не включено."),
+    "el": ("Εταιρεία ή αυτοαπασχόληση", "Εταιρικός φόρος 15% και έκτακτη εισφορά σε μέρισμα, δίπλα στον φόρο εισοδήματος επί του ίδιου κέρδους. Οι κοινωνικές ασφαλίσεις δεν περιλαμβάνονται."),
+ },
+ "purchase-costs": {
+    "en": ("Purchase costs", "Transfer fees or VAT, plus stamp duty, on one Cyprus purchase. Lawyer’s fees and agent’s commission are not included."),
+    "ru": ("Расходы на покупку", "Сборы за переход или НДС, плюс гербовый сбор, по одной покупке на Кипре. Гонорар юриста и комиссия агента не включены."),
+    "el": ("Κόστος αγοράς", "Τέλη μεταβίβασης ή ΦΠΑ, μαζί με χαρτόσημο, σε μία αγορά στην Κύπρο. Αμοιβή δικηγόρου και προμήθεια μεσίτη δεν περιλαμβάνονται."),
+ },
+ "compare-countries": {
+    "en": ("Cyprus and other countries", "One income figure under the Cyprus 2026 bands, the Portugal 2026 scale and UAE personal tax at nil, plus headline company rates."),
+    "ru": ("Кипр и другие страны", "Одна сумма дохода по шкалам Кипра 2026 года, шкале Португалии 2026 года и нулевому подоходному налогу ОАЭ, плюс ставки налога на прибыль."),
+    "el": ("Κύπρος και άλλες χώρες", "Ένα ποσό εισοδήματος με τις κλίμακες Κύπρου 2026, την κλίμακα Πορτογαλίας 2026 και μηδενικό φόρο εισοδήματος ΗΑΕ, μαζί με εταιρικούς συντελεστές."),
  },
 }
 
@@ -335,10 +355,19 @@ def load_guides():
             if lang != "ru" and not _guide_ok(src):
                 g["missing"].add(lang)
                 src = ru
+            steps = []
+            for item in src.get("howto") or []:
+                if not isinstance(item, dict):
+                    continue
+                name = _clean(item.get("name"))
+                text = _clean(item.get("text"))
+                if name and text:
+                    steps.append({"name": name, "text": text})
             g["text"][lang] = {
                 "title": _clean(src.get("title")),
                 "description": _clean(src.get("description")),
                 "md": guide_markdown(src),
+                "howto": steps,
             }
         out.append(g)
     slugs = [g["slug"] for g in out]
@@ -554,6 +583,42 @@ def affiliate_disclosure(lang):
     return (
         f'<p class="aff-disclosure">{e(u["aff_note"])} '
         f'<a href="{href(loc(lang, "/affiliate-disclosure/"))}">{e(u["affiliates"])}</a>.</p>\n'
+    )
+
+TREZOR_BOX = {
+ "en": (
+    "Keep your crypto safe: Trezor Safe 7 hardware wallet",
+    "A hardware wallet keeps the keys on the device rather than on an exchange. The coin can still fall in price. This does not change the tax on a disposal, and it is not advice to buy a coin.",
+    "Trezor Safe 7",
+ ),
+ "ru": (
+    "Храните криптовалюту безопасно: аппаратный кошелёк Trezor Safe 7",
+    "Аппаратный кошелёк держит ключи на устройстве, а не на бирже. Монета всё равно может подешеветь. Это не меняет налог на распоряжение и не является советом купить монету.",
+    "Trezor Safe 7",
+ ),
+ "el": (
+    "Κρατήστε τα κρυπτοστοιχεία σας ασφαλή: hardware πορτοφόλι Trezor Safe 7",
+    "Ένα hardware πορτοφόλι κρατά τα κλειδιά στη συσκευή, όχι σε ανταλλακτήριο. Το νόμισμα μπορεί και πάλι να χάσει τιμή. Αυτό δεν αλλάζει τον φόρο σε μια διάθεση και δεν είναι συμβουλή να αγοράσετε νόμισμα.",
+    "Trezor Safe 7",
+ ),
+}
+
+def trezor_box(lang):
+    """Recommendation on the crypto-tax pages. The URL stays in affiliates.js."""
+    url = affiliate_href("trezor")
+    text = TREZOR_BOX.get(lang) or TREZOR_BOX["en"]
+    if not url or not url.startswith("https://"):
+        return ""
+    title, note, button = text
+    u = UI[lang]
+    return (
+        f'<aside class="aff-offer">'
+        f"<h2>{e(title)}</h2><p>{e(note)}</p>"
+        f'<a class="aff-btn" data-affiliate="trezor" href="{e(url)}" '
+        f'rel="sponsored nofollow noopener" target="_blank">{e(button)}</a>'
+        f'<p class="aff-disclosure">{e(u["aff_note"])} '
+        f'<a href="{href(loc(lang, "/affiliate-disclosure/"))}">{e(u["affiliates"])}</a>.</p>'
+        f"</aside>\n"
     )
 
 def affiliate_runtime():
@@ -1021,12 +1086,13 @@ def header(lang, path_for):
         for l in LANGS)
     return f'''<a class="skip" href="#main">{u["home"]}</a><header class="top"><div class="wrap bar">
 <a class="logo" href="{href(loc(lang, "/"))}">{e(u["name"])}<small>{e(u["tagline"])}</small></a>
-<nav class="main" aria-label="{e(u["lang"])}">{item("calcs", loc(lang, "/calculators/"))}{item("guides", loc(lang, "/guides/"))}{item("services", loc(lang, "/services/"))}{item("real_estate", loc(lang, "/real-estate/"))}{item("about", loc(lang, "/about/"))}{item("contact", loc(lang, "/contact/"))}
+<nav class="main" aria-label="{e(u["lang"])}">{item("calcs", loc(lang, "/calculators/"))}{item("guides", loc(lang, "/guides/"))}{item("foreigners", loc(lang, "/guides/for-foreigners/"))}{item("services", loc(lang, "/services/"))}{item("real_estate", loc(lang, "/real-estate/"))}{item("about", loc(lang, "/about/"))}{item("contact", loc(lang, "/contact/"))}
 {tg_icon_link(lang)}{ig_icon_link(lang)}<span class="langs">{langs}</span></nav></div></header>'''
 
 def footer(lang):
     u = UI[lang]
     links = [
+        (loc(lang, "/guides/for-foreigners/"), u["foreigners"]),
         (loc(lang, "/about/"), u["about"]), (loc(lang, "/contact/"), u["contact"]),
         (loc(lang, "/privacy/"), u["privacy"]), (loc(lang, "/cookies/"), u["cookies"]),
         (loc(lang, "/terms/"), u["terms"]),
@@ -1810,7 +1876,8 @@ def home(lang):
     ld = [{"@context":"https://schema.org","@type":"WebSite","name":SITE,"url":absu(alt(lang)),"inLanguage":lang,
            "publisher":{"@id":absu("/") + "#organization"}}] + service_nodes()
     body = f'''<main id="main"><div class="wrap hero"><h1>{e(title)}</h1><p class="lede">{e(intro)}</p>
-<p class="banner">{e(DISCLAIMER[lang])}</p>{ad("home-top")}</div>
+<p class="banner">{e(DISCLAIMER[lang])}</p>
+<p><a href="{href(loc(lang, "/guides/for-foreigners/"))}">{e(u["foreigners"])}</a></p>{ad("home-top")}</div>
 <div class="wrap"><h2 class="sec">{e(u["calcs"])}</h2><div class="grid">{"".join(cards)}</div>
 <h2 class="sec">{e(u["guides"])}</h2><div class="grid">{"".join(guides)}</div>
 {lead_card(lang)}{ad("home-bottom")}
@@ -1950,6 +2017,26 @@ def calc_page(lang, slug):
         "ru": "Ежемесячный платёж — обычный аннуитет: сумма кредита, месячная ставка и число месяцев. Расчёт предполагает, что ставка не меняется и что нет комиссии банка, страховой премии и штрафа за досрочное погашение. Ставки публикуют сами кипрские банки. Эта страница намеренно не называет ни одной.",
         "el": "Η μηνιαία δόση είναι η συνήθης τοκοχρεολυτική: το δάνειο, το μηνιαίο επιτόκιο και ο αριθμός των μηνών. Υποθέτει ότι το επιτόκιο δεν αλλάζει και ότι δεν πληρώνετε έξοδο τράπεζας, ασφάλιστρο ζωής ή ποινή πρόωρης εξόφλησης. Οι κυπριακές τράπεζες δημοσιεύουν τα δικά τους επιτόκια. Αυτή η σελίδα σκόπιμα δεν αναφέρει κανένα.",
      },
+     "non-dom": {
+        "en": "Income tax from the 2026 tax year, as published by Business in Cyprus, a government site, is nil on the first €22,000, 20% from €22,001 to €32,000, 25% to €42,000, 30% to €72,000 and 35% above that. Non-dom status does not change those bands. The Tax Department’s defence-contribution page, read on 26 November 2026, charges a domiciled resident 5% on dividends from 2026, and 17% on dividends received from a Cyprus company by 31 December 2031 out of profits up to the 2025 tax year. The same page charges individuals 17% on interest, and 3% where total income is under €12,000. A person who is not domiciled is outside the contribution on dividends and interest, on the Department’s residency page. Rent is not in this calculator: the contribution on rent was abolished for 2026. Social insurance and GHS are not included.",
+        "ru": "Подоходный налог с налогового 2026 года, как его публикует Business in Cyprus, государственный сайт: ноль на первые €22 000, 20% с €22 001 до €32 000, 25% до €42 000, 30% до €72 000 и 35% сверх этого. Статус non-dom эти шкалы не меняет. Страница Налогового департамента о взносе на оборону, прочитанная 26 ноября 2026 года, берёт с домицилированного резидента 5% с дивидендов с 2026 года и 17% с дивидендов кипрской компании, полученных до 31 декабря 2031 года из прибыли по налоговый 2025 год. Та же страница берёт с физических лиц 17% с процентов и 3%, если весь доход ниже €12 000. Лицо без домициля вне взноса по дивидендам и процентам, как сказано на странице департамента о резидентстве. Аренда здесь не считается: взнос с аренды на 2026 год отменён. Социальное страхование и ГЕСИ не включены.",
+        "el": "Ο φόρος εισοδήματος από το φορολογικό έτος 2026, όπως τον δημοσιεύει το Business in Cyprus, κυβερνητικός ιστότοπος, είναι μηδέν στα πρώτα €22.000, 20% από €22.001 έως €32.000, 25% έως €42.000, 30% έως €72.000 και 35% πάνω από αυτό. Το καθεστώς non-dom δεν αλλάζει αυτές τις κλίμακες. Η σελίδα του Τμήματος Φορολογίας για την έκτακτη εισφορά, όπως διαβάστηκε στις 26 Νοεμβρίου 2026, επιβάλλει σε κάτοικο με κατοικία 5% στα μερίσματα από το 2026, και 17% σε μερίσματα που εισπράττονται από κυπριακή εταιρεία έως τις 31 Δεκεμβρίου 2031 από κέρδη έως το φορολογικό έτος 2025. Η ίδια σελίδα επιβάλλει σε φυσικά πρόσωπα 17% στους τόκους, και 3% όταν το συνολικό εισόδημα είναι κάτω από €12.000. Πρόσωπο χωρίς κατοικία βρίσκεται έξω από την εισφορά σε μερίσματα και τόκους, στη σελίδα κατοικίας του Τμήματος. Το ενοίκιο δεν είναι σε αυτόν τον υπολογιστή: η εισφορά στο ενοίκιο καταργήθηκε για το 2026. Κοινωνικές ασφαλίσεις και ΓεΣΥ δεν περιλαμβάνονται.",
+     },
+     "company-or-self-employed": {
+        "en": "The company line uses the 15% corporate rate the Tax Department publishes for 2026 on its company-return page, then defence contribution on the whole after-tax profit if it is paid out as a dividend. A non-domiciled shareholder is at nil on that dividend. A domiciled shareholder is at 5% where the dividend is out of 2026 profits. The 17% grandfathering for older profits is not applied here. The self-employed line puts the same profit through the 2026 income-tax bands and nothing else. Social insurance, GHS, expenses, the employment exemptions and any salary you also draw are not in the arithmetic. The result is not a choice of structure.",
+        "ru": "Строка компании берёт ставку 15%, которую Налоговый департамент публикует на 2026 год на странице декларации компании, и затем взнос на оборону со всей прибыли после налога, если она выплачена дивидендом. Акционер без домициля платит с этого дивиденда ноль. Акционер с домицилем платит 5%, если дивиденд из прибыли 2026 года. Дедушкина ставка 17% для более ранней прибыли здесь не применяется. Строка самозанятого проводит ту же прибыль только по шкалам подоходного налога 2026 года. Социальное страхование, ГЕСИ, расходы, льготы по найму и зарплата, которую вы ещё снимаете, в расчёт не входят. Результат — не выбор структуры.",
+        "el": "Η γραμμή της εταιρείας χρησιμοποιεί τον συντελεστή 15% που δημοσιεύει το Τμήμα Φορολογίας για το 2026 στη σελίδα της δήλωσης εταιρείας, και έπειτα έκτακτη εισφορά σε όλο το κέρδος μετά τον φόρο αν πληρωθεί ως μέρισμα. Μέτοχος χωρίς κατοικία είναι στο μηδέν σε αυτό το μέρισμα. Μέτοχος με κατοικία είναι στο 5% όταν το μέρισμα προέρχεται από κέρδη του 2026. Ο μεταβατικός συντελεστής 17% για παλαιότερα κέρδη δεν εφαρμόζεται εδώ. Η γραμμή του αυτοαπασχολούμενου περνά το ίδιο κέρδος μόνο από τις κλίμακες φόρου εισοδήματος του 2026. Κοινωνικές ασφαλίσεις, ΓεΣΥ, έξοδα, απαλλαγές μισθωτών και μισθός που εισπράττετε επιπλέον δεν είναι στον λογαριασμό. Το αποτέλεσμα δεν είναι επιλογή δομής.",
+     },
+     "purchase-costs": {
+        "en": "On a resale, transfer fees follow the Department of Lands and Surveys scale, 3% to €85,000, 5% to €170,000 and 8% above, then the 50% reduction unless the seller took the property in a forced sale under Parts VI and VIA of Law 9/1965. A contract not deposited within six months can add 10%, on the Department’s leaflet. Gov.cy says transfer fees are not charged when the transfer is a VAT transaction, so the new-build choice sets them to zero and charges VAT instead: 19%, or 5% on the qualifying portion of a primary residence within the area and value limits used on the VAT calculator. Stamp duty is €0 when at least one party signs on or after 1 January 2026, under Law 239(I)/2025. The old capped scale is used only if a party signed by 31 December 2025. Legal fees, the agent and local charges are not in the total.",
+        "ru": "При вторичной продаже сборы за переход идут по шкале Департамента земель и землеустройства: 3% до €85 000, 5% до €170 000 и 8% сверх, затем снижение на 50%, если только продавец не получил объект на принудительной продаже по частям VI и VIA закона 9/1965. Договор, не сданный за шесть месяцев, может прибавить 10%, по буклету департамента. Gov.cy говорит, что сборы за переход не взимаются, когда переход — сделка с НДС, поэтому выбор новостройки обнуляет их и берёт НДС: 19% или 5% с подходящей доли основного жилья в пределах площади и стоимости, как в калькуляторе НДС. Гербовый сбор — €0, если хотя бы одна сторона подписывает 1 января 2026 года или позже, по закону 239(I)/2025. Старая шкала с потолком используется, только если сторона подписала не позднее 31 декабря 2025 года. Гонорар юриста, агент и местные сборы в итог не входят.",
+        "el": "Σε μεταπώληση, τα τέλη μεταβίβασης ακολουθούν την κλίμακα του Τμήματος Κτηματολογίου, 3% έως €85.000, 5% έως €170.000 και 8% πάνω από αυτό, και έπειτα τη μείωση 50%, εκτός αν ο πωλητής απέκτησε το ακίνητο σε αναγκαστική πώληση κατά τα Μέρη VI και VIA του Νόμου 9/1965. Συμβόλαιο που δεν κατατέθηκε μέσα σε έξι μήνες μπορεί να προσθέσει 10%, κατά το φυλλάδιο του Τμήματος. Το Gov.cy λέει ότι τέλη μεταβίβασης δεν επιβάλλονται όταν η μεταβίβαση είναι συναλλαγή με ΦΠΑ, οπότε η επιλογή νέας οικοδομής τα μηδενίζει και επιβάλλει ΦΠΑ: 19%, ή 5% στο επιλέξιμο μέρος κύριας κατοικίας μέσα στα όρια εμβαδού και αξίας του υπολογιστή ΦΠΑ. Το χαρτόσημο είναι €0 όταν τουλάχιστον ένα μέρος υπογράφει την 1η Ιανουαρίου 2026 ή αργότερα, κατά τον Νόμο 239(I)/2025. Η παλιά κλίμακα με ανώτατο χρησιμοποιείται μόνο αν ένα μέρος υπέγραψε έως τις 31 Δεκεμβρίου 2025. Αμοιβή δικηγόρου, μεσίτης και τοπικά τέλη δεν είναι στο σύνολο.",
+     },
+     "compare-countries": {
+        "en": "Cyprus personal tax uses the 2026 bands on Business in Cyprus. Portugal uses the 2026 marginal rates in Decreto-Lei n.º 212/2026, on rendimento coletável, with no deductions. The UAE personal line is nil, as the official government portal states that the UAE does not levy income tax on individuals (page dated 28 October 2026). A rate you type is your figure, not a rate this site has checked. Company rates are headlines only: Cyprus 15% from the Tax Department’s 2026 table; Malta 35% on the Malta Tax and Customs Administration corporate page, last updated 8 October 2025, with no shareholder refund applied; Portugal 19% for 2026 on the mainland under Lei n.º 64/2025 and the Portal das Finanças 2026 rate card; Greece 22% for legal persons from tax year 2021 onwards, on the Ministry of Economy and Finance income-tax guide; UAE 9%, and the 0% band up to AED 375,000 is applied only to the euro amount you type, because this page does not publish an exchange rate. Malta’s 2026 personal bands and the child-dependent middle bands of the Greek 2026 employment scale are not calculated. Social insurance is not included.",
+        "ru": "Подоходный налог Кипра берёт шкалы 2026 года с Business in Cyprus. Португалия берёт предельные ставки 2026 года из Decreto-Lei n.º 212/2026, с rendimento coletável, без вычетов. Строка ОАЭ для физического лица — ноль: официальный портал правительства пишет, что ОАЭ не взимают подоходный налог с физических лиц (страница от 28 октября 2026 года). Ставка, которую вы вводите, — ваша цифра, а не ставка, которую этот сайт проверил. Ставки компаний — только заголовки: Кипр 15% из таблицы Налогового департамента на 2026 год; Мальта 35% на странице Malta Tax and Customs Administration, обновлённой 8 октября 2025 года, без возврата акционеру; Португалия 19% на 2026 год на материке по Lei n.º 64/2025 и карточке ставок Portal das Finanças на 2026 год; Греция 22% для юридических лиц с налогового 2021 года, по справочнику Министерства национальной экономики и финансов; ОАЭ 9%, а нулевая полоса до 375 000 дирхамов применяется только к сумме в евро, которую вы вводите, потому что курс эта страница не публикует. Личные шкалы Мальты на 2026 год и средние диапазоны греческой шкалы 2026 года, которые зависят от детей, не считаются. Социальное страхование не включено.",
+        "el": "Ο φόρος φυσικού προσώπου στην Κύπρο χρησιμοποιεί τις κλίμακες 2026 του Business in Cyprus. Η Πορτογαλία χρησιμοποιεί τους οριακούς συντελεστές 2026 του Decreto-Lei n.º 212/2026, επί rendimento coletável, χωρίς εκπτώσεις. Η γραμμή ΗΑΕ για φυσικό πρόσωπο είναι μηδέν: η επίσημη κυβερνητική πύλη γράφει ότι τα ΗΑΕ δεν επιβάλλουν φόρο εισοδήματος σε φυσικά πρόσωπα (σελίδα με ημερομηνία 28 Οκτωβρίου 2026). Συντελεστής που πληκτρολογείτε είναι δικός σας αριθμός, όχι συντελεστής που έλεγξε αυτός ο ιστότοπος. Οι εταιρικοί συντελεστές είναι μόνο οι γενικοί: Κύπρος 15% από τον πίνακα του Τμήματος Φορολογίας για το 2026· Μάλτα 35% στη σελίδα της Malta Tax and Customs Administration, τελευταία ενημέρωση 8 Οκτωβρίου 2025, χωρίς επιστροφή στον μέτοχο· Πορτογαλία 19% για το 2026 στην ηπειρωτική χώρα κατά τον Lei n.º 64/2025 και τον πίνακα του Portal das Finanças για το 2026· Ελλάδα 22% για νομικά πρόσωπα από το φορολογικό έτος 2021, στον οδηγό του Υπουργείου Εθνικής Οικονομίας και Οικονομικών· ΗΑΕ 9%, και η μηδενική ζώνη έως 375.000 ντιρχάμ εφαρμόζεται μόνο στο ποσό σε ευρώ που πληκτρολογείτε, γιατί αυτή η σελίδα δεν δημοσιεύει ισοτιμία. Οι προσωπικές κλίμακες της Μάλτας για το 2026 και τα μεσαία κλιμάκια της ελληνικής κλίμακας 2026 που εξαρτώνται από τέκνα δεν υπολογίζονται. Οι κοινωνικές ασφαλίσεις δεν περιλαμβάνονται.",
+     },
     }
     note = notes[slug][lang]
     offer = calc_offer(lang, slug)
@@ -1959,7 +2046,7 @@ def calc_page(lang, slug):
               {"@type":"Question","name":t,"acceptedAnswer":{"@type":"Answer","text":d}}]}]
     body = f'''<main id="main" class="wrap page"><p class="meta"><a href="{href(loc(lang, "/calculators/"))}">{e(u["calcs"])}</a></p>
 <h1>{e(t)}</h1><p class="lede">{e(d)}</p><p class="banner">{e(DISCLAIMER[lang])}</p>{ad("calc-top")}
-<div id="calc" data-consult="{contact_href(lang,"buy")}" data-calc="{e({"transfer-fees":"transfer","stamp-duty":"stamp","vat":"vat","capital-gains":"cgt","rental-yield":"rental","mortgage":"mortgage"}[slug])}"></div>
+<div id="calc" data-consult="{contact_href(lang,"buy")}" data-calc="{e({"transfer-fees":"transfer","stamp-duty":"stamp","vat":"vat","capital-gains":"cgt","rental-yield":"rental","mortgage":"mortgage","non-dom":"nondom","company-or-self-employed":"company","purchase-costs":"purchase","compare-countries":"compare"}[slug])}"></div>
 {offer}
 {lead_card(lang)}
 {consult_card(lang, {"capital-gains":"Capital gains tax","rental-yield":"Rental income tax"}.get(slug, ""))}
@@ -2007,6 +2094,12 @@ def guide_page(lang, slug, words_out):
     if faqs:
         ld.append({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
             {"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}} for q, a in faqs]})
+    steps = GUIDES[slug]["text"][lang].get("howto") or []
+    if steps:
+        ld.append({"@context":"https://schema.org","@type":"HowTo","name":meta["title"],
+                   "description":meta["description"],"inLanguage":lang,
+                   "step":[{"@type":"HowToStep","position":i,"name":step["name"],"text":step["text"],
+                            "url":absu(path)} for i, step in enumerate(steps, 1)]})
     crumb = f'<a href="{href(loc(lang, "/guides/"))}">{e(u["guides"])}</a>'
     if "/" in slug:
         parent = slug.split("/", 1)[0]
@@ -2016,12 +2109,16 @@ def guide_page(lang, slug, words_out):
     figure = guide_figure(lang, slug)
     if figure:
         ld[0]["image"] = absu("/assets/guides/" + GUIDES[slug]["image"]["src"])
-    disclosure = affiliate_disclosure(lang) if ('data-affiliate="' in body_html or 'data-amazon-search="' in body_html) else ""
+    wallet = trezor_box(lang) if slug == "for-foreigners/crypto" else ""
+    disclosure = "" if wallet else (
+        affiliate_disclosure(lang) if ('data-affiliate="' in body_html or 'data-amazon-search="' in body_html) else ""
+    )
     body = f'''<main id="main" class="wrap page"><p class="meta">{crumb}</p>
 <article><h1>{e(meta["title"])}</h1><p class="lede">{e(meta["description"])}</p>
 {figure}
 <p class="banner">{e(DISCLAIMER[lang])}</p>{ad("guide-top")}
 <div class="body">{body_html}</div>
+{wallet}
 {disclosure}
 {faq_html}
 <section class="src"><h2>{e(u["sources"])}</h2><ul>{src}</ul></section>
@@ -2223,8 +2320,9 @@ def sources_for(path):
         return ["source/build.py"]
     if len(parts) == 1 and parts[0] in PAGE_ORDER:
         return [f"source/content/pages/{parts[0]}.json"]
-    if len(parts) == 2 and parts[0] == "guides":
-        return [f"source/content/guides/{parts[1]}.json"]
+    if parts[0] == "guides" and len(parts) >= 2:
+        slug = "/".join(parts[1:])
+        return [f"source/content/guides/{slug.replace('/', '--')}.json"]
     if parts[0] == "real-estate":
         return ["source/build.py", "data/properties.json"]
     if parts[0] == "calculators" and len(parts) == 2:

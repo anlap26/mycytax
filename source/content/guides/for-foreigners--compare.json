@@ -1,0 +1,191 @@
+{
+  "slug": "for-foreigners/compare",
+  "seq": 47,
+  "ru": {
+    "title": "Кипр, Мальта, Португалия, ОАЭ и Греция: ставки 2026 года",
+    "description": "Заголовки налогов, которые официальные страницы публикуют на 2026 год. Личные шкалы Мальты и средние диапазоны Греции калькулятор не считает.",
+    "body": "Проверено: 26 ноября 2026 года.\n\n## Короткий ответ\n\nСравнение стран на одной зарплате почти всегда врёт, если подставить чужой вычет или социальный взнос. Здесь стоят только заголовки, которые орган напечатал. [Калькулятор](/ru/calculators/compare-countries/) применяет шкалы Кипра 2026 года, предельную шкалу Португалии 2026 года для материка и ноль подоходного налога ОАЭ для физического лица. Личную шкалу Мальты на 2026 год он не считает: на просмотренной странице ставок её не было. Личную шкалу Греции 2026 года он тоже не считает: средние диапазоны зависят от числа детей, и колонка без детей из текста страницы надёжно не читается.\n\nСоциальное страхование ни одной страны в калькулятор не входит. Курс дирхама страница не публикует.\n\n## Кипр\n\nПодоходный налог с налогового 2026 года, Business in Cyprus: 0% до €22 000, затем 20%, 25%, 30% и 35% сверх €72 000. Корпоративный налог с 2026 года, таблица Налогового департамента: 15%. Взнос на оборону с дивиденда — отдельная [страница компании](/ru/guides/for-foreigners/companies/). Это не часть корпоративных 15%.\n\n## Мальта\n\nMalta Tax and Customs Administration на странице корпоративного налога пишет: мальтийские компании платят 35% с мирового дохода и прироста капитала. Страница подоходного налога компаний, обновлённая 8 октября 2025 года, повторяет плоские 35% с чистого облагаемого дохода. Та же страница корпоративного налога говорит, что после распределения дивиденда акционер может получить возврат части или всего налога, уплаченного компанией. Долю возврата эта страница не называет и калькулятор её не применяет. Эффективные «5%» из чужих обзоров сюда не перенесены.\n\nЛичные шкалы на странице MTCA найдены за 2025 год. Страница законодательных заметок 2026 года в прочитанном виде ставку не заменила. Шкалу 2025 года как шкалу 2026 года этот сайт не использует. Это непроверенная для 2026 года цифра, и она не считается.\n\n## Португалия\n\nLei n.º 64/2025, переходная норма: в периодах, начинающихся в 2026 году, ставка пунктов 1 и 5 статьи 87 Кодекса IRC — 19%. Карточка ставок Portal das Finanças на 2026 год ставит 19% на материке. Для Азорских островов и Мадейры карточка публикует сниженные ставки. Страница государственного бюджета называет для Азор 16,8%, а карточка налогового портала — 13,3%. Из-за расхождения двух официальных страниц калькулятор берёт только материковые 19% и автономные регионы не считает.\n\nПодоходный налог физического лица, Decreto-Lei n.º 212/2026, шкала с 1 января 2026 года на материке, предельные ставки: 12,20% до €8 342, 15,20% до €12 587, 20,70% до €17 838, 23,60% до €23 089, 30,60% до €29 397, 34,60% до €43 090, 43,10% до €46 566, 44,60% до €86 634 и 48% сверх этого. Калькулятор просит rendimento coletável, доход после вычетов, а не грязную зарплату. Особые режимы для новых резидентов в расчёт не входят.\n\n## ОАЭ\n\nОфициальный портал правительства, страница от 28 октября 2026 года, пишет, что ОАЭ не взимают подоходный налог с физических лиц. Корпоративный налог, по тому же порталу со ссылкой на Министерство финансов: 0% с налогооблагаемого дохода до 375 000 дирхамов и 9% сверх этого. Калькулятор применяет нулевую полосу только к сумме в евро, которую вы вводите сами. Курс не подставлен. Нулевая ставка свободной зоны на квалифицированный доход в калькуляторе нет: условия на странице FTA не сводятся к одной галочке.\n\n## Греция\n\nСправочник Министерства национальной экономики и финансов: прибыль юридических лиц от предпринимательской деятельности с налогового 2021 года и далее — 22%, кроме случаев, которые справочник называет отдельно (29% для части банков, 10% для названных сельскохозяйственных кооперативов). Форма ΑΑΔΕ для декларации юридического лица тоже показывает 22% среди ставок строки налога.\n\nДля физического лица справочник публикует шкалу занятости и пенсий с 2026 года, которая меняется с числом детей, плюс уменьшение налога на €777 без детей, которое сокращается на €20 на каждую тысячу евро дохода сверх €12 000. Диапазоны €30 001–€40 000 (34%), €40 000,01–€60 000 (39%) и свыше €60 000 (44%) на странице повторяются во всех напечатанных колонках. Диапазоны между €10 000 и €30 000 в извлечённом тексте не дают надёжной колонки для налогоплательщика без детей. Калькулятор эту шкалу не применяет. Её читают на странице министерства.\n\nСоглашения этих стран с Кипром, без процентов удержания, — на [странице соглашений](/ru/guides/for-foreigners/tax-treaties/).",
+    "faq": [
+      {
+        "q": "Почему Мальта не посчитана по личному налогу?",
+        "a": "На странице ставок MTCA, которую читали, есть шкалы 2025 года. Шкалу 2026 года эта проверка не нашла. Старую шкалу под видом новой сайт не ставит."
+      },
+      {
+        "q": "Почему в ОАЭ калькулятор может взять 9% со всей прибыли?",
+        "a": "Нулевая полоса выражена в дирхамах. Курс страница не публикует. Пока вы не введёте евро-эквивалент 375 000 дирхамов, 9% показаны со всей суммы, и строка об этом говорит."
+      },
+      {
+        "q": "19% в Португалии — это и острова?",
+        "a": "Нет. 19% — материк на 2026 год по закону и по карточке Portal das Finanças. Ставки островов на двух официальных страницах расходятся, поэтому калькулятор их не берёт."
+      },
+      {
+        "q": "Греция для зарплаты без детей — какая ставка?",
+        "a": "Министерство публикует шкалу, зависящую от детей, и уменьшение на €777. Средние диапазоны без надёжной колонки «ноль детей» здесь не перепечатаны. Корпоративные 22% напечатаны прямо."
+      }
+    ],
+    "sources": [
+      {
+        "name": "Шкалы Кипра с 2026 года, Business in Cyprus",
+        "url": "https://www.businessincyprus.gov.cy/doing-business-in-cyprus/start-your-business/registering-for-income-tax-and-value-added-tax/"
+      },
+      {
+        "name": "Корпоративный налог Кипра, Налоговый департамент",
+        "url": "https://www.gov.cy/mof-tax/documents/forologiki-dilosi-eisodimatos-etaireias-t-f-4-aytoergodotoymenoy-me-elegmenoys-logariasmoys-t-f-1/"
+      },
+      {
+        "name": "Корпоративный налог 35%, Malta Tax and Customs Administration",
+        "url": "https://mtca.gov.mt/business-tax/corporate/corporate_tax"
+      },
+      {
+        "name": "Подоходный налог компаний, страница обновлена 8 октября 2025 года, MTCA",
+        "url": "https://mtca.gov.mt/business-tax/corporate/Income_Tax"
+      },
+      {
+        "name": "Карточка ставок Португалии на 2026 год, Portal das Finanças",
+        "url": "https://info.portaldasfinancas.gov.pt/pt/apoio_contribuinte/Folhetos_informativos/Documents/SFP-Taxas-2026.pdf"
+      },
+      {
+        "name": "Lei n.º 64/2025, ставка IRC 19% в 2026 году",
+        "url": "https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/legislacao/diplomas_legislativos/Documents/Lei_64_2025.pdf"
+      },
+      {
+        "name": "Decreto-Lei n.º 212/2026, шкалы IRS",
+        "url": "https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/legislacao/diplomas_legislativos/Documents/Decreto-Lei-212-2026.pdf"
+      },
+      {
+        "name": "Корпоративный налог и отсутствие подоходного налога с физических лиц, портал правительства ОАЭ",
+        "url": "https://u.ae/en/information-and-services/finance-and-investment/taxation/corporate-tax"
+      },
+      {
+        "name": "Подоходный налог, Министерство национальной экономики и финансов Греции",
+        "url": "https://minfin.gov.gr/en/tax-policy/tax-guide/income-taxation/"
+      }
+    ]
+  },
+  "en": {
+    "title": "Cyprus, Malta, Portugal, the UAE and Greece: 2026 rates",
+    "description": "The headline taxes official pages publish for 2026. Malta’s personal bands and Greece’s middle bands are not calculated.",
+    "body": "Last checked: 26 November 2026.\n\n## Short answer\n\nA country comparison on one salary is usually wrong once someone else’s deduction or social charge is filled in. Only headlines an authority has printed are stated here. The [calculator](/calculators/compare-countries/) applies the Cyprus 2026 bands, the Portugal 2026 mainland marginal scale and UAE personal income tax at nil. It does not calculate Malta’s personal scale for 2026: that scale was not on the rates page that was reviewed. It does not calculate the Greek 2026 personal scale either: the middle bands depend on the number of children, and the zero-child column did not read reliably out of the page text.\n\nNo country’s social insurance is in the calculator. The page does not publish a dirham rate.\n\n## Cyprus\n\nIncome tax from the 2026 tax year, Business in Cyprus: 0% up to €22,000, then 20%, 25%, 30% and 35% above €72,000. Corporate tax from 2026, Tax Department table: 15%. Defence contribution on a dividend is a separate [company page](/guides/for-foreigners/companies/). It is not part of the corporate 15%.\n\n## Malta\n\nThe Malta Tax and Customs Administration, on its corporate-tax page, says Maltese companies are taxed at 35% on worldwide income and capital gains. The company income-tax page, last updated on 8 October 2025, repeats a flat 35% on net chargeable income. The same corporate-tax page says that after a dividend the shareholder may be entitled to a refund of part or all of the tax the company paid. This page does not state the fraction of that refund, and the calculator does not apply one. An effective “5%” from other people’s summaries is not brought over.\n\nPersonal bands were found on an MTCA page for 2025. The 2026 legislative-notes page, as read, did not replace the rate. This site does not use the 2025 scale as if it were the 2026 scale. That figure is unverified for 2026, and it is not calculated.\n\n## Portugal\n\nLei n.º 64/2025, transitional rule: for periods beginning in 2026, the rate in paragraphs 1 and 5 of Article 87 of the IRC Code is 19%. The Portal das Finanças 2026 rate card puts 19% on the mainland. For the Azores and Madeira the card publishes reduced rates. The state-budget site states 16.8% for the Azores, while the tax portal’s card states 13.3%. Because two official pages differ, the calculator uses only the mainland 19% and does not calculate the autonomous regions.\n\nPersonal income tax, Decreto-Lei n.º 212/2026, the scale from 1 January 2026 on the mainland, marginal rates: 12.20% up to €8,342, 15.20% up to €12,587, 20.70% up to €17,838, 23.60% up to €23,089, 30.60% up to €29,397, 34.60% up to €43,090, 43.10% up to €46,566, 44.60% up to €86,634 and 48% above that. The calculator asks for rendimento coletável, income after deductions, not gross salary. Special regimes for new residents are not in the arithmetic.\n\n## United Arab Emirates\n\nThe official government portal, on a page dated 28 October 2026, says the UAE does not levy income tax on individuals. Corporate tax, on the same portal citing the Ministry of Finance: 0% on taxable income up to AED 375,000 and 9% above that. The calculator applies the nil band only to a euro amount you type yourself. No exchange rate is filled in. The free-zone rate of 0% on qualifying income is not in the calculator: the conditions on the FTA page do not collapse into one tick.\n\n## Greece\n\nThe Ministry of Economy and Finance guide: profits from business activity of legal persons, from tax year 2021 onwards, are at 22%, apart from the cases the guide names separately (29% for some banks, 10% for the agricultural cooperatives it names). The AADE return for a legal person also shows 22% among the rates on the tax line.\n\nFor an individual the guide publishes an employment and pension scale from 2026 that changes with the number of children, plus a tax reduction of €777 with no children, which shrinks by €20 per thousand euros of income above €12,000. The bands €30,001–€40,000 (34%), €40,000.01–€60,000 (39%) and above €60,000 (44%) are repeated on the page in every column that was printed. The bands between €10,000 and €30,000, in the text that was extracted, do not give a reliable column for a taxpayer with no children. The calculator does not apply that scale. It is read on the Ministry’s page.\n\nThe treaties of these countries with Cyprus, without withholding percentages, are on the [treaty page](/guides/for-foreigners/tax-treaties/).",
+    "faq": [
+      {
+        "q": "Why is Malta’s personal tax not calculated?",
+        "a": "The MTCA rates page that was read has the 2025 scales. A 2026 scale was not found in this check. The site does not put the old scale up as the new one."
+      },
+      {
+        "q": "Why can the UAE line charge 9% on the whole profit?",
+        "a": "The nil band is expressed in dirhams. The page does not publish an exchange rate. Until you type a euro equivalent of AED 375,000, 9% is shown on the whole sum, and the line says so."
+      },
+      {
+        "q": "Is Portugal’s 19% the islands as well?",
+        "a": "No. 19% is the mainland for 2026, in the statute and on the Portal das Finanças card. Island rates differ across two official pages, so the calculator does not use them."
+      },
+      {
+        "q": "What is the Greek rate on a salary with no children?",
+        "a": "The Ministry publishes a scale that depends on children, and a €777 reduction. The middle bands, without a reliable zero-child column, are not reprinted here. The corporate 22% is printed in terms."
+      }
+    ],
+    "sources": [
+      {
+        "name": "Cyprus bands from 2026, Business in Cyprus",
+        "url": "https://www.businessincyprus.gov.cy/doing-business-in-cyprus/start-your-business/registering-for-income-tax-and-value-added-tax/"
+      },
+      {
+        "name": "Cyprus corporate tax, Tax Department",
+        "url": "https://www.gov.cy/mof-tax/documents/forologiki-dilosi-eisodimatos-etaireias-t-f-4-aytoergodotoymenoy-me-elegmenoys-logariasmoys-t-f-1/"
+      },
+      {
+        "name": "Corporate tax at 35%, Malta Tax and Customs Administration",
+        "url": "https://mtca.gov.mt/business-tax/corporate/corporate_tax"
+      },
+      {
+        "name": "Company income tax, page updated 8 October 2025, MTCA",
+        "url": "https://mtca.gov.mt/business-tax/corporate/Income_Tax"
+      },
+      {
+        "name": "Portugal 2026 rate card, Portal das Finanças",
+        "url": "https://info.portaldasfinancas.gov.pt/pt/apoio_contribuinte/Folhetos_informativos/Documents/SFP-Taxas-2026.pdf"
+      },
+      {
+        "name": "Lei n.º 64/2025, IRC at 19% in 2026",
+        "url": "https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/legislacao/diplomas_legislativos/Documents/Lei_64_2025.pdf"
+      },
+      {
+        "name": "Decreto-Lei n.º 212/2026, IRS bands",
+        "url": "https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/legislacao/diplomas_legislativos/Documents/Decreto-Lei-212-2026.pdf"
+      },
+      {
+        "name": "Corporate tax, and no personal income tax, UAE government portal",
+        "url": "https://u.ae/en/information-and-services/finance-and-investment/taxation/corporate-tax"
+      },
+      {
+        "name": "No personal income tax, UAE government portal",
+        "url": "https://u.ae/en/information-and-services/finance-and-investment/taxation/other-taxes"
+      },
+      {
+        "name": "Income taxation, Greek Ministry of Economy and Finance",
+        "url": "https://minfin.gov.gr/en/tax-policy/tax-guide/income-taxation/"
+      }
+    ]
+  },
+  "el": {
+    "title": "Κύπρος, Μάλτα, Πορτογαλία, ΗΑΕ και Ελλάδα: συντελεστές 2026",
+    "description": "Οι γενικοί φόροι που δημοσιεύουν επίσημες σελίδες για το 2026. Οι προσωπικές κλίμακες της Μάλτας και τα μεσαία κλιμάκια της Ελλάδας δεν υπολογίζονται.",
+    "body": "Τελευταίος έλεγχος: 26 Νοεμβρίου 2026.\n\n## Σύντομη απάντηση\n\nΣύγκριση χωρών πάνω σε έναν μισθό συνήθως λαθεύει μόλις συμπληρωθεί έκπτωση ή κοινωνική εισφορά κάποιου άλλου. Εδώ στέκονται μόνο γενικοί συντελεστές που τύπωσε αρχή. Ο [υπολογιστής](/el/calculators/compare-countries/) εφαρμόζει τις κλίμακες Κύπρου 2026, την οριακή κλίμακα ηπειρωτικής Πορτογαλίας 2026 και μηδενικό φόρο εισοδήματος φυσικού προσώπου στα ΗΑΕ. Δεν υπολογίζει την προσωπική κλίμακα της Μάλτας για το 2026: δεν ήταν στη σελίδα συντελεστών που ελέγχθηκε. Δεν υπολογίζει ούτε την προσωπική κλίμακα της Ελλάδας για το 2026: τα μεσαία κλιμάκια εξαρτώνται από τον αριθμό τέκνων, και η στήλη χωρίς τέκνα δεν διαβάστηκε αξιόπιστα από το κείμενο της σελίδας.\n\nΚοινωνικές ασφαλίσεις καμίας χώρας δεν είναι στον υπολογιστή. Η σελίδα δεν δημοσιεύει ισοτιμία ντιρχάμ.\n\n## Κύπρος\n\nΦόρος εισοδήματος από το φορολογικό έτος 2026, Business in Cyprus: 0% έως €22.000, έπειτα 20%, 25%, 30% και 35% πάνω από €72.000. Εταιρικός φόρος από το 2026, πίνακας Τμήματος Φορολογίας: 15%. Η έκτακτη εισφορά σε μέρισμα είναι χωριστή [σελίδα εταιρείας](/el/guides/for-foreigners/companies/). Δεν είναι μέρος του εταιρικού 15%.\n\n## Μάλτα\n\nΗ Malta Tax and Customs Administration, στη σελίδα εταιρικού φόρου, λέει ότι οι μαλτέζικες εταιρείες φορολογούνται με 35% στο παγκόσμιο εισόδημα και στα κεφαλαιουχικά κέρδη. Η σελίδα φόρου εισοδήματος εταιρειών, τελευταία ενημέρωση 8 Οκτωβρίου 2025, επαναλαμβάνει ενιαίο 35% στο καθαρό φορολογητέο εισόδημα. Η ίδια σελίδα εταιρικού φόρου λέει ότι μετά από μέρισμα ο μέτοχος μπορεί να δικαιούται επιστροφή μέρους ή όλου του φόρου που πλήρωσε η εταιρεία. Αυτή η σελίδα δεν αναφέρει το κλάσμα της επιστροφής, και ο υπολογιστής δεν εφαρμόζει κάποιο. Ένα πραγματικό «5%» από συνόψεις άλλων δεν μεταφέρεται.\n\nΠροσωπικές κλίμακες βρέθηκαν σε σελίδα της MTCA για το 2025. Η σελίδα νομοθετικών σημειώσεων του 2026, όπως διαβάστηκε, δεν αντικατέστησε τον συντελεστή. Αυτός ο ιστότοπος δεν χρησιμοποιεί την κλίμακα του 2025 σαν να ήταν του 2026. Ο αριθμός είναι μη επαληθευμένος για το 2026, και δεν υπολογίζεται.\n\n## Πορτογαλία\n\nLei n.º 64/2025, μεταβατικός κανόνας: για περιόδους που αρχίζουν το 2026, ο συντελεστής των παραγράφων 1 και 5 του άρθρου 87 του Κώδικα IRC είναι 19%. Η κάρτα συντελεστών 2026 του Portal das Finanças βάζει 19% στην ηπειρωτική χώρα. Για τις Αζόρες και τη Μαδέρα η κάρτα δημοσιεύει μειωμένους συντελεστές. Ο ιστότοπος του κρατικού προϋπολογισμού αναφέρει 16,8% για τις Αζόρες, ενώ η κάρτα της φορολογικής πύλης αναφέρει 13,3%. Επειδή δύο επίσημες σελίδες διαφέρουν, ο υπολογιστής χρησιμοποιεί μόνο το ηπειρωτικό 19% και δεν υπολογίζει τις αυτόνομες περιοχές.\n\nΦόρος εισοδήματος φυσικού προσώπου, Decreto-Lei n.º 212/2026, η κλίμακα από την 1η Ιανουαρίου 2026 στην ηπειρωτική χώρα, οριακοί συντελεστές: 12,20% έως €8.342, 15,20% έως €12.587, 20,70% έως €17.838, 23,60% έως €23.089, 30,60% έως €29.397, 34,60% έως €43.090, 43,10% έως €46.566, 44,60% έως €86.634 και 48% πάνω από αυτό. Ο υπολογιστής ζητά rendimento coletável, εισόδημα μετά από εκπτώσεις, όχι μεικτό μισθό. Ειδικά καθεστώτα για νέους κατοίκους δεν είναι στον λογαριασμό.\n\n## Ηνωμένα Αραβικά Εμιράτα\n\nΗ επίσημη κυβερνητική πύλη, σε σελίδα με ημερομηνία 28 Οκτωβρίου 2026, λέει ότι τα ΗΑΕ δεν επιβάλλουν φόρο εισοδήματος σε φυσικά πρόσωπα. Εταιρικός φόρος, στην ίδια πύλη με παραπομπή στο Υπουργείο Οικονομικών: 0% σε φορολογητέο εισόδημα έως 375.000 ντιρχάμ και 9% πάνω από αυτό. Ο υπολογιστής εφαρμόζει τη μηδενική ζώνη μόνο σε ποσό ευρώ που πληκτρολογείτε εσείς. Ισοτιμία δεν συμπληρώνεται. Ο συντελεστής ελεύθερης ζώνης 0% σε επιλέξιμο εισόδημα δεν είναι στον υπολογιστή: οι όροι στη σελίδα της FTA δεν γίνονται ένα τικ.\n\n## Ελλάδα\n\nΟ οδηγός του Υπουργείου Εθνικής Οικονομίας και Οικονομικών: κέρδη από επιχειρηματική δραστηριότητα νομικών προσώπων, από το φορολογικό έτος 2021 και εφεξής, είναι στο 22%, εκτός από τις περιπτώσεις που ο οδηγός ονομάζει χωριστά (29% για ορισμένες τράπεζες, 10% για τους αγροτικούς συνεταιρισμούς που ονομάζει). Το έντυπο της ΑΑΔΕ για νομικό πρόσωπο δείχνει επίσης 22% ανάμεσα στους συντελεστές της γραμμής φόρου.\n\nΓια φυσικό πρόσωπο ο οδηγός δημοσιεύει κλίμακα μισθωτών και συντάξεων από το 2026 που αλλάζει με τον αριθμό τέκνων, συν μείωση φόρου €777 χωρίς τέκνα, που μικραίνει κατά €20 ανά χίλια ευρώ εισοδήματος πάνω από €12.000. Τα κλιμάκια €30.001–€40.000 (34%), €40.000,01–€60.000 (39%) και πάνω από €60.000 (44%) επαναλαμβάνονται στη σελίδα σε κάθε στήλη που τυπώθηκε. Τα κλιμάκια ανάμεσα σε €10.000 και €30.000, στο κείμενο που εξήχθη, δεν δίνουν αξιόπιστη στήλη για φορολογούμενο χωρίς τέκνα. Ο υπολογιστής δεν εφαρμόζει αυτή την κλίμακα. Διαβάζεται στη σελίδα του Υπουργείου.\n\nΟι συμβάσεις αυτών των χωρών με την Κύπρο, χωρίς ποσοστά παρακράτησης, είναι στη [σελίδα συμβάσεων](/el/guides/for-foreigners/tax-treaties/).",
+    "faq": [
+      {
+        "q": "Γιατί δεν υπολογίζεται ο προσωπικός φόρος της Μάλτας;",
+        "a": "Η σελίδα συντελεστών της MTCA που διαβάστηκε έχει τις κλίμακες του 2025. Κλίμακα 2026 δεν βρέθηκε σε αυτόν τον έλεγχο. Ο ιστότοπος δεν βάζει την παλιά κλίμακα σαν νέα."
+      },
+      {
+        "q": "Γιατί η γραμμή ΗΑΕ μπορεί να πάρει 9% σε όλο το κέρδος;",
+        "a": "Η μηδενική ζώνη εκφράζεται σε ντιρχάμ. Η σελίδα δεν δημοσιεύει ισοτιμία. Μέχρι να πληκτρολογήσετε ισοδύναμο σε ευρώ των 375.000 ντιρχάμ, το 9% φαίνεται σε όλο το ποσό, και η γραμμή το λέει."
+      },
+      {
+        "q": "Το 19% της Πορτογαλίας είναι και τα νησιά;",
+        "a": "Όχι. Το 19% είναι η ηπειρωτική χώρα για το 2026, στον νόμο και στην κάρτα του Portal das Finanças. Οι συντελεστές των νησιών διαφέρουν σε δύο επίσημες σελίδες, οπότε ο υπολογιστής δεν τους χρησιμοποιεί."
+      },
+      {
+        "q": "Ποιος είναι ο ελληνικός συντελεστής σε μισθό χωρίς τέκνα;",
+        "a": "Το Υπουργείο δημοσιεύει κλίμακα που εξαρτάται από τέκνα, και μείωση €777. Τα μεσαία κλιμάκια, χωρίς αξιόπιστη στήλη μηδέν τέκνων, δεν ανατυπώνονται εδώ. Το εταιρικό 22% είναι τυπωμένο ρητά."
+      }
+    ],
+    "sources": [
+      {
+        "name": "Κλίμακες Κύπρου από το 2026, Business in Cyprus",
+        "url": "https://www.businessincyprus.gov.cy/doing-business-in-cyprus/start-your-business/registering-for-income-tax-and-value-added-tax/"
+      },
+      {
+        "name": "Εταιρικός φόρος Κύπρου, Τμήμα Φορολογίας",
+        "url": "https://www.gov.cy/mof-tax/documents/forologiki-dilosi-eisodimatos-etaireias-t-f-4-aytoergodotoymenoy-me-elegmenoys-logariasmoys-t-f-1/"
+      },
+      {
+        "name": "Εταιρικός φόρος 35%, Malta Tax and Customs Administration",
+        "url": "https://mtca.gov.mt/business-tax/corporate/corporate_tax"
+      },
+      {
+        "name": "Φόρος εισοδήματος εταιρειών, ενημέρωση 8 Οκτωβρίου 2025, MTCA",
+        "url": "https://mtca.gov.mt/business-tax/corporate/Income_Tax"
+      },
+      {
+        "name": "Κάρτα συντελεστών Πορτογαλίας 2026, Portal das Finanças",
+        "url": "https://info.portaldasfinancas.gov.pt/pt/apoio_contribuinte/Folhetos_informativos/Documents/SFP-Taxas-2026.pdf"
+      },
+      {
+        "name": "Lei n.º 64/2025, IRC 19% το 2026",
+        "url": "https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/legislacao/diplomas_legislativos/Documents/Lei_64_2025.pdf"
+      },
+      {
+        "name": "Decreto-Lei n.º 212/2026, κλίμακες IRS",
+        "url": "https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/legislacao/diplomas_legislativos/Documents/Decreto-Lei-212-2026.pdf"
+      },
+      {
+        "name": "Εταιρικός φόρος, πύλη κυβέρνησης ΗΑΕ",
+        "url": "https://u.ae/en/information-and-services/finance-and-investment/taxation/corporate-tax"
+      },
+      {
+        "name": "Φορολογία εισοδήματος, Υπουργείο Εθνικής Οικονομίας και Οικονομικών",
+        "url": "https://minfin.gov.gr/en/tax-policy/tax-guide/income-taxation/"
+      }
+    ]
+  }
+}

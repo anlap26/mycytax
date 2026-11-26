@@ -15,7 +15,7 @@ window.MYCYTAX_AFFILIATES = {
   "surfshark": "#AFFILIATE_SURFSHARK",
   "proton": "#AFFILIATE_PROTON",
   "ledger": "#AFFILIATE_LEDGER",
-  "trezor": "#AFFILIATE_TREZOR",
+  "trezor": "https://affil.trezor.io/aff_c?offer_id=352&aff_id=847056",
   "binance": "#AFFILIATE_BINANCE",
   "bybit": "#AFFILIATE_BYBIT",
   "interactivebrokers": "#AFFILIATE_INTERACTIVEBROKERS",

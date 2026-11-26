@@ -11,6 +11,86 @@
         "status": "seeded"
       }
     },
+    "for-foreigners": {
+      "en": {
+        "at": "2026-11-26T00:00:00Z",
+        "status": "seeded"
+      },
+      "ru": {
+        "at": "2026-11-26T00:00:00Z",
+        "status": "seeded"
+      }
+    },
+    "for-foreigners/buying-property": {
+      "en": {
+        "at": "2026-11-26T00:00:00Z",
+        "status": "seeded"
+      },
+      "ru": {
+        "at": "2026-11-26T00:00:00Z",
+        "status": "seeded"
+      }
+    },
+    "for-foreigners/companies": {
+      "en": {
+        "at": "2026-11-26T00:00:00Z",
+        "status": "seeded"
+      },
+      "ru": {
+        "at": "2026-11-26T00:00:00Z",
+        "status": "seeded"
+      }
+    },
+    "for-foreigners/compare": {
+      "en": {
+        "at": "2026-11-26T00:00:00Z",
+        "status": "seeded"
+      },
+      "ru": {
+        "at": "2026-11-26T00:00:00Z",
+        "status": "seeded"
+      }
+    },
+    "for-foreigners/crypto": {
+      "en": {
+        "at": "2026-11-26T00:00:00Z",
+        "status": "seeded"
+      },
+      "ru": {
+        "at": "2026-11-26T00:00:00Z",
+        "status": "seeded"
+      }
+    },
+    "for-foreigners/digital-nomad": {
+      "en": {
+        "at": "2026-11-26T00:00:00Z",
+        "status": "seeded"
+      },
+      "ru": {
+        "at": "2026-11-26T00:00:00Z",
+        "status": "seeded"
+      }
+    },
+    "for-foreigners/relocating": {
+      "en": {
+        "at": "2026-11-26T00:00:00Z",
+        "status": "seeded"
+      },
+      "ru": {
+        "at": "2026-11-26T00:00:00Z",
+        "status": "seeded"
+      }
+    },
+    "for-foreigners/tax-treaties": {
+      "en": {
+        "at": "2026-11-26T00:00:00Z",
+        "status": "seeded"
+      },
+      "ru": {
+        "at": "2026-11-26T00:00:00Z",
+        "status": "seeded"
+      }
+    },
     "international-brokers": {
       "en": {
         "at": "2026-11-19T06:30:28Z",

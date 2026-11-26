@@ -1,0 +1,181 @@
+{
+  "slug": "for-foreigners/digital-nomad",
+  "seq": 43,
+  "ru": {
+    "title": "Виза цифрового кочевника на Кипре",
+    "description": "Разрешение Департамента миграции: не менее €3 500 чистыми в месяц, потолок 500 разрешений, один год с продлением. Это не освобождение от налога.",
+    "body": "Проверено: 26 ноября 2026 года.\n\n## Короткий ответ\n\nСхема «Cyprus Digital Nomad Visa» — временное разрешение для гражданина страны вне ЕС и вне ЕЭЗ, который работает удалённо на работодателя за границей или оказывает услуги клиентам за границей. Департамент миграции снова принимает заявления. Потолок — 500 разрешений. Чистый ежемесячный доход — не меньше €3 500 после взносов и налогов. Разрешение не освобождает от подоходного налога и не создаёт статус non-dom.\n\n## Кого описывает департамент\n\nСтраница департамента, опубликованная 31 декабря 2025 года, говорит: заявитель может работать через средства связи, не зависит от места, работает в компании, зарегистрированной за границей, или самозанят на клиентов за границей, и показывает устойчивый достаточный чистый доход не меньше €3 500 в месяц после вычета взносов и налогов.\n\nПеречень документов департамента, форма MVIS от 19 марта 2025 года, прибавляет к этой сумме 20% на супруга или партнёра и 15% на каждого ребёнка. Доход показывают выплатой зарплаты и выписками банка за шесть месяцев. Если чистый доход из документов не виден, департамент просит письменное подтверждение, что чистый доход не ниже порога.\n\nРабота не должна быть работой на работодателя, зарегистрированного на Кипре, и не должна быть услугой клиенту, который находится на Кипре. Так написано в том же перечне.\n\n## Срок и семья\n\nПервое разрешение — на один год. При продлении — не больше чем на два года. Члены семьи могут находиться тот же срок и не могут работать или вести экономическую деятельность на Кипре.\n\nЗаявление подают в центральный офис департамента в Никосии в течение трёх месяцев после прибытия, лично или через представителя. Документы переводят и заверяют так, как говорит перечень. Если человек уже законно находится на Кипре в другом статусе, департамент позволяет подать заявление там же.\n\nСовет министров ввёл схему решением от 15 октября 2021 года с потолком 100 разрешений и 3 марта 2022 года поднял потолок до 500. Страница департамента говорит, что потолок остаётся 500.\n\n## Налог, о котором пишет сама схема\n\nСтраница схемы говорит: если человек находится в Республике один или несколько периодов, в сумме больше 183 дней в том же налоговом году, его считают налоговым резидентом Кипра, при условии что он не налоговый резидент другого государства.\n\nСтраница Налогового департамента о правиле 183 дней этого дополнительного условия не повторяет. Она считает дни. Правило 60 дней — отдельное, со своими условиями, включая запрет провести больше 183 дней в другой стране. Оба текста надо прочитать. Схема не заменяет [подсчёт дней](/ru/guides/for-foreigners/relocating/).\n\nШкалы подоходного налога с 2026 года, если доход в них попадает, — на той же странице переезда. Статус non-dom схема не выдаёт.\n\nДругие маршруты проживания, включая MEU1 для гражданина Союза и правило 6(2), эта виза не заменяет. Карта — на странице [вариантов проживания](/ru/guides/relocation/residence-options/).",
+    "faq": [
+      {
+        "q": "€3 500 — это до налога или после?",
+        "a": "Страница департамента пишет «чистыми, после вычета взносов и налогов». Это не зарплата до удержаний."
+      },
+      {
+        "q": "Можно ли работать на кипрскую компанию по этой визе?",
+        "a": "Перечень документов требует, чтобы работа не касалась работодателя, зарегистрированного на Кипре, и клиента, который находится на Кипре."
+      },
+      {
+        "q": "Виза делает человека non-dom?",
+        "a": "Нет. Разрешение — иммиграционный документ. Домициль описывает Налоговый департамент отдельно."
+      },
+      {
+        "q": "Гражданин ЕС пользуется этой схемой?",
+        "a": "Страница департамента ограничивает схему гражданами стран вне ЕС и вне ЕЭЗ. Гражданин Союза идёт по свидетельству MEU1."
+      }
+    ],
+    "howto": [
+      {
+        "name": "Проверить паспорт и работу",
+        "text": "Схема — для гражданина страны вне ЕС и вне ЕЭЗ, который работает удалённо на работодателя или клиентов за границей, а не на Кипре."
+      },
+      {
+        "name": "Показать чистый доход",
+        "text": "Департамент требует не меньше €3 500 в месяц после взносов и налогов, плюс 20% на супруга или партнёра и 15% на каждого ребёнка."
+      },
+      {
+        "name": "Подать в Никосии в срок",
+        "text": "Заявление подают в центральный офис Департамента миграции в течение трёх месяцев после прибытия, с переведёнными и заверенными документами из перечня."
+      },
+      {
+        "name": "Отдельно посчитать налоговый год",
+        "text": "Страница схемы говорит о 183 днях. Страница Налогового департамента считает дни по своему тексту. Разрешение не заменяет этот подсчёт и не даёт non-dom."
+      }
+    ],
+    "sources": [
+      {
+        "name": "Цифровые кочевники, Департамент миграции, опубликовано 31 декабря 2025 года",
+        "url": "https://www.gov.cy/mip-md/en/documents/digital-nomads-and-family-members/"
+      },
+      {
+        "name": "Перечень документов, MVIS от 19 марта 2025 года",
+        "url": "https://www.gov.cy/app/uploads/sites/174/2025/12/Accompanying-Documents%5FVIS-Digital-Nomad%5F19032025.pdf"
+      },
+      {
+        "name": "Описание схемы, Департамент миграции",
+        "url": "https://www.gov.cy/app/uploads/sites/174/2025/12/DIGITAL-NOMAD-VISA-SCHEME-E%CE%9D.pdf"
+      },
+      {
+        "name": "Налоговое резидентство, Налоговый департамент",
+        "url": "https://www.gov.cy/mof-tax/en/documents/tax-residency-domicility/"
+      }
+    ]
+  },
+  "en": {
+    "title": "The Cyprus digital nomad visa",
+    "description": "The Migration Department permit: at least €3,500 a month net, a ceiling of 500 permits, one year with a renewal. It is not a tax exemption.",
+    "body": "Last checked: 26 November 2026.\n\n## Short answer\n\nThe Cyprus Digital Nomad Visa scheme is a temporary permit for a national of a country outside the EU and outside the EEA who works remotely for an employer abroad or for clients abroad. The Migration Department is accepting applications again. The ceiling is 500 permits. The net monthly income is at least €3,500 after contributions and tax. The permit does not exempt income tax and it does not create non-dom status.\n\n## Who the Department describes\n\nThe Department’s page, posted on 31 December 2025, says the applicant can work through telecommunications, is not tied to a place, works for a company registered abroad or is self-employed for clients abroad, and shows stable and sufficient net income of at least €3,500 a month after contributions and taxes are deducted.\n\nThe Department’s document list, form MVIS dated 19 March 2025, adds 20% for a spouse or partner and 15% for each child. Income is shown by salary payment and six months of bank statements. Where the net income is not visible from the papers, the Department asks for a written confirmation that the net income is not below the threshold.\n\nThe work must not be work for an employer registered in Cyprus, and it must not be a service to a client established in Cyprus. That is what the same list says.\n\n## Length, and the family\n\nThe first permit is for one year. A renewal is for no more than two years. Family members may stay for the same period and may not work or carry on an economic activity in Cyprus.\n\nThe application is filed at the Department’s central office in Nicosia within three months of arrival, in person or through a representative. Documents are translated and certified as the list says. If the person is already lawfully in Cyprus under another status, the Department allows the application to be filed there.\n\nThe Council of Ministers introduced the scheme by a decision of 15 October 2021 with a ceiling of 100 permits, and on 3 March 2022 raised the ceiling to 500. The Department’s page says the ceiling remains 500.\n\n## The tax sentence on the scheme itself\n\nThe scheme page says that if a person stays in the Republic for one or more periods exceeding 183 days in total in the same tax year, they are considered a Cyprus tax resident, provided they are not a tax resident of any other country.\n\nThe Tax Department’s page on the 183-day rule does not repeat that extra proviso. It counts days. The 60-day rule is separate, with its own conditions, including not spending more than 183 days in another country. Both texts have to be read. The scheme does not replace the [day count](/guides/for-foreigners/relocating/).\n\nThe income-tax bands from 2026, if the income falls in them, are on that same relocation page. The scheme does not issue non-dom status.\n\nOther residence routes, including MEU1 for a Union citizen and Regulation 6(2), are not replaced by this visa. The map is the [residence options](/guides/relocation/residence-options/) page.",
+    "faq": [
+      {
+        "q": "Is €3,500 before tax or after?",
+        "a": "The Department’s page says net, after contributions and taxes are deducted. It is not salary before withholdings."
+      },
+      {
+        "q": "Can the visa be used to work for a Cyprus company?",
+        "a": "The document list requires that the work does not concern an employer registered in Cyprus, or a client established in Cyprus."
+      },
+      {
+        "q": "Does the visa make someone non-dom?",
+        "a": "No. The permit is an immigration document. Domicile is described separately by the Tax Department."
+      },
+      {
+        "q": "Does an EU citizen use this scheme?",
+        "a": "The Department’s page limits the scheme to nationals of countries outside the EU and the EEA. A Union citizen uses the MEU1 certificate."
+      }
+    ],
+    "howto": [
+      {
+        "name": "Check the passport and the work",
+        "text": "The scheme is for a national of a country outside the EU and the EEA who works remotely for an employer or clients abroad, not in Cyprus."
+      },
+      {
+        "name": "Show the net income",
+        "text": "The Department requires at least €3,500 a month after contributions and taxes, plus 20% for a spouse or partner and 15% for each child."
+      },
+      {
+        "name": "File in Nicosia in time",
+        "text": "The application is filed at the Migration Department’s central office within three months of arrival, with the documents on the list translated and certified."
+      },
+      {
+        "name": "Count the tax year separately",
+        "text": "The scheme page speaks of 183 days. The Tax Department’s page counts days on its own text. The permit does not replace that count and does not give non-dom status."
+      }
+    ],
+    "sources": [
+      {
+        "name": "Digital nomads, Migration Department, posted 31 December 2025",
+        "url": "https://www.gov.cy/mip-md/en/documents/digital-nomads-and-family-members/"
+      },
+      {
+        "name": "Document list, MVIS dated 19 March 2025",
+        "url": "https://www.gov.cy/app/uploads/sites/174/2025/12/Accompanying-Documents%5FVIS-Digital-Nomad%5F19032025.pdf"
+      },
+      {
+        "name": "Scheme description, Migration Department",
+        "url": "https://www.gov.cy/app/uploads/sites/174/2025/12/DIGITAL-NOMAD-VISA-SCHEME-E%CE%9D.pdf"
+      },
+      {
+        "name": "Tax residency, Tax Department",
+        "url": "https://www.gov.cy/mof-tax/en/documents/tax-residency-domicility/"
+      }
+    ]
+  },
+  "el": {
+    "title": "Η βίζα ψηφιακού νομάδα στην Κύπρο",
+    "description": "Η άδεια του Τμήματος Μετανάστευσης: τουλάχιστον €3.500 τον μήνα καθαρά, οροφή 500 αδειών, ένα έτος με ανανέωση. Δεν είναι φορολογική απαλλαγή.",
+    "body": "Τελευταίος έλεγχος: 26 Νοεμβρίου 2026.\n\n## Σύντομη απάντηση\n\nΤο σχέδιο «Cyprus Digital Nomad Visa» είναι προσωρινή άδεια για υπήκοο χώρας εκτός ΕΕ και εκτός ΕΟΧ που εργάζεται εξ αποστάσεως για εργοδότη στο εξωτερικό ή για πελάτες στο εξωτερικό. Το Τμήμα Μετανάστευσης δέχεται και πάλι αιτήσεις. Η οροφή είναι 500 άδειες. Το καθαρό μηνιαίο εισόδημα είναι τουλάχιστον €3.500 μετά από εισφορές και φόρους. Η άδεια δεν απαλλάσσει από φόρο εισοδήματος και δεν δημιουργεί καθεστώς non-dom.\n\n## Ποιον περιγράφει το Τμήμα\n\nΗ σελίδα του Τμήματος, με ημερομηνία 31 Δεκεμβρίου 2025, λέει: ο αιτών μπορεί να εργάζεται μέσω τηλεπικοινωνιών, δεν εξαρτάται από τόπο, εργάζεται σε εταιρεία εγγεγραμμένη στο εξωτερικό ή είναι αυτοαπασχολούμενος για πελάτες στο εξωτερικό, και δείχνει σταθερό και επαρκές καθαρό εισόδημα τουλάχιστον €3.500 τον μήνα μετά την αφαίρεση εισφορών και φόρων.\n\nΟ κατάλογος εγγράφων του Τμήματος, έντυπο MVIS με ημερομηνία 19 Μαρτίου 2025, προσθέτει 20% για σύζυγο ή σύντροφο και 15% για κάθε παιδί. Το εισόδημα φαίνεται από πληρωμή μισθού και κινήσεις τράπεζας έξι μηνών. Όπου το καθαρό εισόδημα δεν φαίνεται από τα χαρτιά, το Τμήμα ζητά έγγραφη βεβαίωση ότι το καθαρό εισόδημα δεν είναι κάτω από το όριο.\n\nΗ εργασία δεν πρέπει να είναι εργασία για εργοδότη εγγεγραμμένο στην Κύπρο, και δεν πρέπει να είναι υπηρεσία σε πελάτη εγκατεστημένο στην Κύπρο. Αυτό λέει ο ίδιος κατάλογος.\n\n## Διάρκεια, και η οικογένεια\n\nΗ πρώτη άδεια είναι για ένα έτος. Η ανανέωση είναι για όχι περισσότερο από δύο έτη. Μέλη της οικογένειας μπορούν να μείνουν το ίδιο διάστημα και δεν μπορούν να εργαστούν ή να ασκήσουν οικονομική δραστηριότητα στην Κύπρο.\n\nΗ αίτηση κατατίθεται στο κεντρικό γραφείο του Τμήματος στη Λευκωσία μέσα σε τρεις μήνες από την άφιξη, αυτοπροσώπως ή μέσω αντιπροσώπου. Τα έγγραφα μεταφράζονται και επικυρώνονται όπως λέει ο κατάλογος. Αν το πρόσωπο βρίσκεται ήδη νόμιμα στην Κύπρο με άλλο καθεστώς, το Τμήμα επιτρέπει να κατατεθεί η αίτηση εκεί.\n\nΤο Υπουργικό Συμβούλιο εισήγαγε το σχέδιο με απόφαση της 15ης Οκτωβρίου 2021 με οροφή 100 αδειών, και στις 3 Μαρτίου 2022 ανέβασε την οροφή στις 500. Η σελίδα του Τμήματος λέει ότι η οροφή παραμένει 500.\n\n## Η φορολογική φράση στο ίδιο το σχέδιο\n\nΗ σελίδα του σχεδίου λέει ότι αν πρόσωπο διαμένει στη Δημοκρατία για μία ή περισσότερες περιόδους που υπερβαίνουν τις 183 ημέρες συνολικά στο ίδιο φορολογικό έτος, θεωρείται φορολογικός κάτοικος Κύπρου, εφόσον δεν είναι φορολογικός κάτοικος άλλου κράτους.\n\nΗ σελίδα του Τμήματος Φορολογίας για τον κανόνα των 183 ημερών δεν επαναλαμβάνει αυτή την πρόσθετη επιφύλαξη. Μετρά ημέρες. Ο κανόνας των 60 ημερών είναι χωριστός, με δικούς του όρους, συμπεριλαμβανομένου του να μην περάσει κάποιος πάνω από 183 ημέρες σε άλλη χώρα. Και τα δύο κείμενα πρέπει να διαβαστούν. Το σχέδιο δεν αντικαθιστά τη [μέτρηση ημερών](/el/guides/for-foreigners/relocating/).\n\nΟι κλίμακες φόρου εισοδήματος από το 2026, αν το εισόδημα εμπίπτει σε αυτές, είναι στην ίδια σελίδα μετεγκατάστασης. Το σχέδιο δεν εκδίδει καθεστώς non-dom.\n\nΆλλες οδοί διαμονής, συμπεριλαμβανομένου του MEU1 για πολίτη της Ένωσης και του κανονισμού 6(2), δεν αντικαθίστανται από αυτή τη βίζα. Ο χάρτης είναι η σελίδα [επιλογών διαμονής](/el/guides/relocation/residence-options/).",
+    "faq": [
+      {
+        "q": "Τα €3.500 είναι πριν από τον φόρο ή μετά;",
+        "a": "Η σελίδα του Τμήματος γράφει καθαρά, μετά την αφαίρεση εισφορών και φόρων. Δεν είναι μισθός πριν από κρατήσεις."
+      },
+      {
+        "q": "Η βίζα μπορεί να χρησιμοποιηθεί για εργασία σε κυπριακή εταιρεία;",
+        "a": "Ο κατάλογος εγγράφων απαιτεί η εργασία να μην αφορά εργοδότη εγγεγραμμένο στην Κύπρο, ή πελάτη εγκατεστημένο στην Κύπρο."
+      },
+      {
+        "q": "Η βίζα κάνει κάποιον non-dom;",
+        "a": "Όχι. Η άδεια είναι μεταναστευτικό έγγραφο. Την κατοικία την περιγράφει χωριστά το Τμήμα Φορολογίας."
+      },
+      {
+        "q": "Πολίτης της ΕΕ χρησιμοποιεί αυτό το σχέδιο;",
+        "a": "Η σελίδα του Τμήματος περιορίζει το σχέδιο σε υπηκόους χωρών εκτός ΕΕ και ΕΟΧ. Πολίτης της Ένωσης χρησιμοποιεί το πιστοποιητικό MEU1."
+      }
+    ],
+    "howto": [
+      {
+        "name": "Ελέγξτε το διαβατήριο και την εργασία",
+        "text": "Το σχέδιο είναι για υπήκοο χώρας εκτός ΕΕ και ΕΟΧ που εργάζεται εξ αποστάσεως για εργοδότη ή πελάτες στο εξωτερικό, όχι στην Κύπρο."
+      },
+      {
+        "name": "Δείξτε το καθαρό εισόδημα",
+        "text": "Το Τμήμα απαιτεί τουλάχιστον €3.500 τον μήνα μετά από εισφορές και φόρους, συν 20% για σύζυγο ή σύντροφο και 15% για κάθε παιδί."
+      },
+      {
+        "name": "Καταθέστε στη Λευκωσία εγκαίρως",
+        "text": "Η αίτηση κατατίθεται στο κεντρικό γραφείο του Τμήματος Μετανάστευσης μέσα σε τρεις μήνες από την άφιξη, με τα έγγραφα του καταλόγου μεταφρασμένα και επικυρωμένα."
+      },
+      {
+        "name": "Μετρήστε το φορολογικό έτος χωριστά",
+        "text": "Η σελίδα του σχεδίου μιλά για 183 ημέρες. Η σελίδα του Τμήματος Φορολογίας μετρά ημέρες με το δικό της κείμενο. Η άδεια δεν αντικαθιστά τη μέτρηση και δεν δίνει non-dom."
+      }
+    ],
+    "sources": [
+      {
+        "name": "Ψηφιακοί νομάδες, Τμήμα Μετανάστευσης, 31 Δεκεμβρίου 2025",
+        "url": "https://www.gov.cy/mip-md/en/documents/digital-nomads-and-family-members/"
+      },
+      {
+        "name": "Κατάλογος εγγράφων, MVIS 19 Μαρτίου 2025",
+        "url": "https://www.gov.cy/app/uploads/sites/174/2025/12/Accompanying-Documents%5FVIS-Digital-Nomad%5F19032025.pdf"
+      },
+      {
+        "name": "Περιγραφή σχεδίου, Τμήμα Μετανάστευσης",
+        "url": "https://www.gov.cy/app/uploads/sites/174/2025/12/DIGITAL-NOMAD-VISA-SCHEME-E%CE%9D.pdf"
+      },
+      {
+        "name": "Φορολογική κατοικία, Τμήμα Φορολογίας",
+        "url": "https://www.gov.cy/mof-tax/en/documents/tax-residency-domicility/"
+      }
+    ]
+  }
+}
