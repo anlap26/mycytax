@@ -1,0 +1,457 @@
+# Only the lightweight calculator embeds may be framed by other sites.
+# GitHub Pages ignores this file. Netlify and Cloudflare Pages apply it.
+# frame-ancestors in a meta tag is ignored by browsers, so the allow
+# also lives here. On an embed path it replaces the site-wide rule.
+/*
+  X-Frame-Options: SAMEORIGIN
+  Content-Security-Policy: frame-ancestors 'self'
+
+/embed/transfer-fees
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/embed/transfer-fees/
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/embed/transfer-fees/index.html
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/embed/stamp-duty
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/embed/stamp-duty/
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/embed/stamp-duty/index.html
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/embed/vat
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/embed/vat/
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/embed/vat/index.html
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/embed/capital-gains
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/embed/capital-gains/
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/embed/capital-gains/index.html
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/embed/rental-yield
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/embed/rental-yield/
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/embed/rental-yield/index.html
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/embed/mortgage
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/embed/mortgage/
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/embed/mortgage/index.html
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/embed/non-dom
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/embed/non-dom/
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/embed/non-dom/index.html
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/embed/company-or-self-employed
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/embed/company-or-self-employed/
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/embed/company-or-self-employed/index.html
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/embed/purchase-costs
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/embed/purchase-costs/
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/embed/purchase-costs/index.html
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/embed/compare-countries
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/embed/compare-countries/
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/embed/compare-countries/index.html
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/ru/embed/transfer-fees
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/ru/embed/transfer-fees/
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/ru/embed/transfer-fees/index.html
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/ru/embed/stamp-duty
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/ru/embed/stamp-duty/
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/ru/embed/stamp-duty/index.html
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/ru/embed/vat
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/ru/embed/vat/
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/ru/embed/vat/index.html
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/ru/embed/capital-gains
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/ru/embed/capital-gains/
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/ru/embed/capital-gains/index.html
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/ru/embed/rental-yield
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/ru/embed/rental-yield/
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/ru/embed/rental-yield/index.html
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/ru/embed/mortgage
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/ru/embed/mortgage/
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/ru/embed/mortgage/index.html
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/ru/embed/non-dom
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/ru/embed/non-dom/
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/ru/embed/non-dom/index.html
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/ru/embed/company-or-self-employed
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/ru/embed/company-or-self-employed/
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/ru/embed/company-or-self-employed/index.html
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/ru/embed/purchase-costs
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/ru/embed/purchase-costs/
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/ru/embed/purchase-costs/index.html
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/ru/embed/compare-countries
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/ru/embed/compare-countries/
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/ru/embed/compare-countries/index.html
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/el/embed/transfer-fees
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/el/embed/transfer-fees/
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/el/embed/transfer-fees/index.html
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/el/embed/stamp-duty
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/el/embed/stamp-duty/
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/el/embed/stamp-duty/index.html
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/el/embed/vat
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/el/embed/vat/
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/el/embed/vat/index.html
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/el/embed/capital-gains
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/el/embed/capital-gains/
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/el/embed/capital-gains/index.html
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/el/embed/rental-yield
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/el/embed/rental-yield/
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/el/embed/rental-yield/index.html
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/el/embed/mortgage
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/el/embed/mortgage/
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/el/embed/mortgage/index.html
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/el/embed/non-dom
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/el/embed/non-dom/
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/el/embed/non-dom/index.html
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/el/embed/company-or-self-employed
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/el/embed/company-or-self-employed/
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/el/embed/company-or-self-employed/index.html
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/el/embed/purchase-costs
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/el/embed/purchase-costs/
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/el/embed/purchase-costs/index.html
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/el/embed/compare-countries
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/el/embed/compare-countries/
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
+
+/el/embed/compare-countries/index.html
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, follow
